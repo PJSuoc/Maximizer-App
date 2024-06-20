@@ -4,6 +4,8 @@ import argparse
 import sqlite3
 import logging
 from flask import current_app, g, Flask, flash, jsonify, redirect, render_template, request, session, Response
+import googlemaps
+from datetime import datetime
 
 #Other File imports: DB for database interaction, calculations, support.
 from db import DB
@@ -18,6 +20,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # I need to understand this functionality (I currently do not)
 # required for consistent session(s)?
 app.secret_key = flask_key
+gmaps = googlemaps.Client(key=google_key)
 
 # path to db
 DATABASE = 'powermax.db'
@@ -35,9 +38,14 @@ def get_db_conn():
 # SITE PAGES AND WIDGETS ------------------------------------------------
 
 # Website Home Page 
-@app.route('/')
+@app.route('/', methods = ["GET", "POST"])
 def home():
     return render_template("home.html")
+
+def geolocate():
+    location = request.form.get("location")
+    geoloc =  gmaps.geocode(location)
+    return geoloc
 
 def insert_data():
     db = DB(get_db_conn())
@@ -48,6 +56,9 @@ def insert_data():
     except:
         logging.info("Data Creation Failed")
 
+@app.route('/home2')
+def home2():
+    return render_template("layout.html")
 
 # Utilities ------------------------------
 

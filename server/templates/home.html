@@ -1,30 +1,16 @@
+{% extends "layout.html" %}
+
 {% block title %}
-    Vote Maximizer Testing ground
-    <br>
-    Styling & frontend here
-    <br>
+    Address Lookup?????? <br>
 {% endblock %}
 
-{% block address %}
-    <br>
-    address lookup testing ground <br>
-    <br>
-    <form>
-        <label for="address">Address Input:</label><br>
-        <input type="text" id="address" name="address"><br>
+{% block main %}
+<body>
+    <form action="/" method="post">
+        <label for="location">Address input testing</label>
+        <input type="text" class="form-control" id="location" name="location">
     </form>
+</body>
+
+
 {% endblock %}
-
-{% block listout %}
-    <br>
-    text output testing ground <br>
-    <br>
-{% endblock %}
-
-{% block map %}
-    <br>
-    map output testing ground <br>
-    <br>
-{% endblock %}
-
-
