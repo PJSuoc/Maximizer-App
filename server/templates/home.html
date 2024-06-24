@@ -5,16 +5,82 @@
 {% endblock %}
 
 {% block main %}
-<body>
-    
 
-    
-    <div class="container-fluid">
-        <div class="row" style="padding-top: 10px">
-            <div class="col-2">
-                <form action="/" method="post">
-                    <label for="location">This sidebar is for UPGRADES, PEOPLE, UPGRADES (dropdown filters)</label>
-            </div>
+<style>
+    body { margin: 0; padding: 0;  }
+   /* #map { position: absolute; top: 0; bottom: 0;  width: 100%; } */
+    .map-overlay {
+        font: 14px/20px 'Arial';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        bottom: 10px;
+        padding: 10px;
+        /*background-color: rgba(255, 255, 255, 0.8);/*#dfe8e9;*/
+        box-shadow:  rgba(243, 240, 240, 0.3); 
+        z-index: 2; /* put over  map */
+    }
+    .map-overlay-inner {
+        background-color: #fff;
+        /*margin-top: 20px; /* Adds space for the geocoder */
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px rgba(243, 232, 232, 0.1);
+    }
+    .map-overlay-inner fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+.map-overlay-inner fieldset:last-child {
+    margin: 0;
+}
+
+.map-overlay-inner select {
+    width: 100%;
+}
+
+.map-overlay-inner label {
+    display: block;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.map-overlay-inner button {
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.map-overlay-inner button:focus {
+    outline: none;
+}
+
+.map-overlay-inner button:hover {
+    box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body>
+     
+    <div class="map-overlay">
+       
+        <div class="map-overlay-inner">
+            <div id="geocoder" class="geocoder"></div>
+            <fieldset>
+                <label>Select your topic of interest</label>
+                <select id="layer" name="layer">
+                    <option value="empty">choose</option>
+                    <option value="presidential">Presidential race</option>
+                    <option value="congressional">Congressional race</option>
+                    <option value="RCV">Rank choice voting</option>
+                </select>
+            </fieldset>
+        </div>
+    </div>
         
             <!--<div id="geocoder" class="geocoder"></div>-->
             <div class="col" id="map"></div>
@@ -31,91 +97,85 @@
                     projection: 'globe' // Display the map as a globe
                 });
         
-                // Add the geocoder control to the map after it has fully loaded
-            map.on('load', () => {
-                const geocoder = new MapboxGeocoder({
-                    accessToken: mapboxgl.accessToken,
-                    mapboxgl: mapboxgl
-                });
-
-                document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-
                 
 
-                // Add the GeoJSON source
-                map.addSource('merged_districts', {
-                    type: 'geojson',
-                    data: 'static/merged_districts.geojson', // Path to your GeoJSON file
-                    promoteId: 'NAMELSAD' // Use the appropriate property for unique IDs
-                });
+                const layers = {
+            presidential: 'static/data/Presidential_power.geojson',
+            congressional: 'static/data/Congressional_power.geojson'
+        };
 
-                // Add a line layer to outline the districts
-                map.addLayer({
-                    id: 'merged_districts_line',
-                    type: 'line',
-                    source: 'merged_districts',
-                    paint: {
-                        'line-color': 'black',
-                        'line-width': .5 // Adjust the line width as needed
-                    }
-                }, 'waterway-label'); // Add the new layer before the 'waterway-label' layer or any other layer you want it to be above
-
-                // Make admin-2-boundary and admin-2-boundary-bg layers invisible
-                if (map.getLayer('admin-2-boundary')) {
-                    map.setLayoutProperty('admin-2-boundary', 'visibility', 'none');
-                }
-                if (map.getLayer('admin-2-boundary-bg')) {
-                    map.setLayoutProperty('admin-2-boundary-bg', 'visibility', 'none');
-                }
-            });
-
-            map.on('style.load', () => {
-                const layersToFilter = [
-                    'admin-1-boundary',          // State boundaries
-                    'admin-1-boundary-bg',       // Background for state boundaries
-                    'settlement-label',          // General settlement labels
-                    'settlement-major-label',    // Major city labels
-                    'settlement-minor-label',    // Minor city labels
-                    'settlement-subdivision-label', // Subdivision labels (small towns)
-                    'state-label'                // State labels
-                ];
-
-                if (map.getLayer('country-label')) {
-                    map.removeLayer('country-label');
-                }
-
-                layersToFilter.forEach(layerId => {
-                    if (map.getLayer(layerId)) {
-                        map.setFilter(layerId, ['==', ['get', 'iso_3166_1'], 'US']);
-                    }
-                });
-
-                // Hide county boundaries by setting their visibility to none
-                if (map.getLayer('admin-2-boundary')) {
-                    map.setLayoutProperty('admin-2-boundary', 'visibility', 'none');
-                }
-                if (map.getLayer('admin-2-boundary-bg')) {
-                    map.setLayoutProperty('admin-2-boundary-bg', 'visibility', 'none');
-                }
-
-            });
-
-                map.on('style.load', () => {
-            console.log("Current style:", map.getStyle());
+        function addGeoJsonLayer(layerId) {
+        if (map.getSource(layerId)) { // Check if the source already exists
+            map.removeLayer(layerId + '-fill');
+            map.removeLayer(layerId + '-line');
+            map.removeSource(layerId);
+        }
+       
+        map.addSource(layerId, {
+            type: 'geojson',
+            data: layers[layerId]
         });
-        
-        
-        </script>
-        </div>
-    </div>
 
-    <div class="container-fluid" id="address-lookup">
-        <form action="/" method="post">
-            <label for="location">Get the critical elections in your area here!</label>
-            <input type="text" class="form-control" id="location" name="location">
-            <button class="btn btn-success my-2 my-sm-0" type="submit">Lookup</button>
-    </div>
+        // Add fill layer
+        map.addLayer({
+            id: layerId + '-fill',
+            type: 'fill',
+            source: layerId,
+            paint: {
+                'fill-color': [
+                    'case',
+                    ['==', ['typeof', ['get', 'Voter.Power']], 'number'], // Check if Voter.Power is a number
+                    [
+                        'interpolate',
+                        ['linear'],
+                        ['get', 'Voter.Power'],
+                        1, '#fff7bc',
+                        50, '#fec44f',
+                        100, '#d95f0e'
+                    ],
+                    '#D3D3D3' // Color for NaN or non-numeric values
+                ],
+                'fill-opacity': 1
+            }
+        });
+
+        // Add line layer
+        map.addLayer({
+            id: layerId + '-line',
+            type: 'line',
+            source: layerId,
+            layout: {},
+            paint: {
+                'line-color': '#000',
+                'line-width': 2,
+                'line-opacity': 0.8
+            }
+        });
+    }
+
+    document.getElementById('layer').addEventListener('change', function (e) {
+        const value = e.target.value;
+        if (value === 'presidential' || value === 'congressional') {
+            addGeoJsonLayer(value);
+        } else {
+            ['presidential', 'congressional'].forEach(id => {
+                if (map.getLayer(id + '-fill')) {
+                    map.removeLayer(id + '-fill');
+                    map.removeLayer(id + '-line');
+                    map.removeSource(id);
+                }
+            });
+        }
+    });
+
+    map.on('load', function () {
+        const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            marker: false
+        });
+        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    });
+</script>
 </body>
-
-
 {% endblock %}
