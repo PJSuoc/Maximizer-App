@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Address Lookup?????? <br>
+{% endblock %}
+
+{% block main %}
+<body>
+    <label for="location">Your super-detailed specific location information!</label>
+    <div class="container-fluid">
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    </div>
+    {{randoimage}}
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "vote-maximizer"
+version = "0.1.0"
+description = ""
+authors = ["Paul Soltys"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+geopandas = "^1.0.0"
+googlemaps = "^4.10.0"
+Flask = "^3.0.3"
+shapely = "^2.0.4"
+pandas = "^2.2.2"
+numpy = "^2.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
