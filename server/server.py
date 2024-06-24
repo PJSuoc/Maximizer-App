@@ -5,6 +5,8 @@ import sqlite3
 import logging
 from flask import current_app, g, Flask, flash, jsonify, redirect, render_template, request, session, Response
 import googlemaps
+import geopandas as gpd
+#import pandas as pd
 from datetime import datetime
 
 #Other File imports: DB for database interaction, calculations, support.
@@ -40,21 +42,38 @@ def get_db_conn():
 # Website Home Page 
 @app.route('/', methods = ["GET", "POST"])
 def home():
-    return render_template("home.html")
+    '''
+    Renders the homepage and contains the code references for detailed
+    location lookups.
+    '''
+    #Address/Location Form Output:
+    if request.method == "POST":
+        location = request.form.get("location")
+        geoloc =  gmaps.geocode(location)
+        db = DB(get_db_conn())
+        db.import_data()
+        list_out = db.shapes_near_location(geoloc)
+        list_out = list_out.to_html(classes='table table-stripped')
+        return render_template("detail.html", tables=[list_out], mapbox_key = mapbox_key)
+    
+    #Base Homepage
+    return render_template("home.html", mapbox_key = mapbox_key)
 
-def geolocate():
+def geolocate(): # currently nonfunctional
     location = request.form.get("location")
     geoloc =  gmaps.geocode(location)
-    return geoloc
+    db = DB(get_db_conn())
+    db.import_data()
+    list_out = db.shapes_near_location(geoloc)
+    return list_out
 
 def insert_data():
     db = DB(get_db_conn())
-    tableset = ["shapes", "elections"]
+    #tableset = ["shapes", "elections"]
     try:
-        for i in tableset:
-            db.create_table(i)
+        db.create_tables()
     except:
-        logging.info("Data Creation Failed")
+        logging.info("Table Creation Failed")
 
 @app.route('/home2')
 def home2():

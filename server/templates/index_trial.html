@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Custom Styled MapboxGeocoder</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; display: flex; }
+        #map { position: absolute; top: 0; bottom: 0; right: 0; width: 80%; }
+
+        .geocoder {
+            position: absolute;
+            z-index: 1;
+            width: 20%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #dfe8e9;
+        }
+
+        .mapboxgl-ctrl-geocoder--input {
+            color: #333;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="geocoder" class="geocoder"></div>
+    <div id="map"></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWlrZWtsZWluMSIsImEiOiJjbHhjN2JlbmgwOTJvMmpwdGs5aG0ydHUyIn0.00XJlsXOuFuumTpbWed8Xg';
+
+        // Initialize the map
+        const map = new mapboxgl.Map({
+            container: 'map', // Container ID
+            style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00', // Map style URL
+            center: [-97.919769, 38.798514], // Starting position [lng, lat]
+            zoom: 4, // Starting zoom
+            projection: 'globe' // Display the map as a globe
+        });
+
+        // Add the geocoder control to the map after it has fully loaded
+        map.on('load', () => {
+            const geocoder = new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                mapboxgl: mapboxgl
+            });
+
+            document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+            
+
+            // Add the GeoJSON source
+            map.addSource('merged_districts', {
+                type: 'geojson',
+                data: 'data/merged_districts.geojson', // Path to your GeoJSON file
+                promoteId: 'NAMELSAD' // Use the appropriate property for unique IDs
+            });
+
+            // Add a line layer to outline the districts
+            map.addLayer({
+                id: 'merged_districts_line',
+                type: 'line',
+                source: 'merged_districts',
+                paint: {
+                    'line-color': 'black',
+                    'line-width': .5 // Adjust the line width as needed
+                }
+            }, 'waterway-label'); // Add the new layer before the 'waterway-label' layer or any other layer you want it to be above
+
+            // Make admin-2-boundary and admin-2-boundary-bg layers invisible
+            if (map.getLayer('admin-2-boundary')) {
+                map.setLayoutProperty('admin-2-boundary', 'visibility', 'none');
+            }
+            if (map.getLayer('admin-2-boundary-bg')) {
+                map.setLayoutProperty('admin-2-boundary-bg', 'visibility', 'none');
+            }
+        });
+
+        map.on('style.load', () => {
+            const layersToFilter = [
+                'admin-1-boundary',          // State boundaries
+                'admin-1-boundary-bg',       // Background for state boundaries
+                'settlement-label',          // General settlement labels
+                'settlement-major-label',    // Major city labels
+                'settlement-minor-label',    // Minor city labels
+                'settlement-subdivision-label', // Subdivision labels (small towns)
+                'state-label'                // State labels
+            ];
+
+            if (map.getLayer('country-label')) {
+                map.removeLayer('country-label');
+            }
+
+            layersToFilter.forEach(layerId => {
+                if (map.getLayer(layerId)) {
+                    map.setFilter(layerId, ['==', ['get', 'iso_3166_1'], 'US']);
+                }
+            });
+
+            // Hide county boundaries by setting their visibility to none
+            if (map.getLayer('admin-2-boundary')) {
+                map.setLayoutProperty('admin-2-boundary', 'visibility', 'none');
+            }
+            if (map.getLayer('admin-2-boundary-bg')) {
+                map.setLayoutProperty('admin-2-boundary-bg', 'visibility', 'none');
+            }
+
+        });
+
+        map.on('style.load', () => {
+    console.log("Current style:", map.getStyle());
+});
+
+    </script>
+</body>
+</html>

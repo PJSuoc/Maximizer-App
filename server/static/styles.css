@@ -13,6 +13,13 @@ body {
     position: relative;
 }
 
+#address-lookup {
+    padding-top: 25px;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
 .geocoder {
     position: relative;
     z-index: 1;
