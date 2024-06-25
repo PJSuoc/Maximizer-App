@@ -17,7 +17,7 @@
         bottom: 10px;
         padding: 10px;
         /*background-color: rgba(255, 255, 255, 0.8);/*#dfe8e9;*/
-        box-shadow:  rgba(243, 240, 240, 0.3); 
+       box-shadow:  rgba(243, 240, 240, 0.3); 
         z-index: 2; /* put over  map */
     }
     .map-overlay-inner {
@@ -25,7 +25,7 @@
         /*margin-top: 20px; /* Adds space for the geocoder */
         padding: 10px;
         border-radius: 3px;
-        box-shadow: 0 1px 2px rgba(243, 232, 232, 0.1);
+        /*box-shadow: 0 1px 2px rgba(243, 232, 232, 0.1);*/
     }
     .map-overlay-inner fieldset {
     border: none;
@@ -59,15 +59,25 @@
     outline: none;
 }
 
-.map-overlay-inner button:hover {
-    box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.1);
-}
+
+
+
 </style>
+
 </head>
 <body>
      
     <div class="map-overlay">
-       
+        <style>
+            .custom-popup {
+                font-size: 16px; /* Increase font size */
+                padding: 10px; /* Add more padding */
+                width: 200px; /* Set a specific width if needed */
+                color: #333; /* Text color */
+                border-radius: 3px; /* Rounded corners */
+
+            }
+        </style>
         <div class="map-overlay-inner">
             <div id="geocoder" class="geocoder"></div>
             <fieldset>
@@ -75,7 +85,7 @@
                 <select id="layer" name="layer">
                     <option value="empty">choose</option>
                     <option value="presidential">Presidential race</option>
-                    <option value="congressional">Congressional race</option>
+                    <option value="congressional">Senate race</option>
                     <option value="RCV">Rank choice voting</option>
                 </select>
             </fieldset>
@@ -87,95 +97,125 @@
         
             <script>
                 mapboxgl.accessToken = '{{ mapbox_key }}';
-        
-                // Initialize the map
+            
                 const map = new mapboxgl.Map({
-                    container: 'map', // Container ID
-                    style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00', // Map style URL
-                    center: [-97.919769, 38.798514], // Starting position [lng, lat]
-                    zoom: 4, // Starting zoom
-                    projection: 'globe' // Display the map as a globe
+                    container: 'map',
+                    style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
+                   center: [-98.625126,37.718862],
+                    zoom: 3.2,
+                   projection: 'globe'
                 });
-        
-                
-
+            
                 const layers = {
-            presidential: 'static/data/Presidential_power.geojson',
-            congressional: 'static/data/Congressional_power.geojson'
-        };
+                    presidential: 'static/data/Presidential_power.geojson',
+                    congressional: 'static/data/Congressional_power.geojson'
+                };
+            
+                // Create a popup, but don't add it to the map yet.
+                const popup = new mapboxgl.Popup({
+                    closeButton: false,
+                    closeOnClick: false
+                });
+            
+                function addGeoJsonLayer(layerId) {
+                    if (map.getSource(layerId)) {
+                        map.removeLayer(layerId + '-fill');
+                        map.removeLayer(layerId + '-line');
+                        map.removeSource(layerId);
+                    }
+                   
+                    map.addSource(layerId, {
+                        type: 'geojson',
+                        data: layers[layerId]
+                    });
+            
+                    map.addLayer({
+                        id: layerId + '-fill',
+                        type: 'fill',
+                        source: layerId,
+                        paint: {
+                            'fill-color': [
+                                'case',
+                                ['==', ['typeof', ['get', 'Voter.Power']], 'number'], // Check if Voter.Power is a number
+                                [
+                                    'interpolate',
+                                    ['linear'],
+                                    ['get', 'Voter.Power'],
+                                    1, '#fff7bc',
+                                    50, '#fec44f',
+                                    100, '#d95f0e'
+                                ],
+                                '#D3D3D3' // Color for NaN or non-numeric values
+                            ],
+                            'fill-opacity': 1
+                        }
+                    });
+            
+                    map.addLayer({
+                        id: layerId + '-line',
+                        type: 'line',
+                        source: layerId,
+                        layout: {},
+                        paint: {
+                            'line-color': '#000',
+                            'line-width': 2,
+                            'line-opacity': 0.8
+                        }
+                    });
+            
+                    map.on('mousemove', layerId + '-fill', function(e) {
+                        // Change the cursor style as a UI indicator.
+                        map.getCanvas().style.cursor = 'pointer';
+            
+                        // Display the popup with feature information.
+                        var feature = e.features[0];
+                        var name = feature.properties['NAME'];
+                        var voterPower = feature.properties['Voter.Power'];
 
-        function addGeoJsonLayer(layerId) {
-        if (map.getSource(layerId)) { // Check if the source already exists
-            map.removeLayer(layerId + '-fill');
-            map.removeLayer(layerId + '-line');
-            map.removeSource(layerId);
-        }
-       
-        map.addSource(layerId, {
-            type: 'geojson',
-            data: layers[layerId]
-        });
-
-        // Add fill layer
-        map.addLayer({
-            id: layerId + '-fill',
-            type: 'fill',
-            source: layerId,
-            paint: {
-                'fill-color': [
-                    'case',
-                    ['==', ['typeof', ['get', 'Voter.Power']], 'number'], // Check if Voter.Power is a number
-                    [
-                        'interpolate',
-                        ['linear'],
-                        ['get', 'Voter.Power'],
-                        1, '#fff7bc',
-                        50, '#fec44f',
-                        100, '#d95f0e'
-                    ],
-                    '#D3D3D3' // Color for NaN or non-numeric values
-                ],
-                'fill-opacity': 1
-            }
-        });
-
-        // Add line layer
-        map.addLayer({
-            id: layerId + '-line',
-            type: 'line',
-            source: layerId,
-            layout: {},
-            paint: {
-                'line-color': '#000',
-                'line-width': 2,
-                'line-opacity': 0.8
-            }
-        });
-    }
-
-    document.getElementById('layer').addEventListener('change', function (e) {
-        const value = e.target.value;
-        if (value === 'presidential' || value === 'congressional') {
-            addGeoJsonLayer(value);
-        } else {
-            ['presidential', 'congressional'].forEach(id => {
-                if (map.getLayer(id + '-fill')) {
-                    map.removeLayer(id + '-fill');
-                    map.removeLayer(id + '-line');
-                    map.removeSource(id);
+                // Format the popup content with custom styling
+                        var popupContent = `<div class="custom-popup">
+                                            <strong>State:</strong> ${name}<br>
+                                             <strong>Voter Power:</strong> ${voterPower}%
+                                             </div>`;
+            
+                        popup.setLngLat(e.lngLat)
+                             .setHTML(popupContent)
+                             .addTo(map);
+                        
+                        
+                    });
+            
+                    map.on('mouseleave', layerId + '-fill', function() {
+                        map.getCanvas().style.cursor = '';
+                        popup.remove();
+                    });
                 }
-            });
-        }
-    });
-
-    map.on('load', function () {
-        const geocoder = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl,
-            marker: false
-        });
-        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-    });
-</script>
+            
+                document.getElementById('layer').addEventListener('change', function (e) {
+                    const value = e.target.value;
+                    if (value === 'presidential' || value === 'congressional') {
+                        addGeoJsonLayer(value);
+                    } else {
+                        ['presidential', 'congressional'].forEach(id => {
+                            if (map.getLayer(id + '-fill')) {
+                                map.removeLayer(id + '-fill');
+                                map.removeLayer(id + '-line');
+                                map.removeSource(id);
+                            }
+                        });
+                    }
+                });
+            
+                map.on('load', function () {
+                    const geocoder = new MapboxGeocoder({
+                        accessToken: mapboxgl.accessToken,
+                        mapboxgl: mapboxgl,
+                        marker: false
+                    });
+                    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+                });
+            </script>
+            
+            
 </body>
 {% endblock %}
