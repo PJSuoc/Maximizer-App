@@ -71,10 +71,13 @@
         <style>
             .custom-popup {
                 font-size: 16px; /* Increase font size */
-                padding: 10px; /* Add more padding */
+               padding: 10px; /* Add more padding */
                 width: 200px; /* Set a specific width if needed */
                 color: #333; /* Text color */
                 border-radius: 3px; /* Rounded corners */
+                border-color: #333;
+                border: 2px solid #555;
+                border-width: 2px;
 
             }
         </style>
@@ -86,6 +89,7 @@
                     <option value="empty">choose</option>
                     <option value="presidential">Presidential race</option>
                     <option value="congressional">Senate race</option>
+                    <option value="house">House race</option>
                     <option value="RCV">Rank choice voting</option>
                 </select>
             </fieldset>
@@ -101,20 +105,22 @@
                 const map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
-                   center: [-98.625126,37.718862],
+                    center: [-98.625126,37.718862],
                     zoom: 3.2,
                    projection: 'globe'
                 });
             
                 const layers = {
                     presidential: 'static/data/Presidential_power.geojson',
-                    congressional: 'static/data/Congressional_power.geojson'
+                    congressional: 'static/data/Congressional_power.geojson',
+                    house: 'static/data/2024.house.VoterPower.geojson'
                 };
             
                 // Create a popup, but don't add it to the map yet.
                 const popup = new mapboxgl.Popup({
                     closeButton: false,
                     closeOnClick: false
+                    
                 });
             
                 function addGeoJsonLayer(layerId) {
@@ -128,6 +134,35 @@
                         type: 'geojson',
                         data: layers[layerId]
                     });
+
+                    //  different color scales for each layer add more for each layer here!!
+        const colorScales = {
+            'presidential': [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#feedde', 
+                10, '#fdbe85', 
+                50, '#fd8d3c', 
+                100, '#d94701'  
+            ],
+            'congressional': [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#f2f0f7',
+                25, '#cbc9e2',  
+                50, '#9e9ac8', 
+                100, '#6a51a3'  
+            ],
+            'house': [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#edf8e9', 
+                10, '#bae4b3', 
+                50, '#74c476', 
+                100, '#238b45'  
+            ],
+        };
+
+        // Select the appropriate color scale
+        const fillColor = colorScales[layerId] || ['#D3D3D3']; // Default gray color
+
             
                     map.addLayer({
                         id: layerId + '-fill',
@@ -137,14 +172,7 @@
                             'fill-color': [
                                 'case',
                                 ['==', ['typeof', ['get', 'Voter.Power']], 'number'], // Check if Voter.Power is a number
-                                [
-                                    'interpolate',
-                                    ['linear'],
-                                    ['get', 'Voter.Power'],
-                                    1, '#fff7bc',
-                                    50, '#fec44f',
-                                    100, '#d95f0e'
-                                ],
+                                fillColor,
                                 '#D3D3D3' // Color for NaN or non-numeric values
                             ],
                             'fill-opacity': 1
@@ -210,9 +238,23 @@
                     const geocoder = new MapboxGeocoder({
                         accessToken: mapboxgl.accessToken,
                         mapboxgl: mapboxgl,
-                        marker: false
+                        marker: false,
+                        
                     });
                     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+                    // the 'result' event to control zoom level dynamically
+
+        geocoder.on('result', function(e) {
+                
+                map.flyTo({ // Adjusts the zooming interval so that it doesn't zoom in too much may need to be updated after adding Paul's input data 
+                        center: e.result.center,
+                        zoom: 5.7
+                        });
+                    });
+
+                    map.on('zoom', () => {
+    
+});
                 });
             </script>
             

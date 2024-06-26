@@ -10,7 +10,7 @@ body {
 }
 
 #map-container {
-    position: relative;
+    position: absolute;
 }
 
 #address-lookup {
