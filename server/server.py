@@ -60,14 +60,15 @@ def home():
         #logging.info(senate)
         house, x1 = db.nearby_voting_impact(location, "house")
         #logging.info(house)
-        state_house, x2 = db.nearby_voting_impact(location, "state_leg")
+        state_house, x2 = db.nearby_voting_impact(location, "state_house")
+        state_senate, x4 = db.nearby_voting_impact(location, "state_senate")
         ballot, x3 = db.nearby_voting_impact(location, "ballot")
         presidential_vp = 20
         db.conn.close()
         return render_template("detail.html", prez_vp = presidential_vp,
-                            senate_list = senate, house_list = house, 
-                            state_house_list = state_house, ballot_list = ballot,
-                            mapbox_key = mapbox_key,)
+                        senate_list = senate, house_list = house, 
+                        state_house_list = state_house, state_senate_list = state_senate,
+                        ballot_list = ballot, mapbox_key = mapbox_key)
 
     #Base Homepage
     return render_template("home.html", mapbox_key = mapbox_key)

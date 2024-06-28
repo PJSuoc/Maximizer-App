@@ -103,8 +103,10 @@ class DB:
             output = relevant_elections[relevant_elections["race_type"] == "Senate"]
         elif layer == "house":
             output = relevant_elections[relevant_elections["race_type"] == "House"]
-        elif layer == "state_leg":
+        elif layer == "state_house":
             output = relevant_elections[relevant_elections["race_type"] == "State Leg (Lower)"]
+        elif layer == "state_senate":
+            output = relevant_elections[relevant_elections["race_type"] == "State Leg (Upper)"]
         elif layer == "ballot":
             output = relevant_elections[relevant_elections["race_type"] == "Ballot Initiative"]
         return output
