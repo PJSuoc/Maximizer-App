@@ -10,7 +10,7 @@ body {
 }
 
 #map-container {
-    position: absolute;
+    position: relative;
 }
 
 #address-lookup {
@@ -19,3 +19,4 @@ body {
     justify-content: center;
     width: 30%;
 }
+
