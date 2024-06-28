@@ -95,13 +95,14 @@ class DB:
         relevant_elections = self.elections.merge(shapelist, how="inner", 
                 left_on =["state","congress","s_upper","s_lower"], 
                 right_on = ["state","congress","s_upper","s_lower"])
-        #logging.info(relevant_elections.shape[0])
+        logging.info(type(relevant_elections["race_type"][5]))
+        logging.info(relevant_elections["race_type"][5])  
         if layer == "states":
             output = relevant_elections[relevant_elections["race_type"] == "Senate"]
         elif layer == "house":
             output = relevant_elections[relevant_elections["race_type"] == "House"]
         elif layer == "state_leg":
-            output = relevant_elections[relevant_elections["race_type"] == "State Leg (Lower)"]
+            output = relevant_elections[relevant_elections["race_type"] == "State Leg (Upper)"]
         elif layer == "ballot":
             output = relevant_elections[relevant_elections["race_type"] == "Ballot Initiative"]
         return output
