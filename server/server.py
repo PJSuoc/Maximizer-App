@@ -63,9 +63,11 @@ def home():
         state_house, x2 = db.nearby_voting_impact(location, "state_leg")
         ballot, x3 = db.nearby_voting_impact(location, "ballot")
         presidential_vp = 20
+        db.conn.close()
         return render_template("detail.html", prez_vp = presidential_vp,
                             senate_list = senate, house_list = house, 
                             state_house_list = state_house, ballot_list = ballot)
+
     #Base Homepage
     return render_template("home.html", mapbox_key = mapbox_key)
 
@@ -75,6 +77,7 @@ def geolocate(): # currently nonfunctional
     db = DB(get_db_conn())
     db.import_data()
     list_out = db.shapes_near_location(geoloc)
+    db.conn.close()
     return list_out
 
 def insert_data():
@@ -82,8 +85,10 @@ def insert_data():
     #tableset = ["shapes", "elections"]
     try:
         db.create_tables()
+        db.conn.close()
     except:
         logging.info("Table Creation Failed")
+        db.conn.close()
 
 @app.route('/t')
 def detail():
@@ -99,6 +104,7 @@ def detail():
     state_house, x2 = db.nearby_voting_impact(location, "state_leg")
     ballot, x3 = db.nearby_voting_impact(location, "ballot")
     presidential_vp = 20
+    db.conn.close()
     return render_template("tabletest.html", prez_vp = presidential_vp,
                         senate_list = senate, house_list = house, 
                         state_house_list = state_house, ballot_list = ballot)
