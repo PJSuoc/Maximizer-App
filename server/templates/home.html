@@ -1,17 +1,13 @@
 {% extends "layout.html" %}
 
-{% block title %}
-    Address Lookup?????? <br>
-{% endblock %}
-
 {% block main %}
-
-<style>
+<!-- Should shift this style to CSS sheet at some point-->
+<style> 
     body { margin: 0; padding: 0;  }
     .map-overlay {
         font: 14px/20px 'Arial';
         position: absolute;
-        top: 10px;
+        top: 100px; /* need a dynamic solution to keep it not overlaying with other stuff */
         left: 10px;
         bottom: 10px;
         padding: 10px;
@@ -197,6 +193,13 @@
             document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
         });
     </script>
+    <div class= "container" id="address-lookup">
+        <form action="/" method="post">
+            <label for="location">Find Pivotal Elections near you</label>
+            <input type="text" class="form-control" id="location" name="location"> </input>
+            <button type="button" class="btn btn-info">Find your Local Elections</button>
+        </form>
+    </div>
     </body>
     {% endblock %}
     
