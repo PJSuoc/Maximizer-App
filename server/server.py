@@ -49,13 +49,23 @@ def home():
     #Address/Location Form Output:
     if request.method == "POST":
         location = request.form.get("location")
-        geoloc =  gmaps.geocode(location)
+        location =  gmaps.geocode(location)
         db = DB(get_db_conn())
         db.import_data()
-        list_out = db.shapes_near_location(geoloc)
-        list_out = list_out.to_html(classes='table table-stripped')
-        return render_template("detail.html", tables=[list_out], mapbox_key = mapbox_key)
-    
+        #list_out = db.shapes_near_location(geoloc, db.states)
+        #list_out = list_out.to_html(classes='table table-stripped')
+        #return render_template("detail.html", tables=[list_out], mapbox_key = mapbox_key)
+
+        senate, x = db.nearby_voting_impact(location, "states")
+        #logging.info(senate)
+        house, x1 = db.nearby_voting_impact(location, "house")
+        #logging.info(house)
+        state_house, x2 = db.nearby_voting_impact(location, "state_leg")
+        ballot, x3 = db.nearby_voting_impact(location, "ballot")
+        presidential_vp = 20
+        return render_template("detail.html", prez_vp = presidential_vp,
+                            senate_list = senate, house_list = house, 
+                            state_house_list = state_house, ballot_list = ballot)
     #Base Homepage
     return render_template("home.html", mapbox_key = mapbox_key)
 
@@ -75,9 +85,23 @@ def insert_data():
     except:
         logging.info("Table Creation Failed")
 
-@app.route('/home2')
-def home2():
-    return render_template("layout.html")
+@app.route('/t')
+def detail():
+    db = DB(get_db_conn())
+    db.import_data()
+
+    location = "placeholder"
+     
+    senate, x = db.nearby_voting_impact(location, "states")
+    #logging.info(senate)
+    house, x1 = db.nearby_voting_impact(location, "house")
+    #logging.info(house)
+    state_house, x2 = db.nearby_voting_impact(location, "state_leg")
+    ballot, x3 = db.nearby_voting_impact(location, "ballot")
+    presidential_vp = 20
+    return render_template("tabletest.html", prez_vp = presidential_vp,
+                        senate_list = senate, house_list = house, 
+                        state_house_list = state_house, ballot_list = ballot)
 
 # Utilities ------------------------------
 
