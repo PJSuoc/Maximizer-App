@@ -66,7 +66,8 @@ def home():
         db.conn.close()
         return render_template("detail.html", prez_vp = presidential_vp,
                             senate_list = senate, house_list = house, 
-                            state_house_list = state_house, ballot_list = ballot)
+                            state_house_list = state_house, ballot_list = ballot,
+                            mapbox_key = mapbox_key,)
 
     #Base Homepage
     return render_template("home.html", mapbox_key = mapbox_key)
@@ -93,21 +94,19 @@ def insert_data():
 @app.route('/t')
 def detail():
     db = DB(get_db_conn())
-    db.import_data()
+    #db.import_data()
 
     location = "placeholder"
      
-    senate, x = db.nearby_voting_impact(location, "states")
+    #senate, x = db.nearby_voting_impact(location, "states")
     #logging.info(senate)
-    house, x1 = db.nearby_voting_impact(location, "house")
+    #house, x1 = db.nearby_voting_impact(location, "house")
     #logging.info(house)
-    state_house, x2 = db.nearby_voting_impact(location, "state_leg")
-    ballot, x3 = db.nearby_voting_impact(location, "ballot")
-    presidential_vp = 20
+    #state_house, x2 = db.nearby_voting_impact(location, "state_leg")
+    #ballot, x3 = db.nearby_voting_impact(location, "ballot")
+    #presidential_vp = 20
     db.conn.close()
-    return render_template("tabletest.html", prez_vp = presidential_vp,
-                        senate_list = senate, house_list = house, 
-                        state_house_list = state_house, ballot_list = ballot)
+    return render_template("tabletest.html", mapbox_key = mapbox_key)
 
 # Utilities ------------------------------
 
