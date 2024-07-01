@@ -53,37 +53,39 @@ def home():
         db = DB(get_db_conn())
         db.import_data()
         
+        # Dictionary to store information from shape lookup
         lookup_dict = {"elections": {},"layers": {}}
-        lookup_components = ["Presidential","Senate","House","State Leg (Upper)",
-                             "State Leg (Lower)", "Ballot Initiative"]
+        lookup_components = ["President","Senate","House", "State Leg (Upper)",
+                              "State Leg (Lower)", "Ballot Initiative"]
         
-        ''' NEW CLEANER CODE (UNTESTED) 
+        # Gets information to place in dictionary
         for i in lookup_components:
             elections, shapelayer = db.nearby_voting_impact(location, i)
             lookup_dict["elections"][i] = elections
             lookup_dict["layers"][i] = shapelayer
-        '''
-
-        senate, senate_layer = db.nearby_voting_impact(location, "states")
+        
+        #senate, senate_layer = db.nearby_voting_impact(location, "states")
         #logging.info(senate)
-        house, house_layer = db.nearby_voting_impact(location, "house")
+        #house, house_layer = db.nearby_voting_impact(location, "house")
         #logging.info(house)
-        state_house, s_house_layer = db.nearby_voting_impact(location, "state_house")
-        state_senate, s_sen_layer = db.nearby_voting_impact(location, "state_senate")
-        ballot,_ = db.nearby_voting_impact(location, "ballot")
-        presidential_vp = 20
+        #state_house, s_house_layer = db.nearby_voting_impact(location, "state_house")
+        #state_senate, s_sen_layer = db.nearby_voting_impact(location, "state_senate")
+        #ballot,_ = db.nearby_voting_impact(location, "ballot")
+        #presidential_vp = 20
         db.conn.close()
-        return render_template("detail.html", prez_vp = presidential_vp,
-                        senate_list = senate, 
-                        house_list = house, 
-                        state_house_list = state_house, 
-                        state_senate_list = state_senate,
-                        ballot_list = ballot, 
-                        senate_layer = senate_layer, 
-                        house_layer = house_layer, 
-                        s_house_layer = s_house_layer,
-                        s_sen_layer = s_sen_layer, 
-                        mapbox_key = mapbox_key)
+        return render_template("detail.html", pres_list = lookup_dict["elections"]["President"],
+                    senate_list = lookup_dict["elections"]["Senate"], 
+                    house_list = lookup_dict["elections"]["House"], 
+                    state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
+                    state_senate_list = lookup_dict["elections"]["State Leg (Upper)"],
+                    ballot_list = lookup_dict["elections"]["Ballot Initiative"],
+                    pres_layer = lookup_dict["layers"]["President"],
+                    senate_layer = lookup_dict["layers"]["Senate"], 
+                    house_layer = lookup_dict["layers"]["House"], 
+                    s_house_layer = lookup_dict["layers"]["State Leg (Lower)"],
+                    s_sen_layer = lookup_dict["layers"]["State Leg (Upper)"],
+                    ballot_layer = lookup_dict["layers"]["Ballot Initiative"],
+                    mapbox_key = mapbox_key)
 
     #Base Homepage
     return render_template("home.html", mapbox_key = mapbox_key)

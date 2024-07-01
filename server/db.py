@@ -49,8 +49,11 @@ class DB:
         self.elections = pd.read_csv("./static/data/fakedata.csv", dtype=str)
 
         #Clean NA's from imported shape matching files
-        self.elections = self.elections.fillna("")
-        #self.elections["voter_power"] = self.elections["voter_power"].astype(int)
+        self.elections["state"] = self.elections["state"].fillna("")
+        self.elections["congress"] = self.elections["congress"].fillna("")
+        self.elections["s_upper"] = self.elections["s_upper"].fillna("")
+        self.elections["s_lower"] = self.elections["s_lower"].fillna("")
+        self.elections["voter_power_val"] = self.elections["voter_power"].astype(float)
         self.allshapes = self.allshapes.fillna("")
 
     def nearby_voting_impact(self, location, layer):
@@ -94,23 +97,21 @@ class DB:
 
     def voter_power_filter(self, shapelist, layer):
 
-        relevant_elections = self.elections.merge(shapelist, how="inner", 
+        # Filters elections based to ones in the nearby shapes
+        relevant = self.elections.merge(shapelist, how="inner", 
                 left_on =["state","congress","s_upper","s_lower"], 
                 right_on = ["state","congress","s_upper","s_lower"])
-        logging.info(type(relevant_elections["race_type"][10]))
-        logging.info(relevant_elections["race_type"][10])
-        logging.info(relevant_elections["race_type"][11]) 
-        logging.info(relevant_elections["race_type"][12])   
-        if layer == "states":
-            output = relevant_elections[relevant_elections["race_type"] == "Senate"]
-        elif layer == "house":
-            output = relevant_elections[relevant_elections["race_type"] == "House"]
-        elif layer == "state_house":
-            output = relevant_elections[relevant_elections["race_type"] == "State Leg (Lower)"]
-        elif layer == "state_senate":
-            output = relevant_elections[relevant_elections["race_type"] == "State Leg (Upper)"]
-        elif layer == "ballot":
-            output = relevant_elections[relevant_elections["race_type"] == "Ballot Initiative"]
+
+        # Filters elections by the race type requested
+        relevant = relevant[relevant["race_type"] == layer]
+
+        # Filters elections by voter power 
+        relevant = relevant[relevant["voter_power_val"] > 10]
+        # Sorts remaining elections by voter power & get only the top 3
+        relevant.sort_values("voter_power_val", inplace = True, ascending = False)
+        relevant.reset_index(drop = True)
+        output = relevant[0:3]
+        
         return output
     
     def output_formatter(self, list):

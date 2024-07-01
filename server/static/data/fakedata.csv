@@ -1,4 +1,6 @@
 ﻿district_name,state,congress,s_upper,s_lower,race_type,voter_power,democracy_initiative,civil_liberties
+President,34,,,,President,5,,
+President,42,,,,President,20,,
 US Senate,34,,,,Senate,70,,
 Congressional District 01,34,01,,,House,60,, 
 Congressional District 02,34,02,,,House,5,,
