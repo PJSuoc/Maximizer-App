@@ -58,19 +58,21 @@ class DB:
         Function set for getting the input layers for a specific geolocation
         '''
         
-        #layerlist = [self.states, self.congress, self.s_upper, self.s_lower]
-        #race_type_buckets = ["states", ""]
-        #layer_outputs = []
-        #for i, layer in enumerate(layerlist):
-        nearby_shapes = self.shapes_near_location(location, layer)
-        logging.info(nearby_shapes.shape[0])
-        #logging.info(type(nearby_shapes))
+        # Gets nearby shapes to location input
+        if type(location) == type([]):
+            # IF Address input is a specific geolocation (comes out as type list)
+            nearby_shapes = self.shapes_near_location(location, layer)
+        else:
+            # IF a state is selected from a dropdown menu
+            nearby_shapes = self.shapes_in_state(location, layer)
+
         near_close_elections = self.voter_power_filter(nearby_shapes, layer)
-        #logging.info(near_close_elections.shape[0])
         clean_elections = self.output_formatter(near_close_elections)
         election_string = self.detail_list_constructor(clean_elections)
 
-        return election_string, nearby_shapes
+        # Converts specific election types shapes to geojson for MapBox
+        shapes_json = near_close_elections.to_json(default_handler=str)
+        return election_string, shapes_json
     
     def shapes_near_location(self, location, layer):
         shape = self.allshapes # Temporary, in the future will be the mergeset of shapes

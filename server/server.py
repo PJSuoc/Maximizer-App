@@ -52,23 +52,38 @@ def home():
         location =  gmaps.geocode(location)
         db = DB(get_db_conn())
         db.import_data()
-        #list_out = db.shapes_near_location(geoloc, db.states)
-        #list_out = list_out.to_html(classes='table table-stripped')
-        #return render_template("detail.html", tables=[list_out], mapbox_key = mapbox_key)
+        
+        lookup_dict = {"elections": {},"layers": {}}
+        lookup_components = ["Presidential","Senate","House","State Leg (Upper)",
+                             "State Leg (Lower)", "Ballot Initiative"]
+        
+        ''' NEW CLEANER CODE (UNTESTED) 
+        for i in lookup_components:
+            elections, shapelayer = db.nearby_voting_impact(location, i)
+            lookup_dict["elections"][i] = elections
+            lookup_dict["layers"][i] = shapelayer
+        '''
 
-        senate, x = db.nearby_voting_impact(location, "states")
+        senate, senate_layer = db.nearby_voting_impact(location, "states")
         #logging.info(senate)
-        house, x1 = db.nearby_voting_impact(location, "house")
+        house, house_layer = db.nearby_voting_impact(location, "house")
         #logging.info(house)
-        state_house, x2 = db.nearby_voting_impact(location, "state_house")
-        state_senate, x4 = db.nearby_voting_impact(location, "state_senate")
-        ballot, x3 = db.nearby_voting_impact(location, "ballot")
+        state_house, s_house_layer = db.nearby_voting_impact(location, "state_house")
+        state_senate, s_sen_layer = db.nearby_voting_impact(location, "state_senate")
+        ballot,_ = db.nearby_voting_impact(location, "ballot")
         presidential_vp = 20
         db.conn.close()
         return render_template("detail.html", prez_vp = presidential_vp,
-                        senate_list = senate, house_list = house, 
-                        state_house_list = state_house, state_senate_list = state_senate,
-                        ballot_list = ballot, mapbox_key = mapbox_key)
+                        senate_list = senate, 
+                        house_list = house, 
+                        state_house_list = state_house, 
+                        state_senate_list = state_senate,
+                        ballot_list = ballot, 
+                        senate_layer = senate_layer, 
+                        house_layer = house_layer, 
+                        s_house_layer = s_house_layer,
+                        s_sen_layer = s_sen_layer, 
+                        mapbox_key = mapbox_key)
 
     #Base Homepage
     return render_template("home.html", mapbox_key = mapbox_key)
