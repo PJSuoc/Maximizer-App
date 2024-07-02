@@ -183,7 +183,7 @@
                     const feature = e.features[0];
                     const currentId = feature.properties[idProperty];  // Make sure this is the field you promote as ID
 
-                    console.log("Feature ID:", feature.id, "Current ID:", currentId);  // Logging feature ID for debugging
+                   // console.log("Feature ID:", feature.id, "Current ID:", currentId);  // Logging feature ID for debugging
 
                     if (hoveredStateId !== currentId) {
                         if (hoveredStateId) {
@@ -233,6 +233,15 @@
                 mapboxgl: mapboxgl,
                 marker: false,
             });
+
+        geocoder.on('result', function(e) {
+                console.log(e.result.center)
+    map.flyTo({
+        
+        center: e.result.center,
+        zoom: 6.5  // Set this to whatever zoom level you prefer
+    });
+});
             document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
         });
 
