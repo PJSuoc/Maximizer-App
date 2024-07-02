@@ -261,5 +261,26 @@
             }
         });
     </script>
+
+        <div class= "container" id="state-lookup">
+            <form action="/state" method="post">
+                <label for="location">Pick a state to see high-impact elections</label>
+                <select name="location" id="location">
+                    {% for s in states %}
+                        <option value="{{s}}">{{ s }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-info">Find State Elections</button>
+            </form>
+        </div>
+
+        <div class= "container" id="address-lookup">
+            <form action="/local" method="post">
+                <label for="location">Find Pivotal Elections near you</label>
+                <input type="text" class="form-control" id="location" name="location"> </input>
+                <button type="submit" class="btn btn-info">Find your Local Elections</button>
+            </form>
+        </div>
+
 </body>
 {% endblock %}

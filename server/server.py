@@ -13,6 +13,20 @@ from datetime import datetime
 from db import DB
 from config import flask_key, google_key, mapbox_key
 
+STATES = [
+    "Alabama","Alaska", "Arizona","Arkansas", 
+    "California", "Colorado", "Conneticut", "Delaware", 
+    "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
+    "Indiana", "Iowa", "Kansas", "Kentucky", 
+    "Lousisiana", "Maine", "Maryland", "Massachusetts", 
+    "Michigan", "Minnesota", "Mississippi", "Missouri", 
+    "Montana", "Nebraska", "Nevada", "New Hampshire",
+    "New Jersey", "New Mexico", "New York", "North Carolina", 
+    "North Dakota", "Ohio", "Oklahoma", "Oregon", 
+    "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", 
+    "Tennessee", "Texas", "Utah", "Vermont", "Virginia", 
+    "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+
 
 # base setup
 app = Flask(__name__)
@@ -39,6 +53,18 @@ def get_db_conn():
 
 # SITE PAGES AND WIDGETS ------------------------------------------------
 
+def dataloader():
+    # Imports shapefiles, elections, and candidates(soonTM) as dataframes and
+    # Holds them in memory???
+    db = DB(get_db_conn())
+    elections, allshapes = db.import_data()
+    db.conn.close()
+    return elections, allshapes
+
+with app.app_context():
+    ELECTIONS, ALLSHAPES = dataloader()
+
+
 # Website Home Page 
 @app.route('/', methods = ["GET", "POST"])
 def home():
@@ -49,9 +75,10 @@ def home():
     #Address/Location Form Output:
     if request.method == "POST":
         location = request.form.get("location")
-        location =  gmaps.geocode(location)
+        if "local" in request.form:
+            location =  gmaps.geocode(location)
         db = DB(get_db_conn())
-        db.import_data()
+        db.grab_dataframes(ELECTIONS, ALLSHAPES)
         
         # Dictionary to store information from shape lookup
         lookup_dict = {"elections": {},"layers": {}}
@@ -60,19 +87,13 @@ def home():
         
         # Gets information to place in dictionary
         for i in lookup_components:
-            elections, shapelayer = db.nearby_voting_impact(location, i)
-            lookup_dict["elections"][i] = elections
+            Nelections, shapelayer = db.nearby_voting_impact(location, i)
+            lookup_dict["elections"][i] = Nelections
             lookup_dict["layers"][i] = shapelayer
         
-        #senate, senate_layer = db.nearby_voting_impact(location, "states")
-        #logging.info(senate)
-        #house, house_layer = db.nearby_voting_impact(location, "house")
-        #logging.info(house)
-        #state_house, s_house_layer = db.nearby_voting_impact(location, "state_house")
-        #state_senate, s_sen_layer = db.nearby_voting_impact(location, "state_senate")
-        #ballot,_ = db.nearby_voting_impact(location, "ballot")
-        #presidential_vp = 20
         db.conn.close()
+        # All the individual pieces for the detail lookup. May need to add vals
+        # for zoom and center for the map as well, depending on address lookup
         return render_template("detail.html", pres_list = lookup_dict["elections"]["President"],
                     senate_list = lookup_dict["elections"]["Senate"], 
                     house_list = lookup_dict["elections"]["House"], 
@@ -88,26 +109,22 @@ def home():
                     mapbox_key = mapbox_key)
 
     #Base Homepage
-    return render_template("home.html", mapbox_key = mapbox_key)
+    return render_template("home.html", states = STATES, mapbox_key = mapbox_key)
 
-def geolocate(): # currently nonfunctional
-    location = request.form.get("location")
-    geoloc =  gmaps.geocode(location)
-    db = DB(get_db_conn())
-    db.import_data()
-    list_out = db.shapes_near_location(geoloc)
-    db.conn.close()
-    return list_out
-
-def insert_data():
-    db = DB(get_db_conn())
-    #tableset = ["shapes", "elections"]
-    try:
-        db.create_tables()
-        db.conn.close()
-    except:
-        logging.info("Table Creation Failed")
-        db.conn.close()
+@app.route('/local', methods=["GET", "POST"])
+# Geocodes the location of the person and calls the election mapper
+def local_elections():
+    if request.method == "POST":
+        location = request.form.get("location")
+        location =  gmaps.geocode(location)
+        return election_delivery_function(location)
+    
+@app.route('/state', methods=["GET", "POST"])
+# Passes the state input to and calls the election mapper
+def state_elections():
+    if request.method == "POST":
+        location = request.form.get("location")
+        return election_delivery_function(location)
 
 @app.route('/t')
 def detail():
@@ -116,17 +133,49 @@ def detail():
 
     location = "placeholder"
      
-    #senate, x = db.nearby_voting_impact(location, "states")
-    #logging.info(senate)
-    #house, x1 = db.nearby_voting_impact(location, "house")
-    #logging.info(house)
-    #state_house, x2 = db.nearby_voting_impact(location, "state_leg")
-    #ballot, x3 = db.nearby_voting_impact(location, "ballot")
-    #presidential_vp = 20
     db.conn.close()
-    return render_template("tabletest.html", mapbox_key = mapbox_key)
+    return render_template("tabletest.html", states = STATES, mapbox_key = mapbox_key)
 
 # Utilities ------------------------------
+
+def election_delivery_function(location):
+    '''
+    Takes a location and returns the elections that are related to those shapes.
+    For an exact location, returns elections within ~50 miles.
+    For a state, returns elections within that state.
+    
+    '''
+    db = DB(get_db_conn())
+    db.grab_dataframes(ELECTIONS, ALLSHAPES)
+        
+    # Dictionary to store information from shape lookup
+    lookup_dict = {"elections": {},"layers": {}}
+    lookup_components = ["President","Senate","House", "State Leg (Upper)",
+                              "State Leg (Lower)", "Ballot Initiative"]
+        
+    # Gets information to place in dictionary
+    for i in lookup_components:
+        Nelections, shapelayer = db.nearby_voting_impact(location, i)
+        lookup_dict["elections"][i] = Nelections
+        lookup_dict["layers"][i] = shapelayer
+        
+    db.conn.close()
+    # All the individual pieces for the detail lookup. May need to add vals
+    # for zoom and center for the map as well, depending on address lookup
+    return render_template("detail.html", pres_list = lookup_dict["elections"]["President"],
+                senate_list = lookup_dict["elections"]["Senate"], 
+                house_list = lookup_dict["elections"]["House"], 
+                state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
+                state_senate_list = lookup_dict["elections"]["State Leg (Upper)"],
+                ballot_list = lookup_dict["elections"]["Ballot Initiative"],
+                pres_layer = lookup_dict["layers"]["President"],
+                senate_layer = lookup_dict["layers"]["Senate"], 
+                house_layer = lookup_dict["layers"]["House"], 
+                s_house_layer = lookup_dict["layers"]["State Leg (Lower)"],
+                s_sen_layer = lookup_dict["layers"]["State Leg (Upper)"],
+                ballot_layer = lookup_dict["layers"]["Ballot Initiative"],
+                mapbox_key = mapbox_key)
+
 
 # Default Hostname/address code for temporary testing purposes
 # Logging settings for log debugging
