@@ -13,19 +13,14 @@ from datetime import datetime
 from db import DB
 from config import flask_key, google_key, mapbox_key
 
-STATES = [
-    "Alabama","Alaska", "Arizona","Arkansas", 
-    "California", "Colorado", "Conneticut", "Delaware", 
-    "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
-    "Indiana", "Iowa", "Kansas", "Kentucky", 
-    "Lousisiana", "Maine", "Maryland", "Massachusetts", 
-    "Michigan", "Minnesota", "Mississippi", "Missouri", 
-    "Montana", "Nebraska", "Nevada", "New Hampshire",
-    "New Jersey", "New Mexico", "New York", "North Carolina", 
-    "North Dakota", "Ohio", "Oklahoma", "Oregon", 
-    "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", 
-    "Tennessee", "Texas", "Utah", "Vermont", "Virginia", 
-    "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado", 
+    "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
+    "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", 
+    "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", 
+    "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", 
+    "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", 
+    "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
+    "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
 
 # base setup
@@ -69,46 +64,8 @@ with app.app_context():
 @app.route('/', methods = ["GET", "POST"])
 def home():
     '''
-    Renders the homepage and contains the code references for detailed
-    location lookups.
+    Renders the homepage.
     '''
-    #Address/Location Form Output:
-    if request.method == "POST":
-        location = request.form.get("location")
-        if "local" in request.form:
-            location =  gmaps.geocode(location)
-        db = DB(get_db_conn())
-        db.grab_dataframes(ELECTIONS, ALLSHAPES)
-        
-        # Dictionary to store information from shape lookup
-        lookup_dict = {"elections": {},"layers": {}}
-        lookup_components = ["President","Senate","House", "State Leg (Upper)",
-                              "State Leg (Lower)", "Ballot Initiative"]
-        
-        # Gets information to place in dictionary
-        for i in lookup_components:
-            Nelections, shapelayer = db.nearby_voting_impact(location, i)
-            lookup_dict["elections"][i] = Nelections
-            lookup_dict["layers"][i] = shapelayer
-        
-        db.conn.close()
-        # All the individual pieces for the detail lookup. May need to add vals
-        # for zoom and center for the map as well, depending on address lookup
-        return render_template("detail.html", pres_list = lookup_dict["elections"]["President"],
-                    senate_list = lookup_dict["elections"]["Senate"], 
-                    house_list = lookup_dict["elections"]["House"], 
-                    state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
-                    state_senate_list = lookup_dict["elections"]["State Leg (Upper)"],
-                    ballot_list = lookup_dict["elections"]["Ballot Initiative"],
-                    pres_layer = lookup_dict["layers"]["President"],
-                    senate_layer = lookup_dict["layers"]["Senate"], 
-                    house_layer = lookup_dict["layers"]["House"], 
-                    s_house_layer = lookup_dict["layers"]["State Leg (Lower)"],
-                    s_sen_layer = lookup_dict["layers"]["State Leg (Upper)"],
-                    ballot_layer = lookup_dict["layers"]["Ballot Initiative"],
-                    mapbox_key = mapbox_key)
-
-    #Base Homepage
     return render_template("home.html", states = STATES, mapbox_key = mapbox_key)
 
 @app.route('/local', methods=["GET", "POST"])
@@ -125,8 +82,19 @@ def state_elections():
     if request.method == "POST":
         location = request.form.get("location")
         return election_delivery_function(location)
+    
+@app.route('/about', methods=["GET", "POST"])
+# It's the about page.
+def about_load():
+    return render_template("about.html")
+
+@app.route('/faq', methods=["GET", "POST"])
+# It's the FAQ page.
+def faq_load():
+    return render_template("faq.html")
 
 @app.route('/t')
+# App testing grounds for visual and front-end shenanigans
 def detail():
     db = DB(get_db_conn())
     #db.import_data()

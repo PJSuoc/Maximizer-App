@@ -25,10 +25,19 @@ body {
 }
 
 #address-lookup {
+    text-align: center;
     position: block;
     padding-top: 25px;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 70%;
 }
 
+#state-lookup {
+    text-align: center;
+    position: block;
+    padding-top: 25px;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
