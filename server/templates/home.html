@@ -3,7 +3,9 @@
 {% block main %}
 <!-- Should shift this style to CSS sheet at some point-->
 <style> 
-    body { margin: 0; padding: 0;  }
+
+
+    body { margin: 0; padding: 0;  font-family: 'Arial';}
     .map-overlay {
         font: 14px/20px 'Arial';
         position: absolute;
@@ -14,9 +16,10 @@
         z-index: 2; /* put over  map */
     }
     .map-overlay-inner {
-        background-color: #fff;
+        background-color: rgba(0, 0, 0, 0.6);
         padding: 10px;
         border-radius: 3px;
+        
     }
     .map-overlay-inner fieldset {
         border: none;
@@ -32,7 +35,8 @@
     .map-overlay-inner label {
         display: block;
         font-weight: bold;
-        margin: 0 0 5px;
+        display: block;
+        margin-bottom: 5px;
     }
     .map-overlay-inner button {
         display: inline-block;
@@ -48,18 +52,39 @@
         font-size: 16px;
         padding: 10px;
         width: 200px;
-        color: #333;
+        color: #000000;
         margin: 0px;
+    
         
     }
+    label[for="layer"],
+    label[for="container"],
+    label[for="location"] {
+        color: rgb(230, 213, 213);
+}
+h2, h3 {
+  color: rgb(230, 213, 213);
+  font-family: 'Arial';
+  text-align: center;
+}
+
+h3 {
+  font-size: small;  
+}
+
+
 </style>
 
+
 <body>
+    
     <div class="map-overlay">
         <div class="map-overlay-inner">
-            <div id="geocoder" class="geocoder"></div>
+            <h2>Vote Maximizer</h2>
+            <h3>by the Electoral Innovation Lab</h3>
             <fieldset>
-                <label for="layer">Which races are the most competitive? </label>
+                
+                <label for="layer" style="margin-top: 15px;">Which races are the most competitive? </label>
                 <select id="layer" name="layer">
                     <option value="presidential" selected>Presidential race</option>
                     <option value="congressional">Senate race</option>
@@ -67,6 +92,35 @@
                     <option value="gubernatorial">Gubernatorial race</option>
                     <option value="ballot_initiatives">Ballot initiatives</option>
                 </select>
+
+                <form action="/state" method="post">
+                    <label for="location" style="margin-top: 15px;">Zoom in on a state to see election details</label>
+                    <select name="location" id="location" onchange="this.form.submit()">
+                        {% for s in states %}
+                        <option value="{{s}}">{{ s }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                </form>
+
+                
+                    <form action="/local" method="post">
+                        <label for="location" style="margin-top: 15px;">Find Pivotal Elections near you</label>
+                        <input type="text" class="form-control" id="location" name="location" placeholder="type an address and press enter"></input>
+                    </form>
+
+                    <script>
+                        document.getElementById('location').addEventListener('keypress', function (e) {
+                            if (e.key === 'Enter') {
+                                e.preventDefault(); // Prevent the default action (form submission)
+                                document.getElementById('local-elections-form').submit(); // Submit the form
+                            }
+                        });
+                    </script>
+               
+            </fieldset>
+        </div>
+    </div>
             </fieldset>
         </div>
     </div>
@@ -78,8 +132,8 @@
             container: 'map',
             style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
             center: [-98.625126, 37.718862],
-            zoom: 3.4,
-            projection: 'globe'
+            zoom: 3.6,
+            projection: 'mercator'
         });
 
         const layers = {
@@ -95,6 +149,7 @@
             closeButton: false,
             closeOnClick: false
         });
+        
 
         function addGeoJsonLayer(layerId) {
             const idProperty = layerId === 'house' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
@@ -135,7 +190,7 @@
                             ],
                             'congressional': [
                                 'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                1, '#f2f0f7', 25, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
+                                1, '#f2f0f7', 10, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
                             ],
                             'house': [
                                 'interpolate', ['linear'], ['get', 'Voter.Power'],
@@ -145,8 +200,8 @@
                         '#D3D3D3'  // Color for Nas
                     ],
                     'fill-opacity': 1
-                }
-            });
+                } 
+            }, 'state-label');
 
             // line layer should be black as default
             map.addLayer({
@@ -156,7 +211,7 @@
                 layout: {},
                 paint: {
                     'line-color': '#000',
-                    'line-width': 2,
+                    'line-width': 1,
                     'line-opacity': 1
                 }
             });
@@ -200,6 +255,9 @@
                         <strong>Voter Power:</strong> ${voterPower}%
                     </div>`;
 
+
+            
+
                     popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
                     map.getCanvas().style.cursor = 'pointer';
                 } else {
@@ -225,25 +283,27 @@
             currentLayerId = layerId;
         }
 
+        
+
         // Initial layer setup on map load
         map.on('load', function () {
             addGeoJsonLayer('presidential'); // Load presidential layer by default
-            const geocoder = new MapboxGeocoder({
-                accessToken: mapboxgl.accessToken,
-                mapboxgl: mapboxgl,
-                marker: false,
-            });
+            //const geocoder = new MapboxGeocoder({
+            //    accessToken: mapboxgl.accessToken,
+            //    mapboxgl: mapboxgl,
+            //    marker: false,
+            //});
 
-        geocoder.on('result', function(e) {
-                console.log(e.result.center)
-    map.flyTo({
+        //geocoder.on('result', function(e) {
+        //        console.log(e.result.center)
+    //map.flyTo({
         
-        center: e.result.center,
-        zoom: 6.5  // Set this to whatever zoom level you prefer
-    });
+    //    center: e.result.center,
+    //    zoom: 6.5  // Set this to whatever zoom level you prefer
+   // });
 });
-            document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-        });
+          //  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+        //});
 
         document.getElementById('layer').addEventListener('change', function (e) {
             const value = e.target.value;
@@ -260,30 +320,10 @@
                 });
             }
         });
+
+
+        
     </script>
-    <div class = "row">
-        <div class= "col">
-            <div class = "container" id = "state-lookup">
-            <form action="/state" method="post">
-                <label for="location">Pick a state to see high-impact elections</label>
-                <select name="location" id="location">
-                    {% for s in states %}
-                        <option value="{{s}}">{{ s }}</option>
-                    {% endfor %}
-                </select>
-                <button type="submit" class="btn btn-info">Find State Elections</button>
-            </form>
-            </div>
-        </div>
-        <div class= "col">
-            <div class= "container" id="address-lookup">
-            <form action="/local" method="post">
-                <label for="location">Find Pivotal Elections near you</label>
-                <input type="text" class="form-control" id="location" name="location"> </input>
-                <button type="submit" class="btn btn-info">Find your Local Elections</button>
-            </form>
-            </div>
-        </div>
-    </div>
+   
 </body>
 {% endblock %}

@@ -6,12 +6,15 @@ body {
 #map {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 800px;
+    top: 0;
+    bottom: 0;
+   
 }
 #sm-map {
     position: absolute;
     width: 100%;
-    height: 500px;
+    height: 800px;
 }
 #map-container {
     position: relative;
@@ -19,13 +22,13 @@ body {
 
 #map-container-sm {
     position: relative;
-    width: 50%;
+    width: 100%;
     height: 500px;
     z-index:-1
 }
 
 #address-lookup {
-    text-align: center;
+    text-align: left;
     position: block;
     padding-top: 25px;
     align-items: center;
@@ -41,3 +44,4 @@ body {
     justify-content: center;
     width: 70%;
 }
+
