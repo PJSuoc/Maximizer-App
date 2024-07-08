@@ -183,6 +183,7 @@ h3 {
     paint: {
         'fill-color': [
             'case',
+            ['==', ['get', 'Voter.Power'], null], '#D3D3D3', // Explicitly handle null values
             ['==', layerId, 'presidential'], [
                 'interpolate', ['linear'], ['get', 'Voter.Power'],
                 1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'
@@ -210,6 +211,7 @@ h3 {
         'fill-opacity': 1
     }
 }, 'state-label');
+
 
 
             // line layer should be black as default
