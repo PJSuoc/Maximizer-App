@@ -119,7 +119,7 @@ h3 {
                             <option value="presidential">Presidential race</option>
                             <option value="congressional">Senate race</option>
                             <option value="house">House race</option>
-                            <option value="RCV">Rank choice voting</option>
+                            <option value="gubernatorial">State Governors</option>
                         </select>
                     </fieldset>
                 </div>
@@ -138,9 +138,10 @@ h3 {
                     });
                 
                     const layers = {
-            presidential: 'static/data/Presidential_power.geojson',
-            congressional: 'static/data/Congressional_power.geojson',
-            house: 'static/data/2024.house.VoterPower.geojson'
+            presidential: 'static/data/geojson_imports/Presidential_power.geojson',
+            congressional: 'static/data/geojson_imports/Congressional_power.geojson',
+            house: 'static/data/geojson_imports/2024.house.VoterPower.geojson',
+            gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson'
         };
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
