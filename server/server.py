@@ -47,17 +47,19 @@ def get_db_conn():
         return app.config["_database"] 
 
 # SITE PAGES AND WIDGETS ------------------------------------------------
+# Note- can't use logging.info messages here to check things?
 
 def dataloader():
     # Imports shapefiles, elections, and candidates(soonTM) as dataframes and
     # Holds them in memory???
     db = DB(get_db_conn())
-    elections, allshapes = db.import_data()
+    elections, allshapes, candidates = db.import_data_v2()
     db.conn.close()
-    return elections, allshapes
+    return elections, allshapes, candidates
 
 with app.app_context():
-    ELECTIONS, ALLSHAPES = dataloader()
+    ELECTIONS, ALLSHAPES, CANDIDATES = dataloader()
+
 
 
 # Website Home Page 
@@ -66,6 +68,7 @@ def home():
     '''
     Renders the homepage.
     '''
+    print("Anybody home?")
     return render_template("home.html", states = STATES, mapbox_key = mapbox_key)
 
 @app.route('/local', methods=["GET", "POST"])
@@ -114,7 +117,7 @@ def election_delivery_function(location):
     
     '''
     db = DB(get_db_conn())
-    db.grab_dataframes(ELECTIONS, ALLSHAPES)
+    db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
         
     # Dictionary to store information from shape lookup
     lookup_dict = {"elections": {},"layers": {}}
@@ -126,7 +129,9 @@ def election_delivery_function(location):
         Nelections, shapelayer = db.nearby_voting_impact(location, i)
         lookup_dict["elections"][i] = Nelections
         lookup_dict["layers"][i] = shapelayer
-        
+    
+    print("President stuff", lookup_dict["elections"]["President"])
+
     db.conn.close()
     # All the individual pieces for the detail lookup. May need to add vals
     # for zoom and center for the map as well, depending on address lookup

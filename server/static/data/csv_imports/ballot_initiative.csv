@@ -1,0 +1,53 @@
+﻿state_name,state,congress,s_lower,s_upper,race_type,voter_power,cook_rating,district_name,source,ballot notes
+alaska,2,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Alaska_2024_ballot_measures,repeal top-four RCV from 2020
+alaska,2,,,,Ballot Initiative,,,minimum wage,https://ballotpedia.org/Alaska_2024_ballot_measures,increase to $15 and require paid sick leave
+arizona,4,,,,Ballot Initiative,,,state government,https://ballotpedia.org/Arizona_2024_ballot_measures,provide for legislature to terminate or alter state of emergency power
+arizona,4,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Arizona_2024_ballot_measures,"end term limits for state SC justices with terms of good behavior, ending retention elections under circumstances"
+arizona,4,,,,Ballot Initiative,,,immigration,https://ballotpedia.org/Arizona_2024_ballot_measures,allow state and local police to arrest noncitizens
+arizona,4,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Arizona_2024_ballot_measures,provide for challenges to initiative measure or amendment with secretary of state
+arizona,4,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Arizona_2024_ballot_measures,require partisan primary elections for partisan offices
+arizona,4,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Arizona_2024_ballot_measures,create signature distribution requirement for citizen-initiated ballot measures
+arizona,4,,,,Ballot Initiative,,,minimum wage,https://ballotpedia.org/Arizona_2024_ballot_measures,allow for tipped workers to be paid 25% less per hour if any tips were not less than minimum wage plus $2/hours worked
+california,6,,,,Ballot Initiative,,,minimum wage,https://ballotpedia.org/California_2024_ballot_propositions,increase to $18
+california,6,,,,Ballot Initiative,,,lgbtq+,https://ballotpedia.org/California_2024_ballot_propositions,repeal proposition 8 and establish right to marry
+california,6,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/California_2024_ballot_propositions,requires initiatives that change thresholds to supermajority votes to pass by supermajority rule (as initiated)
+colorado,8,,,,Ballot Initiative,,,judicial,https://ballotpedia.org/Colorado_2024_ballot_measures,creates independent judicial discipline adjudicative board
+colorado,8,,,,Ballot Initiative,,,lgbtq+,https://ballotpedia.org/Colorado_2024_ballot_measures,remove provision of state constitution on same-sex marriage
+colorado,8,,,,Ballot Initiative,,,abortion,https://ballotpedia.org/Colorado_2024_ballot_measures,create right to abortion in state constitution and repeal provision banning use of public funds for abortion
+colorado,8,,,,Ballot Initiative,,,voting policy measure,https://www.rankedvote.co/locations/colorado/final-four-open-all-candidate-primaries-ranked-choice-voting-in-colorado,use final-four all-candidate primaries and ranked-choice general elections for state and federal elections by 2028
+colorado,8,,,,Ballot Initiative,,,guns,https://ballotpedia.org/Colorado_2024_ballot_measures,"levy excise tax on gun and ammunition sales across dealers, manufacturers, vendors; fund other programs including crime victim services and education programs"
+connecticut,9,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Connecticut_2024_ballot_measures,authorize state legislature to provide no-excuse absentee voting
+district of columbia,11,,,,Ballot Initiative,,,voting policy measure,"https://ballotpedia.org/Washington,_D.C.,_Initiative_83,_Ranked-Choice_Voting_Initiative_(November_2024)",create a semi-open primary system in addition to RCV
+florida,12,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Florida_2024_ballot_measures,"change to partisan elections on school board, general, and primary elections beginning 2026"
+florida,12,,,,Ballot Initiative,,,marijuana,https://ballotpedia.org/Florida_2024_ballot_measures,legalize marijuana for 21 and older adults
+florida,12,,,,Ballot Initiative,,,abortion,https://ballotpedia.org/Florida_2024_ballot_measures,establish constitutional right to abortion before fetal viability (estimated around 24 weeks) or when necessary for patient's health
+florida,12,,,,Ballot Initiative,,,campaign financing,https://ballotpedia.org/Florida_2024_ballot_measures,repeal constitutional provision providing for public campaign financing for candidates
+georgia,13,,,,Ballot Initiative,,,judicial,https://ballotpedia.org/Georgia_2024_ballot_measures,provide georgia tax court with statewide judicial power
+hawaii,15,,,,Ballot Initiative,,,judicial,https://ballotpedia.org/Hawaii_2024_ballot_measures,change process for appointing and confirming district court judges to mirror SC and other higher court judges
+hawaii,15,,,,Ballot Initiative,,,lgbtq+,https://ballotpedia.org/Hawaii_2024_ballot_measures,remove provision of state constitution on same-sex marriage
+idaho,16,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Idaho_2024_ballot_measures,amend idaho constitution to provide that only a citizen of the United States can vote in the state
+illinois,17,,,,Ballot Initiative,,,reproductive health,https://ballotpedia.org/Illinois_2024_ballot_measures,advise state officials on whether to provide for reproductive treatments to be covered by any health insurance plan
+illinois,17,,,,Ballot Initiative,,,civil,https://ballotpedia.org/Illinois_2024_ballot_measures,advise state officials on whether to establish civil penalties for election interference
+indiana,18,,,,Ballot Initiative,,,state government,https://ballotpedia.org/Indiana_2024_ballot_measures,remove the superintendent of public instruction for gubernatorial succession
+maine,23,,,,Ballot Initiative,,,campaign financing,https://ballotpedia.org/Maine_2024_ballot_measures,limit campaign contributions to $5000 from individuals and PACs that make independent expenditures
+maryland,24,,,,Ballot Initiative,,,abortion,https://ballotpedia.org/Maryland_2024_ballot_measures,establishes right to reproductive freedom in state constitution
+missouri,29,,,,Ballot Initiative,,,voting policy measure,,establish that only citizens who are Missouri residents can vote and prohibits RCV
+nevada,32,,,,Ballot Initiative,,,state government,https://ballotpedia.org/Nevada_2024_ballot_measures,remove constitutional status of Board of Revents to allow state legislature to review and change governing organization of state universities
+nevada,32,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Nevada_2024_ballot_measures,provide for open top-5 primaries and RCV for general elections
+new mexico,35,,,,Ballot Initiative,,,judicial,https://ballotpedia.org/New_Mexico_2024_ballot_measures,authorize designee of the dean of UNM law school to serve as chair of judicial nomination process
+new york,36,,,,Ballot Initiative,,,voting policy measure,https://ithacavoice.org/2024/06/campaign-aims-to-put-ranked-choice-voting-to-a-referendum-in-ithaca/,"apply open primaries and RCV to all primary, general, and special elections for Mayor, Council, and City Judges in Ithaca effective 2026"
+new york,36,,,,Ballot Initiative,,,discrimination,https://ballotpedia.org/New_York_2024_ballot_measures,"provide that people cannot be denied rights based on their ""ethnicity, national origin, age, and disability"" or ""sex, including sexual orientation, gender identity, gender expression, pregnancy, pregnancy outcomes, and reproductive healthcare and autonomy"""
+new york,36,,,,Ballot Initiative,,,abortion,https://ballotpedia.org/New_York_2024_ballot_measures,"provide that people cannot be denied rights based on their ""ethnicity, national origin, age, and disability"" or ""sex, including sexual orientation, gender identity, gender expression, pregnancy, pregnancy outcomes, and reproductive healthcare and autonomy"""
+north carolina,37,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/North_Carolina_2024_ballot_measures,provide in state constitution that only a citizen (rather than every citizen) of the US may vote
+north dakota,38,,,,Ballot Initiative,,,disability services,https://ballotpedia.org/North_Dakota_2024_ballot_measures,"adjusting state constitution language to support those with mental illness, developmental disabilities, and deafness"
+north dakota,38,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/North_Dakota_2024_ballot_measures,establish a single-subject rule for initiatives; increase the signature requirement for constitutional initiatives; and require constitutional initiatives to be approved at two elections
+oklahoma,40,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Oklahoma_2024_ballot_measures,provide in state constitution that only a citizen (rather than every citizen) of the US may vote
+oregon,41,,,,Ballot Initiative,,,state government,https://ballotpedia.org/Oregon_2024_ballot_measures,alow legislature to impeach elected state executives
+oregon,41,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Oregon_2024_ballot_measures,establish RCV for federal and state offices
+rhode island,44,,,,Ballot Initiative,,,state government,https://ballotpedia.org/Rhode_Island_2024_ballot_measures,call for state constitutional convention to be held
+south dakota,46,,,,Ballot Initiative,,,lgbtq+,https://ballotpedia.org/South_Dakota_2024_ballot_measures,amend constitution changing male pronouns to gender-neutral terms or titles
+south dakota,46,,,,Ballot Initiative,,,abortion,https://ballotpedia.org/South_Dakota_2024_ballot_measures,provide state constitutional right to abortion with a trimester framework for regulations
+south dakota,46,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/South_Dakota_2024_ballot_measures,"provide for top-2 primary elections for certain races, including certain federal races"
+utah,49,,,,Ballot Initiative,,,state government,https://ballotpedia.org/Utah_2024_ballot_measures,provide for elections of county sheriffs to serve 4 year terms
+wisconsin,55,,,,Ballot Initiative,,,state government,"https://ballotpedia.org/Wisconsin_Question_2,_Require_Legislative_Approval_for_State_Expenditure_of_Federal_Funds_Amendment_(August_2024)",an August 2024 initiative to require legislative approval before the governor can expend federal money appropriated to the state
+wisconsin,55,,,,Ballot Initiative,,,voting policy measure,https://ballotpedia.org/Wisconsin_2024_ballot_measures,"states only US citizens who are 18 years old or older can vote in federal, state, local, or school elections"

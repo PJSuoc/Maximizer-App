@@ -5,6 +5,10 @@ import pandas as pd
 import geopandas as gpd
 from shapely import Point
 from pathlib import Path
+import sys
+
+#Preventing to_json from breaking.... ? 
+sys.setrecursionlimit(1500)
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -28,35 +32,17 @@ Class for building database functionalities.
 class DB:
     def __init__(self, connection):
         self.conn = connection
-
-    def execute_script(self, script_file):
-        """
-        Runs sql scripts when given the file name
-        """
-        with open(script_file, "r") as script:
-            c = self.conn.cursor()
-            c.executescript(script.read())
-            self.conn.commit()
-
-    def create_tables(self):
-        """
-        Calls the schema sql files to create tables
-        """
-        script_file = path.join("schemas", "shapes.sql")
-        self.execute_script(script_file)
-        script_file = path.join("schemas", "elections.sql")
-        self.execute_script(script_file)
     
     def import_data(self):
         '''
         Imports all necessary shapefiles for calculations.
         '''
-        self.states = gpd.read_file("./static/data/cb_2023_us_state_500k/cb_2023_us_state_500k.shp")
-        self.congress = gpd.read_file("./static/data/cb_2023_us_cd118_500k/cb_2023_us_cd118_500k.shp")
-        self.s_upper = gpd.read_file("./static/data/cb_2023_us_sldu_500k/cb_2023_us_sldu_500k.shp")
-        self.s_lower = gpd.read_file("./static/data/cb_2023_us_sldl_500k/cb_2023_us_sldl_500k.shp")
-        self.allshapes = gpd.read_file("./static/data/all_shapes/all_shapes.shp")
-        self.elections = pd.read_csv("./static/data/fakedata.csv", dtype=str)
+        #self.states = gpd.read_file("./static/data/shp_imports/cb_2023_us_state_500k/cb_2023_us_state_500k.shp")
+        #self.congress = gpd.read_file("./static/data/shp_imports/cb_2023_us_cd118_500k/cb_2023_us_cd118_500k.shp")
+        #self.s_upper = gpd.read_file("./static/data/shp_imports/cb_2023_us_sldu_500k/cb_2023_us_sldu_500k.shp")
+        #self.s_lower = gpd.read_file("./static/data/shp_imports/cb_2023_us_sldl_500k/cb_2023_us_sldl_500k.shp")
+        self.allshapes = gpd.read_file("./static/data/shp_imports/all_shapes/all_shapes.shp")
+        self.elections = pd.read_csv("./static/data/csv_imports/fakedata.csv", dtype=str)
 
         #Clean NA's from imported shape matching files
         self.elections["state"] = self.elections["state"].fillna("")
@@ -68,16 +54,60 @@ class DB:
         self.allshapes = self.allshapes.fillna("")
         return self.elections, self.allshapes
     
-    def grab_dataframes(self, elections, allshapes):
-        # Pulls dataframes from memory to use for calculation ????
+    def import_data_v2(self):
+        '''
+        Imports all necessary data into pandas/geopandas dataframes to hold in memory
+        for website calculations.
+        '''
+        # Elections CSVs, separated for ease of maintenance/updates
+        president = pd.read_csv("static/data/csv_imports/president.csv", dtype=str)
+        senate = pd.read_csv("static/data/csv_imports/senate.csv", dtype=str)
+        congress = pd.read_csv("static/data/csv_imports/congress_house.csv", dtype=str)
+        s_upper = pd.read_csv("static/data/csv_imports/state_upper_legislature.csv", dtype=str)
+        s_lower = pd.read_csv("static/data/csv_imports/state_lower_legislature.csv", dtype=str)
+        ballot = pd.read_csv("static/data/csv_imports/ballot_initiative.csv", dtype=str)
+        # Merges election CSVs into a single dataframe for calculations
+        df_list = [president, senate, congress, s_upper, s_lower, ballot]
+        self.elections = pd.concat(df_list, ignore_index=True)
+        # Elections data cleaning/adjusting
+        self.elections["eid"] = self.elections.index
+        self.elections["state"] = self.elections["state"].fillna("")
+        self.elections["congress"] = self.elections["congress"].fillna("")
+        self.elections["s_upper"] = self.elections["s_upper"].fillna("")
+        self.elections["s_lower"] = self.elections["s_lower"].fillna("")
+        self.elections["district_name"] = self.elections["district_name"].fillna("")
+        self.elections["voter_power_val"] = self.elections["voter_power"].astype(float)
+        self.elections["voter_power"] = self.elections["voter_power"].fillna("N/A")
+        
+        # Candidates CSV
+        self.candidates = pd.read_csv("static/data/csv_imports/candidates.csv", dtype=str)
+        self.candidates["cid"] = self.candidates.index
+        self.candidates["state"] = self.candidates["state"].fillna("")
+        self.candidates["congress"] = self.candidates["congress"].fillna("")
+        self.candidates["s_upper"] = self.candidates["s_upper"].fillna("")
+        self.candidates["s_lower"] = self.candidates["s_lower"].fillna("")
+
+        # All Shapes shapefile for locating elections
+        self.allshapes = gpd.read_file("./static/data/shp_imports/all_shapes/all_shapes.shp")
+        self.allshapes["state"] = self.allshapes["state"].fillna("")
+        self.allshapes["congress"] = self.allshapes["congress"].fillna("")
+        self.allshapes["s_upper"] = self.allshapes["s_upper"].fillna("")
+        self.allshapes["s_lower"] = self.allshapes["s_lower"].fillna("")
+
+        return self.elections, self.allshapes, self.candidates
+
+
+    def grab_dataframes(self, elections, allshapes, candidates):
+        # Pulls dataframes from memory to use for calculation
         self.elections = elections
         self.allshapes = allshapes
+        self.candidates = candidates
 
     def nearby_voting_impact(self, location, layer):
         '''
         Function set for getting the input layers for a specific geolocation
         '''
-        
+
         # Gets nearby shapes to location input
         if type(location) == type([]):
             # IF Address input is a specific geolocation (comes out as type list)
@@ -86,13 +116,18 @@ class DB:
             # IF a state is selected from a dropdown menu
             nearby_shapes = self.shapes_in_state(location)
 
-        near_close_elections = self.voter_power_filter(nearby_shapes, layer)
-        clean_elections = self.output_formatter(near_close_elections)
+        print(layer,"shapes", nearby_shapes.shape[0])
+        # Get the set of elections for the shapes and filter them for the output
+        clean_elections = self.voter_power_filter(nearby_shapes, layer)
+        print(layer,"elections", clean_elections.shape[0])
+        geojson_output = self.candidate_merger(clean_elections)
+        #clean_elections = self.output_formatter(near_close_elections)
+
         election_string = self.detail_list_constructor(clean_elections)
 
         # Converts specific election types shapes to geojson for MapBox
-        shapes_json = near_close_elections.to_json(default_handler=str)
-        return election_string, shapes_json
+        shapes_jsonstr = geojson_output.to_json(default_handler=str)
+        return election_string, shapes_jsonstr
     
     def shapes_near_location(self, location, layer):
         shape = self.allshapes # Temporary, in the future will be the mergeset of shapes
@@ -167,9 +202,27 @@ class DB:
             #logging.info(election)
             state_name = election["state"] + ", " + election["district_name"]
             election_vp = election["voter_power"]
-            logging.info(election_vp)
-            logging.info(election["race_type"])
+            #logging.info(election_vp)
+            #logging.info(election["race_type"])
             election_str = item_front + statestr + state_name + item_back + item_front + vpstr + election_vp + item_back
             completed_string = completed_string + election_front + election_str + election_back
         
         return completed_string
+    
+    def candidate_merger(self, elections):
+        matcher = elections.merge(self.candidates, how="inner", 
+                left_on =["state","congress","s_upper","s_lower","race_type"], 
+                right_on = ["state","congress","s_upper","s_lower","race_type"])
+        cand_id_list = []
+        cand_str_list = []
+
+        #creates lists of candidate ids and names/affiliations for each election
+        for i, election in elections.iterrows():
+                matched = matcher[matcher["eid"] == election["eid"]]
+                cand_id_list.append(list(matched["cid"]))
+                cand_str_list.append(list(matched["name"] + ", " + matched["party"]))
+
+        elections["candidate_ids"] = cand_id_list
+        elections["candidate_names"] = cand_str_list
+
+        return elections #with candidates

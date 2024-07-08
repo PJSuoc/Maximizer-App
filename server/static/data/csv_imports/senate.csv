@@ -1,0 +1,35 @@
+﻿state_name,state,congress,s_upper,s_lower,district_name,race_type,voter_power,cook_rating
+Arizona,04,,,,,Senate,,lean-D
+California,06,,,,,Senate,,solid-D
+Connecticut,09,,,,,Senate,,solid-D
+Delaware,10,,,,,Senate,,solid-D
+Florida,12,,,,,Senate,,likely-R
+Hawaii,15,,,,,Senate,,solid-D
+Indiana,18,,,,,Senate,,solid-R
+Maine,23,,,,,Senate,,solid-D
+Maryland,24,,,,,Senate,,likely-D
+Massachusetts,25,,,,,Senate,,solid-D
+Michigan,26,,,,,Senate,,lean-D
+Minnesota,27,,,,,Senate,,solid-D
+Mississippi,28,,,,,Senate,,solid-R
+Missouri,29,,,,,Senate,,solid-R
+Montana,30,,,,,Senate,,toss-up
+Nebraska,31,,,,,Senate,,solid-R
+Nebraska,31,,,,,Senate,,solid-R
+Nevada,32,,,,,Senate,,toss-up
+New Jersey,34,,,,,Senate,,solid-D
+New Mexico,35,,,,,Senate,,solid-D
+New York,36,,,,,Senate,,solid-D
+North Dakota,38,,,,,Senate,,solid-R
+Ohio,39,,,,,Senate,,toss-up
+Pennsylvania,42,,,,,Senate,,lean-D
+Rhode Island,44,,,,,Senate,,solid-D
+Tennessee,47,,,,,Senate,,solid-R
+Texas,48,,,,,Senate,,likely-R
+Utah,49,,,,,Senate,,solid-R
+Vermont,50,,,,,Senate,,solid-D
+Virginia,51,,,,,Senate,,solid-D
+Washington,53,,,,,Senate,,solid-D
+West Virginia,54,,,,,Senate,,solid-R
+Wisconsin,55,,,,,Senate,,lean-D
+Wyoming,56,,,,,Senate,,solid-R
