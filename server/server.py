@@ -96,16 +96,24 @@ def about_load():
 def faq_load():
     return render_template("faq.html")
 
-@app.route('/t')
-# App testing grounds for visual and front-end shenanigans
-def detail():
-    db = DB(get_db_conn())
-    #db.import_data()
+@app.route('/get-involved', methods=["GET", "POST"])
+# Page delivering links to each candidate
+def get_involved():
+    # Gets the candidates in the election from the state/local page
+    if request.method == "POST":
+        candidates = request.form.get("candidates")
+        candidates = json.loads(candidates)
+    else:
+        candidates = []
 
-    location = "placeholder"
-     
+    # Gets the candidate information from the candidate DB
+    # Writes a nice HTML string for each candidate
+    db = DB(get_db_conn())
+    db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
+    output = db.candidate_link_strings(candidates)
     db.conn.close()
-    return render_template("tabletest.html", states = STATES, mapbox_key = mapbox_key)
+    
+    return render_template("getinvolved.html", candidates = output)
 
 # Utilities ------------------------------
 

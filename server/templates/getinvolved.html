@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+<style> 
+    body { margin: 0; padding: 0;  }
+    .map-overlay {
+        font: 14px/20px 'Arial';
+        position: absolute;
+        top: 100px; /* need a dynamic solution to keep it not overlaying with other stuff */
+        left: 10px;
+        bottom: 10px;
+        padding: 10px;
+        z-index: 2; /* put over  map */
+    }
+    .map-overlay-inner {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 3px;
+    }
+    .map-overlay-inner fieldset {
+        border: none;
+        padding: 0;
+        margin: 0 0 10px;
+    }
+    .map-overlay-inner fieldset:last-child {
+        margin: 0;
+    }
+    .map-overlay-inner select {
+        width: 100%;
+    }
+    .map-overlay-inner label {
+        display: block;
+        font-weight: bold;
+        margin: 0 0 5px;
+    }
+    .map-overlay-inner button {
+        display: inline-block;
+        width: 20px;
+        height: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    .map-overlay-inner button:focus {
+        outline: none;
+    }
+    .custom-popup {
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        color: #333;
+        margin: 0px;
+        border: 2px solid #555;
+        border-color: #555;
+    }
+    
+</style>
+
+{% block main %}
+<body>
+    <div class="row">
+        {{ candidates | safe }}
+    </div>
+</body>
+
+
+{% endblock %}
+

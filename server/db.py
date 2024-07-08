@@ -120,13 +120,13 @@ class DB:
         # Get the set of elections for the shapes and filter them for the output
         clean_elections = self.voter_power_filter(nearby_shapes, layer)
         print(layer,"elections", clean_elections.shape[0])
-        geojson_output = self.candidate_merger(clean_elections)
+        clean_elections = self.candidate_merger(clean_elections)
         #clean_elections = self.output_formatter(near_close_elections)
 
         election_string = self.detail_list_constructor(clean_elections)
 
         # Converts specific election types shapes to geojson for MapBox
-        shapes_jsonstr = geojson_output.to_json(default_handler=str)
+        shapes_jsonstr = clean_elections.to_json(default_handler=str)
         return election_string, shapes_jsonstr
     
     def shapes_near_location(self, location, layer):
@@ -191,24 +191,49 @@ class DB:
         '''
         election_front = '<li class="list-group-item"><div class="row">'
         # The Button here is non-functional, and will need to be updated for actual links or simply removed for now.
-        election_back = '<div class="col"><button type="button" class="btn btn-info">Get Involved</button></div></div></li>'
+        button_front = '<form action="/get-involved" id="gi" method="post"><input type="hidden" name="candidates" value="' 
+        button_back = '"></form><button class="btn btn-primary" type="submit" form="gi" value="Submit">Get Involved</button></div></div></li>'
         item_front = '<div class="col">'
         item_back = '</div>'
         completed_string = ''
         statestr = "State: "
         vpstr = "Voter Power: "
-
+        
         for i, election in election_list.iterrows():
             #logging.info(election)
             state_name = election["state"] + ", " + election["district_name"]
             election_vp = election["voter_power"]
-            #logging.info(election_vp)
-            #logging.info(election["race_type"])
-            election_str = item_front + statestr + state_name + item_back + item_front + vpstr + election_vp + item_back
-            completed_string = completed_string + election_front + election_str + election_back
-        
+            cand_list = str(election["candidate_ids"])
+            logging.info(cand_list)
+            election_str = item_front + statestr + state_name + item_back + item_front + vpstr + election_vp + item_back + item_front + button_front + cand_list + button_back
+            completed_string = completed_string + election_front + election_str 
         return completed_string
     
+    def candidate_link_strings(self, candidate_ids):
+
+        cand_front = '<div class="col" id="candidate"><li class="list-group-item">'
+        name_front = '<div class="container" id="cand_name">'
+        party_front = '<div class="container" id="cand_party">'
+        button_front = '<div class="container" id="cand_camp"><a class="btn btn-primary" href="'
+        button_back = '" role="button">Candidate Campaign</a>'
+        item_back = '</div>'
+        cand_back = '</li></div>'
+
+        candidate_link_string = ''
+        print(candidate_ids, type(candidate_ids))
+        for candidate in candidate_ids:
+            id = int(candidate)
+            name = self.candidates.loc[id]["name"]
+            party = self.candidates.loc[id]["party"]
+            camp_link = self.candidates.loc[id]["campaign_link"]
+
+            c_str = cand_front + name_front + name + item_back + party_front + party + item_back + \
+                button_front + camp_link + button_back + item_back
+            candidate_link_string = candidate_link_string + c_str 
+
+        candidate_link_string = candidate_link_string + cand_back
+        return candidate_link_string # Long string of all candidate info boxes
+
     def candidate_merger(self, elections):
         matcher = elections.merge(self.candidates, how="inner", 
                 left_on =["state","congress","s_upper","s_lower","race_type"], 
@@ -220,7 +245,7 @@ class DB:
         for i, election in elections.iterrows():
                 matched = matcher[matcher["eid"] == election["eid"]]
                 cand_id_list.append(list(matched["cid"]))
-                cand_str_list.append(list(matched["name"] + ", " + matched["party"]))
+                cand_str_list.append("/n " + matched["party"] + ": " + matched["name"])
 
         elections["candidate_ids"] = cand_id_list
         elections["candidate_names"] = cand_str_list
