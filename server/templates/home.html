@@ -69,7 +69,7 @@ h2, h3 {
 }
 
 h3 {
-  font-size: small;  
+  font-size: 15px;  
 }
 
 
@@ -139,7 +139,8 @@ h3 {
         const layers = {
             presidential: 'static/data/Presidential_power.geojson',
             congressional: 'static/data/Congressional_power.geojson',
-            house: 'static/data/2024.house.VoterPower.geojson'
+            house: 'static/data/2024.house.VoterPower.geojson',
+            guber: 'server/static/data/gubernatorial.geojson'
         };
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
@@ -195,6 +196,10 @@ h3 {
                             'house': [
                                 'interpolate', ['linear'], ['get', 'Voter.Power'],
                                 1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
+                            ],
+                            'guber': [
+                                'match', ['get', 'Voter.Power'],
+                                'toss-up', '#ffff00',  'likely D', '#6aa4d3', 'safe D', '#1f78be', 'likely R', '#f77488','safe R', '#ed1b30', 'no race', '#D3D3D3'
                             ]
                         }[layerId],
                         '#D3D3D3'  // Color for Nas

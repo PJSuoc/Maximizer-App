@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 <style> 
-    body { margin: 0; padding: 0;  }
+   body { margin: 0; padding: 0;  font-family: 'Arial';}
     .map-overlay {
         font: 14px/20px 'Arial';
         position: absolute;
@@ -12,9 +12,10 @@
         z-index: 2; /* put over  map */
     }
     .map-overlay-inner {
-        background-color: #fff;
+        background-color: rgba(0, 0, 0, 0.6);
         padding: 10px;
         border-radius: 3px;
+        
     }
     .map-overlay-inner fieldset {
         border: none;
@@ -30,7 +31,8 @@
     .map-overlay-inner label {
         display: block;
         font-weight: bold;
-        margin: 0 0 5px;
+        display: block;
+        margin-bottom: 5px;
     }
     .map-overlay-inner button {
         display: inline-block;
@@ -46,12 +48,26 @@
         font-size: 16px;
         padding: 10px;
         width: 200px;
-        color: #333;
+        color: #000000;
         margin: 0px;
-        border: 2px solid #555;
-        border-color: #555;
-    }
     
+        
+    }
+    label[for="layer"],
+    label[for="container"],
+    label[for="location"] {
+        color: rgb(230, 213, 213);
+}
+h2, h3 {
+  color: rgb(230, 213, 213);
+  font-family: 'Arial';
+  text-align: center;
+}
+
+h3 {
+  font-size: small;  
+}
+
 </style>
 
 {% block main %}
@@ -117,117 +133,181 @@
                         container: 'map',
                         style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
                         center: [-98.625126, 37.718862],  // UPDATE FOR DYNAMIC STUFF
-                        zoom: 3.2,  // UPDATE FOR DYNAMIC STUFF
-                        projection: 'globe'
+                        zoom: 3,  // UPDATE FOR DYNAMIC STUFF
+                        projection: 'mercator'
                     });
                 
                     const layers = {
-                        presidential: 'static/data/Presidential_power.geojson',
-                        congressional: 'static/data/Congressional_power.geojson', 
-                        house: 'static/data/2024.house.VoterPower.geojson' 
-                    };
-                
-                    const popup = new mapboxgl.Popup({
-                        closeButton: false,
-                        closeOnClick: false
-                    });
-                
-                    function addGeoJsonLayer(layerId) {
-                        if (map.getSource(layerId)) {
-                            map.removeLayer(layerId + '-fill');
-                            map.removeLayer(layerId + '-line');
-                            map.removeSource(layerId);
+            presidential: 'static/data/Presidential_power.geojson',
+            congressional: 'static/data/Congressional_power.geojson',
+            house: 'static/data/2024.house.VoterPower.geojson'
+        };
+
+        let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
+        let currentLayerId = 'presidential'; // Track the current layer
+
+        const popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+        });
+        
+
+        function addGeoJsonLayer(layerId) {
+            const idProperty = layerId === 'house' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
+
+            // Clear hover state when switching layers
+            if (hoveredStateId) {
+                map.setFeatureState({source: currentLayerId, id: hoveredStateId}, { hover: false });
+                hoveredStateId = null;
+            }
+
+            // Remove existing layers
+            if (map.getSource(currentLayerId)) {
+                map.removeLayer(currentLayerId + '-fill');
+                map.removeLayer(currentLayerId + '-line');
+                map.removeLayer(currentLayerId + '-hover-line');  // Remove hover line if it exists
+                map.removeSource(currentLayerId);
+            }
+
+            // Add  layers
+            map.addSource(layerId, {
+                type: 'geojson',
+                data: layers[layerId],
+                promoteId: idProperty  
+            });
+
+            map.addLayer({
+                id: layerId + '-fill',
+                type: 'fill',
+                source: layerId,
+                paint: {
+                    'fill-color': [
+                        'case',
+                        ['==', ['typeof', ['get', 'Voter.Power']], 'number'],
+                        {
+                            'presidential': [
+                                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                                1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'
+                            ],
+                            'congressional': [
+                                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                                1, '#f2f0f7', 10, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
+                            ],
+                            'house': [
+                                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                                1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
+                            ]
+                        }[layerId],
+                        '#D3D3D3'  // Color for Nas
+                    ],
+                    'fill-opacity': 1
+                } 
+            }, 'state-label');
+
+            // line layer should be black as default
+            map.addLayer({
+                id: layerId + '-line',
+                type: 'line',
+                source: layerId,
+                layout: {},
+                paint: {
+                    'line-color': '#000',
+                    'line-width': 1,
+                    'line-opacity': 1
+                }
+            });
+
+            // add line layer that highlights when hovering 
+            map.addLayer({
+                id: layerId + '-hover-line',
+                type: 'line',
+                source: layerId,
+                layout: {},
+                paint: {
+                    'line-color': ['case', ['boolean', ['feature-state', 'hover'], false], '#ffffff', '#000'],
+                    'line-width': ['case', ['boolean', ['feature-state', 'hover'], false], 4, 2],
+                    'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0]
+                }
+            });
+
+            // put hover line  above others
+            map.moveLayer(layerId + '-hover-line');
+
+            // mouse event for hovering
+            map.on('mousemove', layerId + '-fill', function (e) {
+                if (e.features.length > 0) {
+                    const feature = e.features[0];
+                    const currentId = feature.properties[idProperty];  // Make sure this is the field you promote as ID
+
+                   // console.log("Feature ID:", feature.id, "Current ID:", currentId);  // Logging feature ID for debugging
+
+                    if (hoveredStateId !== currentId) {
+                        if (hoveredStateId) {
+                            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
                         }
-                
-                        map.addSource(layerId, {
-                            type: 'geojson',
-                            data: layers[layerId]
-                        });
-                
-                        map.addLayer({
-                            id: layerId + '-fill',
-                            type: 'fill',
-                            source: layerId,
-                            paint: {
-                                'fill-color': [
-                                    'case',
-                                    ['==', ['typeof', ['get', 'Voter.Power']], 'number'],
-                                    {
-                                        'presidential': [
-                                            'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                            1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'  
-                                        ],
-                                        'congressional': [
-                                            'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                            1, '#f2f0f7', 25, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'  
-                                        ],
-                                        'house': [
-                                            'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                            1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
-                                        ]
-                                    }[layerId],
-                                    '#D3D3D3' // Color for NaN or non-numeric values
-                                ],
-                                'fill-opacity': 1
-                            }
-                        });
-                
-                        // Add the line layer with increased width
-                        map.addLayer({
-                            id: layerId + '-line',
-                            type: 'line',
-                            source: layerId,
-                            layout: {},
-                            paint: {
-                                'line-color': '#000',
-                                'line-width': 2, 
-                                'line-opacity': 0.8
-                            }
-                        });
-                
-                        map.on('mousemove', layerId + '-fill', function(e) {
-                            if (e.features.length > 0) {
-                                const feature = e.features[0];
-                                const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
-                                const voterPower = feature.properties['Voter.Power'];
-                                const popupContent = `<div class="custom-popup">
-                                    <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
-                                    <strong>Voter Power:</strong> ${voterPower}%
-                                </div>`;
-                
-                                popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
-                            }
-                        });
-                
-                        map.on('mouseleave', layerId + '-fill', function() {
-                            map.getCanvas().style.cursor = '';
-                            popup.remove();
-                        });
+                        hoveredStateId = currentId;
+                        map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
                     }
-                
-                    document.getElementById('layer').addEventListener('change', function (e) {
-                        const value = e.target.value;
-                        if (value in layers) {
-                            addGeoJsonLayer(value);
-                        } else {
-                            Object.keys(layers).forEach(id => {
-                                if (map.getLayer(id + '-fill')) {
-                                    map.removeLayer(id + '-fill');
-                                    map.removeLayer(id + '-line');
-                                    map.removeSource(id);
-                                }
-                            });
-                        }
-                    });
-                
-                    map.on('load', function () {
-                        const geocoder = new MapboxGeocoder({
-                            accessToken: mapboxgl.accessToken,
-                            mapboxgl: mapboxgl,
-                            marker: false,
-                        });
-                        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-                    });
+
+                    const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
+                    const voterPower = feature.properties['Voter.Power'];
+                    const popupContent = `<div class="custom-popup">
+                        <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
+                        <strong>Voter Power:</strong> ${voterPower}%
+                    </div>`;
+
+
+            
+
+                    popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+                    map.getCanvas().style.cursor = 'pointer';
+                } else {
+                    if (hoveredStateId) {
+                        map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+                        hoveredStateId = null;
+                    }
+                    map.getCanvas().style.cursor = '';
+                    popup.remove();
+                }
+            });
+
+            map.on('mouseleave', layerId + '-fill', function () {
+                if (hoveredStateId) {
+                    map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+                    hoveredStateId = null;
+                }
+                map.getCanvas().style.cursor = '';
+                popup.remove();
+            });
+
+            // Update the current layer ID
+            currentLayerId = layerId;
+        }
+
+        
+
+        // Initial layer setup on map load
+        map.on('load', function () {
+            addGeoJsonLayer('presidential'); // Load presidential layer by default
+            
+});
+          
+
+        document.getElementById('layer').addEventListener('change', function (e) {
+            const value = e.target.value;
+            if (value in layers) {
+                addGeoJsonLayer(value);
+            } else {
+                Object.keys(layers).forEach(id => {
+                    if (map.getLayer(id + '-fill')) {
+                        map.removeLayer(id + '-fill');
+                        map.removeLayer(id + '-line');
+                        map.removeLayer(id + '-hover-line');  // Ensure hover line is also removed
+                        map.removeSource(id);
+                    }
+                });
+            }
+        });
                 </script>
             </div>
         </div>
