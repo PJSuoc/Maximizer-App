@@ -140,7 +140,7 @@ h3 {
             presidential: 'static/data/Presidential_power.geojson',
             congressional: 'static/data/Congressional_power.geojson',
             house: 'static/data/2024.house.VoterPower.geojson',
-            guber: 'server/static/data/gubernatorial.geojson'
+            gubernatorial: 'static/data/gubernatorial.geojson'
         };
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
@@ -177,36 +177,40 @@ h3 {
             });
 
             map.addLayer({
-                id: layerId + '-fill',
-                type: 'fill',
-                source: layerId,
-                paint: {
-                    'fill-color': [
-                        'case',
-                        ['==', ['typeof', ['get', 'Voter.Power']], 'number'],
-                        {
-                            'presidential': [
-                                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'
-                            ],
-                            'congressional': [
-                                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                1, '#f2f0f7', 10, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
-                            ],
-                            'house': [
-                                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
-                            ],
-                            'guber': [
-                                'match', ['get', 'Voter.Power'],
-                                'toss-up', '#ffff00',  'likely D', '#6aa4d3', 'safe D', '#1f78be', 'likely R', '#f77488','safe R', '#ed1b30', 'no race', '#D3D3D3'
-                            ]
-                        }[layerId],
-                        '#D3D3D3'  // Color for Nas
-                    ],
-                    'fill-opacity': 1
-                } 
-            }, 'state-label');
+    id: layerId + '-fill',
+    type: 'fill',
+    source: layerId,
+    paint: {
+        'fill-color': [
+            'case',
+            ['==', layerId, 'presidential'], [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'
+            ],
+            ['==', layerId, 'congressional'], [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#f2f0f7', 10, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
+            ],
+            ['==', layerId, 'house'], [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
+            ],
+            ['==', layerId, 'gubernatorial'], [
+                'match', ['get', 'Voter.Power'],
+                'toss-up', '#ffff00',  
+                'likely D', '#6aa4d3', 
+                'safe D', '#1f78be', 
+                'likely R', '#f77488',
+                'safe R', '#ed1b30', 
+                'no race', '#D3D3D3',
+                '#D3D3D3' // Default color for any other unmatched string values
+            ],
+            '#D3D3D3'  // Default color for unmatched cases
+        ],
+        'fill-opacity': 1
+    }
+}, 'state-label');
+
 
             // line layer should be black as default
             map.addLayer({
