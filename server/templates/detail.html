@@ -138,7 +138,7 @@ h3 {
                     });
                 
                     const layers = {
-            presidential: 'static/data/geojson_imports/Presidential_power.geojson',
+            presidential: 'static/data/geojson_imports/test_geojson.geojson',
             congressional: 'static/data/geojson_imports/Congressional_power.geojson',
             house: 'static/data/geojson_imports/2024.house.VoterPower.geojson',
             gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson'
@@ -178,32 +178,40 @@ h3 {
             });
 
             map.addLayer({
-                id: layerId + '-fill',
-                type: 'fill',
-                source: layerId,
-                paint: {
-                    'fill-color': [
-                        'case',
-                        ['==', ['typeof', ['get', 'Voter.Power']], 'number'],
-                        {
-                            'presidential': [
-                                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'
-                            ],
-                            'congressional': [
-                                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                1, '#f2f0f7', 10, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
-                            ],
-                            'house': [
-                                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                                1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
-                            ]
-                        }[layerId],
-                        '#D3D3D3'  // Color for Nas
-                    ],
-                    'fill-opacity': 1
-                } 
-            }, 'state-label');
+    id: layerId + '-fill',
+    type: 'fill',
+    source: layerId,
+    paint: {
+        'fill-color': [
+            'case',
+            ['==', ['get', 'Voter.Power'], null], '#D3D3D3', // Explicitly handle null values
+            ['==', layerId, 'presidential'], [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'
+            ],
+            ['==', layerId, 'congressional'], [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#f2f0f7', 10, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
+            ],
+            ['==', layerId, 'house'], [
+                'interpolate', ['linear'], ['get', 'Voter.Power'],
+                1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
+            ],
+            ['==', layerId, 'gubernatorial'], [
+                'match', ['get', 'Voter.Power'],
+                'toss-up', '#ffff00',  
+                'likely D', '#6aa4d3', 
+                'safe D', '#1f78be', 
+                'likely R', '#f77488',
+                'safe R', '#ed1b30', 
+                'no race', '#D3D3D3',
+                '#D3D3D3' // Default color for any other unmatched string values
+            ],
+            '#D3D3D3'  // Default color for unmatched cases
+        ],
+        'fill-opacity': 1
+    }
+}, 'state-label');
 
             // line layer should be black as default
             map.addLayer({
@@ -252,11 +260,29 @@ h3 {
 
                     const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
                     const voterPower = feature.properties['Voter.Power'];
-                    const popupContent = `<div class="custom-popup">
-                        <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
-                        <strong>Voter Power:</strong> ${voterPower}%
-                    </div>`;
+                    const cookRating = feature.properties['Voter.Power'];
+                    const candidateNames = feature.properties['candidate_names'];
 
+        let popupContent = '';
+
+        if (layerId === 'gubernatorial') {
+            popupContent = `<div class="custom-popup">
+                <strong>State:</strong> ${name}<br>
+                <strong>Cook Rating:</strong> ${cookRating}
+            </div>`;
+        } else if (layerId === 'presidential') {
+           popupContent = `<div class="custom-popup">
+              <strong>Presidential Candidates:</strong> ${candidateNames}
+           </div>`;
+
+          
+
+        } else {
+            popupContent = `<div class="custom-popup">
+                <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
+                <strong>Voter Power:</strong> ${voterPower}%
+            </div>`;
+        }
 
             
 
