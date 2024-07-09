@@ -72,11 +72,50 @@ h3 {
   font-size: 15px;  
 }
 
+.legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+#color-scale {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #feedde, #fdbe85, #fd8d3c, #d94701);
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(230, 213, 213);
+}
+
+.labels span {
+    font-size: 12px;
+    
+
+}
+
+
+
 
 </style>
 
 
 <body>
+    <div id="legend" class="legend">
+        <h3>Voter Power Scale</h3>
+        <div id="color-scale"></div>
+        <div class="labels">
+            <span>Low</span>
+            <span>High</span>
+        </div>
+    </div>
+    
     
     <div class="map-overlay">
         <div class="map-overlay-inner">
@@ -90,7 +129,7 @@ h3 {
                     <option value="congressional">Senate race</option>
                     <option value="house">House race</option>
                     <option value="gubernatorial">Gubernatorial race</option>
-                    <option value="ballot_initiatives">Ballot initiatives</option>
+                    <option value="ballot_abort">Abortion Ballot Measures</option>
                 </select>
 
                 <form action="/state" method="post">
@@ -121,8 +160,7 @@ h3 {
             </fieldset>
         </div>
     </div>
-            </fieldset>
-        </div>
+           
     </div>
     <div class="col" id="map"></div>
 
@@ -140,8 +178,27 @@ h3 {
             presidential: 'static/data/geojson_imports/Presidential_power.geojson',
             congressional: 'static/data/geojson_imports/Congressional_power.geojson',
             house: 'static/data/geojson_imports/2024.house.VoterPower.geojson',
-            gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson'
+            gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson',
+            ballot_abort: 'static/data/geojson_imports/ballot_abort.geojson'
         };
+
+        function updateLegend(layerId) {
+        var gradient = '';
+        switch(layerId) {
+            case 'presidential':
+                gradient = 'linear-gradient(to right, #feedde, #fdbe85, #fd8d3c, #d94701)';
+                break;
+            case 'congressional':
+                gradient = 'linear-gradient(to right, #f2f0f7, #cbc9e2, #9e9ac8, #6a51a3)';
+                break;
+            case 'house':
+                gradient = 'linear-gradient(to right, #edf8e9, #bae4b3, #74c476, #238b45)';
+                break;
+            default:
+                gradient = 'none'; // No gradient for layers without Voter.Power
+        }
+        document.getElementById('color-scale').style.background = gradient;
+    }
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
         let currentLayerId = 'presidential'; // Track the current layer
@@ -167,6 +224,8 @@ h3 {
                 map.removeLayer(currentLayerId + '-line');
                 map.removeLayer(currentLayerId + '-hover-line');  // Remove hover line if it exists
                 map.removeSource(currentLayerId);
+
+                updateLegend(layerId);
             }
 
             // Add  layers
@@ -175,6 +234,26 @@ h3 {
                 data: layers[layerId],
                 promoteId: idProperty  
             });
+        
+            if (layerId === 'ballot_abort') {
+        // Specific style for 'ballot_abort' layer
+        map.addLayer({
+            id: layerId + '-fill',
+            type: 'fill',
+            source: layerId,
+            paint: {
+                'fill-color': [
+                    'match',
+                    ['get', 'dropdown.type'], // Assuming 'dropdown.type' is the correct property
+                    'abortion', '#f768a1',  // Pink color for abortion-related entries
+                    '#D3D3D3'  // Default color for others
+                ],
+                'fill-opacity': 1
+            }
+
+            
+        }, 'state-label');
+    } else {
 
             map.addLayer({
     id: layerId + '-fill',
@@ -210,7 +289,9 @@ h3 {
         ],
         'fill-opacity': 1
     }
+
 }, 'state-label');
+    }
 
 
 
@@ -259,14 +340,30 @@ h3 {
                         map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
                     }
 
-                    const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
-                    const voterPower = feature.properties['Voter.Power'];
-                    const popupContent = `<div class="custom-popup">
-                        <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
-                        <strong>Voter Power:</strong> ${voterPower}%
-                    </div>`;
+                    let popupContent = ""; // Initialize popupContent
 
-
+                    if (layerId === 'ballot_abort') {
+    // Check if the description is undefined or empty
+    var description = feature.properties['description'];
+    if (description === undefined || description === '') {
+        popupContent = `<div class="custom-popup">
+            <strong>No abortion initiative in this state.</strong>
+        </div>`;
+    } else {
+        // Special popup content for 'ballot_abort' layer
+        popupContent = `<div class="custom-popup">
+            <strong>Ballot Description:</strong> ${description}
+        </div>`;
+    }
+} else {
+    // Generic popup content for other layers
+    const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
+    const voterPower = feature.properties['Voter.Power'];
+    popupContent = `<div class="custom-popup">
+        <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
+        <strong>Voter Power:</strong> ${voterPower}%
+    </div>`;
+}
             
 
                     popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
