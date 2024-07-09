@@ -116,10 +116,10 @@ class DB:
             # IF a state is selected from a dropdown menu
             nearby_shapes = self.shapes_in_state(location)
 
-        print(layer,"shapes", nearby_shapes.shape[0])
+        #print(layer,"shapes", nearby_shapes.shape[0])
         # Get the set of elections for the shapes and filter them for the output
         clean_elections = self.voter_power_filter(nearby_shapes, layer)
-        print(layer,"elections", clean_elections.shape[0])
+        #print(layer,"elections", clean_elections.shape[0])
         clean_elections = self.candidate_merger(clean_elections)
         #clean_elections = self.output_formatter(near_close_elections)
 
@@ -204,23 +204,23 @@ class DB:
             state_name = election["state"] + ", " + election["district_name"]
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
-            logging.info(cand_list)
+            #logging.info(cand_list)
             election_str = item_front + statestr + state_name + item_back + item_front + vpstr + election_vp + item_back + item_front + button_front + cand_list + button_back
             completed_string = completed_string + election_front + election_str 
         return completed_string
     
     def candidate_link_strings(self, candidate_ids):
 
-        cand_front = '<div class="col" id="candidate"><li class="list-group-item">'
-        name_front = '<div class="container" id="cand_name">'
-        party_front = '<div class="container" id="cand_party">'
-        button_front = '<div class="container" id="cand_camp"><a class="btn btn-primary" href="'
+        cand_front = '<div class="col" id="candidate"><ul class="list-group-item">'
+        name_front = '<li id="cand">'
+        party_front = '<li id="cand">'
+        button_front = '<li id="cand"><a class="btn btn-primary" href="'
         button_back = '" role="button">Candidate Campaign</a>'
-        item_back = '</div>'
-        cand_back = '</li></div>'
+        item_back = '</li>'
+        cand_back = '</ul></div>'
 
         candidate_link_string = ''
-        print(candidate_ids, type(candidate_ids))
+        #print(candidate_ids, type(candidate_ids))
         for candidate in candidate_ids:
             id = int(candidate)
             name = self.candidates.loc[id]["name"]
@@ -229,9 +229,9 @@ class DB:
 
             c_str = cand_front + name_front + name + item_back + party_front + party + item_back + \
                 button_front + camp_link + button_back + item_back
-            candidate_link_string = candidate_link_string + c_str 
+            candidate_link_string = candidate_link_string + c_str + cand_back
 
-        candidate_link_string = candidate_link_string + cand_back
+        #candidate_link_string = candidate_link_string + cand_back
         return candidate_link_string # Long string of all candidate info boxes
 
     def candidate_merger(self, elections):
@@ -246,8 +246,8 @@ class DB:
                 matched = matcher[matcher["eid"] == election["eid"]]
                 cand_id_list.append(list(matched["cid"]))
                 cand_str_list.append("/n " + matched["party"] + ": " + matched["name"])
-
+        
+        
         elections["candidate_ids"] = cand_id_list
         elections["candidate_names"] = cand_str_list
-
         return elections #with candidates
