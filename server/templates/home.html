@@ -298,23 +298,32 @@ h3 {
 
         // Initial layer setup on map load
         map.on('load', function () {
-            addGeoJsonLayer('presidential'); // Load presidential layer by default
-            //const geocoder = new MapboxGeocoder({
-            //    accessToken: mapboxgl.accessToken,
-            //    mapboxgl: mapboxgl,
-            //    marker: false,
-            //});
+    addGeoJsonLayer('presidential');
 
-        //geocoder.on('result', function(e) {
-        //        console.log(e.result.center)
-    //map.flyTo({
+
+    //filter for only USA names
+    const layers = map.getStyle().layers;
+
+layers.forEach((layer) => {
+    const currentFilters = map.getFilter(layer.id);
+    
+    // if layer includes label or state filter for USA
+    if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
+        if (currentFilters) {
         
-    //    center: e.result.center,
-    //    zoom: 6.5  // Set this to whatever zoom level you prefer
-   // });
+            map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
+        } else {
+    
+            map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+        }
+    
+    }
+
+    
 });
-          //  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-        //});
+});
+
+
 
         document.getElementById('layer').addEventListener('change', function (e) {
             const value = e.target.value;

@@ -316,6 +316,27 @@ h3 {
         // Initial layer setup on map load
         map.on('load', function () {
             addGeoJsonLayer('presidential'); // Load presidential layer by default
+
+             //filter for only USA names
+    const layers = map.getStyle().layers;
+
+layers.forEach((layer) => {
+    const currentFilters = map.getFilter(layer.id);
+    
+    // if layer includes label or state filter for USA
+    if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
+        if (currentFilters) {
+        
+            map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
+        } else {
+    
+            map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+        }
+    
+    }
+
+    
+});
             
 });
           
