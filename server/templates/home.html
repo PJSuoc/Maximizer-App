@@ -302,9 +302,9 @@ h3 {
                 source: layerId,
                 layout: {},
                 paint: {
-                    'line-color': '#000',
-                    'line-width': 1,
-                    'line-opacity': 1
+                    'line-color': '#808080',
+                    'line-width': .7,
+                    'line-opacity': .8
                 }
             });
 
@@ -361,7 +361,7 @@ h3 {
     const voterPower = feature.properties['Voter.Power'];
     popupContent = `<div class="custom-popup">
         <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
-        <strong>Voter Power:</strong> ${voterPower}%
+        <strong>Voter Power:</strong> ${voterPower}
     </div>`;
 }
             
