@@ -120,6 +120,11 @@ h3 {
                             <option value="congressional">Senate race</option>
                             <option value="house">House race</option>
                             <option value="gubernatorial">State Governors</option>
+                            <option value="ballot_abort">Abortion ballot initiatives</option> 
+                            <option value="ballot_sg">State government ballot initiatives</option> 
+                            <option value="ballot_vpm">Voting policy measure ballot initiatives</option> 
+                            <option value="ballot_others">Additional liberty ballot initiatives</option> 
+
                         </select>
                     </fieldset>
                 </div>
@@ -132,8 +137,8 @@ h3 {
                     const map = new mapboxgl.Map({
                         container: 'map',
                         style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
-                        center: [-98.625126, 37.718862],  // UPDATE FOR DYNAMIC STUFF
-                        zoom: 3,  // UPDATE FOR DYNAMIC STUFF
+                        center: [-98.625126, 37.718862],  
+                        zoom: 6,  
                         projection: 'mercator'
                     });
                 
@@ -141,7 +146,13 @@ h3 {
             presidential: 'static/data/geojson_imports/test_geojson.geojson',
             congressional: 'static/data/geojson_imports/Congressional_power.geojson',
             house: 'static/data/geojson_imports/2024.house.VoterPower.geojson',
-            gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson'
+            gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson',
+            ballot_abort: 'static/data/geojson_imports/ballot_abort.geojson',
+            ballot_vpm: 'static/data/geojson_imports/ballot_VPM.geojson',
+            ballot_sg: '/static/data/geojson_imports/ballot_sg.geojson',
+            ballot_others: '/static/data/geojson_imports/ballot_other.geojson'
+
+
         };
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
@@ -220,9 +231,9 @@ h3 {
                 source: layerId,
                 layout: {},
                 paint: {
-                    'line-color': '#000',
-                    'line-width': 1,
-                    'line-opacity': 1
+                    'line-color': '#808080',
+                    'line-width': .5,
+                    'line-opacity': .8
                 }
             });
 
@@ -280,7 +291,7 @@ h3 {
         } else {
             popupContent = `<div class="custom-popup">
                 <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
-                <strong>Voter Power:</strong> ${voterPower}%
+                <strong>Voter Power:</strong> ${voterPower}
             </div>`;
         }
 
@@ -315,31 +326,24 @@ h3 {
 
         // Initial layer setup on map load
         map.on('load', function () {
-            addGeoJsonLayer('presidential'); // Load presidential layer by default
-
-             //filter for only USA names
+    addGeoJsonLayer('presidential');
+    
+    //filter for only USA names
     const layers = map.getStyle().layers;
 
-layers.forEach((layer) => {
-    const currentFilters = map.getFilter(layer.id);
-    
-    // if layer includes label or state filter for USA
-    if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
-        if (currentFilters) {
+    layers.forEach((layer) => {
+        const currentFilters = map.getFilter(layer.id);
         
-            map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
-        } else {
-    
-            map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+        // if layer includes label or state filter for USA
+        if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
+            if (currentFilters) {
+                map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
+            } else {
+                map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+            }
         }
-    
-    }
-
-    
+    });
 });
-            
-});
-          
 
         document.getElementById('layer').addEventListener('change', function (e) {
             const value = e.target.value;

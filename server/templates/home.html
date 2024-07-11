@@ -129,7 +129,7 @@ h3 {
                     <option value="congressional">Senate race</option>
                     <option value="house">House race</option>
                     <option value="gubernatorial">Gubernatorial race</option>
-                    <option value="ballot_abort">Abortion Ballot Measures</option>
+                    <option value="ballot_all">Ballot measures</option>
                 </select>
 
                 <form action="/state" method="post">
@@ -179,23 +179,27 @@ h3 {
             congressional: 'static/data/geojson_imports/Congressional_power.geojson',
             house: 'static/data/geojson_imports/2024.house.VoterPower.geojson',
             gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson',
-            ballot_abort: 'static/data/geojson_imports/ballot_abort.geojson'
+            ballot_all: 'static/data/geojson_imports/ballot_initiatives_main.geojson'
+            
         };
 
         function updateLegend(layerId) {
         var gradient = '';
         switch(layerId) {
             case 'presidential':
-                gradient = 'linear-gradient(to right, #feedde, #fdbe85, #fd8d3c, #d94701)';
-                break;
-            case 'congressional':
-                gradient = 'linear-gradient(to right, #f2f0f7, #cbc9e2, #9e9ac8, #6a51a3)';
-                break;
-            case 'house':
-                gradient = 'linear-gradient(to right, #edf8e9, #bae4b3, #74c476, #238b45)';
-                break;
-            default:
-                gradient = 'none'; // No gradient for layers without Voter.Power
+            gradient = 'linear-gradient(to right, #feedde, #fdbe85, #fd8d3c, #d94701)';
+            break;
+        case 'congressional':
+            gradient = 'linear-gradient(to right, #f2f0f7, #cbc9e2, #9e9ac8, #6a51a3)';
+            break;
+        case 'house':
+            gradient = 'linear-gradient(to right, #edf8e9, #bae4b3, #74c476, #238b45)';
+            break;
+        case 'ballot_all':
+            gradient = 'linear-gradient(to right, #c7eae5, #01665e)';  // Assuming a range from light to dark for ballot_all
+            break;
+        default:
+            gradient = 'none';  // No gradient for layers without Voter.Power
         }
         document.getElementById('color-scale').style.background = gradient;
     }
@@ -235,24 +239,29 @@ h3 {
                 promoteId: idProperty  
             });
         
-            if (layerId === 'ballot_abort') {
-        // Specific style for 'ballot_abort' layer
+            if (layerId === 'ballot_all') {
+        // Log data to see what's being loaded
+      //  map.getSource(layerId).once('data', e => console.log(e));
+
         map.addLayer({
             id: layerId + '-fill',
             type: 'fill',
             source: layerId,
             paint: {
-                'fill-color': [
-                    'match',
-                    ['get', 'dropdown.type'], // Assuming 'dropdown.type' is the correct property
-                    'abortion', '#f768a1',  // Pink color for abortion-related entries
-                    '#D3D3D3'  // Default color for others
-                ],
-                'fill-opacity': 1
-            }
-
-            
-        }, 'state-label');
+            'fill-color': [
+                'case',
+                ['==', ['get', 'number_per_state'], null], '#D3D3D3', // If number_per_state is null, use grey
+                ['==', ['get', 'number_per_state'], 0], '#D3D3D3', // Also use grey if number_per_state is 0
+                ['interpolate',
+                    ['linear'],
+                    ['get', 'number_per_state'],
+                    1, '#c7eae5',  // Lightest color for the smallest number
+                    9, '#01665e'  // Darkest color for the largest number
+                ]
+            ],
+            'fill-opacity': 1
+        }
+        }, 'state-label'); // Make sure it's positioned correctly in the layer order
     } else {
 
             map.addLayer({
@@ -342,19 +351,19 @@ h3 {
 
                     let popupContent = ""; // Initialize popupContent
 
-                    if (layerId === 'ballot_abort') {
+                    if (layerId === 'ballot_all') {
     // Check if the description is undefined or empty
-    var description = feature.properties['description'];
-    if (description === undefined || description === '') {
-        popupContent = `<div class="custom-popup">
-            <strong>No abortion initiative in this state.</strong>
-        </div>`;
-    } else {
-        // Special popup content for 'ballot_abort' layer
-        popupContent = `<div class="custom-popup">
-            <strong>Ballot Description:</strong> ${description}
-        </div>`;
-    }
+    var description = feature.properties['number_per_state'];
+if (description === undefined || description === '') {  // Use 'description' instead of 'number_per_state'
+    popupContent = `<div class="custom-popup">
+        <strong>There are no ballot initiatives in your state.</strong>
+    </div>`;
+} else {
+    // Corrected content and removed '/n' to properly format the line break in HTML as '<br>'
+    popupContent = `<div class="custom-popup">
+        <strong>There are ${description} ballot initiatives in your state.</strong> <br>click on your state to learn more.
+    </div>`;
+}
 } else {
     // Generic popup content for other layers
     const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
