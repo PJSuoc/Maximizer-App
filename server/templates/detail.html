@@ -143,7 +143,7 @@ h3 {
                     });
                 
                     const layers = {
-            presidential: 'static/data/geojson_imports/test_geojson.geojson',
+            presidential: JSON.parse('{{ pres_layer | safe }}'), 
             congressional: 'static/data/geojson_imports/Congressional_power.geojson',
             house: 'static/data/geojson_imports/2024.house.VoterPower.geojson',
             gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson',
