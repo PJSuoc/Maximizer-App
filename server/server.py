@@ -138,7 +138,7 @@ def election_delivery_function(location):
         lookup_dict["elections"][i] = Nelections
         shapelayer["name"] = i
         shapelayer["crs"] = {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::4269"}}
-        lookup_dict["layers"][i] = jsonify(shapelayer)
+        lookup_dict["layers"][i] = shapelayer
         
     print("President stuff", lookup_dict["layers"]["President"]["features"])
     print("President stuff", lookup_dict["layers"]["President"]["name"])
