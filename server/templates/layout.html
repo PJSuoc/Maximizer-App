@@ -16,22 +16,28 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <style>
+        .navbar {
+            background-color: rgb(205, 205, 205);
+        }
         .navbar .nav-link {
             /* Added a padding so that name and about doesn't touch the edge of the page */
             padding-left: 15px !important; 
             padding-right: 15px !important; 
-            color: rgb(230, 213, 213);
-            font-size: 20px;  
-            
+            color: rgb(179, 89, 0);
+            font-size: 20px;      
         }
 
         .navbar .navbar-brand {
             padding-left: 15px !important;
             padding-right: 15px !important;
-            color: rgb(230, 213, 213);
-            font-size: 25px;  
-           
-       
+            color: rgb(179, 89, 0);
+            font-size: 24px;    
+        }
+        .social {
+            display: inline-block;
+            margin-left: 5px;
+            margin-right: 15px;
+        }
     </style>
 
 
@@ -41,12 +47,31 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <header>
-        <nav class= "navbar navbar-light bg-secondary" >
-            <a class="navbar-brand" href="/">Vote Maximizer</a>
-            <title>Vote Maximizer</title>
-            <a class="nav-link" href="/t">Detail Test (Dev)</a>
-            <a class="nav-link" href="/faq">FAQ</a>
-            <a class="nav-link" href="/about">About</a>
+        <nav class= "navbar" >
+
+                <div class="nav col" id="left-navbar">
+                    <a class="navbar-brand" href="/">Vote Maximizer</a>
+                    <title>Vote Maximizer</title>
+                    <a class="nav-link" href="/faq">FAQ</a>
+                    <a class="nav-link" href="/about">About</a>
+                </div>
+                <!--
+                <div class="nav col justify-content-end d-flex" name="right-navbar">
+                <ul >
+                        <li><a href="/about">
+                            <svg class="bi" width="24" height="24"><use xlink:href="/static/images/twitter-x.svg#twitter"></></svg>
+                        </a></li>
+                        <li><a href="/about" >
+                            <svg class="bi" width="24" height="24"><use xlink:href="/static/images/instagram.svg#instagram"></></svg>
+                        </a></li>
+                        <li><a href="/about">
+                            <svg class="bi" width="24" height="24"><use xlink:href="/static/images/facebook.svg"></></svg>
+                        </a></li>
+                </ul> 
+                </div>
+                    -->
+            </div>
+
         </nav>
     </header>
 
@@ -55,22 +80,6 @@
     
     {% block main %} {% endblock %}
 
-    <div class="container">
-        <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            <span class="text-muted">Electoral Innovation Lab</span>
-            </div> -->
-          
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-            </ul>
-        </footer>
-    </div>
 </body>
 
 

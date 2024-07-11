@@ -6,7 +6,7 @@ import logging
 from flask import current_app, g, Flask, flash, jsonify, redirect, render_template, request, session, Response
 import googlemaps
 import geopandas as gpd
-#import pandas as pd
+import pandas as pd
 from datetime import datetime
 
 #Other File imports: DB for database interaction, calculations, support.
@@ -136,9 +136,14 @@ def election_delivery_function(location):
     for i in lookup_components:
         Nelections, shapelayer = db.nearby_voting_impact(location, i)
         lookup_dict["elections"][i] = Nelections
-        lookup_dict["layers"][i] = shapelayer
-    
-    print("President stuff", lookup_dict["elections"]["President"])
+        shapelayer["name"] = i
+        shapelayer["crs"] = {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::4269"}}
+        lookup_dict["layers"][i] = jsonify(shapelayer)
+        
+    print("President stuff", lookup_dict["layers"]["President"]["features"])
+    print("President stuff", lookup_dict["layers"]["President"]["name"])
+    print("President stuff", lookup_dict["layers"]["President"]["type"])
+    print("President stuff", lookup_dict["layers"]["President"]["crs"])
 
     db.conn.close()
     # All the individual pieces for the detail lookup. May need to add vals

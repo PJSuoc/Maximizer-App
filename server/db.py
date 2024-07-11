@@ -6,9 +6,7 @@ import geopandas as gpd
 from shapely import Point
 from pathlib import Path
 import sys
-
-#Preventing to_json from breaking.... ? 
-sys.setrecursionlimit(1500)
+import json
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -94,7 +92,9 @@ class DB:
         self.allshapes["s_upper"] = self.allshapes["s_upper"].fillna("")
         self.allshapes["s_lower"] = self.allshapes["s_lower"].fillna("")
 
-        return self.elections, self.allshapes, self.candidates
+        elections = self.candidate_merger()
+
+        return elections, self.allshapes, self.candidates
 
 
     def grab_dataframes(self, elections, allshapes, candidates):
@@ -111,25 +111,29 @@ class DB:
         # Gets nearby shapes to location input
         if type(location) == type([]):
             # IF Address input is a specific geolocation (comes out as type list)
-            nearby_shapes = self.shapes_near_location(location, layer)
+            nearby_shapes = self.shapes_near_location(location)
         else:
             # IF a state is selected from a dropdown menu
             nearby_shapes = self.shapes_in_state(location)
 
-        #print(layer,"shapes", nearby_shapes.shape[0])
+        
         # Get the set of elections for the shapes and filter them for the output
         clean_elections = self.voter_power_filter(nearby_shapes, layer)
-        #print(layer,"elections", clean_elections.shape[0])
-        clean_elections = self.candidate_merger(clean_elections)
-        #clean_elections = self.output_formatter(near_close_elections)
-
+        
         election_string = self.detail_list_constructor(clean_elections)
 
         # Converts specific election types shapes to geojson for MapBox
-        shapes_jsonstr = clean_elections.to_json(default_handler=str)
-        return election_string, shapes_jsonstr
+        clean_elections.reset_index(drop = True)
+        #print("name type", type(clean_elections.loc[0]["state_name"]))
+        print("list type", clean_elections.columns.values)
+        print("all type", clean_elections.dtypes)
+        print("all type", clean_elections.shape)
+        print("overall type", type(clean_elections))
+        clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
+        layerjson = clean_elections.to_geo_dict(drop_id = True)
+        return election_string, layerjson
     
-    def shapes_near_location(self, location, layer):
+    def shapes_near_location(self, location):
         shape = self.allshapes # Temporary, in the future will be the mergeset of shapes
 
         #Code to allow for testing placeholder for location
@@ -158,10 +162,10 @@ class DB:
     def voter_power_filter(self, shapelist, layer):
 
         # Filters elections based to ones in the nearby shapes
-        relevant = self.elections.merge(shapelist, how="inner", 
+        relevant = shapelist.merge(self.elections, how="inner", 
                 left_on =["state","congress","s_upper","s_lower"], 
                 right_on = ["state","congress","s_upper","s_lower"])
-
+        
         # Filters elections by the race type requested
         relevant = relevant[relevant["race_type"] == layer]
 
@@ -170,11 +174,11 @@ class DB:
             relevant = relevant[relevant["voter_power_val"] > 10]
             # Sorts remaining elections by voter power & get only the top 3
             relevant.sort_values("voter_power_val", inplace = True, ascending = False)
-            relevant.reset_index(drop = True)
+            relevant = relevant.reset_index(drop = True)
             output = relevant[0:3]
         else:
             output = relevant
-
+        
         return output
     
     def output_formatter(self, list):
@@ -234,20 +238,20 @@ class DB:
         #candidate_link_string = candidate_link_string + cand_back
         return candidate_link_string # Long string of all candidate info boxes
 
-    def candidate_merger(self, elections):
-        matcher = elections.merge(self.candidates, how="inner", 
+    def candidate_merger(self):
+        matcher = self.elections.merge(self.candidates, how="inner", 
                 left_on =["state","congress","s_upper","s_lower","race_type"], 
                 right_on = ["state","congress","s_upper","s_lower","race_type"])
         cand_id_list = []
         cand_str_list = []
 
         #creates lists of candidate ids and names/affiliations for each election
-        for i, election in elections.iterrows():
+        for i, election in self.elections.iterrows():
                 matched = matcher[matcher["eid"] == election["eid"]]
                 cand_id_list.append(list(matched["cid"]))
-                cand_str_list.append("/n " + matched["party"] + ": " + matched["name"])
+                cand_str_list.append("cand " + matched["party"] + ": " + matched["name"])
         
         
-        elections["candidate_ids"] = cand_id_list
-        elections["candidate_names"] = cand_str_list
-        return elections #with candidates
+        self.elections["candidate_ids"] = cand_id_list
+        self.elections["candidate_names"] = cand_str_list
+        return self.elections #with candidates
