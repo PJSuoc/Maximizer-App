@@ -138,15 +138,15 @@ h3 {
                         container: 'map',
                         style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
                         center: [-98.625126, 37.718862],  
-                        zoom: 6,  
+                        zoom: 6 ,  
                         projection: 'mercator'
                     });
                 
                     const layers = {
-            presidential: 'static/data/geojson_imports/test_geojson.geojson',
-            congressional: 'static/data/geojson_imports/Congressional_power.geojson',
-            house: 'static/data/geojson_imports/2024.house.VoterPower.geojson',
-            gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson',
+            presidential: 'static/data/geojson_imports/geojson_final/president.geojson',
+            congressional: 'static/data/geojson_imports/geojson_final/senate.geojson',
+            house: 'static/data/geojson_imports/geojson_final/house.geojson',
+            gubernatorial: 'static/data/geojson_imports/geojson_final/governor.geojson',
             ballot_abort: 'static/data/geojson_imports/ballot_abort.geojson',
             ballot_vpm: 'static/data/geojson_imports/ballot_VPM.geojson',
             ballot_sg: '/static/data/geojson_imports/ballot_sg.geojson',
@@ -195,34 +195,27 @@ h3 {
     paint: {
         'fill-color': [
             'case',
-            ['==', ['get', 'Voter.Power'], null], '#D3D3D3', // Explicitly handle null values
-            ['==', layerId, 'presidential'], [
-                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'
-            ],
-            ['==', layerId, 'congressional'], [
-                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                1, '#f2f0f7', 10, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
-            ],
-            ['==', layerId, 'house'], [
-                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
-            ],
-            ['==', layerId, 'gubernatorial'], [
-                'match', ['get', 'Voter.Power'],
-                'toss-up', '#ffff00',  
-                'likely D', '#6aa4d3', 
-                'safe D', '#1f78be', 
-                'likely R', '#f77488',
-                'safe R', '#ed1b30', 
-                'no race', '#D3D3D3',
-                '#D3D3D3' // Default color for any other unmatched string values
-            ],
-            '#D3D3D3'  // Default color for unmatched cases
+            ['==', ['get', 'voter_power'], null], '#D3D3D3', // Handles null or undefined voter_power
+            ['==', ['get', 'voter_power'], 0], '#D3D3D3', // Handles zero voter_power
+            ['==', layerId, 'presidential'], // Condition
+            ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for presidential
+            1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'],
+            ['==', layerId, 'congressional'], // Condition
+            ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for congressional
+                1, '#f2f0f7', 33.3, '#cbc9e2', 66.6, '#9e9ac8', 100, '#6a51a3'],
+            ['==', layerId, 'house'], // Condition
+            ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for house
+                1, '#edf8e9', 33.3, '#bae4b3', 66.6, '#74c476', 100, '#238b45'],
+            ['==', layerId, 'gubernatorial'], // Condition
+            ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for house
+                1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'], 
+            '#D3D3D3'  // Default color if no conditions are met
         ],
         'fill-opacity': 1
     }
 }, 'state-label');
+
+
 
             // line layer should be black as default
             map.addLayer({
@@ -270,28 +263,39 @@ h3 {
                     }
 
                     const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
-                    const voterPower = feature.properties['Voter.Power'];
-                    const cookRating = feature.properties['Voter.Power'];
-                    const candidateNames = feature.properties['candidate_names'];
+                    const voterPower = feature.properties['voter_power'] === undefined ? 'no race' : feature.properties['voter_power'];
+                    const voterPowerhouse = feature.properties['voter_power'];
+                    const cookRating = feature.properties['voter_power'];
+                    const candidateNameR = feature.properties['R_running'] || 'Not available';
+                    const candidateNameD = feature.properties['D_running'] || 'Not available';
+
 
         let popupContent = '';
 
         if (layerId === 'gubernatorial') {
             popupContent = `<div class="custom-popup">
                 <strong>State:</strong> ${name}<br>
-                <strong>Cook Rating:</strong> ${cookRating}
+                <strong>Republican running:</strong> ${candidateNameR}<br>
+                <strong>Democrat running:</strong> ${candidateNameD}<br>
+                <strong>Voter Power:</strong> ${voterPower}
             </div>`;
         } else if (layerId === 'presidential') {
            popupContent = `<div class="custom-popup">
-              <strong>Presidential Candidates:</strong> ${candidateNames}
+              <strong>Republican running:</strong> ${candidateNameR}<br>
+              <strong>Democrat running:</strong> ${candidateNameD}<br>
+              <strong>Voter Power:</strong> ${voterPower}
            </div>`;
 
           
 
         } else {
-            popupContent = `<div class="custom-popup">
+            const displayVoterPower = voterPowerhouse === undefined ? 'no competitive race' : voterPowerhouse;
+
+    popupContent = `<div class="custom-popup">
                 <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
-                <strong>Voter Power:</strong> ${voterPower}
+                <strong>Republican running:</strong> ${candidateNameR}<br>
+                <strong>Democrat running:</strong> ${candidateNameD}<br>
+                <strong>Voter Power:</strong> ${displayVoterPower}
             </div>`;
         }
 

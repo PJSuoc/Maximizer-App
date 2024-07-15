@@ -129,7 +129,7 @@ h3 {
                     <option value="congressional">Senate race</option>
                     <option value="house">House race</option>
                     <option value="gubernatorial">Gubernatorial race</option>
-                    <option value="ballot_all">Ballot measures</option>
+                    <option value="ballot_all">Democracy ballot measuress</option>
                 </select>
 
                 <form action="/state" method="post">
@@ -175,10 +175,10 @@ h3 {
         });
 
         const layers = {
-            presidential: 'static/data/geojson_imports/Presidential_power.geojson',
-            congressional: 'static/data/geojson_imports/Congressional_power.geojson',
-            house: 'static/data/geojson_imports/2024.house.VoterPower.geojson',
-            gubernatorial: 'static/data/geojson_imports/gubernatorial.geojson',
+            presidential: 'static/data/geojson_imports/geojson_final/president.geojson',
+            congressional: '/static/data/geojson_imports/geojson_final/senate.geojson',
+            house: 'static/data/geojson_imports/geojson_final/house.geojson',
+            gubernatorial: 'static/data/geojson_imports/geojson_final/governor.geojson',
             ballot_all: 'static/data/geojson_imports/ballot_initiatives_main.geojson'
             
         };
@@ -187,7 +187,7 @@ h3 {
         var gradient = '';
         switch(layerId) {
             case 'presidential':
-            gradient = 'linear-gradient(to right, #feedde, #fdbe85, #fd8d3c, #d94701)';
+            gradient = 'linear-gradient(to right, #feedde, #fdbe85, #EF6548, #D7301F)';
             break;
         case 'congressional':
             gradient = 'linear-gradient(to right, #f2f0f7, #cbc9e2, #9e9ac8, #6a51a3)';
@@ -195,8 +195,11 @@ h3 {
         case 'house':
             gradient = 'linear-gradient(to right, #edf8e9, #bae4b3, #74c476, #238b45)';
             break;
+            case 'gubernatorial':
+            gradient = 'linear-gradient(to right, #fffac2, #fff68f, #fff25c, #ffdc09)';
+            break;
         case 'ballot_all':
-            gradient = 'linear-gradient(to right, #c7eae5, #01665e)';  // Assuming a range from light to dark for ballot_all
+            gradient = 'linear-gradient(to right, #c7eae5, #01665e)'; 
             break;
         default:
             gradient = 'none';  // No gradient for layers without Voter.Power
@@ -271,28 +274,24 @@ h3 {
     paint: {
         'fill-color': [
             'case',
-            ['==', ['get', 'Voter.Power'], null], '#D3D3D3', // Explicitly handle null values
+            ['==', ['get', 'voter_power'], null], '#D3D3D3', //  undefined voter_power is grey
+            ['==', ['get', 'voter_power'], 0], '#D3D3D3', //  zero voter_power is also grey
+    
             ['==', layerId, 'presidential'], [
-                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                1, '#feedde', 10, '#fdbe85', 50, '#fd8d3c', 100, '#d94701'
+                'interpolate', ['linear'], ['get', 'voter_power'],
+                1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'
             ],
             ['==', layerId, 'congressional'], [
-                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                1, '#f2f0f7', 10, '#cbc9e2', 50, '#9e9ac8', 100, '#6a51a3'
+                'interpolate', ['linear'], ['get', 'voter_power'],
+                1, '#f2f0f7', 33.3, '#cbc9e2', 66.6, '#9e9ac8', 100, '#6a51a3'
             ],
             ['==', layerId, 'house'], [
-                'interpolate', ['linear'], ['get', 'Voter.Power'],
-                1, '#edf8e9', 10, '#bae4b3', 50, '#74c476', 100, '#238b45'
+                'interpolate', ['linear'], ['get', 'voter_power'],
+                1, '#edf8e9', 33.3, '#bae4b3', 66.6, '#74c476', 100, '#238b45'
             ],
             ['==', layerId, 'gubernatorial'], [
-                'match', ['get', 'Voter.Power'],
-                'toss-up', '#ffff00',  
-                'likely D', '#6aa4d3', 
-                'safe D', '#1f78be', 
-                'likely R', '#f77488',
-                'safe R', '#ed1b30', 
-                'no race', '#D3D3D3',
-                '#D3D3D3' // Default color for any other unmatched string values
+                'interpolate', ['linear'], ['get', 'voter_power'],
+                1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'
             ],
             '#D3D3D3'  // Default color for unmatched cases
         ],
@@ -335,44 +334,50 @@ h3 {
 
             // mouse event for hovering
             map.on('mousemove', layerId + '-fill', function (e) {
-                if (e.features.length > 0) {
-                    const feature = e.features[0];
-                    const currentId = feature.properties[idProperty];  // Make sure this is the field you promote as ID
+    if (e.features.length > 0) {
+        const feature = e.features[0];
+        const currentId = feature.properties[idProperty]; // Make sure this is the field you promote as ID
 
-                   // console.log("Feature ID:", feature.id, "Current ID:", currentId);  // Logging feature ID for debugging
+        // console.log("Feature ID:", feature.id, "Current ID:", currentId);  // Logging feature ID for debugging
 
-                    if (hoveredStateId !== currentId) {
-                        if (hoveredStateId) {
-                            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
-                        }
-                        hoveredStateId = currentId;
-                        map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
-                    }
+        if (hoveredStateId !== currentId) {
+            if (hoveredStateId) {
+                map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+            }
+            hoveredStateId = currentId;
+            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
+        }
 
-                    let popupContent = ""; // Initialize popupContent
+        let popupContent = ""; // Initialize popupContent
+        const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
+        let voterPower = feature.properties['voter_power']; // Directly use the property
 
-                    if (layerId === 'ballot_all') {
-    // Check if the description is undefined or empty
-    var description = feature.properties['number_per_state'];
-if (description === undefined || description === '') {  // Use 'description' instead of 'number_per_state'
-    popupContent = `<div class="custom-popup">
-        <strong>There are no ballot initiatives in your state.</strong>
-    </div>`;
-} else {
-    // Corrected content and removed '/n' to properly format the line break in HTML as '<br>'
-    popupContent = `<div class="custom-popup">
-        <strong>There are ${description} ballot initiatives in your state.</strong> <br>click on your state to learn more.
-    </div>`;
-}
-} else {
-    // Generic popup content for other layers
-    const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
-    const voterPower = feature.properties['Voter.Power'];
-    popupContent = `<div class="custom-popup">
-        <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
-        <strong>Voter Power:</strong> ${voterPower}
-    </div>`;
-}
+        if (layerId === 'ballot_all') {
+            // Check if the description is undefined or empty
+            var description = feature.properties['number_per_state'];
+            if (description === undefined || description === '') {
+                popupContent = `<div class="custom-popup">
+                    <strong>There are no democracy ballot initiatives in your state.</strong>
+                </div>`;
+            } else {
+                popupContent = `<div class="custom-popup">
+                    <strong>Number of democracy ballot initiatives in your state: ${description}</strong> <br>Click on a state in the dropdown menu to learn more.
+                </div>`;
+            }
+        } else if (layerId === 'congressional' && (voterPower === undefined || voterPower === 'no race')) {
+            // Specific case for congressional layer with undefined voter power
+            popupContent = `<div class="custom-popup">
+                <strong>State: ${name}:</strong> <br>
+                No race
+            </div>`;
+        } else {
+            // Handle other cases
+            voterPower = voterPower === undefined ? 'no competitive race' : voterPower; // Check if voter power is undefined
+            popupContent = `<div class="custom-popup">
+                <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
+                <strong>Voter Power:</strong> ${voterPower}
+            </div>`;
+        }
             
 
                     popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
