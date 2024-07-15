@@ -84,6 +84,8 @@ class DB:
         self.candidates["congress"] = self.candidates["congress"].fillna("")
         self.candidates["s_upper"] = self.candidates["s_upper"].fillna("")
         self.candidates["s_lower"] = self.candidates["s_lower"].fillna("")
+        self.candidates["name"] = self.candidates["name"].fillna("")
+        self.candidates["party"] = self.candidates["party"].fillna("")
 
         # All Shapes shapefile for locating elections
         self.allshapes = gpd.read_file("./static/data/shp_imports/all_shapes/all_shapes.shp")
@@ -125,12 +127,9 @@ class DB:
         # Converts specific election types shapes to geojson for MapBox
         clean_elections.reset_index(drop = True)
         #print("name type", type(clean_elections.loc[0]["state_name"]))
-        print("list type", clean_elections.columns.values)
-        print("all type", clean_elections.dtypes)
-        print("all type", clean_elections.shape)
-        print("overall type", type(clean_elections))
+       
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
-        layerjson = clean_elections.to_geo_dict(drop_id = True)
+        layerjson = clean_elections.to_json()
         return election_string, layerjson
     
     def shapes_near_location(self, location):
@@ -204,11 +203,9 @@ class DB:
         vpstr = "Voter Power: "
         
         for i, election in election_list.iterrows():
-            #logging.info(election)
             state_name = election["state"] + ", " + election["district_name"]
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
-            #logging.info(cand_list)
             election_str = item_front + statestr + state_name + item_back + item_front + vpstr + election_vp + item_back + item_front + button_front + cand_list + button_back
             completed_string = completed_string + election_front + election_str 
         return completed_string
@@ -249,7 +246,10 @@ class DB:
         for i, election in self.elections.iterrows():
                 matched = matcher[matcher["eid"] == election["eid"]]
                 cand_id_list.append(list(matched["cid"]))
-                cand_str_list.append("cand " + matched["party"] + ": " + matched["name"])
+                candstring = ""
+                for j, match in matched.iterrows():
+                    candstring = candstring + " " + match["party"] + ": " + match["name"]
+                cand_str_list.append(candstring)
         
         
         self.elections["candidate_ids"] = cand_id_list
