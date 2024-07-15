@@ -116,9 +116,9 @@ h3 {
                         <label>Select your topic of interest</label>
                         <select id="layer" name="layer">
                             <option value="empty">choose</option>
-                            <option value="presidential">Presidential race</option>
-                            <option value="congressional">Senate race</option>
-                            <option value="house">House race</option>
+                            <option value="presidential2">Presidential race</option>
+                            <option value="congressional2">Senate race</option>
+                            <option value="house2">House race</option>
                             <option value="gubernatorial">State Governors</option>
                             <option value="ballot_abort">Abortion ballot initiatives</option> 
                             <option value="ballot_sg">State government ballot initiatives</option> 
@@ -137,15 +137,19 @@ h3 {
                     const map = new mapboxgl.Map({
                         container: 'map',
                         style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
-                        center: [-98.625126, 37.718862],  
-                        zoom: 6 ,  
+                        center: ['{{ long }}', '{{ lat }}'],  
+                        zoom: 5,  
                         projection: 'mercator'
                     });
                 
                     const layers = {
-            presidential: 'static/data/geojson_imports/geojson_final/president.geojson',
-            congressional: 'static/data/geojson_imports/geojson_final/senate.geojson',
-            house: 'static/data/geojson_imports/geojson_final/house.geojson',
+            
+            presidential: JSON.parse('{{ pres_layer | safe }}'), 
+            congressional: JSON.parse('{{ senate_layer | safe }}'),
+            house: JSON.parse('{{house_layer | safe }}'),
+            presidential2: 'static/data/geojson_imports/geojson_final/president.geojson',
+            congressional2: 'static/data/geojson_imports/geojson_final/senate.geojson',
+            house2: 'static/data/geojson_imports/geojson_final/house.geojson',
             gubernatorial: 'static/data/geojson_imports/geojson_final/governor.geojson',
             ballot_abort: 'static/data/geojson_imports/ballot_abort.geojson',
             ballot_vpm: 'static/data/geojson_imports/ballot_VPM.geojson',
@@ -156,7 +160,7 @@ h3 {
         };
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
-        let currentLayerId = 'presidential'; // Track the current layer
+        let currentLayerId = 'presidential2'; // Track the current layer
 
         const popup = new mapboxgl.Popup({
             closeButton: false,
@@ -165,7 +169,7 @@ h3 {
         
 
         function addGeoJsonLayer(layerId) {
-            const idProperty = layerId === 'house' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
+            const idProperty = layerId === 'house2' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
 
             // Clear hover state when switching layers
             if (hoveredStateId) {
@@ -197,13 +201,13 @@ h3 {
             'case',
             ['==', ['get', 'voter_power'], null], '#D3D3D3', // Handles null or undefined voter_power
             ['==', ['get', 'voter_power'], 0], '#D3D3D3', // Handles zero voter_power
-            ['==', layerId, 'presidential'], // Condition
+            ['==', layerId, 'presidential2'], // Condition
             ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for presidential
             1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'],
-            ['==', layerId, 'congressional'], // Condition
+            ['==', layerId, 'congressional2'], // Condition
             ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for congressional
                 1, '#f2f0f7', 33.3, '#cbc9e2', 66.6, '#9e9ac8', 100, '#6a51a3'],
-            ['==', layerId, 'house'], // Condition
+            ['==', layerId, 'house2'], // Condition
             ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for house
                 1, '#edf8e9', 33.3, '#bae4b3', 66.6, '#74c476', 100, '#238b45'],
             ['==', layerId, 'gubernatorial'], // Condition
@@ -279,7 +283,7 @@ h3 {
                 <strong>Democrat running:</strong> ${candidateNameD}<br>
                 <strong>Voter Power:</strong> ${voterPower}
             </div>`;
-        } else if (layerId === 'presidential') {
+        } else if (layerId === 'presidential2') {
            popupContent = `<div class="custom-popup">
               <strong>Republican running:</strong> ${candidateNameR}<br>
               <strong>Democrat running:</strong> ${candidateNameD}<br>
@@ -292,7 +296,7 @@ h3 {
             const displayVoterPower = voterPowerhouse === undefined ? 'no competitive race' : voterPowerhouse;
 
     popupContent = `<div class="custom-popup">
-                <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
+                <strong>${layerId === 'house2' ? 'District' : 'State'}:</strong> ${name}<br>
                 <strong>Republican running:</strong> ${candidateNameR}<br>
                 <strong>Democrat running:</strong> ${candidateNameD}<br>
                 <strong>Voter Power:</strong> ${displayVoterPower}
@@ -330,7 +334,7 @@ h3 {
 
         // Initial layer setup on map load
         map.on('load', function () {
-    addGeoJsonLayer('presidential');
+    addGeoJsonLayer('presidential2');
     
     //filter for only USA names
     const layers = map.getStyle().layers;

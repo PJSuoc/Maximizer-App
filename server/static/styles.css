@@ -45,6 +45,21 @@ body {
     width: 70%;
 }
 
+#socials {
+    margin-left: auto;
+    list-style-type: none;
+}
+
+#social-item {
+    margin-top: 5%;
+    float: left;
+}
+#social-item svg {
+    display: block;
+    text-align: center;
+    margin-right: 25px;
+}
+
 #bi{
     display: inline-block;
     justify-content: center;

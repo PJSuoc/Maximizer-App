@@ -6,11 +6,11 @@ import logging
 from flask import current_app, g, Flask, flash, jsonify, redirect, render_template, request, session, Response
 import googlemaps
 import geopandas as gpd
-#import pandas as pd
+import pandas as pd
 from datetime import datetime
 
 #Other File imports: DB for database interaction, calculations, support.
-from db import DB
+from db import DB, STATEDICT
 from config import flask_key, google_key, mapbox_key
 
 STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado", 
@@ -137,8 +137,12 @@ def election_delivery_function(location):
         Nelections, shapelayer = db.nearby_voting_impact(location, i)
         lookup_dict["elections"][i] = Nelections
         lookup_dict["layers"][i] = shapelayer
-    
-    print("President stuff", lookup_dict["elections"]["President"])
+
+    # Get Lat/Long coordinates for centering
+    if type(location) != type([]):
+        location =  gmaps.geocode(location)
+    lat = location[0]["geometry"]["location"]["lat"]
+    long = location[0]["geometry"]["location"]["lng"]
 
     db.conn.close()
     # All the individual pieces for the detail lookup. May need to add vals
@@ -155,6 +159,8 @@ def election_delivery_function(location):
                 s_house_layer = lookup_dict["layers"]["State Leg (Lower)"],
                 s_sen_layer = lookup_dict["layers"]["State Leg (Upper)"],
                 ballot_layer = lookup_dict["layers"]["Ballot Initiative"],
+                lat = lat,
+                long = long,
                 mapbox_key = mapbox_key)
 
 
