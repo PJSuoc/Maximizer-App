@@ -53,20 +53,9 @@
     
         
     }
-    label[for="layer"],
-    label[for="container"],
-    label[for="location"] {
+    label[for="layer"] {
         color: rgb(230, 213, 213);
-}
-h2, h3 {
-  color: rgb(230, 213, 213);
-  font-family: 'Arial';
-  text-align: center;
-}
-
-h3 {
-  font-size: small;  
-}
+} 
 
 </style>
 
@@ -110,20 +99,23 @@ h3 {
         
         <div class="col">
             <div class="map-overlay">
-                <div class="map-overlay-inner">
-                    <div id="geocoder" class="geocoder"></div>
-                    <fieldset>
-                        <label>Select your topic of interest</label>
-                        <select id="layer" name="layer">
-                            <option value="empty">choose</option>
-                            <option value="presidential2">Presidential race</option>
-                            <option value="congressional2">Senate race</option>
-                            <option value="house2">House race</option>
-                            <option value="gubernatorial">State Governors</option>
-                            <option value="ballot_abort">Abortion ballot initiatives</option> 
-                            <option value="ballot_sg">State government ballot initiatives</option> 
-                            <option value="ballot_vpm">Voting policy measure ballot initiatives</option> 
-                            <option value="ballot_others">Additional liberty ballot initiatives</option> 
+                
+                
+                <div class="map-overlay">
+                    <div class="map-overlay-inner">
+                        <fieldset>
+                            
+                            <label for="layer" style="margin-top: 15px;">Pick your topic of interest: </label>
+                            <select id="layer" name="layer">
+                                <option value="empty">choose</option>
+                                <option value="presidential2" selected>Presidential race</option>
+                                <option value="congressional2">Senate race</option>
+                                <option value="house2">House race</option>
+                                <option value="gubernatorial">Gubernatorial race</option>
+                                <option value="ballot_abort">Abortion ballot initiatives</option> 
+                                <option value="ballot_sg">State government ballot initiatives</option> 
+                                <option value="ballot_vpm">Voting policy measure ballot initiatives</option> 
+                                <option value="ballot_others">Additional liberty ballot initiatives</option> 
 
                         </select>
                     </fieldset>
