@@ -129,6 +129,8 @@ h3 {
                     <option value="congressional">Senate race</option>
                     <option value="house">House race</option>
                     <option value="gubernatorial">Gubernatorial race</option>
+                    <option value="state_leg_up">State legislature upper</option>
+                    <option value="state_leg_low">State legislature lower</option>
                     <option value="ballot_all">Democracy ballot measuress</option>
                 </select>
 
@@ -176,10 +178,12 @@ h3 {
 
         const layers = {
             presidential: 'static/data/geojson_imports/geojson_final/president.geojson',
-            congressional: '/static/data/geojson_imports/geojson_final/senate.geojson',
+            congressional: 'static/data/geojson_imports/geojson_final/senate.geojson',
             house: 'static/data/geojson_imports/geojson_final/house.geojson',
             gubernatorial: 'static/data/geojson_imports/geojson_final/governor.geojson',
-            ballot_all: 'static/data/geojson_imports/ballot_initiatives_main.geojson'
+            ballot_all: 'static/data/geojson_imports/ballot_initiatives_main.geojson',
+            state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
+            state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
             
         };
 
@@ -201,6 +205,16 @@ h3 {
         case 'ballot_all':
             gradient = 'linear-gradient(to right, #c7eae5, #01665e)'; 
             break;
+        
+
+        case 'state_leg_up':
+            gradient = 'linear-gradient(to right, #ffffcc, #225ea8)'; 
+            break;
+        case 'state_leg_low':
+            gradient = 'linear-gradient(to right, #f1eef6, #ce1256)'; 
+            break;
+
+
         default:
             gradient = 'none';  // No gradient for layers without Voter.Power
         }
@@ -217,7 +231,7 @@ h3 {
         
 
         function addGeoJsonLayer(layerId) {
-            const idProperty = layerId === 'house' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
+            const idProperty = layerId === 'house' || 'state_leg_up' || 'state_leg_low' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
 
             // Clear hover state when switching layers
             if (hoveredStateId) {
@@ -292,6 +306,14 @@ h3 {
             ['==', layerId, 'gubernatorial'], [
                 'interpolate', ['linear'], ['get', 'voter_power'],
                 1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'
+            ],
+            ['==', layerId, 'state_leg_up'], [
+                'interpolate', ['linear'], ['get', 'voter_power'],
+                1, '#ffffcc', 33.3, '#a1dab4', 66.6, '#41b6c4', 100, '#225ea8'
+            ],
+            ['==', layerId, 'state_leg_low'], [
+                'interpolate', ['linear'], ['get', 'voter_power'],
+                1, '#f1eef6', 33.3, '#d7b5d8', 66.6, '#df65b0', 100, '#ce1256'
             ],
             '#D3D3D3'  // Default color for unmatched cases
         ],
@@ -374,7 +396,7 @@ h3 {
             // Handle other cases
             voterPower = voterPower === undefined ? 'no competitive race' : voterPower; // Check if voter power is undefined
             popupContent = `<div class="custom-popup">
-                <strong>${layerId === 'house' ? 'District' : 'State'}:</strong> ${name}<br>
+                <strong>${layerId === 'house' || 'state_leg_up' || 'state_leg_low' ? 'District' : 'State'}:</strong> ${name}<br>
                 <strong>Voter Power:</strong> ${voterPower}
             </div>`;
         }

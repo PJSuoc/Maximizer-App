@@ -112,6 +112,8 @@
                                 <option value="congressional2">Senate race</option>
                                 <option value="house2">House race</option>
                                 <option value="gubernatorial">Gubernatorial race</option>
+                                <option value="state_leg_up">State legislature upper</option>
+                                <option value="state_leg_low">State legislature lower</option>
                                 <option value="ballot_abort">Abortion ballot initiatives</option> 
                                 <option value="ballot_sg">State government ballot initiatives</option> 
                                 <option value="ballot_vpm">Voting policy measure ballot initiatives</option> 
@@ -146,7 +148,9 @@
             ballot_abort: 'static/data/geojson_imports/geojson_final/ballot_abort.geojson',
             ballot_vpm: 'static/data/geojson_imports/geojson_final/ballot_VPM.geojson',
             ballot_sg: 'static/data/geojson_imports/geojson_final/ballot_sg.geojson',
-            ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson'
+            ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson',
+            state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
+            state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
 
 
         };
@@ -167,7 +171,7 @@
         
 
         function addGeoJsonLayer(layerId) {
-            const idProperty = layerId === 'house2' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
+            const idProperty = layerId === 'house2' || 'state_leg_up' || 'state_leg_low' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
 
             // Clear hover state when switching layers
             if (hoveredStateId) {
@@ -218,6 +222,8 @@
             ['==', layerId, 'congressional2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#f2f0f7', 33.3, '#cbc9e2', 66.6, '#9e9ac8', 100, '#6a51a3'],
             ['==', layerId, 'house2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#edf8e9', 33.3, '#bae4b3', 66.6, '#74c476', 100, '#238b45'],
             ['==', layerId, 'gubernatorial'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'],
+            ['==', layerId, 'state_leg_up'], ['interpolate', ['linear'], ['get', 'voter_power'],1, '#ffffcc', 33.3, '#a1dab4', 66.6, '#41b6c4', 100, '#225ea8'],
+            ['==', layerId, 'state_leg_low'], ['interpolate', ['linear'], ['get', 'voter_power'],1, '#f1eef6', 33.3, '#d7b5d8', 66.6, '#df65b0', 100, '#ce1256'],
              // Color abortion ballots pink, others grey
             '#D3D3D3'  // Default color if no conditions are met
         ],
@@ -295,6 +301,18 @@
            popupContent = `<div class="custom-popup">
               <strong>Republican running:</strong> ${candidateNameR}<br>
               <strong>Democrat running:</strong> ${candidateNameD}<br>
+              <strong>Voter Power:</strong> ${voterPower}
+           </div>`;
+
+        } else if (layerId === 'state_leg_up') {
+           popupContent = `<div class="custom-popup">
+              <strong>District name:</strong> ${name}<br>
+              <strong>Voter Power:</strong> ${voterPower}
+           </div>`;
+
+        } else if (layerId === 'state_leg_low') {
+           popupContent = `<div class="custom-popup">
+              <strong>District name:</strong> ${name}<br>
               <strong>Voter Power:</strong> ${voterPower}
            </div>`;
 
