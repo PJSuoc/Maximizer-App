@@ -143,13 +143,19 @@
             congressional2: 'static/data/geojson_imports/geojson_final/senate.geojson',
             house2: 'static/data/geojson_imports/geojson_final/house.geojson',
             gubernatorial: 'static/data/geojson_imports/geojson_final/governor.geojson',
-            ballot_abort: 'static/data/geojson_imports/ballot_abort.geojson',
-            ballot_vpm: 'static/data/geojson_imports/ballot_VPM.geojson',
-            ballot_sg: '/static/data/geojson_imports/ballot_sg.geojson',
-            ballot_others: '/static/data/geojson_imports/ballot_other.geojson'
+            ballot_abort: 'static/data/geojson_imports/geojson_final/ballot_abort.geojson',
+            ballot_vpm: 'static/data/geojson_imports/geojson_final/ballot_VPM.geojson',
+            ballot_sg: 'static/data/geojson_imports/geojson_final/ballot_sg.geojson',
+            ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson'
 
 
         };
+
+
+
+        
+
+        
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
         let currentLayerId = 'presidential2'; // Track the current layer
@@ -177,6 +183,16 @@
                 map.removeSource(currentLayerId);
             }
 
+            currentLayerId = layerId; // Update current layer ID
+
+    // Define colors for each of the new layers
+         const colorMapping = {
+                'ballot_abort': '#f88',
+                'ballot_vpm': '#8f8',
+                'ballot_sg': '#88f',
+                'ballot_others': '#ff8'
+         };
+
             // Add  layers
             map.addSource(layerId, {
                 type: 'geojson',
@@ -191,25 +207,24 @@
     paint: {
         'fill-color': [
             'case',
+            ['==', layerId, 'ballot_abort'], ['match', ['get', 'dropdown.type'], 'abortion', '#f768a1', '#D3D3D3'],
+            ['==', layerId, 'ballot_vpm'], ['match', ['get', 'dropdown.type'], 'voting policy measure', '#78C679', '#D3D3D3'],
+            ['==', layerId, 'ballot_sg'], ['match', ['get', 'dropdown.type'], 'state government', '#9E9AC8', '#D3D3D3'],
+            ['==', layerId, 'ballot_others'], ['match', ['get', 'dropdown.type'], 'other liberties', '#92C5DE', '#D3D3D3'],
+
             ['==', ['get', 'voter_power'], null], '#D3D3D3', // Handles null or undefined voter_power
             ['==', ['get', 'voter_power'], 0], '#D3D3D3', // Handles zero voter_power
-            ['==', layerId, 'presidential2'], // Condition
-            ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for presidential
-            1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'],
-            ['==', layerId, 'congressional2'], // Condition
-            ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for congressional
-                1, '#f2f0f7', 33.3, '#cbc9e2', 66.6, '#9e9ac8', 100, '#6a51a3'],
-            ['==', layerId, 'house2'], // Condition
-            ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for house
-                1, '#edf8e9', 33.3, '#bae4b3', 66.6, '#74c476', 100, '#238b45'],
-            ['==', layerId, 'gubernatorial'], // Condition
-            ['interpolate', ['linear'], ['get', 'voter_power'], // Interpolation for house
-                1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'], 
+            ['==', layerId, 'presidential2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'],
+            ['==', layerId, 'congressional2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#f2f0f7', 33.3, '#cbc9e2', 66.6, '#9e9ac8', 100, '#6a51a3'],
+            ['==', layerId, 'house2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#edf8e9', 33.3, '#bae4b3', 66.6, '#74c476', 100, '#238b45'],
+            ['==', layerId, 'gubernatorial'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'],
+             // Color abortion ballots pink, others grey
             '#D3D3D3'  // Default color if no conditions are met
         ],
         'fill-opacity': 1
     }
 }, 'state-label');
+
 
 
 
@@ -221,7 +236,7 @@
                 layout: {},
                 paint: {
                     'line-color': '#808080',
-                    'line-width': .5,
+                    'line-width': .7,
                     'line-opacity': .8
                 }
             });
@@ -264,6 +279,7 @@
                     const cookRating = feature.properties['voter_power'];
                     const candidateNameR = feature.properties['R_running'] || 'Not available';
                     const candidateNameD = feature.properties['D_running'] || 'Not available';
+                    const description = feature.properties['description'] || 'No liberty ballots';
 
 
         let popupContent = '';
@@ -282,7 +298,33 @@
               <strong>Voter Power:</strong> ${voterPower}
            </div>`;
 
-          
+        } else if (layerId === 'ballot_abort') {
+           popupContent = `<div class="custom-popup">
+              <strong>Abortion ballot description:</strong><br>
+               ${description}<br>
+            
+           </div>`;
+
+        } else if (layerId === 'ballot_vpm') {
+           popupContent = `<div class="custom-popup">
+              <strong>Voting policy ballot descriptions:</strong><br>
+               ${description}<br>
+            
+           </div>`;
+
+        } else if (layerId === 'ballot_sg') {
+           popupContent = `<div class="custom-popup">
+              <strong>State government ballot descriptions:</strong><br>
+               ${description}<br>
+            
+           </div>`;
+        
+        } else if (layerId === 'ballot_others') {
+           popupContent = `<div class="custom-popup">
+              <strong>Ballot descriptions:</strong><br>
+               ${description}<br>
+            
+           </div>`;
 
         } else {
             const displayVoterPower = voterPowerhouse === undefined ? 'no competitive race' : voterPowerhouse;
