@@ -278,7 +278,7 @@
                         hoveredStateId = currentId;
                         map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
                     }
-
+//for the pop ups first grab the properties from the geojson files: 
                     const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
                     const voterPower = feature.properties['voter_power'] === undefined ? 'no race' : feature.properties['voter_power'];
                     const voterPowerhouse = feature.properties['voter_power'];
@@ -289,7 +289,7 @@
 
 
         let popupContent = '';
-
+//For the detail map I created separate popups for each layer because there were so many layers. Here is where the popup would be updated:
         if (layerId === 'gubernatorial') {
             popupContent = `<div class="custom-popup">
                 <strong>State:</strong> ${name}<br>
