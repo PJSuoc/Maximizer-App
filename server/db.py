@@ -102,10 +102,11 @@ class DB:
     def grab_dataframes(self, elections, allshapes, candidates):
         # Pulls dataframes from memory to use for calculation
         self.elections = elections
+        print("electlen", elections.shape[0])
         self.allshapes = allshapes
         self.candidates = candidates
 
-    def nearby_voting_impact(self, location, layer):
+    def nearby_voting_impact(self, location, layer, fmid):
         '''
         Function set for getting the input layers for a specific geolocation
         '''
@@ -121,8 +122,8 @@ class DB:
         
         # Get the set of elections for the shapes and filter them for the output
         clean_elections = self.voter_power_filter(nearby_shapes, layer)
-        
-        election_string = self.detail_list_constructor(clean_elections)
+
+        election_string, fmid = self.detail_list_constructor(clean_elections, fmid)
 
         # Converts specific election types shapes to geojson for MapBox
         clean_elections.reset_index(drop = True)
@@ -130,7 +131,7 @@ class DB:
        
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
         layerjson = clean_elections.to_json()
-        return election_string, layerjson
+        return election_string, layerjson, fmid
     
     def shapes_near_location(self, location):
         shape = self.allshapes # Temporary, in the future will be the mergeset of shapes
@@ -180,11 +181,7 @@ class DB:
         
         return output
     
-    def output_formatter(self, list):
-        removed_extras = list[["district_name","state","race_type","voter_power"]]
-        return removed_extras
-    
-    def detail_list_constructor(self, election_list):
+    def detail_list_constructor(self, election_list,form_id):
         '''
         Function designed to construct the set of list items that go in a category
         based off of the set of elections that you want to include
@@ -192,30 +189,40 @@ class DB:
         Input: Election_list, pandas dataframe of elections to include
         Output: (very long) html/js string inserted into the webpage
         '''
-        election_front = '<li class="list-group-item"><div class="row">'
-        # The Button here is non-functional, and will need to be updated for actual links or simply removed for now.
-        button_front = '<form action="/get-involved" id="gi" method="post"><input type="hidden" name="candidates" value="' 
-        button_back = '"></form><button class="btn btn-primary" type="submit" form="gi" value="Submit">Get Involved</button></div></div></li>'
-        item_front = '<div class="col">'
+        election_front = '<li class="list-group-item" id="detail-li"><div class="row" id="detail-row">'
+        # The Button here directs to the get involved page.
+        button_front = '<form action="/get-involved" id="'
+        button_mid = '" method="post"><input type="hidden" name="candidates" value="' 
+        button_mid2 = '"><button class="btn btn-primary" type="submit" form="'
+        button_back = '" value="Submit">Get Involved</button></form></div></div></li>'
+        #item_front = '<div class="col">'
+        name_front = '<div class="col" id="row-name">'
+        vp_front = '<div class="col" id="row-vp">'
+        btn_front = '<div class="col" id="row-btn">'
         item_back = '</div>'
         completed_string = ''
-        statestr = "State: "
+        #statestr = "State: "
         vpstr = "Voter Power: "
         
+
         for i, election in election_list.iterrows():
-            state_name = election["state"] + ", " + election["district_name"]
+            state_name = election["state_name"] + ", " + election["district_name"]
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
-            election_str = item_front + statestr + state_name + item_back + item_front + vpstr + election_vp + item_back + item_front + button_front + cand_list + button_back
-            completed_string = completed_string + election_front + election_str 
-        return completed_string
+            fmid = "form_" + str(form_id)
+            print(cand_list)
+            election_str = name_front + state_name + item_back + vp_front + vpstr + election_vp + item_back + \
+                btn_front + button_front + fmid + button_mid + cand_list + button_mid2 + fmid + button_back
+            completed_string = completed_string + election_front + election_str
+            form_id += 1 
+        return completed_string, form_id
     
     def candidate_link_strings(self, candidate_ids):
 
-        cand_front = '<div class="col" id="candidate"><ul class="list-group-item">'
+        cand_front = '<div class="col" id="candidate"><ul id="infolist" class="list-group-item">'
         name_front = '<li id="cand">'
         party_front = '<li id="cand">'
-        button_front = '<li id="cand"><a class="btn btn-primary" href="'
+        button_front = '<li id="campbtn"><a class="btn btn-primary" href="'
         button_back = '" role="button">Candidate Campaign</a>'
         item_back = '</li>'
         cand_back = '</ul></div>'

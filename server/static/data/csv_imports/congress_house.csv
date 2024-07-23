@@ -1,69 +1,70 @@
 ﻿state_name,state,congress,s_upper,s_lower,district_name,race_type,voter_power,cook_rating
-Alabama,1,2,,,Congressional District 2,House,,likely-D
-Alaska,2,at-large,,,Congressional District at-large,House,,lean-D
-Arizona,4,1,,,Congressional District 1,House,,toss-up
-Arizona,4,6,,,Congressional District 6,House,,toss-up
-California,6,3,,,Congressional District 3,House,,likely-R
-California,6,9,,,Congressional District 9,House,,likely-D
-California,6,13,,,Congressional District 13,House,,toss-up
-California,6,22,,,Congressional District 22,House,,toss-up
-California,6,27,,,Congressional District 27,House,,toss-up
-California,6,40,,,Congressional District 40,House,,likely-R
-California,6,41,,,Congressional District 41,House,,toss-up
-California,6,45,,,Congressional District 45,House,,lean-R
-California,6,47,,,Congressional District 47,House,,lean-D
-California,6,49,,,Congressional District 49,House,,likely-D
-Colorado,8,3,,,Congressional District 3,House,,lean-R
-Colorado,8,8,,,Congressional District 8,House,,toss-up
-Connecticut,9,5,,,Congressional District 5,House,,lean-D
-Florida,12,9,,,Congressional District 9,House,,likely-D
-Florida,12,13,,,Congressional District 13,House,,likely-R
-Florida,12,23,,,Congressional District 23,House,,likely-D
-Illinois,17,17,,,Congressional District 17,House,,lean-D
-Indiana,18,1,,,Congressional District 1,House,,lean-D
-Iowa,19,1,,,Congressional District 1,House,,likely-R
-Iowa,19,3,,,Congressional District 3,House,,lean-R
-Kansas,20,3,,,Congressional District 3,House,,likely-D
-Maine,23,2,,,Congressional District 2,House,,toss-up
-Maryland,24,6,,,Congressional District 6,House,,likely-D
-Michigan,26,3,,,Congressional District 3,House,,likely-D
-Michigan,26,7,,,Congressional District 7,House,,toss-up
-Michigan,26,8,,,Congressional District 8,House,,toss-up
-Michigan,26,10,,,Congressional District 10,House,,lean-R
-Minnesota,27,2,,,Congressional District 2,House,,lean-D
-Montana,30,1,,,Congressional District 1,House,,likely-R
-Nebraska,31,2,,,Congressional District 2,House,,lean-R
-Nevada,32,3,,,Congressional District 3,House,,lean-D
-Nevada,32,4,,,Congressional District 4,House,,likely-D
-New Hampshire,33,1,,,Congressional District 1,House,,likely-D
-New Hampshire,33,2,,,Congressional District 2,House,,likely-D
-New Jersey,34,7,,,Congressional District 7,House,,toss-up
-New Mexico,35,2,,,Congressional District 2,House,,toss-up
-New York,36,1,,,Congressional District 1,House,,likely-R
-New York,36,3,,,Congressional District 3,House,,likely-D
-New York,36,4,,,Congressional District 4,House,,toss-up
-New York,36,17,,,Congressional District 17,House,,toss-up
-New York,36,18,,,Congressional District 18,House,,lean-D
-New York,36,19,,,Congressional District 19,House,,toss-up
-New York,36,22,,,Congressional District 22,House,,lean-D
-North Carolina,37,1,,,Congressional District 1,House,,toss-up
-Ohio,39,1,,,Congressional District 1,House,,likely-D
-Ohio,39,9,,,Congressional District 9,House,,toss-up
-Ohio,39,13,,,Congressional District 13,House,,toss-up
-Oregon,41,4,,,Congressional District 4,House,,likely-D
-Oregon,41,5,,,Congressional District 5,House,,toss-up
-Oregon,41,6,,,Congressional District 6,House,,lean-D
-Pennsylvania,42,1,,,Congressional District 1,House,,likely-R
-Pennsylvania,42,7,,,Congressional District 7,House,,toss-up
-Pennsylvania,42,8,,,Congressional District 8,House,,toss-up
-Pennsylvania,42,10,,,Congressional District 10,House,,lean-R
-Pennsylvania,42,17,,,Congressional District 17,House,,lean-D
-Texas,48,15,,,Congressional District 15,House,,likely-R
-Texas,48,28,,,Congressional District 28,House,,lean-D
-Texas,48,34,,,Congressional District 34,House,,lean-D
-Virginia,51,2,,,Congressional District 2,House,,lean-R
-Virginia,51,7,,,Congressional District 7,House,,
-Washington,53,3,,,Congressional District 3,House,,toss-up
-Washington,53,8,,,Congressional District 8,House,,likely-D
-Wisconsin,55,1,,,Congressional District 1,House,,likely-R
-Wisconsin,55,3,,,Congressional District 3,House,,lean-R
+Alabama,01,02,,,Congressional District 2,House,27,likely-D
+Alaska,02,at-large,,,Congressional District (at Large),House,20,lean-D
+Arizona,04,01,,,Congressional District 1,House,56,toss-up
+Arizona,04,06,,,Congressional District 6,House,53,toss-up
+California,06,47,,,Congressional District 47,House,31,lean-D
+California,06,45,,,Congressional District 45,House,38,lean-R
+California,06,09,,,Congressional District 9,House,19,likely-D
+California,06,49,,,Congressional District 49,House,38,likely-D
+California,06,03,,,Congressional District 3,House,29,likely-R
+California,06,40,,,Congressional District 40,House,45,likely-R
+California,06,13,,,Congressional District 13,House,19,toss-up
+California,06,22,,,Congressional District 22,House,11,toss-up
+California,06,27,,,Congressional District 27,House,20,toss-up
+California,06,41,,,Congressional District 41,House,38,toss-up
+Colorado,08,03,,,Congressional District 3,House,23,lean-R
+Colorado,08,08,,,Congressional District 8,House,87,toss-up
+Connecticut,09,05,,,Congressional District 5,House,37,lean-D
+Florida,12,09,,,Congressional District 9,House,3,likely-D
+Florida,12,23,,,Congressional District 23,House,9,likely-D
+Florida,12,13,,,Congressional District 13,House,29,likely-R
+Illinois,17,17,,,Congressional District 17,House,32,lean-D
+Indiana,18,01,,,Congressional District 1,House,7,lean-D
+Iowa,19,03,,,Congressional District 3,House,64,lean-R
+Iowa,19,01,,,Congressional District 1,House,60,likely-R
+Kansas,20,03,,,Congressional District 3,House,100,likely-D
+Maine,23,02,,,Congressional District 2,House,16,toss-up
+Maryland,24,06,,,Congressional District 6,House,85,likely-D
+Michigan,26,10,,,Congressional District 10,House,77,lean-R
+Michigan,26,03,,,Congressional District 3,House,56,likely-D
+Michigan,26,07,,,Congressional District 7,House,79,toss-up
+Michigan,26,08,,,Congressional District 8,House,46,toss-up
+Minnesota,27,02,,,Congressional District 2,House,41,lean-D
+Montana,30,01,,,Congressional District 1,House,80,likely-R
+Nebraska,31,02,,,Congressional District 2,House,74,lean-R
+Nevada,32,03,,,Congressional District 3,House,26,lean-D
+Nevada,32,01,,,Congressional District 1,House,17,likely-D
+Nevada,32,04,,,Congressional District 4,House,17,likely-D
+New Hampshire,33,01,,,Congressional District 1,House,25,likely-D
+New Hampshire,33,02,,,Congressional District 2,House,55,likely-D
+New Jersey,34,07,,,Congressional District 7,House,45,toss-up
+New Mexico,35,02,,,Congressional District 2,House,28,toss-up
+New York,36,18,,,Congressional District 18,House,41,lean-D
+New York,36,22,,,Congressional District 22,House,29,lean-D
+New York,36,03,,,Congressional District 3,House,48,likely-D
+New York,36,01,,,Congressional District 1,House,27,likely-R
+New York,36,04,,,Congressional District 4,House,28,toss-up
+New York,36,17,,,Congressional District 17,House,32,toss-up
+New York,36,19,,,Congressional District 19,House,58,toss-up
+North Carolina,37,01,,,Congressional District 1,House,62,toss-up
+Ohio,39,01,,,Congressional District 1,House,71,likely-D
+Ohio,39,09,,,Congressional District 9,House,92,toss-up
+Ohio,39,13,,,Congressional District 13,House,54,toss-up
+Oregon,41,06,,,Congressional District 6,House,20,lean-D
+Oregon,41,04,,,Congressional District 4,House,15,likely-D
+Oregon,41,05,,,Congressional District 5,House,41,toss-up
+Pennsylvania,42,17,,,Congressional District 17,House,18,lean-D
+Pennsylvania,42,10,,,Congressional District 10,House,55,lean-R
+Pennsylvania,42,01,,,Congressional District 1,House,40,likely-R
+Pennsylvania,42,07,,,Congressional District 7,House,59,toss-up
+Pennsylvania,42,08,,,Congressional District 8,House,70,toss-up
+Texas,48,28,,,Congressional District 28,House,12,lean-D
+Texas,48,34,,,Congressional District 34,House,0,lean-D
+Texas,48,15,,,Congressional District 15,House,52,likely-R
+Virginia,51,07,,,Congressional District 7,House,52,lean-D
+Virginia,51,02,,,Congressional District 2,House,73,lean-R
+Washington,53,08,,,Congressional District 8,House,78,likely-D
+Washington,53,03,,,Congressional District 3,House,40,toss-up
+Wisconsin,55,03,,,Congressional District 3,House,87,lean-R
+Wisconsin,55,01,,,Congressional District 1,House,96,likely-R

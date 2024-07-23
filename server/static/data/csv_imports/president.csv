@@ -1,59 +1,59 @@
 ﻿state_name,state,congress,s_upper,s_lower,district_name,race_type,voter_power,cook_rating
-Alabama,01,,,,,President,,solid-R
-Alaska,02,,,,,President,,solid-R
-Arizona,04,,,,,President,,toss-up
-Arkansas,05,,,,,President,,solid-R
-California,06,,,,,President,,solid-D
-Colorado,08,,,,,President,,solid-D
-Connecticut,09,,,,,President,,solid-D
-Delaware,10,,,,,President,,solid-D
-District of Columbia,11,,,,,President,,solid-D
-Florida,12,,,,,President,,likely-R
-Georgia,13,,,,,President,,toss-up
-Hawaii,15,,,,,President,,solid-D
-Idaho,16,,,,,President,,solid-R
-Illinois,17,,,,,President,,solid-D
-Indiana,18,,,,,President,,solid-R
-Iowa,19,,,,,President,,solid-R
-Kansas,20,,,,,President,,solid-R
-Kentucky,21,,,,,President,,solid-R
-Louisiana,22,,,,,President,,solid-R
-Maine,23,1,,,Congressional District 1,President,,solid-D
-Maine,23,1,,,Congressional District 1,President,,likely-D
-Maine,23,2,,,Congressional District 2,President,,likely-D
-Maine,23,2,,,Congressional District 2,President,,likely-R
-Maryland,24,,,,,President,,solid-D
-Massachusetts,25,,,,,President,,solid-D
-Michigan,26,,,,,President,,toss-up
-Minnesota,27,,,,,President,,likely-D
-Mississippi,28,,,,,President,,solid-R
-Missouri,29,,,,,President,,solid-R
-Montana,30,,,,,President,,solid-R
-Nebraska,31,2,,,Congressional District 2,President,,likely-D
-Nebraska,31,1,,,Congressional District 1,President,,solid-R
-Nebraska,31,3,,,Congressional District 3,President,,solid-R
-Nebraska,31,3,,,Congressional District 3,President,,solid-R
-Nebraska,31,3,,,Congressional District 3,President,,solid-R
-Nevada,32,,,,,President,,toss-up
-New Hampshire,33,,,,,President,,likely-D
-New Jersey,34,,,,,President,,solid-D
-New Mexico,35,,,,,President,,likely-D
-New York,36,,,,,President,,solid-D
-North Carolina,37,,,,,President,93,lean-R
-North Dakota,38,,,,,President,,solid-R
-Ohio,39,,,,,President,49,solid-R
-Oklahoma,40,,,,,President,,solid-R
-Oregon,41,,,,,President,,solid-D
-Pennsylvania,42,,,,,President,54,toss-up
-Rhode Island,44,,,,,President,,solid-D
-South Carolina,45,,,,,President,,solid-R
-South Dakota,46,,,,,President,,solid-R
-Tennessee,47,,,,,President,,solid-R
-Texas,48,,,,,President,,likely-R
-Utah,49,,,,,President,,solid-R
-Vermont,50,,,,,President,,solid-D
-Virginia,51,,,,,President,,likely-D
-Washington,53,,,,,President,,solid-D
-West Virginia,54,,,,,President,,solid-R
-Wisconsin,55,,,,,President,,toss-up
-Wyoming,56,,,,,President,,solid-R
+Alabama,01,,,,,Presidential,11,solid-R
+Alaska,02,,,,,Presidential,35,solid-R
+Arizona,04,,,,,Presidential,56,toss-up
+Arkansas,05,,,,,Presidential,6,solid-R
+California,06,,,,,Presidential,1,solid-D
+Colorado,08,,,,,Presidential,7,solid-D
+Connecticut,09,,,,,Presidential,3,solid-D
+Delaware,10,,,,,Presidential,8,solid-D
+District of Columbia,11,,,,,Presidential,1,solid-D
+Florida,12,,,,,Presidential,64,likely-R
+Georgia,13,,,,,Presidential,53,toss-up
+Hawaii,15,,,,,Presidential,9,solid-D
+Idaho,16,,,,,Presidential,5,solid-R
+Illinois,17,,,,,Presidential,2,solid-D
+Indiana,18,,,,,Presidential,9,solid-R
+Iowa,19,,,,,Presidential,14,solid-R
+Kansas,20,,,,,Presidential,18,solid-R
+Kentucky,21,,,,,Presidential,5,solid-R
+Louisiana,22,,,,,Presidential,19,solid-R
+Maine,23,01,,,Congressional District 1,Presidential,54,solid-D
+Maine,23,01,,,Congressional District 1,Presidential,54,likely-D
+Maine,23,02,,,Congressional District 2,Presidential,54,likely-D
+Maine,23,02,,,Congressional District 2,Presidential,54,likely-R
+Maryland,24,,,,,Presidential,1,solid-D
+Massachusetts,25,,,,,Presidential,0,solid-D
+Michigan,26,,,,,Presidential,25,toss-up
+Minnesota,27,,,,,Presidential,12,likely-D
+Mississippi,28,,,,,Presidential,22,solid-R
+Missouri,29,,,,,Presidential,11,solid-R
+Montana,30,,,,,Presidential,16,solid-R
+Nebraska,31,02,,,Congressional District 2,Presidential,15,likely-D
+Nebraska,31,01,,,Congressional District 1,Presidential,15,solid-R
+Nebraska,31,03,,,Congressional District 3,Presidential,15,solid-R
+Nebraska,31,03,,,Congressional District 3,Presidential,15,solid-R
+Nebraska,31,03,,,Congressional District 3,Presidential,15,solid-R
+Nevada,32,,,,,Presidential,100,toss-up
+New Hampshire,33,,,,,Presidential,30,likely-D
+New Jersey,34,,,,,Presidential,16,solid-D
+New Mexico,35,,,,,Presidential,18,likely-D
+New York,36,,,,,Presidential,7,solid-D
+North Carolina,37,,,,,Presidential,33,lean-R
+North Dakota,38,,,,,Presidential,11,solid-R
+Ohio,39,,,,,Presidential,41,solid-R
+Oklahoma,40,,,,,Presidential,3,solid-R
+Oregon,41,,,,,Presidential,3,solid-D
+Pennsylvania,42,,,,,Presidential,38,toss-up
+Rhode Island,44,,,,,Presidential,15,solid-D
+South Carolina,45,,,,,Presidential,15,solid-R
+South Dakota,46,,,,,Presidential,12,solid-R
+Tennessee,47,,,,,Presidential,7,solid-R
+Texas,48,,,,,Presidential,39,likely-R
+Utah,49,,,,,Presidential,4,solid-R
+Vermont,50,,,,,Presidential,5,solid-D
+Virginia,51,,,,,Presidential,18,likely-D
+Washington,53,,,,,Presidential,5,solid-D
+West Virginia,54,,,,,Presidential,9,solid-R
+Wisconsin,55,,,,,Presidential,28,toss-up
+Wyoming,56,,,,,Presidential,9,solid-R

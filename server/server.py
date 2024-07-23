@@ -46,7 +46,7 @@ def get_db_conn():
     else:
         return app.config["_database"] 
 
-# SITE PAGES AND WIDGETS ------------------------------------------------
+# SITE PAGES AND WIDGETS ------------------------------------------------ 
 # Note- can't use logging.info messages here to check things?
 
 def dataloader():
@@ -75,9 +75,14 @@ def home():
 # Geocodes the location of the person and calls the election mapper
 def local_elections():
     if request.method == "POST":
-        location = request.form.get("location")
-        location =  gmaps.geocode(location)
-        return election_delivery_function(location)
+        try:
+            location = request.form.get("location")
+            location =  gmaps.geocode(location)
+            return election_delivery_function(location)
+        except:
+            #flash('Unable to locate address', 'error') Doesn't work smh
+            return redirect('/')
+
     
 @app.route('/state', methods=["GET", "POST"])
 # Passes the state input to and calls the election mapper
@@ -85,7 +90,12 @@ def state_elections():
     if request.method == "POST":
         location = request.form.get("location")
         return election_delivery_function(location)
-    
+
+@app.route('/voter-power', methods=["GET", "POST"])
+# It's the about page.
+def vp_load():
+    return render_template("vp.html")
+
 @app.route('/about', methods=["GET", "POST"])
 # It's the about page.
 def about_load():
@@ -101,11 +111,13 @@ def faq_load():
 def get_involved():
     # Gets the candidates in the election from the state/local page
     if request.method == "POST":
+        print(request.form.get("candidates"), type(request.form.get("candidates")))
         candidates = request.form.get("candidates")
         candidates = json.loads(candidates)
     else:
         candidates = []
 
+    print(candidates, type(candidates))
     # Gets the candidate information from the candidate DB
     # Writes a nice HTML string for each candidate
     db = DB(get_db_conn())
@@ -129,14 +141,24 @@ def election_delivery_function(location):
         
     # Dictionary to store information from shape lookup
     lookup_dict = {"elections": {},"layers": {}}
-    lookup_components = ["President","Senate","House", "State Leg (Upper)",
+    lookup_components = ["Presidential","Senate","House", "State Leg (Upper)",
                               "State Leg (Lower)", "Ballot Initiative"]
-        
+    ballot_initiative_types = ["Reproductive Rights", "Democracy Repair",
+                                "Direct Democracy", "Whatever else"]
     # Gets information to place in dictionary
+    election_count = 0
     for i in lookup_components:
+        Nelections, shapelayer, election_count = db.nearby_voting_impact(location, i, election_count)
+        lookup_dict["elections"][i] = Nelections
+        lookup_dict["layers"][i] = shapelayer
+
+    # Some alternative setup for getting split shapelayers per ballot initiative?
+    '''
+    for j in ballot_initiative_types:
         Nelections, shapelayer = db.nearby_voting_impact(location, i)
         lookup_dict["elections"][i] = Nelections
         lookup_dict["layers"][i] = shapelayer
+    '''
 
     # Get Lat/Long coordinates for centering
     if type(location) != type([]):
@@ -147,17 +169,19 @@ def election_delivery_function(location):
     db.conn.close()
     # All the individual pieces for the detail lookup. May need to add vals
     # for zoom and center for the map as well, depending on address lookup
-    return render_template("detail.html", pres_list = lookup_dict["elections"]["President"],
+    return render_template("detail.html", pres_list = lookup_dict["elections"]["Presidential"],
                 senate_list = lookup_dict["elections"]["Senate"], 
                 house_list = lookup_dict["elections"]["House"], 
                 state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
                 state_senate_list = lookup_dict["elections"]["State Leg (Upper)"],
+                #governor_list = lookup_dict["elections"]["Governor"],
                 ballot_list = lookup_dict["elections"]["Ballot Initiative"],
-                pres_layer = lookup_dict["layers"]["President"],
+                pres_layer = lookup_dict["layers"]["Presidential"],
                 senate_layer = lookup_dict["layers"]["Senate"], 
                 house_layer = lookup_dict["layers"]["House"], 
                 s_house_layer = lookup_dict["layers"]["State Leg (Lower)"],
                 s_sen_layer = lookup_dict["layers"]["State Leg (Upper)"],
+                #governor_layer = lookup_dict["layers"]["Governor"],
                 ballot_layer = lookup_dict["layers"]["Ballot Initiative"],
                 lat = lat,
                 long = long,

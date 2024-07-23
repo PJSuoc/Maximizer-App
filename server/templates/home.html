@@ -123,19 +123,19 @@ h3 {
             <h3>by the Electoral Innovation Lab</h3>
             <fieldset>
                 
-                <label for="layer" style="margin-top: 15px;">Which races are the most competitive? </label>
+                <label for="layer" style="margin-top: 15px;">Where do voters have the most power? </label>
                 <select id="layer" name="layer">
-                    <option value="presidential" selected>Presidential race</option>
-                    <option value="congressional">Senate race</option>
-                    <option value="house">House race</option>
-                    <option value="gubernatorial">Gubernatorial race</option>
-                    <option value="state_leg_up">State legislature upper</option>
-                    <option value="state_leg_low">State legislature lower</option>
-                    <option value="ballot_all">Democracy ballot measuress</option>
+                    <option value="presidential" selected>Presidential Race</option>
+                    <option value="congressional">Senate Races</option>
+                    <option value="house">House Races</option>
+                    <option value="gubernatorial">Gubernatorial Races</option>
+                    <option value="state_leg_up">State Upper Legislature</option>
+                    <option value="state_leg_low">State Lower Legislature</option>
+                    <option value="ballot_all">Ballot Initiatives</option>
                 </select>
 
                 <form action="/state" method="post">
-                    <label for="location" style="margin-top: 15px;">Zoom in on a state to see election details</label>
+                    <label for="location" style="margin-top: 15px;">See a specific state's key elections:</label>
                     <select name="location" id="location" onchange="this.form.submit()">
                         {% for s in states %}
                         <option value="{{s}}">{{ s }}</option>
@@ -146,7 +146,7 @@ h3 {
 
                 
                     <form action="/local" method="post">
-                        <label for="location" style="margin-top: 15px;">Find Pivotal Elections near you</label>
+                        <label for="location" style="margin-top: 15px;">Find Pivotal Elections near you:</label>
                         <input type="text" class="form-control" id="location" name="location" placeholder="type an address and press enter"></input>
                     </form>
 
@@ -163,8 +163,10 @@ h3 {
         </div>
     </div>
            
+
+    <div class="map-container">
+        <div class="col" id="map"></div>
     </div>
-    <div class="col" id="map"></div>
 
     <script>
         mapboxgl.accessToken = '{{ mapbox_key }}';
@@ -383,7 +385,7 @@ h3 {
                 </div>`;
             } else {
                 popupContent = `<div class="custom-popup">
-                    <strong>Number of democracy ballot initiatives in your state: ${description}</strong> <br>Click on a state in the dropdown menu to learn more.
+                    <strong>Number of ballot initiatives in your state: ${description}</strong> <br>Click on a state in the dropdown menu to learn more.
                 </div>`;
             }
         } else if (layerId === 'congressional' && (voterPower === undefined || voterPower === 'no race')) {
@@ -431,31 +433,31 @@ h3 {
 
         // Initial layer setup on map load
         map.on('load', function () {
-        
-    addGeoJsonLayer('presidential');
+            //map.resize();
+        addGeoJsonLayer('presidential');
     
 
 
-    //filter for only USA names
-    const layers = map.getStyle().layers;
+                //filter for only USA names
+                const layers = map.getStyle().layers;
 
-layers.forEach((layer) => {
-    const currentFilters = map.getFilter(layer.id);
-    
-    // if layer includes label or state filter for USA
-    if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
-        if (currentFilters) {
-        
-            map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
-        } else {
-    
-            map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
-        }
-    
-    }
+            layers.forEach((layer) => {
+                const currentFilters = map.getFilter(layer.id);
+                
+                // if layer includes label or state filter for USA
+                if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
+                    if (currentFilters) {
+                    
+                        map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
+                    } else {
+                
+                        map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+                    }
+                
+                }
 
-    
-});
+                
+            });
 });
 
 
