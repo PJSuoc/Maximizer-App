@@ -28,6 +28,27 @@ body {
    
 }
 
+#popup-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.vp-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 2;
+}
+
+
 #detail-left {
     width: 100%;
     margin: 0; 

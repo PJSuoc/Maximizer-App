@@ -111,8 +111,8 @@ h3 {
         <h3>Voter Power Scale</h3>
         <div id="color-scale"></div>
         <div class="labels">
-            <span>Low</span>
-            <span>High</span>
+            <span>0</span>
+            <span>100</span>
         </div>
     </div>
     
@@ -481,6 +481,16 @@ h3 {
 
         
     </script>
-   
+    
+    <div class="container" id="popup-btn">
+        <button class="btn btn-outline-light" onclick="vp_popup()">What is Voter Power?</button>
+    </div>
+    <script>
+        // When the user clicks on <div>, open the popup
+        function vp_popup() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+    </script>
 </body>
 {% endblock %}
