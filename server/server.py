@@ -92,7 +92,7 @@ def state_elections():
         return election_delivery_function(location)
 
 @app.route('/voter-power', methods=["GET", "POST"])
-# It's the about page.
+# It's the vp infographic page.
 def vp_load():
     return render_template("vp.html")
 
