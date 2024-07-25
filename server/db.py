@@ -46,11 +46,11 @@ s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv
 s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
-p1 = Path("app\db.py")
-p2 = Path("/db.py")
-p3 = Path("app/db.py")
-p4 = Path("/app/db.py")
-p5 = Path("db.py")
+p1 = r'app\requirements.txt'
+p2 = r"/requirements.txt"
+p3 = "app/requirements.txt"
+p4 = "/app/requirements.txt"
+p5 = "requirements.txt"
 
 if p1.is_file():
     print("Found this file:", p1)
