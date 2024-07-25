@@ -214,7 +214,6 @@ if __name__ == "__main__":
         "-p", "--port",
         help="Server port (default 5000)",
         default = 5000,
-        type = int()
     )
     parser.add_argument(
         "-l", "--log",
@@ -268,5 +267,5 @@ if __name__ == "__main__":
     # app.config['addr'] = "http://%s:%s" % (args.host, args.port)
 
     logging.info("Starting Up!")
-    print("STARTING!")
-    app.run(host=args.host, port=args.port) #pulled out: , threaded=False
+    print("STARTING with:", args.host, args.port)
+    app.run(host=args.host, port=args.port, threaded=False) #pulled out: 

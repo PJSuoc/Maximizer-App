@@ -28,23 +28,27 @@ STATEDICT = {
 """
 Class for building database functionalities.
 """
-# Normalizes file pathways to function on any OS platform
-print(platform.system())
-print(os.getcwd())
-print(type(pathlib.Path("static")))
-print(os.path.abspath(__file__), "abspath output")
-
-root = os.getcwd()
-
-allshape_path = Path("server/static/data/shp_imports/all_shapes/all_shapes.shp")
-candidate_path = Path("server/static/data/csv_imports/candidates.csv")
-president_path = Path("server/static/data/csv_imports/president.csv")
-senate_path = Path("server/static/data/csv_imports/senate.csv")
-house_path = Path("server/static/data/csv_imports/congress_house.csv")
-governor_path = Path("server/static/data/csv_imports/governor.csv")
-s_upper_path = Path("server/static/data/csv_imports/state_upper_legislature.csv")
-s_lower_path = Path("server/static/data/csv_imports/state_lower_legislature.csv")
-ballot_path = Path("server/static/data/csv_imports/ballot_initiative.csv")
+# File pathways for Production function
+if Path("config.py").is_file():
+    allshape_path = Path("static/data/shp_imports/all_shapes/all_shapes.shp")
+    candidate_path = Path("static/data/csv_imports/candidates.csv")
+    president_path = Path("static/data/csv_imports/president.csv")
+    senate_path = Path("static/data/csv_imports/senate.csv")
+    house_path = Path("static/data/csv_imports/congress_house.csv")
+    governor_path = Path("static/data/csv_imports/governor.csv")
+    s_upper_path = Path("static/data/csv_imports/state_upper_legislature.csv")
+    s_lower_path = Path("static/data/csv_imports/state_lower_legislature.csv")
+    ballot_path = Path("static/data/csv_imports/ballot_initiative.csv")
+else:
+    allshape_path = Path("server/static/data/shp_imports/all_shapes/all_shapes.shp")
+    candidate_path = Path("server/static/data/csv_imports/candidates.csv")
+    president_path = Path("server/static/data/csv_imports/president.csv")
+    senate_path = Path("server/static/data/csv_imports/senate.csv")
+    house_path = Path("server/static/data/csv_imports/congress_house.csv")
+    governor_path = Path("server/static/data/csv_imports/governor.csv")
+    s_upper_path = Path("server/static/data/csv_imports/state_upper_legislature.csv")
+    s_lower_path = Path("server/static/data/csv_imports/state_lower_legislature.csv")
+    ballot_path = Path("server/static/data/csv_imports/ballot_initiative.csv")
 
 
 ## Filepath Debugging Code
