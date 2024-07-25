@@ -14,11 +14,11 @@ import os
 from db import DB, STATEDICT
 
 
-#from config import flask_key, google_key, mapbox_key
+from config import flask_key, google_key, mapbox_key
 
-flask_key = os.environ.get('flask_key')
-mapbox_key = os.environ.get('mapbox_key')
-google_key = os.environ.get('google_key')
+#flask_key = os.environ.get('flask_key')
+#mapbox_key = os.environ.get('mapbox_key')
+#google_key = os.environ.get('google_key')
 
 STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado", 
     "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
@@ -37,8 +37,6 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 # I need to understand this functionality (I currently do not)
 # required for consistent session(s)?
-
-print(google_key)
 
 app.secret_key = flask_key
 gmaps = googlemaps.Client(key=google_key)

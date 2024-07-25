@@ -1,10 +1,10 @@
-from os import path
+import os
 import logging
 import sqlite3 as sqlite
 import pandas as pd
 import geopandas as gpd
 from shapely import Point
-from pathlib import Path
+import pathlib
 import sys
 import json
 
@@ -26,6 +26,16 @@ STATEDICT = {
 """
 Class for building database functionalities.
 """
+# Normalizes file pathways to function on any OS platform
+allshape_path = os.path.normpath("./static/data/shp_imports/all_shapes/all_shapes.shp")
+candidate_path = os.path.normpath("static/data/csv_imports/candidates.csv")
+president_path = os.path.normpath("static/data/csv_imports/president.csv")
+senate_path = os.path.normpath("static/data/csv_imports/senate.csv")
+house_path = os.path.normpath("static/data/csv_imports/congress_house.csv")
+governor_path = os.path.normpath("static/data/csv_imports/governor.csv")
+s_upper_path = os.path.normpath("static/data/csv_imports/state_upper_legislature.csv")
+s_lower_path = os.path.normpath("static/data/csv_imports/state_lower_legislature.csv")
+ballot_path = os.path.normpath("static/data/csv_imports/ballot_initiative.csv")
 
 class DB:
     def __init__(self, connection):
@@ -58,12 +68,13 @@ class DB:
         for website calculations.
         '''
         # Elections CSVs, separated for ease of maintenance/updates
-        president = pd.read_csv("static/data/csv_imports/president.csv", dtype=str)
-        senate = pd.read_csv("static/data/csv_imports/senate.csv", dtype=str)
-        congress = pd.read_csv("static/data/csv_imports/congress_house.csv", dtype=str)
-        s_upper = pd.read_csv("static/data/csv_imports/state_upper_legislature.csv", dtype=str)
-        s_lower = pd.read_csv("static/data/csv_imports/state_lower_legislature.csv", dtype=str)
-        ballot = pd.read_csv("static/data/csv_imports/ballot_initiative.csv", dtype=str)
+        president = pd.read_csv(president_path, dtype=str)
+        senate = pd.read_csv(senate_path, dtype=str)
+        congress = pd.read_csv(house_path, dtype=str)
+        governor = pd.read_csv(governor_path, dtype=str)
+        s_upper = pd.read_csv(s_upper_path, dtype=str)
+        s_lower = pd.read_csv(s_lower_path, dtype=str)
+        ballot = pd.read_csv(ballot_path, dtype=str)
         # Merges election CSVs into a single dataframe for calculations
         df_list = [president, senate, congress, s_upper, s_lower, ballot]
         self.elections = pd.concat(df_list, ignore_index=True)
@@ -78,7 +89,7 @@ class DB:
         self.elections["voter_power"] = self.elections["voter_power"].fillna("N/A")
         
         # Candidates CSV
-        self.candidates = pd.read_csv("static/data/csv_imports/candidates.csv", dtype=str)
+        self.candidates = pd.read_csv(candidate_path, dtype=str)
         self.candidates["cid"] = self.candidates.index
         self.candidates["state"] = self.candidates["state"].fillna("")
         self.candidates["congress"] = self.candidates["congress"].fillna("")
@@ -88,7 +99,7 @@ class DB:
         self.candidates["party"] = self.candidates["party"].fillna("")
 
         # All Shapes shapefile for locating elections
-        self.allshapes = gpd.read_file("./static/data/shp_imports/all_shapes/all_shapes.shp")
+        self.allshapes = gpd.read_file(allshape_path)
         self.allshapes["state"] = self.allshapes["state"].fillna("")
         self.allshapes["congress"] = self.allshapes["congress"].fillna("")
         self.allshapes["s_upper"] = self.allshapes["s_upper"].fillna("")
