@@ -37,6 +37,13 @@ s_upper_path = os.path.normpath("static/data/csv_imports/state_upper_legislature
 s_lower_path = os.path.normpath("static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = os.path.normpath("static/data/csv_imports/ballot_initiative.csv")
 
+cwd = os.getcwd()
+print(cwd)
+
+for root, dirs, files in os.walk(cwd):
+        if "president.csv" in files:
+            print(os.path.join(root, "president.csv"))
+
 class DB:
     def __init__(self, connection):
         self.conn = connection
