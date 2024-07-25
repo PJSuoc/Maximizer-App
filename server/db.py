@@ -7,6 +7,7 @@ from shapely import Point
 import pathlib
 import sys
 import json
+import platform
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -27,22 +28,27 @@ STATEDICT = {
 Class for building database functionalities.
 """
 # Normalizes file pathways to function on any OS platform
-allshape_path = os.path.normpath("./static/data/shp_imports/all_shapes/all_shapes.shp")
-candidate_path = os.path.normpath("static/data/csv_imports/candidates.csv")
-president_path = os.path.normpath("static\data\csv_imports\president.csv")
-senate_path = os.path.normpath("static/data/csv_imports/senate.csv")
-house_path = os.path.normpath("static/data/csv_imports/congress_house.csv")
-governor_path = os.path.normpath("static/data/csv_imports/governor.csv")
-s_upper_path = os.path.normpath("static/data/csv_imports/state_upper_legislature.csv")
-s_lower_path = os.path.normpath("static/data/csv_imports/state_lower_legislature.csv")
-ballot_path = os.path.normpath("static/data/csv_imports/ballot_initiative.csv")
+if platform.system == "Windows":
+    allshape_path = "./static/data/shp_imports/all_shapes/all_shapes.shp"
+    candidate_path = "static/data/csv_imports/candidates.csv"
+    president_path = "static\data\csv_imports\president.csv"
+    senate_path = "static/data/csv_imports/senate.csv"
+    house_path = "static/data/csv_imports/congress_house.csv"
+    governor_path = "static/data/csv_imports/governor.csv"
+    s_upper_path = "static/data/csv_imports/state_upper_legislature.csv"
+    s_lower_path = "static/data/csv_imports/state_lower_legislature.csv"
+    ballot_path = "static/data/csv_imports/ballot_initiative.csv"
+else:
+    allshape_path = "static\data/shp_imports\all_shapes\all_shapes.shp"
+    candidate_path = "static\data\csv_imports\candidates.csv"
+    president_path = "static\data\csv_imports\president.csv"
+    senate_path = "static\data\csv_imports\senate.csv"
+    house_path = "static\data\csv_imports\congress_house.csv"
+    governor_path = "static\data\csv_imports\governor.csv"
+    s_upper_path = "static\data\csv_imports\state_upper_legislature.csv"
+    s_lower_path = "static\data\csv_imports\state_lower_legislature.csv"
+    ballot_path = "static\data\csv_imports\ballot_initiative.csv"
 
-cwd = os.getcwd()
-print(cwd)
-
-for root, dirs, files in os.walk(cwd):
-        if "president.csv" in files:
-            print(os.path.join(root, "president.csv"))
 
 class DB:
     def __init__(self, connection):
