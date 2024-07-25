@@ -13,12 +13,13 @@ import os
 #Other File imports: DB for database interaction, calculations, support.
 from db import DB, STATEDICT
 
+## Environment Variables in for local development
+#from config import flask_key, google_key, mapbox_key
 
-from config import flask_key, google_key, mapbox_key
-
-#flask_key = os.environ.get('flask_key')
-#mapbox_key = os.environ.get('mapbox_key')
-#google_key = os.environ.get('google_key')
+## Environment Variables for heroku local or production
+flask_key = os.environ.get('flask_key')
+mapbox_key = os.environ.get('mapbox_key')
+google_key = os.environ.get('google_key')
 
 STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado", 
     "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
