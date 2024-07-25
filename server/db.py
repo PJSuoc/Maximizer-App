@@ -49,9 +49,9 @@ ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
 p1 = Path(os.path.normpath(os.path.join(os.getcwd(), "requirements.txt")))
 p2 = Path(os.path.normpath(os.getcwd()))
-p3 = Path(os.path.normpath(os.path.join(os.getcwd(), '.gitignore')))
-p4 = Path(os.path.normpath(os.path.join(os.getcwd(), "templates/about.html")))
-p5 = Path(os.path.join(os.getcwd(), "server.py"))
+p3 = Path(os.path.normpath(os.path.join(os.getcwd(), 'server/.gitignore')))
+p4 = Path(os.path.normpath(os.path.join(os.getcwd(), "server/templates/about.html")))
+p5 = Path(os.path.join(os.getcwd(), "server/server.py"))
 
 print("Existence:", os.path.exists(p1))
 if p1.is_file():
