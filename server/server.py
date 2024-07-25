@@ -258,13 +258,14 @@ if __name__ == "__main__":
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
     
-    if args.dev == 'prod':
+    if not config_check.is_file():
         print("And I ask myself- well, how did I get here?")
         args.port = int(os.environ.get("PORT",5000))
         args.host = '0.0.0.0'
 
     # Store the address for the web app
     # app.config['addr'] = "http://%s:%s" % (args.host, args.port)
+    print("Port it needs to use: ", int(os.environ.get("PORT",5000)))
 
     logging.info("Starting Up!")
     print("STARTING with:", args.host, args.port)
