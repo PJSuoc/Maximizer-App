@@ -28,26 +28,17 @@ STATEDICT = {
 Class for building database functionalities.
 """
 # Normalizes file pathways to function on any OS platform
-if platform.system == "Windows":
-    allshape_path = "./static/data/shp_imports/all_shapes/all_shapes.shp"
-    candidate_path = "static/data/csv_imports/candidates.csv"
-    president_path = "static\data\csv_imports\president.csv"
-    senate_path = "static/data/csv_imports/senate.csv"
-    house_path = "static/data/csv_imports/congress_house.csv"
-    governor_path = "static/data/csv_imports/governor.csv"
-    s_upper_path = "static/data/csv_imports/state_upper_legislature.csv"
-    s_lower_path = "static/data/csv_imports/state_lower_legislature.csv"
-    ballot_path = "static/data/csv_imports/ballot_initiative.csv"
-else:
-    allshape_path = "static\data/shp_imports\all_shapes\all_shapes.shp"
-    candidate_path = "static\data\csv_imports\candidates.csv"
-    president_path = "static\data\csv_imports\president.csv"
-    senate_path = "static\data\csv_imports\senate.csv"
-    house_path = "static\data\csv_imports\congress_house.csv"
-    governor_path = "static\data\csv_imports\governor.csv"
-    s_upper_path = "static\data\csv_imports\state_upper_legislature.csv"
-    s_lower_path = "static\data\csv_imports\state_lower_legislature.csv"
-    ballot_path = "static\data\csv_imports\ballot_initiative.csv"
+print(platform.system())
+
+allshape_path = "static\data\shp_imports\all_shapes\all_shapes.shp"
+candidate_path = "static\data\csv_imports\candidates.csv"
+president_path = "static\data\csv_imports\president.csv"
+senate_path = "static\data\csv_imports\senate.csv"
+house_path = "static\data\csv_imports\congress_house.csv"
+governor_path = "static\data\csv_imports\governor.csv"
+s_upper_path = "static\data\csv_imports\state_upper_legislature.csv"
+s_lower_path = "static\data\csv_imports\state_lower_legislature.csv"
+ballot_path = "static\data\csv_imports\ballot_initiative.csv"
 
 
 class DB:
@@ -81,7 +72,7 @@ class DB:
         for website calculations.
         '''
         # Elections CSVs, separated for ease of maintenance/updates
-        president = pd.read_csv(president_path, dtype=str)
+        president = pd.read_csv(os.path.normpath(president_path), dtype=str)
         senate = pd.read_csv(senate_path, dtype=str)
         congress = pd.read_csv(house_path, dtype=str)
         governor = pd.read_csv(governor_path, dtype=str)
