@@ -29,10 +29,13 @@ Class for building database functionalities.
 """
 # Normalizes file pathways to function on any OS platform
 print(platform.system())
-print(pathlib.Path("static"))
+print(os.getcwd())
 print(type(pathlib.Path("static")))
 
-allshape_path = pathlib.Path("./static/data/shp_imports/all_shapes/all_shapes.shp")
+root = os.getcwd()
+
+allshape_path = os.path.join(root, pathlib.Path("./static/data/shp_imports/all_shapes/all_shapes.shp"))
+print(allshape_path)
 candidate_path = pathlib.Path("./static/data/csv_imports/candidates.csv")
 president_path = pathlib.Path("./static/data/csv_imports/president.csv")
 senate_path = pathlib.Path("./static/data/csv_imports/senate.csv")
