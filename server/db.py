@@ -51,16 +51,16 @@ p3 = pathlib.Path("app/static/style.css")
 p4 = pathlib.Path("static/style.css")
 p5 = pathlib.Path("static")
 
-if p1.isfile():
+if p1.is_file():
     print("Found this file:", p1)
-if p2.isfile():
-    print("This is a file:", p2)
-if p3.isfile():
-    print("This is a file:", p3)
-if p4.isfile():
-    print("This is a file:", p4)
-if p5.isfile():
-    print("This is a file:", p5)
+if p2.is_file():
+    print("Found this file:", p2)
+if p3.is_file():
+    print("Found this file:", p3)
+if p4.is_file():
+    print("Found this file:", p4)
+if p5.is_file():
+    print("Found this file:", p5)
 
 class DB:
     def __init__(self, connection):
