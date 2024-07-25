@@ -214,7 +214,7 @@ if __name__ == "__main__":
         "-p", "--port",
         help="Server port (default 5000)",
         default = 5000,
-        choices = ['dev', 'prod']
+        type = int()
     )
     parser.add_argument(
         "-l", "--log",
@@ -224,8 +224,8 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-d", "--dev",
-        help="Opens application using a local config file",
-        default="dev",
+        help="Configuration host spot options",
+        default= 'dev',
         choices=['dev', 'prod']
     )
 
@@ -259,14 +259,14 @@ if __name__ == "__main__":
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
     
-    if args.port == 'prod':
+    if args.dev == 'prod':
         print("And I ask myself- well, how did I get here?")
         args.port = int(os.environ.get("PORT",5000))
         args.host = '0.0.0.0'
 
     # Store the address for the web app
-    app.config['addr'] = "http://%s:%s" % (args.host, args.port)
+    # app.config['addr'] = "http://%s:%s" % (args.host, args.port)
 
     logging.info("Starting Up!")
     print("STARTING!")
-    app.run(host=args.host, port=args.port, threaded=False)
+    app.run(host=args.host, port=args.port) #pulled out: , threaded=False
