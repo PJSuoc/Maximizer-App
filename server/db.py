@@ -5,6 +5,7 @@ import pandas as pd
 import geopandas as gpd
 from shapely import Point
 import pathlib
+from pathlib import Path
 import sys
 import json
 import platform
@@ -45,22 +46,32 @@ s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv
 s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
-p1 = pathlib.Path("app/server.py")
-p2 = pathlib.Path("server.py")
-p3 = pathlib.Path("app/static/style.css")
-p4 = pathlib.Path("static/style.css")
-p5 = pathlib.Path("static")
+p1 = Path("app\server.py")
+p2 = Path("/server.py")
+p3 = Path("app/server.py")
+p4 = Path("/app/server.py")
+p5 = Path("server.py")
 
 if p1.is_file():
     print("Found this file:", p1)
+else:
+    print("Did not find p1")
 if p2.is_file():
     print("Found this file:", p2)
+else:
+    print("Did not find p2")
 if p3.is_file():
     print("Found this file:", p3)
+else:
+    print("Did not find p3")
 if p4.is_file():
     print("Found this file:", p4)
+else:
+    print("Did not find p4")
 if p5.is_file():
     print("Found this file:", p5)
+else:
+    print("Did not find p5")
 
 class DB:
     def __init__(self, connection):
