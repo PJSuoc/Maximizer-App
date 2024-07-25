@@ -9,17 +9,21 @@ import geopandas as gpd
 import pandas as pd
 from datetime import datetime
 import os
+from pathlib import Path
 
 #Other File imports: DB for database interaction, calculations, support.
 from db import DB, STATEDICT
 
-## Environment Variables in for local development
-#from config import flask_key, google_key, mapbox_key
-
-## Environment Variables for heroku local or production
-flask_key = os.environ.get('flask_key')
-mapbox_key = os.environ.get('mapbox_key')
-google_key = os.environ.get('google_key')
+## Sets environment variables based on locale
+config_check = Path("config.py")
+if config_check.is_file():
+    ## Environment Variables in for local development
+    from config import flask_key, google_key, mapbox_key
+else:
+    ## Environment Variables for heroku local or production
+    flask_key = os.environ.get('flask_key')
+    mapbox_key = os.environ.get('mapbox_key')
+    google_key = os.environ.get('google_key')
 
 STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado", 
     "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
