@@ -47,8 +47,8 @@ s_upper_path = pathlib.Path("server/static/data/csv_imports/state_upper_legislat
 s_lower_path = pathlib.Path("server/static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = pathlib.Path("server/static/data/csv_imports/ballot_initiative.csv")
 
-p1 = Path(os.path.normpath(os.path.join(os.getcwd(), "requirements.txt")))
-p2 = Path("server/static/data/csv_imports/president.csv")
+p1 = Path("config.py")
+p2 = Path("server/config.py")
 p3 = Path(os.path.join(root, pathlib.Path("server/static/data/csv_imports/senate.csv")))
 p4 = Path(os.path.normpath(os.path.join(os.getcwd(), "server/templates/about.html")))
 p5 = Path(os.path.join(os.getcwd(), "server/server.py"))
