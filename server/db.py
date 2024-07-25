@@ -29,7 +29,7 @@ Class for building database functionalities.
 # Normalizes file pathways to function on any OS platform
 allshape_path = os.path.normpath("./static/data/shp_imports/all_shapes/all_shapes.shp")
 candidate_path = os.path.normpath("static/data/csv_imports/candidates.csv")
-president_path = os.path.normpath("static/data/csv_imports/president.csv")
+president_path = os.path.normpath("static\data\csv_imports\president.csv")
 senate_path = os.path.normpath("static/data/csv_imports/senate.csv")
 house_path = os.path.normpath("static/data/csv_imports/congress_house.csv")
 governor_path = os.path.normpath("static/data/csv_imports/governor.csv")
