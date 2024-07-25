@@ -8,10 +8,17 @@ import googlemaps
 import geopandas as gpd
 import pandas as pd
 from datetime import datetime
+import os
 
 #Other File imports: DB for database interaction, calculations, support.
 from db import DB, STATEDICT
-from config import flask_key, google_key, mapbox_key
+
+
+#from config import flask_key, google_key, mapbox_key
+
+flask_key = os.environ.get('flask_key')
+mapbox_key = os.environ.get('mapbox_key')
+google_key = os.environ.get('google_key')
 
 STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado", 
     "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
@@ -30,6 +37,9 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 # I need to understand this functionality (I currently do not)
 # required for consistent session(s)?
+
+print(google_key)
+
 app.secret_key = flask_key
 gmaps = googlemaps.Client(key=google_key)
 
@@ -209,6 +219,12 @@ if __name__ == "__main__":
         default="warning",
         choices=['debug', 'info', 'warning', 'error']
     )
+    parser.add_argument(
+        "-d", "--dev",
+        help="Opens application using a local config file",
+        default="dev",
+        choices=['dev', 'prod']
+    )
 
     # The format for our logger
     log_fmt = '%(levelname)-8s [%(filename)s:%(lineno)d] %(message)s'
@@ -239,6 +255,9 @@ if __name__ == "__main__":
         logging.error("Logging level set to error")
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
+
+    if args.dev == "dev":
+        from config import flask_key, google_key, mapbox_key
 
     # Store the address for the web app
     app.config['addr'] = "http://%s:%s" % (args.host, args.port)
