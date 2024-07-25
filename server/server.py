@@ -207,14 +207,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--host",
-        help="Server hostname (default 127.0.0.1)",
-        default="127.0.0.1"
+        help = "Server hostname (default 127.0.0.1)",
+        default = "127.0.0.1"
     )
     parser.add_argument(
         "-p", "--port",
         help="Server port (default 5000)",
-        default=5000,
-        type=int
+        default = 5000,
+        choices = ['dev', 'prod']
     )
     parser.add_argument(
         "-l", "--log",
@@ -258,6 +258,9 @@ if __name__ == "__main__":
         logging.error("Logging level set to error")
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
+    
+    if args.port == 'prod':
+        args.port = os.environ.get('PORT')
 
     # Store the address for the web app
     app.config['addr'] = "http://%s:%s" % (args.host, args.port)
