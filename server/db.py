@@ -46,10 +46,10 @@ s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv
 s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
-p1 = os.path.normpath(os.path.join(os.getcwd(), "static/data/csv_imports/president.csv"))
-p2 = os.path.normpath(os.path.join(os.getcwd(), "requirements.txt"))
-p3 = os.path.normpath(os.path.join(os.getcwd(), "static\data\csv_imports\president.csv"))
-p4 = os.path.normpath(os.path.join(os.getcwd(), "db.py"))
+p1 = Path(os.path.normpath(os.path.join(os.getcwd(), "static/data/csv_imports/president.csv")))
+p2 = Path(os.path.normpath(os.path.join(os.getcwd(), "requirements.txt")))
+p3 = Path(os.path.normpath(os.path.join(os.getcwd(), "static\data\csv_imports\president.csv")))
+p4 = Path(os.path.join(os.getcwd(), "db.py"))
 p5 = Path(os.path.join(os.getcwd(), "requirements.txt"))
 
 if p1.is_file():
