@@ -74,7 +74,7 @@ class DB:
         for website calculations.
         '''
         # Elections CSVs, separated for ease of maintenance/updates
-        president = pd.read_csv(os.path.normpath(president_path), dtype=str)
+        president = pd.read_csv(president_path, dtype=str)
         senate = pd.read_csv(senate_path, dtype=str)
         congress = pd.read_csv(house_path, dtype=str)
         governor = pd.read_csv(governor_path, dtype=str)
