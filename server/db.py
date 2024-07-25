@@ -34,11 +34,13 @@ print(type(pathlib.Path("static")))
 
 root = os.getcwd()
 
-allshape_path = os.path.join(root, pathlib.Path("./static/data/shp_imports/all_shapes/all_shapes.shp"))
-print(allshape_path)
+allshape_path = pathlib.Path("./static/data/shp_imports/all_shapes/all_shapes.shp")
+
 candidate_path = pathlib.Path("./static/data/csv_imports/candidates.csv")
-president_path = pathlib.Path("./static/data/csv_imports/president.csv")
+president_path = os.path.join(root, pathlib.Path("./static/data/csv_imports/president.csv"))
+print(president_path)
 senate_path = pathlib.Path("./static/data/csv_imports/senate.csv")
+print(senate_path)
 house_path = pathlib.Path("./static/data/csv_imports/congress_house.csv")
 governor_path = pathlib.Path("static/data/csv_imports/governor.csv")
 s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv")
