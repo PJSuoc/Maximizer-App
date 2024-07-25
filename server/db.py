@@ -46,37 +46,14 @@ s_upper_path = Path("server/static/data/csv_imports/state_upper_legislature.csv"
 s_lower_path = Path("server/static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = Path("server/static/data/csv_imports/ballot_initiative.csv")
 
-p1 = Path("config.py")
-p2 = Path("server/config.py")
-p3 = Path(os.path.join(root, pathlib.Path("server/static/data/csv_imports/senate.csv")))
-p4 = Path(os.path.normpath(os.path.join(os.getcwd(), "server/templates/about.html")))
-p5 = Path(os.path.join(os.getcwd(), "server/server.py"))
 
+## Filepath Debugging Code
+p1 = Path("config.py")
 print("Existence:", os.path.exists(p1))
 if p1.is_file():
     print("Found this file:", p1)
 else:
     print("Did not find p1:", p1)
-print("Existence:", os.path.exists(p2))
-if p2.is_file():
-    print("Found this file:", p2)
-else:
-    print("Did not find p2:", p2)
-print("Existence:", os.path.exists(p3))
-if p3.is_file():
-    print("Found this file:", p3)
-else:
-    print("Did not find p3:", p3)
-print("Existence:", os.path.exists(p4))
-if p4.is_file():
-    print("Found this file:", p4)
-else:
-    print("Did not find p4:", p4)
-print("Existence:", os.path.exists(p5))
-if p5.is_file():
-    print("Found this file:", p5)
-else:
-    print("Did not find p5:", p5)
 
 class DB:
     def __init__(self, connection):
