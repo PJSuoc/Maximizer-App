@@ -16,7 +16,9 @@ from db import DB, STATEDICT
 
 ## Sets environment variables based on locale
 config_check = Path("config.py")
+print("boolean", config_check.is_file())
 if config_check.is_file():
+    print("And I asked myself- how did I get here?")
     ## Environment Variables in for local development
     from config import flask_key, google_key, mapbox_key
 else:
