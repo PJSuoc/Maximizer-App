@@ -32,6 +32,7 @@ Class for building database functionalities.
 print(platform.system())
 print(os.getcwd())
 print(type(pathlib.Path("static")))
+print(os.path.abspath(__file__), "abspath output")
 
 root = os.getcwd()
 
@@ -47,10 +48,10 @@ s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv
 ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
 p1 = Path(os.path.normpath(os.path.join(os.getcwd(), "requirements.txt")))
-p2 = Path(os.path.normpath(os.path.join(os.getcwd(), "static/styles.css")))
-p3 = Path(os.path.normpath(os.path.join(os.getcwd(), "static")))
-p4 = Path(os.path.join(os.getcwd(), "server.py"))
-p5 = Path(os.path.join(os.getcwd(), "Procfile"))
+p2 = Path(os.path.normpath(os.path.join(os.getcwd(), "./server.py")))
+p3 = Path(os.path.normpath(os.path.join(os.getcwd(), "server.py")))
+p4 = Path(os.path.join(os.getcwd(), "./server.py"))
+p5 = Path(os.path.join(os.getcwd(), "/server.py"))
 
 if p1.is_file():
     print("Found this file:", p1)
