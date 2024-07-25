@@ -29,16 +29,18 @@ Class for building database functionalities.
 """
 # Normalizes file pathways to function on any OS platform
 print(platform.system())
+print(pathlib.Path("static"))
+print(type(pathlib.Path("static")))
 
-allshape_path = "static\data\shp_imports\all_shapes\all_shapes.shp"
-candidate_path = "static\data\csv_imports\candidates.csv"
-president_path = "static\data\csv_imports\president.csv"
-senate_path = "static\data\csv_imports\senate.csv"
-house_path = "static\data\csv_imports\congress_house.csv"
-governor_path = "static\data\csv_imports\governor.csv"
-s_upper_path = "static\data\csv_imports\state_upper_legislature.csv"
-s_lower_path = "static\data\csv_imports\state_lower_legislature.csv"
-ballot_path = "static\data\csv_imports\ballot_initiative.csv"
+allshape_path = pathlib.Path("static/data/shp_imports/all_shapes/all_shapes.shp")
+candidate_path = pathlib.Path("static/data/csv_imports/candidates.csv")
+president_path = pathlib.Path("static/data/csv_imports/president.csv")
+senate_path = pathlib.Path("static/data/csv_imports/senate.csv")
+house_path = pathlib.Path("static/data/csv_imports/congress_house.csv")
+governor_path = pathlib.Path("static/data/csv_imports/governor.csv")
+s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv")
+s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv")
+ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
 
 class DB:
