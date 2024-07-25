@@ -258,6 +258,7 @@ if __name__ == "__main__":
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
     
+    #I really would prefer this be a sysarg but I don't know enough about them to make it work
     if not config_check.is_file():
         print("And I ask myself- well, how did I get here?")
         args.port = int(os.environ.get("PORT",5000))
