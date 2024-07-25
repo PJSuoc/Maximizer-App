@@ -38,7 +38,7 @@ root = os.getcwd()
 allshape_path = pathlib.Path("./static/data/shp_imports/all_shapes/all_shapes.shp")
 
 candidate_path = pathlib.Path("./static/data/csv_imports/candidates.csv")
-president_path = pathlib.Path("app/static/data/csv_imports/president.csv")
+president_path = pathlib.Path("static/data/csv_imports/president.csv")
 senate_path = os.path.join(root, pathlib.Path("./static/data/csv_imports/senate.csv"))
 house_path = pathlib.Path("./static/data/csv_imports/congress_house.csv")
 governor_path = pathlib.Path("static/data/csv_imports/governor.csv")
@@ -46,32 +46,32 @@ s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv
 s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
-p1 = r'app\requirements.txt'
-p2 = r"/requirements.txt"
-p3 = "app/requirements.txt"
-p4 = "/app/requirements.txt"
-p5 = "requirements.txt"
+p1 = os.path.normpath(os.path.join(os.getcwd(), "static/data/csv_imports/president.csv"))
+p2 = os.path.normpath(os.path.join(os.getcwd(), "requirements.txt"))
+p3 = os.path.normpath(os.path.join(os.getcwd(), "static\data\csv_imports\president.csv"))
+p4 = os.path.normpath(os.path.join(os.getcwd(), "db.py"))
+p5 = Path(os.path.join(os.getcwd(), "requirements.txt"))
 
 if p1.is_file():
     print("Found this file:", p1)
 else:
-    print("Did not find p1")
+    print("Did not find p1:", p1)
 if p2.is_file():
     print("Found this file:", p2)
 else:
-    print("Did not find p2")
+    print("Did not find p2:", p2)
 if p3.is_file():
     print("Found this file:", p3)
 else:
-    print("Did not find p3")
+    print("Did not find p3:", p3)
 if p4.is_file():
     print("Found this file:", p4)
 else:
-    print("Did not find p4")
+    print("Did not find p4:", p4)
 if p5.is_file():
     print("Found this file:", p5)
 else:
-    print("Did not find p5")
+    print("Did not find p5:", p5)
 
 class DB:
     def __init__(self, connection):
