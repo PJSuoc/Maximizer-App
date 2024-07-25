@@ -39,8 +39,8 @@ root = os.getcwd()
 allshape_path = pathlib.Path("./static/data/shp_imports/all_shapes/all_shapes.shp")
 
 candidate_path = pathlib.Path("./static/data/csv_imports/candidates.csv")
-president_path = pathlib.Path("static/data/csv_imports/president.csv")
-senate_path = os.path.join(root, pathlib.Path("./static/data/csv_imports/senate.csv"))
+president_path = pathlib.Path("server/static/data/csv_imports/president.csv")
+senate_path = os.path.join(root, pathlib.Path("server/static/data/csv_imports/senate.csv"))
 house_path = pathlib.Path("./static/data/csv_imports/congress_house.csv")
 governor_path = pathlib.Path("static/data/csv_imports/governor.csv")
 s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv")
@@ -48,8 +48,8 @@ s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv
 ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
 p1 = Path(os.path.normpath(os.path.join(os.getcwd(), "requirements.txt")))
-p2 = Path(os.path.normpath(os.getcwd()))
-p3 = Path(os.path.normpath(os.path.join(os.getcwd(), 'server/.gitignore')))
+p2 = Path("server/static/data/csv_imports/president.csv")
+p3 = os.path.join(root, pathlib.Path("server/static/data/csv_imports/senate.csv"))
 p4 = Path(os.path.normpath(os.path.join(os.getcwd(), "server/templates/about.html")))
 p5 = Path(os.path.join(os.getcwd(), "server/server.py"))
 
