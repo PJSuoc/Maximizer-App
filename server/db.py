@@ -46,11 +46,11 @@ s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv
 s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
-p1 = Path(os.path.normpath(os.path.join(os.getcwd(), "static/data/csv_imports/president.csv")))
-p2 = Path(os.path.normpath(os.path.join(os.getcwd(), "requirements.txt")))
-p3 = Path(os.path.normpath(os.path.join(os.getcwd(), "static\data\csv_imports\president.csv")))
-p4 = Path(os.path.join(os.getcwd(), "db.py"))
-p5 = Path(os.path.join(os.getcwd(), "requirements.txt"))
+p1 = Path(os.path.normpath(os.path.join(os.getcwd(), "requirements.txt")))
+p2 = Path(os.path.normpath(os.path.join(os.getcwd(), "static/styles.css")))
+p3 = Path(os.path.normpath(os.path.join(os.getcwd(), "static")))
+p4 = Path(os.path.join(os.getcwd(), "server.py"))
+p5 = Path(os.path.join(os.getcwd(), "Procfile"))
 
 if p1.is_file():
     print("Found this file:", p1)
