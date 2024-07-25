@@ -38,15 +38,29 @@ allshape_path = pathlib.Path("./static/data/shp_imports/all_shapes/all_shapes.sh
 
 candidate_path = pathlib.Path("./static/data/csv_imports/candidates.csv")
 president_path = pathlib.Path("app/static/data/csv_imports/president.csv")
-print(president_path)
 senate_path = os.path.join(root, pathlib.Path("./static/data/csv_imports/senate.csv"))
-print(senate_path)
 house_path = pathlib.Path("./static/data/csv_imports/congress_house.csv")
 governor_path = pathlib.Path("static/data/csv_imports/governor.csv")
 s_upper_path = pathlib.Path("static/data/csv_imports/state_upper_legislature.csv")
 s_lower_path = pathlib.Path("static/data/csv_imports/state_lower_legislature.csv")
 ballot_path = pathlib.Path("static/data/csv_imports/ballot_initiative.csv")
 
+p1 = pathlib.Path("app/server.py")
+p2 = pathlib.Path("server.py")
+p3 = pathlib.Path("app/static/style.css")
+p4 = pathlib.Path("static/style.css")
+p5 = pathlib.Path("static")
+
+if p1.isfile():
+    print("Found this file:", p1)
+if p2.isfile():
+    print("This is a file:", p2)
+if p3.isfile():
+    print("This is a file:", p3)
+if p4.isfile():
+    print("This is a file:", p4)
+if p5.isfile():
+    print("This is a file:", p5)
 
 class DB:
     def __init__(self, connection):
