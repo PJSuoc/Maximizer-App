@@ -16,9 +16,7 @@ from db import DB, STATEDICT
 
 ## Sets environment variables based on locale
 config_check = Path("config.py")
-print("boolean", config_check.is_file())
 if config_check.is_file():
-    print("And I asked myself- how did I get here?")
     ## Environment Variables in for local development
     from config import flask_key, google_key, mapbox_key
 else:
@@ -260,9 +258,6 @@ if __name__ == "__main__":
         logging.error("Logging level set to error")
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
-
-    if args.dev == "dev":
-        from config import flask_key, google_key, mapbox_key
 
     # Store the address for the web app
     app.config['addr'] = "http://%s:%s" % (args.host, args.port)
