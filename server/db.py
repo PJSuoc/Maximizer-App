@@ -53,22 +53,27 @@ p3 = Path(os.path.normpath(os.path.join(os.getcwd(), '.gitignore')))
 p4 = Path(os.path.normpath(os.path.join(os.getcwd(), "templates/about.html")))
 p5 = Path(os.path.join(os.getcwd(), "server.py"))
 
+print("Existence:", os.path.exists(p1))
 if p1.is_file():
     print("Found this file:", p1)
 else:
     print("Did not find p1:", p1)
+print("Existence:", os.path.exists(p2))
 if p2.is_file():
     print("Found this file:", p2)
 else:
     print("Did not find p2:", p2)
+print("Existence:", os.path.exists(p3))
 if p3.is_file():
     print("Found this file:", p3)
 else:
     print("Did not find p3:", p3)
+print("Existence:", os.path.exists(p4))
 if p4.is_file():
     print("Found this file:", p4)
 else:
     print("Did not find p4:", p4)
+print("Existence:", os.path.exists(p5))
 if p5.is_file():
     print("Found this file:", p5)
 else:
