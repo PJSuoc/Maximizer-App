@@ -29,7 +29,7 @@ STATEDICT = {
 Class for building database functionalities.
 """
 # File pathways for Production function
-if Path("config.py").is_file():
+if Path("config.py").is_file(): # Pathways for local testing
     allshape_path = Path("static/data/shp_imports/all_shapes/all_shapes.shp")
     candidate_path = Path("static/data/csv_imports/candidates.csv")
     president_path = Path("static/data/csv_imports/president.csv")
@@ -39,7 +39,7 @@ if Path("config.py").is_file():
     s_upper_path = Path("static/data/csv_imports/state_upper_legislature.csv")
     s_lower_path = Path("static/data/csv_imports/state_lower_legislature.csv")
     ballot_path = Path("static/data/csv_imports/ballot_initiative.csv")
-else:
+else: # slightly adjusted pathways for Heroku deployment
     allshape_path = Path("server/static/data/shp_imports/all_shapes/all_shapes.shp")
     candidate_path = Path("server/static/data/csv_imports/candidates.csv")
     president_path = Path("server/static/data/csv_imports/president.csv")
@@ -52,37 +52,18 @@ else:
 
 
 ## Filepath Debugging Code
+'''
 p1 = Path("config.py")
 print("Existence:", os.path.exists(p1))
 if p1.is_file():
     print("Found this file:", p1)
 else:
     print("Did not find p1:", p1)
+'''
 
 class DB:
-    def __init__(self, connection):
-        self.conn = connection
-    
-    def import_data(self):
-        '''
-        Imports all necessary shapefiles for calculations.
-        '''
-        #self.states = gpd.read_file("./static/data/shp_imports/cb_2023_us_state_500k/cb_2023_us_state_500k.shp")
-        #self.congress = gpd.read_file("./static/data/shp_imports/cb_2023_us_cd118_500k/cb_2023_us_cd118_500k.shp")
-        #self.s_upper = gpd.read_file("./static/data/shp_imports/cb_2023_us_sldu_500k/cb_2023_us_sldu_500k.shp")
-        #self.s_lower = gpd.read_file("./static/data/shp_imports/cb_2023_us_sldl_500k/cb_2023_us_sldl_500k.shp")
-        self.allshapes = gpd.read_file("./static/data/shp_imports/all_shapes/all_shapes.shp")
-        self.elections = pd.read_csv("./static/data/csv_imports/fakedata.csv", dtype=str)
-
-        #Clean NA's from imported shape matching files
-        self.elections["state"] = self.elections["state"].fillna("")
-        self.elections["congress"] = self.elections["congress"].fillna("")
-        self.elections["s_upper"] = self.elections["s_upper"].fillna("")
-        self.elections["s_lower"] = self.elections["s_lower"].fillna("")
-        self.elections["voter_power_val"] = self.elections["voter_power"].astype(float)
-        self.elections["voter_power"] = self.elections["voter_power"].fillna("N/A")
-        self.allshapes = self.allshapes.fillna("")
-        return self.elections, self.allshapes
+    def __init__(self):
+        pass
     
     def import_data_v2(self):
         '''

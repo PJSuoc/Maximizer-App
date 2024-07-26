@@ -65,9 +65,8 @@ def get_db_conn():
 def dataloader():
     # Imports shapefiles, elections, and candidates(soonTM) as dataframes and
     # Holds them in memory???
-    db = DB(get_db_conn())
+    db = DB()
     elections, allshapes, candidates = db.import_data_v2()
-    db.conn.close()
     return elections, allshapes, candidates
 
 with app.app_context():
@@ -133,10 +132,9 @@ def get_involved():
     print(candidates, type(candidates))
     # Gets the candidate information from the candidate DB
     # Writes a nice HTML string for each candidate
-    db = DB(get_db_conn())
+    db = DB()
     db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
     output = db.candidate_link_strings(candidates)
-    db.conn.close()
     
     return render_template("getinvolved.html", candidates = output)
 
@@ -149,7 +147,7 @@ def election_delivery_function(location):
     For a state, returns elections within that state.
     
     '''
-    db = DB(get_db_conn())
+    db = DB()
     db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
         
     # Dictionary to store information from shape lookup
@@ -179,7 +177,6 @@ def election_delivery_function(location):
     lat = location[0]["geometry"]["location"]["lat"]
     long = location[0]["geometry"]["location"]["lng"]
 
-    db.conn.close()
     # All the individual pieces for the detail lookup. May need to add vals
     # for zoom and center for the map as well, depending on address lookup
     return render_template("detail.html", pres_list = lookup_dict["elections"]["Presidential"],

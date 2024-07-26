@@ -482,14 +482,24 @@ h3 {
         
     </script>
     
-    <div class="container" id="popup-btn">
-        <button class="btn btn-outline-light" onclick="vp_popup()">What is Voter Power?</button>
-    </div>
+    <button type="btn" class="popup" id="popup-btn" onclick="myFunction()">What is Voter Power?
+        <span class="popuptext" id="myPopup">
+            <div class="container">
+            Voter Power is our way to decide where a single vote has the most 
+            influence, based on how close elections are, how many people vote in them,
+            and how many people the elected official will influence once elected.
+            </div>
+            <div class="container" id="infographic-ref">
+                <a class="btn btn-outline-light" id="infographic-btn"  href="/voter-power" role="button">Check out our infographic here:</a>
+            </div>
+        </span>
+    </button>
+
     <script>
         // When the user clicks on <div>, open the popup
-        function vp_popup() {
-          var popup = document.getElementById("myPopup");
-          popup.classList.toggle("show");
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
         }
     </script>
 </body>

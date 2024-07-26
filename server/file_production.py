@@ -26,9 +26,11 @@ STATEDICT = {
 ##### CSVs utilized for various purposes #####
 
 #Presidential Data CSV
-
+p_loc = "static/data/csv_imports/president.csv"
+p = pd.read_csv(p_loc)
 #Senate Data CSV
-
+s_loc = "static/data/csv_imports/senate.csv"
+s = pd.read_csv(s_loc)
 #House of Representatives CSV
 
 #Governors CSV
