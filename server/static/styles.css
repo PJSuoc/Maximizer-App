@@ -1,3 +1,8 @@
+  /* COLOR NOTES */
+  /* EIL Orange: rgb 255 147 7 */
+  /* Background: 225 all (nav) 240 all (text) */
+
+
 html{
     height: 100%;
 }
@@ -6,14 +11,6 @@ body {
     font-family: 'Arial'; 
     margin: 0; 
     padding: 0;
-}
-
-
-
-#social {
-    display: inline-block;
-    margin-left: 5px;
-    margin-right: 15px;
 }
 
 .map-container {
@@ -34,20 +31,64 @@ body {
     right: 20px;
     width: 150px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     z-index: 2;
 }
 
-.vp-popup {
-    display: none;
+/* Popup container */
+.popup {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: rgba(90, 90, 90);
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
     position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 2;
-}
+    z-index: 1;
+    bottom: 40%;
+    left: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
 
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+#infographic-ref {
+    padding-top: 20px;
+    color: #fff;
+}
+#infographic-btn {
+
+    background-color: rgba(90, 90, 90);
+}
 
 #detail-left {
     width: 100%;
@@ -92,17 +133,27 @@ body {
 
 #socials {
     margin-left: auto;
+    margin-top: 5px;
     list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+#dono-btn {
+    color: rgb(255, 147, 7);
+    border-color: rgb(255, 147, 7);
 }
 
 #social-item {
-    margin-top: 5%;
     float: left;
+    margin-right: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
+
 #social-item svg {
     display: block;
     text-align: center;
-    margin-right: 25px;
 }
 
 #cand-row {
@@ -172,6 +223,13 @@ body {
     justify-content: center;
     font-size: 16px;
     font-weight: normal;
+}
+
+#vp-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
 }
 
 #logo{
