@@ -1,59 +1,59 @@
 state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
 01,,,,Alabama,Aggregate,,5
-02,,,,Alaska,Aggregate,,50
-04,,,,Arizona,Aggregate,,60
-05,,,,Arkansas,Aggregate,,0
-06,,,,California,Aggregate,,50
-08,,,,Colorado,Aggregate,,10
+02,,,,Alaska,Aggregate,,60
+04,,,,Arizona,Aggregate,,75
+05,,,,Arkansas,Aggregate,,5
+06,,,,California,Aggregate,,60
+08,,,,Colorado,Aggregate,,25
 09,,,,Connecticut,Aggregate,,3.0
 10,,,,Delaware,Aggregate,,5
-11,,,,District of Columbia,Aggregate,,0
-12,,,,Florida,Aggregate,,20
-13,,,,Georgia,Aggregate,,5
-15,,,,Hawaii,Aggregate,,0
-16,,,,Idaho,Aggregate,,0
-17,,,,Illinois,Aggregate,,5
-18,,,,Indiana,Aggregate,,10
-19,,,,Iowa,Aggregate,,15
+11,,,,District of Columbia,Aggregate,,5
+12,,,,Florida,Aggregate,,35
+13,,,,Georgia,Aggregate,,10
+15,,,,Hawaii,Aggregate,,10
+16,,,,Idaho,Aggregate,,10
+17,,,,Illinois,Aggregate,,15
+18,,,,Indiana,Aggregate,,15
+19,,,,Iowa,Aggregate,,25
 20,,,,Kansas,Aggregate,,45
-21,,,,Kentucky,Aggregate,,0
+21,,,,Kentucky,Aggregate,,5
 22,,,,Louisiana,Aggregate,,0
-23,,,,Maine,Aggregate,,15
-23,2.0,,,Maine,Aggregate,Congressional District 2,15
-23,1.0,,,Maine,Aggregate,Congressional District 1,15
-24,,,,Maryland,Aggregate,,5
-25,,,,Massachusetts,Aggregate,,0
+23,,,,Maine,Aggregate,,20
+23,2.0,,,Maine,Aggregate,Congressional District 2,20
+23,1.0,,,Maine,Aggregate,Congressional District 1,20
+24,,,,Maryland,Aggregate,,10
+25,,,,Massachusetts,Aggregate,,10
 26,,,,Michigan,Aggregate,,45
 27,,,,Minnesota,Aggregate,,30
 28,,,,Mississippi,Aggregate,,0
-29,,,,Missouri,Aggregate,,5
+29,,,,Missouri,Aggregate,,10
 30,,,,Montana,Aggregate,,15
-31,1.0,,,Nebraska,Aggregate,Congressional District 1,30
-31,2.0,,,Nebraska,Aggregate,Congressional District 2,30
-31,3.0,,,Nebraska,Aggregate,Congressional District 3,30
-31,,,,Nebraska,Aggregate,,30
-32,,,,Nevada,Aggregate,,45
+31,1.0,,,Nebraska,Aggregate,Congressional District 1,35
+31,2.0,,,Nebraska,Aggregate,Congressional District 2,35
+31,3.0,,,Nebraska,Aggregate,Congressional District 3,35
+31,,,,Nebraska,Aggregate,,35
+32,,,,Nevada,Aggregate,,60
 33,,,,New Hampshire,Aggregate,,40
 34,,,,New Jersey,Aggregate,,5
-35,,,,New Mexico,Aggregate,,10
-36,,,,New York,Aggregate,,35
-37,,,,North Carolina,Aggregate,,15
-38,,,,North Dakota,Aggregate,,5
+35,,,,New Mexico,Aggregate,,15
+36,,,,New York,Aggregate,,50
+37,,,,North Carolina,Aggregate,,20
+38,,,,North Dakota,Aggregate,,15
 39,,,,Ohio,Aggregate,,20
-40,,,,Oklahoma,Aggregate,,0
-41,,,,Oregon,Aggregate,,15
+40,,,,Oklahoma,Aggregate,,10
+41,,,,Oregon,Aggregate,,25
 42,,,,Pennsylvania,Aggregate,,70
-44,,,,Rhode Island,Aggregate,,0
-45,,,,South Carolina,Aggregate,,0
-46,,,,South Dakota,Aggregate,,0
+44,,,,Rhode Island,Aggregate,,5
+45,,,,South Carolina,Aggregate,,5
+46,,,,South Dakota,Aggregate,,15
 47,,,,Tennessee,Aggregate,,0
 48,,,,Texas,Aggregate,,15
-49,,,,Utah,Aggregate,,5
+49,,,,Utah,Aggregate,,10
 50,,,,Vermont,Aggregate,,5
 51,,,,Virginia,Aggregate,,10
 53,,,,Washington,Aggregate,,15
 54,,,,West Virginia,Aggregate,,5
-55,,,,Wisconsin,Aggregate,,60
+55,,,,Wisconsin,Aggregate,,65
 56,,,,Wyoming,Aggregate,,0
-55,,,,Wisconsin,Aggregate,,60
+55,,,,Wisconsin,Aggregate,,65
 56,,,,Wyoming,Aggregate,,0

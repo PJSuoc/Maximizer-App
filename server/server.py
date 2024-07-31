@@ -123,13 +123,12 @@ def faq_load():
 def get_involved():
     # Gets the candidates in the election from the state/local page
     if request.method == "POST":
-        print(request.form.get("candidates"), type(request.form.get("candidates")))
         candidates = request.form.get("candidates")
         candidates = json.loads(candidates)
     else:
+        logging.info("candidates mia")
         candidates = []
 
-    print(candidates, type(candidates))
     # Gets the candidate information from the candidate DB
     # Writes a nice HTML string for each candidate
     db = DB()

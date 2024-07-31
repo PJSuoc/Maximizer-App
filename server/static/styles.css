@@ -11,6 +11,7 @@ body {
     font-family: 'Arial'; 
     margin: 0; 
     padding: 0;
+    height: 100%;
 }
 
 .map-container {
@@ -31,9 +32,10 @@ body {
     right: 20px;
     width: 150px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, .6);
     border-radius: 5px;
     z-index: 2;
+    color: rgb(230, 213, 213);
 }
 
 /* Popup container */
@@ -41,7 +43,7 @@ body {
     position: relative;
     display: block;
     cursor: pointer;
-    color: #fff;
+    color: rgb(230, 213, 213);
   }
   
   /* The actual popup (appears on top) */
@@ -49,7 +51,7 @@ body {
     visibility: hidden;
     width: 300px;
     background-color: rgba(90, 90, 90);
-    color: #fff;
+    color: rgb(230, 213, 213);
     justify-content: center;
     text-align: center;
     border-radius: 10px;
@@ -86,12 +88,14 @@ body {
     color: #fff;
 }
 #infographic-btn {
-
-    background-color: rgba(90, 90, 90);
+    color: rgb(230, 213, 213);
+    background-color: rgba(60, 60, 60);
 }
 
 #detail-left {
+    position: relative;
     width: 100%;
+    min-height: 550px;
     margin: 0; 
     padding: 0;
 }
@@ -140,8 +144,9 @@ body {
 }
 
 #dono-btn {
-    color: rgb(255, 147, 7);
-    border-color: rgb(255, 147, 7);
+    color: rgb(225, 130, 0);
+    border-color: rgb(200, 200, 200);
+    background-color: rgb(235, 235, 235);
 }
 
 #social-item {
@@ -162,9 +167,10 @@ body {
 }
 
 #candidate {
-    height: 400px;
+    min-height: 450px;
     margin-right: 10px;
     margin-left: 10px;
+    padding-bottom: 25px;
     background-color: rgb(240,240,240);
 
 }
@@ -173,7 +179,6 @@ body {
     text-align: center;
     justify-content: center;
     list-style-type: none;
-    background-color: rgb(240,240,240);
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
@@ -188,6 +193,16 @@ body {
     list-style-type: none;
     font-family: "Monaco", monospace;
     color: black;
+}
+
+#denier {
+    font-size: 16px;
+    justify-content: center;
+    margin: 10px;
+    margin-bottom: 10%;
+    list-style-type: none;
+    font-family: "Monaco", monospace;
+    color: maroon;
 }
 
 #campbtn {
@@ -229,7 +244,17 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    height: auto; 
+    width: auto; 
+    height: 250px;
+}
+#vp-math{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto; 
+    width: auto; 
+    width: 700px;
 }
 
 #logo{
