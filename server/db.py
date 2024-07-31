@@ -31,24 +31,24 @@ Class for building database functionalities.
 # File pathways for Production function
 if Path("config.py").is_file(): # Pathways for local testing
     allshape_path = Path("static/data/shp_imports/all_shapes/all_shapes.shp")
-    candidate_path = Path("static/data/csv_imports/candidates.csv")
-    president_path = Path("static/data/csv_imports/president.csv")
-    senate_path = Path("static/data/csv_imports/senate.csv")
-    house_path = Path("static/data/csv_imports/congress_house.csv")
-    governor_path = Path("static/data/csv_imports/governor.csv")
-    s_upper_path = Path("static/data/csv_imports/state_upper_legislature.csv")
-    s_lower_path = Path("static/data/csv_imports/state_lower_legislature.csv")
-    ballot_path = Path("static/data/csv_imports/ballot_initiative.csv")
+    candidate_path = Path("static/data/calculated_files/csvs/candidates.csv")
+    president_path = Path("static/data/calculated_files/csvs/president.csv")
+    senate_path = Path("static/data/calculated_files/csvs/senate.csv")
+    house_path = Path("static/data/calculated_files/csvs/congress_house.csv")
+    governor_path = Path("static/data/calculated_files/csvs/governor.csv")
+    s_upper_path = Path("static/data/calculated_files/csvs/state_upper_legislature.csv")
+    s_lower_path = Path("static/data/calculated_files/csvs/state_lower_legislature.csv")
+    ballot_path = Path("static/data/calculated_files/csvs/ballot_initiative.csv")
 else: # slightly adjusted pathways for Heroku deployment
     allshape_path = Path("server/static/data/shp_imports/all_shapes/all_shapes.shp")
-    candidate_path = Path("server/static/data/csv_imports/candidates.csv")
-    president_path = Path("server/static/data/csv_imports/president.csv")
-    senate_path = Path("server/static/data/csv_imports/senate.csv")
-    house_path = Path("server/static/data/csv_imports/congress_house.csv")
-    governor_path = Path("server/static/data/csv_imports/governor.csv")
-    s_upper_path = Path("server/static/data/csv_imports/state_upper_legislature.csv")
-    s_lower_path = Path("server/static/data/csv_imports/state_lower_legislature.csv")
-    ballot_path = Path("server/static/data/csv_imports/ballot_initiative.csv")
+    candidate_path = Path("server/static/data/calculated_files/csvs/candidates.csv")
+    president_path = Path("server/static/data/calculated_files/csvs/president.csv")
+    senate_path = Path("server/static/data/calculated_files/csvs/senate.csv")
+    house_path = Path("server/static/data/calculated_files/csvs/congress_house.csv")
+    governor_path = Path("server/static/data/calculated_files/csvs/governor.csv")
+    s_upper_path = Path("server/static/data/calculated_files/csvs/state_upper_legislature.csv")
+    s_lower_path = Path("server/static/data/calculated_files/csvs/state_lower_legislature.csv")
+    ballot_path = Path("server/static/data/calculated_files/csvs/ballot_initiative.csv")
 
 
 ## Filepath Debugging Code
@@ -87,7 +87,7 @@ class DB:
         self.elections["congress"] = self.elections["congress"].fillna("")
         self.elections["s_upper"] = self.elections["s_upper"].fillna("")
         self.elections["s_lower"] = self.elections["s_lower"].fillna("")
-        self.elections["district_name"] = self.elections["district_name"].fillna("")
+        self.elections["election_name"] = self.elections["election_name"].fillna("")
         self.elections["voter_power_val"] = self.elections["voter_power"].astype(float)
         self.elections["voter_power"] = self.elections["voter_power"].fillna("N/A")
         
@@ -123,6 +123,8 @@ class DB:
     def nearby_voting_impact(self, location, layer, fmid):
         '''
         Function set for getting the input layers for a specific geolocation
+        fmid: int that is used for elements of the detail page, required to get
+            unique links in place for each election
         '''
 
         # Gets nearby shapes to location input
@@ -220,7 +222,7 @@ class DB:
         
 
         for i, election in election_list.iterrows():
-            state_name = election["state_name"] + ", " + election["district_name"]
+            state_name = election["state_name"] + ", " + election["election_name"]
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
             fmid = "form_" + str(form_id)

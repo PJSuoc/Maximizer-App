@@ -1,0 +1,70 @@
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
+01,02,nan,nan,Alabama,House,Congressional District 2,42.0
+02,at-large,nan,nan,Alaska,House,Congressional District (at Large),33.0
+04,01,nan,nan,Arizona,House,Congressional District 1,61.0
+04,06,nan,nan,Arizona,House,Congressional District 6,57.0
+06,47,nan,nan,California,House,Congressional District 47,53.0
+06,45,nan,nan,California,House,Congressional District 45,63.0
+06,09,nan,nan,California,House,Congressional District 9,33.0
+06,49,nan,nan,California,House,Congressional District 49,63.0
+06,03,nan,nan,California,House,Congressional District 3,31.0
+06,40,nan,nan,California,House,Congressional District 40,47.0
+06,13,nan,nan,California,House,Congressional District 13,33.0
+06,22,nan,nan,California,House,Congressional District 22,21.0
+06,27,nan,nan,California,House,Congressional District 27,34.0
+06,41,nan,nan,California,House,Congressional District 41,40.0
+08,03,nan,nan,Colorado,House,Congressional District 3,24.0
+08,08,nan,nan,Colorado,House,Congressional District 8,100.0
+09,05,nan,nan,Connecticut,House,Congressional District 5,58.0
+12,09,nan,nan,Florida,House,Congressional District 9,10.0
+12,23,nan,nan,Florida,House,Congressional District 23,18.0
+12,13,nan,nan,Florida,House,Congressional District 13,31.0
+17,17,nan,nan,Illinois,House,Congressional District 17,53.0
+18,01,nan,nan,Indiana,House,Congressional District 1,15.0
+19,03,nan,nan,Iowa,House,Congressional District 3,69.0
+19,01,nan,nan,Iowa,House,Congressional District 1,65.0
+20,03,nan,nan,Kansas,House,Congressional District 3,95.0
+23,02,nan,nan,Maine,House,Congressional District 2,61.0
+24,06,nan,nan,Maryland,House,Congressional District 6,99.0
+26,10,nan,nan,Michigan,House,Congressional District 10,100.0
+26,03,nan,nan,Michigan,House,Congressional District 3,88.0
+26,07,nan,nan,Michigan,House,Congressional District 7,100.0
+26,08,nan,nan,Michigan,House,Congressional District 8,76.0
+27,02,nan,nan,Minnesota,House,Congressional District 2,64.0
+30,01,nan,nan,Montana,House,Congressional District 1,57.0
+31,02,nan,nan,Nebraska,House,Congressional District 2,65.0
+32,03,nan,nan,Nevada,House,Congressional District 3,45.0
+32,01,nan,nan,Nevada,House,Congressional District 1,31.0
+32,04,nan,nan,Nevada,House,Congressional District 4,30.0
+33,01,nan,nan,New Hampshire,House,Congressional District 1,25.0
+33,02,nan,nan,New Hampshire,House,Congressional District 2,51.0
+34,07,nan,nan,New Jersey,House,Congressional District 7,48.0
+35,02,nan,nan,New Mexico,House,Congressional District 2,44.0
+36,18,nan,nan,New York,House,Congressional District 18,69.0
+36,22,nan,nan,New York,House,Congressional District 22,51.0
+36,03,nan,nan,New York,House,Congressional District 3,79.0
+36,01,nan,nan,New York,House,Congressional District 1,30.0
+36,04,nan,nan,New York,House,Congressional District 4,48.0
+36,17,nan,nan,New York,House,Congressional District 17,55.0
+36,19,nan,nan,New York,House,Congressional District 19,90.0
+37,01,nan,nan,North Carolina,House,Congressional District 1,92.0
+39,01,nan,nan,Ohio,House,Congressional District 1,99.0
+39,09,nan,nan,Ohio,House,Congressional District 9,96.0
+39,13,nan,nan,Ohio,House,Congressional District 13,87.0
+41,06,nan,nan,Oregon,House,Congressional District 6,33.0
+41,04,nan,nan,Oregon,House,Congressional District 4,25.0
+41,05,nan,nan,Oregon,House,Congressional District 5,63.0
+42,17,nan,nan,Pennsylvania,House,Congressional District 17,33.0
+42,10,nan,nan,Pennsylvania,House,Congressional District 10,57.0
+42,01,nan,nan,Pennsylvania,House,Congressional District 1,66.0
+42,07,nan,nan,Pennsylvania,House,Congressional District 7,90.0
+42,08,nan,nan,Pennsylvania,House,Congressional District 8,98.0
+48,28,nan,nan,Texas,House,Congressional District 28,23.0
+48,34,nan,nan,Texas,House,Congressional District 34,7.0
+48,15,nan,nan,Texas,House,Congressional District 15,83.0
+51,07,nan,nan,Virginia,House,Congressional District 7,85.0
+51,02,nan,nan,Virginia,House,Congressional District 2,78.0
+53,08,nan,nan,Washington,House,Congressional District 8,100.0
+53,03,nan,nan,Washington,House,Congressional District 3,42.0
+55,03,nan,nan,Wisconsin,House,Congressional District 3,85.0
+55,01,nan,nan,Wisconsin,House,Congressional District 1,97.0

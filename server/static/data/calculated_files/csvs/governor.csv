@@ -1,0 +1,52 @@
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
+33,nan,nan,nan,New Hampshire,Governor,,100.0
+37,nan,nan,nan,North Carolina,Governor,,100.0
+10,nan,nan,nan,Delaware,Governor,,20.0
+18,nan,nan,nan,Indiana,Governor,,20.0
+29,nan,nan,nan,Missouri,Governor,,20.0
+30,nan,nan,nan,Montana,Governor,,50.0
+38,nan,nan,nan,North Dakota,Governor,,20.0
+49,nan,nan,nan,Utah,Governor,,20.0
+50,nan,nan,nan,Vermont,Governor,,50.0
+53,nan,nan,nan,Washington,Governor,,50.0
+54,nan,nan,nan,West Virginia,Governor,,20.0
+01,nan,nan,nan,Alabama,Governor,,
+02,nan,nan,nan,Alaska,Governor,,
+04,nan,nan,nan,Arizona,Governor,,
+05,nan,nan,nan,Arkansas,Governor,,
+06,nan,nan,nan,California,Governor,,
+08,nan,nan,nan,Colorado,Governor,,
+09,nan,nan,nan,Connecticut,Governor,,
+11,nan,nan,nan,District of Columbia,Governor,,
+12,nan,nan,nan,Florida,Governor,,
+13,nan,nan,nan,Georgia,Governor,,
+15,nan,nan,nan,Hawaii,Governor,,
+16,nan,nan,nan,Idaho,Governor,,
+17,nan,nan,nan,Illinois,Governor,,
+19,nan,nan,nan,Iowa,Governor,,
+20,nan,nan,nan,Kansas,Governor,,
+21,nan,nan,nan,Kentucky,Governor,,
+22,nan,nan,nan,Louisiana,Governor,,
+23,nan,nan,nan,Maine,Governor,,
+24,nan,nan,nan,Maryland,Governor,,
+25,nan,nan,nan,Massachusetts,Governor,,
+26,nan,nan,nan,Michigan,Governor,,
+27,nan,nan,nan,Minnesota,Governor,,
+28,nan,nan,nan,Mississippi,Governor,,
+31,nan,nan,nan,Nebraska,Governor,,
+32,nan,nan,nan,Nevada,Governor,,
+34,nan,nan,nan,New Jersey,Governor,,
+35,nan,nan,nan,New Mexico,Governor,,
+36,nan,nan,nan,New York,Governor,,
+39,nan,nan,nan,Ohio,Governor,,
+40,nan,nan,nan,Oklahoma,Governor,,
+41,nan,nan,nan,Oregon,Governor,,
+42,nan,nan,nan,Pennsylvania,Governor,,
+44,nan,nan,nan,Rhode Island,Governor,,
+45,nan,nan,nan,South Carolina,Governor,,
+46,nan,nan,nan,South Dakota,Governor,,
+47,nan,nan,nan,Tennessee,Governor,,
+48,nan,nan,nan,Texas,Governor,,
+51,nan,nan,nan,Virginia,Governor,,
+55,nan,nan,nan,Wisconsin,Governor,,
+56,nan,nan,nan,Wyoming,Governor,,

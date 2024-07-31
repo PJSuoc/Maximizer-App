@@ -125,7 +125,8 @@ h3 {
                 
                 <label for="layer" style="margin-top: 15px;">Where do voters have the most power? </label>
                 <select id="layer" name="layer">
-                    <option value="presidential" selected>Presidential Race</option>
+                    <option value="aggregate" selected>Overall Voter Power</option>
+                    <option value="presidential">Presidential Race</option>
                     <option value="congressional">Senate Races</option>
                     <option value="house">House Races</option>
                     <option value="gubernatorial">Gubernatorial Races</option>
@@ -179,11 +180,12 @@ h3 {
         });
 
         const layers = {
-            presidential: 'static/data/geojson_imports/geojson_final/president.geojson',
-            congressional: 'static/data/geojson_imports/geojson_final/senate.geojson',
+            aggregate: 'static/data/calculated_files/geojsons/aggregate.geojson',
+            presidential: 'static/data/calculated_files/geojsons/president.geojson',
+            congressional: 'static/data/calculated_files/geojsons/senate.geojson',
             house: 'static/data/geojson_imports/geojson_final/house.geojson',
-            gubernatorial: 'static/data/geojson_imports/geojson_final/governor.geojson',
-            ballot_all: 'static/data/geojson_imports/ballot_initiatives_main.geojson',
+            gubernatorial: 'static/data/calculated_files/geojsons/governor.geojson',
+            ballot_all: 'static/data/geojson_imports/geojson_final/ballot_initiatives_main.geojson',
             state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
             state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
             
@@ -192,7 +194,11 @@ h3 {
         function updateLegend(layerId) {
         var gradient = '';
         switch(layerId) {
-            case 'presidential':
+        
+        case 'aggregate':
+            gradient = 'linear-gradient(to right, #feedde, #fdbe85, #EF6548, #D7301F)';
+            break;   
+        case 'presidential':
             gradient = 'linear-gradient(to right, #feedde, #fdbe85, #EF6548, #D7301F)';
             break;
         case 'congressional':
@@ -201,14 +207,12 @@ h3 {
         case 'house':
             gradient = 'linear-gradient(to right, #edf8e9, #bae4b3, #74c476, #238b45)';
             break;
-            case 'gubernatorial':
+        case 'gubernatorial':
             gradient = 'linear-gradient(to right, #fffac2, #fff68f, #fff25c, #ffdc09)';
             break;
         case 'ballot_all':
             gradient = 'linear-gradient(to right, #c7eae5, #01665e)'; 
             break;
-        
-
         case 'state_leg_up':
             gradient = 'linear-gradient(to right, #ffffcc, #225ea8)'; 
             break;
@@ -224,7 +228,7 @@ h3 {
     }
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
-        let currentLayerId = 'presidential'; // Track the current layer
+        let currentLayerId = 'aggregate'; // Track the current layer
 
         const popup = new mapboxgl.Popup({
             closeButton: false,
@@ -292,7 +296,11 @@ h3 {
             'case',
             ['==', ['get', 'voter_power'], null], '#D3D3D3', //  undefined voter_power is grey
             ['==', ['get', 'voter_power'], 0], '#D3D3D3', //  zero voter_power is also grey
-    
+
+            ['==', layerId, 'aggregate'], [
+                'interpolate', ['linear'], ['get', 'voter_power'],
+                1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'
+            ],
             ['==', layerId, 'presidential'], [
                 'interpolate', ['linear'], ['get', 'voter_power'],
                 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'
@@ -434,7 +442,7 @@ h3 {
         // Initial layer setup on map load
         map.on('load', function () {
             //map.resize();
-        addGeoJsonLayer('presidential');
+        addGeoJsonLayer('aggregate');
     
 
 

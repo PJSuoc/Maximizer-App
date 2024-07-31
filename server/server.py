@@ -152,12 +152,13 @@ def election_delivery_function(location):
         
     # Dictionary to store information from shape lookup
     lookup_dict = {"elections": {},"layers": {}}
-    lookup_components = ["Presidential","Senate","House", "State Leg (Upper)",
+    lookup_components = ["Presidential","Senate","House", "Governor", "State Leg (Upper)",
                               "State Leg (Lower)", "Ballot Initiative"]
     ballot_initiative_types = ["Reproductive Rights", "Democracy Repair",
-                                "Direct Democracy", "Whatever else"]
+                                "Direct Democracy", "Civil Liberties"]
+    
+    election_count = 0 # Used for setting up election detail buttons
     # Gets information to place in dictionary
-    election_count = 0
     for i in lookup_components:
         Nelections, shapelayer, election_count = db.nearby_voting_impact(location, i, election_count)
         lookup_dict["elections"][i] = Nelections
@@ -173,6 +174,7 @@ def election_delivery_function(location):
 
     # Get Lat/Long coordinates for centering
     if type(location) != type([]):
+        location = location + ", USA"
         location =  gmaps.geocode(location)
     lat = location[0]["geometry"]["location"]["lat"]
     long = location[0]["geometry"]["location"]["lng"]
@@ -184,14 +186,14 @@ def election_delivery_function(location):
                 house_list = lookup_dict["elections"]["House"], 
                 state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
                 state_senate_list = lookup_dict["elections"]["State Leg (Upper)"],
-                #governor_list = lookup_dict["elections"]["Governor"],
+                governor_list = lookup_dict["elections"]["Governor"],
                 ballot_list = lookup_dict["elections"]["Ballot Initiative"],
                 pres_layer = lookup_dict["layers"]["Presidential"],
                 senate_layer = lookup_dict["layers"]["Senate"], 
                 house_layer = lookup_dict["layers"]["House"], 
                 s_house_layer = lookup_dict["layers"]["State Leg (Lower)"],
                 s_sen_layer = lookup_dict["layers"]["State Leg (Upper)"],
-                #governor_layer = lookup_dict["layers"]["Governor"],
+                governor_layer = lookup_dict["layers"]["Governor"],
                 ballot_layer = lookup_dict["layers"]["Ballot Initiative"],
                 lat = lat,
                 long = long,
