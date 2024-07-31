@@ -1,8 +1,8 @@
-name,party,state_name,state,congress,s_upper,s_lower,race_type,district_name,campaign_link,donation_link,default_link
-Joe Biden,Democratic Party,Alabama,01,,,,Presidential,,https://joebiden.com/,,
-Joe Biden,Democratic Party,Alaska,02,,,,President,,https://joebiden.com/,,
-Joe Biden,Democratic Party,Arizona,04,,,,President,,https://joebiden.com/,,
-Joe Biden,Democratic Party,Arkansas,05,,,,President,,https://joebiden.com/,,
+name,party,state_name,state,congress,s_upper,s_lower,race_type,election_name,campaign_link,donation_link,election_denier
+Joe Biden,Democratic Party,Alabama,01,1,1,15,Presidential,,https://joebiden.com/,,
+Joe Biden,Democratic Party,Alaska,02,,,,Presidential,,https://joebiden.com/,,
+Joe Biden,Democratic Party,Arizona,04,,,,Presidential,,https://joebiden.com/,,
+Joe Biden,Democratic Party,Arkansas,05,,,,Presidential,,https://joebiden.com/,,
 Joe Biden,Democratic Party,California,06,,,,President,,https://joebiden.com/,,
 Joe Biden,Democratic Party,Colorado,08,,,,President,,https://joebiden.com/,,
 Joe Biden,Democratic Party,Connecticut,09,,,,President,,https://joebiden.com/,,
@@ -57,27 +57,26 @@ Joe Biden,Democratic Party,Washington,53,,,,President,,https://joebiden.com/,,
 Joe Biden,Democratic Party,West Virginia,54,,,,President,,https://joebiden.com/,,
 Joe Biden,Democratic Party,Wisconsin,55,,,,President,,https://joebiden.com/,,
 Joe Biden,Democratic Party,Wyoming,56,,,,President,,https://joebiden.com/,,
-Donald Trump,Republican Party,Alabama,01,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Alaska,02,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Arizona,04,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Arkansas,05,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,California,06,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Colorado,08,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Connecticut,09,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Delaware,10,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,District of Columbia,11,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Florida,12,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Georgia,13,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Hawaii,15,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Idaho,16,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Illinois,17,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Indiana,18,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Iowa,19,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Kansas,20,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Kentucky,21,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Louisiana,22,,,,President,,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Maine,23,1,,,President,Congressional District 1,https://www.donaldjtrump.com/,,
-Donald Trump,Republican Party,Maine,23,1,,,President,Congressional District 1,https://www.donaldjtrump.com/,,
+Donald Trump,Republican Party,Alabama,01,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Alaska,02,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Arizona,04,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Arkansas,05,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,California,06,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Colorado,08,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Connecticut,09,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Delaware,10,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,District of Columbia,11,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Florida,12,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Georgia,13,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Hawaii,15,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Idaho,16,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Illinois,17,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Indiana,18,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Kansas,20,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Kentucky,21,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Louisiana,22,,,,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Maine,23,1,,,President,Congressional District 1,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,Maine,23,1,,,President,Congressional District 1,https://www.donaldjtrump.com/,,1
 Donald Trump,Republican Party,Maine,23,2,,,President,Congressional District 2,https://www.donaldjtrump.com/,,
 Donald Trump,Republican Party,Maine,23,2,,,President,Congressional District 2,https://www.donaldjtrump.com/,,
 Donald Trump,Republican Party,Maryland,24,,,,President,,https://www.donaldjtrump.com/,,
@@ -321,9 +320,9 @@ N/A,Republican Party,Washington,53,8,,,House,Congressional District 8,N/A,,
 N/A,Republican Party,Washington,53,3,,,House,Congressional District 3,N/A,,
 Derrick Van Orden,Republican Party,Wisconsin,55,3,,,House,Congressional District 3,https://www.vanordenforcongress.com/,,
 Bryan Steil,Republican Party,Wisconsin,55,1,,,House,Congressional District 1,https://www.bryansteil.com/,,
-Jovan Jackson,Democratic Party,Nevada,32,,,006,State Leg (Lower),State House District 6,https://www.jovanjackson.com/,,
-Nephi Oliva,Republican Party,Nevada,32,,,006,State Leg (Lower),State House District 6,https://ballotpedia.org/Nephi_Oliva#Campaign_themes,,
-Reuben D'Silva,Democratic Party,Nevada,32,,,028,State Leg (Lower),State House District 28,https://dsilvafornevada.com/,,
-Unknown,Republican Party,Nevada,32,,,028,State Leg (Lower),State House District 28,Unknown,,
-Linda Hunt,Democratic Party,Nevada,32,,,017,State Leg (Lower),State House District 17,https://lindafornevada.com/,,
-Robert Olson,Republican Party,Nevada,32,,,017,State Leg (Lower),State House District 17,https://bobolsonfornevada.com/,,
+Jovan Jackson,Democratic Party,Nevada,32,,,6,State Leg (Lower),State House District 6,https://www.jovanjackson.com/,,
+Nephi Oliva,Republican Party,Nevada,32,,,6,State Leg (Lower),State House District 6,https://ballotpedia.org/Nephi_Oliva#Campaign_themes,,
+Reuben D'Silva,Democratic Party,Nevada,32,,,28,State Leg (Lower),State House District 28,https://dsilvafornevada.com/,,
+Unknown,Republican Party,Nevada,32,,,28,State Leg (Lower),State House District 28,Unknown,,
+Linda Hunt,Democratic Party,Nevada,32,,,17,State Leg (Lower),State House District 17,https://lindafornevada.com/,,
+Robert Olson,Republican Party,Nevada,32,,,17,State Leg (Lower),State House District 17,https://bobolsonfornevada.com/,,
