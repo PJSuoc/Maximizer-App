@@ -60,7 +60,8 @@ def state_vp(df):
         b_vp = b_df.shape[0]
 
         # 3 points per su, sl, if(ballot)
-        state_vp = (p_vp + s_vp + h_vp + g_vp + min(4, su_vp) + min(4, sl_vp) + min(3, b_vp)) * 5
+        state_vp = (p_vp + s_vp + h_vp + g_vp + min(4, su_vp) + min(4, sl_vp) + min(3, b_vp))
+        state_vp = round(state_vp * (100/15)) #Temporary VP Normalizer
 
         svp_df.loc[svp_df["state_name"] == state, ["voter_power"]] = state_vp
     
