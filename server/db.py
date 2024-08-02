@@ -79,7 +79,7 @@ class DB:
         s_lower = pd.read_csv(s_lower_path, dtype=str)
         ballot = pd.read_csv(ballot_path, dtype=str)
         # Merges election CSVs into a single dataframe for calculations
-        df_list = [president, senate, congress, s_upper, s_lower, ballot]
+        df_list = [president, senate, congress, governor, s_upper, s_lower, ballot]
         self.elections = pd.concat(df_list, ignore_index=True)
         # Elections data cleaning/adjusting
         self.elections["eid"] = self.elections.index
@@ -223,7 +223,7 @@ class DB:
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
             fmid = "form_" + str(form_id)
-            print(cand_list)
+            logging.info(cand_list)
             election_str = name_front + state_name + item_back + vp_front + vpstr + election_vp + item_back + \
                 btn_front + button_front + fmid + button_mid + cand_list + button_mid2 + fmid + button_back
             completed_string = completed_string + election_front + election_str
@@ -286,8 +286,18 @@ class DB:
 
         #creates lists of candidate ids and names/affiliations for each election
         for i, election in self.elections.iterrows():
-                matched = matcher[matcher["eid"] == election["eid"]]
+                
+                # Does additional filtration for Ballot Initiatives
+                # Otherwise just gets candidate matches for that election
+                if election["race_type"] == "Ballot Initiative":
+                    matched = matcher[matcher["eid"] == election["eid"]]
+                    matched = matched[matched["election_name_y"] == election["election_name"]]
+                else:
+                    matched = matcher[matcher["eid"] == election["eid"]]
+
                 cand_id_list.append(list(matched["cid"]))
+
+                # Explicitly for adding a string to geojsons
                 candstring = ""
                 for j, match in matched.iterrows():
                     candstring = candstring + " " + match["party"] + ": " + match["name"]
