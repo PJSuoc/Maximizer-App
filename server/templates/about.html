@@ -1,24 +1,57 @@
 {% extends "layout.html" %}
 
-<!-- INFORMATION PAGE TEMPLATE // ABOUT PAGE -->
+<!-- INFORMATION PAGE // ABOUT PAGE -->
+<style>
 
+</style>
 {% block main %}
 <body>
-    <div class="container" name = "info-page">
-        <div class="container">
-            What is Vote Maximizer?
+    <div class="container" id= "info-page">
+        <div class="container" id="info-title">
+            Vote Maximizer
+            <div class="container" id="info-blurb">
+                Vote Maximizer is a web app designed to bring attention to competitive races and topics to repair our democracy in 2024. 
+                Because American voters want a government that adequately represents its people, this project is designed for democratic needs. 
+                We combine ballot information and campaigning efforts, including donations, to create data-driven pivot points in key elections and ballot questions.
+                
+                Our main feature involves a built-in voter power metric. Across election races, voter power can tell you where your vote, 
+                your campaign volunteering, and your political donations will have the most impact. It does this by measuring critical elections, 
+                regardless of party preference, that can swing the balance of legislatures.
+            </div>
         </div>
-        <div class="container">
-            What is the Electoral Innovation Lab?
+
+        <div class="container" id="info-title">
+            The Electoral Innovation Lab
+            <div class="container" id="info-blurb">
+                Our mission is to to build a science of data-driven democracy reform using math, law, and practical strategies for change.
+                The goal of this work is to help voters gain and maintain the power to choose their elected officials instead of politicians 
+                suppressing voters' rights to fair and meaningful representation.
+            </div>
         </div>
-        <div class="container">
-            Where does our data come from?
+
+        <div class="container" id="info-title">
+            Our Data
+            <div class="container" id="info-blurb">
+                Our data is derived from the Princeton Gerrymander Project's poll scraping efforts, CNalysis estimates of legislative control likelihood, and
+                hand-gathered information on candidates, ballot initiatives, and more.
+            </div>
         </div>
-        <div class="container">
+
+        <div class="container" id="info-title">
             Our Team
+            <div class="container" id="info-blurb">
+                People Info (or just a link to the EIL people page)
+            </div>
         </div>
-        <div class="container">
-            Other Websites, Donation Links, etc.
+
+        <div class="container" id="info-title">
+            Check out and support the EIL:
+            <div class="container" id="info-blurb">
+                <a href="https://www.electoral-lab.org/" name="logo"><img src="static/images/eil_logo.png" width="250" height="100"></a>
+            </div>
+            <div class="container" id="info-blurb">
+                <a class="btn btn-success btn-lg" href="https://www.paypal.com/donate/?hosted_button_id=CUTEBG7A85LT6" role="button">Donate to the EIL</a>
+            </div>
         </div>
     </div>
 </body>

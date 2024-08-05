@@ -1,12 +1,14 @@
-from os import path
+import os
 import logging
 import sqlite3 as sqlite
 import pandas as pd
 import geopandas as gpd
 from shapely import Point
+import pathlib
 from pathlib import Path
 import sys
 import json
+import platform
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -26,31 +28,42 @@ STATEDICT = {
 """
 Class for building database functionalities.
 """
+# File pathways for Production function
+if Path("config.py").is_file(): # Pathways for local testing
+    allshape_path = Path("static/data/shp_imports/all_shapes/all_shapes.shp")
+    candidate_path = Path("static/data/calculated_files/csvs/candidates.csv")
+    president_path = Path("static/data/calculated_files/csvs/president.csv")
+    senate_path = Path("static/data/calculated_files/csvs/senate.csv")
+    house_path = Path("static/data/calculated_files/csvs/congress_house.csv")
+    governor_path = Path("static/data/calculated_files/csvs/governor.csv")
+    s_upper_path = Path("static/data/calculated_files/csvs/state_upper_legislature.csv")
+    s_lower_path = Path("static/data/calculated_files/csvs/state_lower_legislature.csv")
+    ballot_path = Path("static/data/calculated_files/csvs/ballot_initiative.csv")
+else: # slightly adjusted pathways for Heroku deployment
+    allshape_path = Path("server/static/data/shp_imports/all_shapes/all_shapes.shp")
+    candidate_path = Path("server/static/data/calculated_files/csvs/candidates.csv")
+    president_path = Path("server/static/data/calculated_files/csvs/president.csv")
+    senate_path = Path("server/static/data/calculated_files/csvs/senate.csv")
+    house_path = Path("server/static/data/calculated_files/csvs/congress_house.csv")
+    governor_path = Path("server/static/data/calculated_files/csvs/governor.csv")
+    s_upper_path = Path("server/static/data/calculated_files/csvs/state_upper_legislature.csv")
+    s_lower_path = Path("server/static/data/calculated_files/csvs/state_lower_legislature.csv")
+    ballot_path = Path("server/static/data/calculated_files/csvs/ballot_initiative.csv")
+
+
+## Filepath Debugging Code
+'''
+p1 = Path("config.py")
+print("Existence:", os.path.exists(p1))
+if p1.is_file():
+    print("Found this file:", p1)
+else:
+    print("Did not find p1:", p1)
+'''
 
 class DB:
-    def __init__(self, connection):
-        self.conn = connection
-    
-    def import_data(self):
-        '''
-        Imports all necessary shapefiles for calculations.
-        '''
-        #self.states = gpd.read_file("./static/data/shp_imports/cb_2023_us_state_500k/cb_2023_us_state_500k.shp")
-        #self.congress = gpd.read_file("./static/data/shp_imports/cb_2023_us_cd118_500k/cb_2023_us_cd118_500k.shp")
-        #self.s_upper = gpd.read_file("./static/data/shp_imports/cb_2023_us_sldu_500k/cb_2023_us_sldu_500k.shp")
-        #self.s_lower = gpd.read_file("./static/data/shp_imports/cb_2023_us_sldl_500k/cb_2023_us_sldl_500k.shp")
-        self.allshapes = gpd.read_file("./static/data/shp_imports/all_shapes/all_shapes.shp")
-        self.elections = pd.read_csv("./static/data/csv_imports/fakedata.csv", dtype=str)
-
-        #Clean NA's from imported shape matching files
-        self.elections["state"] = self.elections["state"].fillna("")
-        self.elections["congress"] = self.elections["congress"].fillna("")
-        self.elections["s_upper"] = self.elections["s_upper"].fillna("")
-        self.elections["s_lower"] = self.elections["s_lower"].fillna("")
-        self.elections["voter_power_val"] = self.elections["voter_power"].astype(float)
-        self.elections["voter_power"] = self.elections["voter_power"].fillna("N/A")
-        self.allshapes = self.allshapes.fillna("")
-        return self.elections, self.allshapes
+    def __init__(self):
+        pass
     
     def import_data_v2(self):
         '''
@@ -58,12 +71,13 @@ class DB:
         for website calculations.
         '''
         # Elections CSVs, separated for ease of maintenance/updates
-        president = pd.read_csv("static/data/csv_imports/president.csv", dtype=str)
-        senate = pd.read_csv("static/data/csv_imports/senate.csv", dtype=str)
-        congress = pd.read_csv("static/data/csv_imports/congress_house.csv", dtype=str)
-        s_upper = pd.read_csv("static/data/csv_imports/state_upper_legislature.csv", dtype=str)
-        s_lower = pd.read_csv("static/data/csv_imports/state_lower_legislature.csv", dtype=str)
-        ballot = pd.read_csv("static/data/csv_imports/ballot_initiative.csv", dtype=str)
+        president = pd.read_csv(president_path, dtype=str)
+        senate = pd.read_csv(senate_path, dtype=str)
+        congress = pd.read_csv(house_path, dtype=str)
+        governor = pd.read_csv(governor_path, dtype=str)
+        s_upper = pd.read_csv(s_upper_path, dtype=str)
+        s_lower = pd.read_csv(s_lower_path, dtype=str)
+        ballot = pd.read_csv(ballot_path, dtype=str)
         # Merges election CSVs into a single dataframe for calculations
         df_list = [president, senate, congress, s_upper, s_lower, ballot]
         self.elections = pd.concat(df_list, ignore_index=True)
@@ -73,12 +87,12 @@ class DB:
         self.elections["congress"] = self.elections["congress"].fillna("")
         self.elections["s_upper"] = self.elections["s_upper"].fillna("")
         self.elections["s_lower"] = self.elections["s_lower"].fillna("")
-        self.elections["district_name"] = self.elections["district_name"].fillna("")
+        self.elections["election_name"] = self.elections["election_name"].fillna("")
         self.elections["voter_power_val"] = self.elections["voter_power"].astype(float)
         self.elections["voter_power"] = self.elections["voter_power"].fillna("N/A")
         
         # Candidates CSV
-        self.candidates = pd.read_csv("static/data/csv_imports/candidates.csv", dtype=str)
+        self.candidates = pd.read_csv(candidate_path, dtype=str)
         self.candidates["cid"] = self.candidates.index
         self.candidates["state"] = self.candidates["state"].fillna("")
         self.candidates["congress"] = self.candidates["congress"].fillna("")
@@ -88,7 +102,7 @@ class DB:
         self.candidates["party"] = self.candidates["party"].fillna("")
 
         # All Shapes shapefile for locating elections
-        self.allshapes = gpd.read_file("./static/data/shp_imports/all_shapes/all_shapes.shp")
+        self.allshapes = gpd.read_file(allshape_path)
         self.allshapes["state"] = self.allshapes["state"].fillna("")
         self.allshapes["congress"] = self.allshapes["congress"].fillna("")
         self.allshapes["s_upper"] = self.allshapes["s_upper"].fillna("")
@@ -102,12 +116,15 @@ class DB:
     def grab_dataframes(self, elections, allshapes, candidates):
         # Pulls dataframes from memory to use for calculation
         self.elections = elections
+        print("electlen", elections.shape[0])
         self.allshapes = allshapes
         self.candidates = candidates
 
-    def nearby_voting_impact(self, location, layer):
+    def nearby_voting_impact(self, location, layer, fmid):
         '''
         Function set for getting the input layers for a specific geolocation
+        fmid: int that is used for elements of the detail page, required to get
+            unique links in place for each election
         '''
 
         # Gets nearby shapes to location input
@@ -121,8 +138,8 @@ class DB:
         
         # Get the set of elections for the shapes and filter them for the output
         clean_elections = self.voter_power_filter(nearby_shapes, layer)
-        
-        election_string = self.detail_list_constructor(clean_elections)
+
+        election_string, fmid = self.detail_list_constructor(clean_elections, fmid)
 
         # Converts specific election types shapes to geojson for MapBox
         clean_elections.reset_index(drop = True)
@@ -130,7 +147,7 @@ class DB:
        
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
         layerjson = clean_elections.to_json()
-        return election_string, layerjson
+        return election_string, layerjson, fmid
     
     def shapes_near_location(self, location):
         shape = self.allshapes # Temporary, in the future will be the mergeset of shapes
@@ -180,11 +197,7 @@ class DB:
         
         return output
     
-    def output_formatter(self, list):
-        removed_extras = list[["district_name","state","race_type","voter_power"]]
-        return removed_extras
-    
-    def detail_list_constructor(self, election_list):
+    def detail_list_constructor(self, election_list,form_id):
         '''
         Function designed to construct the set of list items that go in a category
         based off of the set of elections that you want to include
@@ -192,30 +205,40 @@ class DB:
         Input: Election_list, pandas dataframe of elections to include
         Output: (very long) html/js string inserted into the webpage
         '''
-        election_front = '<li class="list-group-item"><div class="row">'
-        # The Button here is non-functional, and will need to be updated for actual links or simply removed for now.
-        button_front = '<form action="/get-involved" id="gi" method="post"><input type="hidden" name="candidates" value="' 
-        button_back = '"></form><button class="btn btn-primary" type="submit" form="gi" value="Submit">Get Involved</button></div></div></li>'
-        item_front = '<div class="col">'
+        election_front = '<li class="list-group-item" id="detail-li"><div class="row" id="detail-row">'
+        # The Button here directs to the get involved page.
+        button_front = '<form action="/get-involved" id="'
+        button_mid = '" method="post"><input type="hidden" name="candidates" value="' 
+        button_mid2 = '"><button class="btn btn-primary" type="submit" form="'
+        button_back = '" value="Submit">Get Involved</button></form></div></div></li>'
+        #item_front = '<div class="col">'
+        name_front = '<div class="col" id="row-name">'
+        vp_front = '<div class="col" id="row-vp">'
+        btn_front = '<div class="col" id="row-btn">'
         item_back = '</div>'
         completed_string = ''
-        statestr = "State: "
+        #statestr = "State: "
         vpstr = "Voter Power: "
         
+
         for i, election in election_list.iterrows():
-            state_name = election["state"] + ", " + election["district_name"]
+            state_name = election["state_name"] + ", " + election["election_name"]
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
-            election_str = item_front + statestr + state_name + item_back + item_front + vpstr + election_vp + item_back + item_front + button_front + cand_list + button_back
-            completed_string = completed_string + election_front + election_str 
-        return completed_string
+            fmid = "form_" + str(form_id)
+            print(cand_list)
+            election_str = name_front + state_name + item_back + vp_front + vpstr + election_vp + item_back + \
+                btn_front + button_front + fmid + button_mid + cand_list + button_mid2 + fmid + button_back
+            completed_string = completed_string + election_front + election_str
+            form_id += 1 
+        return completed_string, form_id
     
     def candidate_link_strings(self, candidate_ids):
 
-        cand_front = '<div class="col" id="candidate"><ul class="list-group-item">'
+        cand_front = '<div class="col" id="candidate"><ul id="infolist" class="list-group-item">'
         name_front = '<li id="cand">'
         party_front = '<li id="cand">'
-        button_front = '<li id="cand"><a class="btn btn-primary" href="'
+        button_front = '<li id="campbtn"><a class="btn btn-primary" href="'
         button_back = '" role="button">Candidate Campaign</a>'
         item_back = '</li>'
         cand_back = '</ul></div>'

@@ -1,92 +1,243 @@
-body { 
+  /* COLOR NOTES */
+  /* EIL Orange: rgb 255 147 7 */
+  /* Background: 225 all (nav) 240 all (text) */
+
+
+html{
+    height: 100%;
+}
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+body {
+    font-family: "Poppins", sans-serif; 
     margin: 0; 
-    padding: 0; 
+    padding: 0;
+}
+
+.map-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
 }
 
 #map {
-    position: relative;
     width: 100%;
-    height: 800px;
-    top: 0;
-    bottom: 0;
+    height: 100%;
    
 }
-#sm-map {
+
+#popup-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    z-index: 2;
+}
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: rgba(90, 90, 90);
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    position: fixed;
+    z-index: 1;
+    bottom: 40%;
+    left: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+#infographic-ref {
+    padding-top: 20px;
+    color: #fff;
+}
+#infographic-btn {
+
+    background-color: rgba(90, 90, 90);
+}
+
+#detail-left {
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+#detail-right {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+#detail-li {
+    width: 100%;
+
+}
+#detail-row {
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+#row-name {
+    column-width: 70%;
+    font-size: 14px;
+}
+
+#row-vp {
+    column-width: 15%;
+    font-size: 14px
+}
+#row-btn {
+    column-width: 15%;
+    font-size: 14px;
+}
+
+
+
+.map-container-sm {
     position: absolute;
     width: 100%;
-    height: 800px;
-}
-#map-container {
-    position: relative;
-}
-
-#map-container-sm {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    z-index:-1
-}
-
-#address-lookup {
-    text-align: left;
-    position: block;
-    padding-top: 25px;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
-}
-
-#state-lookup {
-    text-align: center;
-    position: block;
-    padding-top: 25px;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
+    height: 100%;
 }
 
 #socials {
     margin-left: auto;
+    margin-top: 5px;
     list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+#dono-btn {
+    color: rgb(255, 147, 7);
+    border-color: rgb(255, 147, 7);
 }
 
 #social-item {
-    margin-top: 5%;
     float: left;
+    margin-right: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
+
 #social-item svg {
     display: block;
     text-align: center;
-    margin-right: 25px;
-}
-
-#bi{
-    display: inline-block;
-    justify-content: center;
-    color: black;
-    background: green;
 }
 
 #cand-row {
     padding-top: 50px;
+    height: 90%;
 }
 
 #candidate {
-    margin-right: 5px;
-    margin-left: 5px;
+    height: 400px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: rgb(240,240,240);
+
+}
+
+#infolist {
+    text-align: center;
+    justify-content: center;
     list-style-type: none;
-    padding: 20px;
-    background-color: rgb(200,200,200);
-    border: 4px solid;
-    border-color: black;
+    background-color: rgb(240,240,240);
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 #cand {
+    font-size: 20px;
+    justify-content: center;
+    margin: 10px;
+    margin-bottom: 10%;
+    list-style-type: none;
+    font-family: "Monaco", monospace;
+    color: black;
+}
+
+#campbtn {
+    justify-content: center;
     margin: 10px;
     list-style-type: none;
+    font-family: "Monaco", monospace;
     color: black;
 }
 
 #cand_party {
     list-style-type: none;
+}
+
+#info-page{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+    width: 70%;
+    background-color: rgb(240,240,240)
+}
+
+#info-title{
+    width: 80%;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#info-blurb{
+    padding-top: 10px;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#vp-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+#logo{
+    height: 200px;
+    width: 300px;
 }

@@ -1,0 +1,328 @@
+name,party,state,congress,s_upper,s_lower,state_name,race_type,election_name,campaign_link,donation_link,election_denier
+Joe Biden,Democratic Party,01,01,001,015,Alabama,Presidential,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,02,nan,nan,nan,Alaska,Presidential,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,04,nan,nan,nan,Arizona,Presidential,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,05,nan,nan,nan,Arkansas,Presidential,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,06,nan,nan,nan,California,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,08,nan,nan,nan,Colorado,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,09,nan,nan,nan,Connecticut,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,10,nan,nan,nan,Delaware,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,11,nan,nan,nan,District of Columbia,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,12,nan,nan,nan,Florida,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,13,nan,nan,nan,Georgia,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,15,nan,nan,nan,Hawaii,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,16,nan,nan,nan,Idaho,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,17,nan,nan,nan,Illinois,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,18,nan,nan,nan,Indiana,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,19,nan,nan,nan,Iowa,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,20,nan,nan,nan,Kansas,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,21,nan,nan,nan,Kentucky,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,22,nan,nan,nan,Louisiana,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,23,01,nan,nan,Maine,President,Congressional District 1,https://joebiden.com/,,0
+Joe Biden,Democratic Party,23,01,nan,nan,Maine,President,Congressional District 1,https://joebiden.com/,,0
+Joe Biden,Democratic Party,23,02,nan,nan,Maine,President,Congressional District 2,https://joebiden.com/,,0
+Joe Biden,Democratic Party,23,02,nan,nan,Maine,President,Congressional District 2,https://joebiden.com/,,0
+Joe Biden,Democratic Party,24,nan,nan,nan,Maryland,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,25,nan,nan,nan,Massachusetts,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,26,nan,nan,nan,Michigan,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,27,nan,nan,nan,Minnesota,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,28,nan,nan,nan,Mississippi,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,29,nan,nan,nan,Missouri,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,30,nan,nan,nan,Montana,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,31,02,nan,nan,Nebraska,President,Congressional District 2,https://joebiden.com/,,0
+Joe Biden,Democratic Party,31,01,nan,nan,Nebraska,President,Congressional District 1,https://joebiden.com/,,0
+Joe Biden,Democratic Party,31,03,nan,nan,Nebraska,President,Congressional District 3,https://joebiden.com/,,0
+Joe Biden,Democratic Party,31,03,nan,nan,Nebraska,President,Congressional District 3,https://joebiden.com/,,0
+Joe Biden,Democratic Party,31,03,nan,nan,Nebraska,President,Congressional District 3,https://joebiden.com/,,0
+Joe Biden,Democratic Party,32,nan,nan,nan,Nevada,Presidential,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,33,nan,nan,nan,New Hampshire,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,34,nan,nan,nan,New Jersey,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,35,nan,nan,nan,New Mexico,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,36,nan,nan,nan,New York,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,37,nan,nan,nan,North Carolina,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,38,nan,nan,nan,North Dakota,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,39,nan,nan,nan,Ohio,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,40,nan,nan,nan,Oklahoma,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,41,nan,nan,nan,Oregon,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,42,nan,nan,nan,Pennsylvania,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,44,nan,nan,nan,Rhode Island,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,45,nan,nan,nan,South Carolina,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,46,nan,nan,nan,South Dakota,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,47,nan,nan,nan,Tennessee,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,48,nan,nan,nan,Texas,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,49,nan,nan,nan,Utah,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,50,nan,nan,nan,Vermont,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,51,nan,nan,nan,Virginia,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,53,nan,nan,nan,Washington,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,54,nan,nan,nan,West Virginia,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,55,nan,nan,nan,Wisconsin,President,,https://joebiden.com/,,0
+Joe Biden,Democratic Party,56,nan,nan,nan,Wyoming,President,,https://joebiden.com/,,0
+Donald Trump,Republican Party,01,nan,nan,nan,Alabama,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,02,nan,nan,nan,Alaska,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,04,nan,nan,nan,Arizona,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,05,nan,nan,nan,Arkansas,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,06,nan,nan,nan,California,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,08,nan,nan,nan,Colorado,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,09,nan,nan,nan,Connecticut,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,10,nan,nan,nan,Delaware,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,11,nan,nan,nan,District of Columbia,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,12,nan,nan,nan,Florida,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,13,nan,nan,nan,Georgia,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,15,nan,nan,nan,Hawaii,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,16,nan,nan,nan,Idaho,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,17,nan,nan,nan,Illinois,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,18,nan,nan,nan,Indiana,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,20,nan,nan,nan,Kansas,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,21,nan,nan,nan,Kentucky,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,22,nan,nan,nan,Louisiana,President,,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,23,01,nan,nan,Maine,President,Congressional District 1,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,23,01,nan,nan,Maine,President,Congressional District 1,https://www.donaldjtrump.com/,,1
+Donald Trump,Republican Party,23,02,nan,nan,Maine,President,Congressional District 2,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,23,02,nan,nan,Maine,President,Congressional District 2,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,24,nan,nan,nan,Maryland,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,25,nan,nan,nan,Massachusetts,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,26,nan,nan,nan,Michigan,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,27,nan,nan,nan,Minnesota,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,28,nan,nan,nan,Mississippi,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,29,nan,nan,nan,Missouri,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,30,nan,nan,nan,Montana,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,31,02,nan,nan,Nebraska,President,Congressional District 2,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,31,01,nan,nan,Nebraska,President,Congressional District 1,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,31,03,nan,nan,Nebraska,President,Congressional District 3,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,31,03,nan,nan,Nebraska,President,Congressional District 3,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,31,03,nan,nan,Nebraska,President,Congressional District 3,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,32,nan,nan,nan,Nevada,Presidential,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,33,nan,nan,nan,New Hampshire,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,34,nan,nan,nan,New Jersey,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,35,nan,nan,nan,New Mexico,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,36,nan,nan,nan,New York,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,37,nan,nan,nan,North Carolina,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,38,nan,nan,nan,North Dakota,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,39,nan,nan,nan,Ohio,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,40,nan,nan,nan,Oklahoma,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,41,nan,nan,nan,Oregon,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,42,nan,nan,nan,Pennsylvania,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,44,nan,nan,nan,Rhode Island,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,45,nan,nan,nan,South Carolina,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,46,nan,nan,nan,South Dakota,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,47,nan,nan,nan,Tennessee,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,48,nan,nan,nan,Texas,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,49,nan,nan,nan,Utah,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,50,nan,nan,nan,Vermont,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,51,nan,nan,nan,Virginia,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,53,nan,nan,nan,Washington,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,54,nan,nan,nan,West Virginia,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,55,nan,nan,nan,Wisconsin,President,,https://www.donaldjtrump.com/,,0
+Donald Trump,Republican Party,56,nan,nan,nan,Wyoming,President,,https://www.donaldjtrump.com/,,0
+nan,Democratic Party,04,nan,nan,nan,Arizona,Senate,,,,0
+Adam Schiff,Democratic Party,06,nan,nan,nan,California,Senate,,https://www.adamschiff.com/,,0
+Christopher Murphy,Democratic Party,09,nan,nan,nan,Connecticut,Senate,,https://chrismurphy.com/,,0
+nan,Democratic Party,10,nan,nan,nan,Delaware,Senate,,,,0
+nan,Democratic Party,12,nan,nan,nan,Florida,Senate,,,,0
+nan,Democratic Party,15,nan,nan,nan,Hawaii,Senate,,,,0
+Valerie McCray,Democratic Party,18,nan,nan,nan,Indiana,Senate,,https://valeriemccray.org/,,0
+David Costello,Democratic Party,23,nan,nan,nan,Maine,Senate,,https://www.costelloforsenate.com/,,0
+Angela Alsobrooks,Democratic Party,24,nan,nan,nan,Maryland,Senate,,https://www.angelaalsobrooks.com/,,0
+Elizabeth Warren,Democratic Party,25,nan,nan,nan,Massachusetts,Senate,,https://elizabethwarren.com/,,0
+nan,Democratic Party,26,nan,nan,nan,Michigan,Senate,,,,0
+nan,Democratic Party,27,nan,nan,nan,Minnesota,Senate,,,,0
+Ty Pinkins,Democratic Party,28,nan,nan,nan,Mississippi,Senate,,https://www.typinkins.com/,,0
+nan,Democratic Party,29,nan,nan,nan,Missouri,Senate,,,,0
+Jon Tester,Democratic Party,30,nan,nan,nan,Montana,Senate,,https://jontester.com/,,0
+nan,Democratic Party,31,nan,nan,nan,Nebraska,Senate,,,,0
+Preston Love Jr.,Democratic Party,31,nan,nan,nan,Nebraska,Senate,,https://love4senate.com/,,0
+Jacky Rosen,Democratic Party,32,nan,nan,nan,Nevada,Senate,,https://www.rosenfornevada.com/,,0
+Andrew Kim,Democratic Party,34,nan,nan,nan,New Jersey,Senate,,https://www.andykim.com/,,0
+Martin Heinrich,Democratic Party,35,nan,nan,nan,New Mexico,Senate,,https://martinheinrich.com/,,0
+Kirsten Gillibrand,Democratic Party,36,nan,nan,nan,New York,Senate,,https://kirstengillibrand.com/,,0
+Katrina Christiansen,Democratic Party,38,nan,nan,nan,North Dakota,Senate,,https://www.katrinaforussenate.com/,,0
+Sherrod Brown,Democratic Party,39,nan,nan,nan,Ohio,Senate,,https://www.sherrodbrown.com/,,0
+Bob Casey Jr.,Democratic Party,42,nan,nan,nan,Pennsylvania,Senate,,https://bobcasey.com/,,0
+nan,Democratic Party,44,nan,nan,nan,Rhode Island,Senate,,,,0
+nan,Democratic Party,47,nan,nan,nan,Tennessee,Senate,,,,0
+Colin Allred,Democratic Party,48,nan,nan,nan,Texas,Senate,,https://colinallred.com/,,0
+Caroline Gleich,Democratic Party,49,nan,nan,nan,Utah,Senate,,https://www.carolineforutah.com/,,0
+Bernie Sanders,Democratic Party,50,nan,nan,nan,Vermont,Senate,,https://berniesanders.com/,,0
+Tim Kaine,Democratic Party,51,nan,nan,nan,Virginia,Senate,,https://timkaine.com/,,0
+nan,Democratic Party,53,nan,nan,nan,Washington,Senate,,,,0
+Glenn Elliott,Democratic Party,54,nan,nan,nan,West Virginia,Senate,,https://elliottforwv.com/,,0
+Tammy Baldwin,Democratic Party,55,nan,nan,nan,Wisconsin,Senate,,https://www.tammybaldwin.com/,,0
+Scott Morrow,Democratic Party,56,nan,nan,nan,Wyoming,Senate,,https://morrowforwyoming.com/,,0
+nan,Republican Party,04,nan,nan,nan,Arizona,Senate,,,,0
+Steve Garvey,Republican Party,06,nan,nan,nan,California,Senate,,https://stevegarvey.com/,,0
+nan,Republican Party,09,nan,nan,nan,Connecticut,Senate,,,,0
+nan,Republican Party,10,nan,nan,nan,Delaware,Senate,,,,0
+nan,Republican Party,12,nan,nan,nan,Florida,Senate,,,,0
+nan,Republican Party,15,nan,nan,nan,Hawaii,Senate,,,,0
+Jim Banks,Republican Party,18,nan,nan,nan,Indiana,Senate,,https://banksforsenate.com/,,0
+Demi Kouzounas,Republican Party,23,nan,nan,nan,Maine,Senate,,https://demiforsenate.com/,,0
+Larry Hogan,Republican Party,24,nan,nan,nan,Maryland,Senate,,https://larryhogan.com/,,0
+nan,Republican Party,25,nan,nan,nan,Massachusetts,Senate,,,,0
+nan,Republican Party,26,nan,nan,nan,Michigan,Senate,,,,0
+nan,Republican Party,27,nan,nan,nan,Minnesota,Senate,,,,0
+Roger Wicker,Republican Party,28,nan,nan,nan,Mississippi,Senate,,https://www.wicker.senate.gov/,,0
+Josh Hawley,Republican Party,29,nan,nan,nan,Missouri,Senate,,https://www.hawley.senate.gov/,,0
+Tim Sheehy,Republican Party,30,nan,nan,nan,Montana,Senate,,https://timformt.com/,,0
+Deb Fischer,Republican Party,31,nan,nan,nan,Nebraska,Senate,,https://www.fischer.senate.gov/public/,,0
+Pete Ricketts,Republican Party,31,nan,nan,nan,Nebraska,Senate,,https://www.ricketts.senate.gov/,,0
+Sam Brown,Republican Party,32,nan,nan,nan,Nevada,Senate,,https://captainsambrown.com/,,0
+Curtis Bashaw,Republican Party,34,nan,nan,nan,New Jersey,Senate,,https://curtisbashawforsenate.com/,,0
+Nella Domenici,Republican Party,35,nan,nan,nan,New Mexico,Senate,,https://www.nellaforsenate.com/,,0
+Mike Sapraicone,Republican Party,36,nan,nan,nan,New York,Senate,,https://mikesapraiconeforsenate.com/,,0
+Kevin Cramer,Republican Party,38,nan,nan,nan,North Dakota,Senate,,https://www.cramer.senate.gov/,,0
+Bernie Moreno,Republican Party,39,nan,nan,nan,Ohio,Senate,,https://secure.winred.com/bernie-moreno-for-senate/bernie-trump-p?sc=20240701_BMORENO_WEB_WEB_FNC-SPLIT&utm_source=web&utm_medium=proc&utm_campaign=fnc,,0
+David McCormick,Republican Party,42,nan,nan,nan,Pennsylvania,Senate,,https://www.davemccormickpa.com/,,0
+nan,Republican Party,44,nan,nan,nan,Rhode Island,Senate,,,,0
+nan,Republican Party,47,nan,nan,nan,Tennessee,Senate,,,,0
+Ted Cruz,Republican Party,48,nan,nan,nan,Texas,Senate,,https://www.tedcruz.org/,,0
+John Curtis,Republican Party,49,nan,nan,nan,Utah,Senate,,https://www.johncurtis.org/,,0
+Gerald Malloy,Republican Party,50,nan,nan,nan,Vermont,Senate,,https://www.deploymalloy.com/,,0
+Hung Cao,Republican Party,51,nan,nan,nan,Virginia,Senate,,https://www.hungforva.com/,,0
+nan,Republican Party,53,nan,nan,nan,Washington,Senate,,,,0
+Jim Justice,Republican Party,54,nan,nan,nan,West Virginia,Senate,,https://jimjusticewv.com/,,0
+nan,Republican Party,55,nan,nan,nan,Wisconsin,Senate,,,,0
+nan,Republican Party,56,nan,nan,nan,Wyoming,Senate,,,,0
+Shomari Figures,Democratic Party,01,02,nan,nan,Alabama,House,Congressional District 2,https://www.figuresforcongress.com/,,0
+nan,Democratic Party,02,at-large,nan,nan,Alaska,House,Congressional District at-large,,,0
+nan,Democratic Party,04,01,nan,nan,Arizona,House,Congressional District 1,,,0
+nan,Democratic Party,04,06,nan,nan,Arizona,House,Congressional District 6,,,0
+Dave Min,Democratic Party,06,47,nan,nan,California,House,Congressional District 47,https://davemin.com/,,0
+Derek Tran,Democratic Party,06,45,nan,nan,California,House,Congressional District 45,https://www.derektranforcongress.com/,,0
+Josh Harder,Democratic Party,06,09,nan,nan,California,House,Congressional District 9 ,https://harder.house.gov/,,0
+Mike Levin,Democratic Party,06,49,nan,nan,California,House,Congressional District 49,https://www.mikelevin.org/,,0
+Jessica Morse,Democratic Party,06,03,nan,nan,California,House,Congressional District 3,,https://emilyslist.org/candidate/jessica-morse/,0
+Joe Kerr,Democratic Party,06,40,nan,nan,California,House,Congressional District 40 ,https://www.joekerrforcongress.com/,,0
+Adam Gray,Democratic Party,06,13,nan,nan,California,House,Congressional District 13,https://www.adamgrayforcongress.com/,,0
+Rudy Salas,Democratic Party,06,22,nan,nan,California,House,Congressional District 22,https://www.rudysalas.com/,,0
+George Whitesides,Democratic Party,06,27,nan,nan,California,House,Congressional District 27,https://www.georgewhitesides.com/,,0
+Will Rollins,Democratic Party,06,41,nan,nan,California,House,Congressional District 41,https://willrollinsforcongress.com/,,0
+Adam Frisch,Democratic Party,08,03,nan,nan,Colorado,House,Congressional District 3,https://adamforcolorado.com/,,0
+Yadira Caraveo,Democratic Party,08,08,nan,nan,Colorado,House,Congressional District 8,https://www.caraveoforcongress.com/,,0
+Jahana Hayes,Democratic Party,09,05,nan,nan,Connecticut,House,Congressional District 5,https://jahanahayes.com/,,0
+Darren Soto,Democratic Party,12,09,nan,nan,Florida,House,Congressional District 9 ,https://www.darrensoto.com/,,0
+Jared Evan Moskowitz,Democratic Party,12,23,nan,nan,Florida,House,Congressional District 23,https://jaredforflorida.com/,,0
+nan,Democratic Party,12,13,nan,nan,Florida,House,Congressional District 13,,,0
+Eric Sorensen,Democratic Party,17,17,nan,nan,Illinois,House,Congressional District 17,https://www.ericforillinois.com/,,0
+Frank Mrvan,Democratic Party,18,01,nan,nan,Indiana,House,Congressional District 1,https://mrvanforcongress.com/,,0
+Lanon Baccam,Democratic Party,19,03,nan,nan,Iowa,House,Congressional District 3,https://lanonbaccam.com/,,0
+Christina Bohannan,Democratic Party,19,01,nan,nan,Iowa,House,Congressional District 1,https://www.bohannanforcongress.com/,,0
+Sharice Davids,Democratic Party,20,03,nan,nan,Kansas,House,Congressional District 3,https://shariceforcongress.com/,,0
+Jared Golden,Democratic Party,23,02,nan,nan,Maine,House,Congressional District 2,https://jaredgoldenforcongress.com/,,0
+April McClain-Delaney,Democratic Party,24,06,nan,nan,Maryland,House,Congressional District 6,https://www.aprilmcclaindelaneyforcongress.com/,,0
+nan,Democratic Party,26,10,nan,nan,Michigan,House,Congressional District 10,,,0
+nan,Democratic Party,26,03,nan,nan,Michigan,House,Congressional District 3,,,0
+Curtis Hertel,Democratic Party,26,07,nan,nan,Michigan,House,Congressional District 7,https://www.hertelformichigan.com/,,0
+nan,Democratic Party,26,08,nan,nan,Michigan,House,Congressional District 8,,,0
+nan,Democratic Party,27,02,nan,nan,Minnesota,House,Congressional District 2,,,0
+Monica Tranel,Democratic Party,30,01,nan,nan,Montana,House,Congressional District 1,https://www.monicatranel.com/,,0
+Tony Vargas,Democratic Party,31,02,nan,nan,Nebraska,House,Congressional District 2,https://nebraskalegislature.gov/senators/landing-pages/index.php?District=7,,0
+Susie Lee,Democratic Party,32,03,nan,nan,Nevada ,House,Congressional District 3,https://susieleeforcongress.com/,,0
+Dina Titus,Democratic Party,32,01,nan,nan,Nevada ,House,Congressional District 1,https://www.dinatitus.com/,,0
+Steven Horsford,Democratic Party,32,04,nan,nan,Nevada ,House,Congressional District 4,https://www.stevenhorsford.com/,,0
+nan,Democratic Party,33,01,nan,nan,New Hampshire,House,Congressional District 1,,,0
+nan,Democratic Party,33,02,nan,nan,New Hampshire,House,Congressional District 2,,,0
+Sue Altman,Democratic Party,34,07,nan,nan,New Jersey,House,Congressional District 7,https://www.suealtman.com/,,0
+Gabe Vasquez,Democratic Party,35,02,nan,nan,New Mexico,House,Congressional District 2,https://gabeforcongress.com/meet-gabe/,,0
+Pat Ryan,Democratic Party,36,18,nan,nan,New York,House,Congressional District 18,https://www.patryanforcongress.com/,,0
+John Mannion,Democratic Party,36,22,nan,nan,New York,House,Congressional District 22,https://www.mannionforny.com/,,0
+Tom Suozzi,Democratic Party,36,03,nan,nan,New York,House,Congressional District 3,https://suozziforcongress2024.com/,,0
+John Avlon,Democratic Party,36,01,nan,nan,New York,House,Congressional District 1,https://www.johnavlon.com/,,0
+Laura Gillen,Democratic Party,36,04,nan,nan,New York,House,Congressional District 4,https://lauragillen.com/,,0
+Mondaire Jones,Democratic Party,36,17,nan,nan,New York,House,Congressional District 17,https://www.mondaireforcongress.com/,,0
+Marcus Molinaro,Democratic Party,36,19,nan,nan,New York,House,Congressional District 19,https://www.marcforus.com/,,0
+Donald Davis,Democratic Party,37,01,nan,nan,North Carolina,House,Congressional District 1,https://votedondavis.com/,,0
+Greg Landsman,Democratic Party,39,01,nan,nan,Ohio,House,Congressional District 1,https://www.landsmanforcongress.com/,,0
+Marcy Kaptur,Democratic Party,39,09,nan,nan,Ohio,House,Congressional District 9,https://marcykaptur.com/,,0
+Emilia Sykes,Democratic Party,39,13,nan,nan,Ohio,House,Congressional District 13,https://www.emiliasykesforcongress.com/,,0
+Andrea Salinas,Democratic Party,41,06,nan,nan,Oregon,House,Congressional District 6,https://www.andreasalinasfororegon.com/,,0
+Val Hoyle,Democratic Party,41,04,nan,nan,Oregon,House,Congressional District 4,https://valhoyle.com/,,0
+Janelle Bynum,Democratic Party,41,05,nan,nan,Oregon,House,Congressional District 5,https://www.janellebynum.com/,,0
+Chris Deluzio,Democratic Party,42,17,nan,nan,Pennsylvania,House,Congressional District 17,https://chrisforpa.com/,,0
+Janelle Stelson,Democratic Party,42,10,nan,nan,Pennsylvania,House,Congressional District 10,https://janellestelson.com/,,0
+Ashley Ehasz,Democratic Party,42,01,nan,nan,Pennsylvania,House,Congressional District 1,https://www.ehaszforcongress.com/,,0
+Susan Wild,Democratic Party,42,07,nan,nan,Pennsylvania,House,Congressional District 7,https://wildforcongress.com/,,0
+Matt Cartwright,Democratic Party,42,08,nan,nan,Pennsylvania,House,Congressional District 8,https://cartwrightcongress.com/,,0
+Henry Cuellar,Democratic Party,48,28,nan,nan,Texas,House,Congressional District 28,https://www.henrycuellar.com/,,0
+Vicente Gonzalez Jr. ,Democratic Party,48,34,nan,nan,Texas,House,Congressional District 34,http://www.vicentegonzalez.com/,,0
+Michelle Vallejo,Democratic Party,48,15,nan,nan,Texas,House,Congressional District 15,https://www.michellefortx15.com/,,0
+Eugene Vindman,Democratic Party,51,07,nan,nan,Virginia,House,Congressional District 7,https://vindmanforcongress.com/,,0
+Missy Cotter Smasal,Democratic Party,51,02,nan,nan,Virginia,House,Congressional District 2,https://missy4congress.com/,,0
+nan,Democratic Party,53,08,nan,nan,Washington,House,Congressional District 8,,,0
+nan,Democratic Party,53,03,nan,nan,Washington,House,Congressional District 3,,,0
+nan,Democratic Party,55,03,nan,nan,Wisconsin,House,Congressional District 3,,,0
+Peter Barca,Democratic Party,55,01,nan,nan,Wisconsin,House,Congressional District 1,https://www.barcaforwisconsin.com/,,0
+Caroleene Dobson,Republican Party,01,02,nan,nan,Alabama,House,Congressional District 2,https://www.dobsonforcongress.com/,,0
+nan,Republican Party,02,at-large,nan,nan,Alaska,House,Congressional District at-large,,,0
+nan,Republican Party,04,01,nan,nan,Arizona,House,Congressional District 1,,,0
+nan,Republican Party,04,06,nan,nan,Arizona,House,Congressional District 6,,,0
+Scott Baugh,Republican Party,06,47,nan,nan,California,House,Congressional District 47,https://baughforcongress.com/,,0
+Michelle Steel,Republican Party,06,45,nan,nan,California,House,Congressional District 45,https://michellesteelca.com/,,0
+Kevin Lincoln II,Republican Party,06,09,nan,nan,California,House,Congressional District 9 ,https://www.kevinlincolnforcongress.com/,,0
+Matt Gunderson,Republican Party,06,49,nan,nan,California,House,Congressional District 49,https://mattgunderson.com/,,0
+Kevin Kiley,Republican Party,06,03,nan,nan,California,House,Congressional District 3,https://electkevinkiley.com/,,0
+Young Kim,Republican Party,06,40,nan,nan,California,House,Congressional District 40 ,https://youngkimforcongress.com/,,0
+John Duarte,Republican Party,06,13,nan,nan,California,House,Congressional District 13,https://www.johnduarteforcongress.com/,,0
+David G. Valadao,Republican Party,06,22,nan,nan,California,House,Congressional District 22,https://valadaoforcongress.com/,,0
+Mike Garcia,Republican Party,06,27,nan,nan,California,House,Congressional District 27,https://www.electmikegarcia.com/,,0
+Ken Calvert,Republican Party,06,41,nan,nan,California,House,Congressional District 41,https://calvertforcongress.com/,,0
+Jeff Hurd,Republican Party,08,03,nan,nan,Colorado,House,Congressional District 3,https://jeffhurdforcolorado.com/,,0
+Gabe Evans,Republican Party,08,08,nan,nan,Colorado,House,Congressional District 8,https://electgabeevans.com/,,0
+nan,Republican Party,09,05,nan,nan,Connecticut,House,Congressional District 5,,,0
+nan,Republican Party,12,09,nan,nan,Florida,House,Congressional District 9 ,,,0
+nan,Republican Party,12,23,nan,nan,Florida,House,Congressional District 23,,,0
+Anna Paulina Luna,Republican Party,12,13,nan,nan,Florida,House,Congressional District 13,https://www.voteannapaulina.com/,,0
+Joseph G. McGraw,Republican Party,17,17,nan,nan,Illinois,House,Congressional District 17,https://judgejoeforcongress.com/,,0
+Randell Niemeyer,Republican Party,18,01,nan,nan,Indiana,House,Congressional District 1,https://www.niemeyerforcongress.com/,,0
+Zach Nunn,Republican Party,19,03,nan,nan,Iowa,House,Congressional District 3,https://zachnunn.com/,,0
+Mariannette Miller-Meeks,Republican Party,19,01,nan,nan,Iowa,House,Congressional District 1,https://drmillermeeks.com/,,0
+nan,Republican Party,20,03,nan,nan,Kansas,House,Congressional District 3,,,0
+Austin Theriault,Republican Party,23,02,nan,nan,Maine,House,Congressional District 2,https://www.austinformaine.com/,,0
+Neil Parrott,Republican Party,24,06,nan,nan,Maryland,House,Congressional District 6,https://www.neilparrott.org/,,0
+John James,Republican Party,26,10,nan,nan,Michigan,House,Congressional District 10,https://johnjamesmi.com/,,0
+nan,Republican Party,26,03,nan,nan,Michigan,House,Congressional District 3,,,0
+Tom Barrett,Republican Party,26,07,nan,nan,Michigan,House,Congressional District 7,https://tombarrettforcongress.com/,,0
+nan,Republican Party,26,08,nan,nan,Michigan,House,Congressional District 8,,,0
+nan,Republican Party,27,02,nan,nan,Minnesota,House,Congressional District 2,,,0
+Ryan K. Zinke,Republican Party,30,01,nan,nan,Montana,House,Congressional District 1,https://www.ryanzinke.com/,,0
+Don Bacon,Republican Party,31,02,nan,nan,Nebraska,House,Congressional District 2,https://donjbacon.com/,,0
+Drew Johnson,Republican Party,32,03,nan,nan,Nevada ,House,Congressional District 3,https://drewfornevada.com/,,0
+Mark Robertson,Republican Party,32,01,nan,nan,Nevada ,House,Congressional District 1,https://robertsonforcongress.com/,,0
+John J. Lee,Republican Party,32,04,nan,nan,Nevada ,House,Congressional District 4,https://www.johnleeforcongress.com/,,0
+nan,Republican Party,33,01,nan,nan,New Hampshire,House,Congressional District 1,,,0
+nan,Republican Party,33,02,nan,nan,New Hampshire,House,Congressional District 2,,,0
+Tom Kean Jr.,Republican Party,34,07,nan,nan,New Jersey,House,Congressional District 7,https://tomkean.com/,,0
+Yvette Herrell,Republican Party,35,02,nan,nan,New Mexico,House,Congressional District 2,https://www.yvetteherrell.com/,,0
+Alison Esposito,Republican Party,36,18,nan,nan,New York,House,Congressional District 18,https://www.alisonesposito.com/,,0
+Brandon Williams,Republican Party,36,22,nan,nan,New York,House,Congressional District 22,https://letsvotebrandon.com/,,0
+Michael LiPetri Jr.,Republican Party,36,03,nan,nan,New York,House,Congressional District 3,https://www.lipetriforcongress.com/,,0
+Nicholas J. LaLota,Republican Party,36,01,nan,nan,New York,House,Congressional District 1,https://www.nicklalota.com/,,0
+Anthony D'Esposito,Republican Party,36,04,nan,nan,New York,House,Congressional District 4,https://despositoforcongress.com/,,0
+Michael Lawler,Republican Party,36,17,nan,nan,New York,House,Congressional District 17,https://www.lawlerforcongress.com/,,0
+Josh Riley,Republican Party,36,19,nan,nan,New York,House,Congressional District 19,https://www.joshrileyforcongress.com/,,0
+Laurie Buckhout,Republican Party,37,01,nan,nan,North Carolina,House,Congressional District 1,https://www.lauriebuckhoutforcongress.com/,,0
+Orlando Sonza,Republican Party,39,01,nan,nan,Ohio,House,Congressional District 1,https://www.orlandosonza.com/,,0
+Derek Merrin,Republican Party,39,09,nan,nan,Ohio,House,Congressional District 9,https://www.derekmerrin.com/,,0
+Kevin Coughlin,Republican Party,39,13,nan,nan,Ohio,House,Congressional District 13,https://kevincoughlin.com/,,0
+Mike Erickson,Republican Party,41,06,nan,nan,Oregon,House,Congressional District 6,https://mikeericksonforcongress.org/,,0
+Monique DeSpain,Republican Party,41,04,nan,nan,Oregon,House,Congressional District 4,https://www.moniqueforcongress.com/,,0
+Lori Chaves-DeRemer,Republican Party,41,05,nan,nan,Oregon,House,Congressional District 5,https://www.lorichavezderemer.com/,,0
+Rob Mercuri,Republican Party,42,17,nan,nan,Pennsylvania,House,Congressional District 17,https://www.robmercuri.com/,,0
+Scott Perry,Republican Party,42,10,nan,nan,Pennsylvania,House,Congressional District 10,https://patriotsforperry.com/,,0
+Brian Fitzpatrick,Republican Party,42,01,nan,nan,Pennsylvania,House,Congressional District 1,https://www.brianfitzpatrick.com/,,0
+Ryan Mackenzie,Republican Party,42,07,nan,nan,Pennsylvania,House,Congressional District 7,https://www.mackenzieforcongress.com/,,0
+Rob Bresnahan Jr. ,Republican Party,42,08,nan,nan,Pennsylvania,House,Congressional District 8,https://robforpa.com/,,0
+Jay Furman,Republican Party,48,28,nan,nan,Texas,House,Congressional District 28,https://commanderfurman.com/,,0
+Mayra Flores,Republican Party,48,34,nan,nan,Texas,House,Congressional District 34,https://www.mayrafloresforcongress.com/,,0
+Monica De La Cruz,Republican Party,48,15,nan,nan,Texas,House,Congressional District 15,https://www.monicaforcongress.us/,,0
+Derrick Anderson,Republican Party,51,07,nan,nan,Virginia,House,Congressional District 7,https://www.americanoathinitiative.org/endorsements/derrick-anderson,,0
+Jennifer Kiggans,Republican Party,51,02,nan,nan,Virginia,House,Congressional District 2,https://jenforcongress.com/,,0
+nan,Republican Party,53,08,nan,nan,Washington,House,Congressional District 8,,,0
+nan,Republican Party,53,03,nan,nan,Washington,House,Congressional District 3,,,0
+Derrick Van Orden,Republican Party,55,03,nan,nan,Wisconsin,House,Congressional District 3,https://www.vanordenforcongress.com/,,0
+Bryan Steil,Republican Party,55,01,nan,nan,Wisconsin,House,Congressional District 1,https://www.bryansteil.com/,,0
+Jovan Jackson,Democratic Party,32,nan,nan,006,Nevada,State Leg (Lower),State House District 6,https://www.jovanjackson.com/,,0
+Nephi Oliva,Republican Party,32,nan,nan,006,Nevada,State Leg (Lower),State House District 6,https://ballotpedia.org/Nephi_Oliva#Campaign_themes,,0
+Reuben D'Silva,Democratic Party,32,nan,nan,028,Nevada,State Leg (Lower),State House District 28,https://dsilvafornevada.com/,,0
+Unknown,Republican Party,32,nan,nan,028,Nevada,State Leg (Lower),State House District 28,Unknown,,0
+Linda Hunt,Democratic Party,32,nan,nan,017,Nevada,State Leg (Lower),State House District 17,https://lindafornevada.com/,,0
+Robert Olson,Republican Party,32,nan,nan,017,Nevada,State Leg (Lower),State House District 17,https://bobolsonfornevada.com/,,0

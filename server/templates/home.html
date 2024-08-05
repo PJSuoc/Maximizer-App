@@ -5,9 +5,9 @@
 <style> 
 
 
-    body { margin: 0; padding: 0;  font-family: 'Arial';}
+    body { margin: 0; padding: 0;}
     .map-overlay {
-        font: 14px/20px 'Arial';
+        font: 14px/20px "Poppins";
         position: absolute;
         top: 100px; /* need a dynamic solution to keep it not overlaying with other stuff */
         left: 10px;
@@ -33,8 +33,7 @@
         width: 100%;
     }
     .map-overlay-inner label {
-        display: block;
-        font-weight: bold;
+       
         display: block;
         margin-bottom: 5px;
     }
@@ -64,7 +63,7 @@
 }
 h2, h3 {
   color: rgb(230, 213, 213);
-  font-family: 'Arial';
+  font-family: "Poppins";
   text-align: center;
 }
 
@@ -111,8 +110,8 @@ h3 {
         <h3>Voter Power Scale</h3>
         <div id="color-scale"></div>
         <div class="labels">
-            <span>Low</span>
-            <span>High</span>
+            <span>0</span>
+            <span>100</span>
         </div>
     </div>
     
@@ -122,31 +121,35 @@ h3 {
             <h2>Vote Maximizer</h2>
             <h3>by the Electoral Innovation Lab</h3>
             <fieldset>
-            
-                <label for="layer" style="margin-top: 15px;">Which races are the most competitive? </label>
+                
+                <label for="layer" style="margin-top: 15px;">Currently viewing the: </label>
                 <select id="layer" name="layer">
-                    <option value="presidential" selected>Presidential race</option>
-                    <option value="congressional">Senate race</option>
-                    <option value="house">House race</option>
-                    <option value="gubernatorial">Gubernatorial race</option>
-                    <option value="state_leg_up">State legislature upper</option>
-                    <option value="state_leg_low">State legislature lower</option>
-                    <option value="ballot_all">Democracy ballot measuress</option>
+                    <option value="aggregate" selected>Overall voter power</option>
+                    <option value="presidential">Presidential race voter power</option>
+                    <option value="congressional">Senate race voter powers</option>
+                    <option value="house">House race voter powers</option>
+                    <option value="gubernatorial">Gubernatorial voter powers</option>
+                    <option value="state_leg_up">State upper legislature voter powers</option>
+                    <option value="state_leg_low">State lower legislature voter powers</option>
+                    <option value="ballot_all">Ballot initiative voter powers</option>
                 </select>
 
                 <form action="/state" method="post">
-                    <label for="location" style="margin-top: 15px;">Zoom in on a state to see election details</label>
+                    <label for="location" style="margin-top: 20px;">Select a state to see more detail:</label>
                     <select name="location" id="location" onchange="this.form.submit()">
+                        <option value="" disabled selected>Select a state</option>
                         {% for s in states %}
                         <option value="{{s}}">{{ s }}</option>
                         {% endfor %}
                     </select>
+                </form>
+                
                     
                 </form>
 
                 
                     <form action="/local" method="post">
-                        <label for="location" style="margin-top: 15px;">Find Pivotal Elections near you</label>
+                        <label for="location" style="margin-top: 15px;">Find Pivotal Elections near you:</label>
                         <input type="text" class="form-control" id="location" name="location" placeholder="type an address and press enter"></input>
                     </form>
 
@@ -163,15 +166,17 @@ h3 {
         </div>
     </div>
            
+
+    <div class="map-container">
+        <div class="col" id="map"></div>
     </div>
-    <div class="col" id="map"></div>
 
     <script>
         mapboxgl.accessToken = '{{ mapbox_key }}';
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
-            center: [-98.625126, 37.718862],
+            center: [-106.111450,37.067780],
             zoom: 3.6,
             projection: 'mercator'
         });
@@ -179,11 +184,12 @@ h3 {
 
         //add all the layers as const here
         const layers = {
-            presidential: 'static/data/geojson_imports/geojson_final/president.geojson',
-            congressional: 'static/data/geojson_imports/geojson_final/senate.geojson',
+            aggregate: 'static/data/calculated_files/geojsons/aggregate.geojson',
+            presidential: 'static/data/calculated_files/geojsons/president.geojson',
+            congressional: 'static/data/calculated_files/geojsons/senate.geojson',
             house: 'static/data/geojson_imports/geojson_final/house.geojson',
-            gubernatorial: 'static/data/geojson_imports/geojson_final/governor.geojson',
-            ballot_all: 'static/data/geojson_imports/ballot_initiatives_main.geojson',
+            gubernatorial: 'static/data/calculated_files/geojsons/governor.geojson',
+            ballot_all: 'static/data/geojson_imports/geojson_final/ballot_initiatives_main.geojson',
             state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
             state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
             
@@ -192,7 +198,11 @@ h3 {
         function updateLegend(layerId) {
         var gradient = '';
         switch(layerId) {
-            case 'presidential':
+        
+        case 'aggregate':
+            gradient = 'linear-gradient(to right, #feedde, #fdbe85, #EF6548, #D7301F)';
+            break;   
+        case 'presidential':
             gradient = 'linear-gradient(to right, #feedde, #fdbe85, #EF6548, #D7301F)';
             break;
         case 'congressional':
@@ -201,14 +211,12 @@ h3 {
         case 'house':
             gradient = 'linear-gradient(to right, #edf8e9, #bae4b3, #74c476, #238b45)';
             break;
-            case 'gubernatorial':
+        case 'gubernatorial':
             gradient = 'linear-gradient(to right, #fffac2, #fff68f, #fff25c, #ffdc09)';
             break;
         case 'ballot_all':
             gradient = 'linear-gradient(to right, #c7eae5, #01665e)'; 
             break;
-        
-
         case 'state_leg_up':
             gradient = 'linear-gradient(to right, #ffffcc, #225ea8)'; 
             break;
@@ -224,7 +232,7 @@ h3 {
     }
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
-        let currentLayerId = 'presidential'; // Track the current layer
+        let currentLayerId = 'aggregate'; // Track the current layer
 
         const popup = new mapboxgl.Popup({
             closeButton: false,
@@ -291,8 +299,8 @@ h3 {
             'case',
             ['==', ['get', 'voter_power'], null], '#D3D3D3', //  undefined voter_power is grey
             ['==', ['get', 'voter_power'], 0], '#D3D3D3', //  zero voter_power is also grey
-    //color for layers
-            ['==', layerId, 'presidential'], [                                  
+    
+            ['==', layerId, 'presidential'], [
                 'interpolate', ['linear'], ['get', 'voter_power'],
                 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'
             ],
@@ -384,7 +392,7 @@ h3 {
                 </div>`;
             } else {
                 popupContent = `<div class="custom-popup">
-                    <strong>Number of democracy ballot initiatives in your state: ${description}</strong> <br>Click on a state in the dropdown menu to learn more.
+                    <strong>Number of ballot initiatives in your state: ${description}</strong> <br>Click on a state in the dropdown menu to learn more.
                 </div>`;
             }
         } else if (layerId === 'congressional' && (voterPower === undefined || voterPower === 'no race')) {
@@ -432,18 +440,18 @@ h3 {
 
         // Initial layer setup on map load
         map.on('load', function () {
-        
-    addGeoJsonLayer('presidential');
+            //map.resize();
+        addGeoJsonLayer('aggregate');
     
 
 
-    //filter for only U.S. names
+    //filter for only USA names
     const layers = map.getStyle().layers;
 
 layers.forEach((layer) => {
     const currentFilters = map.getFilter(layer.id);
     
-    // if layer includes label or state filter for U.S.
+    // if layer includes label or state filter for USA
     if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
         if (currentFilters) {
         
@@ -455,8 +463,8 @@ layers.forEach((layer) => {
     
     }
 
-    
-});
+                
+            });
 });
 
 
@@ -480,6 +488,26 @@ layers.forEach((layer) => {
 
         
     </script>
-   
+    
+    <button type="btn" class="popup" id="popup-btn" onclick="myFunction()">What is Voter Power?
+        <span class="popuptext" id="myPopup">
+            <div class="container">
+            Voter Power is our way to decide where a single vote has the most 
+            influence, based on how close elections are, how many people vote in them,
+            and how many people the elected official will influence once elected.
+            </div>
+            <div class="container" id="infographic-ref">
+                <a class="btn btn-outline-light" id="infographic-btn"  href="/voter-power" role="button">Check out our infographic here:</a>
+            </div>
+        </span>
+    </button>
+
+    <script>
+        // When the user clicks on <div>, open the popup
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
 </body>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 <style> 
-   body { margin: 0; padding: 0;  font-family: 'Arial';}
+   body { margin: 0; padding: 0;  font-family: 'Poppins';}
     .map-overlay {
         font: 14px/20px 'Arial';
         position: absolute;
@@ -30,7 +30,7 @@
     }
     .map-overlay-inner label {
         display: block;
-        font-weight: bold;
+       
         display: block;
         margin-bottom: 5px;
     }
@@ -61,8 +61,8 @@
 
 {% block main %}
 <body>
-    <div class="row">
-        <div class="col">
+    <div class="row" width="100%">
+        <div class="col" >
             <ul class="list-group">
                 <li class="list-group-item"> <strong>Presidential Race</strong>
                     <ul class="list-group list-group-flush">
@@ -89,7 +89,7 @@
                         {{ state_house_list | safe }}
                     </ul>
                 </li>
-                <li class="list-group-item"> Ballot Initiatives
+                <li class="list-group-item"> <strong>Ballot Initiatives</strong>
                     <ul class="list-group list-group-flush">
                         {{ ballot_list | safe }}
                     </ul>
@@ -97,7 +97,7 @@
             </ul>
         </div>
         
-        <div class="col">
+        <div class="col" id="detail-right">
             <div class="map-overlay">
                 
                 
@@ -123,7 +123,7 @@
                     </fieldset>
                 </div>
             </div>
-            <div class="map-container">
+            <div class="map-container-sm">
                 <div id="map"></div>
             
                 <script>
@@ -138,13 +138,13 @@
                 
                     const layers = {
             
-            presidential: JSON.parse('{{ pres_layer | safe }}'), 
-            congressional: JSON.parse('{{ senate_layer | safe }}'),
-            house: JSON.parse('{{house_layer | safe }}'),
-            presidential2: 'static/data/geojson_imports/geojson_final/president.geojson',
-            congressional2: 'static/data/geojson_imports/geojson_final/senate.geojson',
+            //presidential: JSON.parse('{{ pres_layer | safe }}'), 
+            //congressional: JSON.parse('{{ senate_layer | safe }}'),
+            //house: JSON.parse('{{house_layer | safe }}'),
+            presidential2: 'static/data/calculated_files/geojsons/president.geojson',
+            congressional2: 'static/data/calculated_files/geojsons/senate.geojson',
             house2: 'static/data/geojson_imports/geojson_final/house.geojson',
-            gubernatorial: 'static/data/geojson_imports/geojson_final/governor.geojson',
+            gubernatorial: 'static/data/calculated_files/geojsons/governor.geojson',
             ballot_abort: 'static/data/geojson_imports/geojson_final/ballot_abort.geojson',
             ballot_vpm: 'static/data/geojson_imports/geojson_final/ballot_VPM.geojson',
             ballot_sg: 'static/data/geojson_imports/geojson_final/ballot_sg.geojson',
