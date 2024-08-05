@@ -209,8 +209,9 @@ class DB:
         button_front = '<form action="/get-involved" id="'
         button_mid = '" method="post"><input type="hidden" name="candidates" value="' 
         button_mid2 = '"><button class="btn btn-primary" type="submit" form="'
-        button_back = '" value="Submit">Get Involved</button></form></div></div></li>'
-        name_front = '<div class="col" id="row-name">'
+        button_back = '" value="Submit">Learn More</button></form></div></div></li>'
+        name_front = '<div class="col" id="row-state">'
+        elec_front = '<div class="col" id="row-election">'
         vp_front = '<div class="col" id="row-vp">'
         btn_front = '<div class="col" id="row-btn">'
         item_back = '</div>'
@@ -219,13 +220,17 @@ class DB:
         
 
         for i, election in election_list.iterrows():
-            state_name = election["state_name"] + ", " + election["election_name"]
+            state_name = election["state_name"]
+            election_name = election["election_name"]
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
             fmid = "form_" + str(form_id)
             logging.info(cand_list)
-            election_str = name_front + state_name + item_back + vp_front + vpstr + election_vp + item_back + \
-                btn_front + button_front + fmid + button_mid + cand_list + button_mid2 + fmid + button_back
+            election_str = name_front + state_name + item_back + \
+                            elec_front + election_name + item_back + \
+                            vp_front + vpstr + election_vp + item_back + \
+                            btn_front + button_front + fmid + button_mid + \
+                            cand_list + button_mid2 + fmid + button_back
             completed_string = completed_string + election_front + election_str
             form_id += 1 
         return completed_string, form_id
