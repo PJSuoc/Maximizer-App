@@ -1,412 +1,247 @@
-state_name,state,congress,s_upper,s_lower,district_name,race_type,voter_power,cook_rating
-Alaska,2,,A,,State Senate District A,State Leg (Upper),20,
-Alaska,2,,B,,State Senate District B,State Leg (Upper),10,
-Alaska,2,,C,,State Senate District C,State Leg (Upper),0,
-Alaska,2,,D,,State Senate District D,State Leg (Upper),15,
-Alaska,2,,E,,State Senate District E,State Leg (Upper),23,
-Alaska,2,,F,,State Senate District F,State Leg (Upper),31,
-Alaska,2,,G,,State Senate District G,State Leg (Upper),1,
-Alaska,2,,H,,State Senate District H,State Leg (Upper),22,
-Alaska,2,,I,,State Senate District I,State Leg (Upper),3,
-Alaska,2,,J,,State Senate District J,State Leg (Upper),35,
-Alaska,2,,K,,State Senate District K,State Leg (Upper),34,
-Alaska,2,,L,,State Senate District L,State Leg (Upper),45,
-Alaska,2,,M,,State Senate District M,State Leg (Upper),46,
-Alaska,2,,N,,State Senate District N,State Leg (Upper),37,
-Alaska,2,,O,,State Senate District O,State Leg (Upper),11,
-Alaska,2,,P,,State Senate District P,State Leg (Upper),20,
-Alaska,2,,Q,,State Senate District Q,State Leg (Upper),32,
-Alaska,2,,R,,State Senate District R,State Leg (Upper),15,
-Alaska,2,,S,,State Senate District S,State Leg (Upper),65,
-Alaska,2,,T,,State Senate District T,State Leg (Upper),100,
-California,6,,1,,State Senate District 1,State Leg (Upper),61,
-California,6,,2,,State Senate District 2,State Leg (Upper),34,
-California,6,,3,,State Senate District 3,State Leg (Upper),26,
-California,6,,4,,State Senate District 4,State Leg (Upper),35,
-California,6,,5,,State Senate District 5,State Leg (Upper),51,
-California,6,,6,,State Senate District 6,State Leg (Upper),57,
-California,6,,7,,State Senate District 7,State Leg (Upper),42,
-California,6,,8,,State Senate District 8,State Leg (Upper),72,
-California,6,,9,,State Senate District 9,State Leg (Upper),46,
-California,6,,10,,State Senate District 10,State Leg (Upper),24,
-California,6,,11,,State Senate District 11,State Leg (Upper),0,
-California,6,,12,,State Senate District 12,State Leg (Upper),78,
-California,6,,13,,State Senate District 13,State Leg (Upper),32,
-California,6,,14,,State Senate District 14,State Leg (Upper),78,
-California,6,,15,,State Senate District 15,State Leg (Upper),31,
-California,6,,16,,State Senate District 16,State Leg (Upper),100,
-California,6,,17,,State Senate District 17,State Leg (Upper),40,
-California,6,,18,,State Senate District 18,State Leg (Upper),65,
-California,6,,19,,State Senate District 19,State Leg (Upper),58,
-California,6,,20,,State Senate District 20,State Leg (Upper),62,
-California,6,,21,,State Senate District 21,State Leg (Upper),35,
-California,6,,22,,State Senate District 22,State Leg (Upper),40,
-California,6,,23,,State Senate District 23,State Leg (Upper),49,
-California,6,,24,,State Senate District 24,State Leg (Upper),5,
-California,6,,25,,State Senate District 25,State Leg (Upper),15,
-California,6,,26,,State Senate District 26,State Leg (Upper),45,
-California,6,,27,,State Senate District 27,State Leg (Upper),30,
-California,6,,28,,State Senate District 28,State Leg (Upper),38,
-California,6,,29,,State Senate District 29,State Leg (Upper),87,
-California,6,,30,,State Senate District 30,State Leg (Upper),41,
-California,6,,31,,State Senate District 31,State Leg (Upper),83,
-California,6,,32,,State Senate District 32,State Leg (Upper),74,
-California,6,,33,,State Senate District 33,State Leg (Upper),35,
-California,6,,34,,State Senate District 34,State Leg (Upper),69,
-California,6,,35,,State Senate District 35,State Leg (Upper),71,
-California,6,,36,,State Senate District 36,State Leg (Upper),33,
-California,6,,37,,State Senate District 37,State Leg (Upper),28,
-California,6,,38,,State Senate District 38,State Leg (Upper),43,
-California,6,,39,,State Senate District 39,State Leg (Upper),19,
-California,6,,40,,State Senate District 40,State Leg (Upper),61,
-Colorado,8,,1,,State Senate District 1,State Leg (Upper),78,
-Colorado,8,,2,,State Senate District 2,State Leg (Upper),82,
-Colorado,8,,3,,State Senate District 3,State Leg (Upper),44,
-Colorado,8,,4,,State Senate District 4,State Leg (Upper),2,
-Colorado,8,,5,,State Senate District 5,State Leg (Upper),56,
-Colorado,8,,6,,State Senate District 6,State Leg (Upper),51,
-Colorado,8,,7,,State Senate District 7,State Leg (Upper),57,
-Colorado,8,,8,,State Senate District 8,State Leg (Upper),50,
-Colorado,8,,9,,State Senate District 9,State Leg (Upper),66,
-Colorado,8,,10,,State Senate District 10,State Leg (Upper),47,
-Colorado,8,,11,,State Senate District 11,State Leg (Upper),67,
-Colorado,8,,12,,State Senate District 12,State Leg (Upper),42,
-Colorado,8,,13,,State Senate District 13,State Leg (Upper),94,
-Colorado,8,,14,,State Senate District 14,State Leg (Upper),35,
-Colorado,8,,15,,State Senate District 15,State Leg (Upper),47,
-Colorado,8,,16,,State Senate District 16,State Leg (Upper),45,
-Colorado,8,,17,,State Senate District 17,State Leg (Upper),62,
-Colorado,8,,18,,State Senate District 18,State Leg (Upper),17,
-Colorado,8,,19,,State Senate District 19,State Leg (Upper),41,
-Colorado,8,,20,,State Senate District 20,State Leg (Upper),35,
-Colorado,8,,21,,State Senate District 21,State Leg (Upper),75,
-Colorado,8,,22,,State Senate District 22,State Leg (Upper),31,
-Colorado,8,,23,,State Senate District 23,State Leg (Upper),100,
-Colorado,8,,24,,State Senate District 24,State Leg (Upper),76,
-Colorado,8,,25,,State Senate District 25,State Leg (Upper),40,
-Colorado,8,,26,,State Senate District 26,State Leg (Upper),39,
-Colorado,8,,27,,State Senate District 27,State Leg (Upper),77,
-Colorado,8,,28,,State Senate District 28,State Leg (Upper),93,
-Colorado,8,,29,,State Senate District 29,State Leg (Upper),63,
-Colorado,8,,30,,State Senate District 30,State Leg (Upper),64,
-Colorado,8,,31,,State Senate District 31,State Leg (Upper),0,
-Colorado,8,,32,,State Senate District 32,State Leg (Upper),40,
-Colorado,8,,33,,State Senate District 33,State Leg (Upper),89,
-Colorado,8,,34,,State Senate District 34,State Leg (Upper),19,
-Colorado,8,,35,,State Senate District 35,State Leg (Upper),36,
-Kentucky,21,,1,,State Senate District 1,State Leg (Upper),49,
-Kentucky,21,,2,,State Senate District 2,State Leg (Upper),33,
-Kentucky,21,,3,,State Senate District 3,State Leg (Upper),76,
-Kentucky,21,,4,,State Senate District 4,State Leg (Upper),62,
-Kentucky,21,,5,,State Senate District 5,State Leg (Upper),90,
-Kentucky,21,,6,,State Senate District 6,State Leg (Upper),84,
-Kentucky,21,,7,,State Senate District 7,State Leg (Upper),81,
-Kentucky,21,,8,,State Senate District 8,State Leg (Upper),48,
-Kentucky,21,,9,,State Senate District 9,State Leg (Upper),36,
-Kentucky,21,,10,,State Senate District 10,State Leg (Upper),88,
-Kentucky,21,,11,,State Senate District 11,State Leg (Upper),100,
-Kentucky,21,,12,,State Senate District 12,State Leg (Upper),32,
-Kentucky,21,,13,,State Senate District 13,State Leg (Upper),0,
-Kentucky,21,,14,,State Senate District 14,State Leg (Upper),88,
-Kentucky,21,,15,,State Senate District 15,State Leg (Upper),54,
-Kentucky,21,,16,,State Senate District 16,State Leg (Upper),44,
-Kentucky,21,,17,,State Senate District 17,State Leg (Upper),49,
-Kentucky,21,,18,,State Senate District 18,State Leg (Upper),24,
-Kentucky,21,,19,,State Senate District 19,State Leg (Upper),50,
-Kentucky,21,,20,,State Senate District 20,State Leg (Upper),82,
-Kentucky,21,,21,,State Senate District 21,State Leg (Upper),55,
-Kentucky,21,,22,,State Senate District 22,State Leg (Upper),35,
-Kentucky,21,,23,,State Senate District 23,State Leg (Upper),28,
-Kentucky,21,,24,,State Senate District 24,State Leg (Upper),37,
-Kentucky,21,,25,,State Senate District 25,State Leg (Upper),43,
-Kentucky,21,,26,,State Senate District 26,State Leg (Upper),49,
-Kentucky,21,,27,,State Senate District 27,State Leg (Upper),25,
-Kentucky,21,,28,,State Senate District 28,State Leg (Upper),37,
-Kentucky,21,,29,,State Senate District 29,State Leg (Upper),27,
-Kentucky,21,,30,,State Senate District 30,State Leg (Upper),42,
-Kentucky,21,,31,,State Senate District 31,State Leg (Upper),51,
-Kentucky,21,,32,,State Senate District 32,State Leg (Upper),40,
-Kentucky,21,,33,,State Senate District 33,State Leg (Upper),79,
-Kentucky,21,,34,,State Senate District 34,State Leg (Upper),16,
-Kentucky,21,,35,,State Senate District 35,State Leg (Upper),66,
-Kentucky,21,,36,,State Senate District 36,State Leg (Upper),74,
-Kentucky,21,,37,,State Senate District 37,State Leg (Upper),74,
-Kentucky,21,,38,,State Senate District 38,State Leg (Upper),81,
-Massachusetts,25,,D01,,State Senate District 1,State Leg (Upper),61,
-Massachusetts,25,,D02,,State Senate District 2,State Leg (Upper),72,
-Massachusetts,25,,D03,,State Senate District 3,State Leg (Upper),98,
-Massachusetts,25,,D04,,State Senate District 4,State Leg (Upper),70,
-Massachusetts,25,,D05,,State Senate District 5,State Leg (Upper),52,
-Massachusetts,25,,D06,,State Senate District 6,State Leg (Upper),76,
-Massachusetts,25,,D07,,State Senate District 7,State Leg (Upper),44,
-Massachusetts,25,,D08,,State Senate District 8,State Leg (Upper),84,
-Massachusetts,25,,D09,,State Senate District 9,State Leg (Upper),77,
-Massachusetts,25,,D10,,State Senate District 10,State Leg (Upper),59,
-Massachusetts,25,,D11,,State Senate District 11,State Leg (Upper),64,
-Massachusetts,25,,D12,,State Senate District 12,State Leg (Upper),60,
-Massachusetts,25,,D13,,State Senate District 13,State Leg (Upper),68,
-Massachusetts,25,,D14,,State Senate District 14,State Leg (Upper),65,
-Massachusetts,25,,D15,,State Senate District 15,State Leg (Upper),66,
-Massachusetts,25,,D16,,State Senate District 16,State Leg (Upper),50,
-Massachusetts,25,,D17,,State Senate District 17,State Leg (Upper),47,
-Massachusetts,25,,D18,,State Senate District 18,State Leg (Upper),45,
-Massachusetts,25,,D19,,State Senate District 19,State Leg (Upper),100,
-Massachusetts,25,,D20,,State Senate District 20,State Leg (Upper),44,
-Massachusetts,25,,D21,,State Senate District 21,State Leg (Upper),42,
-Massachusetts,25,,D22,,State Senate District 22,State Leg (Upper),57,
-Massachusetts,25,,D23,,State Senate District 23,State Leg (Upper),37,
-Massachusetts,25,,D24,,State Senate District 24,State Leg (Upper),55,
-Massachusetts,25,,D25,,State Senate District 25,State Leg (Upper),16,
-Massachusetts,25,,D26,,State Senate District 26,State Leg (Upper),23,
-Massachusetts,25,,D27,,State Senate District 27,State Leg (Upper),16,
-Massachusetts,25,,D28,,State Senate District 28,State Leg (Upper),0,
-Massachusetts,25,,D29,,State Senate District 29,State Leg (Upper),41,
-Massachusetts,25,,D30,,State Senate District 30,State Leg (Upper),14,
-Massachusetts,25,,D31,,State Senate District 31,State Leg (Upper),68,
-Massachusetts,25,,D32,,State Senate District 32,State Leg (Upper),51,
-Massachusetts,25,,D33,,State Senate District 33,State Leg (Upper),72,
-Massachusetts,25,,D34,,State Senate District 34,State Leg (Upper),77,
-Massachusetts,25,,D35,,State Senate District 35,State Leg (Upper),48,
-Massachusetts,25,,D36,,State Senate District 36,State Leg (Upper),41,
-Massachusetts,25,,D37,,State Senate District 37,State Leg (Upper),63,
-Massachusetts,25,,D38,,State Senate District 38,State Leg (Upper),75,
-Massachusetts,25,,D39,,State Senate District 39,State Leg (Upper),23,
-Massachusetts,25,,D40,,State Senate District 40,State Leg (Upper),30,
-Maine,23,,1,,State Senate District 1,State Leg (Upper),56,
-Maine,23,,2,,State Senate District 2,State Leg (Upper),26,
-Maine,23,,3,,State Senate District 3,State Leg (Upper),33,
-Maine,23,,4,,State Senate District 4,State Leg (Upper),8,
-Maine,23,,5,,State Senate District 5,State Leg (Upper),20,
-Maine,23,,6,,State Senate District 6,State Leg (Upper),0,
-Maine,23,,7,,State Senate District 7,State Leg (Upper),22,
-Maine,23,,8,,State Senate District 8,State Leg (Upper),29,
-Maine,23,,9,,State Senate District 9,State Leg (Upper),44,
-Maine,23,,10,,State Senate District 10,State Leg (Upper),17,
-Maine,23,,11,,State Senate District 11,State Leg (Upper),24,
-Maine,23,,12,,State Senate District 12,State Leg (Upper),23,
-Maine,23,,13,,State Senate District 13,State Leg (Upper),43,
-Maine,23,,14,,State Senate District 14,State Leg (Upper),41,
-Maine,23,,15,,State Senate District 15,State Leg (Upper),65,
-Maine,23,,16,,State Senate District 16,State Leg (Upper),45,
-Maine,23,,17,,State Senate District 17,State Leg (Upper),58,
-Maine,23,,18,,State Senate District 18,State Leg (Upper),34,
-Maine,23,,19,,State Senate District 19,State Leg (Upper),36,
-Maine,23,,20,,State Senate District 20,State Leg (Upper),37,
-Maine,23,,21,,State Senate District 21,State Leg (Upper),100,
-Maine,23,,22,,State Senate District 22,State Leg (Upper),47,
-Maine,23,,23,,State Senate District 23,State Leg (Upper),9,
-Maine,23,,24,,State Senate District 24,State Leg (Upper),45,
-Maine,23,,25,,State Senate District 25,State Leg (Upper),48,
-Maine,23,,26,,State Senate District 26,State Leg (Upper),40,
-Maine,23,,27,,State Senate District 27,State Leg (Upper),42,
-Maine,23,,28,,State Senate District 28,State Leg (Upper),10,
-Maine,23,,29,,State Senate District 29,State Leg (Upper),60,
-Maine,23,,30,,State Senate District 30,State Leg (Upper),56,
-Maine,23,,31,,State Senate District 31,State Leg (Upper),42,
-Maine,23,,32,,State Senate District 32,State Leg (Upper),38,
-Maine,23,,33,,State Senate District 33,State Leg (Upper),48,
-Maine,23,,34,,State Senate District 34,State Leg (Upper),27,
-Maine,23,,35,,State Senate District 35,State Leg (Upper),14,
-North Carolina,37,,1,,State Senate District 1,State Leg (Upper),47,
-North Carolina,37,,2,,State Senate District 2,State Leg (Upper),43,
-North Carolina,37,,3,,State Senate District 3,State Leg (Upper),52,
-North Carolina,37,,4,,State Senate District 4,State Leg (Upper),28,
-North Carolina,37,,5,,State Senate District 5,State Leg (Upper),22,
-North Carolina,37,,6,,State Senate District 6,State Leg (Upper),55,
-North Carolina,37,,7,,State Senate District 7,State Leg (Upper),43,
-North Carolina,37,,8,,State Senate District 8,State Leg (Upper),3,
-North Carolina,37,,9,,State Senate District 9,State Leg (Upper),58,
-North Carolina,37,,10,,State Senate District 10,State Leg (Upper),48,
-North Carolina,37,,11,,State Senate District 11,State Leg (Upper),47,
-North Carolina,37,,12,,State Senate District 12,State Leg (Upper),79,
-North Carolina,37,,13,,State Senate District 13,State Leg (Upper),90,
-North Carolina,37,,14,,State Senate District 14,State Leg (Upper),79,
-North Carolina,37,,15,,State Senate District 15,State Leg (Upper),48,
-North Carolina,37,,16,,State Senate District 16,State Leg (Upper),48,
-North Carolina,37,,17,,State Senate District 17,State Leg (Upper),100,
-North Carolina,37,,18,,State Senate District 18,State Leg (Upper),77,
-North Carolina,37,,19,,State Senate District 19,State Leg (Upper),35,
-North Carolina,37,,20,,State Senate District 20,State Leg (Upper),44,
-North Carolina,37,,21,,State Senate District 21,State Leg (Upper),30,
-North Carolina,37,,22,,State Senate District 22,State Leg (Upper),51,
-North Carolina,37,,23,,State Senate District 23,State Leg (Upper),26,
-North Carolina,37,,24,,State Senate District 24,State Leg (Upper),69,
-North Carolina,37,,25,,State Senate District 25,State Leg (Upper),23,
-North Carolina,37,,26,,State Senate District 26,State Leg (Upper),32,
-North Carolina,37,,27,,State Senate District 27,State Leg (Upper),34,
-North Carolina,37,,28,,State Senate District 28,State Leg (Upper),37,
-North Carolina,37,,29,,State Senate District 29,State Leg (Upper),22,
-North Carolina,37,,30,,State Senate District 30,State Leg (Upper),33,
-North Carolina,37,,31,,State Senate District 31,State Leg (Upper),27,
-North Carolina,37,,32,,State Senate District 32,State Leg (Upper),36,
-North Carolina,37,,33,,State Senate District 33,State Leg (Upper),37,
-North Carolina,37,,34,,State Senate District 34,State Leg (Upper),49,
-North Carolina,37,,35,,State Senate District 35,State Leg (Upper),52,
-North Carolina,37,,36,,State Senate District 36,State Leg (Upper),28,
-North Carolina,37,,37,,State Senate District 37,State Leg (Upper),24,
-North Carolina,37,,38,,State Senate District 38,State Leg (Upper),35,
-North Carolina,37,,39,,State Senate District 39,State Leg (Upper),25,
-North Carolina,37,,40,,State Senate District 40,State Leg (Upper),29,
-North Carolina,37,,41,,State Senate District 41,State Leg (Upper),18,
-North Carolina,37,,42,,State Senate District 42,State Leg (Upper),50,
-North Carolina,37,,43,,State Senate District 43,State Leg (Upper),37,
-North Carolina,37,,44,,State Senate District 44,State Leg (Upper),49,
-North Carolina,37,,45,,State Senate District 45,State Leg (Upper),17,
-North Carolina,37,,46,,State Senate District 46,State Leg (Upper),48,
-North Carolina,37,,47,,State Senate District 47,State Leg (Upper),23,
-North Carolina,37,,48,,State Senate District 48,State Leg (Upper),43,
-North Carolina,37,,49,,State Senate District 49,State Leg (Upper),34,
-North Carolina,37,,50,,State Senate District 50,State Leg (Upper),0,
-Pennsylvania,42,,1,,State Senate District 1,State Leg (Upper),8,
-Pennsylvania,42,,2,,State Senate District 2,State Leg (Upper),100,
-Pennsylvania,42,,3,,State Senate District 3,State Leg (Upper),46,
-Pennsylvania,42,,4,,State Senate District 4,State Leg (Upper),22,
-Pennsylvania,42,,5,,State Senate District 5,State Leg (Upper),29,
-Pennsylvania,42,,6,,State Senate District 6,State Leg (Upper),13,
-Pennsylvania,42,,7,,State Senate District 7,State Leg (Upper),13,
-Pennsylvania,42,,8,,State Senate District 8,State Leg (Upper),59,
-Pennsylvania,42,,9,,State Senate District 9,State Leg (Upper),76,
-Pennsylvania,42,,10,,State Senate District 10,State Leg (Upper),19,
-Pennsylvania,42,,11,,State Senate District 11,State Leg (Upper),55,
-Pennsylvania,42,,12,,State Senate District 12,State Leg (Upper),36,
-Pennsylvania,42,,13,,State Senate District 13,State Leg (Upper),66,
-Pennsylvania,42,,14,,State Senate District 14,State Leg (Upper),36,
-Pennsylvania,42,,15,,State Senate District 15,State Leg (Upper),52,
-Pennsylvania,42,,16,,State Senate District 16,State Leg (Upper),34,
-Pennsylvania,42,,17,,State Senate District 17,State Leg (Upper),53,
-Pennsylvania,42,,18,,State Senate District 18,State Leg (Upper),25,
-Pennsylvania,42,,19,,State Senate District 19,State Leg (Upper),71,
-Pennsylvania,42,,20,,State Senate District 20,State Leg (Upper),2,
-Pennsylvania,42,,21,,State Senate District 21,State Leg (Upper),30,
-Pennsylvania,42,,22,,State Senate District 22,State Leg (Upper),53,
-Pennsylvania,42,,23,,State Senate District 23,State Leg (Upper),30,
-Pennsylvania,42,,24,,State Senate District 24,State Leg (Upper),38,
-Pennsylvania,42,,25,,State Senate District 25,State Leg (Upper),0,
-Pennsylvania,42,,26,,State Senate District 26,State Leg (Upper),64,
-Pennsylvania,42,,27,,State Senate District 27,State Leg (Upper),30,
-Pennsylvania,42,,28,,State Senate District 28,State Leg (Upper),40,
-Pennsylvania,42,,29,,State Senate District 29,State Leg (Upper),21,
-Pennsylvania,42,,30,,State Senate District 30,State Leg (Upper),60,
-Pennsylvania,42,,31,,State Senate District 31,State Leg (Upper),50,
-Pennsylvania,42,,32,,State Senate District 32,State Leg (Upper),39,
-Pennsylvania,42,,33,,State Senate District 33,State Leg (Upper),49,
-Pennsylvania,42,,34,,State Senate District 34,State Leg (Upper),31,
-Pennsylvania,42,,35,,State Senate District 35,State Leg (Upper),19,
-Pennsylvania,42,,36,,State Senate District 36,State Leg (Upper),28,
-Pennsylvania,42,,37,,State Senate District 37,State Leg (Upper),76,
-Pennsylvania,42,,38,,State Senate District 38,State Leg (Upper),54,
-Pennsylvania,42,,39,,State Senate District 39,State Leg (Upper),20,
-Pennsylvania,42,,40,,State Senate District 40,State Leg (Upper),41,
-Pennsylvania,42,,41,,State Senate District 41,State Leg (Upper),39,
-Pennsylvania,42,,42,,State Senate District 42,State Leg (Upper),40,
-Pennsylvania,42,,43,,State Senate District 43,State Leg (Upper),20,
-Pennsylvania,42,,44,,State Senate District 44,State Leg (Upper),48,
-Pennsylvania,42,,45,,State Senate District 45,State Leg (Upper),57,
-Pennsylvania,42,,46,,State Senate District 46,State Leg (Upper),52,
-Pennsylvania,42,,47,,State Senate District 47,State Leg (Upper),47,
-Pennsylvania,42,,48,,State Senate District 48,State Leg (Upper),35,
-Pennsylvania,42,,49,,State Senate District 49,State Leg (Upper),39,
-Pennsylvania,42,,50,,State Senate District 50,State Leg (Upper),25,
-Virginia,51,,1,,State Senate District 1,State Leg (Upper),38,
-Virginia,51,,2,,State Senate District 2,State Leg (Upper),38,
-Virginia,51,,3,,State Senate District 3,State Leg (Upper),37,
-Virginia,51,,4,,State Senate District 4,State Leg (Upper),28,
-Virginia,51,,5,,State Senate District 5,State Leg (Upper),2,
-Virginia,51,,6,,State Senate District 6,State Leg (Upper),27,
-Virginia,51,,7,,State Senate District 7,State Leg (Upper),23,
-Virginia,51,,8,,State Senate District 8,State Leg (Upper),35,
-Virginia,51,,9,,State Senate District 9,State Leg (Upper),30,
-Virginia,51,,10,,State Senate District 10,State Leg (Upper),28,
-Virginia,51,,11,,State Senate District 11,State Leg (Upper),32,
-Virginia,51,,12,,State Senate District 12,State Leg (Upper),51,
-Virginia,51,,13,,State Senate District 13,State Leg (Upper),41,
-Virginia,51,,14,,State Senate District 14,State Leg (Upper),0,
-Virginia,51,,15,,State Senate District 15,State Leg (Upper),59,
-Virginia,51,,16,,State Senate District 16,State Leg (Upper),49,
-Virginia,51,,17,,State Senate District 17,State Leg (Upper),34,
-Virginia,51,,18,,State Senate District 18,State Leg (Upper),69,
-Virginia,51,,19,,State Senate District 19,State Leg (Upper),62,
-Virginia,51,,20,,State Senate District 20,State Leg (Upper),28,
-Virginia,51,,21,,State Senate District 21,State Leg (Upper),35,
-Virginia,51,,22,,State Senate District 22,State Leg (Upper),62,
-Virginia,51,,23,,State Senate District 23,State Leg (Upper),44,
-Virginia,51,,24,,State Senate District 24,State Leg (Upper),62,
-Virginia,51,,25,,State Senate District 25,State Leg (Upper),56,
-Virginia,51,,26,,State Senate District 26,State Leg (Upper),34,
-Virginia,51,,27,,State Senate District 27,State Leg (Upper),80,
-Virginia,51,,28,,State Senate District 28,State Leg (Upper),65,
-Virginia,51,,29,,State Senate District 29,State Leg (Upper),100,
-Virginia,51,,30,,State Senate District 30,State Leg (Upper),87,
-Virginia,51,,31,,State Senate District 31,State Leg (Upper),65,
-Virginia,51,,32,,State Senate District 32,State Leg (Upper),94,
-Virginia,51,,33,,State Senate District 33,State Leg (Upper),70,
-Virginia,51,,34,,State Senate District 34,State Leg (Upper),64,
-Virginia,51,,35,,State Senate District 35,State Leg (Upper),45,
-Virginia,51,,36,,State Senate District 36,State Leg (Upper),64,
-Virginia,51,,37,,State Senate District 37,State Leg (Upper),52,
-Virginia,51,,38,,State Senate District 38,State Leg (Upper),56,
-Virginia,51,,39,,State Senate District 39,State Leg (Upper),9,
-Virginia,51,,40,,State Senate District 40,State Leg (Upper),35,
-Wisconsin,55,,1,,State Senate District 1,State Leg (Upper),53,
-Wisconsin,55,,2,,State Senate District 2,State Leg (Upper),60,
-Wisconsin,55,,3,,State Senate District 3,State Leg (Upper),100,
-Wisconsin,55,,4,,State Senate District 4,State Leg (Upper),98,
-Wisconsin,55,,5,,State Senate District 5,State Leg (Upper),43,
-Wisconsin,55,,6,,State Senate District 6,State Leg (Upper),76,
-Wisconsin,55,,7,,State Senate District 7,State Leg (Upper),7,
-Wisconsin,55,,8,,State Senate District 8,State Leg (Upper),54,
-Wisconsin,55,,9,,State Senate District 9,State Leg (Upper),44,
-Wisconsin,55,,10,,State Senate District 10,State Leg (Upper),61,
-Wisconsin,55,,11,,State Senate District 11,State Leg (Upper),48,
-Wisconsin,55,,12,,State Senate District 12,State Leg (Upper),18,
-Wisconsin,55,,13,,State Senate District 13,State Leg (Upper),41,
-Wisconsin,55,,14,,State Senate District 14,State Leg (Upper),51,
-Wisconsin,55,,15,,State Senate District 15,State Leg (Upper),50,
-Wisconsin,55,,16,,State Senate District 16,State Leg (Upper),59,
-Wisconsin,55,,17,,State Senate District 17,State Leg (Upper),56,
-Wisconsin,55,,18,,State Senate District 18,State Leg (Upper),42,
-Wisconsin,55,,19,,State Senate District 19,State Leg (Upper),43,
-Wisconsin,55,,20,,State Senate District 20,State Leg (Upper),46,
-Wisconsin,55,,21,,State Senate District 21,State Leg (Upper),48,
-Wisconsin,55,,22,,State Senate District 22,State Leg (Upper),50,
-Wisconsin,55,,23,,State Senate District 23,State Leg (Upper),54,
-Wisconsin,55,,24,,State Senate District 24,State Leg (Upper),38,
-Wisconsin,55,,25,,State Senate District 25,State Leg (Upper),29,
-Wisconsin,55,,26,,State Senate District 26,State Leg (Upper),0,
-Wisconsin,55,,27,,State Senate District 27,State Leg (Upper),41,
-Wisconsin,55,,28,,State Senate District 28,State Leg (Upper),48,
-Wisconsin,55,,29,,State Senate District 29,State Leg (Upper),52,
-Wisconsin,55,,30,,State Senate District 30,State Leg (Upper),54,
-Wisconsin,55,,31,,State Senate District 31,State Leg (Upper),44,
-Wisconsin,55,,32,,State Senate District 32,State Leg (Upper),49,
-Wisconsin,55,,33,,State Senate District 33,State Leg (Upper),53,
-Arizona,4,,1,,State Senate District 1,State Leg (Upper),8,
-Arizona,4,,2,,State Senate District 2,State Leg (Upper),25,
-Arizona,4,,3,,State Senate District 3,State Leg (Upper),19,
-Arizona,4,,4,,State Senate District 4,State Leg (Upper),8,
-Arizona,4,,5,,State Senate District 5,State Leg (Upper),26,
-Arizona,4,,6,,State Senate District 6,State Leg (Upper),92,
-Arizona,4,,7,,State Senate District 7,State Leg (Upper),11,
-Arizona,4,,8,,State Senate District 8,State Leg (Upper),0,
-Arizona,4,,9,,State Senate District 9,State Leg (Upper),57,
-Arizona,4,,10,,State Senate District 10,State Leg (Upper),31,
-Arizona,4,,11,,State Senate District 11,State Leg (Upper),79,
-Arizona,4,,12,,State Senate District 12,State Leg (Upper),31,
-Arizona,4,,13,,State Senate District 13,State Leg (Upper),50,
-Arizona,4,,14,,State Senate District 14,State Leg (Upper),84,
-Arizona,4,,15,,State Senate District 15,State Leg (Upper),86,
-Arizona,4,,16,,State Senate District 16,State Leg (Upper),54,
-Arizona,4,,17,,State Senate District 17,State Leg (Upper),26,
-Arizona,4,,18,,State Senate District 18,State Leg (Upper),2,
-Arizona,4,,19,,State Senate District 19,State Leg (Upper),48,
-Arizona,4,,20,,State Senate District 20,State Leg (Upper),27,
-Arizona,4,,21,,State Senate District 21,State Leg (Upper),48,
-Arizona,4,,22,,State Senate District 22,State Leg (Upper),98,
-Arizona,4,,23,,State Senate District 23,State Leg (Upper),85,
-Arizona,4,,24,,State Senate District 24,State Leg (Upper),100,
-Arizona,4,,25,,State Senate District 25,State Leg (Upper),51,
-Arizona,4,,26,,State Senate District 26,State Leg (Upper),84,
-Arizona,4,,27,,State Senate District 27,State Leg (Upper),37,
-Arizona,4,,28,,State Senate District 28,State Leg (Upper),31,
-Arizona,4,,29,,State Senate District 29,State Leg (Upper),48,
-Arizona,4,,30,,State Senate District 30,State Leg (Upper),13,
+﻿state_name,state,congress,s_upper,s_lower,race_type,election_name,margins,voter_power
+Alaska,2,,A,,State Leg (Upper),State Senate District A,-4.576875906,0
+Alaska,2,,B,,State Leg (Upper),State Senate District B,23.33515149,14
+Alaska,2,,C,,State Leg (Upper),State Senate District C,-8.844834159,0
+Alaska,2,,D,,State Leg (Upper),State Senate District D,-45.80479452,3
+Alaska,2,,E,,State Leg (Upper),State Senate District E,-6.495363977,0
+Alaska,2,,F,,State Leg (Upper),State Senate District F,-6.521496371,78
+Alaska,2,,G,,State Leg (Upper),State Senate District G,8.255745817,0
+Alaska,2,,H,,State Leg (Upper),State Senate District H,2.200291215,100
+Alaska,2,,I,,State Leg (Upper),State Senate District I,18.8601787,0
+Alaska,2,,J,,State Leg (Upper),State Senate District J,15.58745514,31
+Alaska,2,,K,,State Leg (Upper),State Senate District K,2.468969239,0
+Alaska,2,,L,,State Leg (Upper),State Senate District L,-30.49856381,8
+Alaska,2,,M,,State Leg (Upper),State Senate District M,-45.89797837,0
+Alaska,2,,N,,State Leg (Upper),State Senate District N,-51.55380479,2
+Alaska,2,,O,,State Leg (Upper),State Senate District O,-40.34617532,0
+Alaska,2,,P,,State Leg (Upper),State Senate District P,-12.54705144,43
+Alaska,2,,Q,,State Leg (Upper),State Senate District Q,-34.55747771,0
+Alaska,2,,R,,State Leg (Upper),State Senate District R,-2.739146528,98
+Alaska,2,,S,,State Leg (Upper),State Senate District S,23.79331063,0
+Alaska,2,,T,,State Leg (Upper),State Senate District T,15.03331184,33
+Arizona,4,,1,,State Leg (Upper),State Senate District 1,-29.13718545,9
+Arizona,4,,2,,State Leg (Upper),State Senate District 2,-5.055739946,86
+Arizona,4,,3,,State Leg (Upper),State Senate District 3,-26.16034075,11
+Arizona,4,,4,,State Leg (Upper),State Senate District 4,-4.220855191,90
+Arizona,4,,5,,State Leg (Upper),State Senate District 5,36.33773146,5
+Arizona,4,,6,,State Leg (Upper),State Senate District 6,31.45778924,7
+Arizona,4,,7,,State Leg (Upper),State Senate District 7,-24.57647825,13
+Arizona,4,,8,,State Leg (Upper),State Senate District 8,25.64731005,12
+Arizona,4,,9,,State Leg (Upper),State Senate District 9,1.797569333,100
+Arizona,4,,10,,State Leg (Upper),State Senate District 10,-23.75942307,14
+Arizona,4,,11,,State Leg (Upper),State Senate District 11,51.59374947,2
+Arizona,4,,12,,State Leg (Upper),State Senate District 12,13.74016131,38
+Arizona,4,,13,,State Leg (Upper),State Senate District 13,-2.212376397,99
+Arizona,4,,14,,State Leg (Upper),State Senate District 14,-18.59882338,23
+Arizona,4,,15,,State Leg (Upper),State Senate District 15,-28.20770752,9
+Arizona,4,,16,,State Leg (Upper),State Senate District 16,-5.650044758,82
+Arizona,4,,17,,State Leg (Upper),State Senate District 17,-9.143737199,61
+Arizona,4,,18,,State Leg (Upper),State Senate District 18,18.98137291,22
+Arizona,4,,19,,State Leg (Upper),State Senate District 19,-23.98776994,13
+Arizona,4,,20,,State Leg (Upper),State Senate District 20,50.43312658,2
+Arizona,4,,21,,State Leg (Upper),State Senate District 21,28.11957037,9
+Arizona,4,,22,,State Leg (Upper),State Senate District 22,35.01707807,5
+Arizona,4,,23,,State Leg (Upper),State Senate District 23,15.57728433,31
+Arizona,4,,24,,State Leg (Upper),State Senate District 24,31.54482588,7
+Arizona,4,,25,,State Leg (Upper),State Senate District 25,-26.36111498,11
+Arizona,4,,26,,State Leg (Upper),State Senate District 26,37.45895092,5
+Arizona,4,,27,,State Leg (Upper),State Senate District 27,-10.23918619,54
+Arizona,4,,28,,State Leg (Upper),State Senate District 28,-26.48140029,11
+Arizona,4,,29,,State Leg (Upper),State Senate District 29,-14.44646058,35
+Arizona,4,,30,,State Leg (Upper),State Senate District 30,-50.56426602,2
+Kansas,20,,1,,State Leg (Upper),State Senate District 1,-44.32336869,3
+Kansas,20,,2,,State Leg (Upper),State Senate District 2,55.36178726,2
+Kansas,20,,3,,State Leg (Upper),State Senate District 3,-12.27065903,43
+Kansas,20,,4,,State Leg (Upper),State Senate District 4,56.28245067,1
+Kansas,20,,5,,State Leg (Upper),State Senate District 5,-6.608026388,75
+Kansas,20,,6,,State Leg (Upper),State Senate District 6,28.30057574,9
+Kansas,20,,7,,State Leg (Upper),State Senate District 7,24.97660271,12
+Kansas,20,,8,,State Leg (Upper),State Senate District 8,11.61245816,46
+Kansas,20,,9,,State Leg (Upper),State Senate District 9,-12.38002422,43
+Kansas,20,,10,,State Leg (Upper),State Senate District 10,-2.974485979,94
+Kansas,20,,11,,State Leg (Upper),State Senate District 11,-6.725300058,74
+Kansas,20,,12,,State Leg (Upper),State Senate District 12,-46.70172705,2
+Kansas,20,,13,,State Leg (Upper),State Senate District 13,-30.91514727,7
+Kansas,20,,14,,State Leg (Upper),State Senate District 14,-42.93822933,3
+Kansas,20,,15,,State Leg (Upper),State Senate District 15,-44.67213115,3
+Kansas,20,,16,,State Leg (Upper),State Senate District 16,-24.10552734,13
+Kansas,20,,17,,State Leg (Upper),State Senate District 17,-17.73478436,24
+Kansas,20,,18,,State Leg (Upper),State Senate District 18,-28.73576677,9
+Kansas,20,,19,,State Leg (Upper),State Senate District 19,28.05970149,9
+Kansas,20,,20,,State Leg (Upper),State Senate District 20,-7.824826471,67
+Kansas,20,,21,,State Leg (Upper),State Senate District 21,14.29344267,35
+Kansas,20,,22,,State Leg (Upper),State Senate District 22,-0.773790669,100
+Kansas,20,,23,,State Leg (Upper),State Senate District 23,-7.555338542,69
+Kansas,20,,24,,State Leg (Upper),State Senate District 24,-35.19625153,5
+Kansas,20,,25,,State Leg (Upper),State Senate District 25,12.406613,43
+Kansas,20,,26,,State Leg (Upper),State Senate District 26,-38.18641138,4
+Kansas,20,,27,,State Leg (Upper),State Senate District 27,-22.84298128,15
+Kansas,20,,28,,State Leg (Upper),State Senate District 28,-14.13018083,36
+Kansas,20,,29,,State Leg (Upper),State Senate District 29,40.93636224,3
+Kansas,20,,30,,State Leg (Upper),State Senate District 30,-15.82165175,30
+Kansas,20,,31,,State Leg (Upper),State Senate District 31,-24.6313829,12
+Kansas,20,,32,,State Leg (Upper),State Senate District 32,-40.89837746,4
+Kansas,20,,33,,State Leg (Upper),State Senate District 33,-56.75684782,1
+Kansas,20,,34,,State Leg (Upper),State Senate District 34,-37.69947484,4
+Kansas,20,,35,,State Leg (Upper),State Senate District 35,-8.805621865,61
+Kansas,20,,36,,State Leg (Upper),State Senate District 36,-61.78648052,1
+Kansas,20,,37,,State Leg (Upper),State Senate District 37,-17.98087212,24
+Kansas,20,,38,,State Leg (Upper),State Senate District 38,-45.48004658,3
+Kansas,20,,39,,State Leg (Upper),State Senate District 39,-49.86063514,2
+Kansas,20,,40,,State Leg (Upper),State Senate District 40,-59.27880946,1
+Nebraska,31,,1,,State Leg (Upper),State Senate District 1,-43.74586764,3
+Nebraska,31,,2,,State Leg (Upper),State Senate District 2,-28.55190539,0
+Nebraska,31,,3,,State Leg (Upper),State Senate District 3,-16.45508818,31
+Nebraska,31,,4,,State Leg (Upper),State Senate District 4,-22.2728965,0
+Nebraska,31,,5,,State Leg (Upper),State Senate District 5,14.92010241,37
+Nebraska,31,,6,,State Leg (Upper),State Senate District 6,1.181059108,0
+Nebraska,31,,7,,State Leg (Upper),State Senate District 7,34.46180556,6
+Nebraska,31,,8,,State Leg (Upper),State Senate District 8,26.0421015,0
+Nebraska,31,,9,,State Leg (Upper),State Senate District 9,34.73142016,6
+Nebraska,31,,10,,State Leg (Upper),State Senate District 10,-3.140136963,0
+Nebraska,31,,11,,State Leg (Upper),State Senate District 11,69.99889295,1
+Nebraska,31,,12,,State Leg (Upper),State Senate District 12,-7.385329736,0
+Nebraska,31,,13,,State Leg (Upper),State Senate District 13,23.56655902,15
+Nebraska,31,,14,,State Leg (Upper),State Senate District 14,-20.47538014,0
+Nebraska,31,,15,,State Leg (Upper),State Senate District 15,-36.06998654,5
+Nebraska,31,,16,,State Leg (Upper),State Senate District 16,-49.43354518,0
+Nebraska,31,,17,,State Leg (Upper),State Senate District 17,-29.50664951,9
+Nebraska,31,,18,,State Leg (Upper),State Senate District 18,-8.947336078,0
+Nebraska,31,,19,,State Leg (Upper),State Senate District 19,-58.46283074,1
+Nebraska,31,,20,,State Leg (Upper),State Senate District 20,-4.214150623,0
+Nebraska,31,,21,,State Leg (Upper),State Senate District 21,-13.55207785,42
+Nebraska,31,,22,,State Leg (Upper),State Senate District 22,-59.98363339,0
+Nebraska,31,,23,,State Leg (Upper),State Senate District 23,-47.70807118,3
+Nebraska,31,,24,,State Leg (Upper),State Senate District 24,-50.67001675,0
+Nebraska,31,,25,,State Leg (Upper),State Senate District 25,-12.71706061,46
+Nebraska,31,,26,,State Leg (Upper),State Senate District 26,9.283493133,0
+Nebraska,31,,27,,State Leg (Upper),State Senate District 27,4.016368597,100
+Nebraska,31,,28,,State Leg (Upper),State Senate District 28,29.55212204,0
+Nebraska,31,,29,,State Leg (Upper),State Senate District 29,17.32329085,28
+Nebraska,31,,30,,State Leg (Upper),State Senate District 30,-21.93933109,0
+Nebraska,31,,31,,State Leg (Upper),State Senate District 31,-19.43252386,23
+Nebraska,31,,32,,State Leg (Upper),State Senate District 32,-39.79222321,0
+Nebraska,31,,33,,State Leg (Upper),State Senate District 33,-49.10343986,2
+Nebraska,31,,34,,State Leg (Upper),State Senate District 34,-53.65796283,0
+Nebraska,31,,35,,State Leg (Upper),State Senate District 35,-25.06321113,13
+Nebraska,31,,36,,State Leg (Upper),State Senate District 36,-31.55843377,0
+Nebraska,31,,37,,State Leg (Upper),State Senate District 37,-39.15552237,4
+Nebraska,31,,38,,State Leg (Upper),State Senate District 38,-65.80264942,0
+Nebraska,31,,39,,State Leg (Upper),State Senate District 39,-35.98615917,5
+Nebraska,31,,40,,State Leg (Upper),State Senate District 40,-66.78107509,0
+Nebraska,31,,41,,State Leg (Upper),State Senate District 41,-60.48523923,1
+Nebraska,31,,42,,State Leg (Upper),State Senate District 42,-57.83614221,0
+Nebraska,31,,43,,State Leg (Upper),State Senate District 43,-66.71252447,1
+Nebraska,31,,44,,State Leg (Upper),State Senate District 44,-60.15268216,0
+Nebraska,31,,45,,State Leg (Upper),State Senate District 45,-16.33633227,31
+Nebraska,31,,46,,State Leg (Upper),State Senate District 46,20.05497526,0
+Nebraska,31,,47,,State Leg (Upper),State Senate District 47,-62.93391091,1
+Nebraska,31,,48,,State Leg (Upper),State Senate District 48,-47.97157444,0
+Nebraska,31,,49,,State Leg (Upper),State Senate District 49,-21.39228966,19
+New Hampshire,33,,1,,State Leg (Upper),State Senate District 1,-13.12967833,40
+New Hampshire,33,,2,,State Leg (Upper),State Senate District 2,-15.96985466,30
+New Hampshire,33,,3,,State Leg (Upper),State Senate District 3,-14.3798987,35
+New Hampshire,33,,4,,State Leg (Upper),State Senate District 4,7.830224351,69
+New Hampshire,33,,5,,State Leg (Upper),State Senate District 5,27.53101807,10
+New Hampshire,33,,6,,State Leg (Upper),State Senate District 6,-20.66571438,18
+New Hampshire,33,,7,,State Leg (Upper),State Senate District 7,-13.23211113,40
+New Hampshire,33,,8,,State Leg (Upper),State Senate District 8,-18.34201556,23
+New Hampshire,33,,9,,State Leg (Upper),State Senate District 9,-12.41229943,43
+New Hampshire,33,,10,,State Leg (Upper),State Senate District 10,17.57845377,25
+New Hampshire,33,,11,,State Leg (Upper),State Senate District 11,-9.054871093,61
+New Hampshire,33,,12,,State Leg (Upper),State Senate District 12,-9.864653084,56
+New Hampshire,33,,13,,State Leg (Upper),State Senate District 13,6.708745937,76
+New Hampshire,33,,14,,State Leg (Upper),State Senate District 14,-20.84239787,18
+New Hampshire,33,,15,,State Leg (Upper),State Senate District 15,14.92679333,33
+New Hampshire,33,,16,,State Leg (Upper),State Senate District 16,-17.57194411,25
+New Hampshire,33,,17,,State Leg (Upper),State Senate District 17,-20.0634127,20
+New Hampshire,33,,18,,State Leg (Upper),State Senate District 18,-10.55670103,53
+New Hampshire,33,,19,,State Leg (Upper),State Senate District 19,-21.72742019,17
+New Hampshire,33,,20,,State Leg (Upper),State Senate District 20,1.774173109,100
+New Hampshire,33,,21,,State Leg (Upper),State Senate District 21,25.19461935,12
+New Hampshire,33,,22,,State Leg (Upper),State Senate District 22,-25.66095085,12
+New Hampshire,33,,23,,State Leg (Upper),State Senate District 23,-23.71060172,14
+New Hampshire,33,,24,,State Leg (Upper),State Senate District 24,1.784644244,100
+Pennsylvania,42,,1,,State Leg (Upper),State Senate District 1,63.21596794,1
+Pennsylvania,42,,2,,State Leg (Upper),State Senate District 2,59.39726308,0
+Pennsylvania,42,,3,,State Leg (Upper),State Senate District 3,88.14862581,0
+Pennsylvania,42,,4,,State Leg (Upper),State Senate District 4,71.71152029,0
+Pennsylvania,42,,5,,State Leg (Upper),State Senate District 5,14.85553593,33
+Pennsylvania,42,,6,,State Leg (Upper),State Senate District 6,2.865840708,0
+Pennsylvania,42,,7,,State Leg (Upper),State Senate District 7,74.39201304,1
+Pennsylvania,42,,8,,State Leg (Upper),State Senate District 8,73.93238354,0
+Pennsylvania,42,,9,,State Leg (Upper),State Senate District 9,15.93290258,29
+Pennsylvania,42,,10,,State Leg (Upper),State Senate District 10,14.3980064,0
+Pennsylvania,42,,11,,State Leg (Upper),State Senate District 11,11.62196029,46
+Pennsylvania,42,,12,,State Leg (Upper),State Senate District 12,18.25300169,0
+Pennsylvania,42,,13,,State Leg (Upper),State Senate District 13,-9.221717293,59
+Pennsylvania,42,,14,,State Leg (Upper),State Senate District 14,11.09500264,0
+Pennsylvania,42,,15,,State Leg (Upper),State Senate District 15,14.07698864,36
+Pennsylvania,42,,16,,State Leg (Upper),State Senate District 16,-7.433845696,0
+Pennsylvania,42,,17,,State Leg (Upper),State Senate District 17,39.79669767,4
+Pennsylvania,42,,18,,State Leg (Upper),State Senate District 18,9.571368042,0
+Pennsylvania,42,,19,,State Leg (Upper),State Senate District 19,17.08207345,26
+Pennsylvania,42,,20,,State Leg (Upper),State Senate District 20,-19.18050673,0
+Pennsylvania,42,,21,,State Leg (Upper),State Senate District 21,-33.97339093,6
+Pennsylvania,42,,22,,State Leg (Upper),State Senate District 22,16.60700212,0
+Pennsylvania,42,,23,,State Leg (Upper),State Senate District 23,-37.4972338,4
+Pennsylvania,42,,24,,State Leg (Upper),State Senate District 24,-0.388592918,0
+Pennsylvania,42,,25,,State Leg (Upper),State Senate District 25,-21.73289529,16
+Pennsylvania,42,,26,,State Leg (Upper),State Senate District 26,21.01586714,0
+Pennsylvania,42,,27,,State Leg (Upper),State Senate District 27,-29.78944775,8
+Pennsylvania,42,,28,,State Leg (Upper),State Senate District 28,-27.66861435,0
+Pennsylvania,42,,29,,State Leg (Upper),State Senate District 29,-27.15095165,10
+Pennsylvania,42,,30,,State Leg (Upper),State Senate District 30,-45.31814626,0
+Pennsylvania,42,,31,,State Leg (Upper),State Senate District 31,-11.95726625,45
+Pennsylvania,42,,32,,State Leg (Upper),State Senate District 32,-36.81953565,0
+Pennsylvania,42,,33,,State Leg (Upper),State Senate District 33,-36.83882041,5
+Pennsylvania,42,,34,,State Leg (Upper),State Senate District 34,-22.07109587,0
+Pennsylvania,42,,35,,State Leg (Upper),State Senate District 35,-23.09001659,14
+Pennsylvania,42,,36,,State Leg (Upper),State Senate District 36,-17.32039411,0
+Pennsylvania,42,,37,,State Leg (Upper),State Senate District 37,0.491041192,100
+Pennsylvania,42,,38,,State Leg (Upper),State Senate District 38,13.0407134,0
+Pennsylvania,42,,39,,State Leg (Upper),State Senate District 39,-21.00922687,17
+Pennsylvania,42,,40,,State Leg (Upper),State Senate District 40,3.655952757,0
+Pennsylvania,42,,41,,State Leg (Upper),State Senate District 41,-28.85750605,9
+Pennsylvania,42,,42,,State Leg (Upper),State Senate District 42,36.77247175,0
+Pennsylvania,42,,43,,State Leg (Upper),State Senate District 43,57.5416779,1
+Pennsylvania,42,,44,,State Leg (Upper),State Senate District 44,9.037506332,0
+Pennsylvania,42,,45,,State Leg (Upper),State Senate District 45,15.03409533,32
+Pennsylvania,42,,46,,State Leg (Upper),State Senate District 46,-16.52159924,0
+Pennsylvania,42,,47,,State Leg (Upper),State Senate District 47,-12.45475785,42
+Pennsylvania,42,,48,,State Leg (Upper),State Senate District 48,-30.50664009,0
+Pennsylvania,42,,49,,State Leg (Upper),State Senate District 49,7.525648763,69
+Pennsylvania,42,,50,,State Leg (Upper),State Senate District 50,-23.21292227,0
+Wisconsin,55,,1,,State Leg (Upper),State Senate District 1,-18.56375237,0
+Wisconsin,55,,2,,State Leg (Upper),State Senate District 2,-24.47448871,13
+Wisconsin,55,,3,,State Leg (Upper),State Senate District 3,34.66147946,0
+Wisconsin,55,,4,,State Leg (Upper),State Senate District 4,66.49696367,1
+Wisconsin,55,,5,,State Leg (Upper),State Senate District 5,-6.786492823,0
+Wisconsin,55,,6,,State Leg (Upper),State Senate District 6,69.18313221,1
+Wisconsin,55,,7,,State Leg (Upper),State Senate District 7,25.45121604,0
+Wisconsin,55,,8,,State Leg (Upper),State Senate District 8,-10.19736842,54
+Wisconsin,55,,9,,State Leg (Upper),State Senate District 9,-14.94969985,0
+Wisconsin,55,,10,,State Leg (Upper),State Senate District 10,-13.36253845,39
+Wisconsin,55,,11,,State Leg (Upper),State Senate District 11,-25.23960153,0
+Wisconsin,55,,12,,State Leg (Upper),State Senate District 12,-23.26879147,14
+Wisconsin,55,,13,,State Leg (Upper),State Senate District 13,-25.10113021,0
+Wisconsin,55,,14,,State Leg (Upper),State Senate District 14,8.847315138,62
+Wisconsin,55,,15,,State Leg (Upper),State Senate District 15,16.18152416,0
+Wisconsin,55,,16,,State Leg (Upper),State Senate District 16,28.67664186,9
+Wisconsin,55,,17,,State Leg (Upper),State Senate District 17,10.74304172,0
+Wisconsin,55,,18,,State Leg (Upper),State Senate District 18,6.534626281,76
+Wisconsin,55,,19,,State Leg (Upper),State Senate District 19,-24.14142539,0
+Wisconsin,55,,20,,State Leg (Upper),State Senate District 20,-35.7050065,5
+Wisconsin,55,,21,,State Leg (Upper),State Senate District 21,-1.62211665,0
+Wisconsin,55,,22,,State Leg (Upper),State Senate District 22,13.9856827,37
+Wisconsin,55,,23,,State Leg (Upper),State Senate District 23,-25.95905488,0
+Wisconsin,55,,24,,State Leg (Upper),State Senate District 24,-5.692407715,81
+Wisconsin,55,,25,,State Leg (Upper),State Senate District 25,-4.411394289,0
+Wisconsin,55,,26,,State Leg (Upper),State Senate District 26,67.96056129,1
+Wisconsin,55,,27,,State Leg (Upper),State Senate District 27,48.92043281,0
+Wisconsin,55,,28,,State Leg (Upper),State Senate District 28,-27.94361862,9
+Wisconsin,55,,29,,State Leg (Upper),State Senate District 29,-15.99459728,0
+Wisconsin,55,,30,,State Leg (Upper),State Senate District 30,1.552123453,100
+Wisconsin,55,,31,,State Leg (Upper),State Senate District 31,6.239827015,0
+Wisconsin,55,,32,,State Leg (Upper),State Senate District 32,8.893884576,62
+Wisconsin,55,,33,,State Leg (Upper),State Senate District 33,-40.70292389,0

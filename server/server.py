@@ -70,6 +70,7 @@ def dataloader():
     return elections, allshapes, candidates
 
 with app.app_context():
+    logging.info("VM Activated")
     ELECTIONS, ALLSHAPES, CANDIDATES = dataloader()
 
 
@@ -80,7 +81,6 @@ def home():
     '''
     Renders the homepage.
     '''
-    print("Anybody home?")
     return render_template("home.html", states = STATES, mapbox_key = mapbox_key)
 
 @app.route('/local', methods=["GET", "POST"])
@@ -92,8 +92,9 @@ def local_elections():
             location =  gmaps.geocode(location)
             return election_delivery_function(location)
         except:
-            #flash('Unable to locate address', 'error') Doesn't work smh
             return redirect('/')
+    else:
+        return redirect('/')
 
     
 @app.route('/state', methods=["GET", "POST"])
@@ -102,6 +103,8 @@ def state_elections():
     if request.method == "POST":
         location = request.form.get("location")
         return election_delivery_function(location)
+    else:
+        return redirect('/')
 
 @app.route('/voter-power', methods=["GET", "POST"])
 # It's the vp infographic page.
@@ -123,13 +126,11 @@ def faq_load():
 def get_involved():
     # Gets the candidates in the election from the state/local page
     if request.method == "POST":
-        print(request.form.get("candidates"), type(request.form.get("candidates")))
         candidates = request.form.get("candidates")
         candidates = json.loads(candidates)
     else:
-        candidates = []
+        return redirect('/')
 
-    print(candidates, type(candidates))
     # Gets the candidate information from the candidate DB
     # Writes a nice HTML string for each candidate
     db = DB()

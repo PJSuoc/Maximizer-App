@@ -79,7 +79,7 @@ class DB:
         s_lower = pd.read_csv(s_lower_path, dtype=str)
         ballot = pd.read_csv(ballot_path, dtype=str)
         # Merges election CSVs into a single dataframe for calculations
-        df_list = [president, senate, congress, s_upper, s_lower, ballot]
+        df_list = [president, senate, congress, governor, s_upper, s_lower, ballot]
         self.elections = pd.concat(df_list, ignore_index=True)
         # Elections data cleaning/adjusting
         self.elections["eid"] = self.elections.index
@@ -206,35 +206,49 @@ class DB:
         Output: (very long) html/js string inserted into the webpage
         '''
         election_front = '<li class="list-group-item" id="detail-li"><div class="row" id="detail-row">'
-        # The Button here directs to the get involved page.
         button_front = '<form action="/get-involved" id="'
         button_mid = '" method="post"><input type="hidden" name="candidates" value="' 
         button_mid2 = '"><button class="btn btn-primary" type="submit" form="'
-        button_back = '" value="Submit">Get Involved</button></form></div></div></li>'
-        #item_front = '<div class="col">'
-        name_front = '<div class="col" id="row-name">'
+        button_back = '" value="Submit">Learn More</button></form></div></div></li>'
+        name_front = '<div class="col" id="row-state">'
+        elec_front = '<div class="col" id="row-election">'
         vp_front = '<div class="col" id="row-vp">'
         btn_front = '<div class="col" id="row-btn">'
         item_back = '</div>'
         completed_string = ''
-        #statestr = "State: "
         vpstr = "Voter Power: "
         
 
         for i, election in election_list.iterrows():
-            state_name = election["state_name"] + ", " + election["election_name"]
+            state_name = election["state_name"]
+            election_name = election["election_name"]
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
             fmid = "form_" + str(form_id)
-            print(cand_list)
-            election_str = name_front + state_name + item_back + vp_front + vpstr + election_vp + item_back + \
-                btn_front + button_front + fmid + button_mid + cand_list + button_mid2 + fmid + button_back
+            logging.info(cand_list)
+            election_str = name_front + state_name + item_back + \
+                            elec_front + election_name + item_back + \
+                            vp_front + vpstr + election_vp + item_back + \
+                            btn_front + button_front + fmid + button_mid + \
+                            cand_list + button_mid2 + fmid + button_back
             completed_string = completed_string + election_front + election_str
             form_id += 1 
         return completed_string, form_id
     
     def candidate_link_strings(self, candidate_ids):
-
+        '''
+        Generates the raw HTML for each candidate on the get involved page.
+        Consists of:
+            Overall Column: id=candidate
+                List of elements: id=infolist
+                    Candidate Name: id=cand
+                    Candidate Party: id=cand
+                    Candidate Campaign Button: id=campbtn
+        
+        Input: candidate_ids, list of candidates based off of unique id to include
+        Output: (very long) html/js string inserted into the webpage
+        '''
+        # HTML Elements that get cobbled together
         cand_front = '<div class="col" id="candidate"><ul id="infolist" class="list-group-item">'
         name_front = '<li id="cand">'
         party_front = '<li id="cand">'
@@ -242,17 +256,27 @@ class DB:
         button_back = '" role="button">Candidate Campaign</a>'
         item_back = '</li>'
         cand_back = '</ul></div>'
+        denier_text = '<li id="denier"><b>Skeptic Flag:</b> This candidate has made statements doubting the \
+            electoral proceedings of free and fair elections in the United States. The EIL is dedicated to promoting and \
+            improving the democratic process, and considers claims of this nature highly detrimental to that mission.</li>'
 
         candidate_link_string = ''
-        #print(candidate_ids, type(candidate_ids))
+        #Creates each candidate individually and then puts them together
         for candidate in candidate_ids:
             id = int(candidate)
             name = self.candidates.loc[id]["name"]
             party = self.candidates.loc[id]["party"]
-            camp_link = self.candidates.loc[id]["campaign_link"]
+            camp_link = str(self.candidates.loc[id]["campaign_link"])
+            denier = self.candidates.loc[id]["election_denier"]
 
-            c_str = cand_front + name_front + name + item_back + party_front + party + item_back + \
-                button_front + camp_link + button_back + item_back
+            # Inserts warning about election deniers. I'd make it a popup, but that's a lot harder and time is of the essence.
+            if denier == "1":
+                c_str = cand_front + name_front + name + item_back + party_front + party + item_back + \
+                    denier_text + button_front + camp_link + button_back + item_back
+            else:
+                c_str = cand_front + name_front + name + item_back + party_front + party + item_back + \
+                    button_front + camp_link + button_back + item_back
+            
             candidate_link_string = candidate_link_string + c_str + cand_back
 
         #candidate_link_string = candidate_link_string + cand_back
@@ -267,8 +291,18 @@ class DB:
 
         #creates lists of candidate ids and names/affiliations for each election
         for i, election in self.elections.iterrows():
-                matched = matcher[matcher["eid"] == election["eid"]]
+                
+                # Does additional filtration for Ballot Initiatives
+                # Otherwise just gets candidate matches for that election
+                if election["race_type"] == "Ballot Initiative":
+                    matched = matcher[matcher["eid"] == election["eid"]]
+                    matched = matched[matched["election_name_y"] == election["election_name"]]
+                else:
+                    matched = matcher[matcher["eid"] == election["eid"]]
+
                 cand_id_list.append(list(matched["cid"]))
+
+                # Explicitly for adding a string to geojsons
                 candstring = ""
                 for j, match in matched.iterrows():
                     candstring = candstring + " " + match["party"] + ": " + match["name"]

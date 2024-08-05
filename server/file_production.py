@@ -56,11 +56,12 @@ def state_vp(df):
         su_vp = su_df.shape[0]
         sl_df = vpdf[vpdf["race_type"] == "State Leg (Lower)"]
         sl_vp = sl_df.shape[0]
-        b_df = vpdf[vpdf["race_type"] == "Ballot Initiative"]
+        b_df = state_df[state_df["race_type"] == "Ballot Initiative"]
         b_vp = b_df.shape[0]
 
         # 3 points per su, sl, if(ballot)
-        state_vp = (p_vp + s_vp + h_vp + g_vp + min(4, su_vp) + min (4, sl_vp) + min (3, b_vp)) * 5
+        state_vp = (p_vp + s_vp + h_vp + g_vp + min(4, su_vp) + min(4, sl_vp) + min(3, b_vp))
+        state_vp = round(state_vp * (100/15)) #Temporary VP Normalizer
 
         svp_df.loc[svp_df["state_name"] == state, ["voter_power"]] = state_vp
     
@@ -68,8 +69,10 @@ def state_vp(df):
 
 
 ### CSV Cleaner & Rewriter
+# The CSV cleaners are VERY similar, candidate just trims to different fields
+# and also has additional cleaning on election denier.
 
-def election_csv_cleaner(location, destination, csv_name):
+def election_csv_cleaner(location, csv_tag, destination, csv_name):
     df = pd.read_csv(location + csv_name)
 
     # Cut the CSV down to the relevant columns
@@ -94,9 +97,9 @@ def election_csv_cleaner(location, destination, csv_name):
     # Voter Power Cleaning
     df["voter_power"] = df["voter_power"].astype(float)
 
-    df.to_csv(destination + csv_name,  index = False)
+    df.to_csv(destination + csv_tag + csv_name,  index = False)
 
-def candidate_csv_cleaner(location, destination, csv_name):
+def candidate_csv_cleaner(location, csv_tag, destination, csv_name):
     df = pd.read_csv(location + csv_name, dtype=str)
 
     # Cut the CSV down to the relevant columns
@@ -121,20 +124,21 @@ def candidate_csv_cleaner(location, destination, csv_name):
     df["party"] = df["party"].fillna("Unknown")
     df["election_denier"] = df["election_denier"].fillna(0)
 
-    df.to_csv(destination + csv_name,  index = False)
+    df.to_csv(destination + csv_tag + csv_name,  index = False)
 
 ### CSV Reader
 
 def csv_reader(filename):
-
-    df = pd.read_csv(destination + p_file)
+    #Currently unused
+    df = pd.read_csv(destination + csv_tag + p_file)
     return df
 
 ### GeoJSON Writer
 def geojson_writer(df, filename):
+    # forces voter_power to a number for interpretation by color scale
     df["voter_power"] = df["voter_power"].astype(float)
     gdf = gpd.GeoDataFrame(df, crs=4269)
-    desto = destination + filename
+    desto = destination + geojson_tag + filename
     gdf.to_file(desto, driver="GeoJSON")
 
 ################################################################################
@@ -143,8 +147,13 @@ def geojson_writer(df, filename):
 
 ##### CSVs utilized for various purposes #####
 
+# These 2 are used to identify folders things are coming/going to/from
 location = "static/data/csv_imports/"
 destination = "static/data/calculated_files/"
+# Secondary Folder
+csv_tag = "csvs/"
+geojson_tag = "geojsons/"
+
 #Presidential Data CSV
 p_file = "president.csv"
 #Senate Data CSV
@@ -165,18 +174,19 @@ c_file = "candidates.csv"
 file_list = [p_file, s_file, h_file, g_file, su_file, sl_file, b_file]
 # Clean all CSVs and write them back
 for df_file in file_list:
-    election_csv_cleaner(location, destination, df_file)
+    election_csv_cleaner(location, csv_tag, destination, df_file)
 
-candidate_csv_cleaner(location, destination, c_file)
+# Clean candidate CSV and write it back
+candidate_csv_cleaner(location, csv_tag, destination, c_file)
 
 #Read in the cleaned CSVs
-p = pd.read_csv(destination + p_file, dtype=str)
-s = pd.read_csv(destination + s_file, dtype=str)
-h = pd.read_csv(destination + h_file, dtype=str)
-g = pd.read_csv(destination + g_file, dtype=str)
-su = pd.read_csv(destination + su_file, dtype=str)
-sl = pd.read_csv(destination + sl_file, dtype=str)
-b = pd.read_csv(destination + b_file, dtype=str)
+p = pd.read_csv(destination + csv_tag + p_file, dtype=str)
+s = pd.read_csv(destination + csv_tag + s_file, dtype=str)
+h = pd.read_csv(destination + csv_tag + h_file, dtype=str)
+g = pd.read_csv(destination + csv_tag + g_file, dtype=str)
+su = pd.read_csv(destination + csv_tag + su_file, dtype=str)
+sl = pd.read_csv(destination + csv_tag + sl_file, dtype=str)
+b = pd.read_csv(destination + csv_tag + b_file, dtype=str)
 merger_list = [p, s, h, g, su, sl, b]
 merge_df = pd.concat(merger_list, ignore_index=True)
 
@@ -188,8 +198,8 @@ merger_list.append(svp_df)
 elections_df = pd.concat(merger_list, ignore_index=True)
 
 #write both options to a csv for future use
-svp_df.to_csv("static/data/calculated_files/aggregate.csv",  index = False)
-merge_df.to_csv("static/data/calculated_files/elections.csv",  index = False)
+svp_df.to_csv("static/data/calculated_files/csvs/aggregate.csv",  index = False)
+merge_df.to_csv("static/data/calculated_files/csvs/elections.csv",  index = False)
 
 
 ################################################################################
@@ -200,6 +210,9 @@ allshape_path = Path("static/data/shp_imports/all_shapes/all_shapes.shp")
 allshapes = gpd.read_file(allshape_path)
 
 def regshapeimport():
+    # Imports the individual shapefiles and cleans their shape identifiers to match the
+    # 4 columns used by our database to sort elections based on different shapes.
+    # Returns all 4 types of shapes as geodataframes
     congress = gpd.read_file("static/data/shp_imports/cb_2023_us_cd118_500k/cb_2023_us_cd118_500k.shp")
     congress = congress.to_crs(4269)
     states = gpd.read_file("static/data/shp_imports/cb_2023_us_state_500k/cb_2023_us_state_500k.shp")
@@ -227,6 +240,7 @@ def regshapeimport():
     return states, congress, state_upper, state_lower
 states, congress, state_upper, state_lower = regshapeimport()
 
+#
 taglist = ["Aggregate", "Presidential","Senate","House", "Governor", "State Leg (Upper)",
                               "State Leg (Lower)", "Ballot Initiative"]
 a_json = "aggregate.geojson"
@@ -238,11 +252,13 @@ su_json = "state_upper_legislature.geojson"
 sl_json = "state_lower_legislature.geojson"
 b_json = "ballot_initiative.geojson"
 
+# I pull things in and out of the following list if I only want to update specific ones
 shapemergelist = [svp_df, p, s, h, g, su, sl, b] ## 
 shp_choice_list = [states, states, states, congress, states, state_upper, state_lower, states]
 json_list = [a_json, p_json, s_json, h_json, g_json, su_json, sl_json, b_json]
 
 def clean_df(df, tag):
+    # Cleans dataframes so that columns are the correct types and nans don't exist
     df["state"] = df["state"].fillna("")
     df["state"] = df["state"].astype(str)
     df["congress"] = df["congress"].fillna("")
@@ -251,6 +267,7 @@ def clean_df(df, tag):
     df["s_upper"] = df["s_upper"].astype(str)
     df["s_lower"] = df["s_lower"].fillna("")
     df["s_lower"] = df["s_lower"].astype(str)
+    #tag = 1 for election dataframes, 0 for shape dataframes
     if tag == 1:
         df["voter_power"] = df["voter_power"].astype(float)
         df["voter_power"] = df["voter_power"].fillna(0)
@@ -258,10 +275,12 @@ def clean_df(df, tag):
 
 
 for i, df in enumerate(shapemergelist):
+    # Gets both the election and shape dataframes
     df = clean_df(df, 1)
     shapes = clean_df(shp_choice_list[i], 0)
     print("Shapes:", df.shape[0], shapes.shape[0])
     print(i, json_list[i], taglist[i])
+    # Merges them so that each shape stays, and election information is added if it exists and matches
     category_df = shapes.merge(df, how="left", on = ["state", "congress", "s_upper", "s_lower"])
     print("Before Filter:", category_df.shape[0])
     print("After Filter:", category_df.shape[0])
