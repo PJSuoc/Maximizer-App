@@ -129,8 +129,7 @@ def get_involved():
         candidates = request.form.get("candidates")
         candidates = json.loads(candidates)
     else:
-        logging.info("candidates mia")
-        candidates = []
+        return redirect('/')
 
     # Gets the candidate information from the candidate DB
     # Writes a nice HTML string for each candidate
