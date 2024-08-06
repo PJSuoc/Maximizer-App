@@ -299,7 +299,11 @@ h3 {
             'case',
             ['==', ['get', 'voter_power'], null], '#D3D3D3', //  undefined voter_power is grey
             ['==', ['get', 'voter_power'], 0], '#D3D3D3', //  zero voter_power is also grey
-    
+
+            ['==', layerId, 'aggregate'], [
+                'interpolate', ['linear'], ['get', 'voter_power'],
+                1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'
+            ],
             ['==', layerId, 'presidential'], [
                 'interpolate', ['linear'], ['get', 'voter_power'],
                 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'
