@@ -7,6 +7,9 @@ from shapely import Point
 from pathlib import Path
 import sys
 import json
+import requests
+import numpy as np
+from config import goog_at, president_sheet, senate_sheet
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -141,9 +144,33 @@ def geojson_writer(df, filename):
     desto = destination + geojson_tag + filename
     gdf.to_file(desto, driver="GeoJSON")
 
+def get_google_sheet_df(headers: dict, google_sheet_id: str, sheet_name: str, _range: str):
+    """_range is in A1 notation (i.e. A:I gives all rows for columns A to I)"""
+
+    url = f'https://sheets.googleapis.com/v4/spreadsheets/{google_sheet_id}/values/{sheet_name}!{_range}'
+    r = requests.get(url, headers=headers)
+    values = r.json()['values']
+    df = pd.DataFrame(values[1:])
+    df.columns = values[0]
+    df = df.apply(lambda x: x.str.strip()).replace('', np.nan)
+    return df
+
+headers = {'authorization': f'Bearer {goog_at}',
+           'Content-Type': 'application/vnd.api+json'}
+
+google_sheet_id = president_sheet
+sheet_name = 'President'
+sample_range = 'A:H'
+
+
+
 ################################################################################
 #####      CSV Production     ##################################################
 ################################################################################
+
+### Google Sheets Import Test ###
+
+df = get_google_sheet_df(headers, google_sheet_id, sheet_name, sample_range)
 
 ##### CSVs utilized for various purposes #####
 
