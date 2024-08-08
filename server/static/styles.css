@@ -8,7 +8,7 @@ html{
 }
 .poppins-regular {
     font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
   }
 
@@ -117,6 +117,7 @@ body {
     width: 100%;
     margin: 0; 
     padding: 0;
+    
 }
 #row-name {
     column-width: 70%;
@@ -152,6 +153,19 @@ body {
     color: rgb(225, 130, 0);
     border-color: rgb(200, 200, 200);
     background-color: rgb(235, 235, 235);
+    font-family: "Poppins", sans-serif; 
+    padding: 0px 10px;
+    align-items: center;
+    line-height: 1;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+    
+}
+
+#dono-btn p {
+    margin: 0; 
+    line-height: 1.8; 
 }
 
 #social-item {
@@ -197,7 +211,7 @@ body {
     margin: 10px;
     margin-bottom: 10%;
     list-style-type: none;
-    font-family: "Monaco", monospace;
+    /*font-family: "Monaco", monospace;*/
     color: black;
 }
 
@@ -207,7 +221,7 @@ body {
     margin: 10px;
     margin-bottom: 10%;
     list-style-type: none;
-    font-family: "Monaco", monospace;
+    /*font-family: "Monaco", monospace;*/
     color: maroon;
 }
 
@@ -215,7 +229,7 @@ body {
     justify-content: center;
     margin: 10px;
     list-style-type: none;
-    font-family: "Monaco", monospace;
+    font-family: 'Poppins', sans-serif;
     color: black;
 }
 
@@ -236,7 +250,7 @@ body {
     padding-top: 25px;
     text-align: center;
     font-size: 18px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 #info-blurb{

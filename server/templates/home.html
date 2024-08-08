@@ -7,27 +7,33 @@
 
     body { margin: 0; padding: 0;}
     .map-overlay {
-        font: 14px/20px "Poppins";
+        font: 14px/20px;
         position: absolute;
-        top: 100px; /* need a dynamic solution to keep it not overlaying with other stuff */
+        top: 155px; /* need a dynamic solution to keep it not overlaying with other stuff */
         left: 10px;
         bottom: 10px;
         padding: 10px;
         z-index: 2; /* put over  map */
+        text-align: center;
+       
     }
     .map-overlay-inner {
         background-color: rgba(0, 0, 0, 0.6);
         padding: 10px;
         border-radius: 3px;
+        text-align: center;
+        box-shadow: 2px 6px 10px rgba(0, 0, 0);
         
     }
     .map-overlay-inner fieldset {
         border: none;
         padding: 0;
         margin: 0 0 10px;
+        text-align: center;
     }
     .map-overlay-inner fieldset:last-child {
         margin: 0;
+        text-align: center;
     }
     .map-overlay-inner select {
         width: 100%;
@@ -79,12 +85,15 @@ h3 {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     z-index: 2;
+    
+    font-family: "Poppins";
 }
 
 #color-scale {
     width: 100%;
     height: 20px;
     background: linear-gradient(to right, #feedde, #fdbe85, #fd8d3c, #d94701);
+    font-family: "Poppins";
 }
 
 .labels {
@@ -98,8 +107,6 @@ h3 {
     
 
 }
-
-
 
 
 </style>
@@ -122,7 +129,8 @@ h3 {
             <h3>by the Electoral Innovation Lab</h3>
             <fieldset>
                 
-                <label for="layer" style="margin-top: 15px;">Currently viewing the: </label>
+                <label for="layer" style="margin-top: 15px; font-size: 18px; font-family: 'Poppins', sans-serif;">You are currently viewing the: </label>
+
                 <select id="layer" name="layer">
                     <option value="aggregate" selected>Overall voter power</option>
                     <option value="presidential">Presidential race voter power</option>
@@ -131,11 +139,11 @@ h3 {
                     <option value="gubernatorial">Gubernatorial voter powers</option>
                     <option value="state_leg_up">State upper legislature voter powers</option>
                     <option value="state_leg_low">State lower legislature voter powers</option>
-                    <option value="ballot_all">Ballot initiative voter powers</option>
+                    <option value="ballot_all">Amount of ballot initiatives</option>
                 </select>
 
                 <form action="/state" method="post">
-                    <label for="location" style="margin-top: 20px;">Select a state to see more detail:</label>
+                    <label for="location" style="margin-top: 15px; font-size: 18px; font-family: 'Poppins', sans-serif;">Select a state to see more detail:</label>
                     <select name="location" id="location" onchange="this.form.submit()">
                         <option value="" disabled selected>Select a state</option>
                         {% for s in states %}
@@ -149,8 +157,8 @@ h3 {
 
                 
                     <form action="/local" method="post">
-                        <label for="location" style="margin-top: 15px;">Find Pivotal Elections near you:</label>
-                        <input type="text" class="form-control" id="location" name="location" placeholder="type an address and press enter"></input>
+                        <label for="location" style="margin-top: 15px; font-size: 18px; font-family: 'Poppins', sans-serif;">Or find pivotal elections near you:</label>
+                        <input type="text" class="form-control" id="location" name="location" placeholder="type address/ZIP, press enter"></input>
                     </form>
 
                     <script>
@@ -200,7 +208,7 @@ h3 {
         switch(layerId) {
         
         case 'aggregate':
-            gradient = 'linear-gradient(to right, #feedde, #fdbe85, #EF6548, #D7301F)';
+            gradient = 'linear-gradient(to right, #ffffd4, #fed98e, #fe9929, #cc4c02)';
             break;   
         case 'presidential':
             gradient = 'linear-gradient(to right, #feedde, #fdbe85, #EF6548, #D7301F)';
@@ -216,6 +224,7 @@ h3 {
             break;
         case 'ballot_all':
             gradient = 'linear-gradient(to right, #c7eae5, #01665e)'; 
+            legendTitle = 'Ballot initiative number';
             break;
         case 'state_leg_up':
             gradient = 'linear-gradient(to right, #ffffcc, #225ea8)'; 
@@ -299,11 +308,12 @@ h3 {
             'case',
             ['==', ['get', 'voter_power'], null], '#D3D3D3', //  undefined voter_power is grey
             ['==', ['get', 'voter_power'], 0], '#D3D3D3', //  zero voter_power is also grey
-
+            
             ['==', layerId, 'aggregate'], [
                 'interpolate', ['linear'], ['get', 'voter_power'],
-                1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'
+                1, '#ffffd4', 33.3, '#fed98e', 66.6, '#fe9929', 100, '#cc4c02'
             ],
+
             ['==', layerId, 'presidential'], [
                 'interpolate', ['linear'], ['get', 'voter_power'],
                 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'
@@ -396,7 +406,7 @@ h3 {
                 </div>`;
             } else {
                 popupContent = `<div class="custom-popup">
-                    <strong>Number of ballot initiatives in your state: ${description}</strong> <br>Click on a state in the dropdown menu to learn more.
+                    <strong>Number of ballot initiatives in your state: ${description}</strong> <br>Click on the state in the dropdown menu to learn about ballot initiatives in this state.
                 </div>`;
             }
         } else if (layerId === 'congressional' && (voterPower === undefined || voterPower === 'no race')) {
