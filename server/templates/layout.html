@@ -29,18 +29,29 @@ select option {
     font-family: 'Poppins', sans-serif;
 }
 
-    .navbar {
-        background-color: rgba(215, 226, 228);
-        padding: 0;
-        margin: 0;
-    }
+.navbar {
+    background-color: rgba(215, 226, 228);
+    padding: 0;
+    margin: 0;
+    border: 1.5px solid rgba(0, 0, 0, 0.1); /* Border around navbar */
+    height: 60px; /* Set a fixed height for the navbar */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.navbar .nav {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
 
     .navbar .nav-link {
         /* Added a padding so that name and about doesn't touch the edge of the page */
 
         padding-left: 15px !important; 
-        padding-right: 15px !important; 
-        color: rgb(255, 147, 7);
+        padding-right: 20px !important; 
+        color: rgb(255, 147, 7); 
         font-size: 20px;      
     }
 
@@ -48,7 +59,7 @@ select option {
         padding-left: 15px !important;
         padding-right: 15px !important;
         color: rgb(255, 147, 7);
-        /*font-size: 20px;    */
+        font-size: 20px;    
     }
 
     </style>
@@ -66,9 +77,8 @@ select option {
      
 
                 <div class="nav col" id="left-navbar">
-                    <a class="navbar-brand" href="/"><b>App home</b></a>
-                    <title>Home</title>
-                    <a class="nav-link" href="/voter-power"><b>Voter Power</b></a>
+                    <a class="nav-link" href="/"><b>App home</b></a>
+                    <a class="nav-link" href="/voter-power"><b>Voter power</b></a>
                     <a class="nav-link" href="/faq"><b>FAQ</b></a>
                     <a class="nav-link" href="/about"><b>About</b></a>
                 </div>

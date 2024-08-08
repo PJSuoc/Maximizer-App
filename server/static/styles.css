@@ -154,6 +154,18 @@ body {
     border-color: rgb(200, 200, 200);
     background-color: rgb(235, 235, 235);
     font-family: "Poppins", sans-serif; 
+    padding: 0px 10px;
+    align-items: center;
+    line-height: 1;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+    
+}
+
+#dono-btn p {
+    margin: 0; 
+    line-height: 1.8; 
 }
 
 #social-item {
