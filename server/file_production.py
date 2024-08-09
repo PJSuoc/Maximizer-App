@@ -296,7 +296,7 @@ sl_json = "state_lower_legislature.geojson"
 b_json = "ballot_initiative.geojson"
 
 # I pull things in and out of the following list if I only want to update specific ones
-shapemergelist = [svp_df ] ##, p, s, h, g, su, sl, b
+shapemergelist = [svp_df, p, s, h, g, su, sl, b]
 shp_choice_list = [states, states, states, congress, states, state_upper, state_lower, states]
 json_list = [a_json, p_json, s_json, h_json, g_json, su_json, sl_json, b_json]
 
