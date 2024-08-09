@@ -82,9 +82,10 @@ def election_csv_cleaner(location, csv_tag, destination, csv_name):
     df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power"]]
 
     #state ID cleaning
+    df["state"] = df["state"].fillna(0.0).astype(int)
     df["state"] = df["state"].astype(str)
     df["state"] = df["state"].str.zfill(2)
-
+    print(type(df["state"].iloc[0]))
     # House of Representatives ID cleaning
     df["congress"] = df["congress"].astype(str)
     df["congress"] = df["congress"].str.zfill(2)
@@ -248,16 +249,16 @@ def regshapeimport(states, congress, state_upper, state_lower):
     # 4 columns used by our database to sort elections based on different shapes.
     # Returns all 4 types of shapes as geodataframes
     congress["state"] = congress["STATEFP"]
-    congress["congress"] = congress["CD119FP"]
+    congress["congress"] = congress["CD118FP"]
     congress["s_upper"] = ""
     congress["s_lower"] = ""
     states["state"] = states["STATEFP"]
     states["congress"] = ""
     states["s_upper"] = ""
     states["s_lower"] = ""
-    state_upper["state"] = state_upper["st"]
+    state_upper["state"] = state_upper["STATEFP"]
     state_upper["congress"] = ""
-    state_upper["s_upper"] = state_upper["DISTRICT"]
+    state_upper["s_upper"] = state_upper["SLDUST"]
     state_upper["s_lower"] = ""
     state_lower["state"] = state_lower["STATEFP"]
     state_lower["congress"] = ""
@@ -295,7 +296,7 @@ sl_json = "state_lower_legislature.geojson"
 b_json = "ballot_initiative.geojson"
 
 # I pull things in and out of the following list if I only want to update specific ones
-shapemergelist = [svp_df , p, s, h, g, su, sl, b] ##
+shapemergelist = [svp_df ] ##, p, s, h, g, su, sl, b
 shp_choice_list = [states, states, states, congress, states, state_upper, state_lower, states]
 json_list = [a_json, p_json, s_json, h_json, g_json, su_json, sl_json, b_json]
 
