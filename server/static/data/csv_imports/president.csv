@@ -1,59 +1,64 @@
-﻿state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power
-Alabama,1,,,,,Presidential,2
-Alaska,2,,,,,Presidential,19
-Arizona,4,,,,,Presidential,100
-Arkansas,5,,,,,Presidential,2
-California,6,,,,,Presidential,1
-Colorado,8,,,,,Presidential,5
-Connecticut,9,,,,,Presidential,3
-Delaware,10,,,,,Presidential,5
-District of Columbia,11,,,,,Presidential,0
-Florida,12,,,,,Presidential,31
-Georgia,13,,,,,Presidential,98
-Hawaii,15,,,,,Presidential,2
-Idaho,16,,,,,Presidential,1
-Illinois,17,,,,,Presidential,3
-Indiana,18,,,,,Presidential,4
-Iowa,19,,,,,Presidential,11
-Kansas,20,,,,,Presidential,5
-Kentucky,21,,,,,Presidential,1
-Louisiana,22,,,,,Presidential,3
-Maine,23,,,,,Presidential,11
-Maine,23,2,,,Congressional District 2,Presidential,10
-Maine,23,1,,,Congressional District 1,Presidential,1
-Maryland,24,,,,,Presidential,1
-Massachusetts,25,,,,,Presidential,1
-Michigan,26,,,,,Presidential,55
-Minnesota,27,,,,,Presidential,17
-Mississippi,28,,,,,Presidential,4
-Missouri,29,,,,,Presidential,3
-Montana,30,,,,,Presidential,6
-Nebraska,31,1,,,Congressional District 1,Presidential,3
-Nebraska,31,2,,,Congressional District 2,Presidential,19
-Nebraska,31,3,,,Congressional District 3,Presidential,0
-Nebraska,31,,,,,Presidential,1
-Nevada,32,,,,,Presidential,98
-New Hampshire,33,,,,,Presidential,25
-New Jersey,34,,,,,Presidential,4
-New Mexico,35,,,,,Presidential,13
-New York,36,,,,,Presidential,2
-North Carolina,37,,,,,Presidential,63
-North Dakota,38,,,,,Presidential,2
-Ohio,39,,,,,Presidential,10
-Oklahoma,40,,,,,Presidential,1
-Oregon,41,,,,,Presidential,4
-Pennsylvania,42,,,,,Presidential,82
-Rhode Island,44,,,,,Presidential,5
-South Carolina,45,,,,,Presidential,6
-South Dakota,46,,,,,Presidential,3
-Tennessee,47,,,,,Presidential,2
-Texas,48,,,,,Presidential,21
-Utah,49,,,,,Presidential,2
-Vermont,50,,,,,Presidential,2
-Virginia,51,,,,,Presidential,8
-Washington,53,,,,,Presidential,2
-West Virginia,54,,,,,Presidential,1
-Wisconsin,55,,,,,Presidential,94
-Wyoming,56,,,,,Presidential,2
-Wisconsin,55,,,,,Presidential,28
-Wyoming,56,,,,,Presidential,9
+state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power,cook_rating,pivotal election?,structural initiative?,liberties initiative?,ballot type,D_running,R_running,I_running ,L_running,G_running,D_link,R_link,I_link,L_link,G_link,EV,Polls,Min Voter Power,Max Voter Power,turnout2020,2020 margin (%),vp (unnorm)
+Alabama,01,,,,,Presidential,2,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,9,-19.6,#REF!,#REF!,"2,323,282",-25.5,16.1
+Alaska,02,,,,,Presidential,19,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3,-15.5,0.000000001082155863,0.000003228400325,"359,530",-10.1,194.9
+Arizona,04,,,,,Presidential,100,toss-up,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,11,-6,0.000000001082155863,0.000003228400325,"3,387,326",0.3,"1,024.1"
+Arkansas,05,,,,,Presidential,2,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6,-27.6,0.000000001082155863,0.000003228400325,"1,219,069",-27.6,17.5
+California,06,,,,,Presidential,1,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,54,25,0.000000001082155863,0.000003228400325,"17,501,380",29.2,10.7
+Colorado,08,,,,,Presidential,5,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10,6,0.000000001082155863,0.000003228400325,"3,256,980",13.5,50.1
+Connecticut,09,,,,,Presidential,3,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,7,20.1,0.000000001082155863,0.000003228400325,"1,823,857",20.1,28.3
+Delaware,10,,,,,Presidential,5,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3,19,0.000000001082155863,0.000003228400325,"504,346",19.0,49.2
+District of Columbia,11,,,,,Presidential,0,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3,86.8,0.000000001082155863,0.000003228400325,"344,356",86.8,3.4
+Florida,12,,,,,Presidential,31,likely-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,30,-6,0.000000001082155863,0.000003228400325,"11,067,456",-3.4,314.6
+Georgia,13,,,,,Presidential,98,toss-up,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,16,-5,0.000000001082155863,0.000003228400325,"4,999,960",0.2,"1,004.1"
+Hawaii,15,,,,,Presidential,2,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4,19,0.000000001082155863,0.000003228400325,"574,469",29.5,23.7
+Idaho,16,,,,,Presidential,1,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4,-30.8,0.000000001082155863,0.000003228400325,"867,934",-30.8,13.3
+Illinois,17,,,,,Presidential,3,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,19,17,0.000000001082155863,0.000003228400325,"6,033,744",17.0,32.5
+Indiana,18,,,,,Presidential,4,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,11,-21.2,0.000000001082155863,0.000003228400325,"3,033,210",-16.1,36.2
+Iowa,19,,,,,Presidential,11,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6,-15,0.000000001082155863,0.000003228400325,"1,690,871",-8.2,117.6
+Kansas,20,,,,,Presidential,5,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6,-14.7,0.000000001082155863,0.000003228400325,"1,373,986",-14.6,51.9
+Kentucky,21,,,,,Presidential,1,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,8,-25.9,0.000000001082155863,0.000003228400325,"2,136,768",-25.9,15.0
+Louisiana,22,,,,,Presidential,3,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,8,-14,0.000000001082155863,0.000003228400325,"2,148,062",-18.6,28.2
+Maine,23,,,,,Presidential,11,likely-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,2,-18.5,0.000000001082155863,0.000003228400325,"819,461",7.9,112.2
+Maine,23,02,,,Congressional District 2,Presidential,10,likely-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1,-18.5,0.000000001082155863,0.000003228400325,"376,349",-7.4,103.4
+Maine,23,01,,,Congressional District 1,Presidential,1,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1,11.5,0.000000001082155863,0.000003228400325,"443,112",23.1,12.6
+Maryland,24,,,,,Presidential,1,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10,26,0.000000001082155863,0.000003228400325,"3,037,030",33.2,8.8
+Massachusetts,25,,,,,Presidential,1,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,11,21,0.000000001082155863,0.000003228400325,"3,631,402",33.5,8.0
+Michigan,26,,,,,Presidential,55,toss-up,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,15,-2.1,0.000000001082155863,0.000003228400325,"5,539,302",2.8,564.1
+Minnesota,27,,,,,Presidential,17,likely-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10,2,0.000000001082155863,0.000003228400325,"3,277,171",7.1,170.1
+Mississippi,28,,,,,Presidential,4,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6,-16.5,0.000000001082155863,0.000003228400325,"1,313,759",-16.6,43.2
+Missouri,29,,,,,Presidential,3,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10,-15.45,0.000000001082155863,0.000003228400325,"3,025,962",-15.4,35.8
+Montana,30,,,,,Presidential,6,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4,-20,0.000000001082155863,0.000003228400325,"603,674",-16.4,63.9
+Nebraska,31,01,,,Congressional District 1,Presidential,3,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1,-7,0.000000001082155863,0.000003228400325,"321,886",-14.9,35.6
+Nebraska,31,02,,,Congressional District 2,Presidential,19,likely-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1,11,0.000000001082155863,0.000003228400325,"339,666",6.5,192.5
+Nebraska,31,03,,,Congressional District 3,Presidential,0,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1,-49,0.000000001082155863,0.000003228400325,"294,831",-53.0,3.4
+Nebraska,31,,,,,Presidential,1,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,2,-49,0.000000001082155863,0.000003228400325,"956,383",-20.5,13.2
+Nevada,32,,,,,Presidential,98,toss-up,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6,-6,0.000000001082155863,0.000003228400325,"1,405,376",2.4,"1,002.2"
+New Hampshire,33,,,,,Presidential,25,likely-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4,-0.3,0.000000001082155863,0.000003228400325,"806,205",7.4,260.5
+New Jersey,34,,,,,Presidential,4,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,14,2.65,0.000000001082155863,0.000003228400325,"4,549,457",15.9,36.1
+New Mexico,35,,,,,Presidential,13,likely-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,5,4.5,0.000000001082155863,0.000003228400325,"923,965",10.8,137.4
+New York,36,,,,,Presidential,2,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,28,8,0.000000001082155863,0.000003228400325,"8,616,861",23.1,18.0
+North Carolina,37,,,,,Presidential,63,lean-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,16,-6,0.000000001082155863,0.000003228400325,"5,524,804",-1.4,648.0
+North Dakota,38,,,,,Presidential,2,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3,-34,0.000000001082155863,0.000003228400325,"362,024",-33.3,20.4
+Ohio,39,,,,,Presidential,10,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,17,-8,0.000000001082155863,0.000003228400325,"5,922,202",-8.0,98.5
+Oklahoma,40,,,,,Presidential,1,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,7,-32.7,0.000000001082155863,0.000003228400325,"1,560,699",-33.1,11.2
+Oregon,41,,,,,Presidential,4,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,8,12,0.000000001082155863,0.000003228400325,"2,374,321",16.1,38.8
+Pennsylvania,42,,,,,Presidential,82,toss-up,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,19,-4.65,0.000000001082155863,0.000003228400325,"6,936,976",1.2,842.5
+Rhode Island,44,,,,,Presidential,5,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4,13,0.000000001082155863,0.000003228400325,"517,757",20.8,53.2
+South Carolina,45,,,,,Presidential,6,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,9,-15,0.000000001082155863,0.000003228400325,"2,513,329",-11.7,64.2
+South Dakota,46,,,,,Presidential,3,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3,-23.75,0.000000001082155863,0.000003228400325,"422,609",-26.2,28.0
+Tennessee,47,,,,,Presidential,2,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,11,-24,0.000000001082155863,0.000003228400325,"3,053,851",-23.2,17.9
+Texas,48,,,,,Presidential,21,likely-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,40,-9,0.000000001082155863,0.000003228400325,"11,315,056",-5.6,214.6
+Utah,49,,,,,Presidential,2,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6,-28,0.000000001082155863,0.000003228400325,"1,488,289",-20.5,25.5
+Vermont,50,,,,,Presidential,2,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3,30.9,0.000000001082155863,0.000003228400325,"367,428",35.4,19.2
+Virginia,51,,,,,Presidential,8,likely-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,13,1.5,0.000000001082155863,0.000003228400325,"4,460,524",10.1,84.0
+Washington,53,,,,,Presidential,2,solid-D,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,12,14,0.000000001082155863,0.000003228400325,"4,087,631",19.2,23.7
+West Virginia,54,,,,,Presidential,1,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4,-27,0.000000001082155863,0.000003228400325,"794,731",-38.9,9.2
+Wisconsin,55,,,,,Presidential,94,toss-up,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10,-1.5,0.000000001082155863,0.000003228400325,"3,298,041",0.6,965.1
+Wyoming,56,,,,,Presidential,2,solid-R,,,,,Joe Biden,Donald Trump,Robert F. Kennedy Jr. ,Chase Oliver,Jill Stein,https://joebiden.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3,-43.4,0.000000001082155863,0.000003228400325,"276,765",-43.4,16.0
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,11.5,-18.5,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.6,

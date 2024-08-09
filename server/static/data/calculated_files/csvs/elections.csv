@@ -55,8 +55,13 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
 54,,,,West Virginia,Presidential,,1.0
 55,,,,Wisconsin,Presidential,,94.0
 56,,,,Wyoming,Presidential,,2.0
-55,,,,Wisconsin,Presidential,,28.0
-56,,,,Wyoming,Presidential,,9.0
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
 04,,,,Arizona,Senate,,13.0
 06,,,,California,Senate,,0.0
 09,,,,Connecticut,Senate,,0.0

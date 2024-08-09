@@ -53,7 +53,12 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
 51,,,,Virginia,Aggregate,,13
 53,,,,Washington,Aggregate,,20
 54,,,,West Virginia,Aggregate,,7
-55,,,,Wisconsin,Aggregate,,87
+55,,,,Wisconsin,Aggregate,,80
 56,,,,Wyoming,Aggregate,,0
-55,,,,Wisconsin,Aggregate,,87
-56,,,,Wyoming,Aggregate,,0
+00,,,,,Aggregate,,
+00,,,,,Aggregate,,
+00,,,,,Aggregate,,
+00,,,,,Aggregate,,
+00,,,,,Aggregate,,
+00,,,,,Aggregate,,
+00,,,,,Aggregate,,
