@@ -9,7 +9,7 @@ import sys
 import json
 import requests
 import numpy as np
-from config import goog_at, president_sheet, senate_sheet
+#from config import goog_at, president_sheet, senate_sheet
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -234,13 +234,13 @@ merge_df.to_csv("static/data/calculated_files/csvs/elections.csv",  index = Fals
 #####      GeoJSON Production     ##############################################
 ################################################################################
 
-congress = gpd.read_file("static/data/shp_imports/congress/lawsuit_congressional/modified_congressional.shp")
+congress = gpd.read_file("static/data/shp_imports/cb_2023_us_cd118_500k/cb_2023_us_cd118_500k.shp") # static/data/shp_imports/congress/lawsuit_congressional/modified_congressional.shp
 congress = congress.to_crs(4269)
 states = gpd.read_file("static/data/shp_imports/cb_2023_us_state_500k/cb_2023_us_state_500k.shp")
 states = states.to_crs(4269)
-state_upper = gpd.read_file("static/data/shp_imports/upper_leg/modified_leg_upper/national_2024_elections_st_leg_upper_boundaries_modified.shp")
+state_upper = gpd.read_file("static/data/shp_imports/cb_2023_us_sldu_500k/cb_2023_us_sldu_500k.shp") # static/data/shp_imports/upper_leg/modified_leg_upper/national_2024_elections_st_leg_upper_boundaries_modified.shp
 state_upper = state_upper.to_crs(4269)
-state_lower = gpd.read_file("static/data/shp_imports/lower_leg/modified_leg_lower/national_2024_elections_st_leg_lower_boundaries_modified.shp")
+state_lower = gpd.read_file("static/data/shp_imports/cb_2023_us_sldl_500k/cb_2023_us_sldl_500k.shp") # static/data/shp_imports/lower_leg/modified_leg_lower/national_2024_elections_st_leg_lower_boundaries_modified.shp
 state_lower = state_lower.to_crs(4269)
 
 def regshapeimport(states, congress, state_upper, state_lower):
@@ -278,7 +278,9 @@ def all_shape_maker(states, congress, state_upper, state_lower):
 
 states, congress, state_upper, state_lower = regshapeimport(states, congress, state_upper, state_lower)
 all_df = all_shape_maker(states, congress, state_upper, state_lower)
-#all_df.to_file("static/data/all_shapes/all_shapes.shp")
+
+## Uncomment this line to update all_shapes
+#all_df.to_file("static/data/calculated_files/geojsons/all_shapes/all_shapes.shp")
 
 #
 taglist = ["Aggregate", "Presidential","Senate","House", "Governor", "State Leg (Upper)",
@@ -293,7 +295,7 @@ sl_json = "state_lower_legislature.geojson"
 b_json = "ballot_initiative.geojson"
 
 # I pull things in and out of the following list if I only want to update specific ones
-shapemergelist = [svp_df, p, s, h, g, su, sl, b] ## 
+shapemergelist = [svp_df , p, s, h, g, su, sl, b] ##
 shp_choice_list = [states, states, states, congress, states, state_upper, state_lower, states]
 json_list = [a_json, p_json, s_json, h_json, g_json, su_json, sl_json, b_json]
 

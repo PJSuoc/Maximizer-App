@@ -1,1 +1,1 @@
-web: python3 server.py --dev prod
+web: python3 server/server.py --dev prod
