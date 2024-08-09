@@ -1,4 +1,4 @@
-﻿state_name,state,congress,s_upper,s_lower,race_type,election_name,margins,voter_power
+state_name,state,congress,s_upper,s_lower,race_type,election_name,margins,voter_power
 Alaska,2,,A,,State Leg (Upper),State Senate District A,-4.576875906,0
 Alaska,2,,B,,State Leg (Upper),State Senate District B,23.33515149,14
 Alaska,2,,C,,State Leg (Upper),State Senate District C,-8.844834159,0
@@ -70,7 +70,7 @@ Kansas,20,,18,,State Leg (Upper),State Senate District 18,-28.73576677,9
 Kansas,20,,19,,State Leg (Upper),State Senate District 19,28.05970149,9
 Kansas,20,,20,,State Leg (Upper),State Senate District 20,-7.824826471,67
 Kansas,20,,21,,State Leg (Upper),State Senate District 21,14.29344267,35
-Kansas,20,,22,,State Leg (Upper),State Senate District 22,-0.773790669,100
+Kansas,20,,22,,State Leg (Upper),State Senate District 22,-0.7737906693,100
 Kansas,20,,23,,State Leg (Upper),State Senate District 23,-7.555338542,69
 Kansas,20,,24,,State Leg (Upper),State Senate District 24,-35.19625153,5
 Kansas,20,,25,,State Leg (Upper),State Senate District 25,12.406613,43
@@ -138,30 +138,30 @@ Nebraska,31,,46,,State Leg (Upper),State Senate District 46,20.05497526,0
 Nebraska,31,,47,,State Leg (Upper),State Senate District 47,-62.93391091,1
 Nebraska,31,,48,,State Leg (Upper),State Senate District 48,-47.97157444,0
 Nebraska,31,,49,,State Leg (Upper),State Senate District 49,-21.39228966,19
-New Hampshire,33,,1,,State Leg (Upper),State Senate District 1,-13.12967833,40
-New Hampshire,33,,2,,State Leg (Upper),State Senate District 2,-15.96985466,30
-New Hampshire,33,,3,,State Leg (Upper),State Senate District 3,-14.3798987,35
-New Hampshire,33,,4,,State Leg (Upper),State Senate District 4,7.830224351,69
-New Hampshire,33,,5,,State Leg (Upper),State Senate District 5,27.53101807,10
-New Hampshire,33,,6,,State Leg (Upper),State Senate District 6,-20.66571438,18
-New Hampshire,33,,7,,State Leg (Upper),State Senate District 7,-13.23211113,40
-New Hampshire,33,,8,,State Leg (Upper),State Senate District 8,-18.34201556,23
-New Hampshire,33,,9,,State Leg (Upper),State Senate District 9,-12.41229943,43
-New Hampshire,33,,10,,State Leg (Upper),State Senate District 10,17.57845377,25
-New Hampshire,33,,11,,State Leg (Upper),State Senate District 11,-9.054871093,61
-New Hampshire,33,,12,,State Leg (Upper),State Senate District 12,-9.864653084,56
-New Hampshire,33,,13,,State Leg (Upper),State Senate District 13,6.708745937,76
-New Hampshire,33,,14,,State Leg (Upper),State Senate District 14,-20.84239787,18
-New Hampshire,33,,15,,State Leg (Upper),State Senate District 15,14.92679333,33
-New Hampshire,33,,16,,State Leg (Upper),State Senate District 16,-17.57194411,25
-New Hampshire,33,,17,,State Leg (Upper),State Senate District 17,-20.0634127,20
-New Hampshire,33,,18,,State Leg (Upper),State Senate District 18,-10.55670103,53
-New Hampshire,33,,19,,State Leg (Upper),State Senate District 19,-21.72742019,17
-New Hampshire,33,,20,,State Leg (Upper),State Senate District 20,1.774173109,100
-New Hampshire,33,,21,,State Leg (Upper),State Senate District 21,25.19461935,12
-New Hampshire,33,,22,,State Leg (Upper),State Senate District 22,-25.66095085,12
-New Hampshire,33,,23,,State Leg (Upper),State Senate District 23,-23.71060172,14
-New Hampshire,33,,24,,State Leg (Upper),State Senate District 24,1.784644244,100
+New Hampshire,33,,1,,State Leg (Upper),State Senate District 1,1.00,99
+New Hampshire,33,,2,,State Leg (Upper),State Senate District 2,-1.84,98
+New Hampshire,33,,3,,State Leg (Upper),State Senate District 3,-0.25,100
+New Hampshire,33,,4,,State Leg (Upper),State Senate District 4,21.96,16
+New Hampshire,33,,5,,State Leg (Upper),State Senate District 5,41.66,3
+New Hampshire,33,,6,,State Leg (Upper),State Senate District 6,-6.53,75
+New Hampshire,33,,7,,State Leg (Upper),State Senate District 7,0.90,99
+New Hampshire,33,,8,,State Leg (Upper),State Senate District 8,-4.21,88
+New Hampshire,33,,9,,State Leg (Upper),State Senate District 9,1.72,98
+New Hampshire,33,,10,,State Leg (Upper),State Senate District 10,31.71,7
+New Hampshire,33,,11,,State Leg (Upper),State Senate District 11,5.07,83
+New Hampshire,33,,12,,State Leg (Upper),State Senate District 12,4.26,88
+New Hampshire,33,,13,,State Leg (Upper),State Senate District 13,20.83,18
+New Hampshire,33,,14,,State Leg (Upper),State Senate District 14,-6.71,74
+New Hampshire,33,,15,,State Leg (Upper),State Senate District 15,29.06,8
+New Hampshire,33,,16,,State Leg (Upper),State Senate District 16,-3.44,92
+New Hampshire,33,,17,,State Leg (Upper),State Senate District 17,-5.93,78
+New Hampshire,33,,18,,State Leg (Upper),State Senate District 18,3.57,91
+New Hampshire,33,,19,,State Leg (Upper),State Senate District 19,-7.59,68
+New Hampshire,33,,20,,State Leg (Upper),State Senate District 20,15.91,29
+New Hampshire,33,,21,,State Leg (Upper),State Senate District 21,39.33,4
+New Hampshire,33,,22,,State Leg (Upper),State Senate District 22,-11.53,47
+New Hampshire,33,,23,,State Leg (Upper),State Senate District 23,-9.58,57
+New Hampshire,33,,24,,State Leg (Upper),State Senate District 24,15.92,29
 Pennsylvania,42,,1,,State Leg (Upper),State Senate District 1,63.21596794,1
 Pennsylvania,42,,2,,State Leg (Upper),State Senate District 2,59.39726308,0
 Pennsylvania,42,,3,,State Leg (Upper),State Senate District 3,88.14862581,0
@@ -185,7 +185,7 @@ Pennsylvania,42,,20,,State Leg (Upper),State Senate District 20,-19.18050673,0
 Pennsylvania,42,,21,,State Leg (Upper),State Senate District 21,-33.97339093,6
 Pennsylvania,42,,22,,State Leg (Upper),State Senate District 22,16.60700212,0
 Pennsylvania,42,,23,,State Leg (Upper),State Senate District 23,-37.4972338,4
-Pennsylvania,42,,24,,State Leg (Upper),State Senate District 24,-0.388592918,0
+Pennsylvania,42,,24,,State Leg (Upper),State Senate District 24,-0.3885929176,0
 Pennsylvania,42,,25,,State Leg (Upper),State Senate District 25,-21.73289529,16
 Pennsylvania,42,,26,,State Leg (Upper),State Senate District 26,21.01586714,0
 Pennsylvania,42,,27,,State Leg (Upper),State Senate District 27,-29.78944775,8
