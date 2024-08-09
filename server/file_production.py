@@ -144,6 +144,7 @@ def geojson_writer(df, filename):
     desto = destination + geojson_tag + filename
     gdf.to_file(desto, driver="GeoJSON")
 
+'''
 def get_google_sheet_df(headers: dict, google_sheet_id: str, sheet_name: str, _range: str):
     """_range is in A1 notation (i.e. A:I gives all rows for columns A to I)"""
 
@@ -161,7 +162,7 @@ headers = {'authorization': f'Bearer {goog_at}',
 google_sheet_id = president_sheet
 sheet_name = 'President'
 sample_range = 'A:H'
-
+'''
 
 
 ################################################################################
@@ -170,7 +171,7 @@ sample_range = 'A:H'
 
 ### Google Sheets Import Test ###
 
-df = get_google_sheet_df(headers, google_sheet_id, sheet_name, sample_range)
+#df = get_google_sheet_df(headers, google_sheet_id, sheet_name, sample_range)
 
 ##### CSVs utilized for various purposes #####
 
@@ -233,39 +234,51 @@ merge_df.to_csv("static/data/calculated_files/csvs/elections.csv",  index = Fals
 #####      GeoJSON Production     ##############################################
 ################################################################################
 
-allshape_path = Path("static/data/shp_imports/all_shapes/all_shapes.shp")
-allshapes = gpd.read_file(allshape_path)
+congress = gpd.read_file("static/data/shp_imports/congress/lawsuit_congressional/modified_congressional.shp")
+congress = congress.to_crs(4269)
+states = gpd.read_file("static/data/shp_imports/cb_2023_us_state_500k/cb_2023_us_state_500k.shp")
+states = states.to_crs(4269)
+state_upper = gpd.read_file("static/data/shp_imports/upper_leg/modified_leg_upper/national_2024_elections_st_leg_upper_boundaries_modified.shp")
+state_upper = state_upper.to_crs(4269)
+state_lower = gpd.read_file("static/data/shp_imports/lower_leg/modified_leg_lower/national_2024_elections_st_leg_lower_boundaries_modified.shp")
+state_lower = state_lower.to_crs(4269)
 
-def regshapeimport():
+def regshapeimport(states, congress, state_upper, state_lower):
     # Imports the individual shapefiles and cleans their shape identifiers to match the
     # 4 columns used by our database to sort elections based on different shapes.
     # Returns all 4 types of shapes as geodataframes
-    congress = gpd.read_file("static/data/shp_imports/cb_2023_us_cd118_500k/cb_2023_us_cd118_500k.shp")
-    congress = congress.to_crs(4269)
-    states = gpd.read_file("static/data/shp_imports/cb_2023_us_state_500k/cb_2023_us_state_500k.shp")
-    states = states.to_crs(4269)
-    state_upper = gpd.read_file("static/data/shp_imports/cb_2023_us_sldu_500k/cb_2023_us_sldu_500k.shp")
-    state_upper = state_upper.to_crs(4269)
-    state_lower = gpd.read_file("static/data/shp_imports/cb_2023_us_sldl_500k/cb_2023_us_sldl_500k.shp")
-    state_lower = state_lower.to_crs(4269)
     congress["state"] = congress["STATEFP"]
-    congress["congress"] = congress["CD118FP"]
+    congress["congress"] = congress["CD119FP"]
     congress["s_upper"] = ""
     congress["s_lower"] = ""
     states["state"] = states["STATEFP"]
     states["congress"] = ""
     states["s_upper"] = ""
     states["s_lower"] = ""
-    state_upper["state"] = state_upper["STATEFP"]
+    state_upper["state"] = state_upper["st"]
     state_upper["congress"] = ""
-    state_upper["s_upper"] = state_upper["SLDUST"]
+    state_upper["s_upper"] = state_upper["DISTRICT"]
     state_upper["s_lower"] = ""
     state_lower["state"] = state_lower["STATEFP"]
     state_lower["congress"] = ""
     state_lower["s_upper"] = ""
     state_lower["s_lower"] = state_lower["SLDLST"]
     return states, congress, state_upper, state_lower
-states, congress, state_upper, state_lower = regshapeimport()
+
+
+def all_shape_maker(states, congress, state_upper, state_lower):
+    c_clip = congress[["state", "congress", "s_upper", "s_lower", "geometry"]]
+    s_clip = states[["state", "congress", "s_upper", "s_lower", "geometry"]]
+    u_clip = state_upper[["state", "congress", "s_upper", "s_lower", "geometry"]]
+    l_clip = state_lower[["state", "congress", "s_upper", "s_lower", "geometry"]]
+
+    df_list = [c_clip, s_clip, u_clip, l_clip]
+    all_df = gpd.GeoDataFrame(pd.concat(df_list, ignore_index=True), crs=df_list[0].crs)
+    return all_df
+
+states, congress, state_upper, state_lower = regshapeimport(states, congress, state_upper, state_lower)
+all_df = all_shape_maker(states, congress, state_upper, state_lower)
+#all_df.to_file("static/data/all_shapes/all_shapes.shp")
 
 #
 taglist = ["Aggregate", "Presidential","Senate","House", "Governor", "State Leg (Upper)",
