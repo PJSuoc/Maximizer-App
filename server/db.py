@@ -32,6 +32,7 @@ Class for building database functionalities.
 if Path("config.py").is_file(): # Pathways for local testing
     allshape_path = Path("static/data/shp_imports/all_shapes/all_shapes.shp")
     candidate_path = Path("static/data/calculated_files/csvs/candidates.csv")
+    #Switch these over to just the election csv ??
     president_path = Path("static/data/calculated_files/csvs/president.csv")
     senate_path = Path("static/data/calculated_files/csvs/senate.csv")
     house_path = Path("static/data/calculated_files/csvs/congress_house.csv")
