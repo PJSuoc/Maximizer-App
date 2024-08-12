@@ -62,40 +62,71 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
 00,,,,,,,
 00,,,,,,,
 00,,,,,,,
-04,,,,Arizona,Senate,,13.0
-06,,,,California,Senate,,0.0
-09,,,,Connecticut,Senate,,0.0
-10,,,,Delaware,Senate,,0.0
-12,,,,Florida,Senate,,4.0
-15,,,,Hawaii,Senate,,0.0
-18,,,,Indiana,Senate,,0.0
-23,,,,Maine,Senate,,0.0
-24,,,,Maryland,Senate,,9.0
-25,,,,Massachusetts,Senate,,0.0
-26,,,,Michigan,Senate,,7.0
-27,,,,Minnesota,Senate,,0.0
-28,,,,Mississippi,Senate,,0.0
-29,,,,Missouri,Senate,,0.0
-30,,,,Montana,Senate,,100.0
-31,,,,Nebraska,Senate,,0.0
-31,,,,Nebraska,Senate,,0.0
-32,,,,Nevada,Senate,,29.0
-34,,,,New Jersey,Senate,,0.0
-35,,,,New Mexico,Senate,,0.0
-36,,,,New York,Senate,,0.0
-38,,,,North Dakota,Senate,,0.0
-39,,,,Ohio,Senate,,6.0
-42,,,,Pennsylvania,Senate,,4.0
-44,,,,Rhode Island,Senate,,0.0
-47,,,,Tennessee,Senate,,0.0
-48,,,,Texas,Senate,,4.0
-49,,,,Utah,Senate,,0.0
-50,,,,Vermont,Senate,,0.0
-51,,,,Virginia,Senate,,0.0
-53,,,,Washington,Senate,,0.0
+04,,,,Arizona,Senate,,41.0
+06,,,,California,Senate,,1.0
+09,,,,Connecticut,Senate,,7.0
+10,,,,Delaware,Senate,,23.0
+12,,,,Florida,Senate,,23.0
+15,,,,Hawaii,Senate,,8.0
+18,,,,Indiana,Senate,,14.0
+23,,,,Maine,Senate,,18.0
+24,,,,Maryland,Senate,,4.0
+25,,,,Massachusetts,Senate,,2.0
+26,,,,Michigan,Senate,,22.0
+27,,,,Minnesota,Senate,,3.0
+28,,,,Mississippi,Senate,,17.0
+29,,,,Missouri,Senate,,12.0
+30,,,,Montana,Senate,,99.0
+31,,,,Nebraska,Senate,,29.0
+31,,,,Nebraska,Senate,,21.0
+32,,,,Nevada,Senate,,100.0
+34,,,,New Jersey,Senate,,7.0
+35,,,,New Mexico,Senate,,24.0
+36,,,,New York,Senate,,1.0
+38,,,,North Dakota,Senate,,18.0
+39,,,,Ohio,Senate,,14.0
+42,,,,Pennsylvania,Senate,,7.0
+44,,,,Rhode Island,Senate,,23.0
+47,,,,Tennessee,Senate,,6.0
+48,,,,Texas,Senate,,15.0
+49,,,,Utah,Senate,,21.0
+50,,,,Vermont,Senate,,13.0
+51,,,,Virginia,Senate,,6.0
+53,,,,Washington,Senate,,5.0
 54,,,,West Virginia,Senate,,7.0
-55,,,,Wisconsin,Senate,,9.0
-56,,,,Wyoming,Senate,,0.0
+55,,,,Wisconsin,Senate,,16.0
+56,,,,Wyoming,Senate,,19.0
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
+00,,,,,,,
 01,02,,,Alabama,House,Congressional District 2,42.0
 02,at-large,,,Alaska,House,Congressional District (at Large),33.0
 04,01,,,Arizona,House,Congressional District 1,61.0

@@ -1,35 +1,66 @@
 state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
-04,00,nan,nan,Arizona,Senate,,13.0
-06,00,nan,nan,California,Senate,,0.0
-09,00,nan,nan,Connecticut,Senate,,0.0
-10,00,nan,nan,Delaware,Senate,,0.0
-12,00,nan,nan,Florida,Senate,,4.0
-15,00,nan,nan,Hawaii,Senate,,0.0
-18,00,nan,nan,Indiana,Senate,,0.0
-23,00,nan,nan,Maine,Senate,,0.0
-24,00,nan,nan,Maryland,Senate,,9.0
-25,00,nan,nan,Massachusetts,Senate,,0.0
-26,00,nan,nan,Michigan,Senate,,7.0
-27,00,nan,nan,Minnesota,Senate,,0.0
-28,00,nan,nan,Mississippi,Senate,,0.0
-29,00,nan,nan,Missouri,Senate,,0.0
-30,00,nan,nan,Montana,Senate,,100.0
-31,00,nan,nan,Nebraska,Senate,,0.0
-31,00,nan,nan,Nebraska,Senate,,0.0
-32,00,nan,nan,Nevada,Senate,,29.0
-34,00,nan,nan,New Jersey,Senate,,0.0
-35,00,nan,nan,New Mexico,Senate,,0.0
-36,00,nan,nan,New York,Senate,,0.0
-38,00,nan,nan,North Dakota,Senate,,0.0
-39,00,nan,nan,Ohio,Senate,,6.0
-42,00,nan,nan,Pennsylvania,Senate,,4.0
-44,00,nan,nan,Rhode Island,Senate,,0.0
-47,00,nan,nan,Tennessee,Senate,,0.0
-48,00,nan,nan,Texas,Senate,,4.0
-49,00,nan,nan,Utah,Senate,,0.0
-50,00,nan,nan,Vermont,Senate,,0.0
-51,00,nan,nan,Virginia,Senate,,0.0
-53,00,nan,nan,Washington,Senate,,0.0
-54,00,nan,nan,West Virginia,Senate,,7.0
-55,00,nan,nan,Wisconsin,Senate,,9.0
-56,00,nan,nan,Wyoming,Senate,,0.0
+04,nan,nan,nan,Arizona,Senate,,41.0
+06,nan,nan,nan,California,Senate,,1.0
+09,nan,nan,nan,Connecticut,Senate,,7.0
+10,nan,nan,nan,Delaware,Senate,,23.0
+12,nan,nan,nan,Florida,Senate,,23.0
+15,nan,nan,nan,Hawaii,Senate,,8.0
+18,nan,nan,nan,Indiana,Senate,,14.0
+23,nan,nan,nan,Maine,Senate,,18.0
+24,nan,nan,nan,Maryland,Senate,,4.0
+25,nan,nan,nan,Massachusetts,Senate,,2.0
+26,nan,nan,nan,Michigan,Senate,,22.0
+27,nan,nan,nan,Minnesota,Senate,,3.0
+28,nan,nan,nan,Mississippi,Senate,,17.0
+29,nan,nan,nan,Missouri,Senate,,12.0
+30,nan,nan,nan,Montana,Senate,,99.0
+31,nan,nan,nan,Nebraska,Senate,,29.0
+31,nan,nan,nan,Nebraska,Senate,,21.0
+32,nan,nan,nan,Nevada,Senate,,100.0
+34,nan,nan,nan,New Jersey,Senate,,7.0
+35,nan,nan,nan,New Mexico,Senate,,24.0
+36,nan,nan,nan,New York,Senate,,1.0
+38,nan,nan,nan,North Dakota,Senate,,18.0
+39,nan,nan,nan,Ohio,Senate,,14.0
+42,nan,nan,nan,Pennsylvania,Senate,,7.0
+44,nan,nan,nan,Rhode Island,Senate,,23.0
+47,nan,nan,nan,Tennessee,Senate,,6.0
+48,nan,nan,nan,Texas,Senate,,15.0
+49,nan,nan,nan,Utah,Senate,,21.0
+50,nan,nan,nan,Vermont,Senate,,13.0
+51,nan,nan,nan,Virginia,Senate,,6.0
+53,nan,nan,nan,Washington,Senate,,5.0
+54,nan,nan,nan,West Virginia,Senate,,7.0
+55,nan,nan,nan,Wisconsin,Senate,,16.0
+56,nan,nan,nan,Wyoming,Senate,,19.0
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
+00,nan,nan,nan,,,,
