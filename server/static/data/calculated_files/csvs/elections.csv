@@ -127,75 +127,75 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
 00,,,,,,,
 00,,,,,,,
 00,,,,,,,
-01,02,,,Alabama,House,Congressional District 2,42.0
+01,02,,,Alabama,House,Congressional District 2,47.0
 02,at-large,,,Alaska,House,Congressional District (at Large),33.0
-04,01,,,Arizona,House,Congressional District 1,61.0
-04,06,,,Arizona,House,Congressional District 6,57.0
-06,47,,,California,House,Congressional District 47,53.0
-06,45,,,California,House,Congressional District 45,63.0
+04,01,,,Arizona,House,Congressional District 1,83.0
+04,06,,,Arizona,House,Congressional District 6,80.0
+06,47,,,California,House,Congressional District 47,72.0
+06,45,,,California,House,Congressional District 45,100.0
 06,09,,,California,House,Congressional District 9,33.0
-06,49,,,California,House,Congressional District 49,63.0
-06,03,,,California,House,Congressional District 3,31.0
-06,40,,,California,House,Congressional District 40,47.0
-06,13,,,California,House,Congressional District 13,33.0
-06,22,,,California,House,Congressional District 22,21.0
-06,27,,,California,House,Congressional District 27,34.0
-06,41,,,California,House,Congressional District 41,40.0
-08,03,,,Colorado,House,Congressional District 3,24.0
+06,49,,,California,House,Congressional District 49,68.0
+06,03,,,California,House,Congressional District 3,36.0
+06,40,,,California,House,Congressional District 40,26.0
+06,13,,,California,House,Congressional District 13,76.0
+06,22,,,California,House,Congressional District 22,74.0
+06,27,,,California,House,Congressional District 27,99.0
+06,41,,,California,House,Congressional District 41,52.0
+08,03,,,Colorado,House,Congressional District 3,57.0
 08,08,,,Colorado,House,Congressional District 8,100.0
-09,05,,,Connecticut,House,Congressional District 5,58.0
-12,09,,,Florida,House,Congressional District 9,10.0
-12,23,,,Florida,House,Congressional District 23,18.0
-12,13,,,Florida,House,Congressional District 13,31.0
-17,17,,,Illinois,House,Congressional District 17,53.0
-18,01,,,Indiana,House,Congressional District 1,15.0
-19,03,,,Iowa,House,Congressional District 3,69.0
-19,01,,,Iowa,House,Congressional District 1,65.0
-20,03,,,Kansas,House,Congressional District 3,95.0
-23,02,,,Maine,House,Congressional District 2,61.0
-24,06,,,Maryland,House,Congressional District 6,99.0
+09,05,,,Connecticut,House,Congressional District 5,87.0
+12,09,,,Florida,House,Congressional District 9,18.0
+12,23,,,Florida,House,Congressional District 23,35.0
+12,13,,,Florida,House,Congressional District 13,34.0
+17,17,,,Illinois,House,Congressional District 17,69.0
+18,01,,,Indiana,House,Congressional District 1,29.0
+19,03,,,Iowa,House,Congressional District 3,87.0
+19,01,,,Iowa,House,Congressional District 1,55.0
+20,03,,,Kansas,House,Congressional District 3,63.0
+23,02,,,Maine,House,Congressional District 2,62.0
+24,06,,,Maryland,House,Congressional District 6,72.0
 26,10,,,Michigan,House,Congressional District 10,100.0
-26,03,,,Michigan,House,Congressional District 3,88.0
-26,07,,,Michigan,House,Congressional District 7,100.0
-26,08,,,Michigan,House,Congressional District 8,76.0
-27,02,,,Minnesota,House,Congressional District 2,64.0
-30,01,,,Montana,House,Congressional District 1,57.0
-31,02,,,Nebraska,House,Congressional District 2,65.0
-32,03,,,Nevada,House,Congressional District 3,45.0
-32,01,,,Nevada,House,Congressional District 1,31.0
-32,04,,,Nevada,House,Congressional District 4,30.0
-33,01,,,New Hampshire,House,Congressional District 1,25.0
-33,02,,,New Hampshire,House,Congressional District 2,51.0
-34,07,,,New Jersey,House,Congressional District 7,48.0
-35,02,,,New Mexico,House,Congressional District 2,44.0
-36,18,,,New York,House,Congressional District 18,69.0
-36,22,,,New York,House,Congressional District 22,51.0
-36,03,,,New York,House,Congressional District 3,79.0
-36,01,,,New York,House,Congressional District 1,30.0
-36,04,,,New York,House,Congressional District 4,48.0
-36,17,,,New York,House,Congressional District 17,55.0
-36,19,,,New York,House,Congressional District 19,90.0
-37,01,,,North Carolina,House,Congressional District 1,92.0
-39,01,,,Ohio,House,Congressional District 1,99.0
-39,09,,,Ohio,House,Congressional District 9,96.0
-39,13,,,Ohio,House,Congressional District 13,87.0
-41,06,,,Oregon,House,Congressional District 6,33.0
-41,04,,,Oregon,House,Congressional District 4,25.0
-41,05,,,Oregon,House,Congressional District 5,63.0
-42,17,,,Pennsylvania,House,Congressional District 17,33.0
-42,10,,,Pennsylvania,House,Congressional District 10,57.0
-42,01,,,Pennsylvania,House,Congressional District 1,66.0
-42,07,,,Pennsylvania,House,Congressional District 7,90.0
-42,08,,,Pennsylvania,House,Congressional District 8,98.0
-48,28,,,Texas,House,Congressional District 28,23.0
-48,34,,,Texas,House,Congressional District 34,7.0
-48,15,,,Texas,House,Congressional District 15,83.0
-51,07,,,Virginia,House,Congressional District 7,85.0
+26,03,,,Michigan,House,Congressional District 3,44.0
+26,07,,,Michigan,House,Congressional District 7,89.0
+26,08,,,Michigan,House,Congressional District 8,50.0
+27,02,,,Minnesota,House,Congressional District 2,68.0
+30,01,,,Montana,House,Congressional District 1,69.0
+31,02,,,Nebraska,House,Congressional District 2,76.0
+32,03,,,Nevada ,House,Congressional District 3,64.0
+32,01,,,Nevada ,House,Congressional District 1,46.0
+32,04,,,Nevada ,House,Congressional District 4,49.0
+33,01,,,New Hampshire,House,Congressional District 1,96.0
+33,02,,,New Hampshire,House,Congressional District 2,87.0
+34,07,,,New Jersey,House,Congressional District 7,65.0
+35,02,,,New Mexico,House,Congressional District 2,79.0
+36,18,,,New York,House,Congressional District 18,90.0
+36,22,,,New York,House,Congressional District 22,91.0
+36,03,,,New York,House,Congressional District 3,64.0
+36,01,,,New York,House,Congressional District 1,25.0
+36,04,,,New York,House,Congressional District 4,98.0
+36,17,,,New York,House,Congressional District 17,91.0
+36,19,,,New York,House,Congressional District 19,100.0
+37,01,,,North Carolina,House,Congressional District 1,84.0
+39,01,,,Ohio,House,Congressional District 1,86.0
+39,09,,,Ohio,House,Congressional District 9,56.0
+39,13,,,Ohio,House,Congressional District 13,79.0
+41,06,,,Oregon,House,Congressional District 6,62.0
+41,04,,,Oregon,House,Congressional District 4,34.0
+41,05,,,Oregon,House,Congressional District 5,98.0
+42,17,,,Pennsylvania,House,Congressional District 17,43.0
+42,10,,,Pennsylvania,House,Congressional District 10,48.0
+42,01,,,Pennsylvania,House,Congressional District 1,83.0
+42,07,,,Pennsylvania,House,Congressional District 7,94.0
+42,08,,,Pennsylvania,House,Congressional District 8,96.0
+48,28,,,Texas,House,Congressional District 28,21.0
+48,34,,,Texas,House,Congressional District 34,12.0
+48,15,,,Texas,House,Congressional District 15,82.0
+51,07,,,Virginia,House,Congressional District 7,81.0
 51,02,,,Virginia,House,Congressional District 2,78.0
-53,08,,,Washington,House,Congressional District 8,100.0
-53,03,,,Washington,House,Congressional District 3,42.0
-55,03,,,Wisconsin,House,Congressional District 3,85.0
-55,01,,,Wisconsin,House,Congressional District 1,97.0
+53,08,,,Washington,House,Congressional District 8,82.0
+53,03,,,Washington,House,Congressional District 3,80.0
+55,03,,,Wisconsin,House,Congressional District 3,80.0
+55,01,,,Wisconsin,House,Congressional District 1,61.0
 33,,,,New Hampshire,Governor,,100.0
 37,,,,North Carolina,Governor,,100.0
 10,,,,Delaware,Governor,,20.0

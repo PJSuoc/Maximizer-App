@@ -32,7 +32,7 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
 31,2.0,,,Nebraska,Aggregate,Congressional District 2,60
 31,3.0,,,Nebraska,Aggregate,Congressional District 3,60
 31,,,,Nebraska,Aggregate,,60
-32,,,,Nevada,Aggregate,,80
+32,,,,Nevada,Aggregate,,60
 33,,,,New Hampshire,Aggregate,,53
 34,,,,New Jersey,Aggregate,,7
 35,,,,New Mexico,Aggregate,,27
@@ -47,7 +47,7 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
 45,,,,South Carolina,Aggregate,,7
 46,,,,South Dakota,Aggregate,,20
 47,,,,Tennessee,Aggregate,,0
-48,,,,Texas,Aggregate,,27
+48,,,,Texas,Aggregate,,33
 49,,,,Utah,Aggregate,,20
 50,,,,Vermont,Aggregate,,13
 51,,,,Virginia,Aggregate,,13
