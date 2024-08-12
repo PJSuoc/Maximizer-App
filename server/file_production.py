@@ -85,7 +85,7 @@ def election_csv_cleaner(location, csv_tag, destination, csv_name):
     df["state"] = df["state"].fillna(0.0).astype(int)
     df["state"] = df["state"].astype(str)
     df["state"] = df["state"].str.zfill(2)
-    print(type(df["state"].iloc[0]))
+    
     # House of Representatives ID cleaning
     df["congress"] = df["congress"].astype(str)
     df["congress"] = df["congress"].str.zfill(2)

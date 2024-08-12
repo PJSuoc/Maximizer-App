@@ -192,7 +192,7 @@ class DB:
             # Sorts remaining elections by voter power & get only the top 3
             relevant.sort_values("voter_power_val", inplace = True, ascending = False)
             relevant = relevant.reset_index(drop = True)
-            output = relevant[0:3]
+            output = relevant[0:5]
         else:
             output = relevant
         
@@ -208,7 +208,8 @@ class DB:
         '''
         election_front = '<li class="list-group-item" id="detail-li"><div class="row" id="detail-row">'
         button_front = '<form action="/get-involved" id="'
-        button_mid = '" method="post"><input type="hidden" name="candidates" value="' 
+        button_mid = '" method="post"><input type="hidden" name="candidates" value="'
+        elec_btn_info =  '"><input type="hidden" name="election" value="'
         button_mid2 = '"><button class="btn btn-primary" type="submit" form="'
         button_back = '" value="Submit">Learn More</button></form></div></div></li>'
         name_front = '<div class="col" id="row-state">'
@@ -225,13 +226,15 @@ class DB:
             election_name = election["election_name"]
             election_vp = election["voter_power"]
             cand_list = str(election["candidate_ids"])
+            #Makes a unique id for each election's secondary page
             fmid = "form_" + str(form_id)
+            estr = str(state_name + " " + election_name)
             logging.info(cand_list)
             election_str = name_front + state_name + item_back + \
                             elec_front + election_name + item_back + \
                             vp_front + vpstr + election_vp + item_back + \
                             btn_front + button_front + fmid + button_mid + \
-                            cand_list + button_mid2 + fmid + button_back
+                            cand_list + elec_btn_info + estr + button_mid2 + fmid + button_back
             completed_string = completed_string + election_front + election_str
             form_id += 1 
         return completed_string, form_id

@@ -101,6 +101,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 550px;
+    max-height: 800px;
     margin: 0; 
     padding: 0;
 }

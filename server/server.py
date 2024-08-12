@@ -123,21 +123,28 @@ def faq_load():
 
 @app.route('/get-involved', methods=["GET", "POST"])
 # Page delivering links to each candidate
+
 def get_involved():
     # Gets the candidates in the election from the state/local page
     if request.method == "POST":
         candidates = request.form.get("candidates")
         candidates = json.loads(candidates)
+        election = request.form.get("election")
     else:
         return redirect('/')
 
+    #I've set this as a base string for now, can switch to a nicer description later
+    
+
+    print("Cands", candidates)
+    print("elec", type(election), election)
     # Gets the candidate information from the candidate DB
     # Writes a nice HTML string for each candidate
     db = DB()
     db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
     output = db.candidate_link_strings(candidates)
     
-    return render_template("getinvolved.html", candidates = output)
+    return render_template("getinvolved.html", candidates = output, election = election)
 
 # Utilities ------------------------------
 
