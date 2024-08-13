@@ -1,67 +1,67 @@
-,state_name,state,congress,s_lower,s_upper,race_type,election_name,voter_power,cook_rating,name.of.ballot,ballot_type
-1,Alaska,2,NA,NA,NA,Ballot Initiative,Repeal Top-Four Ranked-Choice Voting Initiative,NA,NA,Repeal Top-Four Ranked-Choice Voting Initiative,Democracy Repair
-2,Alaska,2,NA,NA,NA,Ballot Initiative,Minimum Wage Increase and Paid Sick Leave Initiative,NA,NA,Minimum Wage Increase and Paid Sick Leave Initiative,Direct Democracy
-3,Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 135,NA,NA,Proposition 135,state government
-4,Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 137,NA,NA,Proposition 137,Democracy Repair
-5,Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 314,NA,NA,Proposition 314,Direct Democracy
-6,Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 136,NA,NA,Proposition 136,Democracy Repair
-7,Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 133,NA,NA,Proposition 133,Democracy Repair
-8,Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 134,NA,NA,Proposition 134,Democracy Repair
-9,Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 138,NA,NA,Proposition 138,Direct Democracy
-10,Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 315,NA,NA,Proposition 315,Direct Democracy
-11,Arizona,4,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
-12,Arkansas,5,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
-13,California,6,NA,NA,NA,Ballot Initiative,Proposition 32,NA,NA,Proposition 32,Direct Democracy
-14,California,6,NA,NA,NA,Ballot Initiative,Proposition 3,NA,NA,Proposition 3,Civil Liberties
-15,Colorado,8,NA,NA,NA,Ballot Initiative,Independent Judicial Discipline Adjudicative Board Amendment,NA,NA,Independent Judicial Discipline Adjudicative Board Amendment,Democracy Repair
-16,Colorado,8,NA,NA,NA,Ballot Initiative,Remove Constitutional Same-Sex Marriage Ban Amendment,NA,NA,Remove Constitutional Same-Sex Marriage Ban Amendment,Civil Liberties
-17,Colorado,8,NA,NA,NA,Ballot Initiative,Right to Abortion and Health Insurance Coverage Initiative,NA,NA,Right to Abortion and Health Insurance Coverage Initiative,Reproductive Rights
-18,Colorado,8,NA,NA,NA,Ballot Initiative,Ballot Initiative 310,NA,NA,Ballot Initiative 310,Democracy Repair
-19,Colorado,8,NA,NA,NA,Ballot Initiative,Sales Tax on Firearms Dealers, Manufacturers, and Ammunition Vendors Measure,NA,NA,Sales Tax on Firearms Dealers, Manufacturers, and Ammunition Vendors Measure,Civil Liberties
-20,Connecticut,9,NA,NA,NA,Ballot Initiative,No-Excuse Absentee Voting Amendment,NA,NA,No-Excuse Absentee Voting Amendment,Democracy Repair
-21,District of Columbia,11,NA,NA,NA,Ballot Initiative,Initiative 83: the Ranked-Choice Voting Initiative,NA,NA,Initiative 83: the Ranked-Choice Voting Initiative,Democracy Repair
-22,Florida,12,NA,NA,NA,Ballot Initiative,Amendment 1,NA,NA,Amendment 1,Democracy Repair
-23,Florida,12,NA,NA,NA,Ballot Initiative,Amendment 3,NA,NA,Amendment 3,Civil Liberties
-24,Florida,12,NA,NA,NA,Ballot Initiative,Amendment 4,NA,NA,Amendment 4,Reproductive Rights
-25,Florida,12,NA,NA,NA,Ballot Initiative,Amendment 6,NA,NA,Amendment 6,Democracy Repair
-26,Georgia,13,NA,NA,NA,Ballot Initiative,Tax Court Amendment (HR 598),NA,NA,Tax Court Amendment (HR 598),Direct Democracy
-27,Hawaii,15,NA,NA,NA,Ballot Initiative,Judicial Appointments and Confirmations Amendment,NA,NA,Judicial Appointments and Confirmations Amendment,Democracy Repair
-28,Hawaii,15,NA,NA,NA,Ballot Initiative,Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment,NA,NA,Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment,Civil Liberties
-29,Idaho,16,NA,NA,NA,Ballot Initiative,Citizenship Voting Requirement for Voting Amendment,NA,NA,Citizenship Voting Requirement for Voting Amendment,Democracy Repair
-30,Idaho,16,NA,NA,NA,Ballot Initiative,Top-Four Ranked-Choice Voting Initiative,NA,NA,Top-Four Ranked-Choice Voting Initiative,Democracy Repair
-31,Illinois,17,NA,NA,NA,Ballot Initiative,Assisted Reproductive Healthcare Advisory Question,NA,NA,Assisted Reproductive Healthcare Advisory Question,reproductive health
-32,Illinois,17,NA,NA,NA,Ballot Initiative,Penalties for Candidate Interference with Election Worker's Duties Advisory Question,NA,NA,Penalties for Candidate Interference with Election Worker's Duties Advisory Question,Democracy Repair
-33,Indiana,18,NA,NA,NA,Ballot Initiative,Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment,NA,NA,Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment,Direct Democracy
-34,Iowa,19,NA,NA,NA,Ballot Initiative,Require Citizenship to Vote in State Elections and Allow 17-year-olds to Vote in Primaries Amendment,NA,NA,Require Citizenship to Vote in State Elections and Allow 17-year-olds to Vote in Primaries Amendment,Democracy Repair
-35,Iowa,19,NA,NA,NA,Ballot Initiative,Gubernatorial Succession Amendment,NA,NA,Gubernatorial Succession Amendment,Direct Democracy
-36,Kentucky,21,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
-37,Maine,23,NA,NA,NA,Ballot Initiative,Campaign Contribution Limits Initiative,NA,NA,Campaign Contribution Limits Initiative,Democracy Repair
-38,Maryland,24,NA,NA,NA,Ballot Initiative,Right to Reproductive Freedom Amendment,NA,NA,Right to Reproductive Freedom Amendment,Reproductive Rights
-39,Massachusetts,25,NA,NA,NA,Ballot Initiative,Authorization of State Auditor to Audit General Court Initiative,NA,NA,Authorization of State Auditor to Audit General Court Initiative,Direct Democracy
-40,Massachusetts,23,NA,NA,NA,Ballot Initiative,Minimum Wage for Tipped Employees Initiative,NA,NA,Minimum Wage for Tipped Employees Initiative,Direct Democracy
-41,Missouri,29,NA,NA,NA,Ballot Initiative,Require Citizenship to Vote and Prohibit Ranked-Choice Voting Amendment,NA,NA,Require Citizenship to Vote and Prohibit Ranked-Choice Voting Amendment,Democracy Repair
-42,Nebraska,31,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
-43,Nevada,32,NA,NA,NA,Ballot Initiative,Question 1,NA,NA,Question 1,Direct Democracy
-44,Nevada,32,NA,NA,NA,Ballot Initiative,Question 2,NA,NA,Question 2,Direct Democracy
-45,Nevada,32,NA,NA,NA,Ballot Initiative,Question 3,NA,NA,Question 3,Democracy Repair
-46,Nevada,32,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
-47,New Hampshite,33,NA,NA,NA,Ballot Initiative,Increase Mandatory Judicial Retirement Age Amendment,NA,NA,Increase Mandatory Judicial Retirement Age Amendment,Democracy Repair
-48,New Mexico,35,NA,NA,NA,Ballot Initiative,Judicial Nominating Commission Amendment,NA,NA,Judicial Nominating Commission Amendment,Democracy Repair
-49,New York,36,NA,NA,NA,Ballot Initiative,Ithaca Ranked Choice Voting and Combined Primaries,NA,NA,Ithaca Ranked Choice Voting and Combined Primaries,Democracy Repair
-50,New York,36,NA,NA,NA,Ballot Initiative,Equal Protection of Law Amendment,NA,NA,Equal Protection of Law Amendment,Civil Liberties
-51,New York,36,NA,NA,NA,Ballot Initiative,Equal Protection of Law Amendment,NA,NA,Equal Protection of Law Amendment,Reproductive Rights
-52,North Carolina,37,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
-53,North Dakota,38,NA,NA,NA,Ballot Initiative,Constitutional Measure 1,NA,NA,Constitutional Measure 1,disability services
-54,North Dakota,38,NA,NA,NA,Ballot Initiative,Constitutional Measure 2,NA,NA,Constitutional Measure 2,Democracy Repair
-55,Oklahoma,40,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
-56,Oklahoma,40,NA,NA,NA,Ballot Initiative,Minimum Wage Increase Initiative,NA,NA,Minimum Wage Increase Initiative,Direct Democracy
-57,Oregon,41,NA,NA,NA,Ballot Initiative,Impeachment of Elected State Executives Amendment,NA,NA,Impeachment of Elected State Executives Amendment,Democracy Repair
-58,Oregon,41,NA,NA,NA,Ballot Initiative,Ranked-Choice Voting for Federal and State Elections Measure,NA,NA,Ranked-Choice Voting for Federal and State Elections Measure,Democracy Repair
-59,Rhode Island,44,NA,NA,NA,Ballot Initiative,Constitutional Convention Question,NA,NA,Constitutional Convention Question,Democracy Repair
-60,South Carolina,45,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
-61,South Dakota,46,NA,NA,NA,Ballot Initiative,Constitutional Amendment E,NA,NA,Constitutional Amendment E,Civil Liberties
-62,South Dakota,46,NA,NA,NA,Ballot Initiative,Constitutional Amendment G,NA,NA,Constitutional Amendment G,Reproductive Rights
-63,South Dakota,46,NA,NA,NA,Ballot Initiative,Constitutional Amendment H,NA,NA,Constitutional Amendment H,Democracy Repair
-64,South Dakota,46,NA,NA,NA,Ballot Initiative,Initiated Measure 29,NA,NA,Initiated Measure 29,Civil Liberties
-65,Utah,49,NA,NA,NA,Ballot Initiative,Elections of County Sheriffs Amendment,NA,NA,Elections of County Sheriffs Amendment,Democracy Repair
-66,Wisconsin,55,NA,NA,NA,Ballot Initiative,Citizenship Voting Requirement Amendment,NA,NA,Citizenship Voting Requirement Amendment,Democracy Repair
+state_name,state,congress,s_lower,s_upper,race_type,election_name,voter_power,cook_rating,name.of.ballot,ballot_type
+Alaska,2,NA,NA,NA,Ballot Initiative,Repeal Top-Four Ranked-Choice Voting Initiative,NA,NA,Repeal Top-Four Ranked-Choice Voting Initiative,Democracy Repair
+Alaska,2,NA,NA,NA,Ballot Initiative,Minimum Wage Increase and Paid Sick Leave Initiative,NA,NA,Minimum Wage Increase and Paid Sick Leave Initiative,Direct Democracy
+Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 135,NA,NA,Proposition 135,state government
+Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 137,NA,NA,Proposition 137,Democracy Repair
+Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 314,NA,NA,Proposition 314,Direct Democracy
+Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 136,NA,NA,Proposition 136,Democracy Repair
+Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 133,NA,NA,Proposition 133,Democracy Repair
+Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 134,NA,NA,Proposition 134,Democracy Repair
+Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 138,NA,NA,Proposition 138,Direct Democracy
+Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 315,NA,NA,Proposition 315,Direct Democracy
+Arizona,4,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
+Arkansas,5,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
+California,6,NA,NA,NA,Ballot Initiative,Proposition 32,NA,NA,Proposition 32,Direct Democracy
+California,6,NA,NA,NA,Ballot Initiative,Proposition 3,NA,NA,Proposition 3,Civil Liberties
+Colorado,8,NA,NA,NA,Ballot Initiative,Independent Judicial Discipline Adjudicative Board Amendment,NA,NA,Independent Judicial Discipline Adjudicative Board Amendment,Democracy Repair
+Colorado,8,NA,NA,NA,Ballot Initiative,Remove Constitutional Same-Sex Marriage Ban Amendment,NA,NA,Remove Constitutional Same-Sex Marriage Ban Amendment,Civil Liberties
+Colorado,8,NA,NA,NA,Ballot Initiative,Right to Abortion and Health Insurance Coverage Initiative,NA,NA,Right to Abortion and Health Insurance Coverage Initiative,Reproductive Rights
+Colorado,8,NA,NA,NA,Ballot Initiative,Ballot Initiative 310,NA,NA,Ballot Initiative 310,Democracy Repair
+Colorado,8,NA,NA,NA,Ballot Initiative,Sales Tax on Firearms Dealers,NA,NA,NA,NA
+Connecticut,9,NA,NA,NA,Ballot Initiative,No-Excuse Absentee Voting Amendment,NA,NA,No-Excuse Absentee Voting Amendment,Democracy Repair
+District of Columbia,11,NA,NA,NA,Ballot Initiative,Initiative 83: the Ranked-Choice Voting Initiative,NA,NA,Initiative 83: the Ranked-Choice Voting Initiative,Democracy Repair
+Florida,12,NA,NA,NA,Ballot Initiative,Amendment 1,NA,NA,Amendment 1,Democracy Repair
+Florida,12,NA,NA,NA,Ballot Initiative,Amendment 3,NA,NA,Amendment 3,Civil Liberties
+Florida,12,NA,NA,NA,Ballot Initiative,Amendment 4,NA,NA,Amendment 4,Reproductive Rights
+Florida,12,NA,NA,NA,Ballot Initiative,Amendment 6,NA,NA,Amendment 6,Democracy Repair
+Georgia,13,NA,NA,NA,Ballot Initiative,Tax Court Amendment (HR 598),NA,NA,Tax Court Amendment (HR 598),Direct Democracy
+Hawaii,15,NA,NA,NA,Ballot Initiative,Judicial Appointments and Confirmations Amendment,NA,NA,Judicial Appointments and Confirmations Amendment,Democracy Repair
+Hawaii,15,NA,NA,NA,Ballot Initiative,Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment,NA,NA,Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment,Civil Liberties
+Idaho,16,NA,NA,NA,Ballot Initiative,Citizenship Voting Requirement for Voting Amendment,NA,NA,Citizenship Voting Requirement for Voting Amendment,Democracy Repair
+Idaho,16,NA,NA,NA,Ballot Initiative,Top-Four Ranked-Choice Voting Initiative,NA,NA,Top-Four Ranked-Choice Voting Initiative,Democracy Repair
+Illinois,17,NA,NA,NA,Ballot Initiative,Assisted Reproductive Healthcare Advisory Question,NA,NA,Assisted Reproductive Healthcare Advisory Question,reproductive health
+Illinois,17,NA,NA,NA,Ballot Initiative,Penalties for Candidate Interference with Election Worker's Duties Advisory Question,NA,NA,Penalties for Candidate Interference with Election Worker's Duties Advisory Question,Democracy Repair
+Indiana,18,NA,NA,NA,Ballot Initiative,Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment,NA,NA,Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment,Direct Democracy
+Iowa,19,NA,NA,NA,Ballot Initiative,Require Citizenship to Vote in State Elections and Allow 17-year-olds to Vote in Primaries Amendment,NA,NA,Require Citizenship to Vote in State Elections and Allow 17-year-olds to Vote in Primaries Amendment,Democracy Repair
+Iowa,19,NA,NA,NA,Ballot Initiative,Gubernatorial Succession Amendment,NA,NA,Gubernatorial Succession Amendment,Direct Democracy
+Kentucky,21,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
+Maine,23,NA,NA,NA,Ballot Initiative,Campaign Contribution Limits Initiative,NA,NA,Campaign Contribution Limits Initiative,Democracy Repair
+Maryland,24,NA,NA,NA,Ballot Initiative,Right to Reproductive Freedom Amendment,NA,NA,Right to Reproductive Freedom Amendment,Reproductive Rights
+Massachusetts,25,NA,NA,NA,Ballot Initiative,Authorization of State Auditor to Audit General Court Initiative,NA,NA,Authorization of State Auditor to Audit General Court Initiative,Direct Democracy
+Massachusetts,23,NA,NA,NA,Ballot Initiative,Minimum Wage for Tipped Employees Initiative,NA,NA,Minimum Wage for Tipped Employees Initiative,Direct Democracy
+Missouri,29,NA,NA,NA,Ballot Initiative,Require Citizenship to Vote and Prohibit Ranked-Choice Voting Amendment,NA,NA,Require Citizenship to Vote and Prohibit Ranked-Choice Voting Amendment,Democracy Repair
+Nebraska,31,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
+Nevada,32,NA,NA,NA,Ballot Initiative,Question 1,NA,NA,Question 1,Direct Democracy
+Nevada,32,NA,NA,NA,Ballot Initiative,Question 2,NA,NA,Question 2,Direct Democracy
+Nevada,32,NA,NA,NA,Ballot Initiative,Question 3,NA,NA,Question 3,Democracy Repair
+Nevada,32,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
+New Hampshite,33,NA,NA,NA,Ballot Initiative,Increase Mandatory Judicial Retirement Age Amendment,NA,NA,Increase Mandatory Judicial Retirement Age Amendment,Democracy Repair
+New Mexico,35,NA,NA,NA,Ballot Initiative,Judicial Nominating Commission Amendment,NA,NA,Judicial Nominating Commission Amendment,Democracy Repair
+New York,36,NA,NA,NA,Ballot Initiative,Ithaca Ranked Choice Voting and Combined Primaries,NA,NA,Ithaca Ranked Choice Voting and Combined Primaries,Democracy Repair
+New York,36,NA,NA,NA,Ballot Initiative,Equal Protection of Law Amendment,NA,NA,Equal Protection of Law Amendment,Civil Liberties
+New York,36,NA,NA,NA,Ballot Initiative,Equal Protection of Law Amendment,NA,NA,Equal Protection of Law Amendment,Reproductive Rights
+North Carolina,37,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
+North Dakota,38,NA,NA,NA,Ballot Initiative,Constitutional Measure 1,NA,NA,Constitutional Measure 1,disability services
+North Dakota,38,NA,NA,NA,Ballot Initiative,Constitutional Measure 2,NA,NA,Constitutional Measure 2,Democracy Repair
+Oklahoma,40,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
+Oklahoma,40,NA,NA,NA,Ballot Initiative,Minimum Wage Increase Initiative,NA,NA,Minimum Wage Increase Initiative,Direct Democracy
+Oregon,41,NA,NA,NA,Ballot Initiative,Impeachment of Elected State Executives Amendment,NA,NA,Impeachment of Elected State Executives Amendment,Democracy Repair
+Oregon,41,NA,NA,NA,Ballot Initiative,Ranked-Choice Voting for Federal and State Elections Measure,NA,NA,Ranked-Choice Voting for Federal and State Elections Measure,Democracy Repair
+Rhode Island,44,NA,NA,NA,Ballot Initiative,Constitutional Convention Question,NA,NA,Constitutional Convention Question,Democracy Repair
+South Carolina,45,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
+South Dakota,46,NA,NA,NA,Ballot Initiative,Constitutional Amendment E,NA,NA,Constitutional Amendment E,Civil Liberties
+South Dakota,46,NA,NA,NA,Ballot Initiative,Constitutional Amendment G,NA,NA,Constitutional Amendment G,Reproductive Rights
+South Dakota,46,NA,NA,NA,Ballot Initiative,Constitutional Amendment H,NA,NA,Constitutional Amendment H,Democracy Repair
+South Dakota,46,NA,NA,NA,Ballot Initiative,Initiated Measure 29,NA,NA,Initiated Measure 29,Civil Liberties
+Utah,49,NA,NA,NA,Ballot Initiative,Elections of County Sheriffs Amendment,NA,NA,Elections of County Sheriffs Amendment,Democracy Repair
+Wisconsin,55,NA,NA,NA,Ballot Initiative,Citizenship Voting Requirement Amendment,NA,NA,Citizenship Voting Requirement Amendment,Democracy Repair

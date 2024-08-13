@@ -107,7 +107,7 @@ def candidate_csv_cleaner(location, csv_tag, destination, csv_name):
     df = pd.read_csv(location + csv_name, dtype=str)
 
     # Cut the CSV down to the relevant columns
-    df = df[["name", "party", "state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "campaign_link", "donation_link", "election_denier"]]
+    df = df[["name", "party", "state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name",  "donation_link", "election_denier","campaign_link",]]
 
     #state ID cleaning
     df["state"] = df["state"].astype(str)
