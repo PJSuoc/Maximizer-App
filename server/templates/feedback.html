@@ -1,31 +1,54 @@
 {% extends "layout.html" %}
 
 <!-- feedback PAGE //  -->
-<style>
 
-</style>
-{% block main %}
 <body>
-    <div class="container" id= "feedback-page">
+    <div class="container" id="feedback-page">
         <div class="container" id="feedback-title">
-            Vote Maximizer
-            <div class="container" id="feedback-blurb">
-                Vote Maximizer is a web app designed to bring attention to competitive races and topics to repair our democracy in 2024. 
-                We are constantly trying to update you with the most up to date data. However, if you see any website or data glitches, 
-                kindly let us know in the following google sheet. 
-            </div>
+            <h1>Vote Maximizer feedback</h1>
+            <p id="feedback-blurb">
+                Vote Maximizer is a web app designed to highlight competitive races and critical issues to strengthen our democracy in 2024. 
+                We strive to provide you with the most current data. If you encounter any website or data issues, please let us know using the Google Sheet linked below.
+            </p>
         </div>
 
-
-        <div class="container" id="feedback-title">
-            <li id="social-item">
-                <a class="btn" id="feedback-btn" href="https://docs.google.com/spreadsheets/d/1V_-vOnayZtcdJSJLpQ1GAHVLtmv2LpATTMwRHJSlLh8/edit?resourcekey=&gid=1922191693#gid=1922191693" role="button"><p>VM Feedback</p></a>
-            </li>
-            
-    
+        <div class="container" id="feedback-button-container">
+            <a class="btn" id="feedback-btn" href="https://docs.google.com/spreadsheets/d/1V_-vOnayZtcdJSJLpQ1GAHVLtmv2LpATTMwRHJSlLh8/edit?resourcekey=&gid=1922191693#gid=1922191693" role="button">
+                VM Feedback
+            </a>
         </div>
     </div>
+
+    <style>
+        #feedback-page {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #feedback-title h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #feedback-blurb {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        #feedback-btn {
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+            background-color: rgb(225, 130, 0);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        #feedback-btn:hover {
+            background-color: rgb(200, 115, 0);
+        }
+    </style>
 </body>
-
-
 {% endblock %}
