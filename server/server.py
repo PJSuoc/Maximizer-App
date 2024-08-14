@@ -121,6 +121,11 @@ def about_load():
 def faq_load():
     return render_template("faq.html")
 
+@app.route('/feedback', methods=["GET", "POST"])
+# It's the feedback page.
+def feedback_load():
+    return render_template("feedback.html")
+
 @app.route('/get-involved', methods=["GET", "POST"])
 # Page delivering links to each candidate
 
