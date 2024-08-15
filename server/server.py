@@ -34,6 +34,56 @@ STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado",
     "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
     "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
+STATELOC = {'Alabama': {'lat': 32.3182314, 'long': -86.902298},
+            'Alaska': {'lat': 63.588753, 'long': -154.4930619},
+            'Arizona': {'lat': 34.0489281, 'long': -111.0937311},
+            'Arkansas': {'lat': 35.20105, 'long': -91.8318334},
+            'California': {'lat': 36.778261, 'long': -119.4179324},
+            'Colorado': {'lat': 39.5500507, 'long': -105.7820674},
+            'Conneticut': {'lat': 41.6032207, 'long': -73.087749},
+            'Delaware': {'lat': 38.9108325, 'long': -75.52766989999999},
+            'Florida': {'lat': 27.6648274, 'long': -81.5157535},
+            'Georgia': {'lat': 32.1574351, 'long': -82.90712300000001},
+            'Hawaii': {'lat': 19.8986819, 'long': -155.6658568},
+            'Idaho': {'lat': 44.0682019, 'long': -114.7420408},
+            'Illinois': {'lat': 40.6331249, 'long': -89.3985283},
+            'Indiana': {'lat': 39.76909, 'long': -86.158018},
+            'Iowa': {'lat': 41.8780025, 'long': -93.097702},
+            'Kansas': {'lat': 39.011902, 'long': -98.4842465},
+            'Kentucky': {'lat': 37.8393332, 'long': -84.2700179},
+            'Louisiana': {'lat': 30.5190775, 'long': -91.5208624},
+            'Maine': {'lat': 45.253783, 'long': -69.4454689},
+            'Maryland': {'lat': 39.0457549, 'long': -76.64127119999999},
+            'Massachusetts': {'lat': 42.4072107, 'long': -71.3824374},
+            'Michigan': {'lat': 44.3148443, 'long': -85.60236429999999},
+            'Minnesota': {'lat': 46.729553, 'long': -94.6858998},
+            'Mississippi': {'lat': 32.3546679, 'long': -89.3985283},
+            'Missouri': {'lat': 37.9642529, 'long': -91.8318334},
+            'Montana': {'lat': 46.8796822, 'long': -110.3625658},
+            'Nebraska': {'lat': 41.4925374, 'long': -99.9018131},
+            'Nevada': {'lat': 38.8026097, 'long': -116.419389},
+            'New Hampshire': {'lat': 43.1938516, 'long': -71.5723953},
+            'New Jersey': {'lat': 40.0583238, 'long': -74.4056612},
+            'New Mexico': {'lat': 34.9727305, 'long': -105.0323635},
+            'New York': {'lat': 40.7127753, 'long': -74.0059728},
+            'North Carolina': {'lat': 35.7595731, 'long': -79.01929969999999},
+            'North Dakota': {'lat': 47.5514926, 'long': -101.0020119},
+            'Ohio': {'lat': 40.4172871, 'long': -82.90712300000001},
+            'Oklahoma': {'lat': 35.0077519, 'long': -97.092877},
+            'Oregon': {'lat': 43.8041334, 'long': -120.5542012},
+            'Pennsylvania': {'lat': 41.2033216, 'long': -77.1945247},
+            'Rhode Island': {'lat': 41.5800945, 'long': -71.4774291},
+            'South Carolina': {'lat': 33.836081, 'long': -81.1637245},
+            'South Dakota': {'lat': 43.9695148, 'long': -99.9018131},
+            'Tennessee': {'lat': 35.5174913, 'long': -86.5804473},
+            'Texas': {'lat': 31.9685988, 'long': -99.9018131},
+            'Utah': {'lat': 40.7606608, 'long': -111.8939487},
+            'Vermont': {'lat': 44.5588028, 'long': -72.57784149999999},
+            'Virginia': {'lat': 37.4315734, 'long': -78.6568942},
+            'Washington': {'lat': 47.7510741, 'long': -120.7401386},
+            'West Virginia': {'lat': 38.5976262, 'long': -80.4549026},
+            'Wisconsin': {'lat': 43.7844397, 'long': -88.7878678},
+            'Wyoming': {'lat': 43.0759678, 'long': -107.2902839}}
 
 # base setup
 app = Flask(__name__)
@@ -134,12 +184,10 @@ def get_involved():
     if request.method == "POST":
         candidates = request.form.get("candidates")
         candidates = json.loads(candidates)
+        #I've set this as a base string for now, can switch to a nicer description later
         election = request.form.get("election")
     else:
         return redirect('/')
-
-    #I've set this as a base string for now, can switch to a nicer description later
-    
 
     print("Cands", candidates)
     print("elec", type(election), election)
@@ -187,10 +235,11 @@ def election_delivery_function(location):
 
     # Get Lat/Long coordinates for centering
     if type(location) != type([]):
-        location = location + ", USA"
-        location =  gmaps.geocode(location)
-    lat = location[0]["geometry"]["location"]["lat"]
-    long = location[0]["geometry"]["location"]["lng"]
+        lat = STATELOC[location]["lat"]
+        long = STATELOC[location]["long"]
+    else:
+        lat = location[0]["geometry"]["location"]["lat"]
+        long = location[0]["geometry"]["location"]["lng"]
 
     # All the individual pieces for the detail lookup. May need to add vals
     # for zoom and center for the map as well, depending on address lookup
