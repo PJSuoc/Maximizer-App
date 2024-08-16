@@ -1,60 +1,60 @@
 state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
-01,,,,Alabama,Presidential,,2.0
-02,,,,Alaska,Presidential,,19.0
-04,,,,Arizona,Presidential,,100.0
-05,,,,Arkansas,Presidential,,2.0
+01,,,,Alabama,Presidential,,1.0
+02,,,,Alaska,Presidential,,31.0
+04,,,,Arizona,Presidential,,42.0
+05,,,,Arkansas,Presidential,,1.0
 06,,,,California,Presidential,,1.0
-08,,,,Colorado,Presidential,,5.0
-09,,,,Connecticut,Presidential,,3.0
-10,,,,Delaware,Presidential,,5.0
-11,,,,District of Columbia,Presidential,,0.0
-12,,,,Florida,Presidential,,31.0
-13,,,,Georgia,Presidential,,98.0
-15,,,,Hawaii,Presidential,,2.0
+08,,,,Colorado,Presidential,,1.0
+09,,,,Connecticut,Presidential,,1.0
+10,,,,Delaware,Presidential,,1.0
+11,,,,District of Columbia,Presidential,,1.0
+12,,,,Florida,Presidential,,32.0
+13,,,,Georgia,Presidential,,93.0
+15,,,,Hawaii,Presidential,,1.0
 16,,,,Idaho,Presidential,,1.0
-17,,,,Illinois,Presidential,,3.0
-18,,,,Indiana,Presidential,,4.0
-19,,,,Iowa,Presidential,,11.0
-20,,,,Kansas,Presidential,,5.0
+17,,,,Illinois,Presidential,,1.0
+18,,,,Indiana,Presidential,,1.0
+19,,,,Iowa,Presidential,,8.0
+20,,,,Kansas,Presidential,,2.0
 21,,,,Kentucky,Presidential,,1.0
 22,,,,Louisiana,Presidential,,3.0
-23,,,,Maine,Presidential,,11.0
-23,2.0,,,Maine,Presidential,Congressional District 2,10.0
-23,1.0,,,Maine,Presidential,Congressional District 1,1.0
+23,,,,Maine,Presidential,,22.0
+23,2.0,,,Maine,Presidential,Congressional District 2,13.0
+23,1.0,,,Maine,Presidential,Congressional District 1,2.0
 24,,,,Maryland,Presidential,,1.0
 25,,,,Massachusetts,Presidential,,1.0
-26,,,,Michigan,Presidential,,55.0
-27,,,,Minnesota,Presidential,,17.0
-28,,,,Mississippi,Presidential,,4.0
-29,,,,Missouri,Presidential,,3.0
-30,,,,Montana,Presidential,,6.0
-31,1.0,,,Nebraska,Presidential,Congressional District 1,3.0
-31,2.0,,,Nebraska,Presidential,Congressional District 2,19.0
-31,3.0,,,Nebraska,Presidential,Congressional District 3,0.0
-31,,,,Nebraska,Presidential,,1.0
-32,,,,Nevada,Presidential,,98.0
-33,,,,New Hampshire,Presidential,,25.0
-34,,,,New Jersey,Presidential,,4.0
-35,,,,New Mexico,Presidential,,13.0
-36,,,,New York,Presidential,,2.0
-37,,,,North Carolina,Presidential,,63.0
-38,,,,North Dakota,Presidential,,2.0
-39,,,,Ohio,Presidential,,10.0
+26,,,,Michigan,Presidential,,63.0
+27,,,,Minnesota,Presidential,,1.0
+28,,,,Mississippi,Presidential,,1.0
+29,,,,Missouri,Presidential,,1.0
+30,,,,Montana,Presidential,,3.0
+31,1.0,,,Nebraska,Presidential,Congressional District 1,38.0
+31,2.0,,,Nebraska,Presidential,Congressional District 2,2.0
+31,3.0,,,Nebraska,Presidential,Congressional District 3,1.0
+31,,,,Nebraska,Presidential,,14.0
+32,,,,Nevada,Presidential,,100.0
+33,,,,New Hampshire,Presidential,,1.0
+34,,,,New Jersey,Presidential,,87.0
+35,,,,New Mexico,Presidential,,1.0
+36,,,,New York,Presidential,,3.0
+37,,,,North Carolina,Presidential,,100.0
+38,,,,North Dakota,Presidential,,1.0
+39,,,,Ohio,Presidential,,22.0
 40,,,,Oklahoma,Presidential,,1.0
-41,,,,Oregon,Presidential,,4.0
-42,,,,Pennsylvania,Presidential,,82.0
-44,,,,Rhode Island,Presidential,,5.0
-45,,,,South Carolina,Presidential,,6.0
-46,,,,South Dakota,Presidential,,3.0
-47,,,,Tennessee,Presidential,,2.0
-48,,,,Texas,Presidential,,21.0
-49,,,,Utah,Presidential,,2.0
-50,,,,Vermont,Presidential,,2.0
-51,,,,Virginia,Presidential,,8.0
-53,,,,Washington,Presidential,,2.0
+41,,,,Oregon,Presidential,,5.0
+42,,,,Pennsylvania,Presidential,,18.0
+44,,,,Rhode Island,Presidential,,24.0
+45,,,,South Carolina,Presidential,,1.0
+46,,,,South Dakota,Presidential,,6.0
+47,,,,Tennessee,Presidential,,3.0
+48,,,,Texas,Presidential,,13.0
+49,,,,Utah,Presidential,,1.0
+50,,,,Vermont,Presidential,,1.0
+51,,,,Virginia,Presidential,,37.0
+53,,,,Washington,Presidential,,1.0
 54,,,,West Virginia,Presidential,,1.0
-55,,,,Wisconsin,Presidential,,94.0
-56,,,,Wyoming,Presidential,,2.0
+55,,,,Wisconsin,Presidential,,13.0
+56,,,,Wyoming,Presidential,,1.0
 00,,,,,,,
 00,,,,,,,
 00,,,,,,,
