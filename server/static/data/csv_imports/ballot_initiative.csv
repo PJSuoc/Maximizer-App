@@ -9,7 +9,7 @@ Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 133,NA,NA,Proposition 133,Democ
 Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 134,NA,NA,Proposition 134,Democracy Repair
 Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 138,NA,NA,Proposition 138,Direct Democracy
 Arizona,4,NA,NA,NA,Ballot Initiative,Proposition 315,NA,NA,Proposition 315,Direct Democracy
-Arizona,4,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
+Arizona,4,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Proposition 139,Reproductive Rights
 Arkansas,5,NA,NA,NA,Ballot Initiative,Right to Abortion Initiative,NA,NA,Right to Abortion Initiative,Reproductive Rights
 California,6,NA,NA,NA,Ballot Initiative,Proposition 32,NA,NA,Proposition 32,Direct Democracy
 California,6,NA,NA,NA,Ballot Initiative,Proposition 3,NA,NA,Proposition 3,Civil Liberties
@@ -17,7 +17,7 @@ Colorado,8,NA,NA,NA,Ballot Initiative,Independent Judicial Discipline Adjudicati
 Colorado,8,NA,NA,NA,Ballot Initiative,Remove Constitutional Same-Sex Marriage Ban Amendment,NA,NA,Remove Constitutional Same-Sex Marriage Ban Amendment,Civil Liberties
 Colorado,8,NA,NA,NA,Ballot Initiative,Right to Abortion and Health Insurance Coverage Initiative,NA,NA,Right to Abortion and Health Insurance Coverage Initiative,Reproductive Rights
 Colorado,8,NA,NA,NA,Ballot Initiative,Ballot Initiative 310,NA,NA,Ballot Initiative 310,Democracy Repair
-Colorado,8,NA,NA,NA,Ballot Initiative,Sales Tax on Firearms Dealers,NA,NA,NA,NA
+Colorado,8,NA,NA,NA,Ballot Initiative,Sales Tax on Firearms Dealers Manufacturers and Ammunition Vendors Measure,NA,NA,Sales Tax on Firearms Dealers, Manufacturers
 Connecticut,9,NA,NA,NA,Ballot Initiative,No-Excuse Absentee Voting Amendment,NA,NA,No-Excuse Absentee Voting Amendment,Democracy Repair
 District of Columbia,11,NA,NA,NA,Ballot Initiative,Initiative 83: the Ranked-Choice Voting Initiative,NA,NA,Initiative 83: the Ranked-Choice Voting Initiative,Democracy Repair
 Florida,12,NA,NA,NA,Ballot Initiative,Amendment 1,NA,NA,Amendment 1,Democracy Repair
@@ -53,6 +53,7 @@ New York,36,NA,NA,NA,Ballot Initiative,Equal Protection of Law Amendment,NA,NA,E
 North Carolina,37,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
 North Dakota,38,NA,NA,NA,Ballot Initiative,Constitutional Measure 1,NA,NA,Constitutional Measure 1,disability services
 North Dakota,38,NA,NA,NA,Ballot Initiative,Constitutional Measure 2,NA,NA,Constitutional Measure 2,Democracy Repair
+Ohio,39,NA,NA,NA,Ballot Initiative,Issue 1,NA,NA,Issue 1,Democracy Repair
 Oklahoma,40,NA,NA,NA,Ballot Initiative,Citizenship Requirement for Voting Amendment,NA,NA,Citizenship Requirement for Voting Amendment,Democracy Repair
 Oklahoma,40,NA,NA,NA,Ballot Initiative,Minimum Wage Increase Initiative,NA,NA,Minimum Wage Increase Initiative,Direct Democracy
 Oregon,41,NA,NA,NA,Ballot Initiative,Impeachment of Elected State Executives Amendment,NA,NA,Impeachment of Elected State Executives Amendment,Democracy Repair
