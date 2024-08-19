@@ -303,6 +303,8 @@ label[for="layer"] {
                     const cookRating = feature.properties['voter_power'];
                     const candidateNameR = feature.properties['R_running'] || 'Not available';
                     const candidateNameD = feature.properties['D_running'] || 'Not available';
+                    const ballotname = feature.properties['name.of.ballot'] || 'Not available';
+
                     const description = feature.properties['description'] || 'No liberty ballots';
 
 
@@ -337,6 +339,8 @@ label[for="layer"] {
 
         } else if (layerId === 'ballot_abort') {
            popupContent = `<div class="custom-popup">
+            <strong>Ballot name:</strong><br>
+               ${ballotname}<br>
               <strong>Abortion ballot description:</strong><br>
                ${description}<br>
             
@@ -344,6 +348,8 @@ label[for="layer"] {
 
         } else if (layerId === 'ballot_vpm') {
            popupContent = `<div class="custom-popup">
+            <strong>Ballot name:</strong><br>
+               ${ballotname}<br>
               <strong>Voting policy ballot descriptions:</strong><br>
                ${description}<br>
             
@@ -351,6 +357,8 @@ label[for="layer"] {
 
         } else if (layerId === 'ballot_sg') {
            popupContent = `<div class="custom-popup">
+            <strong>Ballot name:</strong><br>
+               ${ballotname}<br>
               <strong>State government ballot descriptions:</strong><br>
                ${description}<br>
             
@@ -358,6 +366,8 @@ label[for="layer"] {
         
         } else if (layerId === 'ballot_others') {
            popupContent = `<div class="custom-popup">
+            <strong>Ballot name:</strong><br>
+               ${ballotname}<br>
               <strong>Ballot descriptions:</strong><br>
                ${description}<br>
             
