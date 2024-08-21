@@ -341,28 +341,41 @@ label[for="layer"] {
            </div>`;
 
         } else if (layerId === 'ballot_abort') {
-           popupContent = `<div class="custom-popup">
-            <strong>State name:</strong><br>
-               ${statename}<br>
-            <strong>Ballot name:</strong><br>
-               ${ballotname}<br>
-              <strong>Abortion ballot description:</strong><br>
-               ${description}<br>
-            
-           </div>`;
+   
+        const ballotMessage = ballotname === 'Not available'
+        ? 'No abortion ballots in this state'
+        : `<strong>State name:</strong><br>
+        ${statename}<br>
+        <strong>Ballot name:</strong><br>
+        ${ballotname}<br>
+        <strong>Abortion ballot description:</strong><br>
+        ${description}<br>`;
 
-        } else if (layerId === 'ballot_vpm') {
-           popupContent = `<div class="custom-popup">
-            <strong>State name:</strong><br>
-               ${statename}<br>
-            <strong>Ballot name(s):</strong><br>
-               ${ballotname}<br>
-              <strong>Voting policy ballot description(s):</strong><br>
-               ${description}<br>
-            
-           </div>`;
+    popupContent = `<div class="custom-popup">
+        ${ballotMessage}
+    </div>`;
 
-        } //else if (layerId === 'ballot_sg') {
+
+} else if (layerId === 'ballot_vpm') {
+   
+   const ballotMessage = ballotname === 'Not available'
+   ? 'No voting policy ballots in this state'
+   : `<strong>State name:</strong><br>
+   ${statename}<br>
+   <strong>Ballot name(s):</strong><br>
+   ${ballotname}<br>
+   <strong>Voting policy ballot description(s):</strong><br>
+   ${description}<br>`;
+
+popupContent = `<div class="custom-popup">
+   ${ballotMessage}
+</div>`;
+
+
+}
+             
+
+         //else if (layerId === 'ballot_sg') {
           // popupContent = `<div class="custom-popup">
            // <strong>Ballot name:</strong><br>
             //   ${ballotname}<br>
@@ -372,17 +385,24 @@ label[for="layer"] {
            //</div>`;
         
          else if (layerId === 'ballot_others') {
-           popupContent = `<div class="custom-popup">
-            <strong>State name:</strong><br>
-               ${statename}<br>
-            <strong>Ballot or race name(s):</strong><br>
-               ${ballotname}<br>
-              <strong>Description(s):</strong><br>
-               ${description}<br>
-            
-           </div>`;
+   
+   const ballotMessage = ballotname === 'Not available'
+   ? 'No state-level ballot issues in this state'
+   : `<strong>State name:</strong><br>
+   ${statename}<br>
+   <strong>Ballot or race name(s):</strong><br>
+   ${ballotname}<br>
+   <strong>Description(s):</strong><br>
+   ${description}<br>`;
 
-        } else {
+popupContent = `<div class="custom-popup">
+   ${ballotMessage}
+</div>`;
+
+
+}
+
+     else {
             const displayVoterPower = voterPowerhouse === undefined ? 'no competitive race' : voterPowerhouse;
 
     popupContent = `<div class="custom-popup">
