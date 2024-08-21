@@ -282,3 +282,10 @@ body {
     height: 200px;
     width: 300px;
 }
+
+#election-desc {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 20px;
+}

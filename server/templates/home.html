@@ -134,11 +134,11 @@ h3 {
                 <select id="layer" name="layer">
                     <option value="aggregate" selected>Overall voter power</option>
                     <option value="presidential">Presidential race voter power</option>
-                    <option value="congressional">Senate race voter powers</option>
-                    <option value="house">House race voter powers</option>
-                    <option value="gubernatorial">Gubernatorial voter powers</option>
-                    <option value="state_leg_up">State upper legislature voter powers</option>
-                    <option value="state_leg_low">State lower legislature voter powers</option>
+                    <option value="congressional">Senate race voter power</option>
+                    <option value="house">House race voter power</option>
+                    <option value="gubernatorial">Gubernatorial voter power</option>
+                    <option value="state_leg_up">State upper legislature voter power</option>
+                    <option value="state_leg_low">State lower legislature voter power</option>
                     <option value="ballot_all">Amount of ballot initiatives</option>
                 </select>
 
@@ -241,7 +241,7 @@ h3 {
     }
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
-        let currentLayerId = 'aggregate'; // Track the current layer
+        let currentLayerId = 'aggregate'; // adjust the layer that pops up first here
 
         const popup = new mapboxgl.Popup({
             closeButton: false,
