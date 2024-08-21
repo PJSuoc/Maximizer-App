@@ -127,13 +127,14 @@ label[for="layer"] {
                             <select id="layer" name="layer">
                                 <option value="empty">choose</option>
                                 <option value="ballot_vpm" selected >Voting policy measure ballot initiatives</option>
+                                <option value="ballot_abort">Reproductive rights ballot initiatives</option> 
                                 <option value="presidential2" >Presidential race</option>
                                 <option value="congressional2">Senate race</option>
                                 <option value="house2">House race</option>
                                 <!--<option value="gubernatorial">Gubernatorial race</option> -->
                                 <option value="state_leg_up">State legislature upper</option>
                                 <option value="state_leg_low">State legislature lower</option>
-                                <option value="ballot_abort">Abortion ballot initiatives</option> 
+                                
                                  <!--<option value="ballot_sg">State government ballot initiatives</option>  -->
                                 <option value="ballot_others">State-level ballot issues</option> 
 
@@ -341,6 +342,8 @@ label[for="layer"] {
 
         } else if (layerId === 'ballot_abort') {
            popupContent = `<div class="custom-popup">
+            <strong>State name:</strong><br>
+               ${statename}<br>
             <strong>Ballot name:</strong><br>
                ${ballotname}<br>
               <strong>Abortion ballot description:</strong><br>
