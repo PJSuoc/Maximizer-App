@@ -394,7 +394,7 @@ h3 {
         }
 
         let popupContent = ""; // Initialize popupContent
-        const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
+        const name = feature.properties['NAME'] || feature.properties['NAMELSAD'] || feature.properties['election_name'];
         let voterPower = feature.properties['voter_power']; // Directly use the property
 
         if (layerId === 'ballot_all') {
