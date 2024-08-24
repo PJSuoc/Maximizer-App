@@ -1,1345 +1,1310 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
-01,,,,Alabama,Presidential,,1.0
-02,,,,Alaska,Presidential,,31.0
-04,,,,Arizona,Presidential,,42.0
-05,,,,Arkansas,Presidential,,1.0
-06,,,,California,Presidential,,1.0
-08,,,,Colorado,Presidential,,1.0
-09,,,,Connecticut,Presidential,,1.0
-10,,,,Delaware,Presidential,,1.0
-11,,,,District of Columbia,Presidential,,1.0
-12,,,,Florida,Presidential,,32.0
-13,,,,Georgia,Presidential,,93.0
-15,,,,Hawaii,Presidential,,1.0
-16,,,,Idaho,Presidential,,1.0
-17,,,,Illinois,Presidential,,1.0
-18,,,,Indiana,Presidential,,1.0
-19,,,,Iowa,Presidential,,8.0
-20,,,,Kansas,Presidential,,2.0
-21,,,,Kentucky,Presidential,,1.0
-22,,,,Louisiana,Presidential,,3.0
-23,,,,Maine,Presidential,,22.0
-23,2.0,,,Maine,Presidential,Congressional District 2,13.0
-23,1.0,,,Maine,Presidential,Congressional District 1,2.0
-24,,,,Maryland,Presidential,,1.0
-25,,,,Massachusetts,Presidential,,1.0
-26,,,,Michigan,Presidential,,63.0
-27,,,,Minnesota,Presidential,,1.0
-28,,,,Mississippi,Presidential,,1.0
-29,,,,Missouri,Presidential,,1.0
-30,,,,Montana,Presidential,,3.0
-31,1.0,,,Nebraska,Presidential,Congressional District 1,38.0
-31,2.0,,,Nebraska,Presidential,Congressional District 2,2.0
-31,3.0,,,Nebraska,Presidential,Congressional District 3,1.0
-31,,,,Nebraska,Presidential,,14.0
-32,,,,Nevada,Presidential,,100.0
-33,,,,New Hampshire,Presidential,,1.0
-34,,,,New Jersey,Presidential,,87.0
-35,,,,New Mexico,Presidential,,1.0
-36,,,,New York,Presidential,,3.0
-37,,,,North Carolina,Presidential,,100.0
-38,,,,North Dakota,Presidential,,1.0
-39,,,,Ohio,Presidential,,22.0
-40,,,,Oklahoma,Presidential,,1.0
-41,,,,Oregon,Presidential,,5.0
-42,,,,Pennsylvania,Presidential,,18.0
-44,,,,Rhode Island,Presidential,,24.0
-45,,,,South Carolina,Presidential,,1.0
-46,,,,South Dakota,Presidential,,6.0
-47,,,,Tennessee,Presidential,,3.0
-48,,,,Texas,Presidential,,13.0
-49,,,,Utah,Presidential,,1.0
-50,,,,Vermont,Presidential,,1.0
-51,,,,Virginia,Presidential,,37.0
-53,,,,Washington,Presidential,,1.0
-54,,,,West Virginia,Presidential,,1.0
-55,,,,Wisconsin,Presidential,,13.0
-56,,,,Wyoming,Presidential,,1.0
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-04,,,,Arizona,Senate,,41.0
-06,,,,California,Senate,,1.0
-09,,,,Connecticut,Senate,,7.0
-10,,,,Delaware,Senate,,23.0
-12,,,,Florida,Senate,,23.0
-15,,,,Hawaii,Senate,,8.0
-18,,,,Indiana,Senate,,14.0
-23,,,,Maine,Senate,,18.0
-24,,,,Maryland,Senate,,4.0
-25,,,,Massachusetts,Senate,,2.0
-26,,,,Michigan,Senate,,22.0
-27,,,,Minnesota,Senate,,3.0
-28,,,,Mississippi,Senate,,17.0
-29,,,,Missouri,Senate,,12.0
-30,,,,Montana,Senate,,99.0
-31,,,,Nebraska,Senate,,29.0
-31,,,,Nebraska,Senate,,21.0
-32,,,,Nevada,Senate,,100.0
-34,,,,New Jersey,Senate,,7.0
-35,,,,New Mexico,Senate,,24.0
-36,,,,New York,Senate,,1.0
-38,,,,North Dakota,Senate,,18.0
-39,,,,Ohio,Senate,,14.0
-42,,,,Pennsylvania,Senate,,7.0
-44,,,,Rhode Island,Senate,,23.0
-47,,,,Tennessee,Senate,,6.0
-48,,,,Texas,Senate,,15.0
-49,,,,Utah,Senate,,21.0
-50,,,,Vermont,Senate,,13.0
-51,,,,Virginia,Senate,,6.0
-53,,,,Washington,Senate,,5.0
-54,,,,West Virginia,Senate,,7.0
-55,,,,Wisconsin,Senate,,16.0
-56,,,,Wyoming,Senate,,19.0
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-00,,,,,,,
-01,02,,,Alabama,House,Congressional District 2,43.0
-02,at-large,,,Alaska,House,Congressional District (at Large),33.0
-04,01,,,Arizona,House,Congressional District 1,83.0
-04,06,,,Arizona,House,Congressional District 6,80.0
-06,47,,,California,House,Congressional District 47,72.0
-06,45,,,California,House,Congressional District 45,100.0
-06,09,,,California,House,Congressional District 9,33.0
-06,49,,,California,House,Congressional District 49,68.0
-06,03,,,California,House,Congressional District 3,36.0
-06,40,,,California,House,Congressional District 40,26.0
-06,13,,,California,House,Congressional District 13,76.0
-06,22,,,California,House,Congressional District 22,74.0
-06,27,,,California,House,Congressional District 27,99.0
-06,41,,,California,House,Congressional District 41,52.0
-08,03,,,Colorado,House,Congressional District 3,57.0
-08,08,,,Colorado,House,Congressional District 8,100.0
-09,05,,,Connecticut,House,Congressional District 5,87.0
-12,09,,,Florida,House,Congressional District 9,18.0
-12,23,,,Florida,House,Congressional District 23,35.0
-12,13,,,Florida,House,Congressional District 13,34.0
-17,17,,,Illinois,House,Congressional District 17,69.0
-18,01,,,Indiana,House,Congressional District 1,29.0
-19,03,,,Iowa,House,Congressional District 3,87.0
-19,01,,,Iowa,House,Congressional District 1,55.0
-20,03,,,Kansas,House,Congressional District 3,63.0
-23,02,,,Maine,House,Congressional District 2,62.0
-24,06,,,Maryland,House,Congressional District 6,72.0
-26,10,,,Michigan,House,Congressional District 10,100.0
-26,03,,,Michigan,House,Congressional District 3,44.0
-26,07,,,Michigan,House,Congressional District 7,89.0
-26,08,,,Michigan,House,Congressional District 8,50.0
-27,02,,,Minnesota,House,Congressional District 2,68.0
-30,01,,,Montana,House,Congressional District 1,69.0
-31,02,,,Nebraska,House,Congressional District 2,76.0
-32,03,,,Nevada ,House,Congressional District 3,64.0
-32,01,,,Nevada ,House,Congressional District 1,46.0
-32,04,,,Nevada ,House,Congressional District 4,49.0
-33,01,,,New Hampshire,House,Congressional District 1,96.0
-33,02,,,New Hampshire,House,Congressional District 2,87.0
-34,07,,,New Jersey,House,Congressional District 7,65.0
-35,02,,,New Mexico,House,Congressional District 2,79.0
-36,18,,,New York,House,Congressional District 18,90.0
-36,22,,,New York,House,Congressional District 22,91.0
-36,03,,,New York,House,Congressional District 3,64.0
-36,01,,,New York,House,Congressional District 1,25.0
-36,04,,,New York,House,Congressional District 4,98.0
-36,17,,,New York,House,Congressional District 17,91.0
-36,19,,,New York,House,Congressional District 19,100.0
-37,01,,,North Carolina,House,Congressional District 1,84.0
-39,01,,,Ohio,House,Congressional District 1,86.0
-39,09,,,Ohio,House,Congressional District 9,56.0
-39,13,,,Ohio,House,Congressional District 13,79.0
-41,06,,,Oregon,House,Congressional District 6,62.0
-41,04,,,Oregon,House,Congressional District 4,34.0
-41,05,,,Oregon,House,Congressional District 5,98.0
-42,17,,,Pennsylvania,House,Congressional District 17,43.0
-42,10,,,Pennsylvania,House,Congressional District 10,48.0
-42,01,,,Pennsylvania,House,Congressional District 1,83.0
-42,07,,,Pennsylvania,House,Congressional District 7,94.0
-42,08,,,Pennsylvania,House,Congressional District 8,96.0
-48,28,,,Texas,House,Congressional District 28,21.0
-48,34,,,Texas,House,Congressional District 34,12.0
-48,15,,,Texas,House,Congressional District 15,82.0
-51,07,,,Virginia,House,Congressional District 7,81.0
-51,02,,,Virginia,House,Congressional District 2,78.0
-53,08,,,Washington,House,Congressional District 8,82.0
-53,03,,,Washington,House,Congressional District 3,80.0
-55,03,,,Wisconsin,House,Congressional District 3,80.0
-55,01,,,Wisconsin,House,Congressional District 1,61.0
-33,,,,New Hampshire,Governor,,100.0
-37,,,,North Carolina,Governor,,100.0
-10,,,,Delaware,Governor,,20.0
-18,,,,Indiana,Governor,,20.0
-29,,,,Missouri,Governor,,20.0
-30,,,,Montana,Governor,,50.0
-38,,,,North Dakota,Governor,,20.0
-49,,,,Utah,Governor,,20.0
-50,,,,Vermont,Governor,,50.0
-53,,,,Washington,Governor,,50.0
-54,,,,West Virginia,Governor,,20.0
-01,,,,Alabama,Governor,,
-02,,,,Alaska,Governor,,
-04,,,,Arizona,Governor,,
-05,,,,Arkansas,Governor,,
-06,,,,California,Governor,,
-08,,,,Colorado,Governor,,
-09,,,,Connecticut,Governor,,
-11,,,,District of Columbia,Governor,,
-12,,,,Florida,Governor,,
-13,,,,Georgia,Governor,,
-15,,,,Hawaii,Governor,,
-16,,,,Idaho,Governor,,
-17,,,,Illinois,Governor,,
-19,,,,Iowa,Governor,,
-20,,,,Kansas,Governor,,
-21,,,,Kentucky,Governor,,
-22,,,,Louisiana,Governor,,
-23,,,,Maine,Governor,,
-24,,,,Maryland,Governor,,
-25,,,,Massachusetts,Governor,,
-26,,,,Michigan,Governor,,
-27,,,,Minnesota,Governor,,
-28,,,,Mississippi,Governor,,
-31,,,,Nebraska,Governor,,
-32,,,,Nevada,Governor,,
-34,,,,New Jersey,Governor,,
-35,,,,New Mexico,Governor,,
-36,,,,New York,Governor,,
-39,,,,Ohio,Governor,,
-40,,,,Oklahoma,Governor,,
-41,,,,Oregon,Governor,,
-42,,,,Pennsylvania,Governor,,
-44,,,,Rhode Island,Governor,,
-45,,,,South Carolina,Governor,,
-46,,,,South Dakota,Governor,,
-47,,,,Tennessee,Governor,,
-48,,,,Texas,Governor,,
-51,,,,Virginia,Governor,,
-55,,,,Wisconsin,Governor,,
-56,,,,Wyoming,Governor,,
-02,,00A,,Alaska,State Leg (Upper),State Senate District A,0.0
-02,,00B,,Alaska,State Leg (Upper),State Senate District B,14.0
-02,,00C,,Alaska,State Leg (Upper),State Senate District C,0.0
-02,,00D,,Alaska,State Leg (Upper),State Senate District D,3.0
-02,,00E,,Alaska,State Leg (Upper),State Senate District E,0.0
-02,,00F,,Alaska,State Leg (Upper),State Senate District F,78.0
-02,,00G,,Alaska,State Leg (Upper),State Senate District G,0.0
-02,,00H,,Alaska,State Leg (Upper),State Senate District H,100.0
-02,,00I,,Alaska,State Leg (Upper),State Senate District I,0.0
-02,,00J,,Alaska,State Leg (Upper),State Senate District J,31.0
-02,,00K,,Alaska,State Leg (Upper),State Senate District K,0.0
-02,,00L,,Alaska,State Leg (Upper),State Senate District L,8.0
-02,,00M,,Alaska,State Leg (Upper),State Senate District M,0.0
-02,,00N,,Alaska,State Leg (Upper),State Senate District N,2.0
-02,,00O,,Alaska,State Leg (Upper),State Senate District O,0.0
-02,,00P,,Alaska,State Leg (Upper),State Senate District P,43.0
-02,,00Q,,Alaska,State Leg (Upper),State Senate District Q,0.0
-02,,00R,,Alaska,State Leg (Upper),State Senate District R,98.0
-02,,00S,,Alaska,State Leg (Upper),State Senate District S,0.0
-02,,00T,,Alaska,State Leg (Upper),State Senate District T,33.0
-04,,001,,Arizona,State Leg (Upper),State Senate District 1,9.0
-04,,002,,Arizona,State Leg (Upper),State Senate District 2,86.0
-04,,003,,Arizona,State Leg (Upper),State Senate District 3,11.0
-04,,004,,Arizona,State Leg (Upper),State Senate District 4,90.0
-04,,005,,Arizona,State Leg (Upper),State Senate District 5,5.0
-04,,006,,Arizona,State Leg (Upper),State Senate District 6,7.0
-04,,007,,Arizona,State Leg (Upper),State Senate District 7,13.0
-04,,008,,Arizona,State Leg (Upper),State Senate District 8,12.0
-04,,009,,Arizona,State Leg (Upper),State Senate District 9,100.0
-04,,010,,Arizona,State Leg (Upper),State Senate District 10,14.0
-04,,011,,Arizona,State Leg (Upper),State Senate District 11,2.0
-04,,012,,Arizona,State Leg (Upper),State Senate District 12,38.0
-04,,013,,Arizona,State Leg (Upper),State Senate District 13,99.0
-04,,014,,Arizona,State Leg (Upper),State Senate District 14,23.0
-04,,015,,Arizona,State Leg (Upper),State Senate District 15,9.0
-04,,016,,Arizona,State Leg (Upper),State Senate District 16,82.0
-04,,017,,Arizona,State Leg (Upper),State Senate District 17,61.0
-04,,018,,Arizona,State Leg (Upper),State Senate District 18,22.0
-04,,019,,Arizona,State Leg (Upper),State Senate District 19,13.0
-04,,020,,Arizona,State Leg (Upper),State Senate District 20,2.0
-04,,021,,Arizona,State Leg (Upper),State Senate District 21,9.0
-04,,022,,Arizona,State Leg (Upper),State Senate District 22,5.0
-04,,023,,Arizona,State Leg (Upper),State Senate District 23,31.0
-04,,024,,Arizona,State Leg (Upper),State Senate District 24,7.0
-04,,025,,Arizona,State Leg (Upper),State Senate District 25,11.0
-04,,026,,Arizona,State Leg (Upper),State Senate District 26,5.0
-04,,027,,Arizona,State Leg (Upper),State Senate District 27,54.0
-04,,028,,Arizona,State Leg (Upper),State Senate District 28,11.0
-04,,029,,Arizona,State Leg (Upper),State Senate District 29,35.0
-04,,030,,Arizona,State Leg (Upper),State Senate District 30,2.0
-20,,001,,Kansas,State Leg (Upper),State Senate District 1,3.0
-20,,002,,Kansas,State Leg (Upper),State Senate District 2,2.0
-20,,003,,Kansas,State Leg (Upper),State Senate District 3,43.0
-20,,004,,Kansas,State Leg (Upper),State Senate District 4,1.0
-20,,005,,Kansas,State Leg (Upper),State Senate District 5,75.0
-20,,006,,Kansas,State Leg (Upper),State Senate District 6,9.0
-20,,007,,Kansas,State Leg (Upper),State Senate District 7,12.0
-20,,008,,Kansas,State Leg (Upper),State Senate District 8,46.0
-20,,009,,Kansas,State Leg (Upper),State Senate District 9,43.0
-20,,010,,Kansas,State Leg (Upper),State Senate District 10,94.0
-20,,011,,Kansas,State Leg (Upper),State Senate District 11,74.0
-20,,012,,Kansas,State Leg (Upper),State Senate District 12,2.0
-20,,013,,Kansas,State Leg (Upper),State Senate District 13,7.0
-20,,014,,Kansas,State Leg (Upper),State Senate District 14,3.0
-20,,015,,Kansas,State Leg (Upper),State Senate District 15,3.0
-20,,016,,Kansas,State Leg (Upper),State Senate District 16,13.0
-20,,017,,Kansas,State Leg (Upper),State Senate District 17,24.0
-20,,018,,Kansas,State Leg (Upper),State Senate District 18,9.0
-20,,019,,Kansas,State Leg (Upper),State Senate District 19,9.0
-20,,020,,Kansas,State Leg (Upper),State Senate District 20,67.0
-20,,021,,Kansas,State Leg (Upper),State Senate District 21,35.0
-20,,022,,Kansas,State Leg (Upper),State Senate District 22,100.0
-20,,023,,Kansas,State Leg (Upper),State Senate District 23,69.0
-20,,024,,Kansas,State Leg (Upper),State Senate District 24,5.0
-20,,025,,Kansas,State Leg (Upper),State Senate District 25,43.0
-20,,026,,Kansas,State Leg (Upper),State Senate District 26,4.0
-20,,027,,Kansas,State Leg (Upper),State Senate District 27,15.0
-20,,028,,Kansas,State Leg (Upper),State Senate District 28,36.0
-20,,029,,Kansas,State Leg (Upper),State Senate District 29,3.0
-20,,030,,Kansas,State Leg (Upper),State Senate District 30,30.0
-20,,031,,Kansas,State Leg (Upper),State Senate District 31,12.0
-20,,032,,Kansas,State Leg (Upper),State Senate District 32,4.0
-20,,033,,Kansas,State Leg (Upper),State Senate District 33,1.0
-20,,034,,Kansas,State Leg (Upper),State Senate District 34,4.0
-20,,035,,Kansas,State Leg (Upper),State Senate District 35,61.0
-20,,036,,Kansas,State Leg (Upper),State Senate District 36,1.0
-20,,037,,Kansas,State Leg (Upper),State Senate District 37,24.0
-20,,038,,Kansas,State Leg (Upper),State Senate District 38,3.0
-20,,039,,Kansas,State Leg (Upper),State Senate District 39,2.0
-20,,040,,Kansas,State Leg (Upper),State Senate District 40,1.0
-31,,001,,Nebraska,State Leg (Upper),State Senate District 1,3.0
-31,,002,,Nebraska,State Leg (Upper),State Senate District 2,0.0
-31,,003,,Nebraska,State Leg (Upper),State Senate District 3,31.0
-31,,004,,Nebraska,State Leg (Upper),State Senate District 4,0.0
-31,,005,,Nebraska,State Leg (Upper),State Senate District 5,37.0
-31,,006,,Nebraska,State Leg (Upper),State Senate District 6,0.0
-31,,007,,Nebraska,State Leg (Upper),State Senate District 7,6.0
-31,,008,,Nebraska,State Leg (Upper),State Senate District 8,0.0
-31,,009,,Nebraska,State Leg (Upper),State Senate District 9,6.0
-31,,010,,Nebraska,State Leg (Upper),State Senate District 10,0.0
-31,,011,,Nebraska,State Leg (Upper),State Senate District 11,1.0
-31,,012,,Nebraska,State Leg (Upper),State Senate District 12,0.0
-31,,013,,Nebraska,State Leg (Upper),State Senate District 13,15.0
-31,,014,,Nebraska,State Leg (Upper),State Senate District 14,0.0
-31,,015,,Nebraska,State Leg (Upper),State Senate District 15,5.0
-31,,016,,Nebraska,State Leg (Upper),State Senate District 16,0.0
-31,,017,,Nebraska,State Leg (Upper),State Senate District 17,9.0
-31,,018,,Nebraska,State Leg (Upper),State Senate District 18,0.0
-31,,019,,Nebraska,State Leg (Upper),State Senate District 19,1.0
-31,,020,,Nebraska,State Leg (Upper),State Senate District 20,0.0
-31,,021,,Nebraska,State Leg (Upper),State Senate District 21,42.0
-31,,022,,Nebraska,State Leg (Upper),State Senate District 22,0.0
-31,,023,,Nebraska,State Leg (Upper),State Senate District 23,3.0
-31,,024,,Nebraska,State Leg (Upper),State Senate District 24,0.0
-31,,025,,Nebraska,State Leg (Upper),State Senate District 25,46.0
-31,,026,,Nebraska,State Leg (Upper),State Senate District 26,0.0
-31,,027,,Nebraska,State Leg (Upper),State Senate District 27,100.0
-31,,028,,Nebraska,State Leg (Upper),State Senate District 28,0.0
-31,,029,,Nebraska,State Leg (Upper),State Senate District 29,28.0
-31,,030,,Nebraska,State Leg (Upper),State Senate District 30,0.0
-31,,031,,Nebraska,State Leg (Upper),State Senate District 31,23.0
-31,,032,,Nebraska,State Leg (Upper),State Senate District 32,0.0
-31,,033,,Nebraska,State Leg (Upper),State Senate District 33,2.0
-31,,034,,Nebraska,State Leg (Upper),State Senate District 34,0.0
-31,,035,,Nebraska,State Leg (Upper),State Senate District 35,13.0
-31,,036,,Nebraska,State Leg (Upper),State Senate District 36,0.0
-31,,037,,Nebraska,State Leg (Upper),State Senate District 37,4.0
-31,,038,,Nebraska,State Leg (Upper),State Senate District 38,0.0
-31,,039,,Nebraska,State Leg (Upper),State Senate District 39,5.0
-31,,040,,Nebraska,State Leg (Upper),State Senate District 40,0.0
-31,,041,,Nebraska,State Leg (Upper),State Senate District 41,1.0
-31,,042,,Nebraska,State Leg (Upper),State Senate District 42,0.0
-31,,043,,Nebraska,State Leg (Upper),State Senate District 43,1.0
-31,,044,,Nebraska,State Leg (Upper),State Senate District 44,0.0
-31,,045,,Nebraska,State Leg (Upper),State Senate District 45,31.0
-31,,046,,Nebraska,State Leg (Upper),State Senate District 46,0.0
-31,,047,,Nebraska,State Leg (Upper),State Senate District 47,1.0
-31,,048,,Nebraska,State Leg (Upper),State Senate District 48,0.0
-31,,049,,Nebraska,State Leg (Upper),State Senate District 49,19.0
-33,,001,,New Hampshire,State Leg (Upper),State Senate District 1,99.0
-33,,002,,New Hampshire,State Leg (Upper),State Senate District 2,98.0
-33,,003,,New Hampshire,State Leg (Upper),State Senate District 3,100.0
-33,,004,,New Hampshire,State Leg (Upper),State Senate District 4,16.0
-33,,005,,New Hampshire,State Leg (Upper),State Senate District 5,3.0
-33,,006,,New Hampshire,State Leg (Upper),State Senate District 6,75.0
-33,,007,,New Hampshire,State Leg (Upper),State Senate District 7,99.0
-33,,008,,New Hampshire,State Leg (Upper),State Senate District 8,88.0
-33,,009,,New Hampshire,State Leg (Upper),State Senate District 9,98.0
-33,,010,,New Hampshire,State Leg (Upper),State Senate District 10,7.0
-33,,011,,New Hampshire,State Leg (Upper),State Senate District 11,83.0
-33,,012,,New Hampshire,State Leg (Upper),State Senate District 12,88.0
-33,,013,,New Hampshire,State Leg (Upper),State Senate District 13,18.0
-33,,014,,New Hampshire,State Leg (Upper),State Senate District 14,74.0
-33,,015,,New Hampshire,State Leg (Upper),State Senate District 15,8.0
-33,,016,,New Hampshire,State Leg (Upper),State Senate District 16,92.0
-33,,017,,New Hampshire,State Leg (Upper),State Senate District 17,78.0
-33,,018,,New Hampshire,State Leg (Upper),State Senate District 18,91.0
-33,,019,,New Hampshire,State Leg (Upper),State Senate District 19,68.0
-33,,020,,New Hampshire,State Leg (Upper),State Senate District 20,29.0
-33,,021,,New Hampshire,State Leg (Upper),State Senate District 21,4.0
-33,,022,,New Hampshire,State Leg (Upper),State Senate District 22,47.0
-33,,023,,New Hampshire,State Leg (Upper),State Senate District 23,57.0
-33,,024,,New Hampshire,State Leg (Upper),State Senate District 24,29.0
-42,,001,,Pennsylvania,State Leg (Upper),State Senate District 1,1.0
-42,,002,,Pennsylvania,State Leg (Upper),State Senate District 2,0.0
-42,,003,,Pennsylvania,State Leg (Upper),State Senate District 3,0.0
-42,,004,,Pennsylvania,State Leg (Upper),State Senate District 4,0.0
-42,,005,,Pennsylvania,State Leg (Upper),State Senate District 5,33.0
-42,,006,,Pennsylvania,State Leg (Upper),State Senate District 6,0.0
-42,,007,,Pennsylvania,State Leg (Upper),State Senate District 7,1.0
-42,,008,,Pennsylvania,State Leg (Upper),State Senate District 8,0.0
-42,,009,,Pennsylvania,State Leg (Upper),State Senate District 9,29.0
-42,,010,,Pennsylvania,State Leg (Upper),State Senate District 10,0.0
-42,,011,,Pennsylvania,State Leg (Upper),State Senate District 11,46.0
-42,,012,,Pennsylvania,State Leg (Upper),State Senate District 12,0.0
-42,,013,,Pennsylvania,State Leg (Upper),State Senate District 13,59.0
-42,,014,,Pennsylvania,State Leg (Upper),State Senate District 14,0.0
-42,,015,,Pennsylvania,State Leg (Upper),State Senate District 15,36.0
-42,,016,,Pennsylvania,State Leg (Upper),State Senate District 16,0.0
-42,,017,,Pennsylvania,State Leg (Upper),State Senate District 17,4.0
-42,,018,,Pennsylvania,State Leg (Upper),State Senate District 18,0.0
-42,,019,,Pennsylvania,State Leg (Upper),State Senate District 19,26.0
-42,,020,,Pennsylvania,State Leg (Upper),State Senate District 20,0.0
-42,,021,,Pennsylvania,State Leg (Upper),State Senate District 21,6.0
-42,,022,,Pennsylvania,State Leg (Upper),State Senate District 22,0.0
-42,,023,,Pennsylvania,State Leg (Upper),State Senate District 23,4.0
-42,,024,,Pennsylvania,State Leg (Upper),State Senate District 24,0.0
-42,,025,,Pennsylvania,State Leg (Upper),State Senate District 25,16.0
-42,,026,,Pennsylvania,State Leg (Upper),State Senate District 26,0.0
-42,,027,,Pennsylvania,State Leg (Upper),State Senate District 27,8.0
-42,,028,,Pennsylvania,State Leg (Upper),State Senate District 28,0.0
-42,,029,,Pennsylvania,State Leg (Upper),State Senate District 29,10.0
-42,,030,,Pennsylvania,State Leg (Upper),State Senate District 30,0.0
-42,,031,,Pennsylvania,State Leg (Upper),State Senate District 31,45.0
-42,,032,,Pennsylvania,State Leg (Upper),State Senate District 32,0.0
-42,,033,,Pennsylvania,State Leg (Upper),State Senate District 33,5.0
-42,,034,,Pennsylvania,State Leg (Upper),State Senate District 34,0.0
-42,,035,,Pennsylvania,State Leg (Upper),State Senate District 35,14.0
-42,,036,,Pennsylvania,State Leg (Upper),State Senate District 36,0.0
-42,,037,,Pennsylvania,State Leg (Upper),State Senate District 37,100.0
-42,,038,,Pennsylvania,State Leg (Upper),State Senate District 38,0.0
-42,,039,,Pennsylvania,State Leg (Upper),State Senate District 39,17.0
-42,,040,,Pennsylvania,State Leg (Upper),State Senate District 40,0.0
-42,,041,,Pennsylvania,State Leg (Upper),State Senate District 41,9.0
-42,,042,,Pennsylvania,State Leg (Upper),State Senate District 42,0.0
-42,,043,,Pennsylvania,State Leg (Upper),State Senate District 43,1.0
-42,,044,,Pennsylvania,State Leg (Upper),State Senate District 44,0.0
-42,,045,,Pennsylvania,State Leg (Upper),State Senate District 45,32.0
-42,,046,,Pennsylvania,State Leg (Upper),State Senate District 46,0.0
-42,,047,,Pennsylvania,State Leg (Upper),State Senate District 47,42.0
-42,,048,,Pennsylvania,State Leg (Upper),State Senate District 48,0.0
-42,,049,,Pennsylvania,State Leg (Upper),State Senate District 49,69.0
-42,,050,,Pennsylvania,State Leg (Upper),State Senate District 50,0.0
-55,,001,,Wisconsin,State Leg (Upper),State Senate District 1,0.0
-55,,002,,Wisconsin,State Leg (Upper),State Senate District 2,13.0
-55,,003,,Wisconsin,State Leg (Upper),State Senate District 3,0.0
-55,,004,,Wisconsin,State Leg (Upper),State Senate District 4,1.0
-55,,005,,Wisconsin,State Leg (Upper),State Senate District 5,0.0
-55,,006,,Wisconsin,State Leg (Upper),State Senate District 6,1.0
-55,,007,,Wisconsin,State Leg (Upper),State Senate District 7,0.0
-55,,008,,Wisconsin,State Leg (Upper),State Senate District 8,54.0
-55,,009,,Wisconsin,State Leg (Upper),State Senate District 9,0.0
-55,,010,,Wisconsin,State Leg (Upper),State Senate District 10,39.0
-55,,011,,Wisconsin,State Leg (Upper),State Senate District 11,0.0
-55,,012,,Wisconsin,State Leg (Upper),State Senate District 12,14.0
-55,,013,,Wisconsin,State Leg (Upper),State Senate District 13,0.0
-55,,014,,Wisconsin,State Leg (Upper),State Senate District 14,62.0
-55,,015,,Wisconsin,State Leg (Upper),State Senate District 15,0.0
-55,,016,,Wisconsin,State Leg (Upper),State Senate District 16,9.0
-55,,017,,Wisconsin,State Leg (Upper),State Senate District 17,0.0
-55,,018,,Wisconsin,State Leg (Upper),State Senate District 18,76.0
-55,,019,,Wisconsin,State Leg (Upper),State Senate District 19,0.0
-55,,020,,Wisconsin,State Leg (Upper),State Senate District 20,5.0
-55,,021,,Wisconsin,State Leg (Upper),State Senate District 21,0.0
-55,,022,,Wisconsin,State Leg (Upper),State Senate District 22,37.0
-55,,023,,Wisconsin,State Leg (Upper),State Senate District 23,0.0
-55,,024,,Wisconsin,State Leg (Upper),State Senate District 24,81.0
-55,,025,,Wisconsin,State Leg (Upper),State Senate District 25,0.0
-55,,026,,Wisconsin,State Leg (Upper),State Senate District 26,1.0
-55,,027,,Wisconsin,State Leg (Upper),State Senate District 27,0.0
-55,,028,,Wisconsin,State Leg (Upper),State Senate District 28,9.0
-55,,029,,Wisconsin,State Leg (Upper),State Senate District 29,0.0
-55,,030,,Wisconsin,State Leg (Upper),State Senate District 30,100.0
-55,,031,,Wisconsin,State Leg (Upper),State Senate District 31,0.0
-55,,032,,Wisconsin,State Leg (Upper),State Senate District 32,62.0
-55,,033,,Wisconsin,State Leg (Upper),State Senate District 33,0.0
-02,,,001,Alaska,State Leg (Lower),State House District 1,26.0
-02,,,002,Alaska,State Leg (Lower),State House District 2,75.0
-02,,,003,Alaska,State Leg (Lower),State House District 3,46.0
-02,,,004,Alaska,State Leg (Lower),State House District 4,5.0
-02,,,005,Alaska,State Leg (Lower),State House District 5,73.0
-02,,,006,Alaska,State Leg (Lower),State House District 6,53.0
-02,,,007,Alaska,State Leg (Lower),State House District 7,3.0
-02,,,008,Alaska,State Leg (Lower),State House District 8,2.0
-02,,,009,Alaska,State Leg (Lower),State House District 9,83.0
-02,,,010,Alaska,State Leg (Lower),State House District 10,65.0
-02,,,011,Alaska,State Leg (Lower),State House District 11,46.0
-02,,,012,Alaska,State Leg (Lower),State House District 12,100.0
-02,,,013,Alaska,State Leg (Lower),State House District 13,99.0
-02,,,014,Alaska,State Leg (Lower),State House District 14,24.0
-02,,,015,Alaska,State Leg (Lower),State House District 15,70.0
-02,,,016,Alaska,State Leg (Lower),State House District 16,48.0
-02,,,017,Alaska,State Leg (Lower),State House District 17,7.0
-02,,,018,Alaska,State Leg (Lower),State House District 18,97.0
-02,,,019,Alaska,State Leg (Lower),State House District 19,14.0
-02,,,020,Alaska,State Leg (Lower),State House District 20,54.0
-02,,,021,Alaska,State Leg (Lower),State House District 21,99.0
-02,,,022,Alaska,State Leg (Lower),State House District 22,89.0
-02,,,023,Alaska,State Leg (Lower),State House District 23,11.0
-02,,,024,Alaska,State Leg (Lower),State House District 24,5.0
-02,,,025,Alaska,State Leg (Lower),State House District 25,4.0
-02,,,026,Alaska,State Leg (Lower),State House District 26,2.0
-02,,,027,Alaska,State Leg (Lower),State House District 27,2.0
-02,,,028,Alaska,State Leg (Lower),State House District 28,2.0
-02,,,029,Alaska,State Leg (Lower),State House District 29,4.0
-02,,,030,Alaska,State Leg (Lower),State House District 30,4.0
-02,,,031,Alaska,State Leg (Lower),State House District 31,97.0
-02,,,032,Alaska,State Leg (Lower),State House District 32,9.0
-02,,,033,Alaska,State Leg (Lower),State House District 33,2.0
-02,,,034,Alaska,State Leg (Lower),State House District 34,19.0
-02,,,035,Alaska,State Leg (Lower),State House District 35,67.0
-02,,,036,Alaska,State Leg (Lower),State House District 36,39.0
-02,,,037,Alaska,State Leg (Lower),State House District 37,33.0
-02,,,038,Alaska,State Leg (Lower),State House District 38,6.0
-02,,,039,Alaska,State Leg (Lower),State House District 39,15.0
-02,,,040,Alaska,State Leg (Lower),State House District 40,80.0
-04,,,001,Arizona,State Leg (Lower),State House District 1,9.0
-04,,,002,Arizona,State Leg (Lower),State House District 2,86.0
-04,,,003,Arizona,State Leg (Lower),State House District 3,11.0
-04,,,004,Arizona,State Leg (Lower),State House District 4,90.0
-04,,,005,Arizona,State Leg (Lower),State House District 5,5.0
-04,,,006,Arizona,State Leg (Lower),State House District 6,7.0
-04,,,007,Arizona,State Leg (Lower),State House District 7,13.0
-04,,,008,Arizona,State Leg (Lower),State House District 8,12.0
-04,,,009,Arizona,State Leg (Lower),State House District 9,100.0
-04,,,010,Arizona,State Leg (Lower),State House District 10,14.0
-04,,,011,Arizona,State Leg (Lower),State House District 11,2.0
-04,,,012,Arizona,State Leg (Lower),State House District 12,38.0
-04,,,013,Arizona,State Leg (Lower),State House District 13,99.0
-04,,,014,Arizona,State Leg (Lower),State House District 14,23.0
-04,,,015,Arizona,State Leg (Lower),State House District 15,9.0
-04,,,016,Arizona,State Leg (Lower),State House District 16,82.0
-04,,,017,Arizona,State Leg (Lower),State House District 17,61.0
-04,,,018,Arizona,State Leg (Lower),State House District 18,22.0
-04,,,019,Arizona,State Leg (Lower),State House District 19,13.0
-04,,,020,Arizona,State Leg (Lower),State House District 20,2.0
-04,,,021,Arizona,State Leg (Lower),State House District 21,9.0
-04,,,022,Arizona,State Leg (Lower),State House District 22,5.0
-04,,,023,Arizona,State Leg (Lower),State House District 23,31.0
-04,,,024,Arizona,State Leg (Lower),State House District 24,7.0
-04,,,025,Arizona,State Leg (Lower),State House District 25,11.0
-04,,,026,Arizona,State Leg (Lower),State House District 26,5.0
-04,,,027,Arizona,State Leg (Lower),State House District 27,54.0
-04,,,028,Arizona,State Leg (Lower),State House District 28,11.0
-04,,,029,Arizona,State Leg (Lower),State House District 29,35.0
-04,,,030,Arizona,State Leg (Lower),State House District 30,2.0
-20,,,001,Kansas,State Leg (Lower),State House District 1,3.0
-20,,,002,Kansas,State Leg (Lower),State House District 2,7.0
-20,,,003,Kansas,State Leg (Lower),State House District 3,52.0
-20,,,004,Kansas,State Leg (Lower),State House District 4,2.0
-20,,,005,Kansas,State Leg (Lower),State House District 5,15.0
-20,,,006,Kansas,State Leg (Lower),State House District 6,5.0
-20,,,007,Kansas,State Leg (Lower),State House District 7,7.0
-20,,,008,Kansas,State Leg (Lower),State House District 8,36.0
-20,,,009,Kansas,State Leg (Lower),State House District 9,3.0
-20,,,010,Kansas,State Leg (Lower),State House District 10,2.0
-20,,,011,Kansas,State Leg (Lower),State House District 11,3.0
-20,,,012,Kansas,State Leg (Lower),State House District 12,1.0
-20,,,013,Kansas,State Leg (Lower),State House District 13,2.0
-20,,,014,Kansas,State Leg (Lower),State House District 14,81.0
-20,,,015,Kansas,State Leg (Lower),State House District 15,81.0
-20,,,016,Kansas,State Leg (Lower),State House District 16,99.0
-20,,,017,Kansas,State Leg (Lower),State House District 17,84.0
-20,,,018,Kansas,State Leg (Lower),State House District 18,76.0
-20,,,019,Kansas,State Leg (Lower),State House District 19,24.0
-20,,,020,Kansas,State Leg (Lower),State House District 20,91.0
-20,,,021,Kansas,State Leg (Lower),State House District 21,11.0
-20,,,022,Kansas,State Leg (Lower),State House District 22,20.0
-20,,,023,Kansas,State Leg (Lower),State House District 23,28.0
-20,,,024,Kansas,State Leg (Lower),State House District 24,11.0
-20,,,025,Kansas,State Leg (Lower),State House District 25,10.0
-20,,,026,Kansas,State Leg (Lower),State House District 26,30.0
-20,,,027,Kansas,State Leg (Lower),State House District 27,26.0
-20,,,028,Kansas,State Leg (Lower),State House District 28,85.0
-20,,,029,Kansas,State Leg (Lower),State House District 29,46.0
-20,,,030,Kansas,State Leg (Lower),State House District 30,93.0
-20,,,031,Kansas,State Leg (Lower),State House District 31,3.0
-20,,,032,Kansas,State Leg (Lower),State House District 32,2.0
-20,,,033,Kansas,State Leg (Lower),State House District 33,99.0
-20,,,034,Kansas,State Leg (Lower),State House District 34,1.0
-20,,,035,Kansas,State Leg (Lower),State House District 35,1.0
-20,,,036,Kansas,State Leg (Lower),State House District 36,20.0
-20,,,037,Kansas,State Leg (Lower),State House District 37,11.0
-20,,,038,Kansas,State Leg (Lower),State House District 38,14.0
-20,,,039,Kansas,State Leg (Lower),State House District 39,73.0
-20,,,040,Kansas,State Leg (Lower),State House District 40,50.0
-20,,,041,Kansas,State Leg (Lower),State House District 41,46.0
-20,,,042,Kansas,State Leg (Lower),State House District 42,26.0
-20,,,043,Kansas,State Leg (Lower),State House District 43,21.0
-20,,,044,Kansas,State Leg (Lower),State House District 44,3.0
-20,,,045,Kansas,State Leg (Lower),State House District 45,5.0
-20,,,046,Kansas,State Leg (Lower),State House District 46,1.0
-20,,,047,Kansas,State Leg (Lower),State House District 47,13.0
-20,,,048,Kansas,State Leg (Lower),State House District 48,99.0
-20,,,049,Kansas,State Leg (Lower),State House District 49,93.0
-20,,,050,Kansas,State Leg (Lower),State House District 50,13.0
-20,,,051,Kansas,State Leg (Lower),State House District 51,5.0
-20,,,052,Kansas,State Leg (Lower),State House District 52,57.0
-20,,,053,Kansas,State Leg (Lower),State House District 53,76.0
-20,,,054,Kansas,State Leg (Lower),State House District 54,9.0
-20,,,055,Kansas,State Leg (Lower),State House District 55,14.0
-20,,,056,Kansas,State Leg (Lower),State House District 56,84.0
-20,,,057,Kansas,State Leg (Lower),State House District 57,34.0
-20,,,058,Kansas,State Leg (Lower),State House District 58,11.0
-20,,,059,Kansas,State Leg (Lower),State House District 59,5.0
-20,,,060,Kansas,State Leg (Lower),State House District 60,96.0
-20,,,061,Kansas,State Leg (Lower),State House District 61,3.0
-20,,,062,Kansas,State Leg (Lower),State House District 62,2.0
-20,,,063,Kansas,State Leg (Lower),State House District 63,4.0
-20,,,064,Kansas,State Leg (Lower),State House District 64,2.0
-20,,,065,Kansas,State Leg (Lower),State House District 65,36.0
-20,,,066,Kansas,State Leg (Lower),State House District 66,15.0
-20,,,067,Kansas,State Leg (Lower),State House District 67,100.0
-20,,,068,Kansas,State Leg (Lower),State House District 68,5.0
-20,,,069,Kansas,State Leg (Lower),State House District 69,8.0
-20,,,070,Kansas,State Leg (Lower),State House District 70,2.0
-20,,,071,Kansas,State Leg (Lower),State House District 71,9.0
-20,,,072,Kansas,State Leg (Lower),State House District 72,17.0
-20,,,073,Kansas,State Leg (Lower),State House District 73,5.0
-20,,,074,Kansas,State Leg (Lower),State House District 74,6.0
-20,,,075,Kansas,State Leg (Lower),State House District 75,3.0
-20,,,076,Kansas,State Leg (Lower),State House District 76,3.0
-20,,,077,Kansas,State Leg (Lower),State House District 77,3.0
-20,,,078,Kansas,State Leg (Lower),State House District 78,55.0
-20,,,079,Kansas,State Leg (Lower),State House District 79,5.0
-20,,,080,Kansas,State Leg (Lower),State House District 80,6.0
-20,,,081,Kansas,State Leg (Lower),State House District 81,12.0
-20,,,082,Kansas,State Leg (Lower),State House District 82,7.0
-20,,,083,Kansas,State Leg (Lower),State House District 83,31.0
-20,,,084,Kansas,State Leg (Lower),State House District 84,3.0
-20,,,085,Kansas,State Leg (Lower),State House District 85,46.0
-20,,,086,Kansas,State Leg (Lower),State House District 86,41.0
-20,,,087,Kansas,State Leg (Lower),State House District 87,59.0
-20,,,088,Kansas,State Leg (Lower),State House District 88,99.0
-20,,,089,Kansas,State Leg (Lower),State House District 89,10.0
-20,,,090,Kansas,State Leg (Lower),State House District 90,4.0
-20,,,091,Kansas,State Leg (Lower),State House District 91,9.0
-20,,,092,Kansas,State Leg (Lower),State House District 92,41.0
-20,,,093,Kansas,State Leg (Lower),State House District 93,3.0
-20,,,094,Kansas,State Leg (Lower),State House District 94,9.0
-20,,,095,Kansas,State Leg (Lower),State House District 95,96.0
-20,,,096,Kansas,State Leg (Lower),State House District 96,81.0
-20,,,097,Kansas,State Leg (Lower),State House District 97,17.0
-20,,,098,Kansas,State Leg (Lower),State House District 98,20.0
-20,,,099,Kansas,State Leg (Lower),State House District 99,8.0
-20,,,100,Kansas,State Leg (Lower),State House District 100,15.0
-20,,,101,Kansas,State Leg (Lower),State House District 101,2.0
-20,,,102,Kansas,State Leg (Lower),State House District 102,49.0
-20,,,103,Kansas,State Leg (Lower),State House District 103,9.0
-20,,,104,Kansas,State Leg (Lower),State House District 104,5.0
-20,,,105,Kansas,State Leg (Lower),State House District 105,40.0
-20,,,106,Kansas,State Leg (Lower),State House District 106,1.0
-20,,,107,Kansas,State Leg (Lower),State House District 107,2.0
-20,,,108,Kansas,State Leg (Lower),State House District 108,52.0
-20,,,109,Kansas,State Leg (Lower),State House District 109,1.0
-20,,,110,Kansas,State Leg (Lower),State House District 110,1.0
-20,,,111,Kansas,State Leg (Lower),State House District 111,4.0
-20,,,112,Kansas,State Leg (Lower),State House District 112,2.0
-20,,,113,Kansas,State Leg (Lower),State House District 113,1.0
-20,,,114,Kansas,State Leg (Lower),State House District 114,2.0
-20,,,115,Kansas,State Leg (Lower),State House District 115,1.0
-20,,,116,Kansas,State Leg (Lower),State House District 116,1.0
-20,,,117,Kansas,State Leg (Lower),State House District 117,53.0
-20,,,118,Kansas,State Leg (Lower),State House District 118,1.0
-20,,,119,Kansas,State Leg (Lower),State House District 119,23.0
-20,,,120,Kansas,State Leg (Lower),State House District 120,1.0
-20,,,121,Kansas,State Leg (Lower),State House District 121,70.0
-20,,,122,Kansas,State Leg (Lower),State House District 122,2.0
-20,,,123,Kansas,State Leg (Lower),State House District 123,17.0
-20,,,124,Kansas,State Leg (Lower),State House District 124,1.0
-20,,,125,Kansas,State Leg (Lower),State House District 125,6.0
-26,,,001,Michigan,State Leg (Lower),State House District 1,1.0
-26,,,002,Michigan,State Leg (Lower),State House District 2,38.0
-26,,,003,Michigan,State Leg (Lower),State House District 3,2.0
-26,,,004,Michigan,State Leg (Lower),State House District 4,0.0
-26,,,005,Michigan,State Leg (Lower),State House District 5,0.0
-26,,,006,Michigan,State Leg (Lower),State House District 6,8.0
-26,,,007,Michigan,State Leg (Lower),State House District 7,0.0
-26,,,008,Michigan,State Leg (Lower),State House District 8,1.0
-26,,,009,Michigan,State Leg (Lower),State House District 9,0.0
-26,,,010,Michigan,State Leg (Lower),State House District 10,6.0
-26,,,011,Michigan,State Leg (Lower),State House District 11,1.0
-26,,,012,Michigan,State Leg (Lower),State House District 12,4.0
-26,,,013,Michigan,State Leg (Lower),State House District 13,78.0
-26,,,014,Michigan,State Leg (Lower),State House District 14,22.0
-26,,,015,Michigan,State Leg (Lower),State House District 15,12.0
-26,,,016,Michigan,State Leg (Lower),State House District 16,2.0
-26,,,017,Michigan,State Leg (Lower),State House District 17,5.0
-26,,,018,Michigan,State Leg (Lower),State House District 18,1.0
-26,,,019,Michigan,State Leg (Lower),State House District 19,6.0
-26,,,020,Michigan,State Leg (Lower),State House District 20,37.0
-26,,,021,Michigan,State Leg (Lower),State House District 21,60.0
-26,,,022,Michigan,State Leg (Lower),State House District 22,100.0
-26,,,023,Michigan,State Leg (Lower),State House District 23,10.0
-26,,,024,Michigan,State Leg (Lower),State House District 24,19.0
-26,,,025,Michigan,State Leg (Lower),State House District 25,16.0
-26,,,026,Michigan,State Leg (Lower),State House District 26,5.0
-26,,,027,Michigan,State Leg (Lower),State House District 27,100.0
-26,,,028,Michigan,State Leg (Lower),State House District 28,100.0
-26,,,029,Michigan,State Leg (Lower),State House District 29,98.0
-26,,,030,Michigan,State Leg (Lower),State House District 30,27.0
-26,,,031,Michigan,State Leg (Lower),State House District 31,85.0
-26,,,032,Michigan,State Leg (Lower),State House District 32,2.0
-26,,,033,Michigan,State Leg (Lower),State House District 33,2.0
-26,,,034,Michigan,State Leg (Lower),State House District 34,29.0
-26,,,035,Michigan,State Leg (Lower),State House District 35,4.0
-26,,,036,Michigan,State Leg (Lower),State House District 36,8.0
-26,,,037,Michigan,State Leg (Lower),State House District 37,16.0
-26,,,038,Michigan,State Leg (Lower),State House District 38,83.0
-26,,,039,Michigan,State Leg (Lower),State House District 39,21.0
-26,,,040,Michigan,State Leg (Lower),State House District 40,44.0
-26,,,041,Michigan,State Leg (Lower),State House District 41,2.0
-26,,,042,Michigan,State Leg (Lower),State House District 42,63.0
-26,,,043,Michigan,State Leg (Lower),State House District 43,4.0
-26,,,044,Michigan,State Leg (Lower),State House District 44,100.0
-26,,,045,Michigan,State Leg (Lower),State House District 45,8.0
-26,,,046,Michigan,State Leg (Lower),State House District 46,97.0
-26,,,047,Michigan,State Leg (Lower),State House District 47,11.0
-26,,,048,Michigan,State Leg (Lower),State House District 48,91.0
-26,,,049,Michigan,State Leg (Lower),State House District 49,54.0
-26,,,050,Michigan,State Leg (Lower),State House District 50,8.0
-26,,,051,Michigan,State Leg (Lower),State House District 51,19.0
-26,,,052,Michigan,State Leg (Lower),State House District 52,29.0
-26,,,053,Michigan,State Leg (Lower),State House District 53,5.0
-26,,,054,Michigan,State Leg (Lower),State House District 54,96.0
-26,,,055,Michigan,State Leg (Lower),State House District 55,98.0
-26,,,056,Michigan,State Leg (Lower),State House District 56,50.0
-26,,,057,Michigan,State Leg (Lower),State House District 57,95.0
-26,,,058,Michigan,State Leg (Lower),State House District 58,97.0
-26,,,059,Michigan,State Leg (Lower),State House District 59,11.0
-26,,,060,Michigan,State Leg (Lower),State House District 60,37.0
-26,,,061,Michigan,State Leg (Lower),State House District 61,95.0
-26,,,062,Michigan,State Leg (Lower),State House District 62,95.0
-26,,,063,Michigan,State Leg (Lower),State House District 63,12.0
-26,,,064,Michigan,State Leg (Lower),State House District 64,35.0
-26,,,065,Michigan,State Leg (Lower),State House District 65,4.0
-26,,,066,Michigan,State Leg (Lower),State House District 66,8.0
-26,,,067,Michigan,State Leg (Lower),State House District 67,31.0
-26,,,068,Michigan,State Leg (Lower),State House District 68,91.0
-26,,,069,Michigan,State Leg (Lower),State House District 69,26.0
-26,,,070,Michigan,State Leg (Lower),State House District 70,1.0
-26,,,071,Michigan,State Leg (Lower),State House District 71,31.0
-26,,,072,Michigan,State Leg (Lower),State House District 72,54.0
-26,,,073,Michigan,State Leg (Lower),State House District 73,46.0
-26,,,074,Michigan,State Leg (Lower),State House District 74,5.0
-26,,,075,Michigan,State Leg (Lower),State House District 75,18.0
-26,,,076,Michigan,State Leg (Lower),State House District 76,91.0
-26,,,077,Michigan,State Leg (Lower),State House District 77,13.0
-26,,,078,Michigan,State Leg (Lower),State House District 78,11.0
-26,,,079,Michigan,State Leg (Lower),State House District 79,6.0
-26,,,080,Michigan,State Leg (Lower),State House District 80,53.0
-26,,,081,Michigan,State Leg (Lower),State House District 81,73.0
-26,,,082,Michigan,State Leg (Lower),State House District 82,2.0
-26,,,083,Michigan,State Leg (Lower),State House District 83,83.0
-26,,,084,Michigan,State Leg (Lower),State House District 84,87.0
-26,,,085,Michigan,State Leg (Lower),State House District 85,3.0
-26,,,086,Michigan,State Leg (Lower),State House District 86,68.0
-26,,,087,Michigan,State Leg (Lower),State House District 87,16.0
-26,,,088,Michigan,State Leg (Lower),State House District 88,45.0
-26,,,089,Michigan,State Leg (Lower),State House District 89,6.0
-26,,,090,Michigan,State Leg (Lower),State House District 90,16.0
-26,,,091,Michigan,State Leg (Lower),State House District 91,7.0
-26,,,092,Michigan,State Leg (Lower),State House District 92,85.0
-26,,,093,Michigan,State Leg (Lower),State House District 93,11.0
-26,,,094,Michigan,State Leg (Lower),State House District 94,5.0
-26,,,095,Michigan,State Leg (Lower),State House District 95,26.0
-26,,,096,Michigan,State Leg (Lower),State House District 96,89.0
-26,,,097,Michigan,State Leg (Lower),State House District 97,11.0
-26,,,098,Michigan,State Leg (Lower),State House District 98,4.0
-26,,,099,Michigan,State Leg (Lower),State House District 99,9.0
-26,,,100,Michigan,State Leg (Lower),State House District 100,8.0
-26,,,101,Michigan,State Leg (Lower),State House District 101,7.0
-26,,,102,Michigan,State Leg (Lower),State House District 102,29.0
-26,,,103,Michigan,State Leg (Lower),State House District 103,100.0
-26,,,104,Michigan,State Leg (Lower),State House District 104,13.0
-26,,,105,Michigan,State Leg (Lower),State House District 105,6.0
-26,,,106,Michigan,State Leg (Lower),State House District 106,9.0
-26,,,107,Michigan,State Leg (Lower),State House District 107,28.0
-26,,,108,Michigan,State Leg (Lower),State House District 108,13.0
-26,,,109,Michigan,State Leg (Lower),State House District 109,91.0
-26,,,110,Michigan,State Leg (Lower),State House District 110,27.0
-27,,,01A,Minnesota,State Leg (Lower),State House District 1A,9.0
-27,,,01B,Minnesota,State Leg (Lower),State House District 1B,25.0
-27,,,02A,Minnesota,State Leg (Lower),State House District 2A,93.0
-27,,,02B,Minnesota,State Leg (Lower),State House District 2B,31.0
-27,,,03A,Minnesota,State Leg (Lower),State House District 3A,99.0
-27,,,03B,Minnesota,State Leg (Lower),State House District 3B,51.0
-27,,,04A,Minnesota,State Leg (Lower),State House District 4A,23.0
-27,,,04B,Minnesota,State Leg (Lower),State House District 4B,35.0
-27,,,05A,Minnesota,State Leg (Lower),State House District 5A,6.0
-27,,,05B,Minnesota,State Leg (Lower),State House District 5B,4.0
-27,,,06A,Minnesota,State Leg (Lower),State House District 6A,23.0
-27,,,06B,Minnesota,State Leg (Lower),State House District 6B,16.0
-27,,,07A,Minnesota,State Leg (Lower),State House District 7A,98.0
-27,,,07B,Minnesota,State Leg (Lower),State House District 7B,78.0
-27,,,08A,Minnesota,State Leg (Lower),State House District 8A,4.0
-27,,,08B,Minnesota,State Leg (Lower),State House District 8B,4.0
-27,,,09A,Minnesota,State Leg (Lower),State House District 9A,18.0
-27,,,09B,Minnesota,State Leg (Lower),State House District 9B,7.0
-27,,,10A,Minnesota,State Leg (Lower),State House District 10A,8.0
-27,,,10B,Minnesota,State Leg (Lower),State House District 10B,3.0
-27,,,11A,Minnesota,State Leg (Lower),State House District 11A,64.0
-27,,,11B,Minnesota,State Leg (Lower),State House District 11B,12.0
-27,,,12A,Minnesota,State Leg (Lower),State House District 12A,16.0
-27,,,12B,Minnesota,State Leg (Lower),State House District 12B,8.0
-27,,,13A,Minnesota,State Leg (Lower),State House District 13A,7.0
-27,,,13B,Minnesota,State Leg (Lower),State House District 13B,16.0
-27,,,14A,Minnesota,State Leg (Lower),State House District 14A,98.0
-27,,,14B,Minnesota,State Leg (Lower),State House District 14B,92.0
-27,,,15A,Minnesota,State Leg (Lower),State House District 15A,18.0
-27,,,15B,Minnesota,State Leg (Lower),State House District 15B,9.0
-27,,,16A,Minnesota,State Leg (Lower),State House District 16A,12.0
-27,,,16B,Minnesota,State Leg (Lower),State House District 16B,21.0
-27,,,17A,Minnesota,State Leg (Lower),State House District 17A,7.0
-27,,,17B,Minnesota,State Leg (Lower),State House District 17B,8.0
-27,,,18A,Minnesota,State Leg (Lower),State House District 18A,71.0
-27,,,18B,Minnesota,State Leg (Lower),State House District 18B,18.0
-27,,,19A,Minnesota,State Leg (Lower),State House District 19A,27.0
-27,,,19B,Minnesota,State Leg (Lower),State House District 19B,30.0
-27,,,20A,Minnesota,State Leg (Lower),State House District 20A,83.0
-27,,,20B,Minnesota,State Leg (Lower),State House District 20B,16.0
-27,,,21A,Minnesota,State Leg (Lower),State House District 21A,6.0
-27,,,21B,Minnesota,State Leg (Lower),State House District 21B,22.0
-27,,,22A,Minnesota,State Leg (Lower),State House District 22A,13.0
-27,,,22B,Minnesota,State Leg (Lower),State House District 22B,16.0
-27,,,23A,Minnesota,State Leg (Lower),State House District 23A,38.0
-27,,,23B,Minnesota,State Leg (Lower),State House District 23B,99.0
-27,,,24A,Minnesota,State Leg (Lower),State House District 24A,26.0
-27,,,24B,Minnesota,State Leg (Lower),State House District 24B,45.0
-27,,,25A,Minnesota,State Leg (Lower),State House District 25A,46.0
-27,,,25B,Minnesota,State Leg (Lower),State House District 25B,12.0
-27,,,26A,Minnesota,State Leg (Lower),State House District 26A,59.0
-27,,,26B,Minnesota,State Leg (Lower),State House District 26B,46.0
-27,,,27A,Minnesota,State Leg (Lower),State House District 27A,5.0
-27,,,27B,Minnesota,State Leg (Lower),State House District 27B,4.0
-27,,,28A,Minnesota,State Leg (Lower),State House District 28A,9.0
-27,,,28B,Minnesota,State Leg (Lower),State House District 28B,18.0
-27,,,29A,Minnesota,State Leg (Lower),State House District 29A,9.0
-27,,,29B,Minnesota,State Leg (Lower),State House District 29B,16.0
-27,,,30A,Minnesota,State Leg (Lower),State House District 30A,13.0
-27,,,30B,Minnesota,State Leg (Lower),State House District 30B,12.0
-27,,,31A,Minnesota,State Leg (Lower),State House District 31A,30.0
-27,,,31B,Minnesota,State Leg (Lower),State House District 31B,9.0
-27,,,32A,Minnesota,State Leg (Lower),State House District 32A,73.0
-27,,,32B,Minnesota,State Leg (Lower),State House District 32B,88.0
-27,,,33A,Minnesota,State Leg (Lower),State House District 33A,74.0
-27,,,33B,Minnesota,State Leg (Lower),State House District 33B,67.0
-27,,,34A,Minnesota,State Leg (Lower),State House District 34A,81.0
-27,,,34B,Minnesota,State Leg (Lower),State House District 34B,13.0
-27,,,35A,Minnesota,State Leg (Lower),State House District 35A,93.0
-27,,,35B,Minnesota,State Leg (Lower),State House District 35B,93.0
-27,,,36A,Minnesota,State Leg (Lower),State House District 36A,100.0
-27,,,36B,Minnesota,State Leg (Lower),State House District 36B,32.0
-27,,,37A,Minnesota,State Leg (Lower),State House District 37A,67.0
-27,,,37B,Minnesota,State Leg (Lower),State House District 37B,54.0
-27,,,38A,Minnesota,State Leg (Lower),State House District 38A,5.0
-27,,,38B,Minnesota,State Leg (Lower),State House District 38B,3.0
-27,,,39A,Minnesota,State Leg (Lower),State House District 39A,10.0
-27,,,39B,Minnesota,State Leg (Lower),State House District 39B,4.0
-27,,,40A,Minnesota,State Leg (Lower),State House District 40A,19.0
-27,,,40B,Minnesota,State Leg (Lower),State House District 40B,7.0
-27,,,41A,Minnesota,State Leg (Lower),State House District 41A,97.0
-27,,,41B,Minnesota,State Leg (Lower),State House District 41B,95.0
-27,,,42A,Minnesota,State Leg (Lower),State House District 42A,28.0
-27,,,42B,Minnesota,State Leg (Lower),State House District 42B,17.0
-27,,,43A,Minnesota,State Leg (Lower),State House District 43A,7.0
-27,,,43B,Minnesota,State Leg (Lower),State House District 43B,3.0
-27,,,44A,Minnesota,State Leg (Lower),State House District 44A,10.0
-27,,,44B,Minnesota,State Leg (Lower),State House District 44B,25.0
-27,,,45A,Minnesota,State Leg (Lower),State House District 45A,93.0
-27,,,45B,Minnesota,State Leg (Lower),State House District 45B,13.0
-27,,,46A,Minnesota,State Leg (Lower),State House District 46A,2.0
-27,,,46B,Minnesota,State Leg (Lower),State House District 46B,5.0
-27,,,47A,Minnesota,State Leg (Lower),State House District 47A,16.0
-27,,,47B,Minnesota,State Leg (Lower),State House District 47B,42.0
-27,,,48A,Minnesota,State Leg (Lower),State House District 48A,48.0
-27,,,48B,Minnesota,State Leg (Lower),State House District 48B,82.0
-27,,,49A,Minnesota,State Leg (Lower),State House District 49A,13.0
-27,,,49B,Minnesota,State Leg (Lower),State House District 49B,24.0
-27,,,50A,Minnesota,State Leg (Lower),State House District 50A,7.0
-27,,,50B,Minnesota,State Leg (Lower),State House District 50B,14.0
-27,,,51A,Minnesota,State Leg (Lower),State House District 51A,3.0
-27,,,51B,Minnesota,State Leg (Lower),State House District 51B,10.0
-27,,,52A,Minnesota,State Leg (Lower),State House District 52A,15.0
-27,,,52B,Minnesota,State Leg (Lower),State House District 52B,14.0
-27,,,53A,Minnesota,State Leg (Lower),State House District 53A,26.0
-27,,,53B,Minnesota,State Leg (Lower),State House District 53B,30.0
-27,,,54A,Minnesota,State Leg (Lower),State House District 54A,84.0
-27,,,54B,Minnesota,State Leg (Lower),State House District 54B,39.0
-27,,,55A,Minnesota,State Leg (Lower),State House District 55A,64.0
-27,,,55B,Minnesota,State Leg (Lower),State House District 55B,24.0
-27,,,56A,Minnesota,State Leg (Lower),State House District 56A,23.0
-27,,,56B,Minnesota,State Leg (Lower),State House District 56B,51.0
-27,,,57A,Minnesota,State Leg (Lower),State House District 57A,28.0
-27,,,57B,Minnesota,State Leg (Lower),State House District 57B,96.0
-27,,,58A,Minnesota,State Leg (Lower),State House District 58A,54.0
-27,,,58B,Minnesota,State Leg (Lower),State House District 58B,37.0
-27,,,59A,Minnesota,State Leg (Lower),State House District 59A,1.0
-27,,,59B,Minnesota,State Leg (Lower),State House District 59B,1.0
-27,,,60A,Minnesota,State Leg (Lower),State House District 60A,1.0
-27,,,60B,Minnesota,State Leg (Lower),State House District 60B,1.0
-27,,,61A,Minnesota,State Leg (Lower),State House District 61A,1.0
-27,,,61B,Minnesota,State Leg (Lower),State House District 61B,1.0
-27,,,62A,Minnesota,State Leg (Lower),State House District 62A,1.0
-27,,,62B,Minnesota,State Leg (Lower),State House District 62B,1.0
-27,,,63A,Minnesota,State Leg (Lower),State House District 63A,1.0
-27,,,63B,Minnesota,State Leg (Lower),State House District 63B,1.0
-27,,,64A,Minnesota,State Leg (Lower),State House District 64A,1.0
-27,,,64B,Minnesota,State Leg (Lower),State House District 64B,1.0
-27,,,65A,Minnesota,State Leg (Lower),State House District 65A,1.0
-27,,,65B,Minnesota,State Leg (Lower),State House District 65B,2.0
-27,,,66A,Minnesota,State Leg (Lower),State House District 66A,1.0
-27,,,66B,Minnesota,State Leg (Lower),State House District 66B,1.0
-27,,,67A,Minnesota,State Leg (Lower),State House District 67A,2.0
-27,,,67B,Minnesota,State Leg (Lower),State House District 67B,2.0
-32,,,001,Nevada,State Leg (Lower),State House District 1,38.0
-32,,,002,Nevada,State Leg (Lower),State House District 2,100.0
-32,,,003,Nevada,State Leg (Lower),State House District 3,31.0
-32,,,004,Nevada,State Leg (Lower),State House District 4,96.0
-32,,,005,Nevada,State Leg (Lower),State House District 5,47.0
-32,,,006,Nevada,State Leg (Lower),State House District 6,1.0
-32,,,007,Nevada,State Leg (Lower),State House District 7,5.0
-32,,,008,Nevada,State Leg (Lower),State House District 8,27.0
-32,,,009,Nevada,State Leg (Lower),State House District 9,49.0
-32,,,010,Nevada,State Leg (Lower),State House District 10,17.0
-32,,,011,Nevada,State Leg (Lower),State House District 11,2.0
-32,,,012,Nevada,State Leg (Lower),State House District 12,36.0
-32,,,013,Nevada,State Leg (Lower),State House District 13,73.0
-32,,,014,Nevada,State Leg (Lower),State House District 14,4.0
-32,,,015,Nevada,State Leg (Lower),State House District 15,6.0
-32,,,016,Nevada,State Leg (Lower),State House District 16,31.0
-32,,,017,Nevada,State Leg (Lower),State House District 17,5.0
-32,,,018,Nevada,State Leg (Lower),State House District 18,11.0
-32,,,019,Nevada,State Leg (Lower),State House District 19,10.0
-32,,,020,Nevada,State Leg (Lower),State House District 20,14.0
-32,,,021,Nevada,State Leg (Lower),State House District 21,76.0
-32,,,022,Nevada,State Leg (Lower),State House District 22,68.0
-32,,,023,Nevada,State Leg (Lower),State House District 23,22.0
-32,,,024,Nevada,State Leg (Lower),State House District 24,8.0
-32,,,025,Nevada,State Leg (Lower),State House District 25,69.0
-32,,,026,Nevada,State Leg (Lower),State House District 26,47.0
-32,,,027,Nevada,State Leg (Lower),State House District 27,31.0
-32,,,028,Nevada,State Leg (Lower),State House District 28,3.0
-32,,,029,Nevada,State Leg (Lower),State House District 29,64.0
-32,,,030,Nevada,State Leg (Lower),State House District 30,34.0
-32,,,031,Nevada,State Leg (Lower),State House District 31,31.0
-32,,,032,Nevada,State Leg (Lower),State House District 32,7.0
-32,,,033,Nevada,State Leg (Lower),State House District 33,2.0
-32,,,034,Nevada,State Leg (Lower),State House District 34,28.0
-32,,,035,Nevada,State Leg (Lower),State House District 35,72.0
-32,,,036,Nevada,State Leg (Lower),State House District 36,12.0
-32,,,037,Nevada,State Leg (Lower),State House District 37,97.0
-32,,,038,Nevada,State Leg (Lower),State House District 38,2.0
-32,,,039,Nevada,State Leg (Lower),State House District 39,6.0
-32,,,040,Nevada,State Leg (Lower),State House District 40,28.0
-32,,,041,Nevada,State Leg (Lower),State House District 41,51.0
-32,,,042,Nevada,State Leg (Lower),State House District 42,28.0
-42,,,001,Pennsylvania,State Leg (Lower),State House District 1,6.0
-42,,,002,Pennsylvania,State Leg (Lower),State House District 2,32.0
-42,,,003,Pennsylvania,State Leg (Lower),State House District 3,89.0
-42,,,004,Pennsylvania,State Leg (Lower),State House District 4,25.0
-42,,,005,Pennsylvania,State Leg (Lower),State House District 5,14.0
-42,,,006,Pennsylvania,State Leg (Lower),State House District 6,10.0
-42,,,007,Pennsylvania,State Leg (Lower),State House District 7,83.0
-42,,,008,Pennsylvania,State Leg (Lower),State House District 8,6.0
-42,,,009,Pennsylvania,State Leg (Lower),State House District 9,33.0
-42,,,010,Pennsylvania,State Leg (Lower),State House District 10,0.0
-42,,,011,Pennsylvania,State Leg (Lower),State House District 11,8.0
-42,,,012,Pennsylvania,State Leg (Lower),State House District 12,19.0
-42,,,013,Pennsylvania,State Leg (Lower),State House District 13,91.0
-42,,,014,Pennsylvania,State Leg (Lower),State House District 14,34.0
-42,,,015,Pennsylvania,State Leg (Lower),State House District 15,17.0
-42,,,016,Pennsylvania,State Leg (Lower),State House District 16,74.0
-42,,,017,Pennsylvania,State Leg (Lower),State House District 17,4.0
-42,,,018,Pennsylvania,State Leg (Lower),State House District 18,48.0
-42,,,019,Pennsylvania,State Leg (Lower),State House District 19,1.0
-42,,,020,Pennsylvania,State Leg (Lower),State House District 20,20.0
-42,,,021,Pennsylvania,State Leg (Lower),State House District 21,10.0
-42,,,022,Pennsylvania,State Leg (Lower),State House District 22,3.0
-42,,,023,Pennsylvania,State Leg (Lower),State House District 23,1.0
-42,,,024,Pennsylvania,State Leg (Lower),State House District 24,1.0
-42,,,025,Pennsylvania,State Leg (Lower),State House District 25,40.0
-42,,,026,Pennsylvania,State Leg (Lower),State House District 26,55.0
-42,,,027,Pennsylvania,State Leg (Lower),State House District 27,11.0
-42,,,028,Pennsylvania,State Leg (Lower),State House District 28,62.0
-42,,,029,Pennsylvania,State Leg (Lower),State House District 29,41.0
-42,,,030,Pennsylvania,State Leg (Lower),State House District 30,91.0
-42,,,031,Pennsylvania,State Leg (Lower),State House District 31,34.0
-42,,,032,Pennsylvania,State Leg (Lower),State House District 32,8.0
-42,,,033,Pennsylvania,State Leg (Lower),State House District 33,61.0
-42,,,034,Pennsylvania,State Leg (Lower),State House District 34,1.0
-42,,,035,Pennsylvania,State Leg (Lower),State House District 35,10.0
-42,,,036,Pennsylvania,State Leg (Lower),State House District 36,6.0
-42,,,037,Pennsylvania,State Leg (Lower),State House District 37,8.0
-42,,,038,Pennsylvania,State Leg (Lower),State House District 38,42.0
-42,,,039,Pennsylvania,State Leg (Lower),State House District 39,61.0
-42,,,040,Pennsylvania,State Leg (Lower),State House District 40,69.0
-42,,,041,Pennsylvania,State Leg (Lower),State House District 41,87.0
-42,,,042,Pennsylvania,State Leg (Lower),State House District 42,10.0
-42,,,043,Pennsylvania,State Leg (Lower),State House District 43,6.0
-42,,,044,Pennsylvania,State Leg (Lower),State House District 44,100.0
-42,,,045,Pennsylvania,State Leg (Lower),State House District 45,46.0
-42,,,046,Pennsylvania,State Leg (Lower),State House District 46,67.0
-42,,,047,Pennsylvania,State Leg (Lower),State House District 47,25.0
-42,,,048,Pennsylvania,State Leg (Lower),State House District 48,40.0
-42,,,049,Pennsylvania,State Leg (Lower),State House District 49,4.0
-42,,,050,Pennsylvania,State Leg (Lower),State House District 50,29.0
-42,,,051,Pennsylvania,State Leg (Lower),State House District 51,33.0
-42,,,052,Pennsylvania,State Leg (Lower),State House District 52,14.0
-42,,,053,Pennsylvania,State Leg (Lower),State House District 53,32.0
-42,,,054,Pennsylvania,State Leg (Lower),State House District 54,3.0
-42,,,055,Pennsylvania,State Leg (Lower),State House District 55,27.0
-42,,,056,Pennsylvania,State Leg (Lower),State House District 56,16.0
-42,,,057,Pennsylvania,State Leg (Lower),State House District 57,25.0
-42,,,058,Pennsylvania,State Leg (Lower),State House District 58,19.0
-42,,,059,Pennsylvania,State Leg (Lower),State House District 59,10.0
-42,,,060,Pennsylvania,State Leg (Lower),State House District 60,10.0
-42,,,061,Pennsylvania,State Leg (Lower),State House District 61,21.0
-42,,,062,Pennsylvania,State Leg (Lower),State House District 62,20.0
-42,,,063,Pennsylvania,State Leg (Lower),State House District 63,3.0
-42,,,064,Pennsylvania,State Leg (Lower),State House District 64,6.0
-42,,,065,Pennsylvania,State Leg (Lower),State House District 65,5.0
-42,,,066,Pennsylvania,State Leg (Lower),State House District 66,2.0
-42,,,067,Pennsylvania,State Leg (Lower),State House District 67,2.0
-42,,,068,Pennsylvania,State Leg (Lower),State House District 68,2.0
-42,,,069,Pennsylvania,State Leg (Lower),State House District 69,2.0
-42,,,070,Pennsylvania,State Leg (Lower),State House District 70,35.0
-42,,,071,Pennsylvania,State Leg (Lower),State House District 71,7.0
-42,,,072,Pennsylvania,State Leg (Lower),State House District 72,24.0
-42,,,073,Pennsylvania,State Leg (Lower),State House District 73,4.0
-42,,,074,Pennsylvania,State Leg (Lower),State House District 74,36.0
-42,,,075,Pennsylvania,State Leg (Lower),State House District 75,4.0
-42,,,076,Pennsylvania,State Leg (Lower),State House District 76,11.0
-42,,,077,Pennsylvania,State Leg (Lower),State House District 77,26.0
-42,,,078,Pennsylvania,State Leg (Lower),State House District 78,1.0
-42,,,079,Pennsylvania,State Leg (Lower),State House District 79,9.0
-42,,,080,Pennsylvania,State Leg (Lower),State House District 80,2.0
-42,,,081,Pennsylvania,State Leg (Lower),State House District 81,3.0
-42,,,082,Pennsylvania,State Leg (Lower),State House District 82,59.0
-42,,,083,Pennsylvania,State Leg (Lower),State House District 83,14.0
-42,,,084,Pennsylvania,State Leg (Lower),State House District 84,2.0
-42,,,085,Pennsylvania,State Leg (Lower),State House District 85,5.0
-42,,,086,Pennsylvania,State Leg (Lower),State House District 86,2.0
-42,,,087,Pennsylvania,State Leg (Lower),State House District 87,30.0
-42,,,088,Pennsylvania,State Leg (Lower),State House District 88,89.0
-42,,,089,Pennsylvania,State Leg (Lower),State House District 89,7.0
-42,,,090,Pennsylvania,State Leg (Lower),State House District 90,2.0
-42,,,091,Pennsylvania,State Leg (Lower),State House District 91,11.0
-42,,,092,Pennsylvania,State Leg (Lower),State House District 92,6.0
-42,,,093,Pennsylvania,State Leg (Lower),State House District 93,10.0
-42,,,094,Pennsylvania,State Leg (Lower),State House District 94,7.0
-42,,,095,Pennsylvania,State Leg (Lower),State House District 95,7.0
-42,,,096,Pennsylvania,State Leg (Lower),State House District 96,18.0
-42,,,097,Pennsylvania,State Leg (Lower),State House District 97,21.0
-42,,,098,Pennsylvania,State Leg (Lower),State House District 98,11.0
-42,,,099,Pennsylvania,State Leg (Lower),State House District 99,4.0
-42,,,100,Pennsylvania,State Leg (Lower),State House District 100,3.0
-42,,,101,Pennsylvania,State Leg (Lower),State House District 101,25.0
-42,,,102,Pennsylvania,State Leg (Lower),State House District 102,4.0
-42,,,103,Pennsylvania,State Leg (Lower),State House District 103,11.0
-42,,,104,Pennsylvania,State Leg (Lower),State House District 104,6.0
-42,,,105,Pennsylvania,State Leg (Lower),State House District 105,12.0
-42,,,106,Pennsylvania,State Leg (Lower),State House District 106,52.0
-42,,,107,Pennsylvania,State Leg (Lower),State House District 107,4.0
-42,,,108,Pennsylvania,State Leg (Lower),State House District 108,9.0
-42,,,109,Pennsylvania,State Leg (Lower),State House District 109,13.0
-42,,,110,Pennsylvania,State Leg (Lower),State House District 110,6.0
-42,,,111,Pennsylvania,State Leg (Lower),State House District 111,6.0
-42,,,112,Pennsylvania,State Leg (Lower),State House District 112,26.0
-42,,,113,Pennsylvania,State Leg (Lower),State House District 113,19.0
-42,,,114,Pennsylvania,State Leg (Lower),State House District 114,28.0
-42,,,115,Pennsylvania,State Leg (Lower),State House District 115,29.0
-42,,,116,Pennsylvania,State Leg (Lower),State House District 116,23.0
-42,,,117,Pennsylvania,State Leg (Lower),State House District 117,6.0
-42,,,118,Pennsylvania,State Leg (Lower),State House District 118,81.0
-42,,,119,Pennsylvania,State Leg (Lower),State House District 119,84.0
-42,,,120,Pennsylvania,State Leg (Lower),State House District 120,91.0
-42,,,121,Pennsylvania,State Leg (Lower),State House District 121,50.0
-42,,,122,Pennsylvania,State Leg (Lower),State House District 122,12.0
-42,,,123,Pennsylvania,State Leg (Lower),State House District 123,17.0
-42,,,124,Pennsylvania,State Leg (Lower),State House District 124,7.0
-42,,,125,Pennsylvania,State Leg (Lower),State House District 125,12.0
-42,,,126,Pennsylvania,State Leg (Lower),State House District 126,27.0
-42,,,127,Pennsylvania,State Leg (Lower),State House District 127,4.0
-42,,,128,Pennsylvania,State Leg (Lower),State House District 128,34.0
-42,,,129,Pennsylvania,State Leg (Lower),State House District 129,18.0
-42,,,130,Pennsylvania,State Leg (Lower),State House District 130,16.0
-42,,,131,Pennsylvania,State Leg (Lower),State House District 131,60.0
-42,,,132,Pennsylvania,State Leg (Lower),State House District 132,32.0
-42,,,133,Pennsylvania,State Leg (Lower),State House District 133,28.0
-42,,,134,Pennsylvania,State Leg (Lower),State House District 134,12.0
-42,,,135,Pennsylvania,State Leg (Lower),State House District 135,8.0
-42,,,136,Pennsylvania,State Leg (Lower),State House District 136,25.0
-42,,,137,Pennsylvania,State Leg (Lower),State House District 137,100.0
-42,,,138,Pennsylvania,State Leg (Lower),State House District 138,27.0
-42,,,139,Pennsylvania,State Leg (Lower),State House District 139,10.0
-42,,,140,Pennsylvania,State Leg (Lower),State House District 140,29.0
-42,,,141,Pennsylvania,State Leg (Lower),State House District 141,21.0
-42,,,142,Pennsylvania,State Leg (Lower),State House District 142,82.0
-42,,,143,Pennsylvania,State Leg (Lower),State House District 143,86.0
-42,,,144,Pennsylvania,State Leg (Lower),State House District 144,88.0
-42,,,145,Pennsylvania,State Leg (Lower),State House District 145,44.0
-42,,,146,Pennsylvania,State Leg (Lower),State House District 146,44.0
-42,,,147,Pennsylvania,State Leg (Lower),State House District 147,59.0
-42,,,148,Pennsylvania,State Leg (Lower),State House District 148,2.0
-42,,,149,Pennsylvania,State Leg (Lower),State House District 149,4.0
-42,,,150,Pennsylvania,State Leg (Lower),State House District 150,34.0
-42,,,151,Pennsylvania,State Leg (Lower),State House District 151,14.0
-42,,,152,Pennsylvania,State Leg (Lower),State House District 152,14.0
-42,,,153,Pennsylvania,State Leg (Lower),State House District 153,5.0
-42,,,154,Pennsylvania,State Leg (Lower),State House District 154,1.0
-42,,,155,Pennsylvania,State Leg (Lower),State House District 155,40.0
-42,,,156,Pennsylvania,State Leg (Lower),State House District 156,21.0
-42,,,157,Pennsylvania,State Leg (Lower),State House District 157,21.0
-42,,,158,Pennsylvania,State Leg (Lower),State House District 158,33.0
-42,,,159,Pennsylvania,State Leg (Lower),State House District 159,3.0
-42,,,160,Pennsylvania,State Leg (Lower),State House District 160,99.0
-42,,,161,Pennsylvania,State Leg (Lower),State House District 161,33.0
-42,,,162,Pennsylvania,State Leg (Lower),State House District 162,30.0
-42,,,163,Pennsylvania,State Leg (Lower),State House District 163,17.0
-42,,,164,Pennsylvania,State Leg (Lower),State House District 164,1.0
-42,,,165,Pennsylvania,State Leg (Lower),State House District 165,26.0
-42,,,166,Pennsylvania,State Leg (Lower),State House District 166,12.0
-42,,,167,Pennsylvania,State Leg (Lower),State House District 167,25.0
-42,,,168,Pennsylvania,State Leg (Lower),State House District 168,28.0
-42,,,169,Pennsylvania,State Leg (Lower),State House District 169,7.0
-42,,,170,Pennsylvania,State Leg (Lower),State House District 170,99.0
-42,,,171,Pennsylvania,State Leg (Lower),State House District 171,6.0
-42,,,172,Pennsylvania,State Leg (Lower),State House District 172,33.0
-42,,,173,Pennsylvania,State Leg (Lower),State House District 173,22.0
-42,,,174,Pennsylvania,State Leg (Lower),State House District 174,19.0
-42,,,175,Pennsylvania,State Leg (Lower),State House District 175,1.0
-42,,,176,Pennsylvania,State Leg (Lower),State House District 176,56.0
-42,,,177,Pennsylvania,State Leg (Lower),State House District 177,4.0
-42,,,178,Pennsylvania,State Leg (Lower),State House District 178,71.0
-42,,,179,Pennsylvania,State Leg (Lower),State House District 179,1.0
-42,,,180,Pennsylvania,State Leg (Lower),State House District 180,1.0
-42,,,181,Pennsylvania,State Leg (Lower),State House District 181,0.0
-42,,,182,Pennsylvania,State Leg (Lower),State House District 182,1.0
-42,,,183,Pennsylvania,State Leg (Lower),State House District 183,24.0
-42,,,184,Pennsylvania,State Leg (Lower),State House District 184,3.0
-42,,,185,Pennsylvania,State Leg (Lower),State House District 185,2.0
-42,,,186,Pennsylvania,State Leg (Lower),State House District 186,0.0
-42,,,187,Pennsylvania,State Leg (Lower),State House District 187,61.0
-42,,,188,Pennsylvania,State Leg (Lower),State House District 188,0.0
-42,,,189,Pennsylvania,State Leg (Lower),State House District 189,29.0
-42,,,190,Pennsylvania,State Leg (Lower),State House District 190,0.0
-42,,,191,Pennsylvania,State Leg (Lower),State House District 191,0.0
-42,,,192,Pennsylvania,State Leg (Lower),State House District 192,0.0
-42,,,193,Pennsylvania,State Leg (Lower),State House District 193,6.0
-42,,,194,Pennsylvania,State Leg (Lower),State House District 194,2.0
-42,,,195,Pennsylvania,State Leg (Lower),State House District 195,0.0
-42,,,196,Pennsylvania,State Leg (Lower),State House District 196,7.0
-42,,,197,Pennsylvania,State Leg (Lower),State House District 197,0.0
-42,,,198,Pennsylvania,State Leg (Lower),State House District 198,0.0
-42,,,199,Pennsylvania,State Leg (Lower),State House District 199,28.0
-42,,,200,Pennsylvania,State Leg (Lower),State House District 200,0.0
-42,,,201,Pennsylvania,State Leg (Lower),State House District 201,0.0
-42,,,202,Pennsylvania,State Leg (Lower),State House District 202,3.0
-42,,,203,Pennsylvania,State Leg (Lower),State House District 203,1.0
-55,,,001,Wisconsin,State Leg (Lower),State House District 1,44.0
-55,,,002,Wisconsin,State Leg (Lower),State House District 2,17.0
-55,,,003,Wisconsin,State Leg (Lower),State House District 3,14.0
-55,,,004,Wisconsin,State Leg (Lower),State House District 4,11.0
-55,,,005,Wisconsin,State Leg (Lower),State House District 5,20.0
-55,,,006,Wisconsin,State Leg (Lower),State House District 6,9.0
-55,,,007,Wisconsin,State Leg (Lower),State House District 7,35.0
-55,,,008,Wisconsin,State Leg (Lower),State House District 8,1.0
-55,,,009,Wisconsin,State Leg (Lower),State House District 9,3.0
-55,,,010,Wisconsin,State Leg (Lower),State House District 10,1.0
-55,,,011,Wisconsin,State Leg (Lower),State House District 11,1.0
-55,,,012,Wisconsin,State Leg (Lower),State House District 12,2.0
-55,,,013,Wisconsin,State Leg (Lower),State House District 13,99.0
-55,,,014,Wisconsin,State Leg (Lower),State House District 14,86.0
-55,,,015,Wisconsin,State Leg (Lower),State House District 15,12.0
-55,,,016,Wisconsin,State Leg (Lower),State House District 16,1.0
-55,,,017,Wisconsin,State Leg (Lower),State House District 17,1.0
-55,,,018,Wisconsin,State Leg (Lower),State House District 18,1.0
-55,,,019,Wisconsin,State Leg (Lower),State House District 19,2.0
-55,,,020,Wisconsin,State Leg (Lower),State House District 20,25.0
-55,,,021,Wisconsin,State Leg (Lower),State House District 21,98.0
-55,,,022,Wisconsin,State Leg (Lower),State House District 22,18.0
-55,,,023,Wisconsin,State Leg (Lower),State House District 23,33.0
-55,,,024,Wisconsin,State Leg (Lower),State House District 24,12.0
-55,,,025,Wisconsin,State Leg (Lower),State House District 25,40.0
-55,,,026,Wisconsin,State Leg (Lower),State House District 26,95.0
-55,,,027,Wisconsin,State Leg (Lower),State House District 27,8.0
-55,,,028,Wisconsin,State Leg (Lower),State House District 28,16.0
-55,,,029,Wisconsin,State Leg (Lower),State House District 29,30.0
-55,,,030,Wisconsin,State Leg (Lower),State House District 30,91.0
-55,,,031,Wisconsin,State Leg (Lower),State House District 31,17.0
-55,,,032,Wisconsin,State Leg (Lower),State House District 32,12.0
-55,,,033,Wisconsin,State Leg (Lower),State House District 33,8.0
-55,,,034,Wisconsin,State Leg (Lower),State House District 34,23.0
-55,,,035,Wisconsin,State Leg (Lower),State House District 35,14.0
-55,,,036,Wisconsin,State Leg (Lower),State House District 36,9.0
-55,,,037,Wisconsin,State Leg (Lower),State House District 37,18.0
-55,,,038,Wisconsin,State Leg (Lower),State House District 38,10.0
-55,,,039,Wisconsin,State Leg (Lower),State House District 39,10.0
-55,,,040,Wisconsin,State Leg (Lower),State House District 40,44.0
-55,,,041,Wisconsin,State Leg (Lower),State House District 41,80.0
-55,,,042,Wisconsin,State Leg (Lower),State House District 42,23.0
-55,,,043,Wisconsin,State Leg (Lower),State House District 43,47.0
-55,,,044,Wisconsin,State Leg (Lower),State House District 44,19.0
-55,,,045,Wisconsin,State Leg (Lower),State House District 45,25.0
-55,,,046,Wisconsin,State Leg (Lower),State House District 46,48.0
-55,,,047,Wisconsin,State Leg (Lower),State House District 47,3.0
-55,,,048,Wisconsin,State Leg (Lower),State House District 48,6.0
-55,,,049,Wisconsin,State Leg (Lower),State House District 49,92.0
-55,,,050,Wisconsin,State Leg (Lower),State House District 50,21.0
-55,,,051,Wisconsin,State Leg (Lower),State House District 51,35.0
-55,,,052,Wisconsin,State Leg (Lower),State House District 52,60.0
-55,,,053,Wisconsin,State Leg (Lower),State House District 53,97.0
-55,,,054,Wisconsin,State Leg (Lower),State House District 54,61.0
-55,,,055,Wisconsin,State Leg (Lower),State House District 55,25.0
-55,,,056,Wisconsin,State Leg (Lower),State House District 56,10.0
-55,,,057,Wisconsin,State Leg (Lower),State House District 57,9.0
-55,,,058,Wisconsin,State Leg (Lower),State House District 58,3.0
-55,,,059,Wisconsin,State Leg (Lower),State House District 59,2.0
-55,,,060,Wisconsin,State Leg (Lower),State House District 60,42.0
-55,,,061,Wisconsin,State Leg (Lower),State House District 61,87.0
-55,,,062,Wisconsin,State Leg (Lower),State House District 62,14.0
-55,,,063,Wisconsin,State Leg (Lower),State House District 63,25.0
-55,,,064,Wisconsin,State Leg (Lower),State House District 64,31.0
-55,,,065,Wisconsin,State Leg (Lower),State House District 65,34.0
-55,,,066,Wisconsin,State Leg (Lower),State House District 66,43.0
-55,,,067,Wisconsin,State Leg (Lower),State House District 67,21.0
-55,,,068,Wisconsin,State Leg (Lower),State House District 68,9.0
-55,,,069,Wisconsin,State Leg (Lower),State House District 69,7.0
-55,,,070,Wisconsin,State Leg (Lower),State House District 70,37.0
-55,,,071,Wisconsin,State Leg (Lower),State House District 71,55.0
-55,,,072,Wisconsin,State Leg (Lower),State House District 72,31.0
-55,,,073,Wisconsin,State Leg (Lower),State House District 73,14.0
-55,,,074,Wisconsin,State Leg (Lower),State House District 74,42.0
-55,,,075,Wisconsin,State Leg (Lower),State House District 75,14.0
-55,,,076,Wisconsin,State Leg (Lower),State House District 76,1.0
-55,,,077,Wisconsin,State Leg (Lower),State House District 77,1.0
-55,,,078,Wisconsin,State Leg (Lower),State House District 78,1.0
-55,,,079,Wisconsin,State Leg (Lower),State House District 79,1.0
-55,,,080,Wisconsin,State Leg (Lower),State House District 80,3.0
-55,,,081,Wisconsin,State Leg (Lower),State House District 81,5.0
-55,,,082,Wisconsin,State Leg (Lower),State House District 82,34.0
-55,,,083,Wisconsin,State Leg (Lower),State House District 83,11.0
-55,,,084,Wisconsin,State Leg (Lower),State House District 84,3.0
-55,,,085,Wisconsin,State Leg (Lower),State House District 85,97.0
-55,,,086,Wisconsin,State Leg (Lower),State House District 86,15.0
-55,,,087,Wisconsin,State Leg (Lower),State House District 87,17.0
-55,,,088,Wisconsin,State Leg (Lower),State House District 88,88.0
-55,,,089,Wisconsin,State Leg (Lower),State House District 89,100.0
-55,,,090,Wisconsin,State Leg (Lower),State House District 90,49.0
-55,,,091,Wisconsin,State Leg (Lower),State House District 91,69.0
-55,,,092,Wisconsin,State Leg (Lower),State House District 92,100.0
-55,,,093,Wisconsin,State Leg (Lower),State House District 93,52.0
-55,,,094,Wisconsin,State Leg (Lower),State House District 94,99.0
-55,,,095,Wisconsin,State Leg (Lower),State House District 95,44.0
-55,,,096,Wisconsin,State Leg (Lower),State House District 96,36.0
-55,,,097,Wisconsin,State Leg (Lower),State House District 97,4.0
-55,,,098,Wisconsin,State Leg (Lower),State House District 98,3.0
-55,,,099,Wisconsin,State Leg (Lower),State House District 99,4.0
-02,,,,Alaska,Ballot Initiative,Repeal Top-Four Ranked-Choice Voting Initiative,
-02,,,,Alaska,Ballot Initiative,Minimum Wage Increase and Paid Sick Leave Initiative,
-04,,,,Arizona,Ballot Initiative,Proposition 135,
-04,,,,Arizona,Ballot Initiative,Proposition 137,
-04,,,,Arizona,Ballot Initiative,Proposition 314,
-04,,,,Arizona,Ballot Initiative,Proposition 136,
-04,,,,Arizona,Ballot Initiative,Proposition 133,
-04,,,,Arizona,Ballot Initiative,Proposition 134,
-04,,,,Arizona,Ballot Initiative,Proposition 138,
-04,,,,Arizona,Ballot Initiative,Proposition 315,
-04,,,,Arizona,Ballot Initiative,Right to Abortion Initiative,
-05,,,,Arkansas,Ballot Initiative,Right to Abortion Initiative,
-06,,,,California,Ballot Initiative,Proposition 32,
-06,,,,California,Ballot Initiative,Proposition 3,
-08,,,,Colorado,Ballot Initiative,Independent Judicial Discipline Adjudicative Board Amendment,
-08,,,,Colorado,Ballot Initiative,Remove Constitutional Same-Sex Marriage Ban Amendment,
-08,,,,Colorado,Ballot Initiative,Right to Abortion and Health Insurance Coverage Initiative,
-08,,,,Colorado,Ballot Initiative,Ballot Initiative 310,
-08,,,,Colorado,Ballot Initiative,Sales Tax on Firearms Dealers Manufacturers and Ammunition Vendors Measure,
-09,,,,Connecticut,Ballot Initiative,No-Excuse Absentee Voting Amendment,
-11,,,,District of Columbia,Ballot Initiative,Initiative 83: the Ranked-Choice Voting Initiative,
-12,,,,Florida,Ballot Initiative,Amendment 1,
-12,,,,Florida,Ballot Initiative,Amendment 3,
-12,,,,Florida,Ballot Initiative,Amendment 4,
-12,,,,Florida,Ballot Initiative,Amendment 6,
-13,,,,Georgia,Ballot Initiative,Tax Court Amendment (HR 598),
-15,,,,Hawaii,Ballot Initiative,Judicial Appointments and Confirmations Amendment,
-15,,,,Hawaii,Ballot Initiative,Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment,
-16,,,,Idaho,Ballot Initiative,Citizenship Voting Requirement for Voting Amendment,
-16,,,,Idaho,Ballot Initiative,Top-Four Ranked-Choice Voting Initiative,
-17,,,,Illinois,Ballot Initiative,Assisted Reproductive Healthcare Advisory Question,
-17,,,,Illinois,Ballot Initiative,Penalties for Candidate Interference with Election Worker's Duties Advisory Question,
-18,,,,Indiana,Ballot Initiative,Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment,
-19,,,,Iowa,Ballot Initiative,Require Citizenship to Vote in State Elections and Allow 17-year-olds to Vote in Primaries Amendment,
-19,,,,Iowa,Ballot Initiative,Gubernatorial Succession Amendment,
-21,,,,Kentucky,Ballot Initiative,Citizenship Requirement for Voting Amendment,
-23,,,,Maine,Ballot Initiative,Campaign Contribution Limits Initiative,
-24,,,,Maryland,Ballot Initiative,Right to Reproductive Freedom Amendment,
-25,,,,Massachusetts,Ballot Initiative,Authorization of State Auditor to Audit General Court Initiative,
-23,,,,Massachusetts,Ballot Initiative,Minimum Wage for Tipped Employees Initiative,
-29,,,,Missouri,Ballot Initiative,Require Citizenship to Vote and Prohibit Ranked-Choice Voting Amendment,
-31,,,,Nebraska,Ballot Initiative,Right to Abortion Initiative,
-32,,,,Nevada,Ballot Initiative,Question 1,
-32,,,,Nevada,Ballot Initiative,Question 2,
-32,,,,Nevada,Ballot Initiative,Question 3,
-32,,,,Nevada,Ballot Initiative,Right to Abortion Initiative,
-33,,,,New Hampshite,Ballot Initiative,Increase Mandatory Judicial Retirement Age Amendment,
-35,,,,New Mexico,Ballot Initiative,Judicial Nominating Commission Amendment,
-36,,,,New York,Ballot Initiative,Ithaca Ranked Choice Voting and Combined Primaries,
-36,,,,New York,Ballot Initiative,Equal Protection of Law Amendment,
-36,,,,New York,Ballot Initiative,Equal Protection of Law Amendment,
-37,,,,North Carolina,Ballot Initiative,Citizenship Requirement for Voting Amendment,
-38,,,,North Dakota,Ballot Initiative,Constitutional Measure 1,
-38,,,,North Dakota,Ballot Initiative,Constitutional Measure 2,
-39,,,,Ohio,Ballot Initiative,Issue 1,
-40,,,,Oklahoma,Ballot Initiative,Citizenship Requirement for Voting Amendment,
-40,,,,Oklahoma,Ballot Initiative,Minimum Wage Increase Initiative,
-41,,,,Oregon,Ballot Initiative,Impeachment of Elected State Executives Amendment,
-41,,,,Oregon,Ballot Initiative,Ranked-Choice Voting for Federal and State Elections Measure,
-44,,,,Rhode Island,Ballot Initiative,Constitutional Convention Question,
-45,,,,South Carolina,Ballot Initiative,Citizenship Requirement for Voting Amendment,
-46,,,,South Dakota,Ballot Initiative,Constitutional Amendment E,
-46,,,,South Dakota,Ballot Initiative,Constitutional Amendment G,
-46,,,,South Dakota,Ballot Initiative,Constitutional Amendment H,
-46,,,,South Dakota,Ballot Initiative,Initiated Measure 29,
-49,,,,Utah,Ballot Initiative,Elections of County Sheriffs Amendment,
-55,,,,Wisconsin,Ballot Initiative,Citizenship Voting Requirement Amendment,
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
+01,,,,Alabama,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
+02,,,,Alaska,Presidential,Presidential,8.0,Kamala Harris,Donald Trump
+04,,,,Arizona,Presidential,Presidential,76.0,Kamala Harris,Donald Trump
+05,,,,Arkansas,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+06,,,,California,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+08,,,,Colorado,Presidential,Presidential,16.0,Kamala Harris,Donald Trump
+09,,,,Connecticut,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
+10,,,,Delaware,Presidential,Presidential,0.0,Kamala Harris,Donald Trump
+11,,,,District of Columbia,Presidential,Presidential,6.0,Kamala Harris,Donald Trump
+12,,,,Florida,Presidential,Presidential,19.0,Kamala Harris,Donald Trump
+13,,,,Georgia,Presidential,Presidential,30.0,Kamala Harris,Donald Trump
+15,,,,Hawaii,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
+16,,,,Idaho,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+17,,,,Illinois,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
+18,,,,Indiana,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
+19,,,,Iowa,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
+20,,,,Kansas,Presidential,Presidential,5.0,Kamala Harris,Donald Trump
+21,,,,Kentucky,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+22,,,,Louisiana,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
+23,,,,Maine,Presidential,Presidential,6.0,Kamala Harris,Donald Trump
+23,2.0,,,Maine,Presidential,Congressional District 2,48.0,Kamala Harris,Donald Trump
+23,1.0,,,Maine,Presidential,Congressional District 1,1.0,Kamala Harris,Donald Trump
+24,,,,Maryland,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+25,,,,Massachusetts,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
+26,,,,Michigan,Presidential,Presidential,49.0,Kamala Harris,Donald Trump
+27,,,,Minnesota,Presidential,Presidential,12.0,Kamala Harris,Donald Trump
+28,,,,Mississippi,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
+29,,,,Missouri,Presidential,Presidential,3.0,Kamala Harris,Donald Trump
+30,,,,Montana,Presidential,Presidential,7.0,Kamala Harris,Donald Trump
+31,1.0,,,Nebraska,Presidential,Congressional District 1,3.0,Kamala Harris,Donald Trump
+31,2.0,,,Nebraska,Presidential,Congressional District 2,9.0,Kamala Harris,Donald Trump
+31,3.0,,,Nebraska,Presidential,Congressional District 3,0.0,Kamala Harris,Donald Trump
+31,,,,Nebraska,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+32,,,,Nevada,Presidential,Presidential,100.0,Kamala Harris,Donald Trump
+33,,,,New Hampshire,Presidential,Presidential,26.0,Kamala Harris,Donald Trump
+34,,,,New Jersey,Presidential,Presidential,3.0,Kamala Harris,Donald Trump
+35,,,,New Mexico,Presidential,Presidential,28.0,Kamala Harris,Donald Trump
+36,,,,New York,Presidential,Presidential,6.0,Kamala Harris,Donald Trump
+37,,,,North Carolina,Presidential,Presidential,75.0,Kamala Harris,Donald Trump
+38,,,,North Dakota,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
+39,,,,Ohio,Presidential,Presidential,7.0,Kamala Harris,Donald Trump
+40,,,,Oklahoma,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+41,,,,Oregon,Presidential,Presidential,10.0,Kamala Harris,Donald Trump
+42,,,,Pennsylvania,Presidential,Presidential,60.0,Kamala Harris,Donald Trump
+44,,,,Rhode Island,Presidential,Presidential,10.0,Kamala Harris,Donald Trump
+45,,,,South Carolina,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
+46,,,,South Dakota,Presidential,Presidential,3.0,Kamala Harris,Donald Trump
+47,,,,Tennessee,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+48,,,,Texas,Presidential,Presidential,10.0,Kamala Harris,Donald Trump
+49,,,,Utah,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+50,,,,Vermont,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
+51,,,,Virginia,Presidential,Presidential,76.0,Kamala Harris,Donald Trump
+53,,,,Washington,Presidential,Presidential,3.0,Kamala Harris,Donald Trump
+54,,,,West Virginia,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
+55,,,,Wisconsin,Presidential,Presidential,28.0,Kamala Harris,Donald Trump
+56,,,,Wyoming,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+04,,,,Arizona,Senate,,41.0,Ruben Gallego,Kari Lake
+06,,,,California,Senate,,1.0,Adam Schiff,Steve Garvey
+09,,,,Connecticut,Senate,,5.0,Christopher S. Murphy (incumbent),Matthew Corey
+10,,,,Delaware,Senate,,16.0,Lisa Blunt Rochester,Eric Hansen
+12,,,,Florida,Senate,,42.0,Debbie Mucarsel-Powell,Rick Scott (incumbent)
+15,,,,Hawaii,Senate,,5.0,Mazie K. Hirono (incumbent),Bob McDermott
+18,,,,Indiana,Senate,,10.0,Valerie McCray,Jim Banks
+23,,,,Maine,Senate,,12.0,"Angus King (independent, incumbent)",Demi Kouzounas
+24,,,,Maryland,Senate,,3.0,Angela Alsobrooks,Larry Hogan
+25,,,,Massachusetts,Senate,,1.0,Elizabeth Warren (incumbent),John Deaton
+26,,,,Michigan,Senate,,21.0,Elissa Slotkin,Mike Rogers
+27,,,,Minnesota,Senate,,2.0,Amy Klobuchar (incumbent),Royce White
+28,,,,Mississippi,Senate,,12.0,Ty Pinkins,Roger Wicker (incumbent)
+29,,,,Missouri,Senate,,9.0,Lucas Kunce,Josh Hawley (incumbent)
+30,,,,Montana,Senate,,76.0,Jon Tester (incumbent),Tim Sheehy
+31,,,,Nebraska,Senate,,21.0,Dan Osborn (independent),Deb Fischer (incumbent)
+31,,,,Nebraska,Senate,,14.0,Preston Love Jr.,Pete Ricketts (incumbent)
+32,,,,Nevada,Senate,,100.0,Jacky Rosen (incumbent),Sam Brown
+34,,,,New Jersey,Senate,,5.0,Andy Kim,Curtis Bashaw
+35,,,,New Mexico,Senate,,17.0,Martin Heinrich (incumbent),Nella Domenici
+36,,,,New York,Senate,,1.0,Kirsten Gillibrand (incumbent),Mike Sapraicone
+38,,,,North Dakota,Senate,,12.0,Katrina Christiansen,Kevin Cramer (incumbent)
+39,,,,Ohio,Senate,,11.0,Sherrod Brown (incumbent),Bernie Moreno
+42,,,,Pennsylvania,Senate,,5.0,Bob Casey Jr. (incumbent),David McCormick
+44,,,,Rhode Island,Senate,,16.0,Sheldon Whitehouse (incumbent),This party's nominee will be determined at an upcoming primary.
+47,,,,Tennessee,Senate,,4.0,Gloria Johnson,Marsha Blackburn (incumbent)
+48,,,,Texas,Senate,,17.0,Colin Allred,Ted Cruz (incumbent)
+49,,,,Utah,Senate,,15.0,Caroline Gleich,John Curtis
+50,,,,Vermont,Senate,,9.0,Bernie Sanders (incumbent),Gerald Malloy
+51,,,,Virginia,Senate,,4.0,Tim Kaine (incumbent),Hung Cao
+53,,,,Washington,Senate,,3.0,Maria Cantwell (incumbent),Raul Garcia
+54,,,,West Virginia,Senate,,5.0,Glenn Elliott,Jim Justice
+55,,,,Wisconsin,Senate,,12.0,Tammy Baldwin (incumbent),Eric Hovde
+56,,,,Wyoming,Senate,,12.0,Scott Morrow,This party's nominee will be determined at an upcoming primary.
+01,02,,,Alabama,House,Congressional District 2,43.0,Shomari Figures,Caroleene Dobson
+02,at-large,,,Alaska,House,Congressional District (at Large),33.0,Mary Peltola (incumbent),generic R (Top 4)
+04,01,,,Arizona,House,Congressional District 1,83.0,Amish Shah,David Schweikert (incumbent)
+04,06,,,Arizona,House,Congressional District 6,80.0,Kirsten Engel,Juan Ciscomani (incumbent)
+06,47,,,California,House,Congressional District 47,72.0,Dave Min,Scott Baugh
+06,45,,,California,House,Congressional District 45,100.0,Derek Tran,Michelle Steel (incumbent)
+06,09,,,California,House,Congressional District 9,33.0,Josh Harder (incumbent),Kevin Lincoln II
+06,49,,,California,House,Congressional District 49,68.0,Mike Levin (incumbent),Matt Gunderson
+06,03,,,California,House,Congressional District 3,36.0,Jessica Morse,Kevin Kiley (incumbent)
+06,40,,,California,House,Congressional District 40,26.0,Joe Kerr,Young Kim (incumbent)
+06,13,,,California,House,Congressional District 13,76.0,Adam Gray,John Duarte (incumbent)
+06,22,,,California,House,Congressional District 22,74.0,Rudy Salas,David G. Valadao (incumbent)
+06,27,,,California,House,Congressional District 27,99.0,George Whitesides,Mike Garcia (incumbent)
+06,41,,,California,House,Congressional District 41,52.0,Will Rollins,Ken Calvert (incumbent)
+08,03,,,Colorado,House,Congressional District 3,57.0,Adam Frisch,Jeff Hurd
+08,08,,,Colorado,House,Congressional District 8,100.0,Yadira Caraveo (incumbent),Gabe Evans
+09,05,,,Connecticut,House,Congressional District 5,87.0,Jahana Hayes (incumbent),George Logan
+12,09,,,Florida,House,Congressional District 9,18.0,Darren Soto (incumbent),This party's nominee will be determined at an upcoming primary.
+12,23,,,Florida,House,Congressional District 23,35.0,Jared Evan Moskowitz (incumbent),This party's nominee will be determined at an upcoming primary.
+12,13,,,Florida,House,Congressional District 13,34.0,This party's nominee will be determined at an upcoming primary.,Anna Paulina Luna (incumbent)
+17,17,,,Illinois,House,Congressional District 17,69.0,Eric Sorenson (incumbent),Joseph G. McGraw
+18,01,,,Indiana,House,Congressional District 1,29.0,Frank Mrvan (incumbent),Randell Niemeyer
+19,03,,,Iowa,House,Congressional District 3,87.0,Lanon Baccam,Zach Nunn (incumbent)
+19,01,,,Iowa,House,Congressional District 1,55.0,Christina Bohannan,Mariannette Millter-Meeks (incumbent)
+20,03,,,Kansas,House,Congressional District 3,63.0,Sharice Davids (incumbent),Prasanth Reddy
+23,02,,,Maine,House,Congressional District 2,62.0,Jared Golden (incumbent),Austin Theriault
+24,06,,,Maryland,House,Congressional District 6,72.0,April McClain-Delaney,Neil Parrott
+26,10,,,Michigan,House,Congressional District 10,100.0,Carl Marlinga,John James (incumbent)
+26,03,,,Michigan,House,Congressional District 3,44.0,Hillary Scholten (incumbent),Paul Hudson
+26,07,,,Michigan,House,Congressional District 7,89.0,Curtis Hertel,Tom Barrett
+26,08,,,Michigan,House,Congressional District 8,50.0,Kristen McDonald Rivet,Paul Junge
+27,02,,,Minnesota,House,Congressional District 2,68.0,Angie Craig (incumbent),Joe Teirab
+30,01,,,Montana,House,Congressional District 1,69.0,Monica Tranel,Ryan K. Zinke (incumbent)
+31,02,,,Nebraska,House,Congressional District 2,76.0,Tony Vargas,Don Bacon (incumbent)
+32,03,,,Nevada,House,Congressional District 3,64.0,Susie Lee (incumbent),Drew Johnson
+32,01,,,Nevada,House,Congressional District 1,46.0,Dina Titus (incumbent),Mark Robertson
+32,04,,,Nevada,House,Congressional District 4,49.0,Steven Horsford (incumbent),John J. Lee
+33,01,,,New Hampshire,House,Congressional District 1,96.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
+33,02,,,New Hampshire,House,Congressional District 2,87.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
+34,07,,,New Jersey,House,Congressional District 7,65.0,Susan Altman,Thomas Kean Jr. (incumbent)
+35,02,,,New Mexico,House,Congressional District 2,79.0,Gabriel Vasquez (incumbent),Yvette Herrell
+36,18,,,New York,House,Congressional District 18,90.0,Pat Ryan (incumbent),Alison Esposito
+36,22,,,New York,House,Congressional District 22,91.0,John Mannion,Brandon Williams (incumbent)
+36,03,,,New York,House,Congressional District 3,64.0,Tom Suozzi (incumbent),Michael LiPetri Jr.
+36,01,,,New York,House,Congressional District 1,25.0,John Avlon,Nicholas J. LaLota (incumbent)
+36,04,,,New York,House,Congressional District 4,98.0,Laura Gillen,Anthony D'Esposito (incumbent)
+36,17,,,New York,House,Congressional District 17,91.0,Mondaire Jones,Michael Lawler (incumbent)
+36,19,,,New York,House,Congressional District 19,100.0,Josh Riley,Marcus Molinaro (incumbent)
+37,01,,,North Carolina,House,Congressional District 1,84.0,Donald Davis (incumbent),Laurie Buckhout
+39,01,,,Ohio,House,Congressional District 1,86.0,Greg Landsman (incumbent),Orlando Sonza
+39,09,,,Ohio,House,Congressional District 9,56.0,Marcy Kaptur (incumbent),Derek Merrin
+39,13,,,Ohio,House,Congressional District 13,79.0,Emilia Sykes (incumbent),Kevin Coughlin
+41,06,,,Oregon,House,Congressional District 6,62.0,Andrea Salinas (incumbent),Mike Erickson
+41,04,,,Oregon,House,Congressional District 4,34.0,Val Hoyle (incumbent),Monique DeSpain
+41,05,,,Oregon,House,Congressional District 5,98.0,Janelle Bynum,Lori Chavez-DeRemer (incumbent)
+42,17,,,Pennsylvania,House,Congressional District 17,43.0,Chris Deluzio (incumbent),Rob Mercuri
+42,10,,,Pennsylvania,House,Congressional District 10,48.0,Janelle Stelson,Scott Perry (incumbent)
+42,01,,,Pennsylvania,House,Congressional District 1,83.0,Ashley Ehasz,Brian Fitzpatrick (incumbent)
+42,07,,,Pennsylvania,House,Congressional District 7,94.0,Susan Wild (incumbent),Ryan Mackenzie
+42,08,,,Pennsylvania,House,Congressional District 8,96.0,Matt Cartwright (incumbent),Rob Bresnahan Jr.
+48,28,,,Texas,House,Congressional District 28,21.0,Henry Cuellar (incumbent),Jay Furman
+48,34,,,Texas,House,Congressional District 34,12.0,Vicente Gonzalez Jr. (incumbent),Mayra Flores
+48,15,,,Texas,House,Congressional District 15,82.0,Michelle Vallejo,Monica De La Cruz (incumbent)
+51,07,,,Virginia,House,Congressional District 7,81.0,Eugene Vindman,Derrick Anderson
+51,02,,,Virginia,House,Congressional District 2,78.0,Missy Cotter Smasal,Jennifer Kiggans (incumbent)
+53,08,,,Washington,House,Congressional District 8,82.0,Kim Schrier (incumbent),Carmen Goers
+53,03,,,Washington,House,Congressional District 3,80.0,Marie Gluesenkamp Pérez (incumbent),Joe Kent
+55,03,,,Wisconsin,House,Congressional District 3,80.0,Rebecca Cooke,Derrick Van Orden (incumbent)
+55,01,,,Wisconsin,House,Congressional District 1,61.0,Peter Barca,Bryan Steil (incumbent)
+33,,,,New Hampshire,Governor,,100.0,,
+37,,,,North Carolina,Governor,,100.0,,
+10,,,,Delaware,Governor,,20.0,,
+18,,,,Indiana,Governor,,20.0,,
+29,,,,Missouri,Governor,,20.0,,
+30,,,,Montana,Governor,,50.0,,
+38,,,,North Dakota,Governor,,20.0,,
+49,,,,Utah,Governor,,20.0,,
+50,,,,Vermont,Governor,,50.0,,
+53,,,,Washington,Governor,,50.0,,
+54,,,,West Virginia,Governor,,20.0,,
+01,,,,Alabama,Governor,,,,
+02,,,,Alaska,Governor,,,,
+04,,,,Arizona,Governor,,,,
+05,,,,Arkansas,Governor,,,,
+06,,,,California,Governor,,,,
+08,,,,Colorado,Governor,,,,
+09,,,,Connecticut,Governor,,,,
+11,,,,District of Columbia,Governor,,,,
+12,,,,Florida,Governor,,,,
+13,,,,Georgia,Governor,,,,
+15,,,,Hawaii,Governor,,,,
+16,,,,Idaho,Governor,,,,
+17,,,,Illinois,Governor,,,,
+19,,,,Iowa,Governor,,,,
+20,,,,Kansas,Governor,,,,
+21,,,,Kentucky,Governor,,,,
+22,,,,Louisiana,Governor,,,,
+23,,,,Maine,Governor,,,,
+24,,,,Maryland,Governor,,,,
+25,,,,Massachusetts,Governor,,,,
+26,,,,Michigan,Governor,,,,
+27,,,,Minnesota,Governor,,,,
+28,,,,Mississippi,Governor,,,,
+31,,,,Nebraska,Governor,,,,
+32,,,,Nevada,Governor,,,,
+34,,,,New Jersey,Governor,,,,
+35,,,,New Mexico,Governor,,,,
+36,,,,New York,Governor,,,,
+39,,,,Ohio,Governor,,,,
+40,,,,Oklahoma,Governor,,,,
+41,,,,Oregon,Governor,,,,
+42,,,,Pennsylvania,Governor,,,,
+44,,,,Rhode Island,Governor,,,,
+45,,,,South Carolina,Governor,,,,
+46,,,,South Dakota,Governor,,,,
+47,,,,Tennessee,Governor,,,,
+48,,,,Texas,Governor,,,,
+51,,,,Virginia,Governor,,,,
+55,,,,Wisconsin,Governor,,,,
+56,,,,Wyoming,Governor,,,,
+02,,00A,,Alaska,State Leg (Upper),State Senate District A,0.0,,
+02,,00B,,Alaska,State Leg (Upper),State Senate District B,14.0,,
+02,,00C,,Alaska,State Leg (Upper),State Senate District C,0.0,,
+02,,00D,,Alaska,State Leg (Upper),State Senate District D,3.0,,
+02,,00E,,Alaska,State Leg (Upper),State Senate District E,0.0,,
+02,,00F,,Alaska,State Leg (Upper),State Senate District F,78.0,Janice Park,James Kaufman (incumbent)
+02,,00G,,Alaska,State Leg (Upper),State Senate District G,0.0,,
+02,,00H,,Alaska,State Leg (Upper),State Senate District H,100.0,Matt Claman (incumbent),Thomas McKay
+02,,00I,,Alaska,State Leg (Upper),State Senate District I,0.0,,
+02,,00J,,Alaska,State Leg (Upper),State Senate District J,31.0,,
+02,,00K,,Alaska,State Leg (Upper),State Senate District K,0.0,,
+02,,00L,,Alaska,State Leg (Upper),State Senate District L,8.0,,
+02,,00M,,Alaska,State Leg (Upper),State Senate District M,0.0,,
+02,,00N,,Alaska,State Leg (Upper),State Senate District N,2.0,,
+02,,00O,,Alaska,State Leg (Upper),State Senate District O,0.0,,
+02,,00P,,Alaska,State Leg (Upper),State Senate District P,43.0,,
+02,,00Q,,Alaska,State Leg (Upper),State Senate District Q,0.0,,
+02,,00R,,Alaska,State Leg (Upper),State Senate District R,98.0,Savannah Fletcher (Undeclared),Mike Cronk
+02,,00S,,Alaska,State Leg (Upper),State Senate District S,0.0,,
+02,,00T,,Alaska,State Leg (Upper),State Senate District T,33.0,,
+04,,001,,Arizona,State Leg (Upper),State Senate District 1,9.0,,
+04,,002,,Arizona,State Leg (Upper),State Senate District 2,86.0,Judy Schwiebert,Shawnna Bolick
+04,,003,,Arizona,State Leg (Upper),State Senate District 3,11.0,,
+04,,004,,Arizona,State Leg (Upper),State Senate District 4,90.0,Christine Marsh (incumbent),Carine Werner
+04,,005,,Arizona,State Leg (Upper),State Senate District 5,5.0,,
+04,,006,,Arizona,State Leg (Upper),State Senate District 6,7.0,,
+04,,007,,Arizona,State Leg (Upper),State Senate District 7,13.0,,
+04,,008,,Arizona,State Leg (Upper),State Senate District 8,12.0,,
+04,,009,,Arizona,State Leg (Upper),State Senate District 9,100.0,Eva Burch (incumbent),Robert Scantlebury
+04,,010,,Arizona,State Leg (Upper),State Senate District 10,14.0,,
+04,,011,,Arizona,State Leg (Upper),State Senate District 11,2.0,,
+04,,012,,Arizona,State Leg (Upper),State Senate District 12,38.0,,
+04,,013,,Arizona,State Leg (Upper),State Senate District 13,99.0,Sharon Lee Winters,Javan Daniel Mesnard (incumbent)
+04,,014,,Arizona,State Leg (Upper),State Senate District 14,23.0,,
+04,,015,,Arizona,State Leg (Upper),State Senate District 15,9.0,,
+04,,016,,Arizona,State Leg (Upper),State Senate District 16,82.0,Stacey Seaman,Thomas Shope (incumbent)
+04,,017,,Arizona,State Leg (Upper),State Senate District 17,61.0,John McLean,Vince Leach
+04,,018,,Arizona,State Leg (Upper),State Senate District 18,22.0,,
+04,,019,,Arizona,State Leg (Upper),State Senate District 19,13.0,,
+04,,020,,Arizona,State Leg (Upper),State Senate District 20,2.0,,
+04,,021,,Arizona,State Leg (Upper),State Senate District 21,9.0,,
+04,,022,,Arizona,State Leg (Upper),State Senate District 22,5.0,,
+04,,023,,Arizona,State Leg (Upper),State Senate District 23,31.0,,
+04,,024,,Arizona,State Leg (Upper),State Senate District 24,7.0,,
+04,,025,,Arizona,State Leg (Upper),State Senate District 25,11.0,,
+04,,026,,Arizona,State Leg (Upper),State Senate District 26,5.0,,
+04,,027,,Arizona,State Leg (Upper),State Senate District 27,54.0,,
+04,,028,,Arizona,State Leg (Upper),State Senate District 28,11.0,,
+04,,029,,Arizona,State Leg (Upper),State Senate District 29,35.0,,
+04,,030,,Arizona,State Leg (Upper),State Senate District 30,2.0,,
+20,,001,,Kansas,State Leg (Upper),State Senate District 1,3.0,,
+20,,002,,Kansas,State Leg (Upper),State Senate District 2,2.0,,
+20,,003,,Kansas,State Leg (Upper),State Senate District 3,43.0,,
+20,,004,,Kansas,State Leg (Upper),State Senate District 4,1.0,,
+20,,005,,Kansas,State Leg (Upper),State Senate District 5,75.0,Jeff Pittman (incumbent),Jeff Klemp
+20,,006,,Kansas,State Leg (Upper),State Senate District 6,9.0,,
+20,,007,,Kansas,State Leg (Upper),State Senate District 7,12.0,,
+20,,008,,Kansas,State Leg (Upper),State Senate District 8,46.0,,
+20,,009,,Kansas,State Leg (Upper),State Senate District 9,43.0,,
+20,,010,,Kansas,State Leg (Upper),State Senate District 10,94.0,Andrew Mall,Mike Thompson (incumbent)
+20,,011,,Kansas,State Leg (Upper),State Senate District 11,74.0,Karen Thurlow,Kellie Warren (incumbent)
+20,,012,,Kansas,State Leg (Upper),State Senate District 12,2.0,,
+20,,013,,Kansas,State Leg (Upper),State Senate District 13,7.0,,
+20,,014,,Kansas,State Leg (Upper),State Senate District 14,3.0,,
+20,,015,,Kansas,State Leg (Upper),State Senate District 15,3.0,,
+20,,016,,Kansas,State Leg (Upper),State Senate District 16,13.0,,
+20,,017,,Kansas,State Leg (Upper),State Senate District 17,24.0,,
+20,,018,,Kansas,State Leg (Upper),State Senate District 18,9.0,,
+20,,019,,Kansas,State Leg (Upper),State Senate District 19,9.0,,
+20,,020,,Kansas,State Leg (Upper),State Senate District 20,67.0,Candace Ayars,Brenda Dietrich (incumbent)
+20,,021,,Kansas,State Leg (Upper),State Senate District 21,35.0,,
+20,,022,,Kansas,State Leg (Upper),State Senate District 22,100.0,Usha Reddi (incumbent),Brad Starnes
+20,,023,,Kansas,State Leg (Upper),State Senate District 23,69.0,Stacey Knoell,Adam Thomas
+20,,024,,Kansas,State Leg (Upper),State Senate District 24,5.0,,
+20,,025,,Kansas,State Leg (Upper),State Senate District 25,43.0,,
+20,,026,,Kansas,State Leg (Upper),State Senate District 26,4.0,,
+20,,027,,Kansas,State Leg (Upper),State Senate District 27,15.0,,
+20,,028,,Kansas,State Leg (Upper),State Senate District 28,36.0,,
+20,,029,,Kansas,State Leg (Upper),State Senate District 29,3.0,,
+20,,030,,Kansas,State Leg (Upper),State Senate District 30,30.0,,
+20,,031,,Kansas,State Leg (Upper),State Senate District 31,12.0,,
+20,,032,,Kansas,State Leg (Upper),State Senate District 32,4.0,,
+20,,033,,Kansas,State Leg (Upper),State Senate District 33,1.0,,
+20,,034,,Kansas,State Leg (Upper),State Senate District 34,4.0,,
+20,,035,,Kansas,State Leg (Upper),State Senate District 35,61.0,Jason Anderson,TJ Rose
+20,,036,,Kansas,State Leg (Upper),State Senate District 36,1.0,,
+20,,037,,Kansas,State Leg (Upper),State Senate District 37,24.0,,
+20,,038,,Kansas,State Leg (Upper),State Senate District 38,3.0,,
+20,,039,,Kansas,State Leg (Upper),State Senate District 39,2.0,,
+20,,040,,Kansas,State Leg (Upper),State Senate District 40,1.0,,
+31,,001,,Nebraska,State Leg (Upper),State Senate District 1,3.0,,
+31,,002,,Nebraska,State Leg (Upper),State Senate District 2,0.0,,
+31,,003,,Nebraska,State Leg (Upper),State Senate District 3,31.0,,
+31,,004,,Nebraska,State Leg (Upper),State Senate District 4,0.0,,
+31,,005,,Nebraska,State Leg (Upper),State Senate District 5,37.0,,
+31,,006,,Nebraska,State Leg (Upper),State Senate District 6,0.0,,
+31,,007,,Nebraska,State Leg (Upper),State Senate District 7,6.0,,
+31,,008,,Nebraska,State Leg (Upper),State Senate District 8,0.0,,
+31,,009,,Nebraska,State Leg (Upper),State Senate District 9,6.0,,
+31,,010,,Nebraska,State Leg (Upper),State Senate District 10,0.0,,
+31,,011,,Nebraska,State Leg (Upper),State Senate District 11,1.0,,
+31,,012,,Nebraska,State Leg (Upper),State Senate District 12,0.0,,
+31,,013,,Nebraska,State Leg (Upper),State Senate District 13,15.0,,
+31,,014,,Nebraska,State Leg (Upper),State Senate District 14,0.0,,
+31,,015,,Nebraska,State Leg (Upper),State Senate District 15,5.0,,
+31,,016,,Nebraska,State Leg (Upper),State Senate District 16,0.0,,
+31,,017,,Nebraska,State Leg (Upper),State Senate District 17,9.0,,
+31,,018,,Nebraska,State Leg (Upper),State Senate District 18,0.0,,
+31,,019,,Nebraska,State Leg (Upper),State Senate District 19,1.0,,
+31,,020,,Nebraska,State Leg (Upper),State Senate District 20,0.0,,
+31,,021,,Nebraska,State Leg (Upper),State Senate District 21,42.0,,
+31,,022,,Nebraska,State Leg (Upper),State Senate District 22,0.0,,
+31,,023,,Nebraska,State Leg (Upper),State Senate District 23,3.0,,
+31,,024,,Nebraska,State Leg (Upper),State Senate District 24,0.0,,
+31,,025,,Nebraska,State Leg (Upper),State Senate District 25,46.0,,
+31,,026,,Nebraska,State Leg (Upper),State Senate District 26,0.0,,
+31,,027,,Nebraska,State Leg (Upper),State Senate District 27,100.0,Jason Prokop (unaffiliated),Dawn Liphardt (unaffiliated)
+31,,028,,Nebraska,State Leg (Upper),State Senate District 28,0.0,,
+31,,029,,Nebraska,State Leg (Upper),State Senate District 29,28.0,,
+31,,030,,Nebraska,State Leg (Upper),State Senate District 30,0.0,,
+31,,031,,Nebraska,State Leg (Upper),State Senate District 31,23.0,,
+31,,032,,Nebraska,State Leg (Upper),State Senate District 32,0.0,,
+31,,033,,Nebraska,State Leg (Upper),State Senate District 33,2.0,,
+31,,034,,Nebraska,State Leg (Upper),State Senate District 34,0.0,,
+31,,035,,Nebraska,State Leg (Upper),State Senate District 35,13.0,,
+31,,036,,Nebraska,State Leg (Upper),State Senate District 36,0.0,,
+31,,037,,Nebraska,State Leg (Upper),State Senate District 37,4.0,,
+31,,038,,Nebraska,State Leg (Upper),State Senate District 38,0.0,,
+31,,039,,Nebraska,State Leg (Upper),State Senate District 39,5.0,,
+31,,040,,Nebraska,State Leg (Upper),State Senate District 40,0.0,,
+31,,041,,Nebraska,State Leg (Upper),State Senate District 41,1.0,,
+31,,042,,Nebraska,State Leg (Upper),State Senate District 42,0.0,,
+31,,043,,Nebraska,State Leg (Upper),State Senate District 43,1.0,,
+31,,044,,Nebraska,State Leg (Upper),State Senate District 44,0.0,,
+31,,045,,Nebraska,State Leg (Upper),State Senate District 45,31.0,,
+31,,046,,Nebraska,State Leg (Upper),State Senate District 46,0.0,,
+31,,047,,Nebraska,State Leg (Upper),State Senate District 47,1.0,,
+31,,048,,Nebraska,State Leg (Upper),State Senate District 48,0.0,,
+31,,049,,Nebraska,State Leg (Upper),State Senate District 49,19.0,,
+33,,001,,New Hampshire,State Leg (Upper),State Senate District 1,99.0,,
+33,,002,,New Hampshire,State Leg (Upper),State Senate District 2,98.0,,
+33,,003,,New Hampshire,State Leg (Upper),State Senate District 3,100.0,,
+33,,004,,New Hampshire,State Leg (Upper),State Senate District 4,16.0,,
+33,,005,,New Hampshire,State Leg (Upper),State Senate District 5,3.0,,
+33,,006,,New Hampshire,State Leg (Upper),State Senate District 6,75.0,,
+33,,007,,New Hampshire,State Leg (Upper),State Senate District 7,99.0,,
+33,,008,,New Hampshire,State Leg (Upper),State Senate District 8,88.0,,
+33,,009,,New Hampshire,State Leg (Upper),State Senate District 9,98.0,,
+33,,010,,New Hampshire,State Leg (Upper),State Senate District 10,7.0,,
+33,,011,,New Hampshire,State Leg (Upper),State Senate District 11,83.0,,
+33,,012,,New Hampshire,State Leg (Upper),State Senate District 12,88.0,,
+33,,013,,New Hampshire,State Leg (Upper),State Senate District 13,18.0,,
+33,,014,,New Hampshire,State Leg (Upper),State Senate District 14,74.0,,
+33,,015,,New Hampshire,State Leg (Upper),State Senate District 15,8.0,,
+33,,016,,New Hampshire,State Leg (Upper),State Senate District 16,92.0,,
+33,,017,,New Hampshire,State Leg (Upper),State Senate District 17,78.0,,
+33,,018,,New Hampshire,State Leg (Upper),State Senate District 18,91.0,,
+33,,019,,New Hampshire,State Leg (Upper),State Senate District 19,68.0,,
+33,,020,,New Hampshire,State Leg (Upper),State Senate District 20,29.0,,
+33,,021,,New Hampshire,State Leg (Upper),State Senate District 21,4.0,,
+33,,022,,New Hampshire,State Leg (Upper),State Senate District 22,47.0,,
+33,,023,,New Hampshire,State Leg (Upper),State Senate District 23,57.0,,
+33,,024,,New Hampshire,State Leg (Upper),State Senate District 24,29.0,,
+42,,001,,Pennsylvania,State Leg (Upper),State Senate District 1,1.0,,
+42,,002,,Pennsylvania,State Leg (Upper),State Senate District 2,0.0,,
+42,,003,,Pennsylvania,State Leg (Upper),State Senate District 3,0.0,,
+42,,004,,Pennsylvania,State Leg (Upper),State Senate District 4,0.0,,
+42,,005,,Pennsylvania,State Leg (Upper),State Senate District 5,33.0,,
+42,,006,,Pennsylvania,State Leg (Upper),State Senate District 6,0.0,,
+42,,007,,Pennsylvania,State Leg (Upper),State Senate District 7,1.0,,
+42,,008,,Pennsylvania,State Leg (Upper),State Senate District 8,0.0,,
+42,,009,,Pennsylvania,State Leg (Upper),State Senate District 9,29.0,,
+42,,010,,Pennsylvania,State Leg (Upper),State Senate District 10,0.0,,
+42,,011,,Pennsylvania,State Leg (Upper),State Senate District 11,46.0,,
+42,,012,,Pennsylvania,State Leg (Upper),State Senate District 12,0.0,,
+42,,013,,Pennsylvania,State Leg (Upper),State Senate District 13,59.0,Trex Proffitt,Scott Martin (incumbent)
+42,,014,,Pennsylvania,State Leg (Upper),State Senate District 14,0.0,,
+42,,015,,Pennsylvania,State Leg (Upper),State Senate District 15,36.0,,
+42,,016,,Pennsylvania,State Leg (Upper),State Senate District 16,0.0,,
+42,,017,,Pennsylvania,State Leg (Upper),State Senate District 17,4.0,,
+42,,018,,Pennsylvania,State Leg (Upper),State Senate District 18,0.0,,
+42,,019,,Pennsylvania,State Leg (Upper),State Senate District 19,26.0,,
+42,,020,,Pennsylvania,State Leg (Upper),State Senate District 20,0.0,,
+42,,021,,Pennsylvania,State Leg (Upper),State Senate District 21,6.0,,
+42,,022,,Pennsylvania,State Leg (Upper),State Senate District 22,0.0,,
+42,,023,,Pennsylvania,State Leg (Upper),State Senate District 23,4.0,,
+42,,024,,Pennsylvania,State Leg (Upper),State Senate District 24,0.0,,
+42,,025,,Pennsylvania,State Leg (Upper),State Senate District 25,16.0,,
+42,,026,,Pennsylvania,State Leg (Upper),State Senate District 26,0.0,,
+42,,027,,Pennsylvania,State Leg (Upper),State Senate District 27,8.0,,
+42,,028,,Pennsylvania,State Leg (Upper),State Senate District 28,0.0,,
+42,,029,,Pennsylvania,State Leg (Upper),State Senate District 29,10.0,,
+42,,030,,Pennsylvania,State Leg (Upper),State Senate District 30,0.0,,
+42,,031,,Pennsylvania,State Leg (Upper),State Senate District 31,45.0,,
+42,,032,,Pennsylvania,State Leg (Upper),State Senate District 32,0.0,,
+42,,033,,Pennsylvania,State Leg (Upper),State Senate District 33,5.0,,
+42,,034,,Pennsylvania,State Leg (Upper),State Senate District 34,0.0,,
+42,,035,,Pennsylvania,State Leg (Upper),State Senate District 35,14.0,,
+42,,036,,Pennsylvania,State Leg (Upper),State Senate District 36,0.0,,
+42,,037,,Pennsylvania,State Leg (Upper),State Senate District 37,100.0,Nicole Ruscitto,Devlin Robinson (incumbent)
+42,,038,,Pennsylvania,State Leg (Upper),State Senate District 38,0.0,,
+42,,039,,Pennsylvania,State Leg (Upper),State Senate District 39,17.0,,
+42,,040,,Pennsylvania,State Leg (Upper),State Senate District 40,0.0,,
+42,,041,,Pennsylvania,State Leg (Upper),State Senate District 41,9.0,,
+42,,042,,Pennsylvania,State Leg (Upper),State Senate District 42,0.0,,
+42,,043,,Pennsylvania,State Leg (Upper),State Senate District 43,1.0,,
+42,,044,,Pennsylvania,State Leg (Upper),State Senate District 44,0.0,,
+42,,045,,Pennsylvania,State Leg (Upper),State Senate District 45,32.0,,
+42,,046,,Pennsylvania,State Leg (Upper),State Senate District 46,0.0,,
+42,,047,,Pennsylvania,State Leg (Upper),State Senate District 47,42.0,,
+42,,048,,Pennsylvania,State Leg (Upper),State Senate District 48,0.0,,
+42,,049,,Pennsylvania,State Leg (Upper),State Senate District 49,69.0,Jim Wertz,Daniel Laughlin (incumbent)
+42,,050,,Pennsylvania,State Leg (Upper),State Senate District 50,0.0,,
+55,,001,,Wisconsin,State Leg (Upper),State Senate District 1,0.0,,
+55,,002,,Wisconsin,State Leg (Upper),State Senate District 2,13.0,,
+55,,003,,Wisconsin,State Leg (Upper),State Senate District 3,0.0,,
+55,,004,,Wisconsin,State Leg (Upper),State Senate District 4,1.0,,
+55,,005,,Wisconsin,State Leg (Upper),State Senate District 5,0.0,,
+55,,006,,Wisconsin,State Leg (Upper),State Senate District 6,1.0,,
+55,,007,,Wisconsin,State Leg (Upper),State Senate District 7,0.0,,
+55,,008,,Wisconsin,State Leg (Upper),State Senate District 8,54.0,,
+55,,009,,Wisconsin,State Leg (Upper),State Senate District 9,0.0,,
+55,,010,,Wisconsin,State Leg (Upper),State Senate District 10,39.0,,
+55,,011,,Wisconsin,State Leg (Upper),State Senate District 11,0.0,,
+55,,012,,Wisconsin,State Leg (Upper),State Senate District 12,14.0,,
+55,,013,,Wisconsin,State Leg (Upper),State Senate District 13,0.0,,
+55,,014,,Wisconsin,State Leg (Upper),State Senate District 14,62.0,,
+55,,015,,Wisconsin,State Leg (Upper),State Senate District 15,0.0,,
+55,,016,,Wisconsin,State Leg (Upper),State Senate District 16,9.0,,
+55,,017,,Wisconsin,State Leg (Upper),State Senate District 17,0.0,,
+55,,018,,Wisconsin,State Leg (Upper),State Senate District 18,76.0,,
+55,,019,,Wisconsin,State Leg (Upper),State Senate District 19,0.0,,
+55,,020,,Wisconsin,State Leg (Upper),State Senate District 20,5.0,,
+55,,021,,Wisconsin,State Leg (Upper),State Senate District 21,0.0,,
+55,,022,,Wisconsin,State Leg (Upper),State Senate District 22,37.0,,
+55,,023,,Wisconsin,State Leg (Upper),State Senate District 23,0.0,,
+55,,024,,Wisconsin,State Leg (Upper),State Senate District 24,81.0,Collin McNamara,Patrick Testin (incumbent)
+55,,025,,Wisconsin,State Leg (Upper),State Senate District 25,0.0,,
+55,,026,,Wisconsin,State Leg (Upper),State Senate District 26,1.0,,
+55,,027,,Wisconsin,State Leg (Upper),State Senate District 27,0.0,,
+55,,028,,Wisconsin,State Leg (Upper),State Senate District 28,9.0,,
+55,,029,,Wisconsin,State Leg (Upper),State Senate District 29,0.0,,
+55,,030,,Wisconsin,State Leg (Upper),State Senate District 30,100.0,Jamie Wall,Jim Rafter
+55,,031,,Wisconsin,State Leg (Upper),State Senate District 31,0.0,,
+55,,032,,Wisconsin,State Leg (Upper),State Senate District 32,62.0,Brad Pfaff (incumbent),Stacey Klein
+55,,033,,Wisconsin,State Leg (Upper),State Senate District 33,0.0,,
+02,,,001,Alaska,State Leg (Lower),State House District 1,26.0,,
+02,,,002,Alaska,State Leg (Lower),State House District 2,75.0,,
+02,,,003,Alaska,State Leg (Lower),State House District 3,46.0,,
+02,,,004,Alaska,State Leg (Lower),State House District 4,5.0,,
+02,,,005,Alaska,State Leg (Lower),State House District 5,73.0,,
+02,,,006,Alaska,State Leg (Lower),State House District 6,53.0,,
+02,,,007,Alaska,State Leg (Lower),State House District 7,3.0,,
+02,,,008,Alaska,State Leg (Lower),State House District 8,2.0,,
+02,,,009,Alaska,State Leg (Lower),State House District 9,83.0,,
+02,,,010,Alaska,State Leg (Lower),State House District 10,65.0,,
+02,,,011,Alaska,State Leg (Lower),State House District 11,46.0,,
+02,,,012,Alaska,State Leg (Lower),State House District 12,100.0,,
+02,,,013,Alaska,State Leg (Lower),State House District 13,99.0,,
+02,,,014,Alaska,State Leg (Lower),State House District 14,24.0,,
+02,,,015,Alaska,State Leg (Lower),State House District 15,70.0,,
+02,,,016,Alaska,State Leg (Lower),State House District 16,48.0,,
+02,,,017,Alaska,State Leg (Lower),State House District 17,7.0,,
+02,,,018,Alaska,State Leg (Lower),State House District 18,97.0,,
+02,,,019,Alaska,State Leg (Lower),State House District 19,14.0,,
+02,,,020,Alaska,State Leg (Lower),State House District 20,54.0,,
+02,,,021,Alaska,State Leg (Lower),State House District 21,99.0,,
+02,,,022,Alaska,State Leg (Lower),State House District 22,89.0,,
+02,,,023,Alaska,State Leg (Lower),State House District 23,11.0,,
+02,,,024,Alaska,State Leg (Lower),State House District 24,5.0,,
+02,,,025,Alaska,State Leg (Lower),State House District 25,4.0,,
+02,,,026,Alaska,State Leg (Lower),State House District 26,2.0,,
+02,,,027,Alaska,State Leg (Lower),State House District 27,2.0,,
+02,,,028,Alaska,State Leg (Lower),State House District 28,2.0,,
+02,,,029,Alaska,State Leg (Lower),State House District 29,4.0,,
+02,,,030,Alaska,State Leg (Lower),State House District 30,4.0,,
+02,,,031,Alaska,State Leg (Lower),State House District 31,97.0,,
+02,,,032,Alaska,State Leg (Lower),State House District 32,9.0,,
+02,,,033,Alaska,State Leg (Lower),State House District 33,2.0,,
+02,,,034,Alaska,State Leg (Lower),State House District 34,19.0,,
+02,,,035,Alaska,State Leg (Lower),State House District 35,67.0,,
+02,,,036,Alaska,State Leg (Lower),State House District 36,39.0,,
+02,,,037,Alaska,State Leg (Lower),State House District 37,33.0,,
+02,,,038,Alaska,State Leg (Lower),State House District 38,6.0,,
+02,,,039,Alaska,State Leg (Lower),State House District 39,15.0,,
+02,,,040,Alaska,State Leg (Lower),State House District 40,80.0,,
+04,,,001,Arizona,State Leg (Lower),State House District 1,9.0,,
+04,,,002,Arizona,State Leg (Lower),State House District 2,86.0,,
+04,,,003,Arizona,State Leg (Lower),State House District 3,11.0,,
+04,,,004,Arizona,State Leg (Lower),State House District 4,90.0,,
+04,,,005,Arizona,State Leg (Lower),State House District 5,5.0,,
+04,,,006,Arizona,State Leg (Lower),State House District 6,7.0,,
+04,,,007,Arizona,State Leg (Lower),State House District 7,13.0,,
+04,,,008,Arizona,State Leg (Lower),State House District 8,12.0,,
+04,,,009,Arizona,State Leg (Lower),State House District 9,100.0,,
+04,,,010,Arizona,State Leg (Lower),State House District 10,14.0,,
+04,,,011,Arizona,State Leg (Lower),State House District 11,2.0,,
+04,,,012,Arizona,State Leg (Lower),State House District 12,38.0,,
+04,,,013,Arizona,State Leg (Lower),State House District 13,99.0,,
+04,,,014,Arizona,State Leg (Lower),State House District 14,23.0,,
+04,,,015,Arizona,State Leg (Lower),State House District 15,9.0,,
+04,,,016,Arizona,State Leg (Lower),State House District 16,82.0,,
+04,,,017,Arizona,State Leg (Lower),State House District 17,61.0,,
+04,,,018,Arizona,State Leg (Lower),State House District 18,22.0,,
+04,,,019,Arizona,State Leg (Lower),State House District 19,13.0,,
+04,,,020,Arizona,State Leg (Lower),State House District 20,2.0,,
+04,,,021,Arizona,State Leg (Lower),State House District 21,9.0,,
+04,,,022,Arizona,State Leg (Lower),State House District 22,5.0,,
+04,,,023,Arizona,State Leg (Lower),State House District 23,31.0,,
+04,,,024,Arizona,State Leg (Lower),State House District 24,7.0,,
+04,,,025,Arizona,State Leg (Lower),State House District 25,11.0,,
+04,,,026,Arizona,State Leg (Lower),State House District 26,5.0,,
+04,,,027,Arizona,State Leg (Lower),State House District 27,54.0,,
+04,,,028,Arizona,State Leg (Lower),State House District 28,11.0,,
+04,,,029,Arizona,State Leg (Lower),State House District 29,35.0,,
+04,,,030,Arizona,State Leg (Lower),State House District 30,2.0,,
+20,,,001,Kansas,State Leg (Lower),State House District 1,3.0,,
+20,,,002,Kansas,State Leg (Lower),State House District 2,7.0,,
+20,,,003,Kansas,State Leg (Lower),State House District 3,52.0,,
+20,,,004,Kansas,State Leg (Lower),State House District 4,2.0,,
+20,,,005,Kansas,State Leg (Lower),State House District 5,15.0,,
+20,,,006,Kansas,State Leg (Lower),State House District 6,5.0,,
+20,,,007,Kansas,State Leg (Lower),State House District 7,7.0,,
+20,,,008,Kansas,State Leg (Lower),State House District 8,36.0,,
+20,,,009,Kansas,State Leg (Lower),State House District 9,3.0,,
+20,,,010,Kansas,State Leg (Lower),State House District 10,2.0,,
+20,,,011,Kansas,State Leg (Lower),State House District 11,3.0,,
+20,,,012,Kansas,State Leg (Lower),State House District 12,1.0,,
+20,,,013,Kansas,State Leg (Lower),State House District 13,2.0,,
+20,,,014,Kansas,State Leg (Lower),State House District 14,81.0,,
+20,,,015,Kansas,State Leg (Lower),State House District 15,81.0,,
+20,,,016,Kansas,State Leg (Lower),State House District 16,99.0,,
+20,,,017,Kansas,State Leg (Lower),State House District 17,84.0,,
+20,,,018,Kansas,State Leg (Lower),State House District 18,76.0,,
+20,,,019,Kansas,State Leg (Lower),State House District 19,24.0,,
+20,,,020,Kansas,State Leg (Lower),State House District 20,91.0,,
+20,,,021,Kansas,State Leg (Lower),State House District 21,11.0,,
+20,,,022,Kansas,State Leg (Lower),State House District 22,20.0,,
+20,,,023,Kansas,State Leg (Lower),State House District 23,28.0,,
+20,,,024,Kansas,State Leg (Lower),State House District 24,11.0,,
+20,,,025,Kansas,State Leg (Lower),State House District 25,10.0,,
+20,,,026,Kansas,State Leg (Lower),State House District 26,30.0,,
+20,,,027,Kansas,State Leg (Lower),State House District 27,26.0,,
+20,,,028,Kansas,State Leg (Lower),State House District 28,85.0,,
+20,,,029,Kansas,State Leg (Lower),State House District 29,46.0,,
+20,,,030,Kansas,State Leg (Lower),State House District 30,93.0,,
+20,,,031,Kansas,State Leg (Lower),State House District 31,3.0,,
+20,,,032,Kansas,State Leg (Lower),State House District 32,2.0,,
+20,,,033,Kansas,State Leg (Lower),State House District 33,99.0,,
+20,,,034,Kansas,State Leg (Lower),State House District 34,1.0,,
+20,,,035,Kansas,State Leg (Lower),State House District 35,1.0,,
+20,,,036,Kansas,State Leg (Lower),State House District 36,20.0,,
+20,,,037,Kansas,State Leg (Lower),State House District 37,11.0,,
+20,,,038,Kansas,State Leg (Lower),State House District 38,14.0,,
+20,,,039,Kansas,State Leg (Lower),State House District 39,73.0,,
+20,,,040,Kansas,State Leg (Lower),State House District 40,50.0,,
+20,,,041,Kansas,State Leg (Lower),State House District 41,46.0,,
+20,,,042,Kansas,State Leg (Lower),State House District 42,26.0,,
+20,,,043,Kansas,State Leg (Lower),State House District 43,21.0,,
+20,,,044,Kansas,State Leg (Lower),State House District 44,3.0,,
+20,,,045,Kansas,State Leg (Lower),State House District 45,5.0,,
+20,,,046,Kansas,State Leg (Lower),State House District 46,1.0,,
+20,,,047,Kansas,State Leg (Lower),State House District 47,13.0,,
+20,,,048,Kansas,State Leg (Lower),State House District 48,99.0,,
+20,,,049,Kansas,State Leg (Lower),State House District 49,93.0,,
+20,,,050,Kansas,State Leg (Lower),State House District 50,13.0,,
+20,,,051,Kansas,State Leg (Lower),State House District 51,5.0,,
+20,,,052,Kansas,State Leg (Lower),State House District 52,57.0,,
+20,,,053,Kansas,State Leg (Lower),State House District 53,76.0,,
+20,,,054,Kansas,State Leg (Lower),State House District 54,9.0,,
+20,,,055,Kansas,State Leg (Lower),State House District 55,14.0,,
+20,,,056,Kansas,State Leg (Lower),State House District 56,84.0,,
+20,,,057,Kansas,State Leg (Lower),State House District 57,34.0,,
+20,,,058,Kansas,State Leg (Lower),State House District 58,11.0,,
+20,,,059,Kansas,State Leg (Lower),State House District 59,5.0,,
+20,,,060,Kansas,State Leg (Lower),State House District 60,96.0,,
+20,,,061,Kansas,State Leg (Lower),State House District 61,3.0,,
+20,,,062,Kansas,State Leg (Lower),State House District 62,2.0,,
+20,,,063,Kansas,State Leg (Lower),State House District 63,4.0,,
+20,,,064,Kansas,State Leg (Lower),State House District 64,2.0,,
+20,,,065,Kansas,State Leg (Lower),State House District 65,36.0,,
+20,,,066,Kansas,State Leg (Lower),State House District 66,15.0,,
+20,,,067,Kansas,State Leg (Lower),State House District 67,100.0,,
+20,,,068,Kansas,State Leg (Lower),State House District 68,5.0,,
+20,,,069,Kansas,State Leg (Lower),State House District 69,8.0,,
+20,,,070,Kansas,State Leg (Lower),State House District 70,2.0,,
+20,,,071,Kansas,State Leg (Lower),State House District 71,9.0,,
+20,,,072,Kansas,State Leg (Lower),State House District 72,17.0,,
+20,,,073,Kansas,State Leg (Lower),State House District 73,5.0,,
+20,,,074,Kansas,State Leg (Lower),State House District 74,6.0,,
+20,,,075,Kansas,State Leg (Lower),State House District 75,3.0,,
+20,,,076,Kansas,State Leg (Lower),State House District 76,3.0,,
+20,,,077,Kansas,State Leg (Lower),State House District 77,3.0,,
+20,,,078,Kansas,State Leg (Lower),State House District 78,55.0,,
+20,,,079,Kansas,State Leg (Lower),State House District 79,5.0,,
+20,,,080,Kansas,State Leg (Lower),State House District 80,6.0,,
+20,,,081,Kansas,State Leg (Lower),State House District 81,12.0,,
+20,,,082,Kansas,State Leg (Lower),State House District 82,7.0,,
+20,,,083,Kansas,State Leg (Lower),State House District 83,31.0,,
+20,,,084,Kansas,State Leg (Lower),State House District 84,3.0,,
+20,,,085,Kansas,State Leg (Lower),State House District 85,46.0,,
+20,,,086,Kansas,State Leg (Lower),State House District 86,41.0,,
+20,,,087,Kansas,State Leg (Lower),State House District 87,59.0,,
+20,,,088,Kansas,State Leg (Lower),State House District 88,99.0,,
+20,,,089,Kansas,State Leg (Lower),State House District 89,10.0,,
+20,,,090,Kansas,State Leg (Lower),State House District 90,4.0,,
+20,,,091,Kansas,State Leg (Lower),State House District 91,9.0,,
+20,,,092,Kansas,State Leg (Lower),State House District 92,41.0,,
+20,,,093,Kansas,State Leg (Lower),State House District 93,3.0,,
+20,,,094,Kansas,State Leg (Lower),State House District 94,9.0,,
+20,,,095,Kansas,State Leg (Lower),State House District 95,96.0,,
+20,,,096,Kansas,State Leg (Lower),State House District 96,81.0,,
+20,,,097,Kansas,State Leg (Lower),State House District 97,17.0,,
+20,,,098,Kansas,State Leg (Lower),State House District 98,20.0,,
+20,,,099,Kansas,State Leg (Lower),State House District 99,8.0,,
+20,,,100,Kansas,State Leg (Lower),State House District 100,15.0,,
+20,,,101,Kansas,State Leg (Lower),State House District 101,2.0,,
+20,,,102,Kansas,State Leg (Lower),State House District 102,49.0,,
+20,,,103,Kansas,State Leg (Lower),State House District 103,9.0,,
+20,,,104,Kansas,State Leg (Lower),State House District 104,5.0,,
+20,,,105,Kansas,State Leg (Lower),State House District 105,40.0,,
+20,,,106,Kansas,State Leg (Lower),State House District 106,1.0,,
+20,,,107,Kansas,State Leg (Lower),State House District 107,2.0,,
+20,,,108,Kansas,State Leg (Lower),State House District 108,52.0,,
+20,,,109,Kansas,State Leg (Lower),State House District 109,1.0,,
+20,,,110,Kansas,State Leg (Lower),State House District 110,1.0,,
+20,,,111,Kansas,State Leg (Lower),State House District 111,4.0,,
+20,,,112,Kansas,State Leg (Lower),State House District 112,2.0,,
+20,,,113,Kansas,State Leg (Lower),State House District 113,1.0,,
+20,,,114,Kansas,State Leg (Lower),State House District 114,2.0,,
+20,,,115,Kansas,State Leg (Lower),State House District 115,1.0,,
+20,,,116,Kansas,State Leg (Lower),State House District 116,1.0,,
+20,,,117,Kansas,State Leg (Lower),State House District 117,53.0,,
+20,,,118,Kansas,State Leg (Lower),State House District 118,1.0,,
+20,,,119,Kansas,State Leg (Lower),State House District 119,23.0,,
+20,,,120,Kansas,State Leg (Lower),State House District 120,1.0,,
+20,,,121,Kansas,State Leg (Lower),State House District 121,70.0,,
+20,,,122,Kansas,State Leg (Lower),State House District 122,2.0,,
+20,,,123,Kansas,State Leg (Lower),State House District 123,17.0,,
+20,,,124,Kansas,State Leg (Lower),State House District 124,1.0,,
+20,,,125,Kansas,State Leg (Lower),State House District 125,6.0,,
+26,,,001,Michigan,State Leg (Lower),State House District 1,1.0,,
+26,,,002,Michigan,State Leg (Lower),State House District 2,38.0,,
+26,,,003,Michigan,State Leg (Lower),State House District 3,2.0,,
+26,,,004,Michigan,State Leg (Lower),State House District 4,0.0,,
+26,,,005,Michigan,State Leg (Lower),State House District 5,0.0,,
+26,,,006,Michigan,State Leg (Lower),State House District 6,8.0,,
+26,,,007,Michigan,State Leg (Lower),State House District 7,0.0,,
+26,,,008,Michigan,State Leg (Lower),State House District 8,1.0,,
+26,,,009,Michigan,State Leg (Lower),State House District 9,0.0,,
+26,,,010,Michigan,State Leg (Lower),State House District 10,6.0,,
+26,,,011,Michigan,State Leg (Lower),State House District 11,1.0,,
+26,,,012,Michigan,State Leg (Lower),State House District 12,4.0,,
+26,,,013,Michigan,State Leg (Lower),State House District 13,78.0,,
+26,,,014,Michigan,State Leg (Lower),State House District 14,22.0,,
+26,,,015,Michigan,State Leg (Lower),State House District 15,12.0,,
+26,,,016,Michigan,State Leg (Lower),State House District 16,2.0,,
+26,,,017,Michigan,State Leg (Lower),State House District 17,5.0,,
+26,,,018,Michigan,State Leg (Lower),State House District 18,1.0,,
+26,,,019,Michigan,State Leg (Lower),State House District 19,6.0,,
+26,,,020,Michigan,State Leg (Lower),State House District 20,37.0,,
+26,,,021,Michigan,State Leg (Lower),State House District 21,60.0,,
+26,,,022,Michigan,State Leg (Lower),State House District 22,100.0,,
+26,,,023,Michigan,State Leg (Lower),State House District 23,10.0,,
+26,,,024,Michigan,State Leg (Lower),State House District 24,19.0,,
+26,,,025,Michigan,State Leg (Lower),State House District 25,16.0,,
+26,,,026,Michigan,State Leg (Lower),State House District 26,5.0,,
+26,,,027,Michigan,State Leg (Lower),State House District 27,100.0,,
+26,,,028,Michigan,State Leg (Lower),State House District 28,100.0,,
+26,,,029,Michigan,State Leg (Lower),State House District 29,98.0,,
+26,,,030,Michigan,State Leg (Lower),State House District 30,27.0,,
+26,,,031,Michigan,State Leg (Lower),State House District 31,85.0,,
+26,,,032,Michigan,State Leg (Lower),State House District 32,2.0,,
+26,,,033,Michigan,State Leg (Lower),State House District 33,2.0,,
+26,,,034,Michigan,State Leg (Lower),State House District 34,29.0,,
+26,,,035,Michigan,State Leg (Lower),State House District 35,4.0,,
+26,,,036,Michigan,State Leg (Lower),State House District 36,8.0,,
+26,,,037,Michigan,State Leg (Lower),State House District 37,16.0,,
+26,,,038,Michigan,State Leg (Lower),State House District 38,83.0,,
+26,,,039,Michigan,State Leg (Lower),State House District 39,21.0,,
+26,,,040,Michigan,State Leg (Lower),State House District 40,44.0,,
+26,,,041,Michigan,State Leg (Lower),State House District 41,2.0,,
+26,,,042,Michigan,State Leg (Lower),State House District 42,63.0,,
+26,,,043,Michigan,State Leg (Lower),State House District 43,4.0,,
+26,,,044,Michigan,State Leg (Lower),State House District 44,100.0,,
+26,,,045,Michigan,State Leg (Lower),State House District 45,8.0,,
+26,,,046,Michigan,State Leg (Lower),State House District 46,97.0,,
+26,,,047,Michigan,State Leg (Lower),State House District 47,11.0,,
+26,,,048,Michigan,State Leg (Lower),State House District 48,91.0,,
+26,,,049,Michigan,State Leg (Lower),State House District 49,54.0,,
+26,,,050,Michigan,State Leg (Lower),State House District 50,8.0,,
+26,,,051,Michigan,State Leg (Lower),State House District 51,19.0,,
+26,,,052,Michigan,State Leg (Lower),State House District 52,29.0,,
+26,,,053,Michigan,State Leg (Lower),State House District 53,5.0,,
+26,,,054,Michigan,State Leg (Lower),State House District 54,96.0,,
+26,,,055,Michigan,State Leg (Lower),State House District 55,98.0,,
+26,,,056,Michigan,State Leg (Lower),State House District 56,50.0,,
+26,,,057,Michigan,State Leg (Lower),State House District 57,95.0,,
+26,,,058,Michigan,State Leg (Lower),State House District 58,97.0,,
+26,,,059,Michigan,State Leg (Lower),State House District 59,11.0,,
+26,,,060,Michigan,State Leg (Lower),State House District 60,37.0,,
+26,,,061,Michigan,State Leg (Lower),State House District 61,95.0,,
+26,,,062,Michigan,State Leg (Lower),State House District 62,95.0,,
+26,,,063,Michigan,State Leg (Lower),State House District 63,12.0,,
+26,,,064,Michigan,State Leg (Lower),State House District 64,35.0,,
+26,,,065,Michigan,State Leg (Lower),State House District 65,4.0,,
+26,,,066,Michigan,State Leg (Lower),State House District 66,8.0,,
+26,,,067,Michigan,State Leg (Lower),State House District 67,31.0,,
+26,,,068,Michigan,State Leg (Lower),State House District 68,91.0,,
+26,,,069,Michigan,State Leg (Lower),State House District 69,26.0,,
+26,,,070,Michigan,State Leg (Lower),State House District 70,1.0,,
+26,,,071,Michigan,State Leg (Lower),State House District 71,31.0,,
+26,,,072,Michigan,State Leg (Lower),State House District 72,54.0,,
+26,,,073,Michigan,State Leg (Lower),State House District 73,46.0,,
+26,,,074,Michigan,State Leg (Lower),State House District 74,5.0,,
+26,,,075,Michigan,State Leg (Lower),State House District 75,18.0,,
+26,,,076,Michigan,State Leg (Lower),State House District 76,91.0,,
+26,,,077,Michigan,State Leg (Lower),State House District 77,13.0,,
+26,,,078,Michigan,State Leg (Lower),State House District 78,11.0,,
+26,,,079,Michigan,State Leg (Lower),State House District 79,6.0,,
+26,,,080,Michigan,State Leg (Lower),State House District 80,53.0,,
+26,,,081,Michigan,State Leg (Lower),State House District 81,73.0,,
+26,,,082,Michigan,State Leg (Lower),State House District 82,2.0,,
+26,,,083,Michigan,State Leg (Lower),State House District 83,83.0,,
+26,,,084,Michigan,State Leg (Lower),State House District 84,87.0,,
+26,,,085,Michigan,State Leg (Lower),State House District 85,3.0,,
+26,,,086,Michigan,State Leg (Lower),State House District 86,68.0,,
+26,,,087,Michigan,State Leg (Lower),State House District 87,16.0,,
+26,,,088,Michigan,State Leg (Lower),State House District 88,45.0,,
+26,,,089,Michigan,State Leg (Lower),State House District 89,6.0,,
+26,,,090,Michigan,State Leg (Lower),State House District 90,16.0,,
+26,,,091,Michigan,State Leg (Lower),State House District 91,7.0,,
+26,,,092,Michigan,State Leg (Lower),State House District 92,85.0,,
+26,,,093,Michigan,State Leg (Lower),State House District 93,11.0,,
+26,,,094,Michigan,State Leg (Lower),State House District 94,5.0,,
+26,,,095,Michigan,State Leg (Lower),State House District 95,26.0,,
+26,,,096,Michigan,State Leg (Lower),State House District 96,89.0,,
+26,,,097,Michigan,State Leg (Lower),State House District 97,11.0,,
+26,,,098,Michigan,State Leg (Lower),State House District 98,4.0,,
+26,,,099,Michigan,State Leg (Lower),State House District 99,9.0,,
+26,,,100,Michigan,State Leg (Lower),State House District 100,8.0,,
+26,,,101,Michigan,State Leg (Lower),State House District 101,7.0,,
+26,,,102,Michigan,State Leg (Lower),State House District 102,29.0,,
+26,,,103,Michigan,State Leg (Lower),State House District 103,100.0,,
+26,,,104,Michigan,State Leg (Lower),State House District 104,13.0,,
+26,,,105,Michigan,State Leg (Lower),State House District 105,6.0,,
+26,,,106,Michigan,State Leg (Lower),State House District 106,9.0,,
+26,,,107,Michigan,State Leg (Lower),State House District 107,28.0,,
+26,,,108,Michigan,State Leg (Lower),State House District 108,13.0,,
+26,,,109,Michigan,State Leg (Lower),State House District 109,91.0,,
+26,,,110,Michigan,State Leg (Lower),State House District 110,27.0,,
+27,,,01A,Minnesota,State Leg (Lower),State House District 1A,9.0,,
+27,,,01B,Minnesota,State Leg (Lower),State House District 1B,25.0,,
+27,,,02A,Minnesota,State Leg (Lower),State House District 2A,93.0,,
+27,,,02B,Minnesota,State Leg (Lower),State House District 2B,31.0,,
+27,,,03A,Minnesota,State Leg (Lower),State House District 3A,99.0,,
+27,,,03B,Minnesota,State Leg (Lower),State House District 3B,51.0,,
+27,,,04A,Minnesota,State Leg (Lower),State House District 4A,23.0,,
+27,,,04B,Minnesota,State Leg (Lower),State House District 4B,35.0,,
+27,,,05A,Minnesota,State Leg (Lower),State House District 5A,6.0,,
+27,,,05B,Minnesota,State Leg (Lower),State House District 5B,4.0,,
+27,,,06A,Minnesota,State Leg (Lower),State House District 6A,23.0,,
+27,,,06B,Minnesota,State Leg (Lower),State House District 6B,16.0,,
+27,,,07A,Minnesota,State Leg (Lower),State House District 7A,98.0,,
+27,,,07B,Minnesota,State Leg (Lower),State House District 7B,78.0,,
+27,,,08A,Minnesota,State Leg (Lower),State House District 8A,4.0,,
+27,,,08B,Minnesota,State Leg (Lower),State House District 8B,4.0,,
+27,,,09A,Minnesota,State Leg (Lower),State House District 9A,18.0,,
+27,,,09B,Minnesota,State Leg (Lower),State House District 9B,7.0,,
+27,,,10A,Minnesota,State Leg (Lower),State House District 10A,8.0,,
+27,,,10B,Minnesota,State Leg (Lower),State House District 10B,3.0,,
+27,,,11A,Minnesota,State Leg (Lower),State House District 11A,64.0,,
+27,,,11B,Minnesota,State Leg (Lower),State House District 11B,12.0,,
+27,,,12A,Minnesota,State Leg (Lower),State House District 12A,16.0,,
+27,,,12B,Minnesota,State Leg (Lower),State House District 12B,8.0,,
+27,,,13A,Minnesota,State Leg (Lower),State House District 13A,7.0,,
+27,,,13B,Minnesota,State Leg (Lower),State House District 13B,16.0,,
+27,,,14A,Minnesota,State Leg (Lower),State House District 14A,98.0,,
+27,,,14B,Minnesota,State Leg (Lower),State House District 14B,92.0,,
+27,,,15A,Minnesota,State Leg (Lower),State House District 15A,18.0,,
+27,,,15B,Minnesota,State Leg (Lower),State House District 15B,9.0,,
+27,,,16A,Minnesota,State Leg (Lower),State House District 16A,12.0,,
+27,,,16B,Minnesota,State Leg (Lower),State House District 16B,21.0,,
+27,,,17A,Minnesota,State Leg (Lower),State House District 17A,7.0,,
+27,,,17B,Minnesota,State Leg (Lower),State House District 17B,8.0,,
+27,,,18A,Minnesota,State Leg (Lower),State House District 18A,71.0,,
+27,,,18B,Minnesota,State Leg (Lower),State House District 18B,18.0,,
+27,,,19A,Minnesota,State Leg (Lower),State House District 19A,27.0,,
+27,,,19B,Minnesota,State Leg (Lower),State House District 19B,30.0,,
+27,,,20A,Minnesota,State Leg (Lower),State House District 20A,83.0,,
+27,,,20B,Minnesota,State Leg (Lower),State House District 20B,16.0,,
+27,,,21A,Minnesota,State Leg (Lower),State House District 21A,6.0,,
+27,,,21B,Minnesota,State Leg (Lower),State House District 21B,22.0,,
+27,,,22A,Minnesota,State Leg (Lower),State House District 22A,13.0,,
+27,,,22B,Minnesota,State Leg (Lower),State House District 22B,16.0,,
+27,,,23A,Minnesota,State Leg (Lower),State House District 23A,38.0,,
+27,,,23B,Minnesota,State Leg (Lower),State House District 23B,99.0,,
+27,,,24A,Minnesota,State Leg (Lower),State House District 24A,26.0,,
+27,,,24B,Minnesota,State Leg (Lower),State House District 24B,45.0,,
+27,,,25A,Minnesota,State Leg (Lower),State House District 25A,46.0,,
+27,,,25B,Minnesota,State Leg (Lower),State House District 25B,12.0,,
+27,,,26A,Minnesota,State Leg (Lower),State House District 26A,59.0,,
+27,,,26B,Minnesota,State Leg (Lower),State House District 26B,46.0,,
+27,,,27A,Minnesota,State Leg (Lower),State House District 27A,5.0,,
+27,,,27B,Minnesota,State Leg (Lower),State House District 27B,4.0,,
+27,,,28A,Minnesota,State Leg (Lower),State House District 28A,9.0,,
+27,,,28B,Minnesota,State Leg (Lower),State House District 28B,18.0,,
+27,,,29A,Minnesota,State Leg (Lower),State House District 29A,9.0,,
+27,,,29B,Minnesota,State Leg (Lower),State House District 29B,16.0,,
+27,,,30A,Minnesota,State Leg (Lower),State House District 30A,13.0,,
+27,,,30B,Minnesota,State Leg (Lower),State House District 30B,12.0,,
+27,,,31A,Minnesota,State Leg (Lower),State House District 31A,30.0,,
+27,,,31B,Minnesota,State Leg (Lower),State House District 31B,9.0,,
+27,,,32A,Minnesota,State Leg (Lower),State House District 32A,73.0,,
+27,,,32B,Minnesota,State Leg (Lower),State House District 32B,88.0,,
+27,,,33A,Minnesota,State Leg (Lower),State House District 33A,74.0,,
+27,,,33B,Minnesota,State Leg (Lower),State House District 33B,67.0,,
+27,,,34A,Minnesota,State Leg (Lower),State House District 34A,81.0,,
+27,,,34B,Minnesota,State Leg (Lower),State House District 34B,13.0,,
+27,,,35A,Minnesota,State Leg (Lower),State House District 35A,93.0,,
+27,,,35B,Minnesota,State Leg (Lower),State House District 35B,93.0,,
+27,,,36A,Minnesota,State Leg (Lower),State House District 36A,100.0,,
+27,,,36B,Minnesota,State Leg (Lower),State House District 36B,32.0,,
+27,,,37A,Minnesota,State Leg (Lower),State House District 37A,67.0,,
+27,,,37B,Minnesota,State Leg (Lower),State House District 37B,54.0,,
+27,,,38A,Minnesota,State Leg (Lower),State House District 38A,5.0,,
+27,,,38B,Minnesota,State Leg (Lower),State House District 38B,3.0,,
+27,,,39A,Minnesota,State Leg (Lower),State House District 39A,10.0,,
+27,,,39B,Minnesota,State Leg (Lower),State House District 39B,4.0,,
+27,,,40A,Minnesota,State Leg (Lower),State House District 40A,19.0,,
+27,,,40B,Minnesota,State Leg (Lower),State House District 40B,7.0,,
+27,,,41A,Minnesota,State Leg (Lower),State House District 41A,97.0,,
+27,,,41B,Minnesota,State Leg (Lower),State House District 41B,95.0,,
+27,,,42A,Minnesota,State Leg (Lower),State House District 42A,28.0,,
+27,,,42B,Minnesota,State Leg (Lower),State House District 42B,17.0,,
+27,,,43A,Minnesota,State Leg (Lower),State House District 43A,7.0,,
+27,,,43B,Minnesota,State Leg (Lower),State House District 43B,3.0,,
+27,,,44A,Minnesota,State Leg (Lower),State House District 44A,10.0,,
+27,,,44B,Minnesota,State Leg (Lower),State House District 44B,25.0,,
+27,,,45A,Minnesota,State Leg (Lower),State House District 45A,93.0,,
+27,,,45B,Minnesota,State Leg (Lower),State House District 45B,13.0,,
+27,,,46A,Minnesota,State Leg (Lower),State House District 46A,2.0,,
+27,,,46B,Minnesota,State Leg (Lower),State House District 46B,5.0,,
+27,,,47A,Minnesota,State Leg (Lower),State House District 47A,16.0,,
+27,,,47B,Minnesota,State Leg (Lower),State House District 47B,42.0,,
+27,,,48A,Minnesota,State Leg (Lower),State House District 48A,48.0,,
+27,,,48B,Minnesota,State Leg (Lower),State House District 48B,82.0,,
+27,,,49A,Minnesota,State Leg (Lower),State House District 49A,13.0,,
+27,,,49B,Minnesota,State Leg (Lower),State House District 49B,24.0,,
+27,,,50A,Minnesota,State Leg (Lower),State House District 50A,7.0,,
+27,,,50B,Minnesota,State Leg (Lower),State House District 50B,14.0,,
+27,,,51A,Minnesota,State Leg (Lower),State House District 51A,3.0,,
+27,,,51B,Minnesota,State Leg (Lower),State House District 51B,10.0,,
+27,,,52A,Minnesota,State Leg (Lower),State House District 52A,15.0,,
+27,,,52B,Minnesota,State Leg (Lower),State House District 52B,14.0,,
+27,,,53A,Minnesota,State Leg (Lower),State House District 53A,26.0,,
+27,,,53B,Minnesota,State Leg (Lower),State House District 53B,30.0,,
+27,,,54A,Minnesota,State Leg (Lower),State House District 54A,84.0,,
+27,,,54B,Minnesota,State Leg (Lower),State House District 54B,39.0,,
+27,,,55A,Minnesota,State Leg (Lower),State House District 55A,64.0,,
+27,,,55B,Minnesota,State Leg (Lower),State House District 55B,24.0,,
+27,,,56A,Minnesota,State Leg (Lower),State House District 56A,23.0,,
+27,,,56B,Minnesota,State Leg (Lower),State House District 56B,51.0,,
+27,,,57A,Minnesota,State Leg (Lower),State House District 57A,28.0,,
+27,,,57B,Minnesota,State Leg (Lower),State House District 57B,96.0,,
+27,,,58A,Minnesota,State Leg (Lower),State House District 58A,54.0,,
+27,,,58B,Minnesota,State Leg (Lower),State House District 58B,37.0,,
+27,,,59A,Minnesota,State Leg (Lower),State House District 59A,1.0,,
+27,,,59B,Minnesota,State Leg (Lower),State House District 59B,1.0,,
+27,,,60A,Minnesota,State Leg (Lower),State House District 60A,1.0,,
+27,,,60B,Minnesota,State Leg (Lower),State House District 60B,1.0,,
+27,,,61A,Minnesota,State Leg (Lower),State House District 61A,1.0,,
+27,,,61B,Minnesota,State Leg (Lower),State House District 61B,1.0,,
+27,,,62A,Minnesota,State Leg (Lower),State House District 62A,1.0,,
+27,,,62B,Minnesota,State Leg (Lower),State House District 62B,1.0,,
+27,,,63A,Minnesota,State Leg (Lower),State House District 63A,1.0,,
+27,,,63B,Minnesota,State Leg (Lower),State House District 63B,1.0,,
+27,,,64A,Minnesota,State Leg (Lower),State House District 64A,1.0,,
+27,,,64B,Minnesota,State Leg (Lower),State House District 64B,1.0,,
+27,,,65A,Minnesota,State Leg (Lower),State House District 65A,1.0,,
+27,,,65B,Minnesota,State Leg (Lower),State House District 65B,2.0,,
+27,,,66A,Minnesota,State Leg (Lower),State House District 66A,1.0,,
+27,,,66B,Minnesota,State Leg (Lower),State House District 66B,1.0,,
+27,,,67A,Minnesota,State Leg (Lower),State House District 67A,2.0,,
+27,,,67B,Minnesota,State Leg (Lower),State House District 67B,2.0,,
+32,,,001,Nevada,State Leg (Lower),State House District 1,38.0,,
+32,,,002,Nevada,State Leg (Lower),State House District 2,100.0,,
+32,,,003,Nevada,State Leg (Lower),State House District 3,31.0,,
+32,,,004,Nevada,State Leg (Lower),State House District 4,96.0,,
+32,,,005,Nevada,State Leg (Lower),State House District 5,47.0,,
+32,,,006,Nevada,State Leg (Lower),State House District 6,1.0,,
+32,,,007,Nevada,State Leg (Lower),State House District 7,5.0,,
+32,,,008,Nevada,State Leg (Lower),State House District 8,27.0,,
+32,,,009,Nevada,State Leg (Lower),State House District 9,49.0,,
+32,,,010,Nevada,State Leg (Lower),State House District 10,17.0,,
+32,,,011,Nevada,State Leg (Lower),State House District 11,2.0,,
+32,,,012,Nevada,State Leg (Lower),State House District 12,36.0,,
+32,,,013,Nevada,State Leg (Lower),State House District 13,73.0,,
+32,,,014,Nevada,State Leg (Lower),State House District 14,4.0,,
+32,,,015,Nevada,State Leg (Lower),State House District 15,6.0,,
+32,,,016,Nevada,State Leg (Lower),State House District 16,31.0,,
+32,,,017,Nevada,State Leg (Lower),State House District 17,5.0,,
+32,,,018,Nevada,State Leg (Lower),State House District 18,11.0,,
+32,,,019,Nevada,State Leg (Lower),State House District 19,10.0,,
+32,,,020,Nevada,State Leg (Lower),State House District 20,14.0,,
+32,,,021,Nevada,State Leg (Lower),State House District 21,76.0,,
+32,,,022,Nevada,State Leg (Lower),State House District 22,68.0,,
+32,,,023,Nevada,State Leg (Lower),State House District 23,22.0,,
+32,,,024,Nevada,State Leg (Lower),State House District 24,8.0,,
+32,,,025,Nevada,State Leg (Lower),State House District 25,69.0,,
+32,,,026,Nevada,State Leg (Lower),State House District 26,47.0,,
+32,,,027,Nevada,State Leg (Lower),State House District 27,31.0,,
+32,,,028,Nevada,State Leg (Lower),State House District 28,3.0,,
+32,,,029,Nevada,State Leg (Lower),State House District 29,64.0,,
+32,,,030,Nevada,State Leg (Lower),State House District 30,34.0,,
+32,,,031,Nevada,State Leg (Lower),State House District 31,31.0,,
+32,,,032,Nevada,State Leg (Lower),State House District 32,7.0,,
+32,,,033,Nevada,State Leg (Lower),State House District 33,2.0,,
+32,,,034,Nevada,State Leg (Lower),State House District 34,28.0,,
+32,,,035,Nevada,State Leg (Lower),State House District 35,72.0,,
+32,,,036,Nevada,State Leg (Lower),State House District 36,12.0,,
+32,,,037,Nevada,State Leg (Lower),State House District 37,97.0,,
+32,,,038,Nevada,State Leg (Lower),State House District 38,2.0,,
+32,,,039,Nevada,State Leg (Lower),State House District 39,6.0,,
+32,,,040,Nevada,State Leg (Lower),State House District 40,28.0,,
+32,,,041,Nevada,State Leg (Lower),State House District 41,51.0,,
+32,,,042,Nevada,State Leg (Lower),State House District 42,28.0,,
+42,,,001,Pennsylvania,State Leg (Lower),State House District 1,6.0,,
+42,,,002,Pennsylvania,State Leg (Lower),State House District 2,32.0,,
+42,,,003,Pennsylvania,State Leg (Lower),State House District 3,89.0,,
+42,,,004,Pennsylvania,State Leg (Lower),State House District 4,25.0,,
+42,,,005,Pennsylvania,State Leg (Lower),State House District 5,14.0,,
+42,,,006,Pennsylvania,State Leg (Lower),State House District 6,10.0,,
+42,,,007,Pennsylvania,State Leg (Lower),State House District 7,83.0,,
+42,,,008,Pennsylvania,State Leg (Lower),State House District 8,6.0,,
+42,,,009,Pennsylvania,State Leg (Lower),State House District 9,33.0,,
+42,,,010,Pennsylvania,State Leg (Lower),State House District 10,0.0,,
+42,,,011,Pennsylvania,State Leg (Lower),State House District 11,8.0,,
+42,,,012,Pennsylvania,State Leg (Lower),State House District 12,19.0,,
+42,,,013,Pennsylvania,State Leg (Lower),State House District 13,91.0,,
+42,,,014,Pennsylvania,State Leg (Lower),State House District 14,34.0,,
+42,,,015,Pennsylvania,State Leg (Lower),State House District 15,17.0,,
+42,,,016,Pennsylvania,State Leg (Lower),State House District 16,74.0,,
+42,,,017,Pennsylvania,State Leg (Lower),State House District 17,4.0,,
+42,,,018,Pennsylvania,State Leg (Lower),State House District 18,48.0,,
+42,,,019,Pennsylvania,State Leg (Lower),State House District 19,1.0,,
+42,,,020,Pennsylvania,State Leg (Lower),State House District 20,20.0,,
+42,,,021,Pennsylvania,State Leg (Lower),State House District 21,10.0,,
+42,,,022,Pennsylvania,State Leg (Lower),State House District 22,3.0,,
+42,,,023,Pennsylvania,State Leg (Lower),State House District 23,1.0,,
+42,,,024,Pennsylvania,State Leg (Lower),State House District 24,1.0,,
+42,,,025,Pennsylvania,State Leg (Lower),State House District 25,40.0,,
+42,,,026,Pennsylvania,State Leg (Lower),State House District 26,55.0,,
+42,,,027,Pennsylvania,State Leg (Lower),State House District 27,11.0,,
+42,,,028,Pennsylvania,State Leg (Lower),State House District 28,62.0,,
+42,,,029,Pennsylvania,State Leg (Lower),State House District 29,41.0,,
+42,,,030,Pennsylvania,State Leg (Lower),State House District 30,91.0,,
+42,,,031,Pennsylvania,State Leg (Lower),State House District 31,34.0,,
+42,,,032,Pennsylvania,State Leg (Lower),State House District 32,8.0,,
+42,,,033,Pennsylvania,State Leg (Lower),State House District 33,61.0,,
+42,,,034,Pennsylvania,State Leg (Lower),State House District 34,1.0,,
+42,,,035,Pennsylvania,State Leg (Lower),State House District 35,10.0,,
+42,,,036,Pennsylvania,State Leg (Lower),State House District 36,6.0,,
+42,,,037,Pennsylvania,State Leg (Lower),State House District 37,8.0,,
+42,,,038,Pennsylvania,State Leg (Lower),State House District 38,42.0,,
+42,,,039,Pennsylvania,State Leg (Lower),State House District 39,61.0,,
+42,,,040,Pennsylvania,State Leg (Lower),State House District 40,69.0,,
+42,,,041,Pennsylvania,State Leg (Lower),State House District 41,87.0,,
+42,,,042,Pennsylvania,State Leg (Lower),State House District 42,10.0,,
+42,,,043,Pennsylvania,State Leg (Lower),State House District 43,6.0,,
+42,,,044,Pennsylvania,State Leg (Lower),State House District 44,100.0,,
+42,,,045,Pennsylvania,State Leg (Lower),State House District 45,46.0,,
+42,,,046,Pennsylvania,State Leg (Lower),State House District 46,67.0,,
+42,,,047,Pennsylvania,State Leg (Lower),State House District 47,25.0,,
+42,,,048,Pennsylvania,State Leg (Lower),State House District 48,40.0,,
+42,,,049,Pennsylvania,State Leg (Lower),State House District 49,4.0,,
+42,,,050,Pennsylvania,State Leg (Lower),State House District 50,29.0,,
+42,,,051,Pennsylvania,State Leg (Lower),State House District 51,33.0,,
+42,,,052,Pennsylvania,State Leg (Lower),State House District 52,14.0,,
+42,,,053,Pennsylvania,State Leg (Lower),State House District 53,32.0,,
+42,,,054,Pennsylvania,State Leg (Lower),State House District 54,3.0,,
+42,,,055,Pennsylvania,State Leg (Lower),State House District 55,27.0,,
+42,,,056,Pennsylvania,State Leg (Lower),State House District 56,16.0,,
+42,,,057,Pennsylvania,State Leg (Lower),State House District 57,25.0,,
+42,,,058,Pennsylvania,State Leg (Lower),State House District 58,19.0,,
+42,,,059,Pennsylvania,State Leg (Lower),State House District 59,10.0,,
+42,,,060,Pennsylvania,State Leg (Lower),State House District 60,10.0,,
+42,,,061,Pennsylvania,State Leg (Lower),State House District 61,21.0,,
+42,,,062,Pennsylvania,State Leg (Lower),State House District 62,20.0,,
+42,,,063,Pennsylvania,State Leg (Lower),State House District 63,3.0,,
+42,,,064,Pennsylvania,State Leg (Lower),State House District 64,6.0,,
+42,,,065,Pennsylvania,State Leg (Lower),State House District 65,5.0,,
+42,,,066,Pennsylvania,State Leg (Lower),State House District 66,2.0,,
+42,,,067,Pennsylvania,State Leg (Lower),State House District 67,2.0,,
+42,,,068,Pennsylvania,State Leg (Lower),State House District 68,2.0,,
+42,,,069,Pennsylvania,State Leg (Lower),State House District 69,2.0,,
+42,,,070,Pennsylvania,State Leg (Lower),State House District 70,35.0,,
+42,,,071,Pennsylvania,State Leg (Lower),State House District 71,7.0,,
+42,,,072,Pennsylvania,State Leg (Lower),State House District 72,24.0,,
+42,,,073,Pennsylvania,State Leg (Lower),State House District 73,4.0,,
+42,,,074,Pennsylvania,State Leg (Lower),State House District 74,36.0,,
+42,,,075,Pennsylvania,State Leg (Lower),State House District 75,4.0,,
+42,,,076,Pennsylvania,State Leg (Lower),State House District 76,11.0,,
+42,,,077,Pennsylvania,State Leg (Lower),State House District 77,26.0,,
+42,,,078,Pennsylvania,State Leg (Lower),State House District 78,1.0,,
+42,,,079,Pennsylvania,State Leg (Lower),State House District 79,9.0,,
+42,,,080,Pennsylvania,State Leg (Lower),State House District 80,2.0,,
+42,,,081,Pennsylvania,State Leg (Lower),State House District 81,3.0,,
+42,,,082,Pennsylvania,State Leg (Lower),State House District 82,59.0,,
+42,,,083,Pennsylvania,State Leg (Lower),State House District 83,14.0,,
+42,,,084,Pennsylvania,State Leg (Lower),State House District 84,2.0,,
+42,,,085,Pennsylvania,State Leg (Lower),State House District 85,5.0,,
+42,,,086,Pennsylvania,State Leg (Lower),State House District 86,2.0,,
+42,,,087,Pennsylvania,State Leg (Lower),State House District 87,30.0,,
+42,,,088,Pennsylvania,State Leg (Lower),State House District 88,89.0,,
+42,,,089,Pennsylvania,State Leg (Lower),State House District 89,7.0,,
+42,,,090,Pennsylvania,State Leg (Lower),State House District 90,2.0,,
+42,,,091,Pennsylvania,State Leg (Lower),State House District 91,11.0,,
+42,,,092,Pennsylvania,State Leg (Lower),State House District 92,6.0,,
+42,,,093,Pennsylvania,State Leg (Lower),State House District 93,10.0,,
+42,,,094,Pennsylvania,State Leg (Lower),State House District 94,7.0,,
+42,,,095,Pennsylvania,State Leg (Lower),State House District 95,7.0,,
+42,,,096,Pennsylvania,State Leg (Lower),State House District 96,18.0,,
+42,,,097,Pennsylvania,State Leg (Lower),State House District 97,21.0,,
+42,,,098,Pennsylvania,State Leg (Lower),State House District 98,11.0,,
+42,,,099,Pennsylvania,State Leg (Lower),State House District 99,4.0,,
+42,,,100,Pennsylvania,State Leg (Lower),State House District 100,3.0,,
+42,,,101,Pennsylvania,State Leg (Lower),State House District 101,25.0,,
+42,,,102,Pennsylvania,State Leg (Lower),State House District 102,4.0,,
+42,,,103,Pennsylvania,State Leg (Lower),State House District 103,11.0,,
+42,,,104,Pennsylvania,State Leg (Lower),State House District 104,6.0,,
+42,,,105,Pennsylvania,State Leg (Lower),State House District 105,12.0,,
+42,,,106,Pennsylvania,State Leg (Lower),State House District 106,52.0,,
+42,,,107,Pennsylvania,State Leg (Lower),State House District 107,4.0,,
+42,,,108,Pennsylvania,State Leg (Lower),State House District 108,9.0,,
+42,,,109,Pennsylvania,State Leg (Lower),State House District 109,13.0,,
+42,,,110,Pennsylvania,State Leg (Lower),State House District 110,6.0,,
+42,,,111,Pennsylvania,State Leg (Lower),State House District 111,6.0,,
+42,,,112,Pennsylvania,State Leg (Lower),State House District 112,26.0,,
+42,,,113,Pennsylvania,State Leg (Lower),State House District 113,19.0,,
+42,,,114,Pennsylvania,State Leg (Lower),State House District 114,28.0,,
+42,,,115,Pennsylvania,State Leg (Lower),State House District 115,29.0,,
+42,,,116,Pennsylvania,State Leg (Lower),State House District 116,23.0,,
+42,,,117,Pennsylvania,State Leg (Lower),State House District 117,6.0,,
+42,,,118,Pennsylvania,State Leg (Lower),State House District 118,81.0,,
+42,,,119,Pennsylvania,State Leg (Lower),State House District 119,84.0,,
+42,,,120,Pennsylvania,State Leg (Lower),State House District 120,91.0,,
+42,,,121,Pennsylvania,State Leg (Lower),State House District 121,50.0,,
+42,,,122,Pennsylvania,State Leg (Lower),State House District 122,12.0,,
+42,,,123,Pennsylvania,State Leg (Lower),State House District 123,17.0,,
+42,,,124,Pennsylvania,State Leg (Lower),State House District 124,7.0,,
+42,,,125,Pennsylvania,State Leg (Lower),State House District 125,12.0,,
+42,,,126,Pennsylvania,State Leg (Lower),State House District 126,27.0,,
+42,,,127,Pennsylvania,State Leg (Lower),State House District 127,4.0,,
+42,,,128,Pennsylvania,State Leg (Lower),State House District 128,34.0,,
+42,,,129,Pennsylvania,State Leg (Lower),State House District 129,18.0,,
+42,,,130,Pennsylvania,State Leg (Lower),State House District 130,16.0,,
+42,,,131,Pennsylvania,State Leg (Lower),State House District 131,60.0,,
+42,,,132,Pennsylvania,State Leg (Lower),State House District 132,32.0,,
+42,,,133,Pennsylvania,State Leg (Lower),State House District 133,28.0,,
+42,,,134,Pennsylvania,State Leg (Lower),State House District 134,12.0,,
+42,,,135,Pennsylvania,State Leg (Lower),State House District 135,8.0,,
+42,,,136,Pennsylvania,State Leg (Lower),State House District 136,25.0,,
+42,,,137,Pennsylvania,State Leg (Lower),State House District 137,100.0,,
+42,,,138,Pennsylvania,State Leg (Lower),State House District 138,27.0,,
+42,,,139,Pennsylvania,State Leg (Lower),State House District 139,10.0,,
+42,,,140,Pennsylvania,State Leg (Lower),State House District 140,29.0,,
+42,,,141,Pennsylvania,State Leg (Lower),State House District 141,21.0,,
+42,,,142,Pennsylvania,State Leg (Lower),State House District 142,82.0,,
+42,,,143,Pennsylvania,State Leg (Lower),State House District 143,86.0,,
+42,,,144,Pennsylvania,State Leg (Lower),State House District 144,88.0,,
+42,,,145,Pennsylvania,State Leg (Lower),State House District 145,44.0,,
+42,,,146,Pennsylvania,State Leg (Lower),State House District 146,44.0,,
+42,,,147,Pennsylvania,State Leg (Lower),State House District 147,59.0,,
+42,,,148,Pennsylvania,State Leg (Lower),State House District 148,2.0,,
+42,,,149,Pennsylvania,State Leg (Lower),State House District 149,4.0,,
+42,,,150,Pennsylvania,State Leg (Lower),State House District 150,34.0,,
+42,,,151,Pennsylvania,State Leg (Lower),State House District 151,14.0,,
+42,,,152,Pennsylvania,State Leg (Lower),State House District 152,14.0,,
+42,,,153,Pennsylvania,State Leg (Lower),State House District 153,5.0,,
+42,,,154,Pennsylvania,State Leg (Lower),State House District 154,1.0,,
+42,,,155,Pennsylvania,State Leg (Lower),State House District 155,40.0,,
+42,,,156,Pennsylvania,State Leg (Lower),State House District 156,21.0,,
+42,,,157,Pennsylvania,State Leg (Lower),State House District 157,21.0,,
+42,,,158,Pennsylvania,State Leg (Lower),State House District 158,33.0,,
+42,,,159,Pennsylvania,State Leg (Lower),State House District 159,3.0,,
+42,,,160,Pennsylvania,State Leg (Lower),State House District 160,99.0,,
+42,,,161,Pennsylvania,State Leg (Lower),State House District 161,33.0,,
+42,,,162,Pennsylvania,State Leg (Lower),State House District 162,30.0,,
+42,,,163,Pennsylvania,State Leg (Lower),State House District 163,17.0,,
+42,,,164,Pennsylvania,State Leg (Lower),State House District 164,1.0,,
+42,,,165,Pennsylvania,State Leg (Lower),State House District 165,26.0,,
+42,,,166,Pennsylvania,State Leg (Lower),State House District 166,12.0,,
+42,,,167,Pennsylvania,State Leg (Lower),State House District 167,25.0,,
+42,,,168,Pennsylvania,State Leg (Lower),State House District 168,28.0,,
+42,,,169,Pennsylvania,State Leg (Lower),State House District 169,7.0,,
+42,,,170,Pennsylvania,State Leg (Lower),State House District 170,99.0,,
+42,,,171,Pennsylvania,State Leg (Lower),State House District 171,6.0,,
+42,,,172,Pennsylvania,State Leg (Lower),State House District 172,33.0,,
+42,,,173,Pennsylvania,State Leg (Lower),State House District 173,22.0,,
+42,,,174,Pennsylvania,State Leg (Lower),State House District 174,19.0,,
+42,,,175,Pennsylvania,State Leg (Lower),State House District 175,1.0,,
+42,,,176,Pennsylvania,State Leg (Lower),State House District 176,56.0,,
+42,,,177,Pennsylvania,State Leg (Lower),State House District 177,4.0,,
+42,,,178,Pennsylvania,State Leg (Lower),State House District 178,71.0,,
+42,,,179,Pennsylvania,State Leg (Lower),State House District 179,1.0,,
+42,,,180,Pennsylvania,State Leg (Lower),State House District 180,1.0,,
+42,,,181,Pennsylvania,State Leg (Lower),State House District 181,0.0,,
+42,,,182,Pennsylvania,State Leg (Lower),State House District 182,1.0,,
+42,,,183,Pennsylvania,State Leg (Lower),State House District 183,24.0,,
+42,,,184,Pennsylvania,State Leg (Lower),State House District 184,3.0,,
+42,,,185,Pennsylvania,State Leg (Lower),State House District 185,2.0,,
+42,,,186,Pennsylvania,State Leg (Lower),State House District 186,0.0,,
+42,,,187,Pennsylvania,State Leg (Lower),State House District 187,61.0,,
+42,,,188,Pennsylvania,State Leg (Lower),State House District 188,0.0,,
+42,,,189,Pennsylvania,State Leg (Lower),State House District 189,29.0,,
+42,,,190,Pennsylvania,State Leg (Lower),State House District 190,0.0,,
+42,,,191,Pennsylvania,State Leg (Lower),State House District 191,0.0,,
+42,,,192,Pennsylvania,State Leg (Lower),State House District 192,0.0,,
+42,,,193,Pennsylvania,State Leg (Lower),State House District 193,6.0,,
+42,,,194,Pennsylvania,State Leg (Lower),State House District 194,2.0,,
+42,,,195,Pennsylvania,State Leg (Lower),State House District 195,0.0,,
+42,,,196,Pennsylvania,State Leg (Lower),State House District 196,7.0,,
+42,,,197,Pennsylvania,State Leg (Lower),State House District 197,0.0,,
+42,,,198,Pennsylvania,State Leg (Lower),State House District 198,0.0,,
+42,,,199,Pennsylvania,State Leg (Lower),State House District 199,28.0,,
+42,,,200,Pennsylvania,State Leg (Lower),State House District 200,0.0,,
+42,,,201,Pennsylvania,State Leg (Lower),State House District 201,0.0,,
+42,,,202,Pennsylvania,State Leg (Lower),State House District 202,3.0,,
+42,,,203,Pennsylvania,State Leg (Lower),State House District 203,1.0,,
+55,,,001,Wisconsin,State Leg (Lower),State House District 1,44.0,,
+55,,,002,Wisconsin,State Leg (Lower),State House District 2,17.0,,
+55,,,003,Wisconsin,State Leg (Lower),State House District 3,14.0,,
+55,,,004,Wisconsin,State Leg (Lower),State House District 4,11.0,,
+55,,,005,Wisconsin,State Leg (Lower),State House District 5,20.0,,
+55,,,006,Wisconsin,State Leg (Lower),State House District 6,9.0,,
+55,,,007,Wisconsin,State Leg (Lower),State House District 7,35.0,,
+55,,,008,Wisconsin,State Leg (Lower),State House District 8,1.0,,
+55,,,009,Wisconsin,State Leg (Lower),State House District 9,3.0,,
+55,,,010,Wisconsin,State Leg (Lower),State House District 10,1.0,,
+55,,,011,Wisconsin,State Leg (Lower),State House District 11,1.0,,
+55,,,012,Wisconsin,State Leg (Lower),State House District 12,2.0,,
+55,,,013,Wisconsin,State Leg (Lower),State House District 13,99.0,,
+55,,,014,Wisconsin,State Leg (Lower),State House District 14,86.0,,
+55,,,015,Wisconsin,State Leg (Lower),State House District 15,12.0,,
+55,,,016,Wisconsin,State Leg (Lower),State House District 16,1.0,,
+55,,,017,Wisconsin,State Leg (Lower),State House District 17,1.0,,
+55,,,018,Wisconsin,State Leg (Lower),State House District 18,1.0,,
+55,,,019,Wisconsin,State Leg (Lower),State House District 19,2.0,,
+55,,,020,Wisconsin,State Leg (Lower),State House District 20,25.0,,
+55,,,021,Wisconsin,State Leg (Lower),State House District 21,98.0,,
+55,,,022,Wisconsin,State Leg (Lower),State House District 22,18.0,,
+55,,,023,Wisconsin,State Leg (Lower),State House District 23,33.0,,
+55,,,024,Wisconsin,State Leg (Lower),State House District 24,12.0,,
+55,,,025,Wisconsin,State Leg (Lower),State House District 25,40.0,,
+55,,,026,Wisconsin,State Leg (Lower),State House District 26,95.0,,
+55,,,027,Wisconsin,State Leg (Lower),State House District 27,8.0,,
+55,,,028,Wisconsin,State Leg (Lower),State House District 28,16.0,,
+55,,,029,Wisconsin,State Leg (Lower),State House District 29,30.0,,
+55,,,030,Wisconsin,State Leg (Lower),State House District 30,91.0,,
+55,,,031,Wisconsin,State Leg (Lower),State House District 31,17.0,,
+55,,,032,Wisconsin,State Leg (Lower),State House District 32,12.0,,
+55,,,033,Wisconsin,State Leg (Lower),State House District 33,8.0,,
+55,,,034,Wisconsin,State Leg (Lower),State House District 34,23.0,,
+55,,,035,Wisconsin,State Leg (Lower),State House District 35,14.0,,
+55,,,036,Wisconsin,State Leg (Lower),State House District 36,9.0,,
+55,,,037,Wisconsin,State Leg (Lower),State House District 37,18.0,,
+55,,,038,Wisconsin,State Leg (Lower),State House District 38,10.0,,
+55,,,039,Wisconsin,State Leg (Lower),State House District 39,10.0,,
+55,,,040,Wisconsin,State Leg (Lower),State House District 40,44.0,,
+55,,,041,Wisconsin,State Leg (Lower),State House District 41,80.0,,
+55,,,042,Wisconsin,State Leg (Lower),State House District 42,23.0,,
+55,,,043,Wisconsin,State Leg (Lower),State House District 43,47.0,,
+55,,,044,Wisconsin,State Leg (Lower),State House District 44,19.0,,
+55,,,045,Wisconsin,State Leg (Lower),State House District 45,25.0,,
+55,,,046,Wisconsin,State Leg (Lower),State House District 46,48.0,,
+55,,,047,Wisconsin,State Leg (Lower),State House District 47,3.0,,
+55,,,048,Wisconsin,State Leg (Lower),State House District 48,6.0,,
+55,,,049,Wisconsin,State Leg (Lower),State House District 49,92.0,,
+55,,,050,Wisconsin,State Leg (Lower),State House District 50,21.0,,
+55,,,051,Wisconsin,State Leg (Lower),State House District 51,35.0,,
+55,,,052,Wisconsin,State Leg (Lower),State House District 52,60.0,,
+55,,,053,Wisconsin,State Leg (Lower),State House District 53,97.0,,
+55,,,054,Wisconsin,State Leg (Lower),State House District 54,61.0,,
+55,,,055,Wisconsin,State Leg (Lower),State House District 55,25.0,,
+55,,,056,Wisconsin,State Leg (Lower),State House District 56,10.0,,
+55,,,057,Wisconsin,State Leg (Lower),State House District 57,9.0,,
+55,,,058,Wisconsin,State Leg (Lower),State House District 58,3.0,,
+55,,,059,Wisconsin,State Leg (Lower),State House District 59,2.0,,
+55,,,060,Wisconsin,State Leg (Lower),State House District 60,42.0,,
+55,,,061,Wisconsin,State Leg (Lower),State House District 61,87.0,,
+55,,,062,Wisconsin,State Leg (Lower),State House District 62,14.0,,
+55,,,063,Wisconsin,State Leg (Lower),State House District 63,25.0,,
+55,,,064,Wisconsin,State Leg (Lower),State House District 64,31.0,,
+55,,,065,Wisconsin,State Leg (Lower),State House District 65,34.0,,
+55,,,066,Wisconsin,State Leg (Lower),State House District 66,43.0,,
+55,,,067,Wisconsin,State Leg (Lower),State House District 67,21.0,,
+55,,,068,Wisconsin,State Leg (Lower),State House District 68,9.0,,
+55,,,069,Wisconsin,State Leg (Lower),State House District 69,7.0,,
+55,,,070,Wisconsin,State Leg (Lower),State House District 70,37.0,,
+55,,,071,Wisconsin,State Leg (Lower),State House District 71,55.0,,
+55,,,072,Wisconsin,State Leg (Lower),State House District 72,31.0,,
+55,,,073,Wisconsin,State Leg (Lower),State House District 73,14.0,,
+55,,,074,Wisconsin,State Leg (Lower),State House District 74,42.0,,
+55,,,075,Wisconsin,State Leg (Lower),State House District 75,14.0,,
+55,,,076,Wisconsin,State Leg (Lower),State House District 76,1.0,,
+55,,,077,Wisconsin,State Leg (Lower),State House District 77,1.0,,
+55,,,078,Wisconsin,State Leg (Lower),State House District 78,1.0,,
+55,,,079,Wisconsin,State Leg (Lower),State House District 79,1.0,,
+55,,,080,Wisconsin,State Leg (Lower),State House District 80,3.0,,
+55,,,081,Wisconsin,State Leg (Lower),State House District 81,5.0,,
+55,,,082,Wisconsin,State Leg (Lower),State House District 82,34.0,,
+55,,,083,Wisconsin,State Leg (Lower),State House District 83,11.0,,
+55,,,084,Wisconsin,State Leg (Lower),State House District 84,3.0,,
+55,,,085,Wisconsin,State Leg (Lower),State House District 85,97.0,,
+55,,,086,Wisconsin,State Leg (Lower),State House District 86,15.0,,
+55,,,087,Wisconsin,State Leg (Lower),State House District 87,17.0,,
+55,,,088,Wisconsin,State Leg (Lower),State House District 88,88.0,,
+55,,,089,Wisconsin,State Leg (Lower),State House District 89,100.0,,
+55,,,090,Wisconsin,State Leg (Lower),State House District 90,49.0,,
+55,,,091,Wisconsin,State Leg (Lower),State House District 91,69.0,,
+55,,,092,Wisconsin,State Leg (Lower),State House District 92,100.0,,
+55,,,093,Wisconsin,State Leg (Lower),State House District 93,52.0,,
+55,,,094,Wisconsin,State Leg (Lower),State House District 94,99.0,,
+55,,,095,Wisconsin,State Leg (Lower),State House District 95,44.0,,
+55,,,096,Wisconsin,State Leg (Lower),State House District 96,36.0,,
+55,,,097,Wisconsin,State Leg (Lower),State House District 97,4.0,,
+55,,,098,Wisconsin,State Leg (Lower),State House District 98,3.0,,
+55,,,099,Wisconsin,State Leg (Lower),State House District 99,4.0,,
+02,,,,Alaska,Ballot Initiative,Measure 2: Repeal Top-Four Ranked-Choice Voting Initiative,,,
+02,,,,Alaska,Ballot Initiative,Minimum Wage Increase and Paid Sick Leave Initiative,,,
+04,,,,Arizona,Ballot Initiative,Proposition 135: Emergency Declarations Amendment,,,
+04,,,,Arizona,Ballot Initiative,Proposition 137: End Term Limits and Retention Elections for Supreme Court Justices and Superior Court Judges Amendment,,,
+04,,,,Arizona,Ballot Initiative,Proposition 314: Immigration and Border Law Enforcement Measure,,,
+04,,,,Arizona,Ballot Initiative,Proposition 136: Legal Challenges to Constitutionality of Initiatives Amendment,,,
+04,,,,Arizona,Ballot Initiative,Proposition 133: Require Partisan Primaries and Prohibit Primaries Where Candidates Compete Regardless of Party Affiliation Amendment,,,
+04,,,,Arizona,Ballot Initiative,Proposition 134: Signature Distribution Requirement for Initiatives Amendment,,,
+04,,,,Arizona,Ballot Initiative,Proposition 138: Wages for Tipped Workers Amendment,,,
+04,,,,Arizona,Ballot Initiative,Proposition 315: Legislative Ratification of State Agency Rules that Increase Regulatory Costs Measure,,,
+04,,,,Arizona,Ballot Initiative,Proposition 139: Right to Abortion Initiative,,,
+04,,,,Arizona,Ballot Initiative,Proposition 140: Single Primary for All Candidates and Possible RCV General Election Initiative,,,
+06,,,,California,Ballot Initiative,Proposition 32: $18 Minimum Wage Initiative,,,
+06,,,,California,Ballot Initiative,Proposition 3: Right to Marry and Repeal Proposition 8 Amendment,,,
+06,,,,California,Ballot Initiative,Proposition 5: Lower Supermajority Requirement to 55% for Local Bond Measures to Fund Housing and Public Infrastructure Amendment,,,
+08,,,,Colorado,Ballot Initiative,Independent Judicial Discipline Adjudicative Board Amendment,,,
+08,,,,Colorado,Ballot Initiative,Remove Constitutional Same-Sex Marriage Ban Amendment,,,
+08,,,,Colorado,Ballot Initiative,Initiative 89: Right to Abortion and Health Insurance Coverage Initiative,,,
+08,,,,Colorado,Ballot Initiative,Excise Tax on Firearms Dealers Manufacturers and Ammunition Vendors Measure,,,
+08,,,,Colorado,Ballot Initiative ,Ballot Initiative 310: Top-Four Ranked-Choice Voting Initiative,,,
+09,,,,Connecticut,Ballot Initiative,No-Excuse Absentee Voting Amendment,,,
+11,,,,District of Columbia,Ballot Initiative,Initiative 83: Ranked-Choice Voting Initiative,,,
+12,,,,Florida,Ballot Initiative,Amendment 1: Partisan School Board Elections Amendment,,,
+12,,,,Florida,Ballot Initiative,Amendment 3: Marijuana Legalization Initiative,,,
+12,,,,Florida,Ballot Initiative,Amendment 4: Right to Abortion Initiative,,,
+12,,,,Florida,Ballot Initiative,Amendment 6: Repeal of Public Financing for Statewide Campaigns Amendment,,,
+13,,,,Georgia,Ballot Initiative,Creation of Tax Court Amendment,,,
+15,,,,Hawaii,Ballot Initiative,Judicial Appointments and Confirmations Amendment,,,
+15,,,,Hawaii,Ballot Initiative,Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment,,,
+16,,,,Idaho,Ballot Initiative,Top-Four Ranked-Choice Voting Initiative,,,
+17,,,,Illinois,Ballot Initiative,Assisted Reproductive Healthcare Advisory Question,,,
+17,,,,Illinois,Ballot Initiative,Penalties for Candidate Interference with Election Worker's Duties Advisory Question,,,
+18,,,,Indiana,Ballot Initiative,Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment,,,
+19,,,,Iowa,Ballot Initiative,Require Citizenship to Vote in State Elections and Allow 17-year-olds to Vote in Primaries Amendment,,,
+19,,,,Iowa,Ballot Initiative,Gubernatorial Succession Amendment,,,
+23,,,,Maine,Ballot Initiative,Question 1: Limit Contributions to Super PACs Initiative,,,
+24,,,,Maryland,Ballot Initiative,Right to Reproductive Freedom Amendment,,,
+25,,,,Massachusetts,Ballot Initiative,Question 1: Authorization of State Auditor to Audit General Court Initiative,,,
+25,,,,Massachusetts,Ballot Initiative,Question 5: Minimum Wage for Tipped Employees Initiative,,,
+25,,,,Massachusetts,Ballot Initiative,Question 4: Regulated Access to Psychedelic Substances Initiative,,,
+29,,,,Missouri,Ballot Initiative,Amendment 7: Require Citizenship to Vote and Prohibit Ranked-Choice Voting Amendment,,,
+29,,,,Missouri,Ballot Initiative,Proposition A: Minimum Wage and Earned Paid Sick Time Initiative,,,
+29,,,,Missouri,Ballot Initiative,Amendment 3: Right to Reproductive Freedom Initiative,,,
+00,,,,Montana,Ballot Initiative,CI-126: Top-Four Primary Initiative,,,
+00,,,,Montana,Ballot Initiative,CI-127: Majority Vote Required to Win Elections Initiative,,,
+30,,,,Montana,Ballot Initiative,CI-128: Right to Abortion Initiative,,,
+31,,,,Nebraska,Ballot Initiative,Nebraska Paid Sick Leave Initiative,,,
+31,,,,Nebraska,Ballot Initiative,Right to Abortion Initiative,,,
+32,,,,Nevada,Ballot Initiative,Question 1: Remove Constitutional Status of Board of Regents Amendment,,,
+32,,,,Nevada,Ballot Initiative,Question 2: Revising Language Related to Public Entities for Individuals with Mental Illness: Blindness: or Deafness Amendment,,,
+32,,,,Nevada,Ballot Initiative,Question 3: Top-Five Ranked-Choice Voting Initiative,,,
+32,,,,Nevada,Ballot Initiative,Question 6: Right to Abortion Initiative,,,
+32,,,,Nevada,Ballot Initiative,Voter Identification Initiative,,,
+33,,,,New Hampshire,Ballot Initiative,Increase Mandatory Judicial Retirement Age Amendment,,,
+35,,,,New Mexico,Ballot Initiative,Judicial Nominating Commission Amendment,,,
+36,,,,New York,Ballot Initiative,Proposition 1: Equal Protection of Law Amendment,,,
+38,,,,North Dakota,Ballot Initiative,Constitutional Measure 1: Language Describing State Institutions Amendment,,,
+38,,,,North Dakota,Ballot Initiative,Constitutional Measure 2: Single-Subject Requirement for Initiatives and Require Constitutional Initiatives to be Passed Twice Amendment,,,
+38,,,,North Dakota,Ballot Initiative,Initiated Measure 5: Marijuana Legalization Initiative,,,
+39,,,,Ohio,Ballot Initiative,Issue 1: Establish the Citizens Redistricting Commission Initiative,,,
+40,,,,Oklahoma,Ballot Initiative,Minimum Wage Increase Initiative,,,
+41,,,,Oregon,Ballot Initiative,Measure 115: Impeachment of Elected State Executives Amendment,,,
+41,,,,Oregon,Ballot Initiative,Measure 117: Ranked-Choice Voting for Federal and State Elections Measure,,,
+44,,,,Rhode Island,Ballot Initiative,Question 1: Constitutional Convention Question,,,
+46,,,,South Dakota,Ballot Initiative,Constitutional Amendment E: Gender-Neutral Constitutional Language Amendment,,,
+46,,,,South Dakota,Ballot Initiative,Constitutional Amendment G: Right to Abortion Initiative,,,
+46,,,,South Dakota,Ballot Initiative,Constitutional Amendment H: Top-Two Primary Elections Initiative,,,
+46,,,,South Dakota,Ballot Initiative,Initiated Measure 29: Marijuana Legalization Initiative,,,
+49,,,,Utah,Ballot Initiative,Elections of County Sheriffs Amendment,,,
+00,,,,Utah,Ballot Initiative,Legislative Alteration of Ballot Initiatives and Foreign Contributions Ban Amendment,,,

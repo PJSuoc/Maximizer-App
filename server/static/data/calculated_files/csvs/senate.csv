@@ -1,66 +1,35 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
-04,nan,nan,nan,Arizona,Senate,,41.0
-06,nan,nan,nan,California,Senate,,1.0
-09,nan,nan,nan,Connecticut,Senate,,7.0
-10,nan,nan,nan,Delaware,Senate,,23.0
-12,nan,nan,nan,Florida,Senate,,23.0
-15,nan,nan,nan,Hawaii,Senate,,8.0
-18,nan,nan,nan,Indiana,Senate,,14.0
-23,nan,nan,nan,Maine,Senate,,18.0
-24,nan,nan,nan,Maryland,Senate,,4.0
-25,nan,nan,nan,Massachusetts,Senate,,2.0
-26,nan,nan,nan,Michigan,Senate,,22.0
-27,nan,nan,nan,Minnesota,Senate,,3.0
-28,nan,nan,nan,Mississippi,Senate,,17.0
-29,nan,nan,nan,Missouri,Senate,,12.0
-30,nan,nan,nan,Montana,Senate,,99.0
-31,nan,nan,nan,Nebraska,Senate,,29.0
-31,nan,nan,nan,Nebraska,Senate,,21.0
-32,nan,nan,nan,Nevada,Senate,,100.0
-34,nan,nan,nan,New Jersey,Senate,,7.0
-35,nan,nan,nan,New Mexico,Senate,,24.0
-36,nan,nan,nan,New York,Senate,,1.0
-38,nan,nan,nan,North Dakota,Senate,,18.0
-39,nan,nan,nan,Ohio,Senate,,14.0
-42,nan,nan,nan,Pennsylvania,Senate,,7.0
-44,nan,nan,nan,Rhode Island,Senate,,23.0
-47,nan,nan,nan,Tennessee,Senate,,6.0
-48,nan,nan,nan,Texas,Senate,,15.0
-49,nan,nan,nan,Utah,Senate,,21.0
-50,nan,nan,nan,Vermont,Senate,,13.0
-51,nan,nan,nan,Virginia,Senate,,6.0
-53,nan,nan,nan,Washington,Senate,,5.0
-54,nan,nan,nan,West Virginia,Senate,,7.0
-55,nan,nan,nan,Wisconsin,Senate,,16.0
-56,nan,nan,nan,Wyoming,Senate,,19.0
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
-00,nan,nan,nan,,,,
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
+04,nan,nan,nan,Arizona,Senate,,41.0,Ruben Gallego,Kari Lake
+06,nan,nan,nan,California,Senate,,1.0,Adam Schiff,Steve Garvey
+09,nan,nan,nan,Connecticut,Senate,,5.0,Christopher S. Murphy (incumbent),Matthew Corey
+10,nan,nan,nan,Delaware,Senate,,16.0,Lisa Blunt Rochester,Eric Hansen
+12,nan,nan,nan,Florida,Senate,,42.0,Debbie Mucarsel-Powell,Rick Scott (incumbent)
+15,nan,nan,nan,Hawaii,Senate,,5.0,Mazie K. Hirono (incumbent),Bob McDermott
+18,nan,nan,nan,Indiana,Senate,,10.0,Valerie McCray,Jim Banks
+23,nan,nan,nan,Maine,Senate,,12.0,"Angus King (independent, incumbent)",Demi Kouzounas
+24,nan,nan,nan,Maryland,Senate,,3.0,Angela Alsobrooks,Larry Hogan
+25,nan,nan,nan,Massachusetts,Senate,,1.0,Elizabeth Warren (incumbent),John Deaton
+26,nan,nan,nan,Michigan,Senate,,21.0,Elissa Slotkin,Mike Rogers
+27,nan,nan,nan,Minnesota,Senate,,2.0,Amy Klobuchar (incumbent),Royce White
+28,nan,nan,nan,Mississippi,Senate,,12.0,Ty Pinkins,Roger Wicker (incumbent)
+29,nan,nan,nan,Missouri,Senate,,9.0,Lucas Kunce,Josh Hawley (incumbent)
+30,nan,nan,nan,Montana,Senate,,76.0,Jon Tester (incumbent),Tim Sheehy
+31,nan,nan,nan,Nebraska,Senate,,21.0,Dan Osborn (independent),Deb Fischer (incumbent)
+31,nan,nan,nan,Nebraska,Senate,,14.0,Preston Love Jr.,Pete Ricketts (incumbent)
+32,nan,nan,nan,Nevada,Senate,,100.0,Jacky Rosen (incumbent),Sam Brown
+34,nan,nan,nan,New Jersey,Senate,,5.0,Andy Kim,Curtis Bashaw
+35,nan,nan,nan,New Mexico,Senate,,17.0,Martin Heinrich (incumbent),Nella Domenici
+36,nan,nan,nan,New York,Senate,,1.0,Kirsten Gillibrand (incumbent),Mike Sapraicone
+38,nan,nan,nan,North Dakota,Senate,,12.0,Katrina Christiansen,Kevin Cramer (incumbent)
+39,nan,nan,nan,Ohio,Senate,,11.0,Sherrod Brown (incumbent),Bernie Moreno
+42,nan,nan,nan,Pennsylvania,Senate,,5.0,Bob Casey Jr. (incumbent),David McCormick
+44,nan,nan,nan,Rhode Island,Senate,,16.0,Sheldon Whitehouse (incumbent),This party's nominee will be determined at an upcoming primary.
+47,nan,nan,nan,Tennessee,Senate,,4.0,Gloria Johnson,Marsha Blackburn (incumbent)
+48,nan,nan,nan,Texas,Senate,,17.0,Colin Allred,Ted Cruz (incumbent)
+49,nan,nan,nan,Utah,Senate,,15.0,Caroline Gleich,John Curtis
+50,nan,nan,nan,Vermont,Senate,,9.0,Bernie Sanders (incumbent),Gerald Malloy
+51,nan,nan,nan,Virginia,Senate,,4.0,Tim Kaine (incumbent),Hung Cao
+53,nan,nan,nan,Washington,Senate,,3.0,Maria Cantwell (incumbent),Raul Garcia
+54,nan,nan,nan,West Virginia,Senate,,5.0,Glenn Elliott,Jim Justice
+55,nan,nan,nan,Wisconsin,Senate,,12.0,Tammy Baldwin (incumbent),Eric Hovde
+56,nan,nan,nan,Wyoming,Senate,,12.0,Scott Morrow,This party's nominee will be determined at an upcoming primary.

@@ -1,247 +1,247 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
-02,nan,00A,nan,Alaska,State Leg (Upper),State Senate District A,0.0
-02,nan,00B,nan,Alaska,State Leg (Upper),State Senate District B,14.0
-02,nan,00C,nan,Alaska,State Leg (Upper),State Senate District C,0.0
-02,nan,00D,nan,Alaska,State Leg (Upper),State Senate District D,3.0
-02,nan,00E,nan,Alaska,State Leg (Upper),State Senate District E,0.0
-02,nan,00F,nan,Alaska,State Leg (Upper),State Senate District F,78.0
-02,nan,00G,nan,Alaska,State Leg (Upper),State Senate District G,0.0
-02,nan,00H,nan,Alaska,State Leg (Upper),State Senate District H,100.0
-02,nan,00I,nan,Alaska,State Leg (Upper),State Senate District I,0.0
-02,nan,00J,nan,Alaska,State Leg (Upper),State Senate District J,31.0
-02,nan,00K,nan,Alaska,State Leg (Upper),State Senate District K,0.0
-02,nan,00L,nan,Alaska,State Leg (Upper),State Senate District L,8.0
-02,nan,00M,nan,Alaska,State Leg (Upper),State Senate District M,0.0
-02,nan,00N,nan,Alaska,State Leg (Upper),State Senate District N,2.0
-02,nan,00O,nan,Alaska,State Leg (Upper),State Senate District O,0.0
-02,nan,00P,nan,Alaska,State Leg (Upper),State Senate District P,43.0
-02,nan,00Q,nan,Alaska,State Leg (Upper),State Senate District Q,0.0
-02,nan,00R,nan,Alaska,State Leg (Upper),State Senate District R,98.0
-02,nan,00S,nan,Alaska,State Leg (Upper),State Senate District S,0.0
-02,nan,00T,nan,Alaska,State Leg (Upper),State Senate District T,33.0
-04,nan,001,nan,Arizona,State Leg (Upper),State Senate District 1,9.0
-04,nan,002,nan,Arizona,State Leg (Upper),State Senate District 2,86.0
-04,nan,003,nan,Arizona,State Leg (Upper),State Senate District 3,11.0
-04,nan,004,nan,Arizona,State Leg (Upper),State Senate District 4,90.0
-04,nan,005,nan,Arizona,State Leg (Upper),State Senate District 5,5.0
-04,nan,006,nan,Arizona,State Leg (Upper),State Senate District 6,7.0
-04,nan,007,nan,Arizona,State Leg (Upper),State Senate District 7,13.0
-04,nan,008,nan,Arizona,State Leg (Upper),State Senate District 8,12.0
-04,nan,009,nan,Arizona,State Leg (Upper),State Senate District 9,100.0
-04,nan,010,nan,Arizona,State Leg (Upper),State Senate District 10,14.0
-04,nan,011,nan,Arizona,State Leg (Upper),State Senate District 11,2.0
-04,nan,012,nan,Arizona,State Leg (Upper),State Senate District 12,38.0
-04,nan,013,nan,Arizona,State Leg (Upper),State Senate District 13,99.0
-04,nan,014,nan,Arizona,State Leg (Upper),State Senate District 14,23.0
-04,nan,015,nan,Arizona,State Leg (Upper),State Senate District 15,9.0
-04,nan,016,nan,Arizona,State Leg (Upper),State Senate District 16,82.0
-04,nan,017,nan,Arizona,State Leg (Upper),State Senate District 17,61.0
-04,nan,018,nan,Arizona,State Leg (Upper),State Senate District 18,22.0
-04,nan,019,nan,Arizona,State Leg (Upper),State Senate District 19,13.0
-04,nan,020,nan,Arizona,State Leg (Upper),State Senate District 20,2.0
-04,nan,021,nan,Arizona,State Leg (Upper),State Senate District 21,9.0
-04,nan,022,nan,Arizona,State Leg (Upper),State Senate District 22,5.0
-04,nan,023,nan,Arizona,State Leg (Upper),State Senate District 23,31.0
-04,nan,024,nan,Arizona,State Leg (Upper),State Senate District 24,7.0
-04,nan,025,nan,Arizona,State Leg (Upper),State Senate District 25,11.0
-04,nan,026,nan,Arizona,State Leg (Upper),State Senate District 26,5.0
-04,nan,027,nan,Arizona,State Leg (Upper),State Senate District 27,54.0
-04,nan,028,nan,Arizona,State Leg (Upper),State Senate District 28,11.0
-04,nan,029,nan,Arizona,State Leg (Upper),State Senate District 29,35.0
-04,nan,030,nan,Arizona,State Leg (Upper),State Senate District 30,2.0
-20,nan,001,nan,Kansas,State Leg (Upper),State Senate District 1,3.0
-20,nan,002,nan,Kansas,State Leg (Upper),State Senate District 2,2.0
-20,nan,003,nan,Kansas,State Leg (Upper),State Senate District 3,43.0
-20,nan,004,nan,Kansas,State Leg (Upper),State Senate District 4,1.0
-20,nan,005,nan,Kansas,State Leg (Upper),State Senate District 5,75.0
-20,nan,006,nan,Kansas,State Leg (Upper),State Senate District 6,9.0
-20,nan,007,nan,Kansas,State Leg (Upper),State Senate District 7,12.0
-20,nan,008,nan,Kansas,State Leg (Upper),State Senate District 8,46.0
-20,nan,009,nan,Kansas,State Leg (Upper),State Senate District 9,43.0
-20,nan,010,nan,Kansas,State Leg (Upper),State Senate District 10,94.0
-20,nan,011,nan,Kansas,State Leg (Upper),State Senate District 11,74.0
-20,nan,012,nan,Kansas,State Leg (Upper),State Senate District 12,2.0
-20,nan,013,nan,Kansas,State Leg (Upper),State Senate District 13,7.0
-20,nan,014,nan,Kansas,State Leg (Upper),State Senate District 14,3.0
-20,nan,015,nan,Kansas,State Leg (Upper),State Senate District 15,3.0
-20,nan,016,nan,Kansas,State Leg (Upper),State Senate District 16,13.0
-20,nan,017,nan,Kansas,State Leg (Upper),State Senate District 17,24.0
-20,nan,018,nan,Kansas,State Leg (Upper),State Senate District 18,9.0
-20,nan,019,nan,Kansas,State Leg (Upper),State Senate District 19,9.0
-20,nan,020,nan,Kansas,State Leg (Upper),State Senate District 20,67.0
-20,nan,021,nan,Kansas,State Leg (Upper),State Senate District 21,35.0
-20,nan,022,nan,Kansas,State Leg (Upper),State Senate District 22,100.0
-20,nan,023,nan,Kansas,State Leg (Upper),State Senate District 23,69.0
-20,nan,024,nan,Kansas,State Leg (Upper),State Senate District 24,5.0
-20,nan,025,nan,Kansas,State Leg (Upper),State Senate District 25,43.0
-20,nan,026,nan,Kansas,State Leg (Upper),State Senate District 26,4.0
-20,nan,027,nan,Kansas,State Leg (Upper),State Senate District 27,15.0
-20,nan,028,nan,Kansas,State Leg (Upper),State Senate District 28,36.0
-20,nan,029,nan,Kansas,State Leg (Upper),State Senate District 29,3.0
-20,nan,030,nan,Kansas,State Leg (Upper),State Senate District 30,30.0
-20,nan,031,nan,Kansas,State Leg (Upper),State Senate District 31,12.0
-20,nan,032,nan,Kansas,State Leg (Upper),State Senate District 32,4.0
-20,nan,033,nan,Kansas,State Leg (Upper),State Senate District 33,1.0
-20,nan,034,nan,Kansas,State Leg (Upper),State Senate District 34,4.0
-20,nan,035,nan,Kansas,State Leg (Upper),State Senate District 35,61.0
-20,nan,036,nan,Kansas,State Leg (Upper),State Senate District 36,1.0
-20,nan,037,nan,Kansas,State Leg (Upper),State Senate District 37,24.0
-20,nan,038,nan,Kansas,State Leg (Upper),State Senate District 38,3.0
-20,nan,039,nan,Kansas,State Leg (Upper),State Senate District 39,2.0
-20,nan,040,nan,Kansas,State Leg (Upper),State Senate District 40,1.0
-31,nan,001,nan,Nebraska,State Leg (Upper),State Senate District 1,3.0
-31,nan,002,nan,Nebraska,State Leg (Upper),State Senate District 2,0.0
-31,nan,003,nan,Nebraska,State Leg (Upper),State Senate District 3,31.0
-31,nan,004,nan,Nebraska,State Leg (Upper),State Senate District 4,0.0
-31,nan,005,nan,Nebraska,State Leg (Upper),State Senate District 5,37.0
-31,nan,006,nan,Nebraska,State Leg (Upper),State Senate District 6,0.0
-31,nan,007,nan,Nebraska,State Leg (Upper),State Senate District 7,6.0
-31,nan,008,nan,Nebraska,State Leg (Upper),State Senate District 8,0.0
-31,nan,009,nan,Nebraska,State Leg (Upper),State Senate District 9,6.0
-31,nan,010,nan,Nebraska,State Leg (Upper),State Senate District 10,0.0
-31,nan,011,nan,Nebraska,State Leg (Upper),State Senate District 11,1.0
-31,nan,012,nan,Nebraska,State Leg (Upper),State Senate District 12,0.0
-31,nan,013,nan,Nebraska,State Leg (Upper),State Senate District 13,15.0
-31,nan,014,nan,Nebraska,State Leg (Upper),State Senate District 14,0.0
-31,nan,015,nan,Nebraska,State Leg (Upper),State Senate District 15,5.0
-31,nan,016,nan,Nebraska,State Leg (Upper),State Senate District 16,0.0
-31,nan,017,nan,Nebraska,State Leg (Upper),State Senate District 17,9.0
-31,nan,018,nan,Nebraska,State Leg (Upper),State Senate District 18,0.0
-31,nan,019,nan,Nebraska,State Leg (Upper),State Senate District 19,1.0
-31,nan,020,nan,Nebraska,State Leg (Upper),State Senate District 20,0.0
-31,nan,021,nan,Nebraska,State Leg (Upper),State Senate District 21,42.0
-31,nan,022,nan,Nebraska,State Leg (Upper),State Senate District 22,0.0
-31,nan,023,nan,Nebraska,State Leg (Upper),State Senate District 23,3.0
-31,nan,024,nan,Nebraska,State Leg (Upper),State Senate District 24,0.0
-31,nan,025,nan,Nebraska,State Leg (Upper),State Senate District 25,46.0
-31,nan,026,nan,Nebraska,State Leg (Upper),State Senate District 26,0.0
-31,nan,027,nan,Nebraska,State Leg (Upper),State Senate District 27,100.0
-31,nan,028,nan,Nebraska,State Leg (Upper),State Senate District 28,0.0
-31,nan,029,nan,Nebraska,State Leg (Upper),State Senate District 29,28.0
-31,nan,030,nan,Nebraska,State Leg (Upper),State Senate District 30,0.0
-31,nan,031,nan,Nebraska,State Leg (Upper),State Senate District 31,23.0
-31,nan,032,nan,Nebraska,State Leg (Upper),State Senate District 32,0.0
-31,nan,033,nan,Nebraska,State Leg (Upper),State Senate District 33,2.0
-31,nan,034,nan,Nebraska,State Leg (Upper),State Senate District 34,0.0
-31,nan,035,nan,Nebraska,State Leg (Upper),State Senate District 35,13.0
-31,nan,036,nan,Nebraska,State Leg (Upper),State Senate District 36,0.0
-31,nan,037,nan,Nebraska,State Leg (Upper),State Senate District 37,4.0
-31,nan,038,nan,Nebraska,State Leg (Upper),State Senate District 38,0.0
-31,nan,039,nan,Nebraska,State Leg (Upper),State Senate District 39,5.0
-31,nan,040,nan,Nebraska,State Leg (Upper),State Senate District 40,0.0
-31,nan,041,nan,Nebraska,State Leg (Upper),State Senate District 41,1.0
-31,nan,042,nan,Nebraska,State Leg (Upper),State Senate District 42,0.0
-31,nan,043,nan,Nebraska,State Leg (Upper),State Senate District 43,1.0
-31,nan,044,nan,Nebraska,State Leg (Upper),State Senate District 44,0.0
-31,nan,045,nan,Nebraska,State Leg (Upper),State Senate District 45,31.0
-31,nan,046,nan,Nebraska,State Leg (Upper),State Senate District 46,0.0
-31,nan,047,nan,Nebraska,State Leg (Upper),State Senate District 47,1.0
-31,nan,048,nan,Nebraska,State Leg (Upper),State Senate District 48,0.0
-31,nan,049,nan,Nebraska,State Leg (Upper),State Senate District 49,19.0
-33,nan,001,nan,New Hampshire,State Leg (Upper),State Senate District 1,99.0
-33,nan,002,nan,New Hampshire,State Leg (Upper),State Senate District 2,98.0
-33,nan,003,nan,New Hampshire,State Leg (Upper),State Senate District 3,100.0
-33,nan,004,nan,New Hampshire,State Leg (Upper),State Senate District 4,16.0
-33,nan,005,nan,New Hampshire,State Leg (Upper),State Senate District 5,3.0
-33,nan,006,nan,New Hampshire,State Leg (Upper),State Senate District 6,75.0
-33,nan,007,nan,New Hampshire,State Leg (Upper),State Senate District 7,99.0
-33,nan,008,nan,New Hampshire,State Leg (Upper),State Senate District 8,88.0
-33,nan,009,nan,New Hampshire,State Leg (Upper),State Senate District 9,98.0
-33,nan,010,nan,New Hampshire,State Leg (Upper),State Senate District 10,7.0
-33,nan,011,nan,New Hampshire,State Leg (Upper),State Senate District 11,83.0
-33,nan,012,nan,New Hampshire,State Leg (Upper),State Senate District 12,88.0
-33,nan,013,nan,New Hampshire,State Leg (Upper),State Senate District 13,18.0
-33,nan,014,nan,New Hampshire,State Leg (Upper),State Senate District 14,74.0
-33,nan,015,nan,New Hampshire,State Leg (Upper),State Senate District 15,8.0
-33,nan,016,nan,New Hampshire,State Leg (Upper),State Senate District 16,92.0
-33,nan,017,nan,New Hampshire,State Leg (Upper),State Senate District 17,78.0
-33,nan,018,nan,New Hampshire,State Leg (Upper),State Senate District 18,91.0
-33,nan,019,nan,New Hampshire,State Leg (Upper),State Senate District 19,68.0
-33,nan,020,nan,New Hampshire,State Leg (Upper),State Senate District 20,29.0
-33,nan,021,nan,New Hampshire,State Leg (Upper),State Senate District 21,4.0
-33,nan,022,nan,New Hampshire,State Leg (Upper),State Senate District 22,47.0
-33,nan,023,nan,New Hampshire,State Leg (Upper),State Senate District 23,57.0
-33,nan,024,nan,New Hampshire,State Leg (Upper),State Senate District 24,29.0
-42,nan,001,nan,Pennsylvania,State Leg (Upper),State Senate District 1,1.0
-42,nan,002,nan,Pennsylvania,State Leg (Upper),State Senate District 2,0.0
-42,nan,003,nan,Pennsylvania,State Leg (Upper),State Senate District 3,0.0
-42,nan,004,nan,Pennsylvania,State Leg (Upper),State Senate District 4,0.0
-42,nan,005,nan,Pennsylvania,State Leg (Upper),State Senate District 5,33.0
-42,nan,006,nan,Pennsylvania,State Leg (Upper),State Senate District 6,0.0
-42,nan,007,nan,Pennsylvania,State Leg (Upper),State Senate District 7,1.0
-42,nan,008,nan,Pennsylvania,State Leg (Upper),State Senate District 8,0.0
-42,nan,009,nan,Pennsylvania,State Leg (Upper),State Senate District 9,29.0
-42,nan,010,nan,Pennsylvania,State Leg (Upper),State Senate District 10,0.0
-42,nan,011,nan,Pennsylvania,State Leg (Upper),State Senate District 11,46.0
-42,nan,012,nan,Pennsylvania,State Leg (Upper),State Senate District 12,0.0
-42,nan,013,nan,Pennsylvania,State Leg (Upper),State Senate District 13,59.0
-42,nan,014,nan,Pennsylvania,State Leg (Upper),State Senate District 14,0.0
-42,nan,015,nan,Pennsylvania,State Leg (Upper),State Senate District 15,36.0
-42,nan,016,nan,Pennsylvania,State Leg (Upper),State Senate District 16,0.0
-42,nan,017,nan,Pennsylvania,State Leg (Upper),State Senate District 17,4.0
-42,nan,018,nan,Pennsylvania,State Leg (Upper),State Senate District 18,0.0
-42,nan,019,nan,Pennsylvania,State Leg (Upper),State Senate District 19,26.0
-42,nan,020,nan,Pennsylvania,State Leg (Upper),State Senate District 20,0.0
-42,nan,021,nan,Pennsylvania,State Leg (Upper),State Senate District 21,6.0
-42,nan,022,nan,Pennsylvania,State Leg (Upper),State Senate District 22,0.0
-42,nan,023,nan,Pennsylvania,State Leg (Upper),State Senate District 23,4.0
-42,nan,024,nan,Pennsylvania,State Leg (Upper),State Senate District 24,0.0
-42,nan,025,nan,Pennsylvania,State Leg (Upper),State Senate District 25,16.0
-42,nan,026,nan,Pennsylvania,State Leg (Upper),State Senate District 26,0.0
-42,nan,027,nan,Pennsylvania,State Leg (Upper),State Senate District 27,8.0
-42,nan,028,nan,Pennsylvania,State Leg (Upper),State Senate District 28,0.0
-42,nan,029,nan,Pennsylvania,State Leg (Upper),State Senate District 29,10.0
-42,nan,030,nan,Pennsylvania,State Leg (Upper),State Senate District 30,0.0
-42,nan,031,nan,Pennsylvania,State Leg (Upper),State Senate District 31,45.0
-42,nan,032,nan,Pennsylvania,State Leg (Upper),State Senate District 32,0.0
-42,nan,033,nan,Pennsylvania,State Leg (Upper),State Senate District 33,5.0
-42,nan,034,nan,Pennsylvania,State Leg (Upper),State Senate District 34,0.0
-42,nan,035,nan,Pennsylvania,State Leg (Upper),State Senate District 35,14.0
-42,nan,036,nan,Pennsylvania,State Leg (Upper),State Senate District 36,0.0
-42,nan,037,nan,Pennsylvania,State Leg (Upper),State Senate District 37,100.0
-42,nan,038,nan,Pennsylvania,State Leg (Upper),State Senate District 38,0.0
-42,nan,039,nan,Pennsylvania,State Leg (Upper),State Senate District 39,17.0
-42,nan,040,nan,Pennsylvania,State Leg (Upper),State Senate District 40,0.0
-42,nan,041,nan,Pennsylvania,State Leg (Upper),State Senate District 41,9.0
-42,nan,042,nan,Pennsylvania,State Leg (Upper),State Senate District 42,0.0
-42,nan,043,nan,Pennsylvania,State Leg (Upper),State Senate District 43,1.0
-42,nan,044,nan,Pennsylvania,State Leg (Upper),State Senate District 44,0.0
-42,nan,045,nan,Pennsylvania,State Leg (Upper),State Senate District 45,32.0
-42,nan,046,nan,Pennsylvania,State Leg (Upper),State Senate District 46,0.0
-42,nan,047,nan,Pennsylvania,State Leg (Upper),State Senate District 47,42.0
-42,nan,048,nan,Pennsylvania,State Leg (Upper),State Senate District 48,0.0
-42,nan,049,nan,Pennsylvania,State Leg (Upper),State Senate District 49,69.0
-42,nan,050,nan,Pennsylvania,State Leg (Upper),State Senate District 50,0.0
-55,nan,001,nan,Wisconsin,State Leg (Upper),State Senate District 1,0.0
-55,nan,002,nan,Wisconsin,State Leg (Upper),State Senate District 2,13.0
-55,nan,003,nan,Wisconsin,State Leg (Upper),State Senate District 3,0.0
-55,nan,004,nan,Wisconsin,State Leg (Upper),State Senate District 4,1.0
-55,nan,005,nan,Wisconsin,State Leg (Upper),State Senate District 5,0.0
-55,nan,006,nan,Wisconsin,State Leg (Upper),State Senate District 6,1.0
-55,nan,007,nan,Wisconsin,State Leg (Upper),State Senate District 7,0.0
-55,nan,008,nan,Wisconsin,State Leg (Upper),State Senate District 8,54.0
-55,nan,009,nan,Wisconsin,State Leg (Upper),State Senate District 9,0.0
-55,nan,010,nan,Wisconsin,State Leg (Upper),State Senate District 10,39.0
-55,nan,011,nan,Wisconsin,State Leg (Upper),State Senate District 11,0.0
-55,nan,012,nan,Wisconsin,State Leg (Upper),State Senate District 12,14.0
-55,nan,013,nan,Wisconsin,State Leg (Upper),State Senate District 13,0.0
-55,nan,014,nan,Wisconsin,State Leg (Upper),State Senate District 14,62.0
-55,nan,015,nan,Wisconsin,State Leg (Upper),State Senate District 15,0.0
-55,nan,016,nan,Wisconsin,State Leg (Upper),State Senate District 16,9.0
-55,nan,017,nan,Wisconsin,State Leg (Upper),State Senate District 17,0.0
-55,nan,018,nan,Wisconsin,State Leg (Upper),State Senate District 18,76.0
-55,nan,019,nan,Wisconsin,State Leg (Upper),State Senate District 19,0.0
-55,nan,020,nan,Wisconsin,State Leg (Upper),State Senate District 20,5.0
-55,nan,021,nan,Wisconsin,State Leg (Upper),State Senate District 21,0.0
-55,nan,022,nan,Wisconsin,State Leg (Upper),State Senate District 22,37.0
-55,nan,023,nan,Wisconsin,State Leg (Upper),State Senate District 23,0.0
-55,nan,024,nan,Wisconsin,State Leg (Upper),State Senate District 24,81.0
-55,nan,025,nan,Wisconsin,State Leg (Upper),State Senate District 25,0.0
-55,nan,026,nan,Wisconsin,State Leg (Upper),State Senate District 26,1.0
-55,nan,027,nan,Wisconsin,State Leg (Upper),State Senate District 27,0.0
-55,nan,028,nan,Wisconsin,State Leg (Upper),State Senate District 28,9.0
-55,nan,029,nan,Wisconsin,State Leg (Upper),State Senate District 29,0.0
-55,nan,030,nan,Wisconsin,State Leg (Upper),State Senate District 30,100.0
-55,nan,031,nan,Wisconsin,State Leg (Upper),State Senate District 31,0.0
-55,nan,032,nan,Wisconsin,State Leg (Upper),State Senate District 32,62.0
-55,nan,033,nan,Wisconsin,State Leg (Upper),State Senate District 33,0.0
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
+02,nan,00A,nan,Alaska,State Leg (Upper),State Senate District A,0.0,,
+02,nan,00B,nan,Alaska,State Leg (Upper),State Senate District B,14.0,,
+02,nan,00C,nan,Alaska,State Leg (Upper),State Senate District C,0.0,,
+02,nan,00D,nan,Alaska,State Leg (Upper),State Senate District D,3.0,,
+02,nan,00E,nan,Alaska,State Leg (Upper),State Senate District E,0.0,,
+02,nan,00F,nan,Alaska,State Leg (Upper),State Senate District F,78.0,Janice Park,James Kaufman (incumbent)
+02,nan,00G,nan,Alaska,State Leg (Upper),State Senate District G,0.0,,
+02,nan,00H,nan,Alaska,State Leg (Upper),State Senate District H,100.0,Matt Claman (incumbent),Thomas McKay
+02,nan,00I,nan,Alaska,State Leg (Upper),State Senate District I,0.0,,
+02,nan,00J,nan,Alaska,State Leg (Upper),State Senate District J,31.0,,
+02,nan,00K,nan,Alaska,State Leg (Upper),State Senate District K,0.0,,
+02,nan,00L,nan,Alaska,State Leg (Upper),State Senate District L,8.0,,
+02,nan,00M,nan,Alaska,State Leg (Upper),State Senate District M,0.0,,
+02,nan,00N,nan,Alaska,State Leg (Upper),State Senate District N,2.0,,
+02,nan,00O,nan,Alaska,State Leg (Upper),State Senate District O,0.0,,
+02,nan,00P,nan,Alaska,State Leg (Upper),State Senate District P,43.0,,
+02,nan,00Q,nan,Alaska,State Leg (Upper),State Senate District Q,0.0,,
+02,nan,00R,nan,Alaska,State Leg (Upper),State Senate District R,98.0,Savannah Fletcher (Undeclared),Mike Cronk
+02,nan,00S,nan,Alaska,State Leg (Upper),State Senate District S,0.0,,
+02,nan,00T,nan,Alaska,State Leg (Upper),State Senate District T,33.0,,
+04,nan,001,nan,Arizona,State Leg (Upper),State Senate District 1,9.0,,
+04,nan,002,nan,Arizona,State Leg (Upper),State Senate District 2,86.0,Judy Schwiebert,Shawnna Bolick
+04,nan,003,nan,Arizona,State Leg (Upper),State Senate District 3,11.0,,
+04,nan,004,nan,Arizona,State Leg (Upper),State Senate District 4,90.0,Christine Marsh (incumbent),Carine Werner
+04,nan,005,nan,Arizona,State Leg (Upper),State Senate District 5,5.0,,
+04,nan,006,nan,Arizona,State Leg (Upper),State Senate District 6,7.0,,
+04,nan,007,nan,Arizona,State Leg (Upper),State Senate District 7,13.0,,
+04,nan,008,nan,Arizona,State Leg (Upper),State Senate District 8,12.0,,
+04,nan,009,nan,Arizona,State Leg (Upper),State Senate District 9,100.0,Eva Burch (incumbent),Robert Scantlebury
+04,nan,010,nan,Arizona,State Leg (Upper),State Senate District 10,14.0,,
+04,nan,011,nan,Arizona,State Leg (Upper),State Senate District 11,2.0,,
+04,nan,012,nan,Arizona,State Leg (Upper),State Senate District 12,38.0,,
+04,nan,013,nan,Arizona,State Leg (Upper),State Senate District 13,99.0,Sharon Lee Winters,Javan Daniel Mesnard (incumbent)
+04,nan,014,nan,Arizona,State Leg (Upper),State Senate District 14,23.0,,
+04,nan,015,nan,Arizona,State Leg (Upper),State Senate District 15,9.0,,
+04,nan,016,nan,Arizona,State Leg (Upper),State Senate District 16,82.0,Stacey Seaman,Thomas Shope (incumbent)
+04,nan,017,nan,Arizona,State Leg (Upper),State Senate District 17,61.0,John McLean,Vince Leach
+04,nan,018,nan,Arizona,State Leg (Upper),State Senate District 18,22.0,,
+04,nan,019,nan,Arizona,State Leg (Upper),State Senate District 19,13.0,,
+04,nan,020,nan,Arizona,State Leg (Upper),State Senate District 20,2.0,,
+04,nan,021,nan,Arizona,State Leg (Upper),State Senate District 21,9.0,,
+04,nan,022,nan,Arizona,State Leg (Upper),State Senate District 22,5.0,,
+04,nan,023,nan,Arizona,State Leg (Upper),State Senate District 23,31.0,,
+04,nan,024,nan,Arizona,State Leg (Upper),State Senate District 24,7.0,,
+04,nan,025,nan,Arizona,State Leg (Upper),State Senate District 25,11.0,,
+04,nan,026,nan,Arizona,State Leg (Upper),State Senate District 26,5.0,,
+04,nan,027,nan,Arizona,State Leg (Upper),State Senate District 27,54.0,,
+04,nan,028,nan,Arizona,State Leg (Upper),State Senate District 28,11.0,,
+04,nan,029,nan,Arizona,State Leg (Upper),State Senate District 29,35.0,,
+04,nan,030,nan,Arizona,State Leg (Upper),State Senate District 30,2.0,,
+20,nan,001,nan,Kansas,State Leg (Upper),State Senate District 1,3.0,,
+20,nan,002,nan,Kansas,State Leg (Upper),State Senate District 2,2.0,,
+20,nan,003,nan,Kansas,State Leg (Upper),State Senate District 3,43.0,,
+20,nan,004,nan,Kansas,State Leg (Upper),State Senate District 4,1.0,,
+20,nan,005,nan,Kansas,State Leg (Upper),State Senate District 5,75.0,Jeff Pittman (incumbent),Jeff Klemp
+20,nan,006,nan,Kansas,State Leg (Upper),State Senate District 6,9.0,,
+20,nan,007,nan,Kansas,State Leg (Upper),State Senate District 7,12.0,,
+20,nan,008,nan,Kansas,State Leg (Upper),State Senate District 8,46.0,,
+20,nan,009,nan,Kansas,State Leg (Upper),State Senate District 9,43.0,,
+20,nan,010,nan,Kansas,State Leg (Upper),State Senate District 10,94.0,Andrew Mall,Mike Thompson (incumbent)
+20,nan,011,nan,Kansas,State Leg (Upper),State Senate District 11,74.0,Karen Thurlow,Kellie Warren (incumbent)
+20,nan,012,nan,Kansas,State Leg (Upper),State Senate District 12,2.0,,
+20,nan,013,nan,Kansas,State Leg (Upper),State Senate District 13,7.0,,
+20,nan,014,nan,Kansas,State Leg (Upper),State Senate District 14,3.0,,
+20,nan,015,nan,Kansas,State Leg (Upper),State Senate District 15,3.0,,
+20,nan,016,nan,Kansas,State Leg (Upper),State Senate District 16,13.0,,
+20,nan,017,nan,Kansas,State Leg (Upper),State Senate District 17,24.0,,
+20,nan,018,nan,Kansas,State Leg (Upper),State Senate District 18,9.0,,
+20,nan,019,nan,Kansas,State Leg (Upper),State Senate District 19,9.0,,
+20,nan,020,nan,Kansas,State Leg (Upper),State Senate District 20,67.0,Candace Ayars,Brenda Dietrich (incumbent)
+20,nan,021,nan,Kansas,State Leg (Upper),State Senate District 21,35.0,,
+20,nan,022,nan,Kansas,State Leg (Upper),State Senate District 22,100.0,Usha Reddi (incumbent),Brad Starnes
+20,nan,023,nan,Kansas,State Leg (Upper),State Senate District 23,69.0,Stacey Knoell,Adam Thomas
+20,nan,024,nan,Kansas,State Leg (Upper),State Senate District 24,5.0,,
+20,nan,025,nan,Kansas,State Leg (Upper),State Senate District 25,43.0,,
+20,nan,026,nan,Kansas,State Leg (Upper),State Senate District 26,4.0,,
+20,nan,027,nan,Kansas,State Leg (Upper),State Senate District 27,15.0,,
+20,nan,028,nan,Kansas,State Leg (Upper),State Senate District 28,36.0,,
+20,nan,029,nan,Kansas,State Leg (Upper),State Senate District 29,3.0,,
+20,nan,030,nan,Kansas,State Leg (Upper),State Senate District 30,30.0,,
+20,nan,031,nan,Kansas,State Leg (Upper),State Senate District 31,12.0,,
+20,nan,032,nan,Kansas,State Leg (Upper),State Senate District 32,4.0,,
+20,nan,033,nan,Kansas,State Leg (Upper),State Senate District 33,1.0,,
+20,nan,034,nan,Kansas,State Leg (Upper),State Senate District 34,4.0,,
+20,nan,035,nan,Kansas,State Leg (Upper),State Senate District 35,61.0,Jason Anderson,TJ Rose
+20,nan,036,nan,Kansas,State Leg (Upper),State Senate District 36,1.0,,
+20,nan,037,nan,Kansas,State Leg (Upper),State Senate District 37,24.0,,
+20,nan,038,nan,Kansas,State Leg (Upper),State Senate District 38,3.0,,
+20,nan,039,nan,Kansas,State Leg (Upper),State Senate District 39,2.0,,
+20,nan,040,nan,Kansas,State Leg (Upper),State Senate District 40,1.0,,
+31,nan,001,nan,Nebraska,State Leg (Upper),State Senate District 1,3.0,,
+31,nan,002,nan,Nebraska,State Leg (Upper),State Senate District 2,0.0,,
+31,nan,003,nan,Nebraska,State Leg (Upper),State Senate District 3,31.0,,
+31,nan,004,nan,Nebraska,State Leg (Upper),State Senate District 4,0.0,,
+31,nan,005,nan,Nebraska,State Leg (Upper),State Senate District 5,37.0,,
+31,nan,006,nan,Nebraska,State Leg (Upper),State Senate District 6,0.0,,
+31,nan,007,nan,Nebraska,State Leg (Upper),State Senate District 7,6.0,,
+31,nan,008,nan,Nebraska,State Leg (Upper),State Senate District 8,0.0,,
+31,nan,009,nan,Nebraska,State Leg (Upper),State Senate District 9,6.0,,
+31,nan,010,nan,Nebraska,State Leg (Upper),State Senate District 10,0.0,,
+31,nan,011,nan,Nebraska,State Leg (Upper),State Senate District 11,1.0,,
+31,nan,012,nan,Nebraska,State Leg (Upper),State Senate District 12,0.0,,
+31,nan,013,nan,Nebraska,State Leg (Upper),State Senate District 13,15.0,,
+31,nan,014,nan,Nebraska,State Leg (Upper),State Senate District 14,0.0,,
+31,nan,015,nan,Nebraska,State Leg (Upper),State Senate District 15,5.0,,
+31,nan,016,nan,Nebraska,State Leg (Upper),State Senate District 16,0.0,,
+31,nan,017,nan,Nebraska,State Leg (Upper),State Senate District 17,9.0,,
+31,nan,018,nan,Nebraska,State Leg (Upper),State Senate District 18,0.0,,
+31,nan,019,nan,Nebraska,State Leg (Upper),State Senate District 19,1.0,,
+31,nan,020,nan,Nebraska,State Leg (Upper),State Senate District 20,0.0,,
+31,nan,021,nan,Nebraska,State Leg (Upper),State Senate District 21,42.0,,
+31,nan,022,nan,Nebraska,State Leg (Upper),State Senate District 22,0.0,,
+31,nan,023,nan,Nebraska,State Leg (Upper),State Senate District 23,3.0,,
+31,nan,024,nan,Nebraska,State Leg (Upper),State Senate District 24,0.0,,
+31,nan,025,nan,Nebraska,State Leg (Upper),State Senate District 25,46.0,,
+31,nan,026,nan,Nebraska,State Leg (Upper),State Senate District 26,0.0,,
+31,nan,027,nan,Nebraska,State Leg (Upper),State Senate District 27,100.0,Jason Prokop (unaffiliated),Dawn Liphardt (unaffiliated)
+31,nan,028,nan,Nebraska,State Leg (Upper),State Senate District 28,0.0,,
+31,nan,029,nan,Nebraska,State Leg (Upper),State Senate District 29,28.0,,
+31,nan,030,nan,Nebraska,State Leg (Upper),State Senate District 30,0.0,,
+31,nan,031,nan,Nebraska,State Leg (Upper),State Senate District 31,23.0,,
+31,nan,032,nan,Nebraska,State Leg (Upper),State Senate District 32,0.0,,
+31,nan,033,nan,Nebraska,State Leg (Upper),State Senate District 33,2.0,,
+31,nan,034,nan,Nebraska,State Leg (Upper),State Senate District 34,0.0,,
+31,nan,035,nan,Nebraska,State Leg (Upper),State Senate District 35,13.0,,
+31,nan,036,nan,Nebraska,State Leg (Upper),State Senate District 36,0.0,,
+31,nan,037,nan,Nebraska,State Leg (Upper),State Senate District 37,4.0,,
+31,nan,038,nan,Nebraska,State Leg (Upper),State Senate District 38,0.0,,
+31,nan,039,nan,Nebraska,State Leg (Upper),State Senate District 39,5.0,,
+31,nan,040,nan,Nebraska,State Leg (Upper),State Senate District 40,0.0,,
+31,nan,041,nan,Nebraska,State Leg (Upper),State Senate District 41,1.0,,
+31,nan,042,nan,Nebraska,State Leg (Upper),State Senate District 42,0.0,,
+31,nan,043,nan,Nebraska,State Leg (Upper),State Senate District 43,1.0,,
+31,nan,044,nan,Nebraska,State Leg (Upper),State Senate District 44,0.0,,
+31,nan,045,nan,Nebraska,State Leg (Upper),State Senate District 45,31.0,,
+31,nan,046,nan,Nebraska,State Leg (Upper),State Senate District 46,0.0,,
+31,nan,047,nan,Nebraska,State Leg (Upper),State Senate District 47,1.0,,
+31,nan,048,nan,Nebraska,State Leg (Upper),State Senate District 48,0.0,,
+31,nan,049,nan,Nebraska,State Leg (Upper),State Senate District 49,19.0,,
+33,nan,001,nan,New Hampshire,State Leg (Upper),State Senate District 1,99.0,,
+33,nan,002,nan,New Hampshire,State Leg (Upper),State Senate District 2,98.0,,
+33,nan,003,nan,New Hampshire,State Leg (Upper),State Senate District 3,100.0,,
+33,nan,004,nan,New Hampshire,State Leg (Upper),State Senate District 4,16.0,,
+33,nan,005,nan,New Hampshire,State Leg (Upper),State Senate District 5,3.0,,
+33,nan,006,nan,New Hampshire,State Leg (Upper),State Senate District 6,75.0,,
+33,nan,007,nan,New Hampshire,State Leg (Upper),State Senate District 7,99.0,,
+33,nan,008,nan,New Hampshire,State Leg (Upper),State Senate District 8,88.0,,
+33,nan,009,nan,New Hampshire,State Leg (Upper),State Senate District 9,98.0,,
+33,nan,010,nan,New Hampshire,State Leg (Upper),State Senate District 10,7.0,,
+33,nan,011,nan,New Hampshire,State Leg (Upper),State Senate District 11,83.0,,
+33,nan,012,nan,New Hampshire,State Leg (Upper),State Senate District 12,88.0,,
+33,nan,013,nan,New Hampshire,State Leg (Upper),State Senate District 13,18.0,,
+33,nan,014,nan,New Hampshire,State Leg (Upper),State Senate District 14,74.0,,
+33,nan,015,nan,New Hampshire,State Leg (Upper),State Senate District 15,8.0,,
+33,nan,016,nan,New Hampshire,State Leg (Upper),State Senate District 16,92.0,,
+33,nan,017,nan,New Hampshire,State Leg (Upper),State Senate District 17,78.0,,
+33,nan,018,nan,New Hampshire,State Leg (Upper),State Senate District 18,91.0,,
+33,nan,019,nan,New Hampshire,State Leg (Upper),State Senate District 19,68.0,,
+33,nan,020,nan,New Hampshire,State Leg (Upper),State Senate District 20,29.0,,
+33,nan,021,nan,New Hampshire,State Leg (Upper),State Senate District 21,4.0,,
+33,nan,022,nan,New Hampshire,State Leg (Upper),State Senate District 22,47.0,,
+33,nan,023,nan,New Hampshire,State Leg (Upper),State Senate District 23,57.0,,
+33,nan,024,nan,New Hampshire,State Leg (Upper),State Senate District 24,29.0,,
+42,nan,001,nan,Pennsylvania,State Leg (Upper),State Senate District 1,1.0,,
+42,nan,002,nan,Pennsylvania,State Leg (Upper),State Senate District 2,0.0,,
+42,nan,003,nan,Pennsylvania,State Leg (Upper),State Senate District 3,0.0,,
+42,nan,004,nan,Pennsylvania,State Leg (Upper),State Senate District 4,0.0,,
+42,nan,005,nan,Pennsylvania,State Leg (Upper),State Senate District 5,33.0,,
+42,nan,006,nan,Pennsylvania,State Leg (Upper),State Senate District 6,0.0,,
+42,nan,007,nan,Pennsylvania,State Leg (Upper),State Senate District 7,1.0,,
+42,nan,008,nan,Pennsylvania,State Leg (Upper),State Senate District 8,0.0,,
+42,nan,009,nan,Pennsylvania,State Leg (Upper),State Senate District 9,29.0,,
+42,nan,010,nan,Pennsylvania,State Leg (Upper),State Senate District 10,0.0,,
+42,nan,011,nan,Pennsylvania,State Leg (Upper),State Senate District 11,46.0,,
+42,nan,012,nan,Pennsylvania,State Leg (Upper),State Senate District 12,0.0,,
+42,nan,013,nan,Pennsylvania,State Leg (Upper),State Senate District 13,59.0,Trex Proffitt,Scott Martin (incumbent)
+42,nan,014,nan,Pennsylvania,State Leg (Upper),State Senate District 14,0.0,,
+42,nan,015,nan,Pennsylvania,State Leg (Upper),State Senate District 15,36.0,,
+42,nan,016,nan,Pennsylvania,State Leg (Upper),State Senate District 16,0.0,,
+42,nan,017,nan,Pennsylvania,State Leg (Upper),State Senate District 17,4.0,,
+42,nan,018,nan,Pennsylvania,State Leg (Upper),State Senate District 18,0.0,,
+42,nan,019,nan,Pennsylvania,State Leg (Upper),State Senate District 19,26.0,,
+42,nan,020,nan,Pennsylvania,State Leg (Upper),State Senate District 20,0.0,,
+42,nan,021,nan,Pennsylvania,State Leg (Upper),State Senate District 21,6.0,,
+42,nan,022,nan,Pennsylvania,State Leg (Upper),State Senate District 22,0.0,,
+42,nan,023,nan,Pennsylvania,State Leg (Upper),State Senate District 23,4.0,,
+42,nan,024,nan,Pennsylvania,State Leg (Upper),State Senate District 24,0.0,,
+42,nan,025,nan,Pennsylvania,State Leg (Upper),State Senate District 25,16.0,,
+42,nan,026,nan,Pennsylvania,State Leg (Upper),State Senate District 26,0.0,,
+42,nan,027,nan,Pennsylvania,State Leg (Upper),State Senate District 27,8.0,,
+42,nan,028,nan,Pennsylvania,State Leg (Upper),State Senate District 28,0.0,,
+42,nan,029,nan,Pennsylvania,State Leg (Upper),State Senate District 29,10.0,,
+42,nan,030,nan,Pennsylvania,State Leg (Upper),State Senate District 30,0.0,,
+42,nan,031,nan,Pennsylvania,State Leg (Upper),State Senate District 31,45.0,,
+42,nan,032,nan,Pennsylvania,State Leg (Upper),State Senate District 32,0.0,,
+42,nan,033,nan,Pennsylvania,State Leg (Upper),State Senate District 33,5.0,,
+42,nan,034,nan,Pennsylvania,State Leg (Upper),State Senate District 34,0.0,,
+42,nan,035,nan,Pennsylvania,State Leg (Upper),State Senate District 35,14.0,,
+42,nan,036,nan,Pennsylvania,State Leg (Upper),State Senate District 36,0.0,,
+42,nan,037,nan,Pennsylvania,State Leg (Upper),State Senate District 37,100.0,Nicole Ruscitto,Devlin Robinson (incumbent)
+42,nan,038,nan,Pennsylvania,State Leg (Upper),State Senate District 38,0.0,,
+42,nan,039,nan,Pennsylvania,State Leg (Upper),State Senate District 39,17.0,,
+42,nan,040,nan,Pennsylvania,State Leg (Upper),State Senate District 40,0.0,,
+42,nan,041,nan,Pennsylvania,State Leg (Upper),State Senate District 41,9.0,,
+42,nan,042,nan,Pennsylvania,State Leg (Upper),State Senate District 42,0.0,,
+42,nan,043,nan,Pennsylvania,State Leg (Upper),State Senate District 43,1.0,,
+42,nan,044,nan,Pennsylvania,State Leg (Upper),State Senate District 44,0.0,,
+42,nan,045,nan,Pennsylvania,State Leg (Upper),State Senate District 45,32.0,,
+42,nan,046,nan,Pennsylvania,State Leg (Upper),State Senate District 46,0.0,,
+42,nan,047,nan,Pennsylvania,State Leg (Upper),State Senate District 47,42.0,,
+42,nan,048,nan,Pennsylvania,State Leg (Upper),State Senate District 48,0.0,,
+42,nan,049,nan,Pennsylvania,State Leg (Upper),State Senate District 49,69.0,Jim Wertz,Daniel Laughlin (incumbent)
+42,nan,050,nan,Pennsylvania,State Leg (Upper),State Senate District 50,0.0,,
+55,nan,001,nan,Wisconsin,State Leg (Upper),State Senate District 1,0.0,,
+55,nan,002,nan,Wisconsin,State Leg (Upper),State Senate District 2,13.0,,
+55,nan,003,nan,Wisconsin,State Leg (Upper),State Senate District 3,0.0,,
+55,nan,004,nan,Wisconsin,State Leg (Upper),State Senate District 4,1.0,,
+55,nan,005,nan,Wisconsin,State Leg (Upper),State Senate District 5,0.0,,
+55,nan,006,nan,Wisconsin,State Leg (Upper),State Senate District 6,1.0,,
+55,nan,007,nan,Wisconsin,State Leg (Upper),State Senate District 7,0.0,,
+55,nan,008,nan,Wisconsin,State Leg (Upper),State Senate District 8,54.0,,
+55,nan,009,nan,Wisconsin,State Leg (Upper),State Senate District 9,0.0,,
+55,nan,010,nan,Wisconsin,State Leg (Upper),State Senate District 10,39.0,,
+55,nan,011,nan,Wisconsin,State Leg (Upper),State Senate District 11,0.0,,
+55,nan,012,nan,Wisconsin,State Leg (Upper),State Senate District 12,14.0,,
+55,nan,013,nan,Wisconsin,State Leg (Upper),State Senate District 13,0.0,,
+55,nan,014,nan,Wisconsin,State Leg (Upper),State Senate District 14,62.0,,
+55,nan,015,nan,Wisconsin,State Leg (Upper),State Senate District 15,0.0,,
+55,nan,016,nan,Wisconsin,State Leg (Upper),State Senate District 16,9.0,,
+55,nan,017,nan,Wisconsin,State Leg (Upper),State Senate District 17,0.0,,
+55,nan,018,nan,Wisconsin,State Leg (Upper),State Senate District 18,76.0,,
+55,nan,019,nan,Wisconsin,State Leg (Upper),State Senate District 19,0.0,,
+55,nan,020,nan,Wisconsin,State Leg (Upper),State Senate District 20,5.0,,
+55,nan,021,nan,Wisconsin,State Leg (Upper),State Senate District 21,0.0,,
+55,nan,022,nan,Wisconsin,State Leg (Upper),State Senate District 22,37.0,,
+55,nan,023,nan,Wisconsin,State Leg (Upper),State Senate District 23,0.0,,
+55,nan,024,nan,Wisconsin,State Leg (Upper),State Senate District 24,81.0,Collin McNamara,Patrick Testin (incumbent)
+55,nan,025,nan,Wisconsin,State Leg (Upper),State Senate District 25,0.0,,
+55,nan,026,nan,Wisconsin,State Leg (Upper),State Senate District 26,1.0,,
+55,nan,027,nan,Wisconsin,State Leg (Upper),State Senate District 27,0.0,,
+55,nan,028,nan,Wisconsin,State Leg (Upper),State Senate District 28,9.0,,
+55,nan,029,nan,Wisconsin,State Leg (Upper),State Senate District 29,0.0,,
+55,nan,030,nan,Wisconsin,State Leg (Upper),State Senate District 30,100.0,Jamie Wall,Jim Rafter
+55,nan,031,nan,Wisconsin,State Leg (Upper),State Senate District 31,0.0,,
+55,nan,032,nan,Wisconsin,State Leg (Upper),State Senate District 32,62.0,Brad Pfaff (incumbent),Stacey Klein
+55,nan,033,nan,Wisconsin,State Leg (Upper),State Senate District 33,0.0,,

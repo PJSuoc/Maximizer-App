@@ -1,4 +1,4 @@
-﻿state_name,state,congress,s_lower,s_upper,election_name,race_type,voter_power,cook_rating
+﻿state_name,state,congress,s_lower,s_upper,election_name,race_type,voter_power,cook_rating,D_running,R_running
 New Hampshire,33,,,,,Governor,100,toss-up
 North Carolina,37,,,,,Governor,100,toss-up
 Delaware,10,,,,,Governor,20,safe D

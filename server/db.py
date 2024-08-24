@@ -257,7 +257,7 @@ class DB:
         name_front = '<li id="cand">'
         party_front = '<li id="cand">'
         button_front = '<li id="campbtn"><a class="btn btn-primary" href="'
-        button_back = '" role="button">Candidate Campaign</a>'
+        button_back = '" role="button">More information</a>'
         item_back = '</li>'
         cand_back = '</ul></div>'
         denier_text = '<li id="denier"><b>Skeptic Flag:</b> This candidate has made statements doubting the \

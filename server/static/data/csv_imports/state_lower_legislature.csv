@@ -1,4 +1,4 @@
-state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power
+state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power,D_running,R_running
 Alaska,2,NA,NA,1,State House District 1,State Leg (Lower),26
 Alaska,2,NA,NA,2,State House District 2,State Leg (Lower),75
 Alaska,2,NA,NA,3,State House District 3,State Leg (Lower),46

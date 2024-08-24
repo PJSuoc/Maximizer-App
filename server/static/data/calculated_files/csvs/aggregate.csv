@@ -1,64 +1,57 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power
-01,,,,Alabama,Aggregate,,7
-02,,,,Alaska,Aggregate,,80
-04,,,,Arizona,Aggregate,,100
-05,,,,Arkansas,Aggregate,,7
-06,,,,California,Aggregate,,80
-08,,,,Colorado,Aggregate,,33
-09,,,,Connecticut,Aggregate,,1.0
-10,,,,Delaware,Aggregate,,13
-11,,,,District of Columbia,Aggregate,,7
-12,,,,Florida,Aggregate,,53
-13,,,,Georgia,Aggregate,,13
-15,,,,Hawaii,Aggregate,,13
-16,,,,Idaho,Aggregate,,13
-17,,,,Illinois,Aggregate,,20
-18,,,,Indiana,Aggregate,,27
-19,,,,Iowa,Aggregate,,27
-20,,,,Kansas,Aggregate,,60
-21,,,,Kentucky,Aggregate,,7
-22,,,,Louisiana,Aggregate,,0
-23,,,,Maine,Aggregate,,33
-23,2.0,,,Maine,Aggregate,Congressional District 2,33
-23,1.0,,,Maine,Aggregate,Congressional District 1,33
-24,,,,Maryland,Aggregate,,13
-25,,,,Massachusetts,Aggregate,,13
-26,,,,Michigan,Aggregate,,67
-27,,,,Minnesota,Aggregate,,33
-28,,,,Mississippi,Aggregate,,7
-29,,,,Missouri,Aggregate,,20
-30,,,,Montana,Aggregate,,20
-31,1.0,,,Nebraska,Aggregate,Congressional District 1,67
-31,2.0,,,Nebraska,Aggregate,Congressional District 2,67
-31,3.0,,,Nebraska,Aggregate,Congressional District 3,67
-31,,,,Nebraska,Aggregate,,67
-32,,,,Nevada,Aggregate,,60
-33,,,,New Hampshire,Aggregate,,47
-34,,,,New Jersey,Aggregate,,13
-35,,,,New Mexico,Aggregate,,20
-36,,,,New York,Aggregate,,67
-37,,,,North Carolina,Aggregate,,27
-38,,,,North Dakota,Aggregate,,27
-39,,,,Ohio,Aggregate,,40
-40,,,,Oklahoma,Aggregate,,13
-41,,,,Oregon,Aggregate,,33
-42,,,,Pennsylvania,Aggregate,,93
-44,,,,Rhode Island,Aggregate,,20
-45,,,,South Carolina,Aggregate,,7
-46,,,,South Dakota,Aggregate,,20
-47,,,,Tennessee,Aggregate,,0
-48,,,,Texas,Aggregate,,33
-49,,,,Utah,Aggregate,,20
-50,,,,Vermont,Aggregate,,13
-51,,,,Virginia,Aggregate,,20
-53,,,,Washington,Aggregate,,20
-54,,,,West Virginia,Aggregate,,7
-55,,,,Wisconsin,Aggregate,,87
-56,,,,Wyoming,Aggregate,,7
-00,,,,,Aggregate,,
-00,,,,,Aggregate,,
-00,,,,,Aggregate,,
-00,,,,,Aggregate,,
-00,,,,,Aggregate,,
-00,,,,,Aggregate,,
-00,,,,,Aggregate,,
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
+01,,,,Alabama,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+02,,,,Alaska,Aggregate,Presidential,73,Kamala Harris,Donald Trump
+04,,,,Arizona,Aggregate,Presidential,100,Kamala Harris,Donald Trump
+05,,,,Arkansas,Aggregate,Presidential,0,Kamala Harris,Donald Trump
+06,,,,California,Aggregate,Presidential,87,Kamala Harris,Donald Trump
+08,,,,Colorado,Aggregate,Presidential,40,Kamala Harris,Donald Trump
+09,,,,Connecticut,Aggregate,Presidential,2.0,Kamala Harris,Donald Trump
+10,,,,Delaware,Aggregate,Presidential,13,Kamala Harris,Donald Trump
+11,,,,District of Columbia,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+12,,,,Florida,Aggregate,Presidential,53,Kamala Harris,Donald Trump
+13,,,,Georgia,Aggregate,Presidential,13,Kamala Harris,Donald Trump
+15,,,,Hawaii,Aggregate,Presidential,13,Kamala Harris,Donald Trump
+16,,,,Idaho,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+17,,,,Illinois,Aggregate,Presidential,20,Kamala Harris,Donald Trump
+18,,,,Indiana,Aggregate,Presidential,27,Kamala Harris,Donald Trump
+19,,,,Iowa,Aggregate,Presidential,27,Kamala Harris,Donald Trump
+20,,,,Kansas,Aggregate,Presidential,60,Kamala Harris,Donald Trump
+21,,,,Kentucky,Aggregate,Presidential,0,Kamala Harris,Donald Trump
+22,,,,Louisiana,Aggregate,Presidential,0,Kamala Harris,Donald Trump
+23,,,,Maine,Aggregate,Presidential,27,Kamala Harris,Donald Trump
+23,2.0,,,Maine,Aggregate,Congressional District 2,27,Kamala Harris,Donald Trump
+23,1.0,,,Maine,Aggregate,Congressional District 1,27,Kamala Harris,Donald Trump
+24,,,,Maryland,Aggregate,Presidential,13,Kamala Harris,Donald Trump
+25,,,,Massachusetts,Aggregate,Presidential,20,Kamala Harris,Donald Trump
+26,,,,Michigan,Aggregate,Presidential,67,Kamala Harris,Donald Trump
+27,,,,Minnesota,Aggregate,Presidential,40,Kamala Harris,Donald Trump
+28,,,,Mississippi,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+29,,,,Missouri,Aggregate,Presidential,27,Kamala Harris,Donald Trump
+30,,,,Montana,Aggregate,Presidential,40,Kamala Harris,Donald Trump
+31,1.0,,,Nebraska,Aggregate,Congressional District 1,60,Kamala Harris,Donald Trump
+31,2.0,,,Nebraska,Aggregate,Congressional District 2,60,Kamala Harris,Donald Trump
+31,3.0,,,Nebraska,Aggregate,Congressional District 3,60,Kamala Harris,Donald Trump
+31,,,,Nebraska,Aggregate,Presidential,60,Kamala Harris,Donald Trump
+32,,,,Nevada,Aggregate,Presidential,80,Kamala Harris,Donald Trump
+33,,,,New Hampshire,Aggregate,Presidential,60,Kamala Harris,Donald Trump
+34,,,,New Jersey,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+35,,,,New Mexico,Aggregate,Presidential,27,Kamala Harris,Donald Trump
+36,,,,New York,Aggregate,Presidential,53,Kamala Harris,Donald Trump
+37,,,,North Carolina,Aggregate,Presidential,20,Kamala Harris,Donald Trump
+38,,,,North Dakota,Aggregate,Presidential,33,Kamala Harris,Donald Trump
+39,,,,Ohio,Aggregate,Presidential,33,Kamala Harris,Donald Trump
+40,,,,Oklahoma,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+41,,,,Oregon,Aggregate,Presidential,40,Kamala Harris,Donald Trump
+42,,,,Pennsylvania,Aggregate,Presidential,93,Kamala Harris,Donald Trump
+44,,,,Rhode Island,Aggregate,Presidential,20,Kamala Harris,Donald Trump
+45,,,,South Carolina,Aggregate,Presidential,0,Kamala Harris,Donald Trump
+46,,,,South Dakota,Aggregate,Presidential,20,Kamala Harris,Donald Trump
+47,,,,Tennessee,Aggregate,Presidential,0,Kamala Harris,Donald Trump
+48,,,,Texas,Aggregate,Presidential,33,Kamala Harris,Donald Trump
+49,,,,Utah,Aggregate,Presidential,27,Kamala Harris,Donald Trump
+50,,,,Vermont,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+51,,,,Virginia,Aggregate,Presidential,20,Kamala Harris,Donald Trump
+53,,,,Washington,Aggregate,Presidential,20,Kamala Harris,Donald Trump
+54,,,,West Virginia,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+55,,,,Wisconsin,Aggregate,Presidential,80,Kamala Harris,Donald Trump
+56,,,,Wyoming,Aggregate,Presidential,7,Kamala Harris,Donald Trump
