@@ -184,14 +184,34 @@ class DB:
                 right_on = ["state","congress","s_upper","s_lower"])
         
         # Filters elections by the race type requested
-        relevant = relevant[relevant["race_type"] == layer]
+        # Does some work slicing things together that are deemed less relevant for State Level
+        if layer == "State Level":
+            partone = relevant[relevant["race_type"] == "Governor"]
+            parttwo = relevant[relevant["race_type"] == "Direct Democracy"]
+            partthree = relevant[relevant["race_type"] == "Civil Liberties"]
+            partfour = relevant[relevant["race_type"] == "Reproductive Rights"]
+            merger_list = [partone, parttwo, partthree, partfour]
+            relevant = pd.concat(merger_list, ignore_index=True)
+            print(relevant.shape[0])
+        else:
+            relevant = relevant[relevant["race_type"] == layer]
 
-        if layer != "Ballot Initiative":
+        if layer != "State Level" and layer != "Democracy Repair":
             # Filters elections by voter power 
             relevant = relevant[relevant["voter_power_val"] > 10]
             # Sorts remaining elections by voter power & get only the top 3
             relevant.sort_values("voter_power_val", inplace = True, ascending = False)
             relevant = relevant.reset_index(drop = True)
+            output = relevant[0:5]
+        elif layer == "State Level":
+            #Attempting to deal with a category that has some VP and some non-vp
+            '''
+            relevant_gov = relevant[relevant["race_type"] == "Governor"]
+            relevant_gov = relevant_gov[relevant_gov["voter_power_val"] > 10]
+            relevant_ballot = relevant[relevant["race_type"] != "Governor"]
+            rel_clean = pd.concat([relevant_gov, relevant_ballot], ignore_index=True)
+            rel_clean.sort_values("voter_power_val", inplace = True, ascending = False)
+            rel_clean = rel_clean.reset_index(drop = True)'''
             output = relevant[0:5]
         else:
             output = relevant
@@ -260,9 +280,10 @@ class DB:
         button_back = '" role="button">More information</a>'
         item_back = '</li>'
         cand_back = '</ul></div>'
-        denier_text = '<li id="denier"><b>Skeptic Flag:</b> This candidate has made statements doubting the \
-            electoral proceedings of free and fair elections in the United States. The EIL is dedicated to promoting and \
-            improving the democratic process, and considers claims of this nature highly detrimental to that mission.</li>'
+        denier_text = '<li id="denier"><b>Skeptic Flag:</b> This candidate has made statements doubting \
+            the electoral proceedings of free and fair elections in the United States. However, American \
+            elections are among the best-administered in the world. For more on such claims, \
+            see electiondeniers.org.</li>'
 
         candidate_link_string = ''
         #Creates each candidate individually and then puts them together
@@ -275,10 +296,10 @@ class DB:
 
             # Inserts warning about election deniers. I'd make it a popup, but that's a lot harder and time is of the essence.
             if denier == "1":
-                c_str = cand_front + name_front + name + item_back + party_front + party + item_back + \
+                c_str = cand_front + party_front + party + item_back + name_front + name + item_back + \
                     denier_text + button_front + camp_link + button_back + item_back
             else:
-                c_str = cand_front + name_front + name + item_back + party_front + party + item_back + \
+                c_str = cand_front + party_front + party + item_back + name_front + name + item_back + \
                     button_front + camp_link + button_back + item_back
             
             candidate_link_string = candidate_link_string + c_str + cand_back
