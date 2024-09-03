@@ -295,7 +295,6 @@ class DB:
             denier = self.candidates.loc[id]["election_denier"]
 
             # Inserts warning about election deniers. I'd make it a popup, but that's a lot harder and time is of the essence.
-            print(denier, type(denier))
             if denier == "1":
                 c_str = cand_front + party_front + party + item_back + name_front + name + item_back + \
                     denier_text + button_front + camp_link + button_back + item_back
@@ -320,7 +319,8 @@ class DB:
                 
                 # Does additional filtration for Ballot Initiatives
                 # Otherwise just gets candidate matches for that election
-                if election["race_type"] == "Ballot Initiative":
+                if election["race_type"] == "Democracy Repair" or election["race_type"] == "Reproductive Rights" or \
+                election["race_type"] == "Civil Liberties" or election["race_type"] == "Direct Democracy":
                     matched = matcher[matcher["eid"] == election["eid"]]
                     matched = matched[matched["election_name_y"] == election["election_name"]]
                 else:
