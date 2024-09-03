@@ -126,6 +126,8 @@ def candidate_csv_cleaner(location, csv_tag, destination, csv_name):
     df["name"] = df["name"].fillna("Unknown")
     df["party"] = df["party"].fillna("Unknown")
     df["election_denier"] = df["election_denier"].fillna(0)
+    df["election_denier"] = df["election_denier"].astype(float).astype(int).astype(str)
+
 
     df.to_csv(destination + csv_tag + csv_name,  index = False)
 

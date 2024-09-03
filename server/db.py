@@ -295,6 +295,7 @@ class DB:
             denier = self.candidates.loc[id]["election_denier"]
 
             # Inserts warning about election deniers. I'd make it a popup, but that's a lot harder and time is of the essence.
+            print(denier, type(denier))
             if denier == "1":
                 c_str = cand_front + party_front + party + item_back + name_front + name + item_back + \
                     denier_text + button_front + camp_link + button_back + item_back
