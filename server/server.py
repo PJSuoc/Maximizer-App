@@ -26,7 +26,7 @@ else:
     google_key = os.environ.get('google_key')
 
 STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado", 
-    "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
+    "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
     "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", 
     "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", 
     "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", 
@@ -40,7 +40,7 @@ STATELOC = {'Alabama': {'lat': 32.3182314, 'long': -86.902298},
             'Arkansas': {'lat': 35.20105, 'long': -91.8318334},
             'California': {'lat': 36.778261, 'long': -119.4179324},
             'Colorado': {'lat': 39.5500507, 'long': -105.7820674},
-            'Conneticut': {'lat': 41.6032207, 'long': -73.087749},
+            'Connecticut': {'lat': 41.6032207, 'long': -73.087749},
             'Delaware': {'lat': 38.9108325, 'long': -75.52766989999999},
             'Florida': {'lat': 27.6648274, 'long': -81.5157535},
             'Georgia': {'lat': 32.1574351, 'long': -82.90712300000001},
@@ -89,6 +89,7 @@ STATELOC = {'Alabama': {'lat': 32.3182314, 'long': -86.902298},
 app = Flask(__name__)
 
 # Ensure templates are auto-reloaded
+# Set to False for production, True for development
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 # I need to understand this functionality (I currently do not)
 # required for consistent session(s)?
@@ -125,13 +126,24 @@ with app.app_context():
 
 
 
-# Website Home Page 
-@app.route('/', methods = ["GET", "POST"])
+# Website Home Page     
+@app.route('/', methods=["GET", "POST"])
+
+
 def home():
     '''
-    Renders the homepage.
+    Renders the homepage with optional test versions.
+    Falls back to home.html if the specified template doesn't exist.
     '''
-    return render_template("home.html", states = STATES, mapbox_key = mapbox_key)
+    test_version = request.args.get('test')
+    if test_version:
+        template_name = f"home_{test_version}.html"
+        if os.path.exists(os.path.join(app.template_folder, template_name)):
+            app.logger.info(f"Rendering template: {template_name}")
+            return render_template(template_name, states=STATES, mapbox_key=mapbox_key)
+    
+    # Default to home.html if no test version specified or if the file doesn't exist
+    return render_template("home.html", states=STATES, mapbox_key=mapbox_key)
 
 @app.route('/local', methods=["GET", "POST"])
 # Geocodes the location of the person and calls the election mapper
@@ -139,9 +151,10 @@ def local_elections():
     if request.method == "POST":
         try:
             location = request.form.get("location")
-            location =  gmaps.geocode(location)
+            location = gmaps.geocode(location)
             return election_delivery_function(location)
-        except:
+        except Exception as e:
+            logging.error(f"Error in local_elections: {str(e)}")
             return redirect('/')
     else:
         return redirect('/')
@@ -152,9 +165,11 @@ def local_elections():
 def state_elections():
     if request.method == "POST":
         location = request.form.get("location")
-        return election_delivery_function(location)
     else:
-        return redirect('/')
+        location = request.args.get("location")
+    if location:
+        return election_delivery_function(location)    
+    return redirect('/')
 
 @app.route('/voter-power', methods=["GET", "POST"])
 # It's the vp infographic page.
@@ -282,6 +297,9 @@ if __name__ == "__main__":
         default= 'dev',
         choices=['dev', 'prod']
     )
+    parser.add_argument('--debug', 
+                        action='store_true', 
+                        help='Enable debug mode')
 
     # The format for our logger
     log_fmt = '%(levelname)-8s [%(filename)s:%(lineno)d] %(message)s'
@@ -325,4 +343,4 @@ if __name__ == "__main__":
 
     logging.info("Starting Up!")
     print("STARTING with:", args.host, args.port)
-    app.run(host=args.host, port=args.port, threaded=False) #pulled out: 
+    app.run(host=args.host, port=args.port, threaded=False, debug=args.debug) #pulled out: 
