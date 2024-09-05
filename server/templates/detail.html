@@ -82,6 +82,11 @@ label[for="layer"] {
     <div class="row" height="100%">
         <div class="col" id="detail-left" >
             <ul class="list-group">
+                <li class="list-group-item"> <strong>Democracy Ballot Initiatives</strong>
+                    <ul class="list-group list-group-flush">
+                        {{ dem_ballot_list | safe }}
+                    </ul>
+                </li>
                 <li class="list-group-item"> <strong>Presidential Race</strong>
                     <ul class="list-group list-group-flush">
                         {{ pres_list | safe }}
@@ -107,11 +112,16 @@ label[for="layer"] {
                         {{ state_house_list | safe }}
                     </ul>
                 </li>
-                <li class="list-group-item"> <strong>Ballot Initiatives</strong>
+                <!--<li class="list-group-item"> <strong>Ballot Initiatives</strong>
                     <ul class="list-group list-group-flush">
                         {{ ballot_list | safe }}
                     </ul>
-                </li>
+                </li>-->
+                <li class="list-group-item"> <strong>State-level ballot issues</strong>
+                    <ul class="list-group list-group-flush">
+                        {{ state_level_list | safe }}
+                    </ul>
+                </li> 
             </ul>
         </div>
         
@@ -126,17 +136,16 @@ label[for="layer"] {
                             <label for="layer" style="margin-top: 15px; margin-bottom: 15px;">Currently viewing the: </label>
                             <select id="layer" name="layer">
                                 <option value="empty">choose</option>
-                                <option value="ballot_vpm" selected >Voting policy measure ballot initiatives</option>
-                                <option value="ballot_abort">Reproductive rights ballot initiatives</option> 
-                                <option value="presidential2" >Presidential race</option>
-                                <option value="congressional2">Senate race</option>
-                                <option value="house2">House race</option>
+                                <option value="ballot_vpm" selected >Democracy Ballot Initiatives</option>
+                                <option value="presidential2" >Presidential Race</option>
+                                <option value="congressional2">Senate Race</option>
+                                <option value="house2">House Race</option>
                                 <!--<option value="gubernatorial">Gubernatorial race</option> -->
-                                <option value="state_leg_up">State legislature upper</option>
-                                <option value="state_leg_low">State legislature lower</option>
-                                
+                                <option value="state_leg_up">State Upper Legislature</option>
+                                <option value="state_leg_low">State Lower Legislature</option>
+                                <option value="ballot_abort">Reproductive Rights Ballot Initiatives</option>
                                  <!--<option value="ballot_sg">State government ballot initiatives</option>  -->
-                                <option value="ballot_others">State-level ballot issues</option> 
+                                <option value="ballot_others">State-level Ballot Issues</option> 
 
                         </select>
                     </fieldset>

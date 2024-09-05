@@ -14,7 +14,7 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 28,nan,nan,nan,Mississippi,Senate,,12.0,Ty Pinkins,Roger Wicker (incumbent)
 29,nan,nan,nan,Missouri,Senate,,9.0,Lucas Kunce,Josh Hawley (incumbent)
 30,nan,nan,nan,Montana,Senate,,76.0,Jon Tester (incumbent),Tim Sheehy
-31,nan,nan,nan,Nebraska,Senate,,21.0,Dan Osborn (independent),Deb Fischer (incumbent)
+31,nan,nan,nan,Nebraska,Senate,,50.0,Dan Osborn (independent),Deb Fischer (incumbent)
 31,nan,nan,nan,Nebraska,Senate,,14.0,Preston Love Jr.,Pete Ricketts (incumbent)
 32,nan,nan,nan,Nevada,Senate,,100.0,Jacky Rosen (incumbent),Sam Brown
 34,nan,nan,nan,New Jersey,Senate,,5.0,Andy Kim,Curtis Bashaw

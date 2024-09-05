@@ -9,7 +9,6 @@ import sys
 import json
 import requests
 import numpy as np
-#from config import goog_at, president_sheet, senate_sheet
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -79,7 +78,7 @@ def election_csv_cleaner(location, csv_tag, destination, csv_name):
     df = pd.read_csv(location + csv_name)
 
     # Cut the CSV down to the relevant columns
-    df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power"]]
+    df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power", "D_running", "R_running"]]
 
     #state ID cleaning
     df["state"] = df["state"].fillna(0.0).astype(int)
@@ -127,6 +126,8 @@ def candidate_csv_cleaner(location, csv_tag, destination, csv_name):
     df["name"] = df["name"].fillna("Unknown")
     df["party"] = df["party"].fillna("Unknown")
     df["election_denier"] = df["election_denier"].fillna(0)
+    df["election_denier"] = df["election_denier"].astype(float).astype(int).astype(str)
+
 
     df.to_csv(destination + csv_tag + csv_name,  index = False)
 
@@ -144,26 +145,6 @@ def geojson_writer(df, filename):
     gdf = gpd.GeoDataFrame(df, crs=4269)
     desto = destination + geojson_tag + filename
     gdf.to_file(desto, driver="GeoJSON")
-
-'''
-def get_google_sheet_df(headers: dict, google_sheet_id: str, sheet_name: str, _range: str):
-    """_range is in A1 notation (i.e. A:I gives all rows for columns A to I)"""
-
-    url = f'https://sheets.googleapis.com/v4/spreadsheets/{google_sheet_id}/values/{sheet_name}!{_range}'
-    r = requests.get(url, headers=headers)
-    values = r.json()['values']
-    df = pd.DataFrame(values[1:])
-    df.columns = values[0]
-    df = df.apply(lambda x: x.str.strip()).replace('', np.nan)
-    return df
-
-headers = {'authorization': f'Bearer {goog_at}',
-           'Content-Type': 'application/vnd.api+json'}
-
-google_sheet_id = president_sheet
-sheet_name = 'President'
-sample_range = 'A:H'
-'''
 
 
 ################################################################################
@@ -216,6 +197,16 @@ g = pd.read_csv(destination + csv_tag + g_file, dtype=str)
 su = pd.read_csv(destination + csv_tag + su_file, dtype=str)
 sl = pd.read_csv(destination + csv_tag + sl_file, dtype=str)
 b = pd.read_csv(destination + csv_tag + b_file, dtype=str)
+#e = pd.read_csv(destination + csv_tag + e_file, dtype=str) # state level elections officials
+
+
+## Separates the ballot initiatives, and creates a state-level catchall category
+b_dem = b[b["race_type"] == "Democracy Repair"]
+b_dd = b[b["race_type"] == "Direct Democracy"]
+b_rr = b[b["race_type"] == "Reproductive Rights"]
+b_civ = b[b["race_type"] == "Civil Liberties"]
+minor = g + b_dd + b_civ
+
 merger_list = [p, s, h, g, su, sl, b]
 merge_df = pd.concat(merger_list, ignore_index=True)
 
@@ -230,6 +221,14 @@ elections_df = pd.concat(merger_list, ignore_index=True)
 svp_df.to_csv("static/data/calculated_files/csvs/aggregate.csv",  index = False)
 merge_df.to_csv("static/data/calculated_files/csvs/elections.csv",  index = False)
 
+
+dem_file = "democracy.csv"
+
+countcsv_list = []
+
+def count_csv(df):
+    for state in STATES:
+        pass
 
 ################################################################################
 #####      GeoJSON Production     ##############################################
@@ -283,9 +282,9 @@ all_df = all_shape_maker(states, congress, state_upper, state_lower)
 ## Uncomment this line to update all_shapes
 #all_df.to_file("static/data/calculated_files/geojsons/all_shapes/all_shapes.shp")
 
-#
+# race_type names that are relevant for certain things
 taglist = ["Aggregate", "Presidential","Senate","House", "Governor", "State Leg (Upper)",
-                              "State Leg (Lower)", "Ballot Initiative"]
+        "State Leg (Lower)", "Ballot Initiative", "democracy", "rrights", "statelevel"]
 a_json = "aggregate.geojson"
 p_json = "president.geojson"
 s_json = "senate.geojson"
@@ -294,12 +293,11 @@ g_json = "governor.geojson"
 su_json = "state_upper_legislature.geojson"
 sl_json = "state_lower_legislature.geojson"
 b_json = "ballot_initiative.geojson"
+dem_json = "democracy.geojson"
+rr_json = "reprights.geojson"
+slevel_json = "statewide.geojson"
 
-# I pull things in and out of the following list if I only want to update specific ones
-shapemergelist = [svp_df, p, s, h, g, su, sl, b]
-shp_choice_list = [states, states, states, congress, states, state_upper, state_lower, states]
-json_list = [a_json, p_json, s_json, h_json, g_json, su_json, sl_json, b_json]
-
+# Function that standardizes DFs, shapes AND not shapes
 def clean_df(df, tag):
     # Cleans dataframes so that columns are the correct types and nans don't exist
     df["state"] = df["state"].fillna("")
@@ -316,9 +314,31 @@ def clean_df(df, tag):
         df["voter_power"] = df["voter_power"].fillna(0)
     return df
 
+# List for creating the various geojsons
+# I pull things in and out of the following list if I only want to update specific ones
+shapemergelist = [svp_df, p, s, h, g, su, sl, b]
+shp_choice_list = [states, states, states, congress, states, state_upper, state_lower, states]
+json_list = [a_json, p_json, s_json, h_json, g_json, su_json, sl_json, b_json]
 
 for i, df in enumerate(shapemergelist):
     # Gets both the election and shape dataframes
+    df = clean_df(df, 1)
+    shapes = clean_df(shp_choice_list[i], 0)
+    print("Shapes:", df.shape[0], shapes.shape[0])
+    print(i, json_list[i], taglist[i])
+    # Merges them so that each shape stays, and election information is added if it exists and matches
+    category_df = shapes.merge(df, how="left", on = ["state", "congress", "s_upper", "s_lower"])
+    print("Before Filter:", category_df.shape[0])
+    print("After Filter:", category_df.shape[0])
+    geojson_writer(category_df, json_list[i])
+
+#Creates GEOJSONS for things without voter power- raw counts
+countmergelist = [b_dem, b_rr, minor]
+shp_choice_list = [states, states, states]
+json_list = [dem_json, rr_json, slevel_json]
+
+#This needs to be modified to build the geojsons properly
+for i, df in enumerate(countmergelist):
     df = clean_df(df, 1)
     shapes = clean_df(shp_choice_list[i], 0)
     print("Shapes:", df.shape[0], shapes.shape[0])
