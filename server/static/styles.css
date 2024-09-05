@@ -1,290 +1,514 @@
-  /* COLOR NOTES */
-  /* EIL Orange: rgb 255 147 7 */
-  /* Background: 225 all (nav) 240 all (text) */
-
 
 html{
     height: 100%;
 }
-.poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-  }
 
-body {
-    font-family: "Poppins", sans-serif; 
-    margin: 0; 
-    padding: 0;
-    height: 100%;
+body { margin: 0; padding: 0; background-color: #F2F3F4;}
+
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 60px;
+   background-color: transparent;
+   padding-block: 8px;
+   z-index: 10;
+   transition: 0.25s ease;;
+}
+
+.home-container{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 100vh; 
+   
+
+}
+
+.title-container { 
+   text-align: center;
+   width: 100%; 
+   padding:20px;
+   z-index: 2; 
+   background: transparent; 
+   padding-top: 60px; 
 }
 
 .map-container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
+   flex: 1; 
+   width: 100%;
+   position: relative; 
+   z-index: 1;
+  
 }
 
+.legend-container {
+   width: 100%; 
+   display:flex;
+   padding: 10px;
+   justify-content: center;
+   z-index: 2;
+   position:relative;
+}
+
+.legend {
+   background: transparent;
+   font-family: "Avenir";
+   font-weight: bold;
+   border-radius: 5px;
+   padding: 10px;
+   text-align: center;
+}
+
+
+
+.legend-item {
+   display: flex; 
+   align-items: center; 
+   margin: 5px; 
+   transition: color 0.25s ease-in-out, text-decoration 0.25s ease-in-out;
+}
+
+.legend-items{
+   margin: 5px;
+
+}
 #map {
-    width: 100%;
+     width: 100%;
     height: 100%;
+    }
+
+.legend-item:is(:hover, :focus-visible) {
+   color: var(--orange);
+   text-decoration: underline; 
+}
+
+#color-scale {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px;
+}
+
+.legend-btn {
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--jet);
+   font-size: 1.4rem;
+   font-weight: 500;
+   max-width: max-content;
+   letter-spacing: 1px;
+   padding: 10px; 
+   border:none;
+   box-shadow: 6px 6px 0 -1px var(--jet);
+   transition: opacity 1s ease;
+   transform-origin:center;
+   cursor: pointer;
+}
+
+
+/*.legend-btn:is(:hover, :focus-visible) {
+ background-color: var(--jet);
+ color: var(--white);
+ box-shadow: 5px 5px 0 -2px rgba(255, 255, 255, 0.5);
+}*/
+
+
+.legend-box{
+   margin: 10px;
+}
+
+.color-box {
+   width: 13px;
+   height: 13px;
+   margin-right: 5px;
+}
+
+.legend-button {
+   display:flex;
+   align-items:center;
+   justify-content:flex-start;
+   border: 1px solid black;
+   background-color: transparent;
+   color: black;
+   cursor: pointer;
+   padding: 5px 10px;
+   font-size: 16px;
+   line-height: 25px;
+   height: 25px;
+}
+
+.legend-button:is(:hover, :focus-visible) {
+   background-color: var(--jet);
+   color: var(--white);
+ }
+
+
+.custom-popup {
+   font-size: 16px;
+   padding: 10px;
+   width: 200px;
+   color: #000000;
+   margin: 0px;
+}
+label {
+   color: var(--orange)
+   }
+   label[for="layer"],
+   label[for="container"],
+   label[for="location"] {
+        color: rgb(230, 213, 213);
+   }
+h2, h3 {
+color: rgb(230, 213, 213);
+font-family: "Avenir";
+text-align: center;
+}
+
+h3 {
+font-size: 15px;  
+}
+
+
+#color-scale {
+   display:flex;
+   justify-content: space-between;
+   align-items:center;
+   padding:5px;
+   background: transparent;
+}
+
+.legend-item {
+display: flex;
+align-items: center;
+margin-bottom: 5px;
+}
+
+/*.color-box {
+width: 20px;
+height: 20px;
+margin-right: 8px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}*/
+
+
+/*
+container-fieldset
+*/
+
+#fieldset-container {
+   display: flex; 
+   flex-wrap: nowrap; 
+   justify-content: center; 
+   gap: 20px; 
+}
+
+.flex-container {
+   display: flex; 
+   flex-wrap: nowrap; 
+   gap: 20px; 
+}
+
+label {
+   margin: 0; 
+   font-size: 16px;
+   font-family: 'Avenir', sans-serif;
+}
+
+.more-info{
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+
+}
+
+#location {
+   height: 30px; 
+   width: 300px; 
+   font-size: 14px; 
+}
+
+button {
+   height: 10px; 
+   font-size: 14px; 
+   padding: 5px 10px; 
+}
+
+
+
+
+
+   #popup-btn {
+       align-items: center;
+       justify-content: center;
+       background-color: var(--orange);
+       color: var(--white);
+       font-size: 1.2rem;
+       font-weight: 500;
+       text-transform: uppercase;
+       max-width: max-content;
+       letter-spacing: 1px;
+       line-height: 1.2;
+       padding: 0; 
+       height:45px;
+       box-shadow: 6px 6px 0 -1px var(--jet);
+       border: none; 
+       transition: 0.25s ease;
+       transform-origin:center;
+   }
+
+   #popup-btn:is(:hover, :focus-visible) {
+       background-color: var(--jet);
+       color: var(--white);
+       box-shadow: 5px 5px 0 -2px var(--orange);
+     }
    
-}
+   /* Popup container */
+   .popup {
+       position: relative;
+       display: block;
+       cursor: pointer;
+       color: rgb(230, 213, 213);
+     }
+/* The actual popup (appears on top) */
+.popup .popuptext {
+   visibility: hidden;
+   opacity:0;
+   width: 300px;
+   transition: visibility 0s 1s, opacity 1s linear;
+   background-color: rgba(90, 90, 90);
+   color: rgb(230, 213, 213);
+   justify-content: center;
+   text-align: center;
+   border-radius: 10px;
+   padding: 30px;
+   position: fixed;
+   z-index: 1;
+   bottom: 40%;
+   left: 40%;
+   margin-left: auto;
+   margin-right: auto;
+ }
 
-#popup-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 150px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, .6);
-    border-radius: 5px;
-    z-index: 2;
-    color: rgb(230, 213, 213);
-}
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+   visibility: visible;
+   opacity:1;
+   -webkit-animation: fadeIn 1s;
+   animation: fadeIn 1s;
+   transition:visiblity 0s, opacity 1s linear;
+ }
 
-/* Popup container */
-.popup {
-    position: relative;
-    display: block;
-    cursor: pointer;
-    color: rgb(230, 213, 213);
-  }
-  
-  /* The actual popup (appears on top) */
-  .popup .popuptext {
-    visibility: hidden;
-    width: 300px;
-    background-color: rgba(90, 90, 90);
-    color: rgb(230, 213, 213);
-    justify-content: center;
-    text-align: center;
-    border-radius: 10px;
-    padding: 30px;
-    position: fixed;
-    z-index: 1;
-    bottom: 40%;
-    left: 40%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
 
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
-  }
-  
-  /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-  }
 
-#infographic-ref {
-    padding-top: 20px;
-    color: #fff;
+ /* Add animation (fade in the popup) */
+ @-webkit-keyframes fadeIn {
+   from {opacity: 0;}
+   to {opacity: 1;}
+ }
+
+ @keyframes fadeIn {
+   from {opacity: 0;}
+   to {opacity:1 ;}
+ }
+
+ #infographic-ref {
+   padding-top: 20px;
+   color: #fff;
 }
 #infographic-btn {
-    color: rgb(230, 213, 213);
-    background-color: rgba(60, 60, 60);
+   color: rgb(230, 213, 213);
+   background-color: rgba(60, 60, 60);
 }
 
 #detail-left {
-    position: relative;
-    width: 100%;
-    min-height: 550px;
-    max-height: 800px;
-    margin: 0; 
-    padding: 0;
+   position: relative;
+   width: 100%;
+   min-height: 550px;
+   max-height: 800px;
+   margin: 0;
+   padding: 0;
 }
 #detail-right {
-    position: relative;
-    margin: 0;
-    padding: 0;
+   position: relative;
+   margin: 0;
+   padding: 0;
 }
-#detail-li {
-    width: 100%;
+   #detail-li {
+       width: 100%;
+   
+   }
+   #detail-row {
+       width: 100%;
+       margin: 0;
+       padding: 0;
+   
+   }
+   #row-name {
+       column-width: 70%;
+       font-size: 14px;
+   }
+   
+   #row-vp {
+       column-width: 15%;
+       font-size: 14px
+   }
+   #row-btn {
+       column-width: 15%;
+       font-size: 14px;
+   }
 
-}
-#detail-row {
-    width: 100%;
-    margin: 0; 
-    padding: 0;
-    
-}
-#row-name {
-    column-width: 70%;
-    font-size: 14px;
-}
+   .map-container-sm {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+   }
+   
+   #socials {
+       margin-left: auto;
+       margin-top: 5px;
+       list-style-type: none;
+       display: flex;
+       justify-content: center;
+   }
+   
+   #dono-btn {
+       color: rgb(225, 130, 0);
+       border-color: rgb(200, 200, 200);
+       background-color: rgb(235, 235, 235);
+       font-family: "Poppins", sans-serif;
+       padding: 0px 10px;
+       align-items: center;
+       line-height: 1;
+       justify-content: center;
 
-#row-vp {
-    column-width: 15%;
-    font-size: 14px
-}
-#row-btn {
-    column-width: 15%;
-    font-size: 14px;
-}
+   }
 
 
-
-.map-container-sm {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-#socials {
-    margin-left: auto;
-    margin-top: 5px;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-#dono-btn {
-    color: rgb(225, 130, 0);
-    border-color: rgb(200, 200, 200);
-    background-color: rgb(235, 235, 235);
-    font-family: "Poppins", sans-serif; 
-    padding: 0px 10px;
-    align-items: center;
-    line-height: 1;
-    justify-content: center;
-    display: flex;
-    box-sizing: border-box;
-    
-}
 
 #dono-btn p {
-    margin: 0; 
-    line-height: 1.8; 
+   margin: 0; 
+   line-height: 1.8; 
 }
 
 #social-item {
-    float: left;
-    margin-right: 25px;
-    margin-top: auto;
-    margin-bottom: auto;
+   float: left;
+   margin-right: 25px;
+   margin-top: auto;
+   margin-bottom: auto;
 }
 
 #social-item svg {
-    display: block;
-    text-align: center;
+   display: block;
+   text-align: center;
 }
 
 #cand-row {
-    padding-top: 50px;
-    height: 90%;
+   padding-top: 50px;
+   height: 90%;
 }
 
 #candidate {
-    min-height: 450px;
-    max-width: 400px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-bottom: 25px;
-    background-color: rgb(240,240,240);
+   min-height: 450px;
+   max-width: 400px;
+   margin-right: auto;
+   margin-left: auto;
+   padding-bottom: 25px;
+   background-color: rgb(240,240,240);
 
 }
 
 #infolist {
-    text-align: center;
-    justify-content: center;
-    list-style-type: none;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+   text-align: center;
+   justify-content: center;
+   list-style-type: none;
+   top: 50%;
+   left: 50%;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
 }
 
 #cand {
-    font-size: 20px;
-    justify-content: center;
-    margin: 10px;
-    margin-bottom: 10%;
-    list-style-type: none;
-    /*font-family: "Monaco", monospace;*/
-    color: black;
+   font-size: 20px;
+   justify-content: center;
+   margin: 10px;
+   margin-bottom: 10%;
+   list-style-type: none;
+   /*font-family: "Monaco", monospace;*/
+   color: black;
 }
 
 #denier {
-    font-size: 16px;
-    justify-content: center;
-    margin: 10px;
-    margin-bottom: 10%;
-    list-style-type: none;
-    /*font-family: "Monaco", monospace;*/
-    color: maroon;
+   font-size: 16px;
+   justify-content: center;
+   margin: 10px;
+   margin-bottom: 10%;
+   list-style-type: none;
+   /*font-family: "Monaco", monospace;*/
+   color: maroon;
 }
 
 #campbtn {
-    justify-content: center;
-    margin: 10px;
-    list-style-type: none;
-    font-family: 'Poppins', sans-serif;
-    color: black;
+   justify-content: center;
+   margin: 10px;
+   list-style-type: none;
+   font-family: 'Poppins', sans-serif;
+   color: black;
 }
 
 #cand_party {
-    list-style-type: none;
+   list-style-type: none;
 }
 
 #info-page{
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 50px;
-    width: 70%;
-    background-color: rgb(240,240,240)
+   padding-left: 10px;
+   padding-right: 10px;
+   padding-bottom: 50px;
+   width: 70%;
+   background-color: rgb(240,240,240)
 }
 
 #info-title{
-    width: 80%;
-    padding-top: 25px;
-    text-align: center;
-    font-size: 18px;
-    /*font-weight: bold;*/
+   width: 80%;
+   padding-top: 25px;
+   text-align: center;
+   font-size: 18px;
+   /*font-weight: bold;*/
 }
 
 #info-blurb{
-    padding-top: 10px;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: normal;
+   padding-top: 10px;
+   justify-content: center;
+   font-size: 16px;
+   font-weight: normal;
 }
 
 #vp-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto; 
-    width: auto; 
-    height: 250px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   height: auto; 
+   width: auto; 
+   height: 250px;
 }
 #vp-math{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto; 
-    width: auto; 
-    width: 700px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   height: auto; 
+   width: auto; 
+   width: 700px;
 }
 
 #logo{
-    height: 200px;
-    width: 300px;
+   height: 200px;
+   width: 300px;
 }
 
 #election-desc {
-    text-align: center;
-    font-size: 30px;
-    padding-top: 20px;
+   text-align: center;
+   font-size: 30px;
+   padding-top: 20px;
 }
