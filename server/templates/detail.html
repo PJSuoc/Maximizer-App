@@ -5,44 +5,48 @@
    body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins';
+    font-family: 'Ubuntu', sans-serif;
 }
 .map-overlay {
         font: 14px/20px;
+        width:100%;
         position: absolute;
-        top: 155px; /* need a dynamic solution to keep it not overlaying with other stuff */
-        left: 10px;
-        bottom: 10px;
-        padding: 10px;
-        z-index: 2; /* put over  map */
+        top: 0px; 
+        left: 0px;
+        bottom: 0px;
+        padding: 0px;
+        z-index: 2; 
         text-align: center;
        
     }
+    
     .map-overlay-inner {
         background-color: rgba(0, 0, 0, 0.6);
         padding: 10px;
         border-radius: 3px;
-        text-align: center;
-        box-shadow: 2px 6px 10px rgba(0, 0, 0);
-        
+        box-shadow: 2px 4px 8px rgba(0, 0, 0.2);
+       
     }
     .map-overlay-inner fieldset {
         border: black;
         padding: 0;
         margin: 0 0 10px;
-        text-align: center;
+        text-align: left;
+        display:flex;
+        align-items:center;
+        justify-content: center;
     }
     .map-overlay-inner fieldset:last-child {
         margin: 0;
         text-align: center;
     }
     .map-overlay-inner select {
-        width: 100%;
+        width: auto;
+        flex-grow:1;
     }
     .map-overlay-inner label {
-       
-        display: block;
-        margin-bottom: 5px;
+        margin-right:10px;
+        white-space: nowrap;
     }
     .map-overlay-inner button {
         display: inline-block;
@@ -55,6 +59,7 @@
         outline: none;
     }
 
+   
 .custom-popup {
     font-size: 16px;
     padding: 10px;
@@ -64,14 +69,23 @@
 }
 
 label[for="layer"] {
-    color: rgb(230, 213, 213);
+    color: white;
 }
 
 #detail-right {
-    position: relative; /* Ensure positioning context for absolute elements inside */
-    overflow: hidden; /* Ensure no overflow issues */
+    position: relative; 
+    overflow: hidden; 
 }
 
+#detail-left .list-group-item {
+    border: none;  
+}
+
+.list-group-item strong {
+    text-decoration: underline; 
+    text-decoration-thickness: 3px; 
+    font-weight: bold; 
+}
 
 
 </style>
@@ -80,7 +94,7 @@ label[for="layer"] {
 
 <body>
     <div class="row" height="100%">
-        <div class="col" id="detail-left" >
+        <div class="col" id="detail-left">
             <ul class="list-group">
                 <li class="list-group-item"> <strong>Democracy Ballot Initiatives</strong>
                     <ul class="list-group list-group-flush">
@@ -125,35 +139,34 @@ label[for="layer"] {
             </ul>
         </div>
         
-        <div class="col" id="detail-right">
+        <div class="col" id="detail-right" >
             <div class="map-overlay">
-                
-                
-
                     <div class="map-overlay-inner">
-                        <fieldset>
-                            
-                            <label for="layer" style="margin-top: 15px; margin-bottom: 15px;">Currently viewing the: </label>
+                          <fieldset>
+                            <label for="layer">Currently viewing: </label>
                             <select id="layer" name="layer">
                                 <option value="empty">choose</option>
-                                <option value="ballot_vpm" selected >Democracy Ballot Initiatives</option>
-                                <option value="presidential2" >Presidential Race</option>
-                                <option value="congressional2">Senate Race</option>
-                                <option value="house2">House Race</option>
-                                <!--<option value="gubernatorial">Gubernatorial race</option> -->
-                                <option value="state_leg_up">State Upper Legislature</option>
-                                <option value="state_leg_low">State Lower Legislature</option>
-                                <option value="ballot_abort">Reproductive Rights Ballot Initiatives</option>
-                                 <!--<option value="ballot_sg">State government ballot initiatives</option>  -->
-                                <option value="ballot_others">State-level Ballot Issues</option> 
+                                <option value="ballot_vpm">Democracy ballot initiatives</option>
+                                <option value="presidential2" >Presidential race</option>
+                                <option value="congressional2">Senate race</option>
+                                <option value="house2" selected>House races</option>
+                                <option value="state_leg_up">State upper legislature</option>
+                                <option value="state_leg_low">State lower legislature</option>
+                                <option value="ballot_abort">Reproductive rights initiatives</option>
+                                <option value="ballot_others">State-level ballot issues</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                    
+                    <div class="col map-container-sm">
+                        <div id="map"></div>
+                    </div> 
+            </div>  
+        </div>
+</div>
+                    
 
-                        </select>
-                    </fieldset>
-                </div>
-            </div>
-            <div class="map-container-sm">
-                <div id="map"></div>
-            
+     
                 <script>
                     mapboxgl.accessToken = '{{ mapbox_key }}';
                     const map = new mapboxgl.Map({
@@ -179,8 +192,6 @@ label[for="layer"] {
             ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson',
             state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
             state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
-
-
         };
 
 
@@ -239,17 +250,17 @@ label[for="layer"] {
     paint: {
         'fill-color': [
             'case',
-            ['==', layerId, 'ballot_abort'], ['match', ['get', 'dropdown.type'], 'abortion', '#f768a1', '#D3D3D3'],
-            ['==', layerId, 'ballot_vpm'], ['match', ['get', 'dropdown.type'], 'voting policy measure', '#78C679', '#D3D3D3'],
+            ['==', layerId, 'ballot_abort'], ['match', ['get', 'dropdown.type'], 'abortion', '#F768A0', '#D3D3D3'],
+            ['==', layerId, 'ballot_vpm'], ['match', ['get', 'dropdown.type'], 'voting policy measure', '#9277DE', '#D3D3D3'],
             //['==', layerId, 'ballot_sg'], ['match', ['get', 'dropdown.type'], 'state government', '#9E9AC8', '#D3D3D3'],
             //ballot_others now includes governor, state government ballots and liberty ballots
-            ['==', layerId, 'ballot_others'], ['match', ['get', 'data'], 'has data', '#92C5DE', '#D3D3D3'],
+            ['==', layerId, 'ballot_others'], ['match', ['get', 'data'], 'has data', '#D19E9B', '#D3D3D3'],
 
             ['==', ['get', 'voter_power'], null], '#D3D3D3', // Handles null or undefined voter_power
             ['==', ['get', 'voter_power'], 0], '#D3D3D3', // Handles zero voter_power
             ['==', layerId, 'presidential2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'],
-            ['==', layerId, 'congressional2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#f2f0f7', 33.3, '#cbc9e2', 66.6, '#9e9ac8', 100, '#6a51a3'],
-            ['==', layerId, 'house2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#edf8e9', 33.3, '#bae4b3', 66.6, '#74c476', 100, '#238b45'],
+            ['==', layerId, 'congressional2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fff5e0', 33.3, '#ffebb5', 66.6, '#ffe082', 100, '#fec548'],
+            ['==', layerId, 'house2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#F6FAFC', 33.3, '#E3EEF5', 66.6, '#D1E2ED', 100, '#B4CDE3'],
            // ['==', layerId, 'gubernatorial'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'],
             ['==', layerId, 'state_leg_up'], ['interpolate', ['linear'], ['get', 'voter_power'],1, '#ffffcc', 33.3, '#a1dab4', 66.6, '#41b6c4', 100, '#225ea8'],
             ['==', layerId, 'state_leg_low'], ['interpolate', ['linear'], ['get', 'voter_power'],1, '#f1eef6', 33.3, '#d7b5d8', 66.6, '#df65b0', 100, '#ce1256'],
@@ -457,7 +468,7 @@ popupContent = `<div class="custom-popup">
 
         // Initial layer setup on map load
         map.on('load', function () {
-    addGeoJsonLayer('ballot_vpm');
+    addGeoJsonLayer('house2');
     
     //filter for only USA names
     const layers = map.getStyle().layers;
