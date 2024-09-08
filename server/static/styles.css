@@ -1,60 +1,218 @@
-  /* COLOR NOTES */
-  /* EIL Orange: rgb 255 147 7 */
-  /* Background: 225 all (nav) 240 all (text) */
-
-
 html{
-    height: 100%;
+     height: 100%;
 }
-.poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-  }
 
-body {
-    font-family: "Poppins", sans-serif; 
-    margin: 0; 
-    padding: 0;
-    height: 100%;
+body { margin: 0; padding: 0; background-color: #F2F3F4;}
+
+.header {
+    background-color: transparent;
+    display: flex;
+    padding: 10px 20px; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative; 
+    z-index:10;
+}
+
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 92vh; 
+
+}
+
+.title-container { 
+    text-align: center;
+    width: 100%; 
+    padding:20px;
+    z-index: 2; 
+    background: transparent; 
+    padding-top: 1dvi; 
+    flex: 0 1 auto;
 }
 
 .map-container {
-    position: fixed;
-    height: 100%;
+    flex: 1 1 auto; 
     width: 100%;
+    position: relative; 
+    z-index: 1;
+   
 }
 
 #map {
     width: 100%;
-    height: 100%;
+    height: 95%;
+
+}
+
+.legend-container {
+    flex: 0 1 auto; 
+    width: 100%; 
+    display:flex;
+    justify-content: space-around;
+    z-index: 2;
+    position:relative;
+
+}
+
+.legend-section {
+    background: transparent;
+    font-family: "Avenir";
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+#legend-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap:15px;
+    margin-bottom: 15px;
+}
+
+.legend-btn {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--jet);
+    font-size: 1.4rem;
+    font-weight: 500;
+    height:25px;
+    padding: 5px 10px; 
+    border:none;
+    border-radius: 4px;
+    box-shadow: 6px 6px 0 -1px var(--jet);
+    transition: all 0.3s ease, animation-play-state 0s;
+    transform-origin:center;
+    cursor: pointer;
+}
+
+.legend-btn:is(:hover, :focus-visible) {
+  background-color: var(--jet);
+  color: var(--white);
+  box-shadow: 5px 5px 0 -2px rgba(255, 255, 255, 0.5);
+}
+
+.legend-btn.highlight {
+    transform: scale(1.05);
+    background-color: var(--jet);
+    color: var(--white);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* .legend-btn.highlight {
+    background-color: var(--jet);
+    color: var(--white);
+    animation: pulse 1.5s;
+    animation-iteration-count: infinite;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    border: 2px solid var(--white);
+}
+
+.legend-btn:not(.highlight) {
+    animation-play-state: paused;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+} */
+
+
+.map-overlay {
+    font: 14px/20px;
+    position: fixed;
+    bottom: -10px; /* need a dynamic solution to keep it not overlaying with other stuff */
+    left: 20%;
+    width:60%;
+    padding: 10px;  
+    z-index: 2; /* put over  map */
+    text-align: center;
+    background-color:transparent;
    
 }
 
-#popup-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 150px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, .6);
-    border-radius: 5px;
-    z-index: 2;
-    color: rgb(230, 213, 213);
+
+.more-info{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
 }
 
-/* Popup container */
-.popup {
-    position: relative;
-    display: block;
-    cursor: pointer;
-    color: rgb(230, 213, 213);
-  }
-  
-  /* The actual popup (appears on top) */
-  .popup .popuptext {
+#location {
+    height: 30px; 
+    width: 300px; 
+    font-size: 14px; 
+}
+
+button {
+    height: 10px; 
+    font-size: 14px; 
+    padding: 5px 10px; 
+}
+
+
+
+
+
+    #popup-btn {
+        align-items: center;
+        justify-content: center;
+        background-color: var(--orange);
+        color: var(--white);
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        max-width: max-content;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        padding: 5px; 
+        height:45px;
+        box-shadow: 6px 6px 0 -1px var(--jet);
+        border: none; 
+        border-radius: 4px;
+        transition: 0.25s ease;
+        transform-origin:center;
+        text-decoration: none;
+        margin-right:10px;
+    }
+
+    #popup-btn:is(:hover, :focus-visible) {
+        background-color: var(--jet);
+        color: var(--white);
+        box-shadow: 5px 5px 0 -2px var(--orange);
+      }
+    
+    /* Popup container */
+    .popup {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        color: rgb(230, 213, 213);
+      }
+/* The actual popup (appears on top) */
+.popup .popuptext {
     visibility: hidden;
+    opacity:0;
     width: 300px;
+    transition: visibility 0s 1s, opacity 1s linear;
     background-color: rgba(90, 90, 90);
     color: rgb(230, 213, 213);
     justify-content: center;
@@ -68,27 +226,30 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  
 
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .popup .show {
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
     visibility: visible;
+    opacity:1;
     -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
+    animation: fadeIn 1s;
+    transition:visiblity 0s, opacity 1s linear;
   }
-  
+
+ 
+
   /* Add animation (fade in the popup) */
   @-webkit-keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
   }
-  
+
   @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
   }
 
-#infographic-ref {
+  #infographic-ref {
     padding-top: 20px;
     color: #fff;
 }
@@ -102,7 +263,7 @@ body {
     width: 100%;
     min-height: 550px;
     max-height: 800px;
-    margin: 0; 
+    margin: 0;
     padding: 0;
 }
 #detail-right {
@@ -110,59 +271,57 @@ body {
     margin: 0;
     padding: 0;
 }
-#detail-li {
-    width: 100%;
-
-}
-#detail-row {
-    width: 100%;
-    margin: 0; 
-    padding: 0;
+    #detail-li {
+        width: 100%;
     
-}
-#row-name {
-    column-width: 70%;
-    font-size: 14px;
-}
-
-#row-vp {
-    column-width: 15%;
-    font-size: 14px
-}
-#row-btn {
-    column-width: 15%;
-    font-size: 14px;
-}
-
-
-
-.map-container-sm {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-#socials {
-    margin-left: auto;
-    margin-top: 5px;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-#dono-btn {
-    color: rgb(225, 130, 0);
-    border-color: rgb(200, 200, 200);
-    background-color: rgb(235, 235, 235);
-    font-family: "Poppins", sans-serif; 
-    padding: 0px 10px;
-    align-items: center;
-    line-height: 1;
-    justify-content: center;
-    display: flex;
-    box-sizing: border-box;
+    }
+    #detail-row {
+        width: 100%;
+        margin: 0;
+        padding: 0;
     
-}
+    }
+    #row-name {
+        column-width: 70%;
+        font-size: 14px;
+    }
+    
+    #row-vp {
+        column-width: 15%;
+        font-size: 14px
+    }
+    #row-btn {
+        column-width: 15%;
+        font-size: 14px;
+    }
+
+    .map-container-sm {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #socials {
+        margin-left: auto;
+        margin-top: 5px;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #dono-btn {
+        color: rgb(225, 130, 0);
+        border-color: rgb(200, 200, 200);
+        background-color: rgb(235, 235, 235);
+        font-family: "Poppins", sans-serif;
+        padding: 0px 10px;
+        align-items: center;
+        line-height: 1;
+        justify-content: center;
+
+    }
+
+
 
 #dono-btn p {
     margin: 0; 
@@ -227,6 +386,7 @@ body {
 }
 
 #campbtn {
+    border:none;
     justify-content: center;
     margin: 10px;
     list-style-type: none;
@@ -261,30 +421,30 @@ body {
     font-weight: normal;
 }
 
+
+#election-desc {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
 #vp-img{
+    max-width: 100%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: auto; 
-    width: auto; 
-    height: 250px;
 }
 #vp-math{
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: auto; 
-    width: auto; 
-    width: 700px;
+    max-width: 100%;
 }
 
-#logo{
-    height: 200px;
-    width: 300px;
-}
-
-#election-desc {
-    text-align: center;
-    font-size: 30px;
-    padding-top: 20px;
+#logo img{
+    max-width:100%;
+    height:auto;
 }
