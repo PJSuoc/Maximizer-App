@@ -31,7 +31,7 @@
                            </button>
                        </div>
                        <div class="legend-items">
-                           <button class="legend-btn" data-level="president" style="background-color: #F5928D;">
+                           <button class="legend-btn" data-level="presidential" style="background-color: #F5928D;">
                                President
                            </button>
                        </div>
@@ -74,7 +74,7 @@
         const abortionData= ballotData.filter(initiative => 
             initiative.ballot_type.toLowerCase().includes("reproductive")
         );
-        const LEVELS = ['democracy', 'president', 'senate', 'house', 'state', 'abortion', 'key_ballot']
+        const LEVELS = ['democracy', 'presidential', 'senate', 'house', 'statewide', 'abortion', 'ballot_all']
         let animationRunning = true;
         const COLOR_BG = '#F2F3F4';  // Define your background color
         const COLOR_HOVER = '#FFFFFF';
@@ -169,14 +169,14 @@
             starting: 'static/data/calculated_files/geojsons/overall_albers.geojson',
             abortion: 'static/data/geojson_imports/geojson_final/ballot_abort_albers.geojson',
             democracy: 'static/data/geojson_imports/geojson_final/ballot_VPM_albers.geojson',
-            aggregate: 'static/data/calculated_files/geojsons/aggregate_albers.geojson',
+            //aggregate: 'static/data/calculated_files/geojsons/aggregate_albers.geojson',
             presidential: 'static/data/calculated_files/geojsons/president_albers.geojson',
             senate: 'static/data/calculated_files/geojsons/senate_albers.geojson',
             house: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
             statewide: 'static/data/calculated_files/geojsons/governor_albers.geojson',
             ballot_all: 'static/data/geojson_imports/geojson_final/ballot_initiatives_main_albers.geojson',
-            state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper_albers.geojson',
-            state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower_albers.geojson'        
+            //state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper_albers.geojson',
+            //state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower_albers.geojson'        
         };
 
         const geoJsonCache = {};
@@ -199,6 +199,8 @@
                 throw error;
             }
         }
+
+        const startingDataPromise = loadGeoJson('starting');
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
         let currentLayerId = 'starting'; // adjust the layer that pops up first here
@@ -347,7 +349,7 @@
             paint: {
                 'fill-color': [
                     'case',
-                    ['>', ['to-number', ['get', 'number_per_state'] ], 0], COLOR_ABORTION,
+                    ['>', ['to-number', ['get', 'number_per_state'] ], 0], COLOR_DEMOCRACY,
                     COLOR_DEFAULT
                 ],
                 'fill-opacity': 1,
@@ -653,9 +655,41 @@ map.on('mousemove', layerId + '-fill', function (e) {
 
 map.on('load', async function () {
     try {
-        const startingData = await loadGeoJson('starting');
-        addGeoJsonLayer('starting', startingData);
+        const mapDiv = document.getElementById('map'); 
+        const width = mapDiv.offsetWidth;
+        const height = mapDiv.offsetHeight;
 
+  
+        function fitMapToContainer() {
+            const width = mapDiv.offsetWidth;
+            const height = mapDiv.offsetHeight;
+
+            
+            const aspectRatio = width / height;
+            let bound_value;
+            let bounds;
+
+            if (aspectRatio >= 1) {
+                // Landscape mode
+                bound_value = 15 * Math.max(1, aspectRatio);
+                bounds = [[-bound_value, -bound_value / aspectRatio], [bound_value, bound_value / aspectRatio]];
+            } else {
+                // Portrait mode
+                bound_value = 15 / Math.min(1, aspectRatio);
+                bounds = [[-bound_value * aspectRatio, -bound_value], [bound_value * aspectRatio, bound_value]];
+            }
+            
+            map.fitBounds(bounds, { 
+                padding: {top: 0, bottom: 0, left: 50, right: 50}, 
+                animate: false 
+            });
+        }
+
+        fitMapToContainer();
+        window.addEventListener('resize', fitMapToContainer);
+        const startingData = await loadGeoJson('starting');
+        addGeoJsonLayer('starting', startingDataPromise);
+        
         // Lazy load other layers
         Object.keys(layers).forEach(layerId => {
             if (layerId !== 'starting') {
@@ -720,7 +754,6 @@ map.on('load', async function () {
                 currentPowerLevelIndex = 0;
             } 
                 const currentPowerLevel = powerLevels[currentPowerLevelIndex];
-                console.log("Animating power level: ", currentPowerLevel);
                 
                 let statesToAnimate = features.filter(feature => 
                         voterEmpowerment[currentPowerLevel].includes(feature.properties.STUSPS)
@@ -740,7 +773,6 @@ map.on('load', async function () {
                 if (currentButton) {
                     currentButton.classList.add('highlight');
                 }
-                console.log('currentButton', currentButton);
 
                 // Remove "highlight" class from other buttons
                 document.querySelectorAll('.legend-btn').forEach(button => {
@@ -849,13 +881,13 @@ map.on('load', async function () {
 function getColorForPowerLevel(powerLevel) {
     switch(powerLevel) {
         case 'democracy': return COLOR_DEMOCRACY;
-        case 'president': return COLOR_PRESIDENT;
+        case 'presidential': return COLOR_PRESIDENT;
         case 'senate': return COLOR_SENATE;
         case 'house': return COLOR_HOUSE;
         case 'governor': return COLOR_GOVERNOR;
         case 'abortion': return COLOR_ABORTION;
-        case 'key_ballot': return COLOR_KEY_BALLOT;
-        case 'state': return COLOR_STATE_LEGISLATURE;
+        case 'ballot_all': return COLOR_KEY_BALLOT;
+        case 'statewide': return COLOR_STATE_LEGISLATURE;
         default: return COLOR_DEFAULT;
     }
 }
@@ -868,7 +900,6 @@ document.querySelectorAll('.legend-btn').forEach(button => {
         const powerLevel = this.getAttribute('data-level');
         const color = getColorForPowerLevel(powerLevel);
         
-        console.log("Power level clicked : ", powerLevel);
         // Remove active class from all buttons
         document.querySelectorAll('.legend-btn').forEach(btn => {
             btn.classList.remove('active');
@@ -881,21 +912,7 @@ document.querySelectorAll('.legend-btn').forEach(button => {
         
         // Filter the map to show only states with the selected power level
         // Change the layer to the one that is clicked
-        if (powerLevel === 'democracy') {
-            addGeoJsonLayer('democracy');
-        } else if (powerLevel === 'president') {
-            addGeoJsonLayer('presidential');
-        } else if (powerLevel === 'senate') {
-            addGeoJsonLayer('senate');
-        } else if (powerLevel === 'house') {
-            addGeoJsonLayer('house');
-        } else if (powerLevel === 'statewide') {
-            addGeoJsonLayer('statewide');
-        } else if (powerLevel === 'abortion') {
-            addGeoJsonLayer('abortion');
-        } else if (powerLevel === 'ballot_all') {
-            addGeoJsonLayer('ballot_all');
-        }
+        addGeoJsonLayer(powerLevel);
     });
 });
 
