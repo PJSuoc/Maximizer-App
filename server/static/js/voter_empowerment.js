@@ -24,7 +24,7 @@ const voterEmpowerment =  {
         "UT",
         "MT"
     ],
-    "president": [
+    "presidential": [
         "AZ",
         "GA",
         "ME",
@@ -77,7 +77,7 @@ const voterEmpowerment =  {
         "WA",
         "WI"
     ],
-    'state': [
+    'statewide': [
         "AK",
         "AZ",
         "KS",
@@ -124,7 +124,7 @@ const voterEmpowerment =  {
         "NY",
         "SD"
     ],
-    "key_ballot": [
+    "ballot_all": [
         "AK",
         "AR",
         "AZ",
