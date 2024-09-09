@@ -1,12 +1,12 @@
-﻿state_name,state,congress,s_lower,s_upper,election_name,race_type,voter_power,cook_rating,D_running,R_running
-New Hampshire,33,,,,,Governor,100,toss-up
-North Carolina,37,,,,,Governor,100,toss-up
-Delaware,10,,,,,Governor,20,safe D
-Indiana,18,,,,,Governor,20,safe R
-Missouri,29,,,,,Governor,20,safe R
-Montana,30,,,,,Governor,50,likely R
-North Dakota,38,,,,,Governor,20,safe R
-Utah,49,,,,,Governor,20,safe R
-Vermont,50,,,,,Governor,50,likely R
-Washington,53,,,,,Governor,50,likely D
-West Virginia,54,,,,,Governor,20,safe R
+state_name,state,congress,s_lower,s_upper,election_name,race_type,voter_power,cook_rating,D_running,R_running,D_link,R_link
+New Hampshire,33,,,,,Governor ,100,toss-up,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.,,
+North Carolina,37,,,,,Governor ,100,toss-up,Josh Stein ,Mark K. Robinson,https://www.joshstein.org/,https://electiondeniers.org/
+Delaware,10,,,,,Governor ,10,safe D,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.,,
+Indiana,18,,,,,Governor ,10,safe R,Jennifer McCormick,Mike Braun,https://www.mccormickforgov.com/,https://electiondeniers.org/
+Missouri,29,,,,,Governor ,10,safe R,Crystal Quade,Mike Kehoe,https://crystalquade.com/,https://www.mikekehoe.com/
+Montana,30,,,,,Governor ,30,likely R,Ryan Busse,Greg Gianforte (incumbent),https://busseformontana.com/,https://electiondeniers.org/
+North Dakota,38,,,,,Governor ,10,safe R,Merrill Piepkorn,Kelly Armstrong,https://www.merrillfornd.com/,https://www.armstrongnd.com/
+Utah,49,,,,,Governor ,10,safe R,Brian King,Spencer Cox (incumbent),https://www.kingforutah.com/,https://www.votecox.com/
+Vermont,50,,,,,Governor ,30,likely R,Esther Charlestin,Phil Scott (incumbent),https://www.estherforvt.com/,https://www.philscott.org/
+Washington,53,,,,,Governor ,30,likely D,Bob Ferguson,Dave Reichert,https://www.bobferguson.com/,https://www.reichertforgovernor.com/
+West Virginia,54,,,,,Governor ,10,safe R,Steve Williams,Patrick Morrisey,https://stevewilliamswv.com/,https://electiondeniers.org/
