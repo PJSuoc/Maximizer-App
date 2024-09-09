@@ -5,7 +5,17 @@
      <!-- add viewport meta tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title>EIL Vote Maximizer</title>
+    <!-- redirect to https 
+     Note this must be commented out when testing locally -->
+    <script>
+        if (window.location.protocol == "http:") {
+          console.log("You are not connected with a secure connection.")
+          console.log("Reloading the page to a Secure Connection...")
+          window.location = document.URL.replace("http://", "https://");
+        }
 
+    </script> 
+    
     <!-- font upload-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +33,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Mapbox CSS -->
+    <link rel="preconnect" href="https://api.mapbox.com">   
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
     <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" rel="stylesheet">
     

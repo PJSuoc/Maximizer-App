@@ -93,7 +93,14 @@
         const democracyScale = interpolateColors(COLOR_DEFAULT, COLOR_DEMOCRACY, 5);
         const presidentScale = interpolateColors(COLOR_DEFAULT, COLOR_PRESIDENT, 5);
         const houseScale = interpolateColors(COLOR_DEFAULT, COLOR_HOUSE, 5)
-        const senateScale = interpolateColors(COLOR_DEFAULT, COLOR_SENATE, 5)
+        const senateScale = [
+                                "#e1e1e1", // 0%
+                                "#eedcb4", // 25%
+                                "#ffd885", // 50% (increased saturation)
+                                "#ffce65", // 75% (increased saturation)
+                                "#fec548"  // 100%
+                            ];
+      
         const govScale = interpolateColors(COLOR_DEFAULT, COLOR_GOVERNOR, 5)
         const stateLegScale = interpolateColors(COLOR_DEFAULT, COLOR_STATE_LEGISLATURE, 5) 
         const abortionScale = interpolateColors(COLOR_DEFAULT, COLOR_ABORTION, 5)
@@ -104,14 +111,21 @@
         mapboxgl.accessToken = '{{ mapbox_key }}';
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mikeklein1/cm0h4ib4o01mf01qv90n802b8/draft',
+            style: 'mapbox://styles/mikeklein1/cm0h4ib4o01mf01qv90n802b8',
             zoom: 3.5, // Adjust as needed
-            maxZoom: 5,
+            maxZoom: 6,
             minZoom: 2,
             center: [0,-2],
             projection: 'mercator', // Using an equal-area projection,
             background: COLOR_BG  // Use the same color for the map background
         });
+
+        // Disable map rotation
+        map.dragRotate.disable();
+        map.touchZoomRotate.disableRotation
+        map.dragPan.enable()
+        map.pitchWithRotate = false
+
         // Function to interpolate between two colors
         function interpolateColor(color1, color2, factor) {
             const result = color1.slice();
@@ -415,10 +429,10 @@
             ['==', layerId, 'senate'], [
                 'interpolate', ['linear'], ['get', 'voter_power'],
                 1, senateScale[0],
-                25, senateScale[1],
-                50, senateScale[2],
-                75, senateScale[3],
-                100, senateScale[4]
+                20, senateScale[1],
+                35, senateScale[2],
+                50, senateScale[3],
+                70, senateScale[4]
             ],
             ['==', layerId, 'gubernatorial'], [
                 'interpolate', ['linear'], ['get', 'voter_power'],
@@ -865,9 +879,7 @@ map.on('load', async function () {
             if (map.getLayer('starting-fill')) {
                 map.setPaintProperty('starting-fill', 'fill-color', colorExpression);
                 map.setPaintProperty('starting-fill', 'fill-opacity', opacityExpression);
-            } else {
-                console.error("Layer 'starting-fill' does not exist");
-            }
+            } 
         }
 
         function stopAnimation() {
