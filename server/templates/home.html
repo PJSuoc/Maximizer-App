@@ -64,6 +64,33 @@
                </div>
            </fieldset>
        </div>
+       <div class="footer-wrapper">
+        <div class="footer-container">
+            <div class="title-line-wrapper">
+                <hr class="title-line">
+                <h1>What's new?</h1>
+                <hr class="title-line">
+            </div>
+          <div class="cards-wrapper" id="footer">
+            <card>
+              <div class="footer-type" style="background:var(--orange)">
+                <img class="icon" src="https://www.svgrepo.com/show/533406/book.svg">
+                <span class="footer-type-text">
+                 Welcome to the new release of Vote Maximizer!
+                </span>
+              </div>
+              <span class="footer-title">
+                Learn how it helps maximize your activism <a href="https://samwang.substack.com/p/a-voter-centered-approach-to-optimizing" target="_blank">here</a>.
+              </span>
+              <span class="footer-content">
+                Founder <span>Sam Wang</span>'s TED Talk on 
+                <a href="https://www.ted.com/" target="_blank">how all voters can be represented</a> will be released on <span style="font-weight:700;">September 10</span> for your pre-debate viewing.
+              </span>
+            </card>
+        </div>
+        </div>
+        </div> 
+        <br>
 
 <script type="module">    
         const states = JSON.parse('{{ states | tojson }}')
@@ -125,6 +152,7 @@
         map.touchZoomRotate.disableRotation
         map.dragPan.enable()
         map.pitchWithRotate = false
+        map.scrollZoom.disable();
 
         // Function to interpolate between two colors
         function interpolateColor(color1, color2, factor) {
@@ -177,10 +205,10 @@
             return colors;
         }
 
-        //add all the layers as const here
+        //add all the layers as const herep
         const layers = {
     
-            starting: 'static/data/calculated_files/geojsons/overall_albers.geojson',
+            starting: 'static/data/calculated_files/geojsons/president_albers.geojson',
             abortion: 'static/data/geojson_imports/geojson_final/ballot_abort_albers.geojson',
             democracy: 'static/data/geojson_imports/geojson_final/ballot_VPM_albers.geojson',
             //aggregate: 'static/data/calculated_files/geojsons/aggregate_albers.geojson',

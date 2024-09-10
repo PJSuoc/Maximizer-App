@@ -53,7 +53,6 @@
         width: 20px;
         height: 5px;
         border: none;
-        cursor: pointer;
     }
     .map-overlay-inner button:focus {
         outline: none;
@@ -73,6 +72,8 @@ label[for="layer"] {
 }
 
 #detail-right {
+    display:flex;
+    flex-direction:column;
     position: relative; 
     overflow: hidden; 
 }
@@ -87,6 +88,49 @@ label[for="layer"] {
     font-weight: bold; 
 }
 
+
+
+
+
+.map-pop {
+    background: #0b72b7;
+	border-radius: 2px;
+	color: #fff;
+	position: absolute;
+	top: 257px;
+	left: 193px;
+	width: 93px;
+	height: 54px;
+	text-align: center;
+	font: 13px/15px "Ubuntu",sans-serif;
+	padding: 7px 10px 0 10px;
+    opacity: 1; 
+    visibility: visible; 
+    transition: opacity 0.5s ease, visibility 0.5s ease; 
+	}
+
+    .map-pop.hide {
+        
+        visibility: hidden; 
+    }
+			
+	.map-pop:after {
+        top: 100%;
+		border: solid transparent;
+        content: " ";
+        height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+    .map-pop:after {
+        border-color: rgba(11, 114, 183, 0);
+        border-top-color: #0b72b7;
+        border-width: 10px;
+        left: 50%;
+        margin-left: -10px;
+		}
 
 </style>
 
@@ -160,9 +204,15 @@ label[for="layer"] {
                     
                     <div class="col map-container-sm">
                         <div id="map"></div>
+                        <div class="map-pop">
+                            Mouseover for more info
+                        </div>
+                       
                     </div> 
-            </div>  
+                   
+            </div>       
         </div>
+     
 </div>
                     
 
@@ -192,13 +242,10 @@ label[for="layer"] {
             ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson',
             state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
             state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
+
+
         };
 
-
-
-        
-
-        
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
         let currentLayerId = 'ballot_vpm'; // Track the current layer
@@ -302,6 +349,14 @@ label[for="layer"] {
 
             // put hover line  above others
             map.moveLayer(layerId + '-hover-line');
+
+            map.on('mouseenter', layerId + '-fill',(e) => {
+                const mapPop = document.querySelector('.map-pop');
+                console.log(mapPop);
+                if (mapPop && !mapPop.classList.contains('hide')) {
+                    mapPop.classList.add('hide');
+                }
+            });
 
             // mouse event for hovering
             map.on('mousemove', layerId + '-fill', function (e) {
@@ -440,7 +495,7 @@ popupContent = `<div class="custom-popup">
             
 
                     popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
-                    map.getCanvas().style.cursor = 'pointer';
+                    map.getCanvas().style.cursor = 'crosshair';
                 } else {
                     if (hoveredStateId) {
                         map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
@@ -502,6 +557,12 @@ popupContent = `<div class="custom-popup">
                 });
             }
         });
+
+        // Add mouseenter event to hide map-pop when first entering map
+
+       /* setTimeout(() => {
+            document.querySelector('.map-pop').classList.add('hide');
+        }, 25000);*/
                 </script>
             </div>
         </div>

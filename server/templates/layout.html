@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title>EIL Vote Maximizer</title>
     <!-- redirect to https 
-     Note this must be commented out when testing locally -->
+     Note this must be commented out when testing locally  -->
     <script>
         if (window.location.protocol == "http:") {
           console.log("You are not connected with a secure connection.")
@@ -14,7 +14,7 @@
           window.location = document.URL.replace("http://", "https://");
         }
 
-    </script> 
+    </script>
     
     <!-- font upload-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -374,6 +374,11 @@ div[id="fieldset-container"] {
     .map-container {
         order: 3; 
         height: 50vh; 
+    }
+
+
+    .footer-wrapper{
+        order:4;
     }
 }
 
