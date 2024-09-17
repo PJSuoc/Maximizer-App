@@ -168,7 +168,7 @@ def state_elections():
     else:
         location = request.args.get("location")
     if location:
-        return election_delivery_function(location)    
+        return election_delivery_function_structured(location)
     return redirect('/')
 
 @app.route('/voter-power', methods=["GET", "POST"])
@@ -248,7 +248,12 @@ def election_delivery_function(location):
 
     # All the individual pieces for the detail lookup. May need to add vals
     # for zoom and center for the map as well, depending on address lookup
-    return render_template("detail.html", pres_list = lookup_dict["elections"]["Presidential"],
+    print("Debug: lookup_dict type:", type(lookup_dict))
+    print("Debug: lookup_dict keys:", lookup_dict.keys())
+    print("Debug: lookup_dict contents:", lookup_dict)
+    return render_template("detail.html", 
+                           all_data = lookup_dict["elections"],
+                           pres_list = lookup_dict["elections"]["Presidential"],
                 senate_list = lookup_dict["elections"]["Senate"], 
                 house_list = lookup_dict["elections"]["House"], 
                 state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
@@ -270,6 +275,51 @@ def election_delivery_function(location):
                 long = long,
                 mapbox_key = mapbox_key)
 
+def election_delivery_function_structured(location):
+    db = DB()
+    db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
+        
+    # Dictionary to store information from shape lookup
+    lookup_dict = {"elections": {},"layers": {}}
+    lookup_components = ["Presidential","Senate","House", "Governor", "State Leg (Upper)",
+                              "State Leg (Lower)", "Democracy Repair", "State Level"]
+
+    election_count = 0 # Used for setting up election detail buttons
+    # Gets information to place in dictionary
+    for i in lookup_components:
+        elections_data, shapelayer, election_count = db.nearby_voting_impact_structured(location, i, election_count)
+        lookup_dict["elections"][i] = elections_data
+        lookup_dict["layers"][i] = shapelayer
+
+    # Get Lat/Long coordinates for centering
+    if type(location) != type([]):
+        lat = STATELOC[location]["lat"]
+        long = STATELOC[location]["long"]
+    else:
+        lat = location[0]["geometry"]["location"]["lat"]
+        long = location[0]["geometry"]["location"]["lng"]
+
+    # All the individual pieces for the detail lookup.
+    return render_template("detail.html", 
+                pres_list = lookup_dict["elections"]["Presidential"],
+                senate_list = lookup_dict["elections"]["Senate"], 
+                house_list = lookup_dict["elections"]["House"], 
+                state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
+                state_senate_list = lookup_dict["elections"]["State Leg (Upper)"],
+                governor_list = lookup_dict["elections"]["Governor"],
+                dem_ballot_list = lookup_dict["elections"]["Democracy Repair"],
+                state_level_list = lookup_dict["elections"]["State Level"],
+                pres_layer = lookup_dict["layers"]["Presidential"],
+                senate_layer = lookup_dict["layers"]["Senate"], 
+                house_layer = lookup_dict["layers"]["House"], 
+                s_house_layer = lookup_dict["layers"]["State Leg (Lower)"],
+                s_sen_layer = lookup_dict["layers"]["State Leg (Upper)"],
+                governor_layer = lookup_dict["layers"]["Governor"],
+                dem_ballot_layer = lookup_dict["layers"]["Democracy Repair"],
+                state_level_layer = lookup_dict["layers"]["State Level"],
+                lat = lat,
+                long = long,
+                mapbox_key = mapbox_key)
 
 # Default Hostname/address code for temporary testing purposes
 # Logging settings for log debugging

@@ -1,70 +1,73 @@
 {% extends "layout.html" %}
 {% block main %}
-
-<style> 
-   body {
+<style>
+body {
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
 }
-.map-overlay {
-        font: 14px/20px;
-        width:100%;
-        position: absolute;
-        top: 0px; 
-        left: 0px;
-        bottom: 0px;
-        padding: 0px;
-        z-index: 2; 
-        text-align: center;
-       
-    }
-    
-    .map-overlay-inner {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 10px;
-        border-radius: 3px;
-        box-shadow: 2px 4px 8px rgba(0, 0, 0.2);
-       
-    }
-    .map-overlay-inner fieldset {
-        border: black;
-        padding: 0;
-        margin: 0 0 10px;
-        text-align: left;
-        display:flex;
-        align-items:center;
-        justify-content: center;
-    }
-    .map-overlay-inner fieldset:last-child {
-        margin: 0;
-        text-align: center;
-    }
-    .map-overlay-inner select {
-        width: auto;
-        flex-grow:1;
-    }
-    .map-overlay-inner label {
-        margin-right:10px;
-        white-space: nowrap;
-    }
-    .map-overlay-inner button {
-        display: inline-block;
-        width: 20px;
-        height: 5px;
-        border: none;
-    }
-    .map-overlay-inner button:focus {
-        outline: none;
-    }
 
-   
+.map-overlay {
+    font: 14px/20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    z-index: 2;
+    text-align: center;
+}
+
+.map-overlay-inner {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.map-overlay-inner fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-overlay-inner fieldset:last-child {
+    margin: 0;
+    text-align: center;
+}
+
+.map-overlay-inner select {
+    width: auto;
+    flex-grow: 1;
+}
+
+.map-overlay-inner label {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.map-overlay-inner button {
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+    border: none;
+}
+
+.map-overlay-inner button:focus {
+    outline: none;
+}
+
 .custom-popup {
     font-size: 16px;
     padding: 10px;
     width: 200px;
     color: #000000;
-    margin: 0px;
+    margin: 0;
 }
 
 label[for="layer"] {
@@ -72,66 +75,60 @@ label[for="layer"] {
 }
 
 #detail-right {
-    display:flex;
-    flex-direction:column;
-    position: relative; 
-    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 
 #detail-left .list-group-item {
-    border: none;  
+    border: none;
 }
 
 .list-group-item strong {
-    text-decoration: underline; 
-    text-decoration-thickness: 3px; 
-    font-weight: bold; 
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    font-weight: bold;
 }
-
-
-
-
 
 .map-pop {
     background: #0b72b7;
-	border-radius: 2px;
-	color: #fff;
-	position: absolute;
-	top: 257px;
-	left: 193px;
-	width: 93px;
-	height: 54px;
-	text-align: center;
-	font: 13px/15px "Ubuntu",sans-serif;
-	padding: 7px 10px 0 10px;
-    opacity: 1; 
-    visibility: visible; 
-    transition: opacity 0.5s ease, visibility 0.5s ease; 
-	}
+    border-radius: 2px;
+    color: #fff;
+    position: absolute;
+    top: 257px;
+    left: 193px;
+    width: 93px;
+    height: 54px;
+    text-align: center;
+    font: 13px/15px "Ubuntu", sans-serif;
+    padding: 7px 10px 0 10px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
 
-    .map-pop.hide {
-        
-        visibility: hidden; 
-    }
-			
-	.map-pop:after {
-        top: 100%;
-		border: solid transparent;
-        content: " ";
-        height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-	}
+.map-pop.hide {
+    visibility: hidden;
+}
 
-    .map-pop:after {
-        border-color: rgba(11, 114, 183, 0);
-        border-top-color: #0b72b7;
-        border-width: 10px;
-        left: 50%;
-        margin-left: -10px;
-		}
+.map-pop:after {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
 
+.map-pop:after {
+    border-color: rgba(11, 114, 183, 0);
+    border-top-color: #0b72b7;
+    border-width: 10px;
+    left: 50%;
+    margin-left: -10px;
+}
 </style>
 
 
@@ -214,7 +211,46 @@ label[for="layer"] {
         </div>
      
 </div>
-                    
+<script>
+
+    // Create a master dictionary to hold all state data
+    let masterStateData = {};
+
+    // Function to add data to the master dictionary
+    function addToMasterData(dataList, category) {
+        dataList.forEach(item => {
+            const state = item.state || item.state_name || 'Unknown';
+            if (!masterStateData[state]) {
+                masterStateData[state] = {};
+            }
+            if (!masterStateData[state][category]) {
+                masterStateData[state][category] = [];
+            }
+            masterStateData[state][category].push(item);
+        });
+    }
+
+    // Process each data list
+    addToMasterData({{ pres_list | tojson | safe }}, 'presidential');
+    addToMasterData({{ senate_list | tojson | safe }}, 'senate');
+    addToMasterData({{ house_list | tojson | safe }}, 'house');
+    addToMasterData({{ state_house_list | tojson | safe }}, 'state_house');
+    addToMasterData({{ state_senate_list | tojson | safe }}, 'state_senate');
+    addToMasterData({{ governor_list | tojson | safe }}, 'governor');
+    addToMasterData({{ dem_ballot_list | tojson | safe }}, 'democracy_repair_ballots');
+    addToMasterData({{ state_level_list | tojson | safe }}, 'state_level_ballots');
+
+    console.log('Master State Data:', masterStateData);
+
+    // Optional: Count the number of states
+    const totalStates = Object.keys(masterStateData).length;
+    console.log('Total number of states:', totalStates);
+
+    // Optional: Log a summary of data for each state
+    for (const state in masterStateData) {
+        console.log(`${state}:`, Object.keys(masterStateData[state]).join(', '));
+    }
+</script>          
 
      
                 <script>
@@ -227,7 +263,7 @@ label[for="layer"] {
                         projection: 'mercator'
                     });
                 
-                    const layers = {
+        const layers = {
             
             //presidential: JSON.parse('{{ pres_layer | safe }}'), 
             //congressional: JSON.parse('{{ senate_layer | safe }}'),
@@ -242,9 +278,10 @@ label[for="layer"] {
             ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson',
             state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
             state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
-
-
         };
+
+        const senateList = {{senate_list | tojson}};
+        console.log(senateList);
 
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.

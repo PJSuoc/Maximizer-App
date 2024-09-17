@@ -150,6 +150,45 @@ class DB:
         layerjson = clean_elections.to_json()
         return election_string, layerjson, fmid
     
+    def nearby_voting_impact_structured(self, location, layer, fmid):
+        '''
+        Function set for getting the input layers for a specific geolocation
+        Returns structured data instead of HTML strings
+        fmid: int that is used for elements of the detail page, required to get
+            unique links in place for each election
+        '''
+
+        # Gets nearby shapes to location input
+        if type(location) == type([]):
+            # IF Address input is a specific geolocation (comes out as type list)
+            nearby_shapes = self.shapes_near_location(location)
+        else:
+            # IF a state is selected from a dropdown menu
+            nearby_shapes = self.shapes_in_state(location)
+
+        
+        # Get the set of elections for the shapes and filter them for the output
+        clean_elections = self.voter_power_filter(nearby_shapes, layer)
+
+        # Instead of constructing HTML, create a list of dictionaries
+        election_data = []
+        for i, election in clean_elections.iterrows():
+            election_data.append({
+                "state_name": election["state_name"],
+                "election_name": election["election_name"],
+                "voter_power": election["voter_power"],
+                "candidate_ids": str(election["candidate_ids"]),
+                "form_id": f"form_{fmid}"
+            })
+            fmid += 1
+
+        # Converts specific election types shapes to geojson for MapBox
+        clean_elections.reset_index(drop = True)
+        clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
+        layerjson = clean_elections.to_json()
+        
+        return election_data, layerjson, fmid
+
     def shapes_near_location(self, location):
         shape = self.allshapes # Temporary, in the future will be the mergeset of shapes
 
