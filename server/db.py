@@ -12,10 +12,10 @@ import platform
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
-    "California": "06", "Colorado": "08", "Conneticut": "09", "Delaware": "10", 
+    "California": "06", "Colorado": "08", "Connecticut": "09", "Delaware": "10", 
     "Florida": "12", "Georgia": "13", "Hawaii": "15", "Idaho": "16", "Illinois": "17", 
     "Indiana": "18", "Iowa": "19", "Kansas": "20", "Kentucky": "21", 
-    "Lousisiana": "22", "Maine": "23", "Maryland": "24", "Massachusetts": "25", 
+    "Louisiana": "22", "Maine": "23", "Maryland": "24", "Massachusetts": "25", 
     "Michigan": "26", "Minnesota": "27", "Mississippi": "28", "Missouri": "29", 
     "Montana": "30", "Nebraska": "31", "Nevada": "32", "New Hampshire": "33",
     "New Jersey": "34", "New Mexico": "35", "New York": "36", "North Carolina": "37", 
