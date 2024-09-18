@@ -1,8 +1,25 @@
-html{
-     height: 100%;
+:root {
+    /**
+    * colors
+    */
+   
+    --orange: hsl(34, 100%, 44%);
+    --white: hsl(0, 0%, 100%);
+    --jet: hsl(0, 0%, 22%);
 }
 
-body { margin: 0; padding: 0; background-color: #F2F3F4;}
+html{
+     height: 100%;
+     font-family: 'Ubuntu', sans-serif;
+     font-size: 10px;
+     scroll-behavior: smooth;
+}
+
+body { margin: 0; 
+    padding: 0; 
+    background-color:var(--white);
+    font-size: 1.6rem;
+    line-height: 1.5;}
 
 .header {
     background-color: transparent;
@@ -18,56 +35,57 @@ body { margin: 0; padding: 0; background-color: #F2F3F4;}
 .home-container{
     display: flex;
     flex-direction: column;
+    align-items:center;
     width: 100%;
-    height: 93vh; 
+    height: 100vh; 
+    position: relative; 
+    z-index: 1; 
+
 
 }
 
-.title-container { 
+.title-container, .legend-container, .map-container,.blog-wrapper {
+    width: 100%;
+}
+
+.title-container {
+    flex-basis: 5%; 
     text-align: center;
-    width: 100%; 
-    padding:20px;
-    z-index: 2; 
-    background: transparent; 
-    padding-top: 1dvi; 
-    flex: 0 1 auto;
+    z-index: 2;
+    background: transparent;
+    position:relative;
 }
+
 
 .map-container {
-    flex: 1 1 auto; 
-    width: 100%;
+    flex-basis:50%;
+    flex-shrink: 0;
+    height:55%;
     position: relative; 
     z-index: 1;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
-   
 }
 
 #map {
     width: 100%;
-    height: 120%;
-
+    height: 60vh;
 }
 
 .legend-container {
-    flex: 0 1 auto; 
-    width: 100%; 
     display:flex;
     justify-content: space-around;
-    z-index: 2;
     position:relative;
+    z-index:2;
 
 }
 
 .legend-section {
     background: transparent;
-    font-family: "Avenir";
     font-weight: bold;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
+    
 }
-
 
 
 #legend-box {
@@ -75,7 +93,7 @@ body { margin: 0; padding: 0; background-color: #F2F3F4;}
     flex-wrap: wrap;
     justify-content: center; 
     gap:15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .legend-btn {
@@ -90,15 +108,8 @@ body { margin: 0; padding: 0; background-color: #F2F3F4;}
     border:none;
     border-radius: 4px;
     box-shadow: 6px 6px 0 -1px var(--jet);
-    transition: all 0.3s ease, animation-play-state 0s;
-    transform-origin:center;
+    transition: opacity 1s ease;
     cursor: pointer;
-}
-
-.legend-btn:is(:hover, :focus-visible) {
-  background-color: var(--jet);
-  color: var(--white);
-  box-shadow: 5px 5px 0 -2px rgba(255, 255, 255, 0.5);
 }
 
 .legend-btn.highlight {
@@ -107,49 +118,157 @@ body { margin: 0; padding: 0; background-color: #F2F3F4;}
     color: var(--white);
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
-
-/* .legend-btn.highlight {
-    background-color: var(--jet);
-    color: var(--white);
-    animation: pulse 1.5s;
-    animation-iteration-count: infinite;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-    border: 2px solid var(--white);
-}
-
 .legend-btn:not(.highlight) {
     animation-play-state: paused;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1.1);
-    }
-    50% {
-        transform: scale(1.15);
-    }
-    100% {
-        transform: scale(1.1);
-    }
-} */
-
-
-.map-overlay {
-    font: 14px/20px;
-    position: fixed;
-    bottom: -10px; /* need a dynamic solution to keep it not overlaying with other stuff */
-    left: 20%;
-    width:60%;
-    padding: 10px;  
-    z-index: 2; /* put over  map */
-    text-align: center;
-    background-color:transparent;
-   
+.legend-btn:is(:hover, :focus-visible) {
+  background-color: var(--jet);
+  color: var(--white);
+  box-shadow: 5px 5px 0 -2px rgba(255, 255, 255, 0.5);
 }
 
+
+/*version 2*/
+.blog-wrapper {
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .blog-container {
+    background: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center; 
+    align-items: center; 
+   
+  }
+
+  .title-line-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    gap: 10px; 
+    margin-bottom: 15px;
+}
+
+h1 {
+    flex-shrink: 0;
+    margin: 0 10px;
+    white-space:nowrap;
+}
+
+.title-line {
+    flex-grow: 1; 
+    border: none;
+    border-top: 1px solid #000; 
+}
+
+.cards-wrapper {
+   width:100%;
+   display: grid;
+   grid-template-columns: repeat(2, 0.2fr);
+   gap: 20px;
+   justify-content: center;
+  }
+  
+  .icon{
+    height:20px;
+  }
+  
+  card {
+    padding: 5px;
+    background: white;
+    overflow-x: visible;
+    overflow-y: visible;
+    filter: drop-shadow(0 2px 7px #00000040);
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin:10px;
+    /*cursor: pointer;*/
+    width:400px;
+    height:auto;
+    box-sizing:border-box;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  card:hover {
+    border-color: grey;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 5px;
+    gap: 5px;
+    margin: -10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color:var(--white);
+  }
+
+  .card-date{
+    color: #4b5563; /* slate-600 */
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+
+ 
+  
+  .card-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #075985;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+  }
+
+  .card-content {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+    color: #334155;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding-bottom: 10px;
+    line-height:1.5;
+    overflow: visible;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .card-footer{
+    text-align:right;
+  }
+
+  .read-more-btn {
+    font-size: 0.875rem;
+    color: #d29d2c;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  
 
 .more-info{
     display:flex;
@@ -158,10 +277,13 @@ body { margin: 0; padding: 0; background-color: #F2F3F4;}
 
 }
 
+
+
 #location {
     height: 30px; 
     width: 300px; 
     font-size: 14px; 
+    font-family: 'Ubuntu', sans-serif;
 }
 
 button {
@@ -171,9 +293,6 @@ button {
 }
 
 
-
-
-
     #popup-btn {
         align-items: center;
         justify-content: center;
@@ -181,17 +300,12 @@ button {
         color: var(--white);
         font-size: 1.2rem;
         font-weight: 500;
-        text-transform: uppercase;
-        max-width: max-content;
-        letter-spacing: 1px;
-        line-height: 1.2;
         padding: 5px; 
         height:45px;
         box-shadow: 6px 6px 0 -1px var(--jet);
         border: none; 
         border-radius: 4px;
         transition: 0.25s ease;
-        transform-origin:center;
         text-decoration: none;
         margin-right:10px;
     }
@@ -225,26 +339,15 @@ button {
     z-index: 1;
     bottom: 40%;
     left: 40%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
     visibility: visible;
     opacity:1;
-    -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
-    transition:visiblity 0s, opacity 1s linear;
   }
 
- 
-
-  /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
 
   @keyframes fadeIn {
     from {opacity: 0;}
@@ -260,18 +363,20 @@ button {
     background-color: rgba(60, 60, 60);
 }
 
+#detail-left, #detail-right {
+    position:relative;
+    padding:0;
+}
+
 #detail-left {
-    position: relative;
     width: 100%;
     min-height: 550px;
     max-height: 800px;
-    margin: 0;
-    padding: 0;
+    margin-left: 20px;
 }
+
 #detail-right {
-    position: relative;
-    margin: 0;
-    padding: 0;
+    margin-right: 20px;
 }
     #detail-li {
         width: 100%;
@@ -279,8 +384,7 @@ button {
     }
     #detail-row {
         width: 100%;
-        margin: 0;
-        padding: 0;
+    
     
     }
     #row-name {
@@ -298,9 +402,11 @@ button {
     }
 
     .map-container-sm {
-        position: absolute;
         width: 100%;
         height: 100%;
+        position:relative;
+        margin-bottom:20px;
+       
     }
     
     #socials {
@@ -312,7 +418,7 @@ button {
     }
     
     #dono-btn {
-        color: rgb(225, 130, 0);
+        color: var(--orange);
         border-color: rgb(200, 200, 200);
         background-color: rgb(235, 235, 235);
         font-family: "Poppins", sans-serif;
@@ -388,12 +494,16 @@ button {
 }
 
 #campbtn {
-    border:none;
     justify-content: center;
     margin: 10px;
     list-style-type: none;
     font-family: 'Poppins', sans-serif;
     color: black;
+    border:none;
+}
+
+#campbtn button{
+    border:none;
 }
 
 #cand_party {
@@ -413,7 +523,7 @@ button {
     padding-top: 25px;
     text-align: center;
     font-size: 18px;
-    /*font-weight: bold;*/
+    font-weight: bold;
 }
 
 #info-blurb{
@@ -424,26 +534,13 @@ button {
 }
 
 
-#election-desc {
-    text-align: center;
-    font-size: 30px;
-    padding-top: 20px;
-}
-
-#vp-img{
+#vp-img,#vp-math{
     max-width: 100%;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: auto; 
-}
-#vp-math{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto; 
-    max-width: 100%;
+    
 }
 
 #logo img{
@@ -451,94 +548,8 @@ button {
     height:auto;
 }
 
-h1 {
-    margin-block: 0 10px;
-  }
-
-.footer-wrapper {
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-  }
-  .footer-container {
-    background: transparent;
-    flex:0 1 auto;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction:column;
-    justify-content: center; 
-    align-items: center; 
-  }
-
-  .title-line-wrapper {
-    display: flex;
-    align-items: center;
-    max-width: 500px;
-    width: 100%;
-    gap: 10px; 
-    padding: 10px;
+#election-desc {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px;
 }
-
-h1 {
-    flex-shrink: 0;
-    margin: 0 10px;
-    white-space:nowrap;
-}
-
-.title-line {
-    flex-grow: 1; 
-    border: 0;
-    border-top: 1px solid #000; 
-}
-  
-  .cards-wrapper {
-   width:100%;
-   display: flex;
-   justify-content: center;
-   margin: 0 10px;
-  }
-  
-  .icon{
-    height:20px;
-  }
-  card {
-    padding: 5px;
-    margin-bottom: 5px;
-    background: white;
-    border-radius: 10px;
-    overflow-y: hidden;
-    filter: drop-shadow(0 2px 7px #00000040);
-    display: block;
-    max-width: 680px;
-    margin:0 auto;
-    cursor: pointer;
-  }
-
-  .footer-type {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-block: 5px;
-    gap: 5px;
-    margin: -10px;
-    margin-bottom: 10px;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color:var(--white);
-  }
-  
-  .footer-title {
-    font-size: 1.4rem;
-  }
-  .footer-content {
-    font-size: 1.4rem;
-    hyphens: auto;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    padding-bottom: 5px; 
-  }
