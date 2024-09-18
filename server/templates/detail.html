@@ -1,186 +1,228 @@
 {% extends "layout.html" %}
 {% block main %}
+
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Ubuntu', sans-serif;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Ubuntu', sans-serif;
+    }
 
-.map-overlay {
-    font: 14px/20px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    padding: 0;
-    z-index: 2;
-    text-align: center;
-}
+    .map-overlay {
+        font: 14px/20px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        padding: 0;
+        z-index: 2;
+        text-align: center;
+    }
 
-.map-overlay-inner {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    border-radius: 3px;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-}
+    .map-overlay-inner {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-.map-overlay-inner fieldset {
-    border: none;
-    padding: 0;
-    margin: 0 0 10px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .map-overlay-inner fieldset {
+        border: none;
+        padding: 0;
+        margin: 0 0 10px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.map-overlay-inner fieldset:last-child {
-    margin: 0;
-    text-align: center;
-}
+    .map-overlay-inner fieldset:last-child {
+        margin: 0;
+        text-align: center;
+    }
 
-.map-overlay-inner select {
-    width: auto;
-    flex-grow: 1;
-}
+    .map-overlay-inner select {
+        width: auto;
+        flex-grow: 1;
+    }
 
-.map-overlay-inner label {
-    margin-right: 10px;
-    white-space: nowrap;
-}
+    .map-overlay-inner label {
+        margin-right: 10px;
+        white-space: nowrap;
+    }
 
-.map-overlay-inner button {
-    display: inline-block;
-    width: 20px;
-    height: 5px;
-    border: none;
-}
+    .map-overlay-inner button {
+        display: inline-block;
+        width: 20px;
+        height: 5px;
+        border: none;
+    }
 
-.map-overlay-inner button:focus {
-    outline: none;
-}
+    .map-overlay-inner button:focus {
+        outline: none;
+    }
 
-.custom-popup {
-    font-size: 16px;
-    padding: 10px;
-    width: 200px;
-    color: #000000;
-    margin: 0;
-}
+    .custom-popup {
+        font-size: 16px;
+        padding: 10px;
+        width: 200px;
+        color: #000000;
+        margin: 0;
+    }
 
-label[for="layer"] {
-    color: white;
-}
+    label[for="layer"] {
+        color: white;
+    }
 
-#detail-right {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-}
+    #detail-right {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
 
-#detail-left .list-group-item {
-    border: none;
-}
+    #detail-left .list-group-item {
+        border: none;
+    }
 
-.list-group-item strong {
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    font-weight: bold;
-}
+    .list-group-item strong {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        font-weight: bold;
+    }
 
-.map-pop {
-    background: #0b72b7;
-    border-radius: 2px;
-    color: #fff;
-    position: absolute;
-    top: 257px;
-    left: 193px;
-    width: 93px;
-    height: 54px;
-    text-align: center;
-    font: 13px/15px "Ubuntu", sans-serif;
-    padding: 7px 10px 0 10px;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
+    .map-pop {
+        background: #0b72b7;
+        border-radius: 2px;
+        color: #fff;
+        position: absolute;
+        top: 257px;
+        left: 193px;
+        width: 93px;
+        height: 54px;
+        text-align: center;
+        font: 13px/15px "Ubuntu", sans-serif;
+        padding: 7px 10px 0 10px;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
 
-.map-pop.hide {
-    visibility: hidden;
-}
+    .map-pop.hide {
+        visibility: hidden;
+    }
 
-.map-pop:after {
-    top: 100%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-}
+    .map-pop:after {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
 
-.map-pop:after {
-    border-color: rgba(11, 114, 183, 0);
-    border-top-color: #0b72b7;
-    border-width: 10px;
-    left: 50%;
-    margin-left: -10px;
-}
+    .map-pop:after {
+        border-color: rgba(11, 114, 183, 0);
+        border-top-color: #0b72b7;
+        border-width: 10px;
+        left: 50%;
+        margin-left: -10px;
+    }
+
+    .table {
+        table-layout: fixed;
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529;
+        border-collapse: collapse;
+    }
+    .table th,
+    .table td {
+        padding: 0.75rem;
+        vertical-align: middle;
+        border-top: 1px solid #dee2e6;
+    }
+    .category-title th {
+        background-color: #f8f9fa;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .category-header td,
+    .subcategory-header td {
+        background-color: #e9ecef;
+        font-weight: bold;
+    }
+    .state-section {
+        margin-bottom: 2rem;
+    }
+
+    .category-description {
+        margin-bottom: 1rem;
+        font-style: italic;
+        color: #6c757d;
+        background-color: #f8f9fa;
+    }
+
+    .category-description td {
+        padding-top: 0;
+    }
+
+    .table td.text-truncate {
+        max-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .table th:last-child,
+    .table td:last-child {
+        width: 100px;
+        text-align: right;
+    }
+
+    .table th:nth-child(2),
+    .table td:nth-child(2) {
+        width: 100px;
+        text-align: center;
+    }
+
+    .table tr:first-child th,
+    .table tr:nth-child(2) td {
+        text-align: left;
+    }
+
+    .btn-info {
+        width: 100px;
+    }
+
+    .text-wrap {
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 300px; /* Adjust this value as needed */
+    }
+
+    .candidate-names {
+        max-height: 100px; /* Adjust this value as needed */
+        overflow-y: auto;
+    }
+
+    /* Ensure the table doesn't become too wide */
+    .table {
+        max-width: 100%;
+    }
 </style>
-
-
 
 <body>
     <div class="row" height="100%">
         <div class="col" id="detail-left">
-            <ul class="list-group">
-                <li class="list-group-item"> <strong>Democracy Ballot Initiatives</strong>
-                    <ul class="list-group list-group-flush">
-                        {{ dem_ballot_list | safe }}
-                    </ul>
-                </li>
-                <li class="list-group-item"> <strong>Presidential Race</strong>
-                    <ul class="list-group list-group-flush">
-                        {{ pres_list | safe }}
-                    </ul>
-                </li>
-                <li class="list-group-item"> <strong>Senate</strong>
-                    <ul class="list-group list-group-flush">
-                        {{ senate_list | safe }}
-                    </ul>
-                </li>
-                <li class="list-group-item"> <strong>House of Representatives</strong>
-                    <ul class="list-group list-group-flush">
-                        {{ house_list | safe }}
-                    </ul>
-                </li>
-                <li class="list-group-item"> <strong>State Senate</strong>
-                    <ul class="list-group list-group-flush">
-                        {{ state_senate_list | safe }}
-                    </ul>
-                </li>
-                <li class="list-group-item"> <strong>State House</strong>
-                    <ul class="list-group list-group-flush">
-                        {{ state_house_list | safe }}
-                    </ul>
-                </li>
-                <!--<li class="list-group-item"> <strong>Ballot Initiatives</strong>
-                    <ul class="list-group list-group-flush">
-                        {{ ballot_list | safe }}
-                    </ul>
-                </li>-->
-                <li class="list-group-item"> <strong>State-level ballot issues</strong>
-                    <ul class="list-group list-group-flush">
-                        {{ state_level_list | safe }}
-                    </ul>
-                </li> 
+            <ul class="list-group" id="state-data-list">
+                <!-- State data will be dynamically inserted here -->
             </ul>
         </div>
         
-        <div class="col" id="detail-right" >
+    <div class="col" id="detail-right" >
             <div class="map-overlay">
                     <div class="map-overlay-inner">
                           <fieldset>
@@ -218,7 +260,10 @@ label[for="layer"] {
 
     // Function to add data to the master dictionary
     function addToMasterData(dataList, category) {
-        dataList.forEach(item => {
+        // Use empty array if dataList is falsy (null, undefined, or empty)
+        const items = dataList || [];
+        
+        items.forEach(item => {
             const state = item.state || item.state_name || 'Unknown';
             if (!masterStateData[state]) {
                 masterStateData[state] = {};
@@ -226,7 +271,15 @@ label[for="layer"] {
             if (!masterStateData[state][category]) {
                 masterStateData[state][category] = [];
             }
-            masterStateData[state][category].push(item);
+            // Use spread operator to add new items
+            masterStateData[state][category] = [...masterStateData[state][category], item];
+        });
+
+        // Ensure category exists even if dataList was empty
+        Object.keys(masterStateData).forEach(state => {
+            if (!masterStateData[state][category]) {
+                masterStateData[state][category] = [];
+            }
         });
     }
 
@@ -250,6 +303,159 @@ label[for="layer"] {
     for (const state in masterStateData) {
         console.log(`${state}:`, Object.keys(masterStateData[state]).join(', '));
     }
+
+    function createCategoryList(categoryData, categoryTitle) {
+        console.log('Category Data:', categoryData);
+        if (!categoryData || categoryData.length === 0) return '';
+        
+        let tableRows = '';
+        let description = '';
+
+        switch (categoryTitle) {
+            case 'Democracy Ballot Initiatives':
+                description = `<p class="category-description">These initiatives make long-term changes to the practice of democracy in this state.</p>`;
+                tableRows = categoryData.map(item => `
+                    <tr>
+                        <td class="text-wrap" colspan="2">
+                            <div class="candidate-names">${item.candidate_names || ''}</div>
+                        </td>
+                        <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                    </tr>
+                `).join('');
+                break;
+            case 'Elected Offices':
+                description = `<p class="category-description">Elected offices where the power of individual voters is high:</p>`;
+                tableRows = '';
+                
+                if (categoryData.president && categoryData.president.voter_power > 20) {
+                    tableRows += `
+                        <tr>
+                            <td>President</td>
+                            <td>${Math.round(categoryData.president.voter_power)}</td>
+                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                        </tr>
+                    `;
+                }
+                
+                if (categoryData.senate && categoryData.senate.voter_power > 20) {
+                    tableRows += `
+                        <tr>
+                            <td>Senate</td>
+                            <td>${Math.round(categoryData.senate.voter_power)}</td>
+                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                        </tr>
+                    `;
+                }
+                
+                const highPowerHouseDistricts = categoryData.house.filter(item => item.voter_power > 20);
+                
+                if (highPowerHouseDistricts.length > 0) {
+                    tableRows += `<tr class="subcategory-header"><td colspan="3">U.S. House</td></tr>`;
+                    tableRows += highPowerHouseDistricts.map(item => `
+                        <tr>
+                            <td>${item.election_name.replace(/^Congressional\s*/, '').trim() || 'N/A'}</td>
+                            <td>${Math.round(item.voter_power)}</td>
+                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                        </tr>
+                    `).join('');
+                }
+                
+                const highPowerStateSenateDistricts = categoryData.state_senate.filter(item => item.voter_power > 20);
+                
+                if (highPowerStateSenateDistricts.length > 0) {
+                    tableRows += `<tr class="subcategory-header"><td colspan="3">State Senate</td></tr>`;
+                    tableRows += highPowerStateSenateDistricts.map(item => `
+                        <tr>
+                            <td>${item.election_name.replace(/^State Senate\s*/, '').trim() || 'N/A'}</td>
+                            <td>${Math.round(item.voter_power)}</td>
+                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                        </tr>
+                    `).join('');
+                }
+                
+                const highPowerStateHouseDistricts = categoryData.state_house.filter(item => item.voter_power > 20);
+                
+                if (highPowerStateHouseDistricts.length > 0) {
+                    tableRows += `<tr class="subcategory-header"><td colspan="3">State House</td></tr>`;
+                    tableRows += highPowerStateHouseDistricts.map(item => `
+                        <tr>
+                            <td>${item.election_name.replace(/^State House\s*/, '').trim() || 'N/A'}</td>
+                            <td>${Math.round(item.voter_power)}</td>
+                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                        </tr>
+                    `).join('');
+                }
+                
+                // If no offices have voter power > 20, add a message
+                if (tableRows === '') {
+                    tableRows = `<tr><td colspan="3">No offices in this state currently have high voter power.</td></tr>`;
+                }
+                
+                break;
+        }
+
+        // Determine column headers based on category
+        let columnHeaders = '';
+        if (categoryTitle === 'Democracy Ballot Initiatives') {
+            columnHeaders = `
+                <tr>
+                    <th colspan="2">Name</th>
+                    <th>Action</th>
+                </tr>
+            `;
+        } else {
+            columnHeaders = `
+                <tr>
+                    <th>Name</th>
+                    <th>Voter Power</th>
+                    <th>Action</th>
+                </tr>
+            `;
+        }
+
+        return `
+            <table class="table">
+                <thead>
+                    <tr class="category-title">
+                        <th colspan="3">${categoryTitle}</th>
+                    </tr>
+                    <tr class="category-description">
+                        <td colspan="3">${description}</td>
+                    </tr>
+                    ${columnHeaders}
+                </thead>
+                <tbody>
+                    ${tableRows}
+                </tbody>
+            </table>
+        `;
+    }
+
+    function populateStateList() {
+        const stateDataList = document.getElementById('state-data-list');
+        stateDataList.innerHTML = ''; // Clear existing content
+
+        for (const state in masterStateData) {
+            const stateData = masterStateData[state];
+            let stateHtml = `<div class="state-section" id="state-${state.toLowerCase().replace(/\s+/g, '-')}">
+                <h3>${state}</h3>`;
+
+            stateHtml += createCategoryList(stateData.democracy_repair_ballots, 'Democracy Ballot Initiatives');
+            stateHtml += createCategoryList({
+                president: stateData.presidential[0],
+                senate: stateData.senate[0],
+                house: stateData.house,
+                state_senate: stateData.state_senate,
+                state_house: stateData.state_house
+            }, 'Elected Offices');
+
+            stateHtml += `</div>`;
+            stateDataList.innerHTML += stateHtml;
+        }
+    }
+
+    // Call the function to populate the list
+    populateStateList();
 </script>          
 
      
@@ -491,16 +697,7 @@ popupContent = `<div class="custom-popup">
 }
              
 
-         //else if (layerId === 'ballot_sg') {
-          // popupContent = `<div class="custom-popup">
-           // <strong>Ballot name:</strong><br>
-            //   ${ballotname}<br>
-            //  <strong>State government ballot descriptions:</strong><br>
-           //    ${description}<br>
-            
-           //</div>`;
-        
-         else if (layerId === 'ballot_others') {
+     else if (layerId === 'ballot_others') {
    
    const ballotMessage = ballotname === 'Not available'
    ? 'No state-level ballot issues in this state'

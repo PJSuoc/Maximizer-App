@@ -159,31 +159,32 @@ class DB:
         '''
 
         # Gets nearby shapes to location input
-        if type(location) == type([]):
+        if isinstance(location, list):
             # IF Address input is a specific geolocation (comes out as type list)
             nearby_shapes = self.shapes_near_location(location)
         else:
             # IF a state is selected from a dropdown menu
             nearby_shapes = self.shapes_in_state(location)
 
-        
         # Get the set of elections for the shapes and filter them for the output
         clean_elections = self.voter_power_filter(nearby_shapes, layer)
 
+        print("Election keys", clean_elections.keys())
+        print("Election data", clean_elections)
         # Instead of constructing HTML, create a list of dictionaries
         election_data = []
         for i, election in clean_elections.iterrows():
-            election_data.append({
-                "state_name": election["state_name"],
-                "election_name": election["election_name"],
-                "voter_power": election["voter_power"],
-                "candidate_ids": str(election["candidate_ids"]),
-                "form_id": f"form_{fmid}"
-            })
+            # Get the entire matching row from self.elections
+            full_election_data = self.elections[self.elections['eid'] == election['eid']].iloc[0].to_dict()
+            
+            # Add additional fields
+            full_election_data['form_id'] = f"form_{fmid}"
+            
+            election_data.append(full_election_data)
             fmid += 1
 
         # Converts specific election types shapes to geojson for MapBox
-        clean_elections.reset_index(drop = True)
+        clean_elections = clean_elections.reset_index(drop=True)
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
         layerjson = clean_elections.to_json()
         

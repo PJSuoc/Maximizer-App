@@ -204,9 +204,8 @@ def get_involved():
     else:
         return redirect('/')
 
-    print("Cands", candidates)
-    print("elec", type(election), election)
-    # Gets the candidate information from the candidate DB
+
+    # Gets the candidate information from tshe candidate DB
     # Writes a nice HTML string for each candidate
     db = DB()
     db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
@@ -248,9 +247,6 @@ def election_delivery_function(location):
 
     # All the individual pieces for the detail lookup. May need to add vals
     # for zoom and center for the map as well, depending on address lookup
-    print("Debug: lookup_dict type:", type(lookup_dict))
-    print("Debug: lookup_dict keys:", lookup_dict.keys())
-    print("Debug: lookup_dict contents:", lookup_dict)
     return render_template("detail.html", 
                            all_data = lookup_dict["elections"],
                            pres_list = lookup_dict["elections"]["Presidential"],
