@@ -94,10 +94,8 @@
         color: var(--orange);
     }
     
-    
-    
-    
     </style>
+
  <body>
 
     <div class="home-container">
@@ -105,86 +103,109 @@
            <div class="entry-title">Maximize your individual voter power and strengthen democracy in 2024</div>
            <hr>
            <div class="main-title">Vote Maximizer</div>
+           <div class="sub-title">Click on a state for more information</div>
        </div>
        <div class="map-container">
            <div class="col" id="map"></div>
        </div>
-       <div class="legend-container">
-           <fieldset>
-               <form action="/local" method="post">
-                   <div class="input-group">
-                       <label for="location">Find pivotal elections near you:</label>
-                       <input type="text" class="form-control" id="location" name="location" placeholder="Type address/ZIP, press enter">
-                   </div>  
-               </form>
 
-               <div id="legend-section" class="legend-section">
-                   <div id="legend-box">
-                       <div class="legend-items"> 
-                           <button class="legend-btn" data-level="democracy" style="background-color: #9277DE;">
-                               Democracy repair
-                           </button>
-                       </div>
-                       <div class="legend-items">
-                           <button class="legend-btn" data-level="presidential" style="background-color: #F5928D;">
-                               President
-                           </button>
-                       </div>
-                       <div class="legend-items">
-                           <button class="legend-btn" data-level="senate" style="background-color: #fec548;">
-                               Senate
-                           </button>
-                       </div> 
-                       <div class="legend-items">
-                           <button class="legend-btn" data-level="house" style="background-color: #B4CDE3;">
-                               House
-                           </button>
-                       </div>  
-                       <div class="legend-items">
-                           <button class="legend-btn" data-level="statewide" style="background-color: #D19E9B;">
-                               State
-                           </button>
-                       </div>
-                       <div class="legend-items">
-                           <button class="legend-btn" data-level="abortion" style="background-color: #F768A0;">
-                               Abortion
-                           </button>
-                       </div>
-                       <div class="legend-items">
-                           <button class="legend-btn" data-level="ballot_all" style="background-color: #13DDB7;">
-                                Ballot Measures
-                           </button>
-                       </div>
-                   </div>
-               </div>
-           </fieldset>
-       </div>
-       <div class="footer-wrapper">
-        <div class="footer-container">
+
+     <div class="legend-container">
+        <fieldset>
+            <form action="/local" method="post">
+                <div class="input-group">
+                    <label for="location">Find pivotal elections near you:</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Type address/ZIP, press enter">
+                </div>  
+            </form>
+
+            <div id="legend-section" class="legend-section">
+                <div id="legend-box">
+                    <div class="legend-items"> 
+                        <button class="legend-btn" data-level="democracy" style="background-color: #9277DE;">
+                            Democracy repair
+                        </button>
+                    </div>
+                    <div class="legend-items">
+                        <button class="legend-btn" data-level="presidential" style="background-color: #F5928D;">
+                            President
+                        </button>
+                    </div>
+                    <div class="legend-items">
+                        <button class="legend-btn" data-level="senate" style="background-color: #fec548;">
+                            Senate
+                        </button>
+                    </div> 
+                    <div class="legend-items">
+                        <button class="legend-btn" data-level="house" style="background-color: #B4CDE3;">
+                            House
+                        </button>
+                    </div>  
+                    <div class="legend-items">
+                        <button class="legend-btn" data-level="statewide" style="background-color: #D19E9B;">
+                            State
+                        </button>
+                    </div>
+                    <div class="legend-items">
+                        <button class="legend-btn" data-level="abortion" style="background-color: #F768A0;">
+                            Abortion
+                        </button>
+                    </div>
+                    <div class="legend-items">
+                        <button class="legend-btn" data-level="ballot_all" style="background-color: #13DDB7;">
+                            Ballot Measures
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="blog-wrapper">
+        <div class="blog-container">
             <div class="title-line-wrapper">
                 <hr class="title-line">
                 <h1>What's new?</h1>
                 <hr class="title-line">
             </div>
-          <div class="cards-wrapper" id="footer">
+          <div class="cards-wrapper" id="cards">
+
             <card>
-              <div class="footer-type" style="background:var(--orange)">
-                <img class="icon" src="https://www.svgrepo.com/show/533406/book.svg">
-                <span class="footer-type-text">
-                 Welcome to the new release of Vote Maximizer!
+                <div  class="card-date">Sep 17 2024</div>
+                <span class="card-title">
+                    New from the great people at Bolts Magazine
                 </span>
-              </div>
-              <span class="footer-title">
-                Learn how it helps maximize your activism <a href="https://samwang.substack.com/p/a-voter-centered-approach-to-optimizing" target="_blank">here</a>.
-              </span>
-              <span class="footer-content">
-                Founder <span>Sam Wang</span>'s TED Talk on 
-                <a href="https://www.ted.com/" target="_blank">how all voters can be represented</a> will be released on <span style="font-weight:700;">September 10</span> for your pre-debate viewing.
-              </span>
+                <span class="card-content">
+                A deep-dive analysis of all 
+                <a href="https://boltsmag.org/elections-chief-elections-2024-guide/"
+                target="_blank">12 states where the chief election official is up for election </a> this November.
+
+                </span>
+
+                <div class="card-footer">
+                   
+                </div>
+            </card>
+
+            <card>
+                <div  class="card-date">Sep 10 2024</div>
+                <span class="card-title">
+                    Welcome to the new release of Vote Maximizer!
+                </span>
+                <span class="card-content">
+                    Learn how it helps maximize your activism 
+                    <a href="https://samwang.substack.com/p/a-voter-centered-approach-to-optimizing" target="_blank">here</a>. Then watch
+                    Founder Sam Wang's <a href="https://www.ted.com/speakers/sam_wang" target="_blank">TED Talk</a>, on how all voters can be represented.
+                </span>
+
+                <div class="card-footer">
+                   
+                </div>
             </card>
         </div>
         </div>
         </div> 
+    </div>
         <br>
 
 <script type="module">    
@@ -1057,6 +1078,56 @@ document.getElementById('location').addEventListener('keypress', function (e) {
         e.target.form.submit(); // Submit the form
     }
 });
+
+//Clean input after left page
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {  
+        document.getElementById('location').value = '';
+    }
+});
+
+
+/*
+fetch('https://public-api.wordpress.com/wp/v2/sites/236951957/posts', {
+method: 'GET',
+headers: {
+    'Authorization': '5d4782818fdd' // 使用你的 API 密钥
+}
+})
+.then(response => response.json())
+.then(data =>  {
+const blogPosts = data;
+const templateCard = document.querySelector('#blog-card-template').content;
+const blogSection = document.querySelector('#cards');
+
+
+
+blogPosts.forEach(post => {
+const blogCard = templateCard.cloneNode(true);
+
+console.log("post ",post);
+const date = new Date(post.date);
+const options = { year: 'numeric', month: 'short',day:"numeric" };
+let formattedDate = date.toLocaleDateString('en-US', options);
+
+formattedDate = formattedDate.replace(',', '');
+
+blogCard.querySelector('.card-date').textContent = formattedDate;
+
+console.log("title ",post.title);
+
+const title = post.title.rendered.replace(/&nbsp;/g, ' ');
+
+blogCard.querySelector('.card-title').textContent=title;
+
+const excerpt = post.content.rendered.replace(/&nbsp;/g, ' ');
+blogCard.querySelector('.card-content').innerHTML=excerpt;
+
+blogSection.appendChild(blogCard);
+});
+})
+.catch(error => console.error('Error:', error));
+*/
     </script>
 </body>
 {% endblock %}
