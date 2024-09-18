@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
      <!-- add viewport meta tag-->
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>EIL Vote Maximizer</title>
     <!-- redirect to https  -->
     <script>
@@ -39,6 +39,12 @@
     <!-- ion-icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <!-- dropdown -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/jolty-ui/dist/jolty-ui-base.min.css" rel="stylesheet">
+    <style>
+    
     <style>
 
 :root {
@@ -52,6 +58,9 @@
 
 
 }
+.header {
+    height:fit-content;
+}
     
     .btn {
     align-items: center;
@@ -63,8 +72,8 @@
     font-size: 1.2rem;
     font-weight: 500;
     text-transform: uppercase;
-    max-width: max-content;
-    height:max-content;
+    max-width: fit-content;
+    height:fit-content;
     letter-spacing: 1px;
     padding: 10px 15px; 
     box-shadow: 6px 6px 0 -1px var(--jet);
@@ -80,7 +89,7 @@
 
 /*  select style */
 #layer {
-    font-family: 'Ubuntun', sans-serif; 
+    font-family: 'Ubuntu', sans-serif; 
     font-size: 18px; 
     padding: 10px; 
     border: 1px solid #ccc; 
@@ -103,22 +112,33 @@
     flex-direction: column;
     align-items: center; 
     justify-content:center;
+    margin-bottom: 0px;
 }
 
 /*  home.html title css style */
 
-
+.title-container {
+    height:fit-content;
+}
 .entry-title {
-    font-family: 'Jost', sans-serif;
-    font-size: 20px; 
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.8rem; 
+    font-weight: 400;
 }
 
 .main-title {
     text-transform: uppercase;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 3.8rem; 
     letter-spacing: 1.5px; 
-    font-weight: 600;
+    font-weight: 700;
+}
+
+.sub-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem; 
+    letter-spacing: 1px; 
+    font-weight: 400;
 }
 
 hr {
@@ -132,25 +152,85 @@ hr {
     *button
 */
 
+.nav-links {
+    display: flex;
+    align-items: center;
+}
 
+.navbar-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--jet);
+    font-weight: bold;
+}
+
+
+.navbar-link:hover {
+    color: var(--primary);
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  .nav-submenu {
+      position: absolute;
+      background:white;
+      top: 100%; /* Position right below the dropdown */
+      left: 0;
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height:auto; 
+      width:250px;
+      box-sizing: border-box;
+      border: 1px solid var(--jet);
+      z-index: 1000;  
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .nav-submenu li {
+    width: 100%;
+  }
+  
+  
+  .nav-submenu li a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--jet);
+      text-decoration: none;
+      white-space: nowrap;
+  }
+  
+  .nav-submenu li a:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown:hover .nav-submenu {
+    display: block;
+  }
+  
+  .nav-submenu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  .dropdown:hover .nav-submenu {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
 #right-navbar svg {
     transition: fill  0.25s ease;;
 }
 
 #right-navbar svg :is(:hover, :focus-visible, :active){
     fill: var(--jet);
-}
-
-html {
-  font-family: 'Jost', sans-serif;
-  font-size: 10px;
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: transparent;
-  font-size: 1.6rem;
-  line-height: 1.5;
 }
 
 div[id="info-page"] {
@@ -186,6 +266,7 @@ div[id="fieldset-container"] {
     justify-content: space-between; 
     flex-grow: 1;
     flex-wrap: nowrap; 
+    overflow: visible;
 }
 
 .navbar-list {
@@ -208,7 +289,7 @@ div[id="fieldset-container"] {
             display: flex;
             align-items: center; 
             flex-shrink:1;
-            overflow:hidden;
+            overflow:visible;
         
            
         }
@@ -226,11 +307,13 @@ div[id="fieldset-container"] {
         { 
             color: var(--orange);
             text-decoration: underline; 
+            text-decoration-thickness: 3px;
         }
 
         .navbar-link.active {
             color: var(--orange); 
             text-decoration: underline; 
+            text-decoration-thickness: 3px;
         }
 
 
@@ -266,7 +349,7 @@ div[id="fieldset-container"] {
             justify-content: center; 
             flex-wrap: nowrap; 
             white-space: nowrap; 
-            overflow: hidden; 
+            overflow: visible; 
             
         }
         
@@ -301,6 +384,11 @@ div[id="fieldset-container"] {
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .title-line-wrapper {
+        display:none;
+    }
+}
 
 @media (max-width: 800px) {
     .header{
@@ -364,26 +452,33 @@ div[id="fieldset-container"] {
         display: flex;
         flex-direction: column;
     }
+    #cards.cards-wrapper { 
+        grid-template-columns: repeat(1, 1fr);  
+    }
+
+
+    .title-container {
+        flex-basis: 5%;
+    }
 
     .legend-container {
+
         order: 2; 
-        margin-bottom: 20px; 
+        flex-basis: 5%; 
+        margin-top: 2px;
+        margin-bottom: 2px; 
     }
 
     .map-container {
         order: 3; 
-        height: 50vh; 
+        height: 30vh; 
+        flex-shrink: 1;
+        min-height: 20vh;
     }
-
-
-    .footer-wrapper{
+    .blog-wrapper{
         order:4;
     }
 }
-
-
-
-
 
     </style>
 
@@ -413,11 +508,35 @@ div[id="fieldset-container"] {
                 <a href="/faq"  class="label-lg navbar-link has-after"><b>FAQ</b></a>  
                 <a href="/about"  class="label-lg navbar-link has-after"><b>About</b></a>  
                 <a href="/feedback"  class="label-lg navbar-link has-after"><b>Feedback</b></a>  
+                <!-- "About Us" Dropdown Menu -->
+                <div class="dropdown">
+                <a href="#" class="label-lg navbar-link dropdown-toggle has-after"><b>Resources</b></a>
+                        <ul class="nav-submenu" id="about-us-submenu">
+                            <li><a href="https://boltsmag.org/" target="_blank"> Bolts magazine</a></li>
+                            <li><a href="https://samwang.substack.com" target="_blank">Sam's Substack</a></li>
+                            <li><a href="https://ballotpedia.org" target="_blank">Ballotpedia</a></li>
+                            <li><a href="https://secure.actblue.com/donate/pec2024" target="_blank">ActBlue</a></li>
+                            <li><a href="https://secure.winred.com/team/d3206dc3-pec-optimized-picks-2024" target="_blank">WinRed</a></li>
+                            
+                        </ul>
+                </div>
             </div>
             
             <div class="nav col" id="right-navbar">
                 
                 <ul id="socials">
+
+                    <li id="social-item">
+
+                        <ul class="nav-submenu" id="social-submenu">
+                            <li><a href="https://boltsmag.org/"> Bolts magazine</a></li>
+                            <li><a href="#"> Sam's substack</a></li>
+                            <li><a href="#"> Ballotpedia</a></li>
+                            <li><a href="#"> ActBlue</a></li>
+                            <li><a href="#"> WinRed</a></li>
+                        </ul>
+                    </li>
+
 
                     <li id="social-item"><a href="https://x.com/ElectoralLab" target="_blank">
                         <svg id="social-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(225, 130, 0)" class="bi bi-twitter-x" viewBox="0 0 16 16">
@@ -497,6 +616,21 @@ function myFunction() {
             popup.classList.toggle("show");
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const submenu = document.getElementById('social-submenu');
+
+    dropdownToggle.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!dropdownToggle.contains(event.target) && !submenu.contains(event.target)) {
+            submenu.style.display = 'none';
+        }
+    });
+}); 
 
 
 
