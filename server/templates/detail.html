@@ -1,220 +1,11 @@
 {% extends "layout.html" %}
 {% block main %}
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Ubuntu', sans-serif;
-    }
+<link rel="stylesheet" href="./static/detail.css">
 
-    .map-overlay {
-        font: 14px/20px;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        padding: 0;
-        z-index: 2;
-        text-align: center;
-    }
 
-    .map-overlay-inner {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 10px;
-        border-radius: 3px;
-        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .map-overlay-inner fieldset {
-        border: none;
-        padding: 0;
-        margin: 0 0 10px;
-        text-align: left;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .map-overlay-inner fieldset:last-child {
-        margin: 0;
-        text-align: center;
-    }
-
-    .map-overlay-inner select {
-        width: auto;
-        flex-grow: 1;
-    }
-
-    .map-overlay-inner label {
-        margin-right: 10px;
-        white-space: nowrap;
-    }
-
-    .map-overlay-inner button {
-        display: inline-block;
-        width: 20px;
-        height: 5px;
-        border: none;
-    }
-
-    .map-overlay-inner button:focus {
-        outline: none;
-    }
-
-    .custom-popup {
-        font-size: 16px;
-        padding: 10px;
-        width: 200px;
-        color: #000000;
-        margin: 0;
-    }
-
-    label[for="layer"] {
-        color: white;
-    }
-
-    #detail-right {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        overflow: hidden;
-    }
-
-    #detail-left .list-group-item {
-        border: none;
-    }
-
-    .list-group-item strong {
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
-        font-weight: bold;
-    }
-
-    .map-pop {
-        background: #0b72b7;
-        border-radius: 2px;
-        color: #fff;
-        position: absolute;
-        top: 257px;
-        left: 193px;
-        width: 93px;
-        height: 54px;
-        text-align: center;
-        font: 13px/15px "Ubuntu", sans-serif;
-        padding: 7px 10px 0 10px;
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-
-    .map-pop.hide {
-        visibility: hidden;
-    }
-
-    .map-pop:after {
-        top: 100%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-    }
-
-    .map-pop:after {
-        border-color: rgba(11, 114, 183, 0);
-        border-top-color: #0b72b7;
-        border-width: 10px;
-        left: 50%;
-        margin-left: -10px;
-    }
-
-    .table {
-        table-layout: fixed;
-        width: 100%;
-        margin-bottom: 1rem;
-        color: #212529;
-        border-collapse: collapse;
-    }
-    .table th,
-    .table td {
-        padding: 0.75rem;
-        vertical-align: middle;
-        border-top: 1px solid #dee2e6;
-    }
-    .category-title th {
-        background-color: #f8f9fa;
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-    .category-header td,
-    .subcategory-header td {
-        background-color: #e9ecef;
-        font-weight: bold;
-    }
-    .state-section {
-        margin-bottom: 2rem;
-    }
-
-    .category-description {
-        margin-bottom: 1rem;
-        font-style: italic;
-        color: #6c757d;
-        background-color: #f8f9fa;
-    }
-
-    .category-description td {
-        padding-top: 0;
-    }
-
-    .table td.text-truncate {
-        max-width: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .table th:last-child,
-    .table td:last-child {
-        width: 100px;
-        text-align: right;
-    }
-
-    .table th:nth-child(2),
-    .table td:nth-child(2) {
-        width: 100px;
-        text-align: center;
-    }
-
-    .table tr:first-child th,
-    .table tr:nth-child(2) td {
-        text-align: left;
-    }
-
-    .btn-info {
-        width: 100px;
-    }
-
-    .text-wrap {
-        white-space: normal;
-        word-wrap: break-word;
-        max-width: 300px; /* Adjust this value as needed */
-    }
-
-    .candidate-names {
-        max-height: 100px; /* Adjust this value as needed */
-        overflow-y: auto;
-    }
-
-    /* Ensure the table doesn't become too wide */
-    .table {
-        max-width: 100%;
-    }
-</style>
-
-<body>
+<div class="detail-page">
+    <body>
     <div class="row" height="100%">
         <div class="col" id="detail-left">
             <ul class="list-group" id="state-data-list">
@@ -253,33 +44,25 @@
         </div>
      
 </div>
-<script>
+<script type="module">
 
     // Create a master dictionary to hold all state data
     let masterStateData = {};
 
+    //read in ballot data
+    import ballotData from './static/js/ballots.js';
+
     // Function to add data to the master dictionary
     function addToMasterData(dataList, category) {
-        // Use empty array if dataList is falsy (null, undefined, or empty)
-        const items = dataList || [];
-        
-        items.forEach(item => {
-            const state = item.state || item.state_name || 'Unknown';
+        dataList.forEach(item => {
+            const state = typeof item.state_name === 'string' ? item.state_name.trim() : 'Unknown';
             if (!masterStateData[state]) {
                 masterStateData[state] = {};
             }
             if (!masterStateData[state][category]) {
                 masterStateData[state][category] = [];
             }
-            // Use spread operator to add new items
-            masterStateData[state][category] = [...masterStateData[state][category], item];
-        });
-
-        // Ensure category exists even if dataList was empty
-        Object.keys(masterStateData).forEach(state => {
-            if (!masterStateData[state][category]) {
-                masterStateData[state][category] = [];
-            }
+            masterStateData[state][category].push(item);
         });
     }
 
@@ -293,6 +76,7 @@
     addToMasterData({{ dem_ballot_list | tojson | safe }}, 'democracy_repair_ballots');
     addToMasterData({{ state_level_list | tojson | safe }}, 'state_level_ballots');
 
+    
     console.log('Master State Data:', masterStateData);
 
     // Optional: Count the number of states
@@ -304,106 +88,187 @@
         console.log(`${state}:`, Object.keys(masterStateData[state]).join(', '));
     }
 
+    Object.keys(masterStateData).forEach(state => {
+        Object.keys(masterStateData[state]).forEach(category => {
+            if (category.includes('ballot')) {
+                masterStateData[state][category].forEach(item => {
+                    const matchingBallot = ballotData.find(ballot => 
+                        ballot.state_name === state && 
+                        ballot.election_name === item.election_name
+                    );
+                    if (matchingBallot) {
+                        // Merge ballot data with existing item
+                        Object.assign(item, matchingBallot);
+                    } else {
+                        console.warn(`No matching ballot found for ${state} - ${item.election_name}`);
+                    }
+                });
+            }
+        });
+    });
+
+    console.log('Updated Master State Data with ballot information:', masterStateData);
+
     function createCategoryList(categoryData, categoryTitle) {
         console.log('Category Data:', categoryData);
-        if (!categoryData || categoryData.length === 0) return '';
+        // if (!categoryData || categoryData.length === 0) return '';
         
         let tableRows = '';
         let description = '';
+        let rowsNonEmpty = (categoryData && categoryData.length > 0)
+        let hasElectedOffices = false;
 
         switch (categoryTitle) {
             case 'Democracy Ballot Initiatives':
-                description = `<p class="category-description">These initiatives make long-term changes to the practice of democracy in this state.</p>`;
-                tableRows = categoryData.map(item => `
-                    <tr>
-                        <td class="text-wrap" colspan="2">
-                            <div class="candidate-names">${item.candidate_names || ''}</div>
-                        </td>
-                        <td><button class="btn btn-sm btn-info">Learn More</button></td>
-                    </tr>
-                `).join('');
+                if (rowsNonEmpty) {
+                    description = `<p class="category-description">These initiatives make long-term changes to the practice of democracy in this state.</p>`;
+
+                    // Sort categoryData by election_name
+                    const sortedCategoryData = [...categoryData].sort((a, b) => {
+                        const nameA = (a.election_name || '').toLowerCase();
+                        const nameB = (b.election_name || '').toLowerCase();
+                        return nameA.localeCompare(nameB);
+                    });
+                    tableRows += sortedCategoryData.map(item => `
+                        <tr>
+                            <td class="text-wrap" colspan="2">
+                                <div class="row-name democracy-name">${item['name of ballot'] || ''}</div>
+                            </td>
+                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
+                        </tr>
+                    `).join('');
+                }
+                else {
+                    tableRows += `<tr><td colspan="3">No such ballot initiatives exist in this state.</td></tr>`;
+                }
                 break;
+
             case 'Elected Offices':
+            if (hasElectedOffices) {
                 description = `<p class="category-description">Elected offices where the power of individual voters is high:</p>`;
-                tableRows = '';
-                
+            }
+                // <tr class="subcategory-header"><td colspan="3">President</td></tr>
                 if (categoryData.president && categoryData.president.voter_power > 20) {
-                    tableRows += `
+                    hasElectedOffices = true;
+                    tableRows +=`
                         <tr>
                             <td>President</td>
                             <td>${Math.round(categoryData.president.voter_power)}</td>
-                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                            <td><button class="btn btn-primary btn-info" type="submit" form="{categoryData.form_id}" value="Submit">Learn More</button></td>
                         </tr>
                     `;
                 }
+                else {
+                    tableRows += `<tr><td colspan="3" class="missing">This presidential race does not have high voter power.</td></tr>`;
+                }
                 
                 if (categoryData.senate && categoryData.senate.voter_power > 20) {
+                    hasElectedOffices = true;
                     tableRows += `
                         <tr>
                             <td>Senate</td>
                             <td>${Math.round(categoryData.senate.voter_power)}</td>
-                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
                         </tr>
                     `;
                 }
-                
+                else {
+                    tableRows += `<tr><td colspan="3" class="missing">This U.S. Senate race does not have high voter power.</td></tr>`;
+                } 
                 const highPowerHouseDistricts = categoryData.house.filter(item => item.voter_power > 20);
                 
-                if (highPowerHouseDistricts.length > 0) {
+                if (highPowerHouseDistricts && highPowerHouseDistricts.length > 0) {
+                    hasElectedOffices = true;
                     tableRows += `<tr class="subcategory-header"><td colspan="3">U.S. House</td></tr>`;
                     tableRows += highPowerHouseDistricts.map(item => `
                         <tr>
                             <td>${item.election_name.replace(/^Congressional\s*/, '').trim() || 'N/A'}</td>
                             <td>${Math.round(item.voter_power)}</td>
-                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
                         </tr>
                     `).join('');
+                }
+                else {
+                    tableRows += `<tr><td colspan="3" class="missing">No U.S. House races have high voter power.</td></tr>`;
                 }
                 
                 const highPowerStateSenateDistricts = categoryData.state_senate.filter(item => item.voter_power > 20);
                 
-                if (highPowerStateSenateDistricts.length > 0) {
+                if (highPowerStateSenateDistricts && highPowerStateSenateDistricts.length > 0) {
+                    
                     tableRows += `<tr class="subcategory-header"><td colspan="3">State Senate</td></tr>`;
                     tableRows += highPowerStateSenateDistricts.map(item => `
                         <tr>
                             <td>${item.election_name.replace(/^State Senate\s*/, '').trim() || 'N/A'}</td>
                             <td>${Math.round(item.voter_power)}</td>
-                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
                         </tr>
                     `).join('');
+                }
+                else {
+                    tableRows += `<tr><td colspan="3" class="missing">No state senate races have high voter power.</td></tr>`;
                 }
                 
                 const highPowerStateHouseDistricts = categoryData.state_house.filter(item => item.voter_power > 20);
                 
-                if (highPowerStateHouseDistricts.length > 0) {
+                if (highPowerStateHouseDistricts && highPowerStateHouseDistricts.length > 0) {
+                    hasElectedOffices = true;
                     tableRows += `<tr class="subcategory-header"><td colspan="3">State House</td></tr>`;
                     tableRows += highPowerStateHouseDistricts.map(item => `
                         <tr>
                             <td>${item.election_name.replace(/^State House\s*/, '').trim() || 'N/A'}</td>
                             <td>${Math.round(item.voter_power)}</td>
-                            <td><button class="btn btn-sm btn-info">Learn More</button></td>
+                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
                         </tr>
                     `).join('');
                 }
-                
+
                 // If no offices have voter power > 20, add a message
                 if (tableRows === '') {
-                    tableRows = `<tr><td colspan="3">No offices in this state currently have high voter power.</td></tr>`;
+                    tableRows = `<tr><td colspan="3" class="missing">No state house races have high voter power.</td></tr>`;
                 }
                 
                 break;
-        }
+            case 'Other ballot initiatives':
+                description = '' 
+                // Sort categoryData by election_name
 
+            
+                if (rowsNonEmpty) {
+                    const sortedCategoryData = [...categoryData].sort((a, b) => {
+                        const typeA = (a.ballot_type ?? '').toLowerCase();
+                        const typeB = (b.ballot_type ?? '').toLowerCase();
+                        const nameA = (a.election_name ?? '').toLowerCase();
+                        const nameB = (b.election_name ?? '').toLowerCase();
+                        return typeB.localeCompare(typeA) || nameA.localeCompare(nameB);
+                    });
+                    tableRows += `<p class="category-description">Other state-level ballot initiatives:</p>`;
+                    tableRows += sortedCategoryData.map(item => `
+                    <tr>
+                        <td class="text-wrap" colspan="2">
+                            <div class="row-name democracy-name">${item['name of ballot'] || ''}</div>
+                        </td>
+                        <td><button class="btn btn-primary btn-info">Learn More</button></td>
+                    </tr>
+                `).join('');
+                } else {
+                    tableRows += `<tr><td colspan="3" class="missing">No ballot initiatives have high voter power.</td></tr>`;
+                }
+                break;
+            }
         // Determine column headers based on category
         let columnHeaders = '';
-        if (categoryTitle === 'Democracy Ballot Initiatives') {
-            columnHeaders = `
-                <tr>
-                    <th colspan="2">Name</th>
-                    <th>Action</th>
-                </tr>
-            `;
+        if (categoryTitle === 'Democracy Ballot Initiatives' || categoryTitle === 'Other ballot initiatives') {
+            if (rowsNonEmpty) {
+                columnHeaders = `
+                    <tr>
+                        <th colspan="2">Name</th>
+                        <th>Action</th>
+                    </tr>
+                `;
+            }
         } else {
+            if (hasElectedOffices) {
             columnHeaders = `
                 <tr>
                     <th>Name</th>
@@ -411,7 +276,8 @@
                     <th>Action</th>
                 </tr>
             `;
-        }
+        } 
+    }
 
         return `
             <table class="table">
@@ -431,6 +297,8 @@
         `;
     }
 
+
+
     function populateStateList() {
         const stateDataList = document.getElementById('state-data-list');
         stateDataList.innerHTML = ''; // Clear existing content
@@ -440,14 +308,16 @@
             let stateHtml = `<div class="state-section" id="state-${state.toLowerCase().replace(/\s+/g, '-')}">
                 <h3>${state}</h3>`;
 
-            stateHtml += createCategoryList(stateData.democracy_repair_ballots, 'Democracy Ballot Initiatives');
+            stateHtml += createCategoryList(stateData.democracy_repair_ballots, 'Democracy Ballot Initiatives', state);
             stateHtml += createCategoryList({
-                president: stateData.presidential[0],
-                senate: stateData.senate[0],
-                house: stateData.house,
-                state_senate: stateData.state_senate,
-                state_house: stateData.state_house
+                president: stateData.presidential?.[0] ?? [],
+                senate: stateData.senate?.[0] ?? [],
+                house: stateData.house || [],
+                state_senate: stateData.state_senate || [],
+                state_house: stateData.state_house || [],
             }, 'Elected Offices');
+
+            stateHtml += createCategoryList(stateData.state_level_ballots , 'Other ballot initiatives', state);
 
             stateHtml += `</div>`;
             stateDataList.innerHTML += stateHtml;
@@ -458,8 +328,9 @@
     populateStateList();
 </script>          
 
+
      
-                <script>
+        <script>
                     mapboxgl.accessToken = '{{ mapbox_key }}';
                     const map = new mapboxgl.Map({
                         container: 'map',
@@ -803,6 +674,8 @@ popupContent = `<div class="custom-popup">
     </div>
 
 </body>
+</div>
+
 
 
 {% endblock %}
