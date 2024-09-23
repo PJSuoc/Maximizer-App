@@ -9,6 +9,8 @@ import sys
 import json
 import requests
 import numpy as np
+from static.data.gsheet_import import spreadsheet_pull
+from config import sheet_id
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -35,7 +37,40 @@ STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado",
     "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
 
-##### State VP Merger Test function #####
+
+#Presidential Data CSV
+p_file = "president.csv"
+#Senate Data CSV
+s_file = "senate.csv"
+#House of Representatives CSV
+h_file = "congress_house.csv"
+#Governors CSV
+g_file = "governor.csv"
+#State Upper Legislature (State Senate) CSV
+su_file = "state_upper_legislature.csv"
+#State Lower Legislature (State House) CSV
+sl_file = "state_lower_legislature.csv"
+# Ballot Initiatives ()
+b_file = "ballot_initiative.csv"
+# Candidates
+c_file = "candidates.csv"
+file_list = [p_file, s_file, h_file, g_file, su_file, sl_file, b_file]
+
+### Data Importing ##########################################################
+
+import_loc = "static/data/csv_imports/"
+# List of the sheet tab names used for each data component w/ data ranges
+sheet_list = ['Presidential!A2:X','Senate!A2:X','House!A2:X','Governor!A2:X',
+              'State Upper Legislature!A2:X','State Lower Legislature!A2:X',
+              'Ballot Initiatives!A2:X','Candidates!A2:X']
+# List of file locations matching list of sheet names
+import_list = [p_file, s_file, h_file, g_file, su_file, sl_file, b_file, c_file]
+
+for i, sheet_name in enumerate(sheet_list):
+    file = spreadsheet_pull(sheet_id, sheet_name)
+    
+
+##### State VP Merger Test function #########################################
 def state_vp(df):
 
     svp_df = p.copy(deep=True)
@@ -106,7 +141,7 @@ def candidate_csv_cleaner(location, csv_tag, destination, csv_name):
     df = pd.read_csv(location + csv_name, dtype=str)
 
     # Cut the CSV down to the relevant columns
-    df = df[["name", "party", "state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name",  "donation_link", "election_denier","campaign_link",]]
+    df = df[["name", "party", "state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name","election_denier","campaign_link","donation_link"]]
 
     #state ID cleaning
     df["state"] = df["state"].astype(str)
@@ -151,9 +186,6 @@ def geojson_writer(df, filename):
 #####      CSV Production     ##################################################
 ################################################################################
 
-### Google Sheets Import Test ###
-
-#df = get_google_sheet_df(headers, google_sheet_id, sheet_name, sample_range)
 
 ##### CSVs utilized for various purposes #####
 
@@ -164,24 +196,7 @@ destination = "static/data/calculated_files/"
 csv_tag = "csvs/"
 geojson_tag = "geojsons/"
 
-#Presidential Data CSV
-p_file = "president.csv"
-#Senate Data CSV
-s_file = "senate.csv"
-#House of Representatives CSV
-h_file = "congress_house.csv"
-#Governors CSV
-g_file = "governor.csv"
-#State Upper Legislature (State Senate) CSV
-su_file = "state_upper_legislature.csv"
-#State Lower Legislature (State House) CSV
-sl_file = "state_lower_legislature.csv"
-# Ballot Initiatives ()
-b_file = "ballot_initiative.csv"
-# Candidates
-c_file = "candidates.csv"
 
-file_list = [p_file, s_file, h_file, g_file, su_file, sl_file, b_file]
 # Clean all CSVs and write them back
 for df_file in file_list:
     election_csv_cleaner(location, csv_tag, destination, df_file)

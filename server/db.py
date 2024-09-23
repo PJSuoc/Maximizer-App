@@ -276,8 +276,12 @@ class DB:
         cand_front = '<div class="col" id="candidate"><ul id="infolist" class="list-group-item">'
         name_front = '<li id="cand">'
         party_front = '<li id="cand">'
-        button_front = '<li id="campbtn"><a class="btn btn-primary" href="'
-        button_back = '" role="button">More information</a>'
+        #Campaign button Components & Flag
+        camp_front = '<li id="campbtn"><a class="btn btn-primary" href="'
+        camp_back = '" role="button">More Information</a>'
+        #Donation Button Components & Flag
+        dono_front = '<li id="donobtn"><a class="btn btn-primary" href="'
+        dono_back = '" role="button">Donation Link</a>'
         item_back = '</li>'
         cand_back = '</ul></div>'
         denier_text = '<li id="denier"><b>Skeptic Flag:</b> This candidate has made statements doubting \
@@ -292,15 +296,18 @@ class DB:
             name = self.candidates.loc[id]["name"]
             party = self.candidates.loc[id]["party"]
             camp_link = str(self.candidates.loc[id]["campaign_link"])
+            dono_link = str(self.candidates.loc[id]["donation_link"])
             denier = self.candidates.loc[id]["election_denier"]
 
             # Inserts warning about election deniers. I'd make it a popup, but that's a lot harder and time is of the essence.
             if denier == "1":
                 c_str = cand_front + party_front + party + item_back + name_front + name + item_back + \
-                    denier_text + button_front + camp_link + button_back + item_back
+                    denier_text + camp_front + camp_link + camp_back + item_back \
+                    + dono_front + dono_link + dono_back + item_back
             else:
                 c_str = cand_front + party_front + party + item_back + name_front + name + item_back + \
-                    button_front + camp_link + button_back + item_back
+                    camp_front + camp_link + camp_back + item_back \
+                    + dono_front + dono_link + dono_back + item_back
             
             candidate_link_string = candidate_link_string + c_str + cand_back
 
