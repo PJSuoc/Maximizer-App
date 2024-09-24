@@ -1,60 +1,67 @@
 state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
-01,,,,Alabama,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-02,,,,Alaska,Aggregate,Presidential,60,Kamala Harris,Donald Trump
-04,,,,Arizona,Aggregate,Presidential,80,Kamala Harris,Donald Trump
-05,,,,Arkansas,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-06,,,,California,Aggregate,Presidential,67,Kamala Harris,Donald Trump
-08,,,,Colorado,Aggregate,Presidential,20,Kamala Harris,Donald Trump
-09,,,,Connecticut,Aggregate,Presidential,2.0,Kamala Harris,Donald Trump
-10,,,,Delaware,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-11,,,,District of Columbia,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-12,,,,Florida,Aggregate,Presidential,33,Kamala Harris,Donald Trump
-13,,,,Georgia,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-15,,,,Hawaii,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-16,,,,Idaho,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-17,,,,Illinois,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-18,,,,Indiana,Aggregate,Presidential,13,Kamala Harris,Donald Trump
-19,,,,Iowa,Aggregate,Presidential,13,Kamala Harris,Donald Trump
-20,,,,Kansas,Aggregate,Presidential,60,Kamala Harris,Donald Trump
-21,,,,Kentucky,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-22,,,,Louisiana,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-23,,,,Maine,Aggregate,Presidential,20,Kamala Harris,Donald Trump
-23,2.0,,,Maine,Aggregate,Congressional District 2,20,Kamala Harris,Donald Trump
-23,1.0,,,Maine,Aggregate,Congressional District 1,20,Kamala Harris,Donald Trump
-24,,,,Maryland,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-25,,,,Massachusetts,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-26,,,,Michigan,Aggregate,Presidential,67,Kamala Harris,Donald Trump
-27,,,,Minnesota,Aggregate,Presidential,40,Kamala Harris,Donald Trump
-28,,,,Mississippi,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-29,,,,Missouri,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-30,,,,Montana,Aggregate,Presidential,13,Kamala Harris,Donald Trump
-31,1.0,,,Nebraska,Aggregate,Congressional District 1,40,Kamala Harris,Donald Trump
-31,2.0,,,Nebraska,Aggregate,Congressional District 2,40,Kamala Harris,Donald Trump
-31,3.0,,,Nebraska,Aggregate,Congressional District 3,40,Kamala Harris,Donald Trump
-31,,,,Nebraska,Aggregate,Presidential,40,Kamala Harris,Donald Trump
-32,,,,Nevada,Aggregate,Presidential,40,Kamala Harris,Donald Trump
-33,,,,New Hampshire,Aggregate,Presidential,47,Kamala Harris,Donald Trump
-34,,,,New Jersey,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-35,,,,New Mexico,Aggregate,Presidential,20,Kamala Harris,Donald Trump
-36,,,,New York,Aggregate,Presidential,47,Kamala Harris,Donald Trump
-37,,,,North Carolina,Aggregate,Presidential,13,Kamala Harris,Donald Trump
-38,,,,North Dakota,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-39,,,,Ohio,Aggregate,Presidential,27,Kamala Harris,Donald Trump
-40,,,,Oklahoma,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-41,,,,Oregon,Aggregate,Presidential,27,Kamala Harris,Donald Trump
-42,,,,Pennsylvania,Aggregate,Presidential,93,Kamala Harris,Donald Trump
-44,,,,Rhode Island,Aggregate,Presidential,13,Kamala Harris,Donald Trump
-45,,,,South Carolina,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-46,,,,South Dakota,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-47,,,,Tennessee,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-48,,,,Texas,Aggregate,Presidential,33,Kamala Harris,Donald Trump
-49,,,,Utah,Aggregate,Presidential,7,Kamala Harris,Donald Trump
-50,,,,Vermont,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-51,,,,Virginia,Aggregate,Presidential,20,Kamala Harris,Donald Trump
-53,,,,Washington,Aggregate,Presidential,13,Kamala Harris,Donald Trump
-54,,,,West Virginia,Aggregate,Presidential,0,Kamala Harris,Donald Trump
-55,,,,Wisconsin,Aggregate,Presidential,80,Kamala Harris,Donald Trump
-56,,,,Wyoming,Aggregate,Presidential,7,Kamala Harris,Donald Trump
+01,,,,Alabama,Aggregate,Presidential,7,,
+02,,,,Alaska,Aggregate,Presidential,67,,
+04,,,,Arizona,Aggregate,Presidential,80,,
+05,,,,Arkansas,Aggregate,Presidential,0,,
+06,,,,California,Aggregate,Presidential,67,,
+08,,,,Colorado,Aggregate,Presidential,13,,
+09,,,,Connecticut,Aggregate,Presidential,2.0,,
+10,,,,Delaware,Aggregate,Presidential,13,,
+11,,,,District of Columbia,Aggregate,Presidential,0,,
+12,,,,Florida,Aggregate,Presidential,33,,
+13,,,,Georgia,Aggregate,Presidential,7,,
+15,,,,Hawaii,Aggregate,Presidential,0,,
+16,,,,Idaho,Aggregate,Presidential,0,,
+17,,,,Illinois,Aggregate,Presidential,7,,
+18,,,,Indiana,Aggregate,Presidential,13,,
+19,,,,Iowa,Aggregate,Presidential,20,,
+20,,,,Kansas,Aggregate,Presidential,60,,
+21,,,,Kentucky,Aggregate,Presidential,0,,
+22,,,,Louisiana,Aggregate,Presidential,0,,
+23,,,,Maine,Aggregate,Presidential,13,,
+23,2.0,,,Maine,Aggregate,Congressional District 2,13,,
+23,1.0,,,Maine,Aggregate,Congressional District 1,13,,
+24,,,,Maryland,Aggregate,Presidential,7,,
+25,,,,Massachusetts,Aggregate,Presidential,0,,
+26,,,,Michigan,Aggregate,Presidential,67,,
+27,,,,Minnesota,Aggregate,Presidential,40,,
+28,,,,Mississippi,Aggregate,Presidential,0,,
+29,,,,Missouri,Aggregate,Presidential,7,,
+30,,,,Montana,Aggregate,Presidential,20,,
+31,1.0,,,Nebraska,Aggregate,Congressional District 1,47,,
+31,2.0,,,Nebraska,Aggregate,Congressional District 2,47,,
+31,3.0,,,Nebraska,Aggregate,Congressional District 3,47,,
+31,,,,Nebraska,Aggregate,Presidential,47,,
+32,,,,Nevada,Aggregate,Presidential,60,,
+33,,,,New Hampshire,Aggregate,Presidential,53,,
+34,,,,New Jersey,Aggregate,Presidential,7,,
+35,,,,New Mexico,Aggregate,Presidential,20,,
+36,,,,New York,Aggregate,Presidential,47,,
+37,,,,North Carolina,Aggregate,Presidential,20,,
+38,,,,North Dakota,Aggregate,Presidential,13,,
+39,,,,Ohio,Aggregate,Presidential,27,,
+40,,,,Oklahoma,Aggregate,Presidential,0,,
+41,,,,Oregon,Aggregate,Presidential,20,,
+42,,,,Pennsylvania,Aggregate,Presidential,93,,
+44,,,,Rhode Island,Aggregate,Presidential,7,,
+45,,,,South Carolina,Aggregate,Presidential,0,,
+46,,,,South Dakota,Aggregate,Presidential,0,,
+47,,,,Tennessee,Aggregate,Presidential,0,,
+48,,,,Texas,Aggregate,Presidential,33,,
+49,,,,Utah,Aggregate,Presidential,7,,
+50,,,,Vermont,Aggregate,Presidential,7,,
+51,,,,Virginia,Aggregate,Presidential,13,,
+53,,,,Washington,Aggregate,Presidential,20,,
+54,,,,West Virginia,Aggregate,Presidential,7,,
+55,,,,Wisconsin,Aggregate,Presidential,80,,
+56,,,,Wyoming,Aggregate,Presidential,7,,
+00,,,,,Aggregate,,,,
+00,,,,,Aggregate,,,,
+00,,,,,Aggregate,,,,
+00,,,,,Aggregate,,,,
+00,,,,,Aggregate,,,,
+00,,,,,Aggregate,,,,
+00,,,,,Aggregate,,,,
 00,,,,,Aggregate,,,,
 00,,,,,Aggregate,,,,
 00,,,,,Aggregate,,,,

@@ -1,60 +1,60 @@
 state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
-01,,,,Alabama,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
-02,,,,Alaska,Presidential,Presidential,8.0,Kamala Harris,Donald Trump
-04,,,,Arizona,Presidential,Presidential,76.0,Kamala Harris,Donald Trump
-05,,,,Arkansas,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-06,,,,California,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-08,,,,Colorado,Presidential,Presidential,16.0,Kamala Harris,Donald Trump
-09,,,,Connecticut,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
-10,,,,Delaware,Presidential,Presidential,0.0,Kamala Harris,Donald Trump
-11,,,,District of Columbia,Presidential,Presidential,6.0,Kamala Harris,Donald Trump
-12,,,,Florida,Presidential,Presidential,19.0,Kamala Harris,Donald Trump
-13,,,,Georgia,Presidential,Presidential,30.0,Kamala Harris,Donald Trump
-15,,,,Hawaii,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
-16,,,,Idaho,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-17,,,,Illinois,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
-18,,,,Indiana,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
-19,,,,Iowa,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
-20,,,,Kansas,Presidential,Presidential,5.0,Kamala Harris,Donald Trump
-21,,,,Kentucky,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-22,,,,Louisiana,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
-23,,,,Maine,Presidential,Presidential,6.0,Kamala Harris,Donald Trump
-23,2.0,,,Maine,Presidential,Congressional District 2,48.0,Kamala Harris,Donald Trump
-23,1.0,,,Maine,Presidential,Congressional District 1,1.0,Kamala Harris,Donald Trump
-24,,,,Maryland,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-25,,,,Massachusetts,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
-26,,,,Michigan,Presidential,Presidential,49.0,Kamala Harris,Donald Trump
-27,,,,Minnesota,Presidential,Presidential,12.0,Kamala Harris,Donald Trump
-28,,,,Mississippi,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
-29,,,,Missouri,Presidential,Presidential,3.0,Kamala Harris,Donald Trump
-30,,,,Montana,Presidential,Presidential,7.0,Kamala Harris,Donald Trump
-31,1.0,,,Nebraska,Presidential,Congressional District 1,3.0,Kamala Harris,Donald Trump
-31,2.0,,,Nebraska,Presidential,Congressional District 2,9.0,Kamala Harris,Donald Trump
-31,3.0,,,Nebraska,Presidential,Congressional District 3,0.0,Kamala Harris,Donald Trump
-31,,,,Nebraska,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-32,,,,Nevada,Presidential,Presidential,100.0,Kamala Harris,Donald Trump
-33,,,,New Hampshire,Presidential,Presidential,26.0,Kamala Harris,Donald Trump
-34,,,,New Jersey,Presidential,Presidential,3.0,Kamala Harris,Donald Trump
-35,,,,New Mexico,Presidential,Presidential,28.0,Kamala Harris,Donald Trump
-36,,,,New York,Presidential,Presidential,6.0,Kamala Harris,Donald Trump
-37,,,,North Carolina,Presidential,Presidential,75.0,Kamala Harris,Donald Trump
-38,,,,North Dakota,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
-39,,,,Ohio,Presidential,Presidential,7.0,Kamala Harris,Donald Trump
-40,,,,Oklahoma,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-41,,,,Oregon,Presidential,Presidential,10.0,Kamala Harris,Donald Trump
-42,,,,Pennsylvania,Presidential,Presidential,60.0,Kamala Harris,Donald Trump
-44,,,,Rhode Island,Presidential,Presidential,10.0,Kamala Harris,Donald Trump
-45,,,,South Carolina,Presidential,Presidential,4.0,Kamala Harris,Donald Trump
-46,,,,South Dakota,Presidential,Presidential,3.0,Kamala Harris,Donald Trump
-47,,,,Tennessee,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-48,,,,Texas,Presidential,Presidential,10.0,Kamala Harris,Donald Trump
-49,,,,Utah,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
-50,,,,Vermont,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
-51,,,,Virginia,Presidential,Presidential,76.0,Kamala Harris,Donald Trump
-53,,,,Washington,Presidential,Presidential,3.0,Kamala Harris,Donald Trump
-54,,,,West Virginia,Presidential,Presidential,2.0,Kamala Harris,Donald Trump
-55,,,,Wisconsin,Presidential,Presidential,28.0,Kamala Harris,Donald Trump
-56,,,,Wyoming,Presidential,Presidential,1.0,Kamala Harris,Donald Trump
+01,,,,Alabama,Presidential,Presidential,2.0,,
+02,,,,Alaska,Presidential,Presidential,25.0,,
+04,,,,Arizona,Presidential,Presidential,62.0,,
+05,,,,Arkansas,Presidential,Presidential,4.0,,
+06,,,,California,Presidential,Presidential,1.0,,
+08,,,,Colorado,Presidential,Presidential,4.0,,
+09,,,,Connecticut,Presidential,Presidential,2.0,,
+10,,,,Delaware,Presidential,Presidential,4.0,,
+11,,,,District of Columbia,Presidential,Presidential,0.0,,
+12,,,,Florida,Presidential,Presidential,23.0,,
+13,,,,Georgia,Presidential,Presidential,45.0,,
+15,,,,Hawaii,Presidential,Presidential,4.0,,
+16,,,,Idaho,Presidential,Presidential,1.0,,
+17,,,,Illinois,Presidential,Presidential,2.0,,
+18,,,,Indiana,Presidential,Presidential,2.0,,
+19,,,,Iowa,Presidential,Presidential,26.0,,
+20,,,,Kansas,Presidential,Presidential,4.0,,
+21,,,,Kentucky,Presidential,Presidential,1.0,,
+22,,,,Louisiana,Presidential,Presidential,2.0,,
+23,,,,Maine,Presidential,Presidential,7.0,,
+23,2.0,,,Maine,Presidential,Congressional District 2,50.0,,
+23,1.0,,,Maine,Presidential,Congressional District 1,1.0,,
+24,,,,Maryland,Presidential,Presidential,1.0,,
+25,,,,Massachusetts,Presidential,Presidential,1.0,,
+26,,,,Michigan,Presidential,Presidential,65.0,,
+27,,,,Minnesota,Presidential,Presidential,13.0,,
+28,,,,Mississippi,Presidential,Presidential,3.0,,
+29,,,,Missouri,Presidential,Presidential,5.0,,
+30,,,,Montana,Presidential,Presidential,6.0,,
+31,1.0,,,Nebraska,Presidential,Congressional District 1,3.0,,
+31,2.0,,,Nebraska,Presidential,Congressional District 2,23.0,,
+31,3.0,,,Nebraska,Presidential,Congressional District 3,0.0,,
+31,,,,Nebraska,Presidential,Presidential,1.0,,
+32,,,,Nevada,Presidential,Presidential,100.0,,
+33,,,,New Hampshire,Presidential,Presidential,12.0,,
+34,,,,New Jersey,Presidential,Presidential,3.0,,
+35,,,,New Mexico,Presidential,Presidential,21.0,,
+36,,,,New York,Presidential,Presidential,4.0,,
+37,,,,North Carolina,Presidential,Presidential,68.0,,
+38,,,,North Dakota,Presidential,Presidential,2.0,,
+39,,,,Ohio,Presidential,Presidential,6.0,,
+40,,,,Oklahoma,Presidential,Presidential,3.0,,
+41,,,,Oregon,Presidential,Presidential,3.0,,
+42,,,,Pennsylvania,Presidential,Presidential,64.0,,
+44,,,,Rhode Island,Presidential,Presidential,4.0,,
+45,,,,South Carolina,Presidential,Presidential,5.0,,
+46,,,,South Dakota,Presidential,Presidential,2.0,,
+47,,,,Tennessee,Presidential,Presidential,1.0,,
+48,,,,Texas,Presidential,Presidential,26.0,,
+49,,,,Utah,Presidential,Presidential,2.0,,
+50,,,,Vermont,Presidential,Presidential,1.0,,
+51,,,,Virginia,Presidential,Presidential,8.0,,
+53,,,,Washington,Presidential,Presidential,2.0,,
+54,,,,West Virginia,Presidential,Presidential,1.0,,
+55,,,,Wisconsin,Presidential,Presidential,61.0,,
+56,,,,Wyoming,Presidential,Presidential,1.0,,
 00,,,,,,,,,
 00,,,,,,,,,
 00,,,,,,,,,
@@ -62,72 +62,48 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 00,,,,,,,,,
 00,,,,,,,,,
 00,,,,,,,,,
-04,,,,Arizona,Senate,,41.0,Ruben Gallego,Kari Lake
-06,,,,California,Senate,,1.0,Adam Schiff,Steve Garvey
-09,,,,Connecticut,Senate,,5.0,Christopher S. Murphy (incumbent),Matthew Corey
-10,,,,Delaware,Senate,,16.0,Lisa Blunt Rochester,Eric Hansen
-12,,,,Florida,Senate,,42.0,Debbie Mucarsel-Powell,Rick Scott (incumbent)
-15,,,,Hawaii,Senate,,5.0,Mazie K. Hirono (incumbent),Bob McDermott
-18,,,,Indiana,Senate,,10.0,Valerie McCray,Jim Banks
-23,,,,Maine,Senate,,12.0,"Angus King (independent, incumbent)",Demi Kouzounas
-24,,,,Maryland,Senate,,3.0,Angela Alsobrooks,Larry Hogan
+00,,,,,,,,,
+00,,,,,,,,,
+00,,,,,,,,,
+00,,,,,,,,,
+00,,,,,,,,,
+00,,,,,,,,,
+00,,,,,,,,,
+04,,,,Arizona,Senate,,37.0,Ruben Gallego,Kari Lake
+06,,,,California,Senate,,0.0,Adam Schiff,Steve Garvey
+09,,,,Connecticut,Senate,,4.0,Christopher S. Murphy (incumbent),Matthew Corey
+10,,,,Delaware,Senate,,13.0,Lisa Blunt Rochester,Eric Hansen
+12,,,,Florida,Senate,,32.0,Debbie Mucarsel-Powell,Rick Scott (incumbent)
+15,,,,Hawaii,Senate,,4.0,Mazie K. Hirono (incumbent),Bob McDermott
+18,,,,Indiana,Senate,,8.0,Valerie McCray,Jim Banks
+23,,,,Maine,Senate,,5.0,,Demi Kouzounas
+24,,,,Maryland,Senate,,2.0,Angela Alsobrooks,Larry Hogan
 25,,,,Massachusetts,Senate,,1.0,Elizabeth Warren (incumbent),John Deaton
-26,,,,Michigan,Senate,,21.0,Elissa Slotkin,Mike Rogers
+26,,,,Michigan,Senate,,18.0,Elissa Slotkin,Mike Rogers
 27,,,,Minnesota,Senate,,2.0,Amy Klobuchar (incumbent),Royce White
-28,,,,Mississippi,Senate,,12.0,Ty Pinkins,Roger Wicker (incumbent)
-29,,,,Missouri,Senate,,9.0,Lucas Kunce,Josh Hawley (incumbent)
-30,,,,Montana,Senate,,76.0,Jon Tester (incumbent),Tim Sheehy
-31,,,,Nebraska,Senate,,50.0,Dan Osborn (independent),Deb Fischer (incumbent)
-32,,,,Nevada,Senate,,100.0,Jacky Rosen (incumbent),Sam Brown
+28,,,,Mississippi,Senate,,9.0,Ty Pinkins,Roger Wicker (incumbent)
+29,,,,Missouri,Senate,,7.0,Lucas Kunce,Josh Hawley (incumbent)
+30,,,,Montana,Senate,,49.0,Jon Tester (incumbent),Tim Sheehy
+31,,,,Nebraska,Senate,,100.0,,Deb Fischer (incumbent)
+32,,,,Nevada,Senate,,52.0,Jacky Rosen (incumbent),Sam Brown
 34,,,,New Jersey,Senate,,5.0,Andy Kim,Curtis Bashaw
-35,,,,New Mexico,Senate,,17.0,Martin Heinrich (incumbent),Nella Domenici
+35,,,,New Mexico,Senate,,11.0,Martin Heinrich (incumbent),Nella Domenici
 36,,,,New York,Senate,,1.0,Kirsten Gillibrand (incumbent),Mike Sapraicone
-38,,,,North Dakota,Senate,,12.0,Katrina Christiansen,Kevin Cramer (incumbent)
-39,,,,Ohio,Senate,,11.0,Sherrod Brown (incumbent),Bernie Moreno
-42,,,,Pennsylvania,Senate,,5.0,Bob Casey Jr. (incumbent),David McCormick
-44,,,,Rhode Island,Senate,,16.0,Sheldon Whitehouse (incumbent),This party's nominee will be determined at an upcoming primary.
-47,,,,Tennessee,Senate,,4.0,Gloria Johnson,Marsha Blackburn (incumbent)
-48,,,,Texas,Senate,,17.0,Colin Allred,Ted Cruz (incumbent)
-49,,,,Utah,Senate,,15.0,Caroline Gleich,John Curtis
-50,,,,Vermont,Senate,,9.0,Bernie Sanders (incumbent),Gerald Malloy
+38,,,,North Dakota,Senate,,10.0,Katrina Christiansen,Kevin Cramer (incumbent)
+39,,,,Ohio,Senate,,15.0,Sherrod Brown (incumbent),Bernie Moreno
+42,,,,Pennsylvania,Senate,,4.0,Bob Casey Jr. (incumbent),David McCormick
+44,,,,Rhode Island,Senate,,13.0,Sheldon Whitehouse (incumbent),Patricia Morgan
+47,,,,Tennessee,Senate,,3.0,Gloria Johnson,Marsha Blackburn (incumbent)
+48,,,,Texas,Senate,,24.0,Colin Allred,Ted Cruz (incumbent)
+49,,,,Utah,Senate,,4.0,Caroline Gleich,John Curtis
+50,,,,Vermont,Senate,,7.0,Bernie Sanders (incumbent),Gerald Malloy
 51,,,,Virginia,Senate,,4.0,Tim Kaine (incumbent),Hung Cao
 53,,,,Washington,Senate,,3.0,Maria Cantwell (incumbent),Raul Garcia
-54,,,,West Virginia,Senate,,5.0,Glenn Elliott,Jim Justice
-55,,,,Wisconsin,Senate,,12.0,Tammy Baldwin (incumbent),Eric Hovde
-56,,,,Wyoming,Senate,,12.0,Scott Morrow,This party's nominee will be determined at an upcoming primary.
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
+54,,,,West Virginia,Senate,,4.0,Glenn Elliott,Jim Justice
+55,,,,Wisconsin,Senate,,14.0,Tammy Baldwin (incumbent),Eric Hovde
+56,,,,Wyoming,Senate,,10.0,Scott Morrow,John Barrasso (incumbent)
 01,02,,,Alabama,House,Congressional District 2,43.0,Shomari Figures,Caroleene Dobson
-02,at-large,,,Alaska,House,Congressional District (at Large),33.0,Mary Peltola (incumbent),generic R (Top 4)
+02,at-large,,,Alaska,House,Congressional District (at Large),33.0,Mary Peltola (incumbent),Nicholas Begich
 04,01,,,Arizona,House,Congressional District 1,83.0,Amish Shah,David Schweikert (incumbent)
 04,06,,,Arizona,House,Congressional District 6,80.0,Kirsten Engel,Juan Ciscomani (incumbent)
 06,47,,,California,House,Congressional District 47,72.0,Dave Min,Scott Baugh
@@ -143,9 +119,9 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 08,03,,,Colorado,House,Congressional District 3,57.0,Adam Frisch,Jeff Hurd
 08,08,,,Colorado,House,Congressional District 8,100.0,Yadira Caraveo (incumbent),Gabe Evans
 09,05,,,Connecticut,House,Congressional District 5,87.0,Jahana Hayes (incumbent),George Logan
-12,09,,,Florida,House,Congressional District 9,18.0,Darren Soto (incumbent),This party's nominee will be determined at an upcoming primary.
-12,23,,,Florida,House,Congressional District 23,35.0,Jared Evan Moskowitz (incumbent),This party's nominee will be determined at an upcoming primary.
-12,13,,,Florida,House,Congressional District 13,34.0,This party's nominee will be determined at an upcoming primary.,Anna Paulina Luna (incumbent)
+12,09,,,Florida,House,Congressional District 9,18.0,Darren Soto (incumbent),Thomas Chalifoux
+12,23,,,Florida,House,Congressional District 23,35.0,Jared Evan Moskowitz (incumbent),Joe Kaufman
+12,13,,,Florida,House,Congressional District 13,34.0,Whitney Fox,Anna Paulina Luna (incumbent)
 17,17,,,Illinois,House,Congressional District 17,69.0,Eric Sorenson (incumbent),Joseph G. McGraw
 18,01,,,Indiana,House,Congressional District 1,29.0,Frank Mrvan (incumbent),Randell Niemeyer
 19,03,,,Iowa,House,Congressional District 3,87.0,Lanon Baccam,Zach Nunn (incumbent)
@@ -160,11 +136,11 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 27,02,,,Minnesota,House,Congressional District 2,68.0,Angie Craig (incumbent),Joe Teirab
 30,01,,,Montana,House,Congressional District 1,69.0,Monica Tranel,Ryan K. Zinke (incumbent)
 31,02,,,Nebraska,House,Congressional District 2,76.0,Tony Vargas,Don Bacon (incumbent)
-32,03,,,Nevada ,House,Congressional District 3,64.0,Susie Lee (incumbent),Drew Johnson
-32,01,,,Nevada ,House,Congressional District 1,46.0,Dina Titus (incumbent),Mark Robertson
-32,04,,,Nevada ,House,Congressional District 4,49.0,Steven Horsford (incumbent),John J. Lee
-33,01,,,New Hampshire,House,Congressional District 1,96.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
-33,02,,,New Hampshire,House,Congressional District 2,87.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
+32,03,,,Nevada,House,Congressional District 3,64.0,Susie Lee (incumbent),Drew Johnson
+32,01,,,Nevada,House,Congressional District 1,46.0,Dina Titus (incumbent),Mark Robertson
+32,04,,,Nevada,House,Congressional District 4,49.0,Steven Horsford (incumbent),John J. Lee
+33,01,,,New Hampshire,House,Congressional District 1,96.0,Chris Pappas (incumbent),Russell Prescott
+33,02,,,New Hampshire,House,Congressional District 2,87.0,Maggie Goodlander,Lily Williams
 34,07,,,New Jersey,House,Congressional District 7,65.0,Susan Altman,Thomas Kean Jr. (incumbent)
 35,02,,,New Mexico,House,Congressional District 2,79.0,Gabriel Vasquez (incumbent),Yvette Herrell
 36,18,,,New York,House,Congressional District 18,90.0,Pat Ryan (incumbent),Alison Esposito
@@ -185,7 +161,7 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 42,10,,,Pennsylvania,House,Congressional District 10,48.0,Janelle Stelson,Scott Perry (incumbent)
 42,01,,,Pennsylvania,House,Congressional District 1,83.0,Ashley Ehasz,Brian Fitzpatrick (incumbent)
 42,07,,,Pennsylvania,House,Congressional District 7,94.0,Susan Wild (incumbent),Ryan Mackenzie
-42,08,,,Pennsylvania,House,Congressional District 8,96.0,Matt Cartwright (incumbent),Rob Bresnahan Jr. 
+42,08,,,Pennsylvania,House,Congressional District 8,96.0,Matt Cartwright (incumbent),Rob Bresnahan Jr.
 48,28,,,Texas,House,Congressional District 28,21.0,Henry Cuellar (incumbent),Jay Furman
 48,34,,,Texas,House,Congressional District 34,12.0,Vicente Gonzalez Jr. (incumbent),Mayra Flores
 48,15,,,Texas,House,Congressional District 15,82.0,Michelle Vallejo,Monica De La Cruz (incumbent)
@@ -195,20 +171,17 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 53,03,,,Washington,House,Congressional District 3,80.0,Marie Gluesenkamp Pérez (incumbent),Joe Kent
 55,03,,,Wisconsin,House,Congressional District 3,80.0,Rebecca Cooke,Derrick Van Orden (incumbent)
 55,01,,,Wisconsin,House,Congressional District 1,61.0,Peter Barca,Bryan Steil (incumbent)
-00,,,,,,,,,
-00,,,,,,,,,
-00,,,,,,,,,
-33,,,,New Hampshire,Governor ,,100.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
-37,,,,North Carolina,Governor ,,100.0,Josh Stein ,Mark K. Robinson
-10,,,,Delaware,Governor ,,10.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
-18,,,,Indiana,Governor ,,10.0,Jennifer McCormick,Mike Braun
-29,,,,Missouri,Governor ,,10.0,Crystal Quade,Mike Kehoe
-30,,,,Montana,Governor ,,30.0,Ryan Busse,Greg Gianforte (incumbent)
-38,,,,North Dakota,Governor ,,10.0,Merrill Piepkorn,Kelly Armstrong
-49,,,,Utah,Governor ,,10.0,Brian King,Spencer Cox (incumbent)
-50,,,,Vermont,Governor ,,30.0,Esther Charlestin,Phil Scott (incumbent)
-53,,,,Washington,Governor ,,30.0,Bob Ferguson,Dave Reichert
-54,,,,West Virginia,Governor ,,10.0,Steve Williams,Patrick Morrisey
+33,,,,New Hampshire,Governor,,100.0,Joyce Craig,Kelly Ayotte
+37,,,,North Carolina,Governor,,100.0,Josh Stein,Mark K. Robinson
+10,,,,Delaware,Governor,,10.0,Matt Meyer,Michael Ramone
+18,,,,Indiana,Governor,,10.0,Jennifer McCormick,Mike Braun
+29,,,,Missouri,Governor,,10.0,Crystal Quade,Mike Kehoe
+30,,,,Montana,Governor,,30.0,Ryan Busse,Greg Gianforte (incumbent)
+38,,,,North Dakota,Governor,,10.0,Merrill Piepkorn,Kelly Armstrong
+49,,,,Utah,Governor,,10.0,Brian King,Spencer Cox (incumbent)
+50,,,,Vermont,Governor,,30.0,Esther Charlestin,Phil Scott (incumbent)
+53,,,,Washington,Governor,,30.0,Bob Ferguson,Dave Reichert
+54,,,,West Virginia,Governor,,10.0,Steve Williams,Patrick Morrisey
 02,,00A,,Alaska,State Leg (Upper),State Senate District A,0.0,,
 02,,00B,,Alaska,State Leg (Upper),State Senate District B,14.0,,
 02,,00C,,Alaska,State Leg (Upper),State Senate District C,0.0,,
@@ -348,24 +321,24 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 31,,047,,Nebraska,State Leg (Upper),State Senate District 47,1.0,,
 31,,048,,Nebraska,State Leg (Upper),State Senate District 48,0.0,,
 31,,049,,Nebraska,State Leg (Upper),State Senate District 49,19.0,,
-33,,001,,New Hampshire,State Leg (Upper),State Senate District 1,99.0,,
-33,,002,,New Hampshire,State Leg (Upper),State Senate District 2,98.0,,
-33,,003,,New Hampshire,State Leg (Upper),State Senate District 3,100.0,,
+33,,001,,New Hampshire,State Leg (Upper),State Senate District 1,99.0,Rusty Talbot,David Rochefort
+33,,002,,New Hampshire,State Leg (Upper),State Senate District 2,98.0,Carlos Cardona,Timothy Lang Sr. (incumbent)
+33,,003,,New Hampshire,State Leg (Upper),State Senate District 3,100.0,William Marsh,Mark McConkey
 33,,004,,New Hampshire,State Leg (Upper),State Senate District 4,16.0,,
 33,,005,,New Hampshire,State Leg (Upper),State Senate District 5,3.0,,
-33,,006,,New Hampshire,State Leg (Upper),State Senate District 6,75.0,,
-33,,007,,New Hampshire,State Leg (Upper),State Senate District 7,99.0,,
-33,,008,,New Hampshire,State Leg (Upper),State Senate District 8,88.0,,
-33,,009,,New Hampshire,State Leg (Upper),State Senate District 9,98.0,,
+33,,006,,New Hampshire,State Leg (Upper),State Senate District 6,75.0,John Ceskavich,James Gray (incumbent)
+33,,007,,New Hampshire,State Leg (Upper),State Senate District 7,99.0,Stu Green,Dan Innis (incumbent)
+33,,008,,New Hampshire,State Leg (Upper),State Senate District 8,88.0,David Trumble,Ruth Ward (incumbent)
+33,,009,,New Hampshire,State Leg (Upper),State Senate District 9,98.0,Matthew McLaughlin,Denise Ricciardi (incumbent)
 33,,010,,New Hampshire,State Leg (Upper),State Senate District 10,7.0,,
-33,,011,,New Hampshire,State Leg (Upper),State Senate District 11,83.0,,
-33,,012,,New Hampshire,State Leg (Upper),State Senate District 12,88.0,,
+33,,011,,New Hampshire,State Leg (Upper),State Senate District 11,83.0,Shannon Chandley (incumbent),Tim McGough
+33,,012,,New Hampshire,State Leg (Upper),State Senate District 12,88.0,Ben Ming,Kevin Avard (incumbent)
 33,,013,,New Hampshire,State Leg (Upper),State Senate District 13,18.0,,
 33,,014,,New Hampshire,State Leg (Upper),State Senate District 14,74.0,,
 33,,015,,New Hampshire,State Leg (Upper),State Senate District 15,8.0,,
 33,,016,,New Hampshire,State Leg (Upper),State Senate District 16,92.0,,
-33,,017,,New Hampshire,State Leg (Upper),State Senate District 17,78.0,,
-33,,018,,New Hampshire,State Leg (Upper),State Senate District 18,91.0,,
+33,,017,,New Hampshire,State Leg (Upper),State Senate District 17,78.0,Kelly Roberts,Howard Pearl (incumbent)
+33,,018,,New Hampshire,State Leg (Upper),State Senate District 18,91.0,Donna Soucy (incumbent),Victoria Sullivan
 33,,019,,New Hampshire,State Leg (Upper),State Senate District 19,68.0,,
 33,,020,,New Hampshire,State Leg (Upper),State Senate District 20,29.0,,
 33,,021,,New Hampshire,State Leg (Upper),State Senate District 21,4.0,,
@@ -1238,8 +1211,8 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 55,,,097,Wisconsin,State Leg (Lower),State House District 97,4.0,,
 55,,,098,Wisconsin,State Leg (Lower),State House District 98,3.0,,
 55,,,099,Wisconsin,State Leg (Lower),State House District 99,4.0,,
-02,,,,Alaska,Democracy Repair,Measure 2,,,
-02,,,,Alaska,Direct Democracy,Minimum Wage Increase and Paid Sick Leave Initiative,,,
+02,,,,Alaska,Democracy Repair,Ballot Measure 2,,,
+02,,,,Alaska,Direct Democracy,Ballot Measure 1,,,
 04,,,,Arizona,Direct Democracy,Proposition 135,,,
 04,,,,Arizona,Democracy Repair,Proposition 137,,,
 04,,,,Arizona,Direct Democracy,Proposition 314,,,
@@ -1253,11 +1226,11 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 06,,,,California,Direct Democracy,Proposition 32,,,
 06,,,,California,Civil Liberties,Proposition 3,,,
 06,,,,California,Direct Democracy,Proposition 5,,,
-08,,,,Colorado,Democracy Repair,Independent Judicial Discipline Adjudicative Board Amendment,,,
-08,,,,Colorado,Civil Liberties,Remove Constitutional Same-Sex Marriage Ban Amendment,,,
-08,,,,Colorado,Reproductive Rights,Initiative 89,,,
-08,,,,Colorado,Civil Liberties,Excise Tax on Firearms Dealers Manufacturers and Ammunition Vendors Measure,,,
-08,,,,Colorado,Democracy Repair,Ballot Initiative 310,,,
+08,,,,Colorado,Democracy Repair,Amendment H,,,
+08,,,,Colorado,Civil Liberties,Amendment J,,,
+08,,,,Colorado,Reproductive Rights,Amendment 79,,,
+08,,,,Colorado,Civil Liberties,Proposition KK,,,
+08,,,,Colorado,Democracy Repair,Proposition 131,,,
 09,,,,Connecticut,Democracy Repair,No-Excuse Absentee Voting Amendment,,,
 11,,,,District of Columbia,Democracy Repair,Initiative 83,,,
 12,,,,Florida,Democracy Repair,Amendment 1,,,
@@ -1267,7 +1240,7 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 13,,,,Georgia,Direct Democracy,Creation of Tax Court Amendment,,,
 15,,,,Hawaii,Democracy Repair,Judicial Appointments and Confirmations Amendment,,,
 15,,,,Hawaii,Civil Liberties,Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment,,,
-16,,,,Idaho,Democracy Repair,Top-Four Ranked-Choice Voting Initiative,,,
+16,,,,Idaho,Democracy Repair,Proposition 1,,,
 17,,,,Illinois,Reproductive Rights,Assisted Reproductive Healthcare Advisory Question,,,
 17,,,,Illinois,Democracy Repair,Penalties for Candidate Interference with Election Worker's Duties Advisory Question,,,
 18,,,,Indiana,Direct Democracy,Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment,,,
@@ -1284,22 +1257,22 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 30,,,,Montana,Democracy Repair,CI-126,,,
 30,,,,Montana,Democracy Repair,CI-127,,,
 30,,,,Montana,Reproductive Rights,CI-128,,,
-31,,,,Nebraska,Direct Democracy,Nebraska Paid Sick Leave Initiative,,,
-31,,,,Nebraska,Reproductive Rights,Right to Abortion Initiative,,,
-31,,,,Nebraska,Reproductive Rights,Prohibits Abortions After the First Trimester Amendment,,,
+31,,,,Nebraska,Direct Democracy,Initiative 436,,,
+31,,,,Nebraska,Reproductive Rights,Initiative 439,,,
+31,,,,Nebraska,Reproductive Rights,Initiative 434,,,
+31,,,,Nebraska,Civil Liberties,Initiative 437,,,
 32,,,,Nevada,Direct Democracy,Question 1,,,
 32,,,,Nevada,Direct Democracy,Question 2,,,
 32,,,,Nevada,Democracy Repair,Question 3,,,
 32,,,,Nevada,Reproductive Rights,Question 6,,,
-32,,,,Nevada,Direct Democracy,Voter Identification Initiative,,,
+32,,,,Nevada,Direct Democracy,Question 7,,,
 33,,,,New Hampshire,Democracy Repair,Increase Mandatory Judicial Retirement Age Amendment,,,
-35,,,,New Mexico,Democracy Repair,Judicial Nominating Commission Amendment,,,
-36,,,,New York,Civil Liberties,Proposition 1,,,
+35,,,,New Mexico,Democracy Repair,Constitutional Amendment 3,,,
+36,,,,New York,Civil Liberties,Proposal 1,,,
 38,,,,North Dakota,Direct Democracy,Constitutional Measure 1,,,
 38,,,,North Dakota,Democracy Repair,Constitutional Measure 2,,,
 38,,,,North Dakota,Civil Liberties,Initiated Measure 5,,,
 39,,,,Ohio,Democracy Repair,Issue 1,,,
-40,,,,Oklahoma,Direct Democracy,Minimum Wage Increase Initiative,,,
 41,,,,Oregon,Democracy Repair,Measure 115,,,
 41,,,,Oregon,Democracy Repair,Measure 117,,,
 44,,,,Rhode Island,Democracy Repair,Question 1,,,
@@ -1307,5 +1280,4 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 46,,,,South Dakota,Reproductive Rights,Constitutional Amendment G,,,
 46,,,,South Dakota,Democracy Repair,Constitutional Amendment H,,,
 46,,,,South Dakota,Civil Liberties,Initiated Measure 29,,,
-49,,,,Utah,Democracy Repair,Elections of County Sheriffs Amendment,,,
-49,,,,Utah,Democracy Repair,Legislative Alteration of Ballot Initiatives and Foreign Contributions Ban Amendment,,,
+49,,,,Utah,Democracy Repair,Amendment C,,,

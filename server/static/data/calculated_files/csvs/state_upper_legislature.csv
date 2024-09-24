@@ -138,24 +138,24 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 31,nan,047,nan,Nebraska,State Leg (Upper),State Senate District 47,1.0,,
 31,nan,048,nan,Nebraska,State Leg (Upper),State Senate District 48,0.0,,
 31,nan,049,nan,Nebraska,State Leg (Upper),State Senate District 49,19.0,,
-33,nan,001,nan,New Hampshire,State Leg (Upper),State Senate District 1,99.0,,
-33,nan,002,nan,New Hampshire,State Leg (Upper),State Senate District 2,98.0,,
-33,nan,003,nan,New Hampshire,State Leg (Upper),State Senate District 3,100.0,,
+33,nan,001,nan,New Hampshire,State Leg (Upper),State Senate District 1,99.0,Rusty Talbot,David Rochefort
+33,nan,002,nan,New Hampshire,State Leg (Upper),State Senate District 2,98.0,Carlos Cardona,Timothy Lang Sr. (incumbent)
+33,nan,003,nan,New Hampshire,State Leg (Upper),State Senate District 3,100.0,William Marsh,Mark McConkey
 33,nan,004,nan,New Hampshire,State Leg (Upper),State Senate District 4,16.0,,
 33,nan,005,nan,New Hampshire,State Leg (Upper),State Senate District 5,3.0,,
-33,nan,006,nan,New Hampshire,State Leg (Upper),State Senate District 6,75.0,,
-33,nan,007,nan,New Hampshire,State Leg (Upper),State Senate District 7,99.0,,
-33,nan,008,nan,New Hampshire,State Leg (Upper),State Senate District 8,88.0,,
-33,nan,009,nan,New Hampshire,State Leg (Upper),State Senate District 9,98.0,,
+33,nan,006,nan,New Hampshire,State Leg (Upper),State Senate District 6,75.0,John Ceskavich,James Gray (incumbent)
+33,nan,007,nan,New Hampshire,State Leg (Upper),State Senate District 7,99.0,Stu Green,Dan Innis (incumbent)
+33,nan,008,nan,New Hampshire,State Leg (Upper),State Senate District 8,88.0,David Trumble,Ruth Ward (incumbent)
+33,nan,009,nan,New Hampshire,State Leg (Upper),State Senate District 9,98.0,Matthew McLaughlin,Denise Ricciardi (incumbent)
 33,nan,010,nan,New Hampshire,State Leg (Upper),State Senate District 10,7.0,,
-33,nan,011,nan,New Hampshire,State Leg (Upper),State Senate District 11,83.0,,
-33,nan,012,nan,New Hampshire,State Leg (Upper),State Senate District 12,88.0,,
+33,nan,011,nan,New Hampshire,State Leg (Upper),State Senate District 11,83.0,Shannon Chandley (incumbent),Tim McGough
+33,nan,012,nan,New Hampshire,State Leg (Upper),State Senate District 12,88.0,Ben Ming,Kevin Avard (incumbent)
 33,nan,013,nan,New Hampshire,State Leg (Upper),State Senate District 13,18.0,,
 33,nan,014,nan,New Hampshire,State Leg (Upper),State Senate District 14,74.0,,
 33,nan,015,nan,New Hampshire,State Leg (Upper),State Senate District 15,8.0,,
 33,nan,016,nan,New Hampshire,State Leg (Upper),State Senate District 16,92.0,,
-33,nan,017,nan,New Hampshire,State Leg (Upper),State Senate District 17,78.0,,
-33,nan,018,nan,New Hampshire,State Leg (Upper),State Senate District 18,91.0,,
+33,nan,017,nan,New Hampshire,State Leg (Upper),State Senate District 17,78.0,Kelly Roberts,Howard Pearl (incumbent)
+33,nan,018,nan,New Hampshire,State Leg (Upper),State Senate District 18,91.0,Donna Soucy (incumbent),Victoria Sullivan
 33,nan,019,nan,New Hampshire,State Leg (Upper),State Senate District 19,68.0,,
 33,nan,020,nan,New Hampshire,State Leg (Upper),State Senate District 20,29.0,,
 33,nan,021,nan,New Hampshire,State Leg (Upper),State Senate District 21,4.0,,

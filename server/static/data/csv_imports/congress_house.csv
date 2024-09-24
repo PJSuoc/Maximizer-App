@@ -1,74 +1,70 @@
-state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power,cook_rating,pivotal election?,structural initiative?,liberties initiative?,ballot type,D_running,R_running,I_independent ,D_link,R_link,I_link,"Margins
-(DRA)",Margins (CON22),Margin (Averages),VP w/ avg margins
-Alabama,01,02,,,Congressional District 2,House,43,likely-D,,,,,Shomari Figures,Caroleene Dobson,,https://www.figuresforcongress.com/,https://www.dobsonforcongress.com/,,8.4,8.4,8.4,0.1518802556
-Alaska,02,at-large,,,Congressional District (at Large),House,33,lean-D,,,,,Mary Peltola (incumbent),generic R (Top 4),,https://marypeltola.com/,,,9.9,10.0,9.9,0.1153495453
-Arizona,04,01,,,Congressional District 1,House,83,toss-up,,,,,Amish Shah,David Schweikert (incumbent),,https://www.amishforarizona.com/,https://electiondeniers.org/,,-3.4,-0.8,-2.1,0.292479177
-Arizona,04,06,,,Congressional District 6,House,80,toss-up,,,,,Kirsten Engel,Juan Ciscomani (incumbent),,https://www.engelforarizona.com/,https://juanciscomani.com/,,-3.8,-1.0,-2.4,0.282439482
-California,06,47,,,Congressional District 47,House,72,lean-D,,,,,Dave Min,Scott Baugh,,https://davemin.com/,https://baughforcongress.com/,,7.1,3.4,5.2,0.2534344587
-California,06,45,,,Congressional District 45,House,100,lean-R,,,,,Derek Tran,Michelle Steel (incumbent),,https://www.derektranforcongress.com/,https://michellesteelca.com/,,6.0,-4.8,0.6,0.3523781445
-California,06,09,,,Congressional District 9,House,33,likely-D,,,,,Josh Harder (incumbent),Kevin Lincoln II,,https://harderforcongress.com/,https://www.kevinlincolnforcongress.com/,,10.0,9.6,9.8,0.1182370166
-California,06,49,,,Congressional District 49,House,68,likely-D,,,,,Mike Levin (incumbent),Matt Gunderson,,https://wp.mikelevin.org/,https://mattgunderson.com/,,6.0,5.2,5.6,0.240220204
-California,06,03,,,Congressional District 3,House,36,likely-R,,,,,Jessica Morse,Kevin Kiley (incumbent),,https://www.morseforcongress.com/,https://electkevinkiley.com/,,-7.5,-7.2,-7.4,0.1280252239
-California,06,40,,,Congressional District 40,House,26,likely-R,,,,,Joe Kerr,Young Kim (incumbent),,https://www.joekerrforcongress.com/,https://youngkimforcongress.com/,,-5.0,-13.6,-9.3,0.0908854685
-California,06,13,,,Congressional District 13,House,76,toss-up,,,,,Adam Gray,John Duarte (incumbent),,https://www.adamgrayforcongress.com/,https://www.johnduarteforcongress.com/,,10.0,-0.4,4.8,0.268770509
-California,06,22,,,Congressional District 22,House,74,toss-up,,,,,Rudy Salas,David G. Valadao (incumbent),,https://www.rudysalas.com/,https://valadaoforcongress.com/,,13.0,-3.0,5.0,0.2616554246
-California,06,27,,,Congressional District 27,House,99,toss-up,,,,,George Whitesides,Mike Garcia (incumbent),,https://www.georgewhitesides.com/,https://electiondeniers.org/,,9.7,-6.4,1.7,0.3504640557
-California,06,41,,,Congressional District 41,House,52,toss-up,,,,,Will Rollins,Ken Calvert (incumbent),,https://willrollinsforcongress.com/,https://electiondeniers.org/,,-6.0,-4.6,-5.3,0.1829920889
-Colorado,08,03,,,Congressional District 3,House,57,lean-R,,,,,Adam Frisch,Jeff Hurd,,https://adamforcolorado.com/,https://jeffhurdforcolorado.com/,,-9.3,-0.2,-4.8,0.2005774728
-Colorado,08,08,,,Congressional District 8,House,100,toss-up,,,,,Yadira Caraveo (incumbent),Gabe Evans,,https://www.caraveoforcongress.com/,https://electgabeevans.com/,,1.3,0.7,1.0,0.3535533906
-Connecticut,09,05,,,Congressional District 5,House,87,lean-D,,,,,Jahana Hayes (incumbent),George Logan,,https://jahanahayes.com/,https://georgeloganforcongress.com/,,6.5,0.8,3.7,0.3074875977
-Florida,12,9,,,Congressional District 9,House,18,likely-D,,,,,Darren Soto (incumbent),This party's nominee will be determined at an upcoming primary.,,https://www.darrensoto.com/,,,19.5,7.2,13.4,0.06420427513
-Florida,12,23,,,Congressional District 23,House,35,likely-D,,,,,Jared Evan Moskowitz (incumbent),This party's nominee will be determined at an upcoming primary.,,https://jaredforflorida.com/,,,14.2,4.8,9.5,0.1246751842
-Florida,12,13,,,Congressional District 13,House,34,likely-R,,,,,This party's nominee will be determined at an upcoming primary.,Anna Paulina Luna (incumbent),Tony D'Arrigo,,https://www.voteannapaulina.com/,https://tonydarrigo.com/,-7.5,-8.0,-7.8,0.119286131
-Illinois,17,17,,,Congressional District 17,House,69,lean-D,,,,,Eric Sorenson (incumbent),Joseph G. McGraw,,https://www.ericforillinois.com/,https://judgejoeforcongress.com/,,7.0,4.0,5.5,0.2437834332
-Indiana,18,1,,,Congressional District 1,House,29,lean-D,,,,,Frank Mrvan (incumbent),Randell Niemeyer,,https://mrvanforcongress.com/,https://www.niemeyerforcongress.com/,,15.5,5.6,10.6,0.1036009029
-Iowa,19,3,,,Congressional District 3,House,87,lean-R,,,,,Lanon Baccam,Zach Nunn (incumbent),,https://lanonbaccam.com/,https://zachnunn.com/,,-2.6,-0.7,-1.7,0.3074875977
-Iowa,19,1,,,Congressional District 1,House,55,likely-R,,,,,Christina Bohannan,Mariannette Millter-Meeks (incumbent),,https://www.bohannanforcongress.com/,https://drmillermeeks.com/,,-3.0,-6.8,-4.9,0.1956752415
-Kansas,20,3,,,Congressional District 3,House,63,likely-D,,,,,Sharice Davids (incumbent),Prasanth Reddy,,https://shariceforcongress.com/,https://reddyforkansas.com/,,0.1,12.1,6.1,0.2227855764
-Maine,23,2,,,Congressional District 2,House,62,toss-up,,,,,Jared Golden (incumbent),Austin Theriault,,https://jaredgoldenforcongress.com/,https://www.austinformaine.com/,,6.2,6.2,6.2,0.2191481474
-Maryland,24,6,,,Congressional District 6,House,72,likely-D,,,,,April McClain-Delaney,Neil Parrott,,https://www.aprilmcclaindelaneyforcongress.com/,https://electiondeniers.org/,,0.9,9.5,5.2,0.2545077311
-Michigan,26,10,,,Congressional District 10,House,100,lean-R,,,,,Carl Marlinga,John James (incumbent),,https://www.marlinga4congress.com/,https://johnjamesmi.com/,,1.6,-0.5,0.6,0.3520670638
-Michigan,26,3,,,Congressional District 3,House,44,likely-D,,,,,Hillary Scholten (incumbent),Paul Hudson,,https://hillaryscholten.com/,,,3.6,12.9,8.3,0.1553720075
-Michigan,26,7,,,Congressional District 7,House,89,toss-up,,,,,Curtis Hertel,Tom Barrett,,https://www.hertelformichigan.com/,https://electiondeniers.org/,,1.4,5.4,3.4,0.315006397
-Michigan,26,8,,,Congressional District 8,House,50,toss-up,,,,,Kristen McDonald Rivet,Paul Junge,,https://kristenmcdonaldrivet.com/,https://www.pauljunge.com/,,4.8,10.3,7.6,0.175371709
-Minnesota,27,2,,,Congressional District 2,House,68,lean-D,,,,,Angie Craig (incumbent),Joe Teirab,,https://angiecraig.com/,https://www.joeformn2.com/,,5.9,5.3,5.6,0.240220204
-Montana,30,1,,,Congressional District 1,House,69,likely-R,,,,,Monica Tranel,Ryan K. Zinke (incumbent),,https://www.monicatranel.com/,https://electiondeniers.org/,,-3.8,-3.1,-3.5,0.2455681219
-Nebraska,31,2,,,Congressional District 2,House,76,lean-R,,,,,Tony Vargas,Don Bacon (incumbent),,https://www.vargasfornebraska.com/,https://donjbacon.com/,,-3.0,-2.6,-2.8,0.268770509
-Nevada ,32,3,,,Congressional District 3,House,64,lean-D,,,,,Susie Lee (incumbent),Drew Johnson,,https://susieleeforcongress.com/,https://drewfornevada.com/,,8.0,4.0,6.0,0.2260977028
-Nevada ,32,1,,,Congressional District 1,House,46,likely-D,,,,,Dina Titus (incumbent),Mark Robertson,,https://www.dinatitus.com/,https://robertsonforcongress.com/,,10.3,5.6,8.0,0.1636973965
-Nevada ,32,4,,,Congressional District 4,House,49,likely-D,,,,,Steven Horsford (incumbent),John J. Lee,,https://www.stevenhorsford.com/,https://electiondeniers.org/,,10.5,4.8,7.7,0.1723925253
-New Hampshire,33,1,,,Congressional District 1,House,96,likely-D,,,,,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.,,,,,-9.0,8.1,-0.5,0.3386136499
-New Hampshire,33,2,,,Congressional District 2,House,87,likely-D,,,,,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.,,,,,-4.5,11.7,3.6,0.3090261206
-New Jersey,34,7,,,Congressional District 7,House,65,toss-up,,,,,Susan Altman,Thomas Kean Jr. (incumbent),,https://www.suealtman.com/,https://tomkean.com/,,-4.9,-2.8,-3.9,0.2313637052
-New Mexico,35,2,,,Congressional District 2,House,79,toss-up,,,,,Gabriel Vasquez (incumbent),Yvette Herrell,,https://gabeforcongress.com/,https://electiondeniers.org/,,8.2,0.7,4.5,0.2810550538
-New York,36,18,,,Congressional District 18,House,90,lean-D,,,,,Pat Ryan (incumbent),Alison Esposito,,https://www.patryanforcongress.com/,https://www.alisonesposito.com/,,5.4,1.3,3.4,0.3164550981
-New York,36,22,,,Congressional District 22,House,91,lean-D,,,,,John Mannion,Brandon Williams (incumbent),,https://www.mannionforny.com/,https://letsvotebrandon.com/,,7.3,-1.0,3.2,0.3220470123
-New York,36,3,,,Congressional District 3,House,64,likely-D,,,,,Tom Suozzi (incumbent),Michael LiPetri Jr.,,https://suozziforcongress2024.com/,https://www.lipetriforcongress.com/,,4.5,7.5,6.0,0.2260977028
-New York,36,1,,,Congressional District 1,House,25,likely-R,1,,,,John Avlon,Nicholas J. LaLota (incumbent),,https://www.johnavlon.com/,https://www.nicklalota.com/,,-7.8,-11.0,-9.4,0.08932359451
-New York,36,4,,,Congressional District 4,House,98,toss-up,,,,,Laura Gillen,Anthony D'Esposito (incumbent),,https://lauragillen.com/,https://despositoforcongress.com/,,7.6,-3.6,2.0,0.3460985606
-New York,36,17,,,Congressional District 17,House,91,toss-up,,,,,Mondaire Jones,Michael Lawler (incumbent),,https://mondaireforcongress.com/,https://www.lawlerforcongress.com/,,6.8,-0.6,3.1,0.323391389
-New York,36,19,,,Congressional District 19,House,100,toss-up,,,,,Josh Riley,Marcus Molinaro (incumbent),,https://www.joshrileyforcongress.com/,https://www.marcforus.com/,,3.4,-1.6,0.9,0.3534797464
-North Carolina,37,1,,,Congressional District 1,House,84,toss-up,,,,,Donald Davis (incumbent),Laurie Buckhout,,https://votedondavis.com/,https://www.lauriebuckhoutforcongress.com/,,3.2,4.8,4.0,0.2962962963
-Ohio,39,1,,,Congressional District 1,House,86,likely-D,,,,,Greg Landsman (incumbent),Orlando Sonza,,https://www.landsmanforcongress.com/,https://www.orlandosonza.com/,,2.0,5.6,3.8,0.3027770538
-Ohio,39,9,,,Congressional District 9,House,56,toss-up,,,,,Marcy Kaptur (incumbent),Derek Merrin,,https://marcykaptur.com/,https://www.derekmerrin.com/,,0.2,13.4,6.8,0.1989349836
-Ohio,39,13,,,Congressional District 13,House,79,toss-up,,,,,Emilia Sykes (incumbent),Kevin Coughlin,,https://www.emiliasykesforcongress.com/,https://kevincoughlin.com/,,3.7,5.4,4.6,0.2775741102
-Oregon,41,6,,,Congressional District 6,House,62,lean-D,,,,,Andrea Salinas (incumbent),Mike Erickson,,https://www.andreasalinasfororegon.com/,https://mikeericksonforcongress.org/,,10.0,2.4,6.2,0.2191481474
-Oregon,41,4,,,Congressional District 4,House,34,likely-D,,,,,Val Hoyle (incumbent),Monique DeSpain,,https://valhoyle.com/,https://www.moniqueforcongress.com/,,11.9,7.4,9.7,0.121412899
-Oregon,41,5,,,Congressional District 5,House,98,toss-up,,,,,Janelle Bynum,Lori Chavez-DeRemer (incumbent),,https://www.janellebynum.com/,https://www.lorichavezderemer.com/,,6.0,-2.1,2.0,0.3470085046
-Pennsylvania,42,17,,,Congressional District 17,House,43,lean-D,,,,,Chris Deluzio (incumbent),Rob Mercuri,,https://chrisforpa.com/,https://www.robmercuri.com/,,10.0,6.8,8.4,0.1513492961
-Pennsylvania,42,10,,,Congressional District 10,House,48,lean-R,,,,,Janelle Stelson,Scott Perry (incumbent),,https://janellestelson.com/,https://electiondeniers.org/,,-3.8,-7.6,-5.7,0.1709179649
-Pennsylvania,42,1,,,Congressional District 1,House,83,likely-R,,,,,Ashley Ehasz,Brian Fitzpatrick (incumbent),,https://www.ehaszforcongress.com/,https://www.brianfitzpatrick.com/,,5.7,-9.8,-2.1,0.2946442031
-Pennsylvania,42,7,,,Congressional District 7,House,94,toss-up,,,,,Susan Wild (incumbent),Ryan Mackenzie,,https://wildforcongress.com/,https://www.mackenzieforcongress.com/,,3.4,2.0,2.7,0.3332867169
-Pennsylvania,42,8,,,Congressional District 8,House,96,toss-up,,,,,Matt Cartwright (incumbent),Rob Bresnahan Jr. ,,https://cartwrightcongress.com/,https://robforpa.com/,,2.3,2.4,2.4,0.3405419577
-Texas,48,28,,,Congressional District 28,House,21,lean-D,,,,,Henry Cuellar (incumbent),Jay Furman,,https://www.henrycuellar.com/,https://commanderfurman.com/,,12.5,12.7,12.6,0.07275861338
-Texas,48,34,,,Congressional District 34,House,12,lean-D,,,,,Vicente Gonzalez Jr. (incumbent),Mayra Flores,,http://www.vicentegonzalez.com/,https://www.mayrafloresforcongress.com/,,23.8,8.5,16.2,0.04125476933
-Texas,48,15,,,Congressional District 15,House,82,likely-R,,,,,Michelle Vallejo,Monica De La Cruz (incumbent),,https://www.michellefortx15.com/,https://www.monicaforcongress.us/,,4.1,-8.5,-2.2,0.2896203664
-Virginia,51,07,,,Congressional District 7,House,81,lean-D,,,,,Eugene Vindman,Derrick Anderson,,https://vindmanforcongress.com/,https://derrickanderson.com/,,3.9,4.6,4.3,0.2879250817
-Virginia,51,02,,,Congressional District 2,House,78,lean-R,,,,,Missy Cotter Smasal,Jennifer Kiggans (incumbent),,https://missy4congress.com/,https://jenforcongress.com/,,-1.8,-3.4,-2.6,0.2758239639
-Washington,53,08,,,Congressional District 8,House,82,likely-D,,,,,Kim Schrier (incumbent),Carmen Goers,,https://www.drkimschrier.com/,https://www.carmenforwashington.com/,,1.6,6.9,4.2,0.2887739361
-Washington,53,03,,,Congressional District 3,House,80,toss-up,,,,,Marie Gluesenkamp Pérez (incumbent),Joe Kent,,https://marieforcongress.com/,https://electiondeniers.org/,,-5.6,0.8,-2.4,0.2827848275
-Wisconsin,55,03,,,Congressional District 3,House,80,lean-R,,,,,Rebecca Cooke,Derrick Van Orden (incumbent),,https://cookeforwisconsin.com/en/,https://electiondeniers.org/,,-1.1,-3.7,-2.4,0.2827848275
-Wisconsin,55,01,,,Congressional District 1,House,61,likely-R,,,,,Peter Barca,Bryan Steil (incumbent),,https://www.barcaforwisconsin.com/,https://www.bryansteil.com/,,0.4,-8.9,-4.3,0.2174252917
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,1.4,-0.8,1,
+state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power,cook_rating,pivotal election?,structural initiative?,liberties initiative?,ballot type,D_running,R_running,I_independent,D_link,R_link,I_link
+Alabama,01,2,,,Congressional District 2,House,43,likely-D,,,,,Shomari Figures,Caroleene Dobson,,https://www.figuresforcongress.com/,https://www.dobsonforcongress.com/,
+Alaska,02,at-large,,,Congressional District (at Large),House,33,toss-up,,,,,Mary Peltola (incumbent),Nicholas Begich,,https://marypeltola.com/,https://www.alaskansfornickbegich.com/,
+Arizona,04,1,,,Congressional District 1,House,83,toss-up,,,,,Amish Shah,David Schweikert (incumbent),,https://www.amishforarizona.com/,https://electiondeniers.org/,
+Arizona,04,6,,,Congressional District 6,House,80,toss-up,,,,,Kirsten Engel,Juan Ciscomani (incumbent),,https://www.engelforarizona.com/,https://juanciscomani.com/,
+California,06,47,,,Congressional District 47,House,72,lean-D,,,,,Dave Min,Scott Baugh,,https://davemin.com/,https://baughforcongress.com/,
+California,06,45,,,Congressional District 45,House,100,toss-up,,,,,Derek Tran,Michelle Steel (incumbent),,https://www.derektranforcongress.com/,https://michellesteelca.com/,
+California,06,9,,,Congressional District 9,House,33,likely-D,,,,,Josh Harder (incumbent),Kevin Lincoln II,,https://harderforcongress.com/,https://www.kevinlincolnforcongress.com/,
+California,06,49,,,Congressional District 49,House,68,likely-D,,,,,Mike Levin (incumbent),Matt Gunderson,,https://wp.mikelevin.org/,https://mattgunderson.com/,
+California,06,3,,,Congressional District 3,House,36,likely-R,,,,,Jessica Morse,Kevin Kiley (incumbent),,https://www.morseforcongress.com/,https://electkevinkiley.com/,
+California,06,40,,,Congressional District 40,House,26,likely-R,,,,,Joe Kerr,Young Kim (incumbent),,https://www.joekerrforcongress.com/,https://youngkimforcongress.com/,
+California,06,13,,,Congressional District 13,House,76,toss-up,,,,,Adam Gray,John Duarte (incumbent),,https://www.adamgrayforcongress.com/,https://www.johnduarteforcongress.com/,
+California,06,22,,,Congressional District 22,House,74,toss-up,,,,,Rudy Salas,David G. Valadao (incumbent),,https://www.rudysalas.com/,https://valadaoforcongress.com/,
+California,06,27,,,Congressional District 27,House,99,toss-up,,,,,George Whitesides,Mike Garcia (incumbent),,https://www.georgewhitesides.com/,https://electiondeniers.org/,
+California,06,41,,,Congressional District 41,House,52,toss-up,,,,,Will Rollins,Ken Calvert (incumbent),,https://willrollinsforcongress.com/,https://electiondeniers.org/,
+Colorado,08,3,,,Congressional District 3,House,57,likely-R,,,,,Adam Frisch,Jeff Hurd,,https://adamforcolorado.com/,https://jeffhurdforcolorado.com/,
+Colorado,08,8,,,Congressional District 8,House,100,toss-up,,,,,Yadira Caraveo (incumbent),Gabe Evans,,https://www.caraveoforcongress.com/,https://electgabeevans.com/,
+Connecticut,09,5,,,Congressional District 5,House,87,lean-D,,,,,Jahana Hayes (incumbent),George Logan,,https://jahanahayes.com/,https://georgeloganforcongress.com/,
+Florida,12,9,,,Congressional District 9,House,18,likely-D,,,,,Darren Soto (incumbent),Thomas Chalifoux,,https://www.darrensoto.com/,https://thomaschalifoux.com/,
+Florida,12,23,,,Congressional District 23,House,35,likely-D,,,,,Jared Evan Moskowitz (incumbent),Joe Kaufman,,https://jaredforflorida.com/,https://kaufmanforcongress.com/,
+Florida,12,13,,,Congressional District 13,House,34,likely-R,,,,,Whitney Fox,Anna Paulina Luna (incumbent),,https://whitneyfoxforcongress.com/,https://www.voteannapaulina.com/,
+Illinois,17,17,,,Congressional District 17,House,69,lean-D,,,,,Eric Sorenson (incumbent),Joseph G. McGraw,,https://www.ericforillinois.com/,https://judgejoeforcongress.com/,
+Indiana,18,1,,,Congressional District 1,House,29,lean-D,,,,,Frank Mrvan (incumbent),Randell Niemeyer,,https://mrvanforcongress.com/,https://www.niemeyerforcongress.com/,
+Iowa,19,3,,,Congressional District 3,House,87,lean-R,,,,,Lanon Baccam,Zach Nunn (incumbent),,https://lanonbaccam.com/,https://zachnunn.com/,
+Iowa,19,1,,,Congressional District 1,House,55,lean-R,,,,,Christina Bohannan,Mariannette Millter-Meeks (incumbent),,https://www.bohannanforcongress.com/,https://drmillermeeks.com/,
+Kansas,20,3,,,Congressional District 3,House,63,likely-D,,,,,Sharice Davids (incumbent),Prasanth Reddy,,https://shariceforcongress.com/,https://reddyforkansas.com/,
+Maine,23,2,,,Congressional District 2,House,62,toss-up,,,,,Jared Golden (incumbent),Austin Theriault,,https://jaredgoldenforcongress.com/,https://www.austinformaine.com/,
+Maryland,24,6,,,Congressional District 6,House,72,likely-D,,,,,April McClain-Delaney,Neil Parrott,,https://www.aprilmcclaindelaneyforcongress.com/,https://electiondeniers.org/,
+Michigan,26,10,,,Congressional District 10,House,100,lean-R,,,,,Carl Marlinga,John James (incumbent),,https://www.marlinga4congress.com/,https://johnjamesmi.com/,
+Michigan,26,3,,,Congressional District 3,House,44,likely-D,,,,,Hillary Scholten (incumbent),Paul Hudson,,https://hillaryscholten.com/,,
+Michigan,26,7,,,Congressional District 7,House,89,toss-up,,,,,Curtis Hertel,Tom Barrett,,https://www.hertelformichigan.com/,https://electiondeniers.org/,
+Michigan,26,8,,,Congressional District 8,House,50,toss-up,,,,,Kristen McDonald Rivet,Paul Junge,,https://kristenmcdonaldrivet.com/,https://www.pauljunge.com/,
+Minnesota,27,2,,,Congressional District 2,House,68,lean-D,,,,,Angie Craig (incumbent),Joe Teirab,,https://angiecraig.com/,https://www.joeformn2.com/,
+Montana,30,1,,,Congressional District 1,House,69,likely-R,,,,,Monica Tranel,Ryan K. Zinke (incumbent),,https://www.monicatranel.com/,https://electiondeniers.org/,
+Nebraska,31,2,,,Congressional District 2,House,76,toss-up,,,,,Tony Vargas,Don Bacon (incumbent),,https://www.vargasfornebraska.com/,https://donjbacon.com/,
+Nevada,32,3,,,Congressional District 3,House,64,lean-D,,,,,Susie Lee (incumbent),Drew Johnson,,https://susieleeforcongress.com/,https://drewfornevada.com/,
+Nevada,32,1,,,Congressional District 1,House,46,likely-D,,,,,Dina Titus (incumbent),Mark Robertson,,https://www.dinatitus.com/,https://robertsonforcongress.com/,
+Nevada,32,4,,,Congressional District 4,House,49,likely-D,,,,,Steven Horsford (incumbent),John J. Lee,,https://www.stevenhorsford.com/,https://electiondeniers.org/,
+New Hampshire,33,1,,,Congressional District 1,House,96,likely-D,,,,,Chris Pappas (incumbent),Russell Prescott,,https://www.chrispappas.org/,https://www.prescottforcongress.com/,
+New Hampshire,33,2,,,Congressional District 2,House,87,likely-D,,,,,Maggie Goodlander,Lily Williams,,https://maggiefornh.com/,https://www.lilytangwilliams.com/,
+New Jersey,34,7,,,Congressional District 7,House,65,toss-up,,,,,Susan Altman,Thomas Kean Jr. (incumbent),,https://www.suealtman.com/,https://tomkean.com/,
+New Mexico,35,2,,,Congressional District 2,House,79,toss-up,,,,,Gabriel Vasquez (incumbent),Yvette Herrell,,https://gabeforcongress.com/,https://electiondeniers.org/,
+New York,36,18,,,Congressional District 18,House,90,lean-D,,,,,Pat Ryan (incumbent),Alison Esposito,,https://www.patryanforcongress.com/,https://www.alisonesposito.com/,
+New York,36,22,,,Congressional District 22,House,91,lean-D,,,,,John Mannion,Brandon Williams (incumbent),,https://www.mannionforny.com/,https://letsvotebrandon.com/,
+New York,36,3,,,Congressional District 3,House,64,likely-D,,,,,Tom Suozzi (incumbent),Michael LiPetri Jr.,,https://suozziforcongress2024.com/,https://www.lipetriforcongress.com/,
+New York,36,1,,,Congressional District 1,House,25,likely-R,1,,,,John Avlon,Nicholas J. LaLota (incumbent),,https://www.johnavlon.com/,https://www.nicklalota.com/,
+New York,36,4,,,Congressional District 4,House,98,toss-up,,,,,Laura Gillen,Anthony D'Esposito (incumbent),,https://lauragillen.com/,https://despositoforcongress.com/,
+New York,36,17,,,Congressional District 17,House,91,toss-up,,,,,Mondaire Jones,Michael Lawler (incumbent),,https://mondaireforcongress.com/,https://www.lawlerforcongress.com/,
+New York,36,19,,,Congressional District 19,House,100,toss-up,,,,,Josh Riley,Marcus Molinaro (incumbent),,https://www.joshrileyforcongress.com/,https://www.marcforus.com/,
+North Carolina,37,1,,,Congressional District 1,House,84,toss-up,,,,,Donald Davis (incumbent),Laurie Buckhout,,https://votedondavis.com/,https://www.lauriebuckhoutforcongress.com/,
+Ohio,39,1,,,Congressional District 1,House,86,likely-D,,,,,Greg Landsman (incumbent),Orlando Sonza,,https://www.landsmanforcongress.com/,https://www.orlandosonza.com/,
+Ohio,39,9,,,Congressional District 9,House,56,lean-D,,,,,Marcy Kaptur (incumbent),Derek Merrin,,https://marcykaptur.com/,https://www.derekmerrin.com/,
+Ohio,39,13,,,Congressional District 13,House,79,toss-up,,,,,Emilia Sykes (incumbent),Kevin Coughlin,,https://www.emiliasykesforcongress.com/,https://kevincoughlin.com/,
+Oregon,41,6,,,Congressional District 6,House,62,lean-D,,,,,Andrea Salinas (incumbent),Mike Erickson,,https://www.andreasalinasfororegon.com/,https://mikeericksonforcongress.org/,
+Oregon,41,4,,,Congressional District 4,House,34,likely-D,,,,,Val Hoyle (incumbent),Monique DeSpain,,https://valhoyle.com/,https://www.moniqueforcongress.com/,
+Oregon,41,5,,,Congressional District 5,House,98,toss-up,,,,,Janelle Bynum,Lori Chavez-DeRemer (incumbent),,https://www.janellebynum.com/,https://www.lorichavezderemer.com/,
+Pennsylvania,42,17,,,Congressional District 17,House,43,lean-D,,,,,Chris Deluzio (incumbent),Rob Mercuri,,https://chrisforpa.com/,https://www.robmercuri.com/,
+Pennsylvania,42,10,,,Congressional District 10,House,48,lean-R,,,,,Janelle Stelson,Scott Perry (incumbent),,https://janellestelson.com/,https://electiondeniers.org/,
+Pennsylvania,42,1,,,Congressional District 1,House,83,likely-R,,,,,Ashley Ehasz,Brian Fitzpatrick (incumbent),,https://www.ehaszforcongress.com/,https://www.brianfitzpatrick.com/,
+Pennsylvania,42,7,,,Congressional District 7,House,94,toss-up,,,,,Susan Wild (incumbent),Ryan Mackenzie,,https://wildforcongress.com/,https://www.mackenzieforcongress.com/,
+Pennsylvania,42,8,,,Congressional District 8,House,96,toss-up,,,,,Matt Cartwright (incumbent),Rob Bresnahan Jr.,,https://cartwrightcongress.com/,https://robforpa.com/,
+Texas,48,28,,,Congressional District 28,House,21,likely-D,,,,,Henry Cuellar (incumbent),Jay Furman,,https://www.henrycuellar.com/,https://commanderfurman.com/,
+Texas,48,34,,,Congressional District 34,House,12,lean-D,,,,,Vicente Gonzalez Jr. (incumbent),Mayra Flores,,http://www.vicentegonzalez.com/,https://www.mayrafloresforcongress.com/,
+Texas,48,15,,,Congressional District 15,House,82,likely-R,,,,,Michelle Vallejo,Monica De La Cruz (incumbent),,https://www.michellefortx15.com/,https://www.monicaforcongress.us/,
+Virginia,51,7,,,Congressional District 7,House,81,lean-D,,,,,Eugene Vindman,Derrick Anderson,,https://vindmanforcongress.com/,https://derrickanderson.com/,
+Virginia,51,2,,,Congressional District 2,House,78,lean-R,,,,,Missy Cotter Smasal,Jennifer Kiggans (incumbent),,https://missy4congress.com/,https://jenforcongress.com/,
+Washington,53,8,,,Congressional District 8,House,82,likely-D,,,,,Kim Schrier (incumbent),Carmen Goers,,https://www.drkimschrier.com/,https://www.carmenforwashington.com/,
+Washington,53,3,,,Congressional District 3,House,80,toss-up,,,,,Marie Gluesenkamp Pérez (incumbent),Joe Kent,,https://marieforcongress.com/,https://electiondeniers.org/,
+Wisconsin,55,3,,,Congressional District 3,House,80,lean-R,,,,,Rebecca Cooke,Derrick Van Orden (incumbent),,https://cookeforwisconsin.com/en/,https://electiondeniers.org/,
+Wisconsin,55,1,,,Congressional District 1,House,61,likely-R,,,,,Peter Barca,Bryan Steil (incumbent),,https://www.barcaforwisconsin.com/,https://www.bryansteil.com/,

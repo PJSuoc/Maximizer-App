@@ -1,6 +1,6 @@
 state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
 01,02,nan,nan,Alabama,House,Congressional District 2,43.0,Shomari Figures,Caroleene Dobson
-02,at-large,nan,nan,Alaska,House,Congressional District (at Large),33.0,Mary Peltola (incumbent),generic R (Top 4)
+02,at-large,nan,nan,Alaska,House,Congressional District (at Large),33.0,Mary Peltola (incumbent),Nicholas Begich
 04,01,nan,nan,Arizona,House,Congressional District 1,83.0,Amish Shah,David Schweikert (incumbent)
 04,06,nan,nan,Arizona,House,Congressional District 6,80.0,Kirsten Engel,Juan Ciscomani (incumbent)
 06,47,nan,nan,California,House,Congressional District 47,72.0,Dave Min,Scott Baugh
@@ -16,9 +16,9 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 08,03,nan,nan,Colorado,House,Congressional District 3,57.0,Adam Frisch,Jeff Hurd
 08,08,nan,nan,Colorado,House,Congressional District 8,100.0,Yadira Caraveo (incumbent),Gabe Evans
 09,05,nan,nan,Connecticut,House,Congressional District 5,87.0,Jahana Hayes (incumbent),George Logan
-12,09,nan,nan,Florida,House,Congressional District 9,18.0,Darren Soto (incumbent),This party's nominee will be determined at an upcoming primary.
-12,23,nan,nan,Florida,House,Congressional District 23,35.0,Jared Evan Moskowitz (incumbent),This party's nominee will be determined at an upcoming primary.
-12,13,nan,nan,Florida,House,Congressional District 13,34.0,This party's nominee will be determined at an upcoming primary.,Anna Paulina Luna (incumbent)
+12,09,nan,nan,Florida,House,Congressional District 9,18.0,Darren Soto (incumbent),Thomas Chalifoux
+12,23,nan,nan,Florida,House,Congressional District 23,35.0,Jared Evan Moskowitz (incumbent),Joe Kaufman
+12,13,nan,nan,Florida,House,Congressional District 13,34.0,Whitney Fox,Anna Paulina Luna (incumbent)
 17,17,nan,nan,Illinois,House,Congressional District 17,69.0,Eric Sorenson (incumbent),Joseph G. McGraw
 18,01,nan,nan,Indiana,House,Congressional District 1,29.0,Frank Mrvan (incumbent),Randell Niemeyer
 19,03,nan,nan,Iowa,House,Congressional District 3,87.0,Lanon Baccam,Zach Nunn (incumbent)
@@ -33,11 +33,11 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 27,02,nan,nan,Minnesota,House,Congressional District 2,68.0,Angie Craig (incumbent),Joe Teirab
 30,01,nan,nan,Montana,House,Congressional District 1,69.0,Monica Tranel,Ryan K. Zinke (incumbent)
 31,02,nan,nan,Nebraska,House,Congressional District 2,76.0,Tony Vargas,Don Bacon (incumbent)
-32,03,nan,nan,Nevada ,House,Congressional District 3,64.0,Susie Lee (incumbent),Drew Johnson
-32,01,nan,nan,Nevada ,House,Congressional District 1,46.0,Dina Titus (incumbent),Mark Robertson
-32,04,nan,nan,Nevada ,House,Congressional District 4,49.0,Steven Horsford (incumbent),John J. Lee
-33,01,nan,nan,New Hampshire,House,Congressional District 1,96.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
-33,02,nan,nan,New Hampshire,House,Congressional District 2,87.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
+32,03,nan,nan,Nevada,House,Congressional District 3,64.0,Susie Lee (incumbent),Drew Johnson
+32,01,nan,nan,Nevada,House,Congressional District 1,46.0,Dina Titus (incumbent),Mark Robertson
+32,04,nan,nan,Nevada,House,Congressional District 4,49.0,Steven Horsford (incumbent),John J. Lee
+33,01,nan,nan,New Hampshire,House,Congressional District 1,96.0,Chris Pappas (incumbent),Russell Prescott
+33,02,nan,nan,New Hampshire,House,Congressional District 2,87.0,Maggie Goodlander,Lily Williams
 34,07,nan,nan,New Jersey,House,Congressional District 7,65.0,Susan Altman,Thomas Kean Jr. (incumbent)
 35,02,nan,nan,New Mexico,House,Congressional District 2,79.0,Gabriel Vasquez (incumbent),Yvette Herrell
 36,18,nan,nan,New York,House,Congressional District 18,90.0,Pat Ryan (incumbent),Alison Esposito
@@ -58,7 +58,7 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 42,10,nan,nan,Pennsylvania,House,Congressional District 10,48.0,Janelle Stelson,Scott Perry (incumbent)
 42,01,nan,nan,Pennsylvania,House,Congressional District 1,83.0,Ashley Ehasz,Brian Fitzpatrick (incumbent)
 42,07,nan,nan,Pennsylvania,House,Congressional District 7,94.0,Susan Wild (incumbent),Ryan Mackenzie
-42,08,nan,nan,Pennsylvania,House,Congressional District 8,96.0,Matt Cartwright (incumbent),Rob Bresnahan Jr. 
+42,08,nan,nan,Pennsylvania,House,Congressional District 8,96.0,Matt Cartwright (incumbent),Rob Bresnahan Jr.
 48,28,nan,nan,Texas,House,Congressional District 28,21.0,Henry Cuellar (incumbent),Jay Furman
 48,34,nan,nan,Texas,House,Congressional District 34,12.0,Vicente Gonzalez Jr. (incumbent),Mayra Flores
 48,15,nan,nan,Texas,House,Congressional District 15,82.0,Michelle Vallejo,Monica De La Cruz (incumbent)
@@ -68,6 +68,3 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 53,03,nan,nan,Washington,House,Congressional District 3,80.0,Marie Gluesenkamp Pérez (incumbent),Joe Kent
 55,03,nan,nan,Wisconsin,House,Congressional District 3,80.0,Rebecca Cooke,Derrick Van Orden (incumbent)
 55,01,nan,nan,Wisconsin,House,Congressional District 1,61.0,Peter Barca,Bryan Steil (incumbent)
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,

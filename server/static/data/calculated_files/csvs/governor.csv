@@ -1,12 +1,12 @@
 state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
-33,nan,nan,nan,New Hampshire,Governor ,,100.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
-37,nan,nan,nan,North Carolina,Governor ,,100.0,Josh Stein ,Mark K. Robinson
-10,nan,nan,nan,Delaware,Governor ,,10.0,This party's nominee will be determined at an upcoming primary.,This party's nominee will be determined at an upcoming primary.
-18,nan,nan,nan,Indiana,Governor ,,10.0,Jennifer McCormick,Mike Braun
-29,nan,nan,nan,Missouri,Governor ,,10.0,Crystal Quade,Mike Kehoe
-30,nan,nan,nan,Montana,Governor ,,30.0,Ryan Busse,Greg Gianforte (incumbent)
-38,nan,nan,nan,North Dakota,Governor ,,10.0,Merrill Piepkorn,Kelly Armstrong
-49,nan,nan,nan,Utah,Governor ,,10.0,Brian King,Spencer Cox (incumbent)
-50,nan,nan,nan,Vermont,Governor ,,30.0,Esther Charlestin,Phil Scott (incumbent)
-53,nan,nan,nan,Washington,Governor ,,30.0,Bob Ferguson,Dave Reichert
-54,nan,nan,nan,West Virginia,Governor ,,10.0,Steve Williams,Patrick Morrisey
+33,nan,nan,nan,New Hampshire,Governor,,100.0,Joyce Craig,Kelly Ayotte
+37,nan,nan,nan,North Carolina,Governor,,100.0,Josh Stein,Mark K. Robinson
+10,nan,nan,nan,Delaware,Governor,,10.0,Matt Meyer,Michael Ramone
+18,nan,nan,nan,Indiana,Governor,,10.0,Jennifer McCormick,Mike Braun
+29,nan,nan,nan,Missouri,Governor,,10.0,Crystal Quade,Mike Kehoe
+30,nan,nan,nan,Montana,Governor,,30.0,Ryan Busse,Greg Gianforte (incumbent)
+38,nan,nan,nan,North Dakota,Governor,,10.0,Merrill Piepkorn,Kelly Armstrong
+49,nan,nan,nan,Utah,Governor,,10.0,Brian King,Spencer Cox (incumbent)
+50,nan,nan,nan,Vermont,Governor,,30.0,Esther Charlestin,Phil Scott (incumbent)
+53,nan,nan,nan,Washington,Governor,,30.0,Bob Ferguson,Dave Reichert
+54,nan,nan,nan,West Virginia,Governor,,10.0,Steve Williams,Patrick Morrisey
