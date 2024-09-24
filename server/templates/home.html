@@ -100,7 +100,7 @@
 
     <div class="home-container">
        <div class="title-container">
-           <div class="entry-title">Maximize your individual voter power and strengthen democracy in 2024</div>
+           <div class="entry-title">Maximize the impact of your canvassing and donations</div>
            <hr>
            <div class="main-title">Vote Maximizer</div>
            <div class="sub-title">Click on a state for more information</div>
@@ -168,6 +168,7 @@
                 <h1>What's new?</h1>
                 <hr class="title-line">
             </div>
+            
           <div class="cards-wrapper" id="cards">
 
             <card>
@@ -210,6 +211,7 @@
 
 <script type="module">    
         const states = JSON.parse('{{ states | tojson }}')
+        const postal_codes = JSON.parse('{{ postal_codes | tojson }}')
         let stateWideRaces = ["AK","AZ","DE","IN","MO","MT","KS","MI","MN","ND","UT","VT","WA","WV","NE","NV","NH","PA","WI","NC"];
         import voterEmpowerment from './static/js/voter_empowerment.js';
         import ballotData from './static/js/ballots.js';
@@ -542,9 +544,7 @@
             }
         }, 'albersusa-points');
     } else {
-        if (layerId === 'senate') {
-            console.log('senate layer');
-        }
+
         map.addLayer({
 
     id: layerId + '-fill',
@@ -655,16 +655,20 @@
                 };
                 let feature = map.queryRenderedFeatures(e.point, { layers: [layerId + '-fill'] })[0];
                 let location;
+                let selection = '';
                 if (feature) {
-                    location = feature.properties['state_name'];
-                    if (location && states.includes(location)) {
-                        window.location.href = `/state?location=${location}`;
+                    selection = getHighlightedButton();
+
+                    location = feature.properties.STUSPS || feature.properties.state_name;
+                    if (location && (states.includes(location) || postal_codes.includes(location))) {
+                        window.location.href = `/state?location=${location}&selection=${selection}`;
                         return;
                     }
                 }
                 if (!location) {
+                    console.log("no location");
                     feature = map.queryRenderedFeatures(e.point, { layers: ['albersusa'] })[0];
-                    location = feature.properties['state_name'];
+                    location = feature.properties.STUSPS || feature.properties.state_name;
                     if (location && states.includes(location)) {
                         window.location.href = `/state?location=${location}`;
                         return;
@@ -1046,6 +1050,17 @@ function getColorForPowerLevel(powerLevel) {
         case 'statewide': return COLOR_STATE_LEGISLATURE;
         default: return COLOR_DEFAULT;
     }
+}
+
+// Write a function that searches all legend buttons and 
+// returns the one that is clicked
+function getClickedButton() {
+    return document.querySelector('.legend-btn.active');
+}
+// Return the data-level of the highlighted class
+function getHighlightedButton() {
+    const highlightedButton = document.querySelector('.legend-btn.highlight');
+    return highlightedButton.getAttribute('data-level');
 }
 
 // Add click event listener for legend buttons

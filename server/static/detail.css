@@ -1,9 +1,48 @@
 .detail-page {
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Ubuntu', sans-serif;
-    }
+    display: flex; 
+    height: 100%; 
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#map-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+
+.row {
+    display: flex; 
+    width: 100%; 
+}
+#detail-left, #detail-right {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+}
+
+#detail-right {
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden; 
+}
+
+#state-data-list {
+    flex-grow: 1; 
+    overflow-y: auto; 
+}
+    
 
     .map-overlay {
         font: 14px/20px;
@@ -19,15 +58,17 @@
 
     .map-overlay-inner {
         background-color: rgba(0, 0, 0, 0.6);
-        padding: 10px;
+        padding: 9px;
         border-radius: 3px;
         box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+
     }
 
     .map-overlay-inner fieldset {
         border: none;
         padding: 0;
         margin: 0 0 10px;
+        border-radius: 3px;
         text-align: left;
         display: flex;
         align-items: center;
@@ -37,6 +78,7 @@
     .map-overlay-inner fieldset:last-child {
         margin: 0;
         text-align: center;
+
     }
 
     .map-overlay-inner select {
@@ -129,37 +171,67 @@
     }
 
     .table {
-        table-layout: fixed;
         width: 100%;
+        table-layout: fixed;
         margin-bottom: 1rem;
         color: #212529;
         border-collapse: collapse;
     }
+
+
+    .table th,
+    .table td{
+        text-align: center;
+        vertical-align: middle;
+        font-size:1.2rem;
+        padding: 0.75rem; /* 统一内边距 */
+        border-top: 1px solid #dee2e6; /* 增加边框以保持表格结构 */
+    }
+
+
+    /*
     .table th,
     .table td {
         padding: 0.75rem;
         vertical-align: middle;
         border-top: 1px solid #dee2e6;
-    }
+    }*/
+
+
+
     .category-title th {
-        background-color: #f8f9fa;
-        font-size: 1.5em;
+        background-color: rgba(0, 0, 0, 0.1);
+        font-size: 1.4em;
         font-weight: bold;
-        text-align: left;
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
     }
     .category-header td,
     .subcategory-header td {
-        background-color: #e9ecef;
+        background-color: rgba(0, 0, 0, 0.1);
         font-weight: bold;
         font-size: 1.2em;
-        text-align: left;
-    }
-    .state-section {
-        margin-bottom: 2rem;
+        text-align: center;
     }
 
-    .category-description {
-        background-color: #f3f3f3d1;
+
+    .state-section h3 {
+        width: 100%;
+        text-align: center;
+        background-color: black;
+        color:white;
+        padding: 0px;
+        margin:0;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        font-weight:700;
+    
+    }
+
+    .category-description{
+       background-color: #f8f9fa;
     }
 
     .category-description td {
@@ -173,31 +245,36 @@
         white-space: nowrap;
     }
 
-    .table th:last-child {
-        width: 100px;
-        text-align: right;
+    
+
+    .table th:last-child,.table td:last-child {
+        padding-top:10px;
+        text-align:center;
     }
-/*     .table td:last-child {
-        text-align: left;
-    } */
+     
 
     .table th:nth-child(2),
     .table td:nth-child(2) {
         width: 100px;
+        width:auto;
         text-align: center;
+        
     }
 
     .table tr:first-child th,
     .table tr:nth-child(2) td {
-        text-align: left;
+        text-align: center;
+        
     }
 
+    
 
 
     .text-wrap {
         white-space: normal;
         word-wrap: break-word;
         max-width: 300px; /* Adjust this value as needed */
+       
     }
 
     .candidate-names {
@@ -209,4 +286,25 @@
     .table {
         max-width: 100%;
     }
+
+    .category-description-fixed{
+        text-align: center;
+    }
+
+    .custom-btn {
+        padding: 5px 10px; 
+        font-size: 8px; 
+    }
+
+    .vote-info {
+        display:block;
+        font-size: 0.8rem; 
+        color: #6c757d; 
+        white-space: normal; 
+        word-wrap:break-word;
+    }
+   
+   
 }
+  
+

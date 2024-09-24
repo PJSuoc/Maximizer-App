@@ -20,14 +20,14 @@
                             <label for="layer">Currently viewing: </label>
                             <select id="layer" name="layer">
                                 <option value="empty">choose</option>
-                                <option value="ballot_vpm">Democracy ballot initiatives</option>
-                                <option value="presidential2" >Presidential race</option>
-                                <option value="congressional2">Senate race</option>
-                                <option value="house2" selected>House races</option>
-                                <option value="state_leg_up">State upper legislature</option>
+                                <option value="ballot_vpm" selectionValue="democracy">Democracy ballot initiatives</option>
+                                <option value="presidential2" selectionValue="presidential">Presidential race</option>
+                                <option value="congressional2" selectionValue="senate">Senate race</option>
+                                <option value="house2" selectionValue="house">House races</option>
+                                <option value="state_leg_up" >State upper legislature</option>
                                 <option value="state_leg_low">State lower legislature</option>
-                                <option value="ballot_abort">Reproductive rights initiatives</option>
-                                <option value="ballot_others">State-level ballot issues</option>
+                                <option value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</option>
+                                <option value="ballot_others" selectionValue="others">State-level ballot issues</option>
                             </select>
                         </fieldset>
                     </div>
@@ -54,6 +54,7 @@
 
     // Function to add data to the master dictionary
     function addToMasterData(dataList, category) {
+        //console.log('Adding data to master data:', dataList, category);
         dataList.forEach(item => {
             const state = typeof item.state_name === 'string' ? item.state_name.trim() : 'Unknown';
             if (!masterStateData[state]) {
@@ -77,16 +78,8 @@
     addToMasterData({{ state_level_list | tojson | safe }}, 'state_level_ballots');
 
     
-    console.log('Master State Data:', masterStateData);
+    //console.log('Master State Data:', masterStateData);
 
-    // Optional: Count the number of states
-    const totalStates = Object.keys(masterStateData).length;
-    console.log('Total number of states:', totalStates);
-
-    // Optional: Log a summary of data for each state
-    for (const state in masterStateData) {
-        console.log(`${state}:`, Object.keys(masterStateData[state]).join(', '));
-    }
 
     Object.keys(masterStateData).forEach(state => {
         Object.keys(masterStateData[state]).forEach(category => {
@@ -107,10 +100,7 @@
         });
     });
 
-    console.log('Updated Master State Data with ballot information:', masterStateData);
-
     function createCategoryList(categoryData, categoryTitle) {
-        console.log('Category Data:', categoryData);
         // if (!categoryData || categoryData.length === 0) return '';
         
         let tableRows = '';
@@ -119,24 +109,29 @@
         let hasElectedOffices = false;
 
         switch (categoryTitle) {
-            case 'Democracy Ballot Initiatives':
+            case 'Democracy':
                 if (rowsNonEmpty) {
-                    description = `<p class="category-description">These initiatives make long-term changes to the practice of democracy in this state.</p>`;
-
+                    description = `<p class="category-description-fixed">These initiatives make long-term changes to the practice of democracy in this state.</p>`;
+   
                     // Sort categoryData by election_name
                     const sortedCategoryData = [...categoryData].sort((a, b) => {
                         const nameA = (a.election_name || '').toLowerCase();
                         const nameB = (b.election_name || '').toLowerCase();
                         return nameA.localeCompare(nameB);
                     });
-                    tableRows += sortedCategoryData.map(item => `
-                        <tr>
+                    tableRows += sortedCategoryData.map(item => 
+                        `<tr>
                             <td class="text-wrap" colspan="2">
                                 <div class="row-name democracy-name">${item['name of ballot'] || ''}</div>
                             </td>
-                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
+                            <td>
+                                <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
+                                    class="btn btn-primary btn-info custom-btn">
+                                    Learn More
+                                </a>   
+                            </td>
                         </tr>
-                    `).join('');
+                `).join('');
                 }
                 else {
                     tableRows += `<tr><td colspan="3">No such ballot initiatives exist in this state.</td></tr>`;
@@ -144,17 +139,26 @@
                 break;
 
             case 'Elected Offices':
-            if (hasElectedOffices) {
-                description = `<p class="category-description">Elected offices where the power of individual voters is high:</p>`;
-            }
                 // <tr class="subcategory-header"><td colspan="3">President</td></tr>
                 if (categoryData.president && categoryData.president.voter_power > 20) {
                     hasElectedOffices = true;
+                  
+                    const item = categoryData.president;
+                    const candidate_ids = item.candidate_ids;
+                    const election = `${item.state_name} ${item.election_name}`;
+                    const election_id = item.eid;
+
+
                     tableRows +=`
                         <tr>
                             <td>President</td>
                             <td>${Math.round(categoryData.president.voter_power)}</td>
-                            <td><button class="btn btn-primary btn-info" type="submit" form="{categoryData.form_id}" value="Submit">Learn More</button></td>
+                            <td>
+                                <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
+                                    class="btn btn-primary btn-info custom-btn">
+                                    Learn More
+                                </a>    
+                            </td>
                         </tr>
                     `;
                 }
@@ -164,11 +168,18 @@
                 
                 if (categoryData.senate && categoryData.senate.voter_power > 20) {
                     hasElectedOffices = true;
+                    const item = categoryData.senate;
+
                     tableRows += `
                         <tr>
                             <td>Senate</td>
                             <td>${Math.round(categoryData.senate.voter_power)}</td>
-                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
+                            <td>
+                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}"  
+                                    class="btn btn-primary btn-info custom-btn">
+                                    Learn More
+                                </a>   
+                            </td>
                         </tr>
                     `;
                 }
@@ -184,7 +195,12 @@
                         <tr>
                             <td>${item.election_name.replace(/^Congressional\s*/, '').trim() || 'N/A'}</td>
                             <td>${Math.round(item.voter_power)}</td>
-                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
+                            <td>
+                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
+                                    class="btn btn-primary btn-info custom-btn">
+                                    Learn More
+                                </a>   
+                            </td>
                         </tr>
                     `).join('');
                 }
@@ -201,7 +217,12 @@
                         <tr>
                             <td>${item.election_name.replace(/^State Senate\s*/, '').trim() || 'N/A'}</td>
                             <td>${Math.round(item.voter_power)}</td>
-                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
+                            <td>
+                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
+                                    class="btn btn-primary btn-info custom-btn">
+                                    Learn More
+                                </a>   
+                            </td>
                         </tr>
                     `).join('');
                 }
@@ -218,17 +239,20 @@
                         <tr>
                             <td>${item.election_name.replace(/^State House\s*/, '').trim() || 'N/A'}</td>
                             <td>${Math.round(item.voter_power)}</td>
-                            <td><button class="btn btn-primary btn-info">Learn More</button></td>
+                            <td>
+                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
+                                    class="btn btn-primary btn-info custom-btn">
+                                    Learn More
+                                </a>   
+                            </td>
                         </tr>
                     `).join('');
                 }
-
-                // If no offices have voter power > 20, add a message
-                if (tableRows === '') {
-                    tableRows = `<tr><td colspan="3" class="missing">No state house races have high voter power.</td></tr>`;
-                }
-                
+                else {
+                    tableRows += `<tr><td colspan="3" class="missing">No state house races have high voter power.</td></tr>`;
+                }                
                 break;
+
             case 'Other ballot initiatives':
                 description = '' 
                 // Sort categoryData by election_name
@@ -242,38 +266,47 @@
                         const nameB = (b.election_name ?? '').toLowerCase();
                         return typeB.localeCompare(typeA) || nameA.localeCompare(nameB);
                     });
-                    tableRows += `<p class="category-description">Other state-level ballot initiatives:</p>`;
+
+                    //tableRows += `<p class="category-description-fixed">Other state-level ballot initiatives:</p>`;
                     tableRows += sortedCategoryData.map(item => `
-                    <tr>
+                    <tr class="tr-whole">
                         <td class="text-wrap" colspan="2">
                             <div class="row-name democracy-name">${item['name of ballot'] || ''}</div>
                         </td>
-                        <td><button class="btn btn-primary btn-info">Learn More</button></td>
+
+                        <td>
+                             <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
+                                class="btn btn-primary btn-info custom-btn">
+                                Learn More
+                            </a>   
+                        </td>
+                        
                     </tr>
                 `).join('');
                 } else {
-                    tableRows += `<tr><td colspan="3" class="missing">No ballot initiatives have high voter power.</td></tr>`;
+                    tableRows += `<tr><td colspan="3" class="missing">No ballot initiatives in this state.</td></tr>`;
                 }
                 break;
             }
         // Determine column headers based on category
         let columnHeaders = '';
-        if (categoryTitle === 'Democracy Ballot Initiatives' || categoryTitle === 'Other ballot initiatives') {
+        if (categoryTitle === 'Democracy' || categoryTitle === 'Other ballot initiatives') {
             if (rowsNonEmpty) {
                 columnHeaders = `
                     <tr>
-                        <th colspan="2">Name</th>
-                        <th>Action</th>
+                        <th colspan="2">Initiative</th>
+                        <th></th>
                     </tr>
                 `;
             }
         } else {
             if (hasElectedOffices) {
+                    description = `<p class="category-description-fixed">Elected offices where the <a href="/voter-power" target="_blank">power of individual voters</a> is high:</p>`;
             columnHeaders = `
                 <tr>
-                    <th>Name</th>
-                    <th>Voter Power</th>
-                    <th>Action</th>
+                    <th>Office</th>
+                    <th>Voter Power <span class="vote-info">Where your vote is powerful (max=100)</span></th>
+                    <th></th>
                 </tr>
             `;
         } 
@@ -305,10 +338,13 @@
 
         for (const state in masterStateData) {
             const stateData = masterStateData[state];
-            let stateHtml = `<div class="state-section" id="state-${state.toLowerCase().replace(/\s+/g, '-')}">
-                <h3>${state}</h3>`;
+            let stateHtml = `
+            
+                <div class="state-section" id="state-${state.toLowerCase().replace(/\s+/g, '-')}">
+                <h3>${state}</h3>
+            `;
 
-            stateHtml += createCategoryList(stateData.democracy_repair_ballots, 'Democracy Ballot Initiatives', state);
+            stateHtml += createCategoryList(stateData.democracy_repair_ballots, 'Democracy', state);
             stateHtml += createCategoryList({
                 president: stateData.presidential?.[0] ?? [],
                 senate: stateData.senate?.[0] ?? [],
@@ -358,7 +394,7 @@
         };
 
         const senateList = {{senate_list | tojson}};
-        console.log(senateList);
+
 
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
@@ -372,7 +408,7 @@
 
         function addGeoJsonLayer(layerId) {
             const idProperty = layerId === 'house2' || 'state_leg_up' || 'state_leg_low' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
-
+            
             // Clear hover state when switching layers
             if (hoveredStateId) {
                 map.setFeatureState({source: currentLayerId, id: hoveredStateId}, { hover: false });
@@ -398,11 +434,16 @@
          };
 
             // Add  layers
+            try {
             map.addSource(layerId, {
                 type: 'geojson',
                 data: layers[layerId],
                 promoteId: idProperty  
             });
+
+            } catch (error) {
+                console.error('Error adding source for', layerId, ':', error);
+            }
 
             map.addLayer({
     id: layerId + '-fill',
@@ -466,7 +507,6 @@
 
             map.on('mouseenter', layerId + '-fill',(e) => {
                 const mapPop = document.querySelector('.map-pop');
-                console.log(mapPop);
                 if (mapPop && !mapPop.classList.contains('hide')) {
                     mapPop.classList.add('hide');
                 }
@@ -627,24 +667,57 @@ popupContent = `<div class="custom-popup">
         
 
         // Initial layer setup on map load
-        map.on('load', function () {
-    addGeoJsonLayer('house2');
+    map.on('load', function () {
+        var serverSelection = JSON.parse('{{ selection|default("house", true)|tojson|safe }}');
+        var layerToAdd = 'house2'; // Default layer
+        var dropdown = document.getElementById('layer');
+        var foundMatch = false;
     
-    //filter for only USA names
-    const layers = map.getStyle().layers;
-
-    layers.forEach((layer) => {
-        const currentFilters = map.getFilter(layer.id);
-        
-        // if layer includes label or state filter for USA
-        if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
-            if (currentFilters) {
-                map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
-            } else {
-                map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+        // Check if serverSelection corresponds to a valid layer option
+        for (var i = 0; i < dropdown.options.length; i++) {
+            var option = dropdown.options[i];
+            if (option.getAttribute('selectionValue') === serverSelection) {
+                layerToAdd = option.value;
+                option.selected = true;
+                foundMatch = true;
+                break;
             }
         }
-    });
+
+        // If no match found, look for house2 or house option
+        if (!foundMatch) {
+            for (var i = 0; i < dropdown.options.length; i++) {
+                var option = dropdown.options[i];
+                if (option.value === 'house2' || option.getAttribute('selectionValue') === 'house') {
+                    option.selected = true;
+                    layerToAdd = 'house2';
+                    break;
+                }
+            }
+        }
+
+        //trigger event for change in layer and attach the corrrect e.target.value
+
+            console.log('About to trigger change event with value:', layerToAdd);
+            document.getElementById('layer').value = layerToAdd;
+            document.getElementById('layer').dispatchEvent(new Event('change', {bubbles: true}));
+
+
+        //addGeoJsonLayer(layerToAdd);
+        //console.log(`Selected = ${serverSelection} and layer = ${layerToAdd}`);
+        const layers = map.getStyle().layers;
+        layers.forEach((layer) => {
+            const currentFilters = map.getFilter(layer.id);
+            // if layer includes label or state filter for USA
+            if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
+                if (currentFilters) {
+                    map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
+                } else {
+                    map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+                }
+            }
+        });
+
 });
 
         document.getElementById('layer').addEventListener('change', function (e) {
@@ -662,6 +735,8 @@ popupContent = `<div class="custom-popup">
                 });
             }
         });
+
+ 
 
         // Add mouseenter event to hide map-pop when first entering map
 
