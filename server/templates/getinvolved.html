@@ -1,20 +1,327 @@
 {% extends "layout.html" %}
-
+{% block styles %}
 <style> 
+
+:root {
+    --warning-bg: #f9f9f9;
+    --warning-border: #EC4D2B;
+    --icon-bg: #EC4D2B;
+    --icon-color: #f9f9f9;
+    --link-color: #0056b3;
+    --link-hover-color: #00376a;
+    --border-radius: 1rem;
+    --text-color: #EC4D2B;
+}
+
+
+.get-involved-sec {
+  background-color: #f5f5f5;
+}
+
+.get-involved-sec .col {
+  padding: 0 1em 1em 1em;
+  text-align: center;
+}
+
+.get-involved-sec .service-card {
+  width: 100%;
+  height: 100%;
+  padding: 2em 1.5em;
+  border-radius: 5px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 2em;
+}
+
+.get-involved-sec .row {
+  justify-content: center;
+}
+
+.get-involved-sec .service-card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--orange);
+  position: absolute;
+  left: 0%;
+  top: -98%;
+  z-index: -2;
+  transition: all 0.4s cubic-bezier(0.77, -0.04, 0, 0.99);
+}
+
+.get-involved-sec .service-card:hover .btn {
+  background-color: #000; 
+  color: #fff;
+}
+
+.get-involved-sec h3 {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #1f194c;
+  margin: 1em 0;
+  z-index: 3;
+}
+
+.get-involved-sec p {
+  color: #575a7b;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  z-index: 3;
+}
+
+.get-involved-sec .service-card:hover::after {
+  top: 0%;
+}
+
+.get-involved-sec .service-card:hover h3 {
+  color: #ffffff;
+}
+
+.get-involved-sec .service-card:hover p {
+  color: #f0f0f0;
+}
+
+.get-involved-sec .campaign-url,
+.get-involved-sec .donate-url {
+  display: block;
+  margin-bottom: 1em; 
+}
+
+.election-denier {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: var(--warning-bg);
+    border: 2px solid var(--warning-border);
+    border-radius: var(--border-radius);
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.election-denier__icon {
+    background-color: var(--icon-bg);
+    padding: 5px;
+    border-radius: 50%;
+    flex: 0 0 auto; 
+    max-width: 30px; 
+    max-height: 30px; 
+}
+
+.election-denier__icon svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--icon-color);
+}
+
+.election-denier__content {
+    flex: 1; 
+    min-width: 0; 
+}
+
+.election-denier__title {
+    font-weight: bold;
+    font-size:1rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: var(--text-color); 
+    text-decoration: underline;
+}
+
+.election-denier__text {
+    font-size: 1rem;
+    color: var(--text-color); 
+    overflow-wrap: break-word;
+}
+
+.election-denier__text a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.election-denier__text a:hover {
+    color: var(--link-hover-color);
+}
+
+
+
+
+
+@media (min-width: 576px) {
+  .get-involved-sec .col {
+    padding: 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  .get-involved-sec .col {
+    padding: 1.5em;
+  }
+}
+
+
+
 
 
 </style>
+{% endblock %}
 
 {% block main %}
+
 <body id="gi-page">
-    <div class="container" id="election-desc">
-        {{election}}
+    <!-- Add this block for flashed messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }} <a href="{{ url_for('home') }}" class="alert-link">Return to homepage</a>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="container democracy" id="election-desc">
+        <h1>{{election[0].state_name}} {{election[0].election_name}}</h1>
     </div>
-    <div class="container" id="cand-row">
-        <div class="row">
-            {{ candidates | safe }}
+
+    <section id="get-involved" class="get-involved-sec pt-5 pb-5">
+        <div class="container" id="cand-row">
+            <div class="row mt-5 mt-md-4 row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center">
+                {% for item in candidates %}
+                {% set special_categories = ["Direct Democracy", "Reproductive Rights", "Democracy Repair", "Civil Liberties"] %}
+                
+                {% if item.race_type in special_categories %}
+                  <!-- candidate initiative -->
+                  <div class="col">
+                    <div class="service-card">
+                        <h3>{{ item.race_type }}</h3>
+                        <h3>{{ item.party }}</h3>
+                        <p>Description: {{ item.name | capitalize }}</p>
+
+                        <div class="campaign-url">
+                            <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
+                        </div>
+                        {% if item.donation_link and item.donation_link | lower != 'nan' %}
+                        <div class="donate-url">
+                            <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                  </div>
+                  {% else %}
+
+                    <!-- candidate -->
+                    <div class="col">
+                        <div class="service-card">
+                            <h3>{{ item.party }}</h3>
+                            <h3>{{ item.name }}</h3>
+                            {% if item.election_denier == "1" %}
+                            <div class="alert alert-warning election-denier">
+                                <div class="election-denier__icon">
+                                    <svg height="100%" viewBox="0 0 512 512" width="100%" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="#f9f9f9" d="M449.07,399.08,278.64,82.58c-12.08-22.44-44.26-22.44-56.35,0L51.87,399.08A32,32,0,0,0,80,446.25H420.89A32,32,0,0,0,449.07,399.08Zm-198.6-1.83a20,20,0,1,1,20-20A20,20,0,0,1,250.47,397.25ZM272.19,196.1l-5.74,122a16,16,0,0,1-32,0l-5.74-121.95v0a21.73,21.73,0,0,1,21.5-22.69h.21a21.74,21.74,0,0,1,21.73,22.7Z"/>
+                                    </svg>
+                                </div>
+                                <div class="election-denier__content">
+                                    <span class="election-denier__title">Skeptic Flag:</span>
+                                    <span class="election-denier__text">
+                                        This candidate has made statements doubting the electoral proceedings of free and fair elections in the United States. However, American elections are among the best-administered in the world. For more on such claims, see 
+                                        <a href="https://www.electiondeniers.org" target="_blank">www.electiondeniers.org</a>.
+                                    </span>
+                                </div>
+                            </div>
+                            {% endif %}
+                            <div class="campaign-url">
+                                <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
+                            </div>
+                            {% if item.donation_link and item.donation_link | lower != 'nan' %}
+                                <div class="donate-url">
+                                    <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+
         </div>
-    </div>
+
+    </section>
+    
+
+  <!--  
+    
+    <div class="horizontal">
+		<div class="vertical">
+			<div class="scrolling-wrapper">
+            {% for item in candidates %}
+              {% set special_categories = ["Direct Democracy", "Reproductive Rights", "Democracy Repair", "Civil Liberties"] %}
+              {% if item.race_type in special_categories %}
+
+                    <article class="article-body first-pinned">
+                        <section class="pinned-note">
+                            <span class="pinit"></span>
+                            <div class="nodes">
+                                <div class="left-strip">
+                                    <h1 class="pinned-heading"> {{item.race_type}} </h1>
+                                    <h1 class="pinned-heading"> {{item.party}} </h1>
+                    <p class="pinned-description"> Description: {{item.name|capitalize}} </p>
+                    <li class="campaign-url">
+                        <a class="btn btn-primary" href="{{item.campaign_link}}" target="_blank"
+                        role="button">Learn more</a>
+                        </li>
+                        {% if item.donation_link and item.donation_link|lower != 'nan' %}
+                        <li class="donate-url">
+                            <a class="btn btn-primary" href="{{item.donation_link}}" target="_blank"
+                            role="button">Donate</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                {% else %}
+                <article class="article-body second-pinned">
+					<section class="pinned-note">
+						<span class="pinit"></span>
+						<div class="nodes">
+							<div class="left-strip">
+                                <h1 class="pinned-heading"> {{item.party}} </h1>
+                                <p class="pinned-description"> {{item.name}} </p>
+                        {% if item.election_denier == "1" %}
+                        <li class="election-denier-warning alert alert-warning">
+                            <span class="desc-title"> Skeptic Flag: </span> 
+                            <span class="warning-text">This candidate has made statements doubting 
+                                the electoral proceedings of free and fair elections in the 
+                                United States. However, American elections are among the best-administered in 
+                                the world. For more on such claims, see 
+                                <a href="https://www.electiondeniers.org" target="_blank">www.electiondeniers.org</a>.
+                            </span>
+                        </li>
+                        {% else %}
+                        <li class="campaign-url">
+                            <a class="btn btn-primary" href="{{item.campaign_link}}" target="_blank"
+                            role="button">Learn more</a>
+                        </li>
+
+                            {% if item.donation_link and item.donation_link|lower != 'nan' %}
+                            <li class="donate-url">
+                                <a class="btn btn-primary" href="{{item.donation_link}}" target="_blank"
+                                role="button">Donate</a>
+                                </li>
+                            {% endif %} 
+                        {% endif %}
+                    </ul>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>-->
 </body>
 
 

@@ -9,21 +9,7 @@ from pathlib import Path
 import sys
 import json
 import platform
-
-STATEDICT = {
-    "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
-    "California": "06", "Colorado": "08", "Connecticut": "09", "Delaware": "10", 
-    "Florida": "12", "Georgia": "13", "Hawaii": "15", "Idaho": "16", "Illinois": "17", 
-    "Indiana": "18", "Iowa": "19", "Kansas": "20", "Kentucky": "21", 
-    "Louisiana": "22", "Maine": "23", "Maryland": "24", "Massachusetts": "25", 
-    "Michigan": "26", "Minnesota": "27", "Mississippi": "28", "Missouri": "29", 
-    "Montana": "30", "Nebraska": "31", "Nevada": "32", "New Hampshire": "33",
-    "New Jersey": "34", "New Mexico": "35", "New York": "36", "North Carolina": "37", 
-    "North Dakota": "38", "Ohio": "39", "Oklahoma": "40", "Oregon": "41", 
-    "Pennsylvania": "42", "Rhode Island": "44", "South Carolina": "45", "South Dakota": "46", 
-    "Tennessee": "47", "Texas": "48", "Utah": "49", "Vermont": "50", "Virginia": "51", 
-    "Washington": "53", "West Virginia": "54", "Wisconsin": "55", "Wyoming": "56"
-}
+from constants import STATEDICT
 
 """
 Class for building database functionalities.
@@ -120,6 +106,40 @@ class DB:
         print("electlen", elections.shape[0])
         self.allshapes = allshapes
         self.candidates = candidates
+        
+    def get_election_by_id(self, eid):
+        # Convert eid to int if it's not already
+        eid = int(eid) if not isinstance(eid, int) else eid
+        
+        # Filter the elections dataframe
+        election_rows = self.elections[self.elections['eid'] == eid]
+        
+        if len(election_rows) == 0:
+            print(f"No elections found with eid: {eid}")
+            return None
+        
+        # Convert to list of dictionaries
+        election_data = election_rows.to_dict('records')
+        
+        return election_data
+    def get_candidates_by_ids(self, candidate_ids, ignore_missing=False):
+        # Convert all ids to integers
+        candidate_ids = [int(cid) for cid in candidate_ids]
+        
+        # Filter the candidates dataframe
+        matching_candidates = self.candidates[self.candidates['cid'].isin(candidate_ids)]
+        
+        # Check for missing IDs
+        found_ids = set(matching_candidates['cid'].tolist())
+        missing_ids = set(candidate_ids) - found_ids
+        
+        if missing_ids and not ignore_missing:
+            print(f"Warning: The following candidate IDs were not found: {missing_ids}")
+        
+        # Convert to list of dictionaries
+        candidate_data = matching_candidates.to_dict('records')
+    
+        return candidate_data
 
     def nearby_voting_impact(self, location, layer, fmid):
         '''
@@ -150,6 +170,45 @@ class DB:
         layerjson = clean_elections.to_json()
         return election_string, layerjson, fmid
     
+    def nearby_voting_impact_structured(self, location, layer, fmid):
+        '''
+        Function set for getting the input layers for a specific geolocation
+        Returns structured data instead of HTML strings
+        fmid: int that is used for elements of the detail page, required to get
+            unique links in place for each election
+        '''
+
+        # Gets nearby shapes to location input
+        if isinstance(location, list):
+            # IF Address input is a specific geolocation (comes out as type list)
+            nearby_shapes = self.shapes_near_location(location)
+        else:
+            # IF a state is selected from a dropdown menu
+            nearby_shapes = self.shapes_in_state(location)
+
+        # Get the set of elections for the shapes and filter them for the output
+        clean_elections = self.voter_power_filter(nearby_shapes, layer)
+
+        # Instead of constructing HTML, create a list of dictionaries
+        election_data = []
+        for i, election in clean_elections.iterrows():
+            # Get the entire matching row from self.elections
+            full_election_data = self.elections[self.elections['eid'] == election['eid']].iloc[0].to_dict()
+            
+            # Add additional fields
+            full_election_data['form_id'] = f"form_{fmid}"
+            
+            election_data.append(full_election_data)
+            fmid += 1
+
+        # Converts specific election types shapes to geojson for MapBox
+        clean_elections = clean_elections.reset_index(drop=True)
+        clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
+        layerjson = clean_elections.to_json()
+        
+        return election_data, layerjson, fmid
+
+
     def shapes_near_location(self, location):
         shape = self.allshapes # Temporary, in the future will be the mergeset of shapes
 
@@ -345,3 +404,4 @@ class DB:
         self.elections["candidate_ids"] = cand_id_list
         self.elections["candidate_names"] = cand_str_list
         return self.elections #with candidates
+   

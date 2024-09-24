@@ -3,87 +3,34 @@ import requests
 import argparse
 import sqlite3
 import logging
-from flask import current_app, g, Flask, flash, jsonify, redirect, render_template, request, session, Response
+from flask import current_app, g, Flask, flash, jsonify, redirect, render_template, request, session, Response, url_for
 import googlemaps
 import geopandas as gpd
 import pandas as pd
 from datetime import datetime
 import os
 from pathlib import Path
-
+import logging
+import base64
+from urllib.parse import urlparse, parse_qs
+import re
+from werkzeug.exceptions import BadRequest
 #Other File imports: DB for database interaction, calculations, support.
-from db import DB, STATEDICT
+from db import DB
+from constants import STATES, STATELOC, POSTAL_TO_STATE, STATEDICT
 
 ## Sets environment variables based on locale
 config_check = Path("config.py")
 if config_check.is_file():
     ## Environment Variables in for local development
-    from config import flask_key, google_key, mapbox_key
+    from config import flask_key, google_key, mapbox_key, LOG_VIEW_SECRET_KEY
 else:
     ## Environment Variables for heroku local or production
     flask_key = os.environ.get('flask_key')
     mapbox_key = os.environ.get('mapbox_key')
     google_key = os.environ.get('google_key')
 
-STATES = [ "Alabama","Alaska", "Arizona","Arkansas", "California", "Colorado", 
-    "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", 
-    "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", 
-    "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", 
-    "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", 
-    "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", 
-    "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
-    "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
-STATELOC = {'Alabama': {'lat': 32.3182314, 'long': -86.902298},
-            'Alaska': {'lat': 63.588753, 'long': -154.4930619},
-            'Arizona': {'lat': 34.0489281, 'long': -111.0937311},
-            'Arkansas': {'lat': 35.20105, 'long': -91.8318334},
-            'California': {'lat': 36.778261, 'long': -119.4179324},
-            'Colorado': {'lat': 39.5500507, 'long': -105.7820674},
-            'Connecticut': {'lat': 41.6032207, 'long': -73.087749},
-            'Delaware': {'lat': 38.9108325, 'long': -75.52766989999999},
-            'Florida': {'lat': 27.6648274, 'long': -81.5157535},
-            'Georgia': {'lat': 32.1574351, 'long': -82.90712300000001},
-            'Hawaii': {'lat': 19.8986819, 'long': -155.6658568},
-            'Idaho': {'lat': 44.0682019, 'long': -114.7420408},
-            'Illinois': {'lat': 40.6331249, 'long': -89.3985283},
-            'Indiana': {'lat': 39.76909, 'long': -86.158018},
-            'Iowa': {'lat': 41.8780025, 'long': -93.097702},
-            'Kansas': {'lat': 39.011902, 'long': -98.4842465},
-            'Kentucky': {'lat': 37.8393332, 'long': -84.2700179},
-            'Louisiana': {'lat': 30.5190775, 'long': -91.5208624},
-            'Maine': {'lat': 45.253783, 'long': -69.4454689},
-            'Maryland': {'lat': 39.0457549, 'long': -76.64127119999999},
-            'Massachusetts': {'lat': 42.4072107, 'long': -71.3824374},
-            'Michigan': {'lat': 44.3148443, 'long': -85.60236429999999},
-            'Minnesota': {'lat': 46.729553, 'long': -94.6858998},
-            'Mississippi': {'lat': 32.3546679, 'long': -89.3985283},
-            'Missouri': {'lat': 37.9642529, 'long': -91.8318334},
-            'Montana': {'lat': 46.8796822, 'long': -110.3625658},
-            'Nebraska': {'lat': 41.4925374, 'long': -99.9018131},
-            'Nevada': {'lat': 38.8026097, 'long': -116.419389},
-            'New Hampshire': {'lat': 43.1938516, 'long': -71.5723953},
-            'New Jersey': {'lat': 40.0583238, 'long': -74.4056612},
-            'New Mexico': {'lat': 34.9727305, 'long': -105.0323635},
-            'New York': {'lat': 40.7127753, 'long': -74.0059728},
-            'North Carolina': {'lat': 35.7595731, 'long': -79.01929969999999},
-            'North Dakota': {'lat': 47.5514926, 'long': -101.0020119},
-            'Ohio': {'lat': 40.4172871, 'long': -82.90712300000001},
-            'Oklahoma': {'lat': 35.0077519, 'long': -97.092877},
-            'Oregon': {'lat': 43.8041334, 'long': -120.5542012},
-            'Pennsylvania': {'lat': 41.2033216, 'long': -77.1945247},
-            'Rhode Island': {'lat': 41.5800945, 'long': -71.4774291},
-            'South Carolina': {'lat': 33.836081, 'long': -81.1637245},
-            'South Dakota': {'lat': 43.9695148, 'long': -99.9018131},
-            'Tennessee': {'lat': 35.5174913, 'long': -86.5804473},
-            'Texas': {'lat': 31.9685988, 'long': -99.9018131},
-            'Utah': {'lat': 40.7606608, 'long': -111.8939487},
-            'Vermont': {'lat': 44.5588028, 'long': -72.57784149999999},
-            'Virginia': {'lat': 37.4315734, 'long': -78.6568942},
-            'Washington': {'lat': 47.7510741, 'long': -120.7401386},
-            'West Virginia': {'lat': 38.5976262, 'long': -80.4549026},
-            'Wisconsin': {'lat': 43.7844397, 'long': -88.7878678},
-            'Wyoming': {'lat': 43.0759678, 'long': -107.2902839}}
 
 # base setup
 app = Flask(__name__)
@@ -128,47 +75,55 @@ with app.app_context():
 
 # Website Home Page     
 @app.route('/', methods=["GET", "POST"])
-
-
 def home():
     '''
     Renders the homepage with optional test versions.
     Falls back to home.html if the specified template doesn't exist.
     '''
     test_version = request.args.get('test')
+    postal_codes = list(POSTAL_TO_STATE.keys())
     if test_version:
         template_name = f"home_{test_version}.html"
         if os.path.exists(os.path.join(app.template_folder, template_name)):
             app.logger.info(f"Rendering template: {template_name}")
-            return render_template(template_name, states=STATES, mapbox_key=mapbox_key)
+            return render_template(template_name, states=STATES, postal_codes=postal_codes, mapbox_key=mapbox_key)
     
     # Default to home.html if no test version specified or if the file doesn't exist
-    return render_template("home.html", states=STATES, mapbox_key=mapbox_key)
+    return render_template("home.html", 
+                           states=STATES,
+                           postal_codes = postal_codes,
+                           mapbox_key=mapbox_key)
 
 @app.route('/local', methods=["GET", "POST"])
-# Geocodes the location of the person and calls the election mapper
 def local_elections():
-    if request.method == "POST":
-        try:
-            location = request.form.get("location")
-            location = gmaps.geocode(location)
-            return election_delivery_function(location)
-        except Exception as e:
-            logging.error(f"Error in local_elections: {str(e)}")
+    try:
+        location = request.values.get("location") or request.args.get("location")
+        if not location:
+            flash("Please provide a location.", "error")
             return redirect('/')
-    else:
+
+        location = gmaps.geocode(location)
+        return election_delivery_function_structured(location)
+    except Exception as e:
+        logging.error(f"Error in local_elections: {str(e)}")
+        flash("An error occurred while processing your request. Please try again.", "error")
         return redirect('/')
 
     
 @app.route('/state', methods=["GET", "POST"])
-# Passes the state input to and calls the election mapper
 def state_elections():
-    if request.method == "POST":
-        location = request.form.get("location")
-    else:
-        location = request.args.get("location")
+    location = request.args.get("location")
+    selection = request.args.get("selection", default="house")
     if location:
-        return election_delivery_function(location)    
+        print(location)
+        # Check if it's a postal code
+        if len(location) == 2 and location.upper() in POSTAL_TO_STATE:
+            # Look up the full state name
+            print("Postal Code", location.upper())
+            location = POSTAL_TO_STATE[location.upper()]
+            print("State", location)
+                    
+        return election_delivery_function_structured(location, selection)
     return redirect('/')
 
 @app.route('/voter-power', methods=["GET", "POST"])
@@ -191,28 +146,77 @@ def faq_load():
 def feedback_load():
     return render_template("feedback.html")
 
-@app.route('/get-involved', methods=["GET", "POST"])
-# Page delivering links to each candidate
 
-def get_involved():
-    # Gets the candidates in the election from the state/local page
-    if request.method == "POST":
-        candidates = request.form.get("candidates")
-        candidates = json.loads(candidates)
-        #I've set this as a base string for now, can switch to a nicer description later
-        election = request.form.get("election")
-    else:
-        return redirect('/')
 
-    print("Cands", candidates)
-    print("elec", type(election), election)
-    # Gets the candidate information from the candidate DB
-    # Writes a nice HTML string for each candidate
-    db = DB()
-    db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
-    output = db.candidate_link_strings(candidates)
+
+@app.route('/view_logs')
+def view_logs():
+    secret_key = request.args.get('key')
+    if secret_key != LOG_VIEW_SECRET_KEY:
+        return jsonify({"error": "Access denied"}), 403
     
-    return render_template("getinvolved.html", candidates = output, election = election)
+    try:
+        with open('missing_data.log', 'r') as log_file:
+            logs = json.load(log_file)
+        recent_logs = logs[-100:][::-1]     
+        return jsonify(recent_logs)  # Return last 100 log entries
+    except FileNotFoundError:
+        return jsonify({"error": "Log file not found"}), 404
+    
+
+
+@app.route('/get-involved', methods=["GET", "POST"])
+def get_involved():
+    try:
+        if request.method == "POST":
+            candidates = request.form.get("candidates")
+            election = request.form.get("election")
+        elif request.method == "GET":
+            candidates = request.args.get("candidates")
+            election = request.args.get("election")
+        else:
+            raise BadRequest("Invalid request method")
+
+        # Validate and sanitize inputs
+        if candidates:
+            candidates = validate_candidates(candidates)
+        if election:
+            election = validate_election(election)
+
+ 
+        db = DB()
+        db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
+
+        # Use parameterized queries in your DB class methods
+        elections_df = db.get_election_by_id(election)
+        candidates_df = db.get_candidates_by_ids(candidates)
+        if len(elections_df) == 0 or len(candidates_df) == 0:
+            flash("Election data not found. Error has been logged and will be corrected soon", "error")
+            return render_template("layout.html")
+
+
+        return render_template("getinvolved.html",
+                            candidates=candidates_df,
+                            election=elections_df)
+
+    except Exception as e:
+        app.logger.error(f"Error in get_involved: {str(e)}")
+        print(f"Error in get_involved: {str(e)}")
+        flash("An error occurred. Please try again later.", "error")
+        return render_template("layout.html")
+        
+
+def validate_candidates(candidates):
+    if isinstance(candidates, str):
+        candidates = candidates.split(',')
+    if not isinstance(candidates, list):
+        raise ValueError("Candidates must be a list or comma-separated string of integers")
+    return [int(c) for c in candidates if c.isdigit()]
+
+def validate_election(election):
+    if not re.match(r'^\d+$', str(election)):
+        raise ValueError("Election must be an integer")
+    return int(election)
 
 # Utilities ------------------------------
 
@@ -248,7 +252,9 @@ def election_delivery_function(location):
 
     # All the individual pieces for the detail lookup. May need to add vals
     # for zoom and center for the map as well, depending on address lookup
-    return render_template("detail.html", pres_list = lookup_dict["elections"]["Presidential"],
+    return render_template("detail.html", 
+                           all_data = lookup_dict["elections"],
+                           pres_list = lookup_dict["elections"]["Presidential"],
                 senate_list = lookup_dict["elections"]["Senate"], 
                 house_list = lookup_dict["elections"]["House"], 
                 state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
@@ -270,7 +276,69 @@ def election_delivery_function(location):
                 long = long,
                 mapbox_key = mapbox_key)
 
+def election_delivery_function_structured(location, selection = None):
+    db = DB()
+    db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
+        
+    # Dictionary to store information from shape lookup
+    lookup_dict = {"elections": {},"layers": {}}
+    lookup_components = ["Presidential","Senate","House", "Governor", "State Leg (Upper)",
+                              "State Leg (Lower)", "Democracy Repair", "State Level"]
 
+    election_count = 0 # Used for setting up election detail buttons
+    # Gets information to place in dictionary
+    for i in lookup_components:
+        elections_data, shapelayer, election_count = db.nearby_voting_impact_structured(location, i, election_count)
+        lookup_dict["elections"][i] = elections_data
+        lookup_dict["layers"][i] = shapelayer
+
+    # Get Lat/Long coordinates for centering
+    if type(location) != type([]):
+        lat = STATELOC[location]["lat"]
+        long = STATELOC[location]["long"]
+    else:
+        lat = location[0]["geometry"]["location"]["lat"]
+        long = location[0]["geometry"]["location"]["lng"]
+
+    # All the individual pieces for the detail lookup.
+    return render_template("detail.html", 
+                pres_list = lookup_dict["elections"]["Presidential"],
+                senate_list = lookup_dict["elections"]["Senate"], 
+                house_list = lookup_dict["elections"]["House"], 
+                state_house_list = lookup_dict["elections"]["State Leg (Lower)"], 
+                state_senate_list = lookup_dict["elections"]["State Leg (Upper)"],
+                governor_list = lookup_dict["elections"]["Governor"],
+                dem_ballot_list = lookup_dict["elections"]["Democracy Repair"],
+                state_level_list = lookup_dict["elections"]["State Level"],
+                pres_layer = lookup_dict["layers"]["Presidential"],
+                senate_layer = lookup_dict["layers"]["Senate"], 
+                house_layer = lookup_dict["layers"]["House"], 
+                s_house_layer = lookup_dict["layers"]["State Leg (Lower)"],
+                s_sen_layer = lookup_dict["layers"]["State Leg (Upper)"],
+                governor_layer = lookup_dict["layers"]["Governor"],
+                dem_ballot_layer = lookup_dict["layers"]["Democracy Repair"],
+                state_level_layer = lookup_dict["layers"]["State Level"],
+                lat = lat,
+                long = long,
+                mapbox_key = mapbox_key,
+                selection = selection)
+
+def write_to_log(message, log_type="info"):
+    log_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "type": log_type,
+        "message": message
+    }
+    
+    try:
+        with open('missing_data.log', 'r+') as log_file:
+            logs = json.load(log_file)
+            logs.append(log_entry)
+            log_file.seek(0)
+            json.dump(logs, log_file)
+    except FileNotFoundError:
+        with open('missing_data.log', 'w') as log_file:
+            json.dump([log_entry], log_file)
 # Default Hostname/address code for temporary testing purposes
 # Logging settings for log debugging
 if __name__ == "__main__":
