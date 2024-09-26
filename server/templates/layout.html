@@ -43,7 +43,7 @@
     <!-- dropdown -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jolty-ui/dist/jolty-ui-base.min.css" rel="stylesheet">
-
+    
     {% block styles %}
    
     {% endblock %}
@@ -537,8 +537,10 @@ div[id="fieldset-container"] {
             
             <div class="nav col" id="left-navbar">
                 <a href="/" class="label-lg navbar-link has-after active"><b>Home</b></a>
-                <a href="/voter-power"  class="label-lg navbar-link has-after"><b>Voter Power</b></a>  
-                <a href="/faq"  class="label-lg navbar-link has-after"><b>How to use the site?</b></a>  
+
+                <a href="/voter-power"  class="label-lg navbar-link has-after"><b>What is voter power</b></a>  
+                <a href="/faq"  class="label-lg navbar-link has-after"><b>How to use the site</b></a>  
+
                 <a href="/about"  class="label-lg navbar-link has-after"><b>About</b></a>  
                 <a href="/feedback"  class="label-lg navbar-link has-after"><b>Feedback</b></a>  
                 <!-- "About Us" Dropdown Menu -->
@@ -669,8 +671,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </script>
 
-
-    
  {% block main %}
  {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}

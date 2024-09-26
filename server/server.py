@@ -115,13 +115,10 @@ def state_elections():
     location = request.args.get("location")
     selection = request.args.get("selection", default="house")
     if location:
-        print(location)
         # Check if it's a postal code
         if len(location) == 2 and location.upper() in POSTAL_TO_STATE:
             # Look up the full state name
-            print("Postal Code", location.upper())
             location = POSTAL_TO_STATE[location.upper()]
-            print("State", location)
                     
         return election_delivery_function_structured(location, selection)
     return redirect('/')

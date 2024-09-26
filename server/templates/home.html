@@ -833,11 +833,11 @@ map.on('load', async function () {
 
             if (aspectRatio >= 1) {
                 // Landscape mode
-                bound_value = 15 * Math.max(1, aspectRatio);
+                bound_value = 14 * Math.max(1, aspectRatio);
                 bounds = [[-bound_value, -bound_value / aspectRatio], [bound_value, bound_value / aspectRatio]];
             } else {
                 // Portrait mode
-                bound_value = 15 / Math.min(1, aspectRatio);
+                bound_value = 15/ Math.min(1, aspectRatio);
                 bounds = [[-bound_value * aspectRatio, -bound_value], [bound_value * aspectRatio, bound_value]];
             }
             

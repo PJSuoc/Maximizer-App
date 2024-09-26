@@ -24,6 +24,7 @@ html, body {
 .row {
     display: flex; 
     width: 100%; 
+   
 }
 #detail-left, #detail-right {
     flex: 1; 
@@ -112,6 +113,7 @@ html, body {
 
     label[for="layer"] {
         color: white;
+        font-size: medium;
     }
 
     #detail-right {
@@ -183,9 +185,9 @@ html, body {
     .table td{
         text-align: center;
         vertical-align: middle;
-        font-size:1.2rem;
-        padding: 0.75rem; /* 统一内边距 */
-        border-top: 1px solid #dee2e6; /* 增加边框以保持表格结构 */
+        font-size:1.6rem;
+        padding: 0.5rem; 
+        border-top: 1px solid #dee2e6; 
     }
 
 
@@ -201,7 +203,7 @@ html, body {
 
     .category-title th {
         background-color: rgba(0, 0, 0, 0.1);
-        font-size: 1.4em;
+        font-size: 1.6em;
         font-weight: bold;
         text-align: center;
         color: black;
@@ -211,7 +213,7 @@ html, body {
     .subcategory-header td {
         background-color: rgba(0, 0, 0, 0.1);
         font-weight: bold;
-        font-size: 1.2em;
+        font-size: 1.4em;
         text-align: center;
     }
 
