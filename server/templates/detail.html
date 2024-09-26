@@ -305,7 +305,7 @@
             columnHeaders = `
                 <tr>
                     <th>Office</th>
-                    <th>Voter Power <span class="vote-info">Where your vote is powerful (max=100)</span></th>
+                    <th>Voter Power <span class="vote-info">The power of one more vote (max = 100)</span></th>
                     <th></th>
                 </tr>
             `;
@@ -370,7 +370,7 @@
                     mapboxgl.accessToken = '{{ mapbox_key }}';
                     const map = new mapboxgl.Map({
                         container: 'map',
-                        style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00',
+                        style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00/draft',
                         center: ['{{ long }}', '{{ lat }}'],  
                         zoom: 5,  
                         projection: 'mercator'
@@ -502,6 +502,9 @@
                 }
             });
 
+            map.moveLayer('state-label')
+            map.moveLayer('settlement-major-label')
+            map.moveLayer('settlement-minor-label')
             // put hover line  above others
             map.moveLayer(layerId + '-hover-line');
 

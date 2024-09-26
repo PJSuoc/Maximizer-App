@@ -187,7 +187,7 @@ class DB:
             nearby_shapes = self.shapes_in_state(location)
 
         # Get the set of elections for the shapes and filter them for the output
-        clean_elections = self.voter_power_filter(nearby_shapes, layer)
+        clean_elections = self.voter_power_filter(nearby_shapes, layer, 20, 10)
 
         # Instead of constructing HTML, create a list of dictionaries
         election_data = []
@@ -201,6 +201,7 @@ class DB:
             election_data.append(full_election_data)
             fmid += 1
 
+        
         # Converts specific election types shapes to geojson for MapBox
         clean_elections = clean_elections.reset_index(drop=True)
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
@@ -235,7 +236,7 @@ class DB:
 
         return shapes_in_state
 
-    def voter_power_filter(self, shapelist, layer):
+    def voter_power_filter(self, shapelist, layer, vp_minimum = 10,max_limit=3):
 
         # Filters elections based to ones in the nearby shapes
         relevant = shapelist.merge(self.elections, how="inner", 
@@ -257,11 +258,11 @@ class DB:
 
         if layer != "State Level" and layer != "Democracy Repair":
             # Filters elections by voter power 
-            relevant = relevant[relevant["voter_power_val"] > 10]
-            # Sorts remaining elections by voter power & get only the top 3
+            relevant = relevant[relevant["voter_power_val"] > vp_minimum]
+            # Sorts remaining elections by voter power & get only the top max_limit
             relevant.sort_values("voter_power_val", inplace = True, ascending = False)
             relevant = relevant.reset_index(drop = True)
-            output = relevant[0:5]
+            output = relevant[0:max_limit]
         elif layer == "State Level":
             #Attempting to deal with a category that has some VP and some non-vp
             '''
@@ -271,7 +272,7 @@ class DB:
             rel_clean = pd.concat([relevant_gov, relevant_ballot], ignore_index=True)
             rel_clean.sort_values("voter_power_val", inplace = True, ascending = False)
             rel_clean = rel_clean.reset_index(drop = True)'''
-            output = relevant[0:5]
+            output = relevant[0:max_limit]
         else:
             output = relevant
         
@@ -335,12 +336,8 @@ class DB:
         cand_front = '<div class="col" id="candidate"><ul id="infolist" class="list-group-item">'
         name_front = '<li id="cand">'
         party_front = '<li id="cand">'
-        #Campaign button Components & Flag
-        camp_front = '<li id="campbtn"><a class="btn btn-primary" href="'
-        camp_back = '" role="button">More Information</a>'
-        #Donation Button Components & Flag
-        dono_front = '<li id="donobtn"><a class="btn btn-primary" href="'
-        dono_back = '" role="button">Donation Link</a>'
+        button_front = '<li id="campbtn"><a class="btn btn-primary" href="'
+        button_back = '" role="button">More information</a>'
         item_back = '</li>'
         cand_back = '</ul></div>'
         denier_text = '<li id="denier"><b>Skeptic Flag:</b> This candidate has made statements doubting \
@@ -355,18 +352,15 @@ class DB:
             name = self.candidates.loc[id]["name"]
             party = self.candidates.loc[id]["party"]
             camp_link = str(self.candidates.loc[id]["campaign_link"])
-            dono_link = str(self.candidates.loc[id]["donation_link"])
             denier = self.candidates.loc[id]["election_denier"]
 
             # Inserts warning about election deniers. I'd make it a popup, but that's a lot harder and time is of the essence.
             if denier == "1":
                 c_str = cand_front + party_front + party + item_back + name_front + name + item_back + \
-                    denier_text + camp_front + camp_link + camp_back + item_back \
-                    + dono_front + dono_link + dono_back + item_back
+                    denier_text + button_front + camp_link + button_back + item_back
             else:
                 c_str = cand_front + party_front + party + item_back + name_front + name + item_back + \
-                    camp_front + camp_link + camp_back + item_back \
-                    + dono_front + dono_link + dono_back + item_back
+                    button_front + camp_link + button_back + item_back
             
             candidate_link_string = candidate_link_string + c_str + cand_back
 
