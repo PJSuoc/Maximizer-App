@@ -93,7 +93,43 @@
     .footer-widget ul li a:hover {
         color: var(--orange);
     }
-    
+
+    .video-section {
+    display: flex;
+    flex-direction: row;
+    margin: 2em auto;
+    padding: 1.5em;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+/* Video Container Styling */
+.video-container {
+    flex: 1;
+    margin-right: 2em;
+}
+
+.video-frame {
+    border-radius: 6px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Information Styling */
+.video-info {
+    flex: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-title {
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
     </style>
 
  <body>
@@ -160,6 +196,21 @@
             </div>
         </fieldset>
     </div>
+    
+    <section class="video-section">
+        <div class="video-container">
+          <div class="video-frame">
+            <div class="video-content" id="video-content">
+              <iframe id="video" width="100%" height="200" src="https://www.youtube.com/embed/bSJEDoHk4-c?start=4" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">
+            <span>A quick tour of vote maximizers</span>
+          </div>
+        </div>
+      </section>
 
     <div class="blog-wrapper">
         <div class="blog-container">
