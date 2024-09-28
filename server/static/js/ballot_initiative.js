@@ -1471,4 +1471,4 @@ const ballotData = [
   }
 ];
 
-export default ballot_initiative;
+export default ballotData;
