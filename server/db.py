@@ -68,7 +68,6 @@ class DB:
         # Merges election CSVs into a single dataframe for calculations
         df_list = [president, senate, congress, governor, s_upper, s_lower, ballot]
         self.elections = pd.concat(df_list, ignore_index=True)
-        print(ballot)
         # Elections data cleaning/adjusting
         self.elections["eid"] = self.elections.index
         self.elections["state"] = self.elections["state"].fillna("")
@@ -165,7 +164,7 @@ class DB:
 
         # Converts specific election types shapes to geojson for MapBox
         clean_elections.reset_index(drop = True)
-        #print("name type", type(clean_elections.loc[0]["state_name"]))
+        
        
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
         layerjson = clean_elections.to_json()
@@ -194,27 +193,15 @@ class DB:
         election_data = []
         for i, election in clean_elections.iterrows():
             # Get the entire matching row from self.elections
-            full_election_data = self.elections[self.elections['eid'] == election['eid']].iloc[0].to_dict()
-            #full_election_data = self.get_election_by_id(election['eid'])
-            #self.elections[self.elections['eid'] == election['eid']].to_dict(orient='records')
-            if location == "Utah":
-                print("Data frame", self.elections[self.elections['eid'] == election['eid']])
-            # election_string, fmid = self.detail_list_constructor(clean_elections, fmid)
-            # Add additional fields
-            # full_election_data['form_id'] = f"form_{fmid}"
+            full_election_data = self.elections[self.elections['eid'] == election['eid']].iloc[0].to_dict()            
             election_data.append(full_election_data)
             fmid += 1
 
-            if location == "Utah":
-                print("full_election_data", election_data)
-                 
         # Converts specific election types shapes to geojson for MapBox
         clean_elections = clean_elections.reset_index(drop=True)
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
         layerjson = clean_elections.to_json()
-        if location == "Utah":
-            print("election_data", election_data)
-        
+
         return election_data, layerjson, fmid
 
 

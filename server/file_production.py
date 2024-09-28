@@ -10,8 +10,8 @@ import sys
 import json
 import requests
 import numpy as np
-#from static.data.gsheet_import import spreadsheet_pull
-#from config import sheet_id
+from static.data.gsheet_import import spreadsheet_pull
+from config import sheet_id
 
 STATEDICT = {
     "Alabama": "01","Alaska": "02", "Arizona": "04","Arkansas": "05", 
@@ -210,9 +210,7 @@ def geojson_writer(df, filename):
             print(f"Error occurred. Return code: {process.returncode}")
             print(f"STDOUT: {stdout}")
             print(f"STDERR: {stderr}")
-        
-
-        
+          
     except Exception as e:
         print(f"An exception occurred: {e}")
     
