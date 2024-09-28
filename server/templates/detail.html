@@ -50,7 +50,8 @@
     let masterStateData = {};
 
     //read in ballot data
-    import ballotData from './static/js/ballots.js';
+    import ballotData from './static/js/ballot_initiative.js';
+    console.log("ballotData", ballotData)
 
     // Function to add data to the master dictionary
     function addToMasterData(dataList, category) {
@@ -67,6 +68,7 @@
         });
     }
 
+    console.log("democracy_repair_ballots", {{ dem_ballot_list | tojson | safe }})
     // Process each data list
     addToMasterData({{ pres_list | tojson | safe }}, 'presidential');
     addToMasterData({{ senate_list | tojson | safe }}, 'senate');
@@ -78,17 +80,29 @@
     addToMasterData({{ state_level_list | tojson | safe }}, 'state_level_ballots');
 
     
-    //console.log('Master State Data:', masterStateData);
+    console.log('Master State Data:', masterStateData);
 
 
     Object.keys(masterStateData).forEach(state => {
         Object.keys(masterStateData[state]).forEach(category => {
             if (category.includes('ballot')) {
                 masterStateData[state][category].forEach(item => {
+                    if (item.election_name == "Amendment C") {
+                        console.log('item', item);
+                        console.log('ballotData', ballotData);
+                        console.log('state', state);
+                        //print ballot data for state
+                        console.log('ballotData for state', ballotData.filter(ballot => ballot.state_name === state));  
+                        //print ballot data for election_name Amendment C
+                        console.log('ballotData for election_name Amendment C', ballotData.filter(ballot => ballot.election_name === 'Amendment C'));
+                    }
                     const matchingBallot = ballotData.find(ballot => 
                         ballot.state_name === state && 
                         ballot.election_name === item.election_name
                     );
+                    if (item.election_name == "Amendment C") {
+                        console.log('matchingBallot', matchingBallot);
+                    }
                     if (matchingBallot) {
                         // Merge ballot data with existing item
                         Object.assign(item, matchingBallot);
@@ -99,7 +113,7 @@
             }
         });
     });
-
+    console.log('Master State Data with ballots:', masterStateData);
     function createCategoryList(categoryData, categoryTitle) {
         // if (!categoryData || categoryData.length === 0) return '';
         

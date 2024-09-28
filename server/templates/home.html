@@ -265,7 +265,7 @@
         const postal_codes = JSON.parse('{{ postal_codes | tojson }}')
         let stateWideRaces = ["AK","AZ","DE","IN","MO","MT","KS","MI","MN","ND","UT","VT","WA","WV","NE","NV","NH","PA","WI","NC"];
         import voterEmpowerment from './static/js/voter_empowerment.js';
-        import ballotData from './static/js/ballots.js';
+        import ballotData from './static/js/ballot_initiative.js';
         import stateData from './static/js/stateData.js';
         const abortionData= ballotData.filter(initiative => 
             initiative.ballot_type.toLowerCase().includes("reproductive")
