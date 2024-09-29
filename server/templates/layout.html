@@ -374,6 +374,9 @@ div[id="fieldset-container"] {
             text-overflow: ellipsis;
         }
 
+
+
+
 @media (max-width: 1200px){
 
    #right-navbar{
@@ -395,6 +398,16 @@ div[id="fieldset-container"] {
 @media (max-width: 800px) {
     .header{
         height:fit-content;
+    }
+
+    .home-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .video-wrapper {
+        flex-basis: auto;   
+        order: 4;
     }
 
     .nav-toggle-btn {
@@ -450,35 +463,6 @@ div[id="fieldset-container"] {
 
     
 }
-
-.alert {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.alert p {
-    margin-bottom: 1rem;
-}
-
-.alert-link-container {
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.alert-link {
-    font-size: 1.25em;
-    font-weight: bold;
-}
-
-.btn-close {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-}
-
-
 @media (max-width: 768px) {
     .home-container {
         display: flex;
@@ -538,9 +522,9 @@ div[id="fieldset-container"] {
             <div class="nav col" id="left-navbar">
                 <a href="/" class="label-lg navbar-link has-after active"><b>Home</b></a>
 
-                <a href="/voter-power"  class="label-lg navbar-link has-after"><b>What is voter power?</b></a>  
-                <a href="/faq"  class="label-lg navbar-link has-after"><b>How to use the site</b></a>  
+                <a href="/voter-power"  class="label-lg navbar-link has-after"><b>What is voter power</b></a>  
 
+                <a href="/faq"  class="label-lg navbar-link has-after"><b>How to use the site</b></a>  
                 <a href="/about"  class="label-lg navbar-link has-after"><b>About</b></a>  
                 <a href="/feedback"  class="label-lg navbar-link has-after"><b>Feedback</b></a>  
                 <!-- "About Us" Dropdown Menu -->
@@ -671,23 +655,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </script>
 
- {% block main %}
- {% with messages = get_flashed_messages(with_categories=true) %}
-{% if messages %}
-    {% for category, message in messages %}
-    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-        <p>{{ message }}</p>
-        
-        <div class="alert-link-container">
-            <a href="{{ url_for('home') }}" class="alert-link">Return to homepage</a>
-        </div>
-        
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {% endfor %}
-{% endif %}
-{% endwith %}
-  {% endblock %}
+
+    
+ {% block main %} {% endblock %}
 
 </body>
 

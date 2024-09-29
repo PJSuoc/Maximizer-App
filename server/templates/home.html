@@ -95,42 +95,72 @@
     }
 
     .video-section {
-    display: flex;
-    flex-direction: row;
-    margin: 2em auto;
-    padding: 1.5em;
-    background-color: white;
-    border-radius: 10px;
-    max-width: 800px;
-}
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows: auto auto;
+        margin: 0 auto;
+        padding: 0; 
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        width:40%;
+        position: relative;
+        text-align: center;
+    }
+    
+    .video-frame {
+        position: relative;
+        background-color: transparent;
+        overflow: visible; 
+        z-index: 10;
+    }
+    
+    .video-container {
+        position: relative;
+        left: 0;
+        margin:0 auto;
+        display: grid;
+        grid-template-rows: 1fr;
+        width: 100%;
+        border-radius: 6px;
+        box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+    }
 
-/* Video Container Styling */
-.video-container {
-    flex: 1;
-    margin-right: 2em;
-}
+    .video-content {
+        position:relative;
+        width:100%;
+        padding: 0; 
+        margin: 0; 
+        height: auto;
+    }
+    
+    #video {
+        display: block; 
+        width: 100%; 
+        aspect-ratio: 16/9;
+        border: none;
+    }
+    
+    .video__info {
+        padding: 0.1em 0;
+        height: auto;
+    }
+    
+    .video_word {
+        margin: 0.5em 0;
+        color: black;
+        font-size: 1em;
+        text-align: center; 
+        width: 100%;
+    }
+    
+    .video_word span {
+        padding-left: 0.15em;
+        font-size: 1em;
+        word-wrap: break-word; 
+    }
+    
 
-.video-frame {
-    border-radius: 6px;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Video Information Styling */
-.video-info {
-    flex: 0.6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.video-title {
-    color: black;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-}
-
-    </style>
+   </style>
 
  <body>
 
@@ -197,21 +227,23 @@
         </fieldset>
     </div>
     
-    <section class="video-section">
-        <div class="video-container">
-          <div class="video-frame">
-            <div class="video-content" id="video-content">
-              <iframe id="video" width="100%" height="200" src="https://www.youtube.com/embed/bSJEDoHk4-c?start=4" frameborder="0" allowfullscreen></iframe>
+    <div class="video-wrapper">
+        <section class="video-section">
+            <div class="video-frame">
+                <div class="video-container">
+                    <div class="video-content" id="video-content" style="flex: 1;">
+                        <iframe id="video" src="https://www.youtube.com/embed/bSJEDoHk4-c?start=4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="video-info">
-          <div class="video-title">
-            <span>A quick tour of Vote Maximizer</span>
-          </div>
-        </div>
-      </section>
 
+            <div class="video__info">
+                <div class="video_word">
+                    <span>A quick tour of vote maximizer</span>
+                </div>
+            </div>
+        </section>
+    </div>
     <div class="blog-wrapper">
         <div class="blog-container">
             <div class="title-line-wrapper">
@@ -265,11 +297,21 @@
         const postal_codes = JSON.parse('{{ postal_codes | tojson }}')
         let stateWideRaces = ["AK","AZ","DE","IN","MO","MT","KS","MI","MN","ND","UT","VT","WA","WV","NE","NV","NH","PA","WI","NC"];
         import voterEmpowerment from './static/js/voter_empowerment.js';
-        import ballotData from './static/js/ballot_initiative.js';
+        //import ballotData from './static/js/ballot_initiative.js';
         import stateData from './static/js/stateData.js';
-        const abortionData= ballotData.filter(initiative => 
-            initiative.ballot_type.toLowerCase().includes("reproductive")
+
+        const ballotData = {{ ballot_data | tojson | safe }}
+        const democracyData = ballotData.filter(initiative => 
+            initiative.race_type.toLowerCase().includes("democracy repair")
         );
+   
+
+        const abortionData= ballotData.filter(initiative => 
+        initiative.race_type.toLowerCase().includes("reproductive")
+    );
+
+        console.log("democracyData", democracyData)
+        console.log("abortionData", abortionData)
         const LEVELS = ['democracy', 'presidential', 'senate', 'house', 'statewide', 'abortion', 'ballot_all']
         let animationRunning = true;
         const COLOR_BG = '#F2F3F4';  // Define your background color
@@ -572,7 +614,7 @@
             id: layerId + '-fill',
             type: 'fill',
             source: layerId,
-            paint: {   
+            paint: {
                 'fill-color': [
                     'case',
                     ['any', 
@@ -732,7 +774,6 @@ map.on('mousemove', layerId + '-fill', function (e) {
     if (e.features.length > 0) {
         const feature = e.features[0];
         const currentId = feature.properties[idProperty]; // Make sure this is the field you promote as ID
-
         //console.log("Feature ID:", feature.id, "Current ID:", currentId);  // Logging feature ID for debugging
         
         if (hoveredStateId !== currentId) {
@@ -797,7 +838,16 @@ map.on('mousemove', layerId + '-fill', function (e) {
             }
 
         } else if (layerId === 'democracy') {
-            var description = feature.properties['number_per_state'];
+            const thisStateName = feature.properties.state_name || feature.properties.NAME;
+            console.log("thisStateName", thisStateName)
+            console.log("feature.properties.name", feature.properties.state_name)
+            console.log('feature.properties', feature.properties)
+            var description = democracyData.filter(initiative => initiative.state_name === thisStateName);
+            console.log("description", description)
+            if (thisStateName === "Utah") {
+                console.log("democracyData", democracyData)
+
+            }
             if (description === undefined || description === '' || description === 0) {
                 popupContent = `<div class="custom-popup">
                     <strong>State:</strong> ${name}<br>
@@ -806,7 +856,7 @@ map.on('mousemove', layerId + '-fill', function (e) {
             } else {
                 popupContent = `<div class="custom-popup">
                     <strong>State:</strong> ${name}<br>
-                    <strong>Democracy initiatives: ${description}</strong><br>
+                    <strong>Democracy initiatives: ${description.length}</strong><br>
                     Click the state to learn more.
                 </div>`;
             }
@@ -884,11 +934,11 @@ map.on('load', async function () {
 
             if (aspectRatio >= 1) {
                 // Landscape mode
-                bound_value = 14 * Math.max(1, aspectRatio);
+                bound_value = 15 * Math.max(1, aspectRatio);
                 bounds = [[-bound_value, -bound_value / aspectRatio], [bound_value, bound_value / aspectRatio]];
             } else {
                 // Portrait mode
-                bound_value = 15/ Math.min(1, aspectRatio);
+                bound_value = 15 / Math.min(1, aspectRatio);
                 bounds = [[-bound_value * aspectRatio, -bound_value], [bound_value * aspectRatio, bound_value]];
             }
             
