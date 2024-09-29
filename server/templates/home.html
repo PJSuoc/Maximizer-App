@@ -790,7 +790,8 @@ map.on('mousemove', layerId + '-fill', function (e) {
 
         if (layerId === 'ballot_all') {
             // Check if the description is undefined or empty
-            var description = feature.properties['number_per_state'];
+            const stateName = feature.properties['NAME'] || feature.properties['state_name'];
+            var description = ballotData.filter(initiative => initiative.state_name === stateName);
             if (description === undefined || description === '') {
                 popupContent = `<div class="custom-popup">
                     <strong>State:</strong> ${name}<br>
@@ -799,12 +800,12 @@ map.on('mousemove', layerId + '-fill', function (e) {
             } else {
                 popupContent = `<div class="custom-popup">
                     <strong>State:</strong> ${name}<br>
-                    <strong>Total initiatives:</strong> ${description}
+                    <strong>Total initiatives:</strong> ${description.length}
                     <br>Click the state to learn more.<br>
                 </div>`;
             }
         } else if (layerId === 'abortion') {
-            const stateName = feature.properties['NAME'];
+            const stateName = feature.properties['NAME'] || feature.properties.state_name;
             // Filter ballotData for abortion initiatives in the current state
             const stateAbortionInitiatives = abortionData.filter(initiative => initiative.state_name === stateName); 
                
@@ -839,15 +840,7 @@ map.on('mousemove', layerId + '-fill', function (e) {
 
         } else if (layerId === 'democracy') {
             const thisStateName = feature.properties.state_name || feature.properties.NAME;
-            console.log("thisStateName", thisStateName)
-            console.log("feature.properties.name", feature.properties.state_name)
-            console.log('feature.properties', feature.properties)
             var description = democracyData.filter(initiative => initiative.state_name === thisStateName);
-            console.log("description", description)
-            if (thisStateName === "Utah") {
-                console.log("democracyData", democracyData)
-
-            }
             if (description === undefined || description === '' || description === 0) {
                 popupContent = `<div class="custom-popup">
                     <strong>State:</strong> ${name}<br>
@@ -872,16 +865,7 @@ map.on('mousemove', layerId + '-fill', function (e) {
                 <strong>District:</strong> ${name}<br>
                 No competitive race.
             </div>`;
-        } else if (layerId === 'overall') {
-            // Handle overall case
-            let powerLevel = feature.properties['power_level'];
-            powerLevel = powerLevel[0].toUpperCase() + powerLevel.slice(1);
-            popupContent = `<div class="custom-popup">
-                <strong>State:</strong> ${name}<br>
-                <strong>Power Level: ${powerLevel}</strong><br>
-                <strong>Voter Power:</strong> ${voterPower}
-            </div>`;
-        }
+        } 
         else {
             // Handle other cases
             voterPower = voterPower === undefined ? 'no competitive race' : voterPower; // Check if voter power is undefined
