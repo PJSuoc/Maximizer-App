@@ -164,7 +164,7 @@ class DB:
 
         # Converts specific election types shapes to geojson for MapBox
         clean_elections.reset_index(drop = True)
-        #print("name type", type(clean_elections.loc[0]["state_name"]))
+        
        
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
         layerjson = clean_elections.to_json()
@@ -193,20 +193,15 @@ class DB:
         election_data = []
         for i, election in clean_elections.iterrows():
             # Get the entire matching row from self.elections
-            full_election_data = self.elections[self.elections['eid'] == election['eid']].iloc[0].to_dict()
-            
-            # Add additional fields
-            full_election_data['form_id'] = f"form_{fmid}"
-            
+            full_election_data = self.elections[self.elections['eid'] == election['eid']].iloc[0].to_dict()            
             election_data.append(full_election_data)
             fmid += 1
 
-        
         # Converts specific election types shapes to geojson for MapBox
         clean_elections = clean_elections.reset_index(drop=True)
         clean_elections = gpd.GeoDataFrame(clean_elections, crs=4269)
         layerjson = clean_elections.to_json()
-        
+
         return election_data, layerjson, fmid
 
 
@@ -246,7 +241,7 @@ class DB:
         # Filters elections by the race type requested
         # Does some work slicing things together that are deemed less relevant for State Level
         if layer == "State Level":
-            partone = relevant[relevant["race_type"] == "Governor"]
+            partone = relevant[relevant["race_type"] == "NotNeeded"]
             parttwo = relevant[relevant["race_type"] == "Direct Democracy"]
             partthree = relevant[relevant["race_type"] == "Civil Liberties"]
             partfour = relevant[relevant["race_type"] == "Reproductive Rights"]

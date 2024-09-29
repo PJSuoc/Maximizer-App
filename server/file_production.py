@@ -1,4 +1,5 @@
 from os import path
+import subprocess
 import logging
 import sqlite3 as sqlite
 import pandas as pd
@@ -179,8 +180,40 @@ def geojson_writer(df, filename):
     df["voter_power"] = df["voter_power"].astype(float)
     gdf = gpd.GeoDataFrame(df, crs=4269)
     desto = destination + geojson_tag + filename
+    output_file = desto.replace('.geojson', '_albers.geojson')
+    
+    # Write the initial GeoJSON file
     gdf.to_file(desto, driver="GeoJSON")
-
+    
+    # Construct the command
+    command = f'dirty-reproject --forward albersUsa < "{desto}" > "{output_file}"'
+    
+    print(f"Executing command: {command}")
+    
+    try:
+        # Use shell=True to handle input/output redirection
+        process = subprocess.Popen(
+            command,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        
+        # Wait for the process to complete and capture output
+        stdout, stderr = process.communicate()
+        
+        # Check the return code
+        if process.returncode == 0:
+            print(f"Successfully created Albers projection file: {output_file}")
+        else:
+            print(f"Error occurred. Return code: {process.returncode}")
+            print(f"STDOUT: {stdout}")
+            print(f"STDERR: {stderr}")
+          
+    except Exception as e:
+        print(f"An exception occurred: {e}")
+    
 
 ################################################################################
 #####      CSV Production     ##################################################
