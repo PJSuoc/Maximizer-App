@@ -1187,47 +1187,6 @@ window.addEventListener('pageshow', function(event) {
 });
 
 
-/*
-fetch('https://public-api.wordpress.com/wp/v2/sites/236951957/posts', {
-method: 'GET',
-headers: {
-    'Authorization': '5d4782818fdd' // 使用你的 API 密钥
-}
-})
-.then(response => response.json())
-.then(data =>  {
-const blogPosts = data;
-const templateCard = document.querySelector('#blog-card-template').content;
-const blogSection = document.querySelector('#cards');
-
-
-
-blogPosts.forEach(post => {
-const blogCard = templateCard.cloneNode(true);
-
-console.log("post ",post);
-const date = new Date(post.date);
-const options = { year: 'numeric', month: 'short',day:"numeric" };
-let formattedDate = date.toLocaleDateString('en-US', options);
-
-formattedDate = formattedDate.replace(',', '');
-
-blogCard.querySelector('.card-date').textContent = formattedDate;
-
-console.log("title ",post.title);
-
-const title = post.title.rendered.replace(/&nbsp;/g, ' ');
-
-blogCard.querySelector('.card-title').textContent=title;
-
-const excerpt = post.content.rendered.replace(/&nbsp;/g, ' ');
-blogCard.querySelector('.card-content').innerHTML=excerpt;
-
-blogSection.appendChild(blogCard);
-});
-})
-.catch(error => console.error('Error:', error));
-*/
     </script>
 </body>
 {% endblock %}
