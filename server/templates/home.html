@@ -293,440 +293,345 @@
         <br>
 
 <script type="module">    
-        const states = JSON.parse('{{ states | tojson }}')
-        const postal_codes = JSON.parse('{{ postal_codes | tojson }}')
-        let stateWideRaces = ["AK","AZ","DE","IN","MO","MT","KS","MI","MN","ND","UT","VT","WA","WV","NE","NV","NH","PA","WI","NC"];
-        import voterEmpowerment from './static/js/voter_empowerment.js';
-        //import ballotData from './static/js/ballot_initiative.js';
-        import stateData from './static/js/stateData.js';
+    const number_to_state = {{ number_to_state | tojson }};
+    const states = Object.values(number_to_state);
+    console.log("number_to_state:", states);
+    const postal_codes = JSON.parse('{{ postal_codes | tojson }}');
+    //let stateWideRaces = ["AK","AZ","DE","IN","MO","MT","KS","MI","MN","ND","UT","VT","WA","WV","NE","NV","NH","PA","WI","NC"];
+    //import voterEmpowerment from './static/js/voter_empowerment.js';
+    //import stateData from './static/js/stateData.js';
 
-        const ballotData = {{ ballot_data | tojson | safe }}
-        const democracyData = ballotData.filter(initiative => 
-            initiative.race_type.toLowerCase().includes("democracy repair")
-        );
-   
+    // Use the pre-filtered data directly
+    const democracyData = {{ democracy_data | tojson | safe }};
+    const abortionData = {{ abortion_data | tojson | safe }};
+    const houseData = {{ house_data | tojson | safe }};
+    const senateData = {{ senate_data | tojson | safe }};
+    const presidentData = {{ president_data | tojson | safe }};
+    console.log("House Data:", houseData);
+    const governorData = {{ governor_data | tojson | safe }};
+    const stateLegUpperData = {{ state_leg_upper_data | tojson | safe }};
+    const stateLegLowerData = {{ state_leg_lower_data | tojson | safe }};
+    // Combine state-level
+    const stateData = [...governorData, ...stateLegUpperData, ...stateLegLowerData];
+    // Combine all ballot data 
+    const ballotData = [...democracyData, ...abortionData];
+    const startingData = null;
+    const LEVELS = ['democracy', 'presidential', 'senate', 'house', 'statewide', 'abortion', 'ballot_all']
+    let animationRunning = true;
+    const COLOR_BG = '#F2F3F4';  // Define your background color
+    const COLOR_HOVER = '#FFFFFF';
+    const COLOR_DEMOCRACY = '#9277DE';
+    const COLOR_PRESIDENT = '#F5928D';
+    const COLOR_SENATE  = '#fec548'
+    const COLOR_HOUSE = '#B4CDE3';
+    const COLOR_GOVERNOR = '#13DDB7';
+    const COLOR_STATE_LEGISLATURE = '#D19E9B';
+    const COLOR_ABORTION = '#F768A0';
+    const COLOR_KEY_BALLOT = '#13DDB7';
+    const COLOR_DEFAULT  = '#e1e1e1'; // Default color for unmatched cases
+    const COLOR_BORDER = '#EEEEEE';
+    const COLOR_BORDER_LEG = '#000000';// Border color for all layers
 
-        const abortionData= ballotData.filter(initiative => 
-        initiative.race_type.toLowerCase().includes("reproductive")
-    );
-
-        console.log("democracyData", democracyData)
-        console.log("abortionData", abortionData)
-        const LEVELS = ['democracy', 'presidential', 'senate', 'house', 'statewide', 'abortion', 'ballot_all']
-        let animationRunning = true;
-        const COLOR_BG = '#F2F3F4';  // Define your background color
-        const COLOR_HOVER = '#FFFFFF';
-        const COLOR_DEMOCRACY = '#9277DE';
-        const COLOR_PRESIDENT = '#F5928D';
-        const COLOR_SENATE  = '#fec548'
-        const COLOR_HOUSE = '#B4CDE3';
-        const COLOR_GOVERNOR = '#13DDB7';
-        const COLOR_STATE_LEGISLATURE = '#D19E9B';
-        const COLOR_ABORTION = '#F768A0';
-        const COLOR_KEY_BALLOT = '#13DDB7';
-        const COLOR_DEFAULT  = '#e1e1e1'; // Default color for unmatched cases
-        const COLOR_BORDER = '#EEEEEE';
-        const COLOR_BORDER_LEG = '#000000';// Border color for all layers
-
-        const democracyScale = interpolateColors(COLOR_DEFAULT, COLOR_DEMOCRACY, 5);
-        const presidentScale = interpolateColors(COLOR_DEFAULT, COLOR_PRESIDENT, 5);
-        const houseScale = interpolateColors(COLOR_DEFAULT, COLOR_HOUSE, 5)
-        const senateScale = [
-                                "#e1e1e1", // 0%
-                                "#eedcb4", // 25%
-                                "#ffd885", // 50% (increased saturation)
-                                "#ffce65", // 75% (increased saturation)
-                                "#fec548"  // 100%
-                            ];
-      
-        const govScale = interpolateColors(COLOR_DEFAULT, COLOR_GOVERNOR, 5)
-        const stateLegScale = interpolateColors(COLOR_DEFAULT, COLOR_STATE_LEGISLATURE, 5) 
-        const abortionScale = interpolateColors(COLOR_DEFAULT, COLOR_ABORTION, 5)
-        const keyBallotScale = interpolateColors(COLOR_DEFAULT, COLOR_KEY_BALLOT, 5)
-
-        // Set the background color of the body
-        document.body.style.backgroundColor = COLOR_BG;
-        mapboxgl.accessToken = '{{ mapbox_key }}';
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mikeklein1/cm0h4ib4o01mf01qv90n802b8',
-            zoom: 3.5, // Adjust as needed
-            maxZoom: 6,
-            minZoom: 2,
-            center: [0,-2],
-            projection: 'mercator', // Using an equal-area projection,
-            background: COLOR_BG  // Use the same color for the map background
-        });
-
-        // Disable map rotation
-        map.dragRotate.disable();
-        map.touchZoomRotate.disableRotation
-        map.dragPan.enable()
-        map.pitchWithRotate = false
-        map.scrollZoom.disable();
-
-        // Function to interpolate between two colors
-        function interpolateColor(color1, color2, factor) {
-            const result = color1.slice();
-            for (let i = 0; i < 3; i++) {
-                result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
-            }
-            return result;
-        }
-        // Function to convert hex to RGB
-        function hexToRgb(hex) {
-            const bigint = parseInt(hex.slice(1), 16);
-            return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
-        }
-        // Function to convert RGB to hex
-        function rgbToHex(rgb) {
-            return "#" + rgb.map(x => {
-                const hex = x.toString(16);
-                return hex.length === 1 ? "0" + hex : hex;
-            }).join('');
-        }
-
-        // Combined function for both cases
-        function interpolateColors(startColor, endColor, steps, extendRange = false) {
-            const start = hexToRgb(startColor);
-            const end = hexToRgb(endColor);
-            const colors = [];
-
-            if (extendRange) {
-                // Case 2: Create a darker version of the end color
-                const darkerEnd = end.map(c => Math.max(0, c - 40));
-                steps += 1; // Add an extra step for the darker color
-
-                for (let i = 0; i < steps; i++) {
-                    const factor = i / (steps - 1);
-                    const interpolated = i === steps - 1 
-                        ? darkerEnd 
-                        : interpolateColor(start, end, factor);
-                    colors.push(rgbToHex(interpolated));
-                }
-            } else {
-                // Case 1: Standard interpolation
-                for (let i = 0; i < steps; i++) {
-                    const factor = i / (steps - 1);
-                    const interpolated = interpolateColor(start, end, factor);
-                    colors.push(rgbToHex(interpolated));
-                }
-            }
-
-            return colors;
-        }
-
-        //add all the layers as const herep
-        const layers = {
+    const democracyScale = interpolateColors(COLOR_DEFAULT, COLOR_DEMOCRACY, 5);
+    const presidentScale = interpolateColors(COLOR_DEFAULT, COLOR_PRESIDENT, 5);
+    const houseScale = interpolateColors(COLOR_DEFAULT, COLOR_HOUSE, 5)
+    const senateScale = [
+                            "#e1e1e1", // 0%
+                            "#eedcb4", // 25%
+                            "#ffd885", // 50% (increased saturation)
+                            "#ffce65", // 75% (increased saturation)
+                            "#fec548"  // 100%
+                        ];
     
-            starting: 'static/data/calculated_files/geojsons/president_albers.geojson',
-            abortion: 'static/data/geojson_imports/geojson_final/ballot_abort_albers.geojson',
-            democracy: 'static/data/geojson_imports/geojson_final/ballot_VPM_albers.geojson',
-            //aggregate: 'static/data/calculated_files/geojsons/aggregate_albers.geojson',
-            presidential: 'static/data/calculated_files/geojsons/president_albers.geojson',
-            senate: 'static/data/calculated_files/geojsons/senate_albers.geojson',
-            house: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
-            statewide: 'static/data/calculated_files/geojsons/governor_albers.geojson',
-            ballot_all: 'static/data/geojson_imports/geojson_final/ballot_initiatives_main_albers.geojson',
-            //state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper_albers.geojson',
-            //state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower_albers.geojson'        
-        };
+    const govScale = interpolateColors(COLOR_DEFAULT, COLOR_GOVERNOR, 5)
+    const stateLegScale = interpolateColors(COLOR_DEFAULT, COLOR_STATE_LEGISLATURE, 5) 
+    const abortionScale = interpolateColors(COLOR_DEFAULT, COLOR_ABORTION, 5)
+    const keyBallotScale = interpolateColors(COLOR_DEFAULT, COLOR_KEY_BALLOT, 5)
 
-        const geoJsonCache = {};
+    let hoveredStateId = null;
+    let currentLayerId = 'ballot_all'; // or whatever your initial layer is
 
-        async function loadGeoJson(layerId) {
-            if (geoJsonCache[layerId]) {
-                return geoJsonCache[layerId];
-            }
-            const startTime = performance.now();
-            try {
-                const response = await fetch(layers[layerId]);
-                const data = await response.json();
-                geoJsonCache[layerId] = data;
-                
-                const endTime = performance.now();
-                const downloadTime = (endTime - startTime) / 1000; // Convert to seconds
-                
-                return data;
-            } catch (error) {
-                throw error;
-            }
+    // Set the background color of the body
+    document.body.style.backgroundColor = COLOR_BG;
+    mapboxgl.accessToken = '{{ mapbox_key }}';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mikeklein1/cm0h4ib4o01mf01qv90n802b8',
+        zoom: 3.5, // Adjust as needed
+        maxZoom: 6,
+        minZoom: 3,
+        center: [0,-2],
+        projection: 'mercator', // Using an equal-area projection,
+        background: COLOR_BG  // Use the same color for the map background
+    });
+
+    // Disable map rotation
+    map.dragRotate.disable();
+    map.touchZoomRotate.disableRotation
+    map.dragPan.enable()
+    map.pitchWithRotate = false
+    //map.scrollZoom.disable();
+
+    // Function to interpolate between two colors
+    function interpolateColor(color1, color2, factor) {
+        const result = color1.slice();
+        for (let i = 0; i < 3; i++) {
+            result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
         }
-
-        const startingDataPromise = loadGeoJson('starting');
-
-        let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
-        let currentLayerId = 'starting'; // adjust the layer that pops up first here
-
-        const popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
-        });
-        
-
-        function addGeoJsonLayer(layerId) {
-            const idProperty = layerId === 'house' || layerId === 'state_leg_up' || layerId === 'state_leg_low' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
-
-            // remove hover state when switching layers
-            if (hoveredStateId) {
-                map.setFeatureState({source: currentLayerId, id: hoveredStateId}, { hover: false });
-                hoveredStateId = null;
-            }
-
-            // Remove existing layers
-            if (map.getSource(currentLayerId)) {
-                map.removeLayer(currentLayerId + '-fill');
-                map.removeLayer(currentLayerId + '-line');
-                map.removeLayer(currentLayerId + '-hover-line');  // Remove hover line if it exists
-                map.removeSource(currentLayerId);
-
-            }
-
-            // Adds the geojson layers
-            map.addSource(layerId, {
-                type: 'geojson',
-                data: layers[layerId],
-                promoteId: idProperty  
-            });
-        
-   
-    if (layerId === 'ballot_all') {
-        map.addLayer({
-            id: layerId + '-fill',
-            type: 'fill',
-            source: layerId,
-            paint: {
-            'fill-color': [
-                'case',
-                ['all', 
-                    ['!=', ['get', 'number_per_state'], null],
-                    ['!=', ['get', 'number_per_state'], 0]
-                ], COLOR_KEY_BALLOT,
-                COLOR_DEFAULT,
-            ],
-            'fill-opacity': 1, // 100% opaque
-        }
-        }, 'albersusa-points'); // state names should be over the layers
-    } else if (layerId === 'statewide') {
-        //stateWideRaces = stateWideRaces.map(String); // Convert all elements to strings
-        // Filter stateData for the current state and find max voter power
-        const stateMaxVoterPower = {};
-        const stateNames = [...new Set(stateData.map(race => race.state_name))];
-        
-        stateNames.forEach(stateName => {
-            const stateRaces = stateData.filter(race => race.state_name === stateName);
-            const maxVoterPower = Math.max(...stateRaces.map(race => parseInt(race.voter_power) || 0));
-            stateMaxVoterPower[stateName] = maxVoterPower;
-        });
-
-        const stateRaces = stateData.filter(race => parseInt(race.voter_power) >= 20);
-        const maxVoterPower = Math.max(...stateRaces.map(race => parseInt(race.voter_power) || 0));
-        const statesToPaint = Object.keys(stateMaxVoterPower).filter(state => stateMaxVoterPower[state] >= 20)
-        stateWideRaces = statesToPaint.map(String);
-        map.addLayer({
-            id: layerId + '-fill',
-            type: 'fill',
-            source: layerId,
-            paint: {
-                'fill-color': [
-                    'case',
-                    ['in', ['get', 'NAME'], [ 'literal', stateWideRaces] ],
-                    COLOR_STATE_LEGISLATURE,
-                    COLOR_DEFAULT
-                ],
-                'fill-opacity': 1
-            }
-        }, 'albersusa-points');
-
-    } else if (layerId === 'starting') {
-
-        const races = voterEmpowerment['democracy'].map(String);
-        map.addLayer({
-            id: layerId + '-fill',
-            type: 'fill',
-            source: layerId,
-            paint: {
-                'fill-color': [
-                    'case',
-                    ['in', ['get', 'STUSPS'], [ 'literal', races] ],
-                    COLOR_DEMOCRACY,
-                    COLOR_DEFAULT
-                ],
-                'fill-opacity': 1
-            }
-        }, 'albersusa-points');
-    } else if (layerId === 'overall') {
-        map.addLayer({
-            id: layerId + '-fill',
-            type: 'fill',
-            source: layerId,
-            filter: ['!=', ['get', 'STATEFP'], '72'], // Exclude Puerto Rico
-            paint: {
-                    'fill-color': [
-                        'match',
-                        ['get', 'power_level'],
-                        'democracy', COLOR_DEMOCRACY,  // Color for score 1
-                        'president', COLOR_PRESIDENT,  // Color for score 2
-                        'senate', COLOR_SENATE,  // Color for score 3
-                        'house', COLOR_HOUSE,  // Color for score 4
-                        'governor', COLOR_GOVERNOR,  // Color for score 5
-                        'state legislature', COLOR_STATE_LEGISLATURE,  // Color for score 6
-                        COLOR_DEFAULT,    // Default color if no match
-                    ],
-                    'fill-opacity': 1,
-                }
-        }, 'albersusa-points'); // state names should be over the layers
-    } else if (layerId === 'abortion') {
-        // Filter abortionData to get a list of only the state names
-        const abortionStates = abortionData.map(initiative => initiative.state_name).map(String);
-        map.addLayer({
-            id: layerId + '-fill',
-            type: 'fill',
-            source: layerId,
-            paint: {
-                'fill-color': [
-                    'case',
-                    ['in', ['get', 'NAME'], [ 'literal', abortionStates] ],
-                    COLOR_ABORTION,
-                    COLOR_DEFAULT
-                ],
-                'fill-opacity': 1
-            }
-        }, 'albersusa-points');
-    } else if (layerId === 'democracy') {
-        map.addLayer({
-            id: layerId + '-fill',
-            type: 'fill',
-            source: layerId,
-            filter: ['!=', ['get', 'STATEFP'], '72'], // Exclude Puerto Rico
-            paint: {
-                'fill-color': [
-                    'case',
-                    ['>', ['to-number', ['get', 'number_per_state'] ], 0], COLOR_DEMOCRACY,
-                    COLOR_DEFAULT
-                ],
-                'fill-opacity': 1,
-            }
-        }, 'albersusa-points');
-    } else if (layerId === 'house') {
-        const data = geoJsonCache[layerId];
-        map.addLayer({
-            id: layerId + '-fill',
-            type: 'fill',
-            source: layerId,
-            paint: {
-                'fill-color': [
-                    'case',
-                    ['any', 
-                        ['==', ['get', 'voter_power'], null],
-                        ['==', ['get', 'voter_power'], 0]
-                    ],
-                    COLOR_DEFAULT,
-                    [
-                        'interpolate',
-                        ['linear'],
-                        ['get', 'voter_power'],
-                        //1, houseScale[0],
-                        20, houseScale[1],
-                        50, houseScale[2],
-                        75, houseScale[3],
-                        100, houseScale[4]
-                    ]
-                ],
-                'fill-opacity': 1
-            }
-        }, 'albersusa-points');
-    } else {
-
-        map.addLayer({
-
-    id: layerId + '-fill',
-    type: 'fill',
-    source: layerId,
-    filter: ['!=', ['get', 'STATEFP'], '72'], // Exclude Puerto Rico
-    paint: {
-        'fill-color': [
-            'case',
-            ['==', ['get', 'voter_power'], null], COLOR_DEFAULT, //  undefined voter_power is grey
-            ['==', ['get', 'voter_power'], 0], COLOR_DEFAULT, //  zero voter_power is also grey
-            
-            ['==', layerId, 'aggregate'], [
-                'interpolate', ['linear'], ['get', 'voter_power'],
-                1, '#ffffd4', 33.3, '#fed98e', 66.6, '#fe9929', 100, '#cc4c02'
-            ],
-
-            ['==', layerId, 'presidential'], [
-                'interpolate', ['linear'], ['get', 'voter_power'],
-                1, presidentScale[0],
-                25, presidentScale[1],
-                50, presidentScale[2],
-                75, presidentScale[3],
-                100, presidentScale[4]
-            ],
-            ['==', layerId, 'senate'], [
-                'interpolate', ['linear'], ['get', 'voter_power'],
-                1, senateScale[0],
-                20, senateScale[1],
-                35, senateScale[2],
-                50, senateScale[3],
-                70, senateScale[4]
-            ],
-            ['==', layerId, 'gubernatorial'], [
-                'interpolate', ['linear'], ['get', 'voter_power'],
-                1, govScale[0],
-                25, govScale[1],
-                50, govScale[2],
-                75, govScale[3],
-                100, govScale[4]
-            ],
-            ['==', layerId, 'state_leg_up'], [
-                'case',
-                ['>', ['get', 'voter_power'], 20], COLOR_STATE_LEGISLATURE,
-                COLOR_DEFAULT
-            ],
-            ['==', layerId, 'state_leg_low'], [
-                'interpolate', ['linear'], ['get', 'voter_power'],
-                1, stateLegScale[0],
-                25, stateLegScale[1],
-                50, stateLegScale[2],
-                75, stateLegScale[3],
-                100, stateLegScale[4]
-            ],
-            COLOR_DEFAULT  // Default color for unmatched cases
-        ],
-        'fill-opacity': 1
+        return result;
+    }
+    // Function to convert hex to RGB
+    function hexToRgb(hex) {
+        const bigint = parseInt(hex.slice(1), 16);
+        return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+    }
+    // Function to convert RGB to hex
+    function rgbToHex(rgb) {
+        return "#" + rgb.map(x => {
+            const hex = x.toString(16);
+            return hex.length === 1 ? "0" + hex : hex;
+        }).join('');
     }
 
-                }, 'albersusa-points');
+    // Combined function for both cases
+    function interpolateColors(startColor, endColor, steps, extendRange = false) {
+        const start = hexToRgb(startColor);
+        const end = hexToRgb(endColor);
+        const colors = [];
+
+        if (extendRange) {
+            // Case 2: Create a darker version of the end color
+            const darkerEnd = end.map(c => Math.max(0, c - 40));
+            steps += 1; // Add an extra step for the darker color
+
+            for (let i = 0; i < steps; i++) {
+                const factor = i / (steps - 1);
+                const interpolated = i === steps - 1 
+                    ? darkerEnd 
+                    : interpolateColor(start, end, factor);
+                colors.push(rgbToHex(interpolated));
             }
-            // line layer to seperate states or districts
+        } else {
+            // Case 1: Standard interpolation
+            for (let i = 0; i < steps; i++) {
+                const factor = i / (steps - 1);
+                const interpolated = interpolateColor(start, end, factor);
+                colors.push(rgbToHex(interpolated));
+            }
+        }
+
+        return colors;
+    }
+
+    //add all the layers as const herep
+    /* const layers = {
+
+        starting: 'static/data/calculated_files/geojsons/president_albers.geojson',
+        abortion: 'static/data/geojson_imports/geojson_final/ballot_abort_albers.geojson',
+        democracy: 'static/data/geojson_imports/geojson_final/ballot_VPM_albers.geojson',
+        //aggregate: 'static/data/calculated_files/geojsons/aggregate_albers.geojson',
+        presidential: 'static/data/calculated_files/geojsons/president_albers.geojson',
+        senate: 'static/data/calculated_files/geojsons/senate_albers.geojson',
+        house: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
+        statewide: 'static/data/calculated_files/geojsons/governor_albers.geojson',
+        ballot_all: 'static/data/geojson_imports/geojson_final/ballot_initiatives_main_albers.geojson',
+        //state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper_albers.geojson',
+        //state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower_albers.geojson'        
+    }; */
+    const layers = {
+        baseStatesMap: 'static/data/calculated_files/geojsons/president_albers.geojson',
+        houseMap: 'static/data/calculated_files/geojsons/congress_house_albers.geojson',
+        #houseMap: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
+        stateUpperMap: 'static/data/calculated_files/geojsons/state_upper_legislature_albers.geojson',
+        stateLowerMap: 'static/data/calculated_files/geojsons/state_lower_legislature_albers.geojson',
+    };
+
+
+    //Layer configuration map, simplifies logic for each layer.
+    const layerConfig = {
+        'starting': {
+            colorScale: COLOR_DEFAULT,
+            baseMap: 'baseStatesMap',
+            jsonData: startingData,
+            idProperty: 'STATEFP',
+        },
+        'presidential': {
+            colorScale: presidentScale,
+            baseMap: 'baseStatesMap',
+            jsonData: presidentData, // Replace with actual data when available
+            idProperty: 'STATEFP',
+            matchingFunction: (feature, dataItem) => feature.properties.state_name === dataItem.state_name,
+        },
+        'senate': {
+            colorScale: senateScale,
+            baseMap: 'baseStatesMap',
+            jsonData: senateData, // Replace with actual data when available
+            idProperty: 'STATEFP',
+            matchingFunction: (feature, dataItem) => feature.properties.state_name === dataItem.state_name
+        },
+        'house': {
+            colorScale: houseScale,
+            baseMap: 'houseMap',
+            jsonData: houseData, // Replace with actual data when available
+            idProperty: 'GEOIDFQ',
+            matchingFunction: (feature, dataItem) => {
+                const featureState = feature.properties.state;
+                const featureCongress = feature.properties.congress; 
+                if (featureState && featureCongress) {
+                    return (
+                        dataItem.state === featureState && 
+                        (dataItem.congress === featureCongress || 
+                        (dataItem.congress && featureCongress && dataItem.congress.toString() === featureCongress.toString()))
+                    );
+                } else {
+                    console.warn("Undefined property in feature:", feature);
+                    return false; // Do not match if either state or congress property is undefined
+                }
+            }
+        },
+        'state_leg_up': {
+            colorScale: stateLegScale,
+            baseMap: 'stateUpperMap',
+            jsonData: stateLegUpperData, // Replace with actual data when available
+            idProperty: 'GEOIDFQ'
+        },
+        'state_leg_low': {
+            colorScale: stateLegScale,
+            baseMap: 'stateLowerMap',
+            jsonData: stateLegLowerData, // Replace with actual data when available
+            idProperty: 'GEOIDFQ'
+        },
+        'ballot_all': {
+            colorScale: COLOR_KEY_BALLOT,
+            baseMap: 'baseStatesMap',
+            jsonData: ballotData,
+            idProperty: 'STATEFP'
+        },
+        'democracy': {
+            colorScale: democracyScale,
+            baseMap: 'baseStatesMap',
+            jsonData: democracyData,
+            idProperty: 'STATEFP'
+        },
+        'abortion': {
+            colorScale: COLOR_ABORTION,
+            baseMap: 'baseStatesMap',
+            jsonData: abortionData,
+            idProperty: 'STATEFP'
+        }
+    };
+    const geoJsonCache = {};
+
+    function lookForMissingGEOIDFQ() {
+        console.log("Looking for missing GEOIDFQ");
+        loadGeoJson('houseMap')
+        .then(data => {
+            console.log("Data loaded successfully. Data type:", typeof data);
+            console.log("Data structure:", JSON.stringify(data).slice(0, 200) + "...");
+
+            if (data && typeof data === 'object' && data.type === 'FeatureCollection' && Array.isArray(data.features)) {
+                const featuresWithoutGEOIDFQ = data.features.filter(feature => !feature.properties.GEOIDFQ);
+                console.log("Features without GEOIDFQ:", featuresWithoutGEOIDFQ);
+            } else {
+                console.error("Unexpected data structure. Expected a GeoJSON FeatureCollection.");
+                console.log("Full data:", data);
+            }
+        })
+        .catch(error => {
+            console.error("Error loading GeoJSON for houseMap:", error);
+        });
+    }
+    async function loadGeoJson(layerId) {
+        const config = layerConfig[layerId] || { baseMap: 'baseStatesMap' };
+        const mapId = config.baseMap;
+
+        if (geoJsonCache[mapId]) {
+            return geoJsonCache[mapId];
+        }
+
+        try {
+            const response = await fetch(layers[mapId]);
+            const data = await response.json();
+            geoJsonCache[mapId] = data;
+            return data;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    const startingDataPromise = loadGeoJson('baseStatesMap');
+    let sourceData;
+    let idProperty = 'STATEFP';    
+
+    const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+    
+    async function addGeoJsonLayer(layerId) {
+        const config = layerConfig[layerId] || {};
+        const idProperty = config.idProperty || 'STATEFP';
+
+        // Remove existing layers
+        if (map.getSource(currentLayerId)) {
+            map.removeLayer(currentLayerId + '-fill');
+            map.removeLayer(currentLayerId + '-line');
+            map.removeLayer(currentLayerId + '-hover-line');
+            map.removeSource(currentLayerId);
+        }
+
+        console.log(`Preparing to load data for: ${layerId}`);
+        try {
+            const sourceData = await loadGeoJson(layerId);
+            console.log(`Data loaded successfully for: ${layerId}`);
+
+            // Add source
+            map.addSource(layerId, {
+                type: 'geojson',
+                data: sourceData,
+                promoteId: idProperty
+            });
+
+            console.log(`Source added for: ${layerId}`);
+
+            // Define fill paint
+            let fillPaint;
+            if (config.jsonData) {
+                fillPaint = createFillPaint(layerId, config);
+            } else {
+                fillPaint = COLOR_DEFAULT;
+            }
+            console.log("Fill Paint:", fillPaint);
+
+            // Add fill layer
+            map.addLayer({
+                id: layerId + '-fill',
+                type: 'fill',
+                source: layerId,
+                paint: {
+                    'fill-color': fillPaint,
+                    'fill-opacity': 1
+                }
+            }, 'albersusa-points');
+
+            // Add line layer
             map.addLayer({
                 id: layerId + '-line',
                 type: 'line',
                 source: layerId,
-                layout: {},
                 paint: {
-                    'line-color': [
-                        'case',
-                        ['==', layerId, 'state_leg_up'], COLOR_BORDER_LEG,
-                        COLOR_BORDER
-                    ],
-                    'line-width': [
-                        'case',
-                        ['==', layerId, 'state_leg_up'], 0.5,
-                        1.5
-                    ],
+                    'line-color': layerId === 'state_leg_up' ? COLOR_BORDER_LEG : COLOR_BORDER,
+                    'line-width': layerId === 'state_leg_up' ? 0.5 : 1.5,
                     'line-opacity': 1
                 }
             }, 'albersusa-points');
 
-            // add line layer that highlights when hovering 
+            // Add hover line layer
             map.addLayer({
                 id: layerId + '-hover-line',
-                filter: ['!=', ['get', 'STATEFP'], '72'], // Exclude Puerto Rico
                 type: 'line',
                 source: layerId,
-                layout: {},
+                filter: ['!=', ['get', 'STATEFP'], '72'], // Exclude Puerto Rico
                 paint: {
                     'line-color': ['case', ['boolean', ['feature-state', 'hover'], false], COLOR_HOVER, COLOR_BORDER],
                     'line-color-transition': { duration: 1000 },
@@ -735,499 +640,583 @@
                 }
             });
 
-            // put hover line  above others
-            map.moveLayer(layerId + '-hover-line');
+            // Move hover line above others
+        map.moveLayer(layerId + '-hover-line');
+        currentLayerId = layerId;
 
-            map.on('click', layerId + '-fill', function (e) {
-            //e.preventDefault(); 
-            // test the feature.properties
-            const features = map.queryRenderedFeatures(e.point);
-            
-            if (!features.length) {
-                    return;
-                };
-                let feature = map.queryRenderedFeatures(e.point, { layers: [layerId + '-fill'] })[0];
-                let location;
-                let selection = '';
-                if (feature) {
-                    selection = getHighlightedButton();
-
-                    location = feature.properties.STUSPS || feature.properties.state_name;
-                    if (location && (states.includes(location) || postal_codes.includes(location))) {
-                        window.location.href = `/state?location=${location}&selection=${selection}`;
-                        return;
-                    }
-                }
-                if (!location) {
-                    console.log("no location");
-                    feature = map.queryRenderedFeatures(e.point, { layers: ['albersusa'] })[0];
-                    location = feature.properties.STUSPS || feature.properties.state_name;
-                    if (location && states.includes(location)) {
-                        window.location.href = `/state?location=${location}`;
-                        return;
-                    }
-                }
-            });
-
-            // mouse event for hovering
-map.on('mousemove', layerId + '-fill', function (e) {
-    if (e.features.length > 0) {
-        const feature = e.features[0];
-        const currentId = feature.properties[idProperty]; // Make sure this is the field you promote as ID
-        //console.log("Feature ID:", feature.id, "Current ID:", currentId);  // Logging feature ID for debugging
+        } catch (error) {
+            console.error(`Error in addGeoJsonLayer for ${layerId}:`, error);
+        }
+    
+        function createFillPaint(layerId, config) {
+            console.log("createFillPaint called with layerId:", layerId);
+            console.log("Configuration provided:", config);
         
-        if (hoveredStateId !== currentId) {
-            if (hoveredStateId) {
-                map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
-            }
-            hoveredStateId = currentId;
-            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
-        }
-
-        let popupContent = ""; // Initialize popupContent
-        const name = feature.properties['NAME'] || feature.properties['NAMELSAD'] || feature.properties['election_name'];
-        let voterPower = feature.properties['voter_power']; // Directly use the property
-
-        if (layerId === 'ballot_all') {
-            // Check if the description is undefined or empty
-            const stateName = feature.properties['NAME'] || feature.properties['state_name'];
-            var description = ballotData.filter(initiative => initiative.state_name === stateName);
-            if (description === undefined || description === '') {
-                popupContent = `<div class="custom-popup">
-                    <strong>State:</strong> ${name}<br>
-                    There are no ballot initiatives in your state.
-                </div>`;
-            } else {
-                popupContent = `<div class="custom-popup">
-                    <strong>State:</strong> ${name}<br>
-                    <strong>Total initiatives:</strong> ${description.length}
-                    <br>Click the state to learn more.<br>
-                </div>`;
-            }
-        } else if (layerId === 'abortion') {
-            const stateName = feature.properties['NAME'] || feature.properties.state_name;
-            // Filter ballotData for abortion initiatives in the current state
-            const stateAbortionInitiatives = abortionData.filter(initiative => initiative.state_name === stateName); 
-               
-            var description = stateAbortionInitiatives.length;
-            if (description <= 0) {
-                popupContent = `<div class="custom-popup">
-                    <strong>There are no abortion ballot initiatives in your state.</strong>
-                </div>`;
-            } else {
-                popupContent = `<div class="custom-popup">
-                    <strong>${stateName} has reproductive rights on the ballot.</strong> 
-                    <br>Click the state to learn more.<br>
-                </div>`;
-            }
-        } else if (layerId === 'statewide') {
-            const stateName = feature.properties['NAME'];
-            // Filter stateData for the current state and find max voter power
-            const stateRaces = stateData.filter(race => race.state_name === stateName);
-            const maxVoterPower = Math.max(...stateRaces.map(race => parseInt(race.voter_power) || 0));
-            if (stateRaces.length === 0 || maxVoterPower === 0) {
-                popupContent = `<div class="custom-popup">
-                    <strong>State: ${stateName}</strong>
-                    <br>No competitive races.<br>
-                </div>`;
-            } else {
-                popupContent = `<div class="custom-popup">
-                    <strong>State: ${stateName}.</strong>
-                    <br><strong>Maximum Voter Power:</strong> ${maxVoterPower}
-                    <br>Click the state to learn more.<br>
-                </div>`;
-            }
-
-        } else if (layerId === 'democracy') {
-            const thisStateName = feature.properties.state_name || feature.properties.NAME;
-            var description = democracyData.filter(initiative => initiative.state_name === thisStateName);
-            if (description === undefined || description === '' || description === 0) {
-                popupContent = `<div class="custom-popup">
-                    <strong>State:</strong> ${name}<br>
-                    <strong>No democracy initiatives.</strong>
-                </div>`;
-            } else {
-                popupContent = `<div class="custom-popup">
-                    <strong>State:</strong> ${name}<br>
-                    <strong>Democracy initiatives: ${description.length}</strong><br>
-                    Click the state to learn more.
-                </div>`;
-            }
-        }else if (layerId === 'starting'){
-            popupContent = `<div class="custom-popup">
-                <strong>State:</strong> ${name}
-                <br>Click the state to learn more.<br>
-            </div>`;
-
-        } else if (layerId === 'house' && (!voterPower || voterPower === 'no race')) {
-            // Specific case for house layer with undefined voter power
-            popupContent = `<div class="custom-popup">
-                <strong>District:</strong> ${name}<br>
-                No competitive race.
-            </div>`;
-        } 
-        else {
-            // Handle other cases
-            voterPower = voterPower === undefined ? 'no competitive race' : voterPower; // Check if voter power is undefined
-            popupContent = `<div class="custom-popup">
-                <strong>${layerId === 'house' || layerId === 'state_leg_up' || layerId === 'state_leg_low' ? 'District' : 'State'}:</strong> ${name}<br>
-                <strong>Voter Power:</strong> ${voterPower}
-            </div>`;
-        }
-            
-                    popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
-                    map.getCanvas().style.cursor = 'pointer';
-                } else {
-                    if (hoveredStateId) {
-                        map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
-                        hoveredStateId = null;
+            if (Array.isArray(config.colorScale) && typeof config.matchingFunction === 'function') {
+                console.log("Valid colorScale and matchingFunction detected.");
+        
+                // Step 1: Group by feature properties and find max voter power using matchingFunction
+                const stateMaxPower = config.jsonData.reduce((acc, item) => {
+                    console.log("Processing item from jsonData:", item);
+                    
+                    const matchingFeature = Object.keys(acc).find(name => {
+                        const matchResult = config.matchingFunction({ properties: { state: name } }, item);
+                        console.log(`Matching feature state: ${name} with data item:`, item, "Result:", matchResult);
+                        return matchResult;
+                    });
+        
+                    const power = Math.round(parseFloat(item.voter_power) || 0);
+                    console.log("Calculated voter power for current item:", power);
+        
+                    if (matchingFeature && !isNaN(power)) {
+                        acc[matchingFeature] = Math.max(acc[matchingFeature] || 0, power);
+                        console.log(`Updating acc for matching feature ${matchingFeature}:`, acc[matchingFeature]);
+                    } else if (item.state && !isNaN(power)) {
+                        acc[item.state] = Math.max(acc[item.state] || 0, power);
+                        console.log(`Updating acc for item.state ${item.state}:`, acc[item.state]);
                     }
-                    map.getCanvas().style.cursor = '';
-                    popup.remove();
-                }
-            });
+        
+                    return acc;
+                }, {});
+        
+                console.log("Final aggregated stateMaxPower object:", stateMaxPower);
+        
+                // Step 2: Convert to array for Mapbox expression
+                const voterPowerData = Object.entries(stateMaxPower).flatMap(([name, power]) => [name, power]);
+                console.log("Converted voterPowerData for Mapbox match expression:", voterPowerData);
+        
+                // Step 3: Return the fill paint expression
+                const fillPaint = [
+                    'interpolate',
+                    ['linear'],
+                    ['coalesce',
+                        ['match', ['get', config.idProperty],
+                            ...voterPowerData,
+                            0 // Default value if NAME is not found in the match
+                        ],
+                        0
+                        ],
+                        0, config.colorScale[0],
+                         20, config.colorScale[1],
+                        40, config.colorScale[2],
+                        60, config.colorScale[3],
+                        80, config.colorScale[4]
+                    ];
+            
+                console.log("Generated fill paint expression:", JSON.stringify(fillPaint, null, 2));
+                return fillPaint;
+        
+        } else {
+            // Handle the case where colorScale is a single color (unchanged)
+            return [
+                'match',
+                ['get', 'NAME'],
+                ...config.jsonData.reduce((acc, item) => {
+                    const name = item.state_name || item.NAME;
+                    if (name && !acc.includes(name)) {
+                        acc.push(name, config.colorScale);
+                    }
+                    return acc;
+                }, []),
+                COLOR_DEFAULT
+            ];
+        }
+    }
+    
+    map.on('click', layerId + '-fill', function (e) {
+        //e.preventDefault(); 
+        // test the feature.properties
+        const features = map.queryRenderedFeatures(e.point);
+        
+        if (!features.length) {
+                return;
+            };
+            let feature = map.queryRenderedFeatures(e.point, { layers: [layerId + '-fill'] })[0];
+            let location;
+            let selection = '';
+            if (feature) {
+                selection = getHighlightedButton();
 
-            map.on('mouseleave', layerId + '-fill', function () {
+                location = feature.properties.STUSPS || feature.properties.state_name;
+                if (location && (states.includes(location) || postal_codes.includes(location))) {
+                    window.location.href = `/state?location=${location}&selection=${selection}`;
+                    return;
+                }
+            }
+            if (!location) {
+                console.log("no location");
+                feature = map.queryRenderedFeatures(e.point, { layers: ['albersusa'] })[0];
+                location = feature.properties.STUSPS || feature.properties.state_name;
+                if (location && states.includes(location)) {
+                    window.location.href = `/state?location=${location}`;
+                    return;
+                }
+            }
+        });
+
+        // mouse event for hovering
+    map.on('mousemove', layerId + '-fill', function (e) {
+        if (e.features.length > 0) {
+            const feature = e.features[0];
+            const currentId = feature.properties[idProperty];
+            if (hoveredStateId !== currentId) {
                 if (hoveredStateId) {
                     map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
-                    hoveredStateId = null;
                 }
-                map.getCanvas().style.cursor = '';
-                popup.remove();
-            });
+                hoveredStateId = currentId;
+                map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
+            }
 
-            // Update the current layer ID
-            currentLayerId = layerId;
+            const config = layerConfig[layerId];
+            console.log("Layer id and config", layerId, config);
+            //let name = feature.properties['NAME'] || feature.properties['NAMELSAD'] || feature.properties['state_name'];
+            let stateName = feature.properties['NAME'] || feature.properties['state_name'];
+            if (!stateName) {
+                const stateNumber = feature.properties['STATEFP'];
+                stateName = number_to_state[stateNumber];
+            }
+            let popupContent = "";
+            let voterPower;
+            let maxVoterPower;
+
+ //           if (config && config.jsonData) {
+ //               const dataItem = config.jsonData.find(item => item.state_name === stateName || item.NAME === name);
+ //               voterPower = dataItem ? dataItem.voter_power : 'no competitive race';
+ //           }
+
+            switch(layerId) {
+                case 'ballot_all':
+                    const ballotInitiatives = ballotData.filter(initiative => initiative.state_name === stateName);
+                    popupContent = ballotInitiatives.length > 0 ?
+                        `<div class="custom-popup">
+                            <strong>State:</strong> ${name}<br>
+                            <strong>Total initiatives:</strong> ${ballotInitiatives.length}
+                            <br>Click the state to learn more.<br>
+                        </div>` :
+                        `<div class="custom-popup">
+                            <strong>State:</strong> ${name}<br>
+                            There are no ballot initiatives in your state.
+                        </div>`;
+                    break;
+
+                case 'abortion':
+                    const abortionInitiatives = abortionData.filter(initiative => initiative.state_name === stateName);
+                    popupContent = abortionInitiatives.length > 0 ?
+                        `<div class="custom-popup">
+                            <strong>${stateName} has reproductive rights on the ballot.</strong> 
+                            <br>Click the state to learn more.<br>
+                        </div>` :
+                        `<div class="custom-popup">
+                            <strong>There are no abortion ballot initiatives in your state.</strong>
+                        </div>`;
+                    break;
+                case 'house':
+                    // Find the matching house data for the specific state and congress
+                    // Filter house data for the specific state and congress
+                    const congressValue = feature.properties.congress;
+                    const stateValue = feature.properties.state;
+                    const matchingHouseData = config.jsonData.filter(race => 
+                        config.matchingFunction(feature, race)
+                    );
+
+                    if (matchingHouseData && matchingHouseData.length > 0) {
+                        const voterPower = parseInt(matchingHouseData.voter_power) || 0;
+                        popupContent = voterPower > 0 ?
+                            `<div class="custom-popup">
+                                <strong>State:</strong> ${stateName}<br>
+                                <strong>Congressional District:</strong> ${congressValue}<br>
+                                <strong>Voter Power:</strong> ${voterPower}<br>
+                                Click for more details.
+                            </div>` :
+                            `<div class="custom-popup">
+                                <strong>State:</strong> ${stateName}<br>
+                                <strong>Congressional District:</strong> ${congressValue}<br>
+                                No competitive race in this district.
+                            </div>`;
+                    } else {
+                        popupContent = `<div class="custom-popup">
+                            <strong>State:</strong> ${stateName}<br>
+                            <strong>Congressional District:</strong> ${congressValue}<br>
+                            No data available for this district.
+                        </div>`;
+                    }
+                    break;
+                case 'presidential': case 'senate': 
+                    const caseData = config.jsonData.filter(race => race.state_name === stateName);
+                    maxVoterPower = Math.max(...caseData.map(race => parseInt(race.voter_power) || 0));
+                    popupContent = caseData.length > 0 && maxVoterPower > 0 ?
+                        `<div class="custom-popup">
+                            <strong>State: ${stateName}.</strong>
+                            <br><strong>Maximum Voter Power:</strong> ${maxVoterPower}
+                            <br>Click the state to learn more.<br>
+                        </div>` :
+                        `<div class="custom-popup"> 
+                            <strong>State: ${stateName}.</strong>
+                            <br>No competitive races.<br>
+                        </div>`;
+                    break;
+
+                case 'statewide':
+                    const stateRaces = stateData.filter(race => race.state_name === stateName);
+                    maxVoterPower = Math.max(...stateRaces.map(race => parseInt(race.voter_power) || 0));
+                    popupContent = stateRaces.length > 0 && maxVoterPower > 0 ?
+                        `<div class="custom-popup">
+                            <strong>State: ${stateName}.</strong>
+                            <br><strong>Maximum Voter Power:</strong> ${maxVoterPower}
+                            <br>Click the state to learn more.<br>
+                        </div>` :
+                        `<div class="custom-popup">
+                            <strong>State: ${stateName}</strong>
+                            <br>No competitive races.<br>
+                        </div>`;
+                    break;
+
+                case 'democracy':
+                    const democracyInitiatives = democracyData.filter(initiative => initiative.state_name === stateName);
+                    popupContent = democracyInitiatives.length > 0 ?
+                        `<div class="custom-popup">
+                            <strong>State:</strong> ${name}<br>
+                            <strong>Democracy initiatives: ${democracyInitiatives.length}</strong><br>
+                            Click the state to learn more.
+                        </div>` :
+                        `<div class="custom-popup">
+                            <strong>State:</strong> ${name}<br>
+                            <strong>No democracy initiatives.</strong>
+                        </div>`;
+                    break;
+
+                case 'starting':
+                    popupContent = `<div class="custom-popup">
+                        <strong>State:</strong> ${name}
+                        <br>Click the state to learn more.<br>
+                    </div>`;
+                    break;
+
+                default:
+                    const entityType = ['house', 'state_leg_up', 'state_leg_low'].includes(layerId) ? 'District' : 'State';
+                    popupContent = `<div class="custom-popup">
+                        <strong>${entityType}:</strong> ${name}<br>
+                        <strong>Voter Power:</strong> ${voterPower}
+                    </div>`;
+                    break;
+            }
+
+            popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+            map.getCanvas().style.cursor = 'pointer';
+        } else {
+            if (hoveredStateId) {
+                map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+                hoveredStateId = null;
+            }
+            map.getCanvas().style.cursor = '';
+            popup.remove();
         }
+    });
 
-map.on('load', async function () {
-    try {
-        const mapDiv = document.getElementById('map'); 
-        const width = mapDiv.offsetWidth;
-        const height = mapDiv.offsetHeight;
+    map.on('mouseleave', layerId + '-fill', function () {
+        if (hoveredStateId) {
+            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+            hoveredStateId = null;
+        }
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+    });
+}
 
-  
-        function fitMapToContainer() {
+    map.on('load', async function () {
+        try {
+            const mapDiv = document.getElementById('map'); 
             const width = mapDiv.offsetWidth;
             const height = mapDiv.offsetHeight;
 
-            
-            const aspectRatio = width / height;
-            let bound_value;
-            let bounds;
+  
+            function fitMapToContainer() {
+                const width = mapDiv.offsetWidth;
+                const height = mapDiv.offsetHeight;
+                const aspectRatio = width / height;
+                let bound_value;
+                let bounds;
 
-            if (aspectRatio >= 1) {
-                // Landscape mode
-                bound_value = 15 * Math.max(1, aspectRatio);
-                bounds = [[-bound_value, -bound_value / aspectRatio], [bound_value, bound_value / aspectRatio]];
-            } else {
-                // Portrait mode
-                bound_value = 15 / Math.min(1, aspectRatio);
-                bounds = [[-bound_value * aspectRatio, -bound_value], [bound_value * aspectRatio, bound_value]];
-            }
-            
-            map.fitBounds(bounds, { 
-                padding: {top: 0, bottom: 0, left: 50, right: 50}, 
-                animate: false 
-            });
-        }
-
-        fitMapToContainer();
-        window.addEventListener('resize', fitMapToContainer);
-        const startingData = await loadGeoJson('starting');
-        addGeoJsonLayer('starting', startingDataPromise);
-        
-        // Lazy load other layers
-        Object.keys(layers).forEach(layerId => {
-            if (layerId !== 'starting') {
-                loadGeoJson(layerId);
-            }
-        });
-    } catch (error) {
-        console.error('Error during initial map setup:', error);
-    }
-
-    // Set initial color for all states
-    //map.setPaintProperty('starting-fill', 'fill-color', COLOR_DEFAULT);
-
-    // Wait for the source to load
-    map.once('idle', function() {   
-        let animationId;
-        let features = [];
-        let allFeatures = [];
-        let powerLevels = LEVELS;
-        let currentPowerLevelIndex = 0;
-        let skipFadeFirst = true;
-        let fadeInDelay = 1500;
-        const nextGroupDelay = 2000; // Increased delay between power levels
-        const fadeOutDelay = 1500;
-        const steps = 30;
-        const stateColors = new Map();
-        const stateOpacities = new Map();
-
-        function queryFeatures() {
-            allFeatures= map.queryRenderedFeatures({ layers: ['starting-fill'] });
-            
-            features = allFeatures.filter((feature, index, self) =>
-                index === self.findIndex((t) => (
-                    t.properties.STATEFP === feature.properties.STATEFP
-                )) && feature.properties.power_level !== "none"
-            );
-
-            if (features.length > 0) {
-                animateNextPowerLevel();
-            } else {
-                console.error("No features found. Retrying in 1 second...");
-                setTimeout(queryFeatures, 1000);
-            }
-        }
-        queryFeatures();
-
-        async function animateNextPowerLevel() {
-            if (!features || features.length === 0) {
-                console.error("Features not loaded yet. Retrying in 1 second...");
-                setTimeout(animateNextPowerLevel, 1000);
-                return;
-            }
-            if (skipFadeFirst) {
-                fadeInDelay = 0;
-                skipFadeFirst = false;
-            }
-            else {
-                fadeInDelay = 1500;
-            }
-
-            if (currentPowerLevelIndex >= powerLevels.length) {
-                currentPowerLevelIndex = 0;
-            } 
-                const currentPowerLevel = powerLevels[currentPowerLevelIndex];
+                if (aspectRatio >= 1) {
+                    // Landscape mode
+                    bound_value = 15 * Math.max(1, aspectRatio);
+                    bounds = [[-bound_value, -bound_value / aspectRatio], [bound_value, bound_value / aspectRatio]];
+                } else {
+                    // Portrait mode
+                    bound_value = 15 / Math.min(1, aspectRatio);
+                    bounds = [[-bound_value * aspectRatio, -bound_value], [bound_value * aspectRatio, bound_value]];
+                }
                 
-                let statesToAnimate = features.filter(feature => 
-                        voterEmpowerment[currentPowerLevel].includes(feature.properties.STUSPS)
-                    );
-                const targetColor = getColorForPowerLevel(currentPowerLevel);
-                // Set all states to default fill-color
-                allFeatures.forEach(feature => {
-                    const stateId = feature.properties.STATEFP;
-                    stateColors.set(stateId, COLOR_DEFAULT);
-                    stateOpacities.set(stateId, 1); 
+                map.fitBounds(bounds, { 
+                    padding: {top: 0, bottom: 0, left: 50, right: 50}, 
+                    animate: false 
                 });
-                updateMapColors();
+            }
 
+            fitMapToContainer();
+            window.addEventListener('resize', fitMapToContainer);
+            const startingData = await startingDataPromise;
+            addGeoJsonLayer('ballot_all');
+            
+            lookForMissingGEOIDFQ();
+   /*     LEVELS.forEach(level => {
+                if (level !== 'starting') {
+                    addGeoJsonLayer(level).catch(error => {
+                        console.error(`Error loading layer ${level}:`, error);
+                    });
+                }
+            });*/
 
-                // Get the button with the data-level matching currentPowerLevel and add "highlight" class
-                const currentButton = document.querySelector(`.legend-btn[data-level="${currentPowerLevel}"]`);
-                if (currentButton) {
-                    currentButton.classList.add('highlight');
+        } catch (error) {
+            console.error('Error during initial map setup:', error);
+        }
+
+        // Set initial color for all states
+        //map.setPaintProperty('starting-fill', 'fill-color', COLOR_DEFAULT);
+
+        // Wait for the source to load
+        map.once('idle', function() {   
+            const DEBUG_DISABLE_ANIMATION = true;
+            if (DEBUG_DISABLE_ANIMATION) {
+                animationRunning = false;
+            }
+            let animationId;
+            let features = [];
+            let allFeatures = [];
+            let powerLevels = LEVELS;
+            let currentPowerLevelIndex = 0;
+            let skipFadeFirst = true;
+            let fadeInDelay = 1500;
+            const nextGroupDelay = 2000; // Increased delay between power levels
+            const fadeOutDelay = 1500;
+            const steps = 30;
+            const stateColors = new Map();
+            const stateOpacities = new Map();
+
+            function queryFeatures() {
+                if (DEBUG_DISABLE_ANIMATION) {
+                    return;
+                }
+                allFeatures= map.queryRenderedFeatures({ layers: ['starting-fill'] });
+                
+                features = allFeatures.filter((feature, index, self) =>
+                    index === self.findIndex((t) => (
+                        t.properties.STATEFP === feature.properties.STATEFP
+                    )) && feature.properties.power_level !== "none"
+                );
+
+                if (features.length > 0) {
+                    animateNextPowerLevel();
+                } else {
+                    console.error("No features found. Retrying in 1 second...");
+                    setTimeout(queryFeatures, 1000);
+                }
+            }
+            queryFeatures();
+
+            async function animateNextPowerLevel() {
+                if (!features || features.length === 0) {
+                    console.error("Features not loaded yet. Retrying in 1 second...");
+                    setTimeout(animateNextPowerLevel, 1000);
+                    return;
+                }
+                if (skipFadeFirst) {
+                    fadeInDelay = 0;
+                    skipFadeFirst = false;
+                }
+                else {
+                    fadeInDelay = 1500;
                 }
 
-                // Remove "highlight" class from other buttons
-                document.querySelectorAll('.legend-btn').forEach(button => {
-                    if (button !== currentButton) {
-                        button.classList.remove('highlight');
+                if (currentPowerLevelIndex >= powerLevels.length) {
+                    currentPowerLevelIndex = 0;
+                } 
+                    const currentPowerLevel = powerLevels[currentPowerLevelIndex];
+                    
+                    let statesToAnimate = features.filter(feature => 
+                            voterEmpowerment[currentPowerLevel].includes(feature.properties.STUSPS)
+                        );
+                    const targetColor = getColorForPowerLevel(currentPowerLevel);
+                    // Set all states to default fill-color
+                    allFeatures.forEach(feature => {
+                        const stateId = feature.properties.STATEFP;
+                        stateColors.set(stateId, COLOR_DEFAULT);
+                        stateOpacities.set(stateId, 1); 
+                    });
+                    updateMapColors();
+
+
+                    // Get the button with the data-level matching currentPowerLevel and add "highlight" class
+                    const currentButton = document.querySelector(`.legend-btn[data-level="${currentPowerLevel}"]`);
+                    if (currentButton) {
+                        currentButton.classList.add('highlight');
                     }
-                });
-                await animateStates(statesToAnimate, targetColor, true);
-                currentPowerLevelIndex++;
-                // Use Promise-based setTimeout
-                await new Promise(resolve => setTimeout(resolve, nextGroupDelay));
-                await fadeOutStates(statesToAnimate);
-                if (animationRunning) { 
-                    animateNextPowerLevel(); // Continue to next power level
-                }
 
-        }
+                    // Remove "highlight" class from other buttons
+                    document.querySelectorAll('.legend-btn').forEach(button => {
+                        if (button !== currentButton) {
+                            button.classList.remove('highlight');
+                        }
+                    });
+                    await animateStates(statesToAnimate, targetColor, true);
+                    currentPowerLevelIndex++;
+                    // Use Promise-based setTimeout
+                    await new Promise(resolve => setTimeout(resolve, nextGroupDelay));
+                    await fadeOutStates(statesToAnimate);
+                    if (animationRunning) { 
+                        animateNextPowerLevel(); // Continue to next power level
+                    }
 
-        function easeInOutQuad(t) {
-            return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-        }
+            }
 
-        function animateStates(states, targetColor,useLinearFade = false) {
-            return new Promise((resolve) => {
-                const opacityDelay = fadeInDelay / steps;
-                
-                states.forEach(feature => {
-                    const stateId = feature.properties.STATEFP;
-                    stateColors.set(stateId, targetColor);
-                });
-                
-                for (let i = 0; i <= steps; i++) {
-                    setTimeout(() => {
-                        //adding one prevents ever being 0
-                        const t = (i + 1) / (steps + 1);
-                        const opacity = useLinearFade ? t : easeInOutQuad(t);
-                        states.forEach(feature => {
-                            const stateId = feature.properties.STATEFP;
-                            stateOpacities.set(stateId, opacity);
-                        });
-                        updateMapColors();
-                        if (i === steps) resolve(); // Resolve the promise when animation is complete
-                    }, i * opacityDelay);
-                }
-            });
-        }
+            function easeInOutQuad(t) {
+                return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+            }
 
-        function fadeOutStates(states) {
-            return new Promise((resolve) => {
-                const opacityDelay = fadeOutDelay / steps;
-                
-                for (let i = steps; i >= 0; i--) {
-                    setTimeout(() => {
-                        const t = i / steps;
-                        const opacity = easeInOutQuad(t);
-                        states.forEach(feature => {
-                            const stateId = feature.properties.STATEFP;
-                            stateOpacities.set(stateId, opacity);
-                        });
-                        updateMapColors();
-                        if (i === 0) {
+            function animateStates(states, targetColor,useLinearFade = false) {
+                return new Promise((resolve) => {
+                    const opacityDelay = fadeInDelay / steps;
+                    
+                    states.forEach(feature => {
+                        const stateId = feature.properties.STATEFP;
+                        stateColors.set(stateId, targetColor);
+                    });
+                    
+                    for (let i = 0; i <= steps; i++) {
+                        setTimeout(() => {
+                            //adding one prevents ever being 0
+                            const t = (i + 1) / (steps + 1);
+                            const opacity = useLinearFade ? t : easeInOutQuad(t);
                             states.forEach(feature => {
                                 const stateId = feature.properties.STATEFP;
-                                stateColors.set(stateId, COLOR_DEFAULT);
+                                stateOpacities.set(stateId, opacity);
                             });
                             updateMapColors();
-                            resolve();
-                        }
-                    }, (steps - i) * opacityDelay);
-                }
-            });
-        }
-
-        function updateMapColors() {
-            const colorExpression = [
-                'match',
-                ['get', 'STATEFP'],
-                ...Array.from(stateColors).flatMap(([statefp, color]) => [statefp, color]),
-                COLOR_DEFAULT
-            ];
-
-            const opacityExpression = [
-                'match',
-                ['get', 'STATEFP'],
-                ...Array.from(stateOpacities).flatMap(([statefp, opacity]) => [statefp, opacity]),
-                0.1 // Default opacity for states not yet animated
-            ];
-
-
-            if (map.getLayer('starting-fill')) {
-                map.setPaintProperty('starting-fill', 'fill-color', colorExpression);
-                map.setPaintProperty('starting-fill', 'fill-opacity', opacityExpression);
-            } 
-        }
-
-        function stopAnimation() {
-            if (animationId) {
-                clearTimeout(animationId);
+                            if (i === steps) resolve(); // Resolve the promise when animation is complete
+                        }, i * opacityDelay);
+                    }
+                });
             }
+
+            function fadeOutStates(states) {
+                return new Promise((resolve) => {
+                    const opacityDelay = fadeOutDelay / steps;
+                    
+                    for (let i = steps; i >= 0; i--) {
+                        setTimeout(() => {
+                            const t = i / steps;
+                            const opacity = easeInOutQuad(t);
+                            states.forEach(feature => {
+                                const stateId = feature.properties.STATEFP;
+                                stateOpacities.set(stateId, opacity);
+                            });
+                            updateMapColors();
+                            if (i === 0) {
+                                states.forEach(feature => {
+                                    const stateId = feature.properties.STATEFP;
+                                    stateColors.set(stateId, COLOR_DEFAULT);
+                                });
+                                updateMapColors();
+                                resolve();
+                            }
+                        }, (steps - i) * opacityDelay);
+                    }
+                });
+            }
+
+            function updateMapColors() {
+                const colorExpression = [
+                    'match',
+                    ['get', 'STATEFP'],
+                    ...Array.from(stateColors).flatMap(([statefp, color]) => [statefp, color]),
+                    COLOR_DEFAULT
+                ];
+
+                const opacityExpression = [
+                    'match',
+                    ['get', 'STATEFP'],
+                    ...Array.from(stateOpacities).flatMap(([statefp, opacity]) => [statefp, opacity]),
+                    0.1 // Default opacity for states not yet animated
+                ];
+
+
+                if (map.getLayer('starting-fill')) {
+                    map.setPaintProperty('starting-fill', 'fill-color', colorExpression);
+                    map.setPaintProperty('starting-fill', 'fill-opacity', opacityExpression);
+                } 
+            }
+
+            function stopAnimation() {
+                if (animationId) {
+                    clearTimeout(animationId);
+                }
+            }
+        });
+    });
+
+    function getColorForPowerLevel(powerLevel) {
+        switch(powerLevel) {
+            case 'democracy': return COLOR_DEMOCRACY;
+            case 'presidential': return COLOR_PRESIDENT;
+            case 'senate': return COLOR_SENATE;
+            case 'house': return COLOR_HOUSE;
+            case 'governor': return COLOR_GOVERNOR;
+            case 'abortion': return COLOR_ABORTION;
+            case 'ballot_all': return COLOR_KEY_BALLOT;
+            case 'statewide': return COLOR_STATE_LEGISLATURE;
+            default: return COLOR_DEFAULT;
+        }
+    }
+
+    // Write a function that searches all legend buttons and 
+    // returns the one that is clicked
+    function getClickedButton() {
+        return document.querySelector('.legend-btn.active');
+    }
+    // Return the data-level of the highlighted class
+    function getHighlightedButton() {
+        const highlightedButton = document.querySelector('.legend-btn.highlight');
+        return highlightedButton.getAttribute('data-level');
+    }
+
+    // Add click event listener for legend buttons
+    document.querySelectorAll('.legend-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            //stop the animation
+            animationRunning = false;
+            const powerLevel = this.getAttribute('data-level');
+            const color = getColorForPowerLevel(powerLevel);
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.legend-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('highlight');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            this.classList.add('highlight');
+            
+            // Filter the map to show only states with the selected power level
+            // Change the layer to the one that is clicked
+            addGeoJsonLayer(powerLevel);
+        });
+    });
+
+    document.getElementById('location').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent the default action (form submission)
+            e.target.form.submit(); // Submit the form
         }
     });
-});
 
-function getColorForPowerLevel(powerLevel) {
-    switch(powerLevel) {
-        case 'democracy': return COLOR_DEMOCRACY;
-        case 'presidential': return COLOR_PRESIDENT;
-        case 'senate': return COLOR_SENATE;
-        case 'house': return COLOR_HOUSE;
-        case 'governor': return COLOR_GOVERNOR;
-        case 'abortion': return COLOR_ABORTION;
-        case 'ballot_all': return COLOR_KEY_BALLOT;
-        case 'statewide': return COLOR_STATE_LEGISLATURE;
-        default: return COLOR_DEFAULT;
-    }
-}
-
-// Write a function that searches all legend buttons and 
-// returns the one that is clicked
-function getClickedButton() {
-    return document.querySelector('.legend-btn.active');
-}
-// Return the data-level of the highlighted class
-function getHighlightedButton() {
-    const highlightedButton = document.querySelector('.legend-btn.highlight');
-    return highlightedButton.getAttribute('data-level');
-}
-
-// Add click event listener for legend buttons
-document.querySelectorAll('.legend-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        //stop the animation
-        animationRunning = false;
-        const powerLevel = this.getAttribute('data-level');
-        const color = getColorForPowerLevel(powerLevel);
-        
-        // Remove active class from all buttons
-        document.querySelectorAll('.legend-btn').forEach(btn => {
-            btn.classList.remove('active');
-            btn.classList.remove('highlight');
-        });
-        
-        // Add active class to clicked button
-        this.classList.add('active');
-        this.classList.add('highlight');
-        
-        // Filter the map to show only states with the selected power level
-        // Change the layer to the one that is clicked
-        addGeoJsonLayer(powerLevel);
+    //Clean input after left page
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {  
+            document.getElementById('location').value = '';
+        }
     });
-});
 
-document.getElementById('location').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        e.preventDefault(); // Prevent the default action (form submission)
-        e.target.form.submit(); // Submit the form
-    }
-});
-
-//Clean input after left page
-window.addEventListener('pageshow', function(event) {
-    if (event.persisted) {  
-        document.getElementById('location').value = '';
-    }
-});
-
-
-/*
-fetch('https://public-api.wordpress.com/wp/v2/sites/236951957/posts', {
-method: 'GET',
-headers: {
-    'Authorization': '5d4782818fdd' // 使用你的 API 密钥
-}
-})
-.then(response => response.json())
-.then(data =>  {
-const blogPosts = data;
-const templateCard = document.querySelector('#blog-card-template').content;
-const blogSection = document.querySelector('#cards');
-
-
-
-blogPosts.forEach(post => {
-const blogCard = templateCard.cloneNode(true);
-
-console.log("post ",post);
-const date = new Date(post.date);
-const options = { year: 'numeric', month: 'short',day:"numeric" };
-let formattedDate = date.toLocaleDateString('en-US', options);
-
-formattedDate = formattedDate.replace(',', '');
-
-blogCard.querySelector('.card-date').textContent = formattedDate;
-
-console.log("title ",post.title);
-
-const title = post.title.rendered.replace(/&nbsp;/g, ' ');
-
-blogCard.querySelector('.card-title').textContent=title;
-
-const excerpt = post.content.rendered.replace(/&nbsp;/g, ' ');
-blogCard.querySelector('.card-content').innerHTML=excerpt;
-
-blogSection.appendChild(blogCard);
-});
-})
-.catch(error => console.error('Error:', error));
-*/
-    </script>
-</body>
-{% endblock %}
+        </script>
+    </body>
+    {% endblock %}
