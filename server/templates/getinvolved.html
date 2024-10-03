@@ -89,10 +89,82 @@
   color: #f0f0f0;
 }
 
-.get-involved-sec .campaign-url,
-.get-involved-sec .donate-url {
-  display: block;
-  margin-bottom: 1em; 
+
+.button-container {
+    display: flex;                  
+    justify-content: space-between; 
+    position: absolute;             
+    bottom: 1em;                 
+    left: 0;                       
+    width: 100%;                    
+    padding: 0 1em;                
+}
+
+
+.campaign-url, .donate-url {
+    flex: none;                     
+    display: inline-block;         
+    margin: 0 0.5em;                
+}
+
+.campaign-url .btn.btn-primary, .donate-url .btn.btn-primary {
+    padding: 0.5em 1em;          /* 设置按钮的内边距，上下是 0.25em，左右是 1em */
+    outline: 0em solid #0000;     /* 禁用按钮的 outline（即按钮被点击时的外部边框），outline 的宽度为 0，颜色为透明 */
+    border-radius: 4em;           /* 设置按钮的圆角半径为 4em，使按钮的边角变得非常圆 */
+}
+
+.button-container:only-child {
+    justify-content: center;        
+}
+
+.button-container .campaign-url, .button-container .donate-url {
+    display: inline-block;           
+    margin: 0 0.5em;                 
+}
+
+
+.button-container .campaign-url:only-child, .button-container .donate-url:only-child {
+    margin: 0 auto;                 
+}
+
+.partydivider {
+  margin:32px auto;
+  width:400px; 
+  max-width: 100%;
+  position:relative;
+}
+
+.partydividermask { 
+    overflow:hidden; height:20px; 
+}
+
+.partydividermask:after { 
+      content:''; 
+      display:block; margin:-25px auto 0;
+      width:100%; height:25px;  
+        border-radius:125px / 12px;
+       box-shadow:0 0 8px #555555;
+}
+.partydivider span {
+    width:40px; height:40px; 
+    position:absolute; 
+    bottom:100%; margin-bottom:-25px;
+    left:50%; margin-left:-25px;
+    border-radius:100%;
+    box-shadow:0 2px 4px  #777777;
+    background:#fff;
+}
+.partydivider i {
+    position:absolute;
+    top:0px; bottom:0px;
+    left:0px; right:0px;
+    border-radius:100%;
+    border:1px dashed #999999;
+    text-align:center;
+    line-height:40px;
+    font-style:normal;
+    color:#555555; 
+    
 }
 
 .election-denier {
@@ -206,14 +278,21 @@
                         <h3>{{ item.party }}</h3>
                         <p>Description: {{ item.name | capitalize }}</p>
 
-                        <div class="campaign-url">
-                            <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
+                        <div class="button-container">
+
+                            <div class="campaign-url">
+                                <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
+                            </div>
+                            {% if item.donation_link and item.donation_link | lower != 'nan' %}
+                            <div class="donate-url">
+                                <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
+                            </div>
+                            {% endif %}
+
+
                         </div>
-                        {% if item.donation_link and item.donation_link | lower != 'nan' %}
-                        <div class="donate-url">
-                            <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
-                        </div>
-                        {% endif %}
+
+                        
                     </div>
                   </div>
                   {% else %}
@@ -221,15 +300,26 @@
                     <!-- candidate -->
                     <div class="col">
                         <div class="service-card">
-                            <h3>
-                                {% if item.party == 'Republican Party' %}
-                                    <i class="fa-solid fa-republican"></i>
-                                {% elif item.party == 'Democratic Party' %}
-                                    <i class="fa-solid fa-democrat"></i>
-                        
-                                {% endif %}
-                            </h3>
+                          
+    
+
                             <h3>{{ item.party }}</h3>
+
+                            <div class="partydivider">
+                                <div class="partydividermask">
+                                  
+                                </div>
+                                <span>
+                                    {% if item.party == 'Republican Party' %}
+                                    <i class="fa-solid fa-republican"></i>
+                                    {% elif item.party == 'Democratic Party' %}
+                                    <i class="fa-solid fa-democrat"></i>
+                                    {% else %}
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                    {% endif %}
+                                </span>
+                                  
+                                </div>
 
                             <h3>{{ item.name }}</h3>
                             {% if item.election_denier == "1" %}
@@ -248,14 +338,20 @@
                                 </div>
                             </div>
                             {% endif %}
-                            <div class="campaign-url">
-                                <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
-                            </div>
-                            {% if item.donation_link and item.donation_link | lower != 'nan' %}
-                                <div class="donate-url">
-                                    <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
+
+                            <div class="button-container">
+                                <div class="campaign-url">
+                                    <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
                                 </div>
-                            {% endif %}
+                                {% if item.donation_link and item.donation_link | lower != 'nan' %}
+                                    <div class="donate-url">
+                                        <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+
+                           
                         </div>
                     </div>
                 {% endif %}
