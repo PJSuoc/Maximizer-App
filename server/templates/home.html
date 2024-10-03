@@ -181,7 +181,10 @@
             <form action="/local" method="post">
                 <div class="input-group">
                     <label for="location">Find pivotal elections near you:</label>
-                    <input type="text" class="form-control" id="location" name="location" placeholder="Type address/ZIP, press enter">
+                    <div class="search-container">
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Type address/ZIP">
+                        <button class="search-button">Search</button>    
+                </div>
                 </div>  
             </form>
 

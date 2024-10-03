@@ -84,6 +84,7 @@
   color: #ffffff;
 }
 
+
 .get-involved-sec .service-card:hover p {
   color: #f0f0f0;
 }
@@ -220,7 +221,16 @@
                     <!-- candidate -->
                     <div class="col">
                         <div class="service-card">
+                            <h3>
+                                {% if item.party == 'Republican Party' %}
+                                    <i class="fa-solid fa-republican"></i>
+                                {% elif item.party == 'Democratic Party' %}
+                                    <i class="fa-solid fa-democrat"></i>
+                        
+                                {% endif %}
+                            </h3>
                             <h3>{{ item.party }}</h3>
+
                             <h3>{{ item.name }}</h3>
                             {% if item.election_denier == "1" %}
                             <div class="alert alert-warning election-denier">
