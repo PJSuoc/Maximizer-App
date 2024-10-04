@@ -300,6 +300,7 @@
         const postal_codes = JSON.parse('{{ postal_codes | tojson }}')
         let stateWideRaces = ["AK","AZ","DE","IN","MO","MT","KS","MI","MN","ND","UT","VT","WA","WV","NE","NV","NH","PA","WI","NC"];
         import voterEmpowerment from './static/js/voter_empowerment.js';
+        console.log("Voter Empowerment", voterEmpowerment);
         //import ballotData from './static/js/ballot_initiative.js';
         import stateData from './static/js/stateData.js';
 
@@ -452,6 +453,7 @@
                 
                 return data;
             } catch (error) {
+                console.error('Error loading or processing GeoJSON:', error);
                 throw error;
             }
         }
@@ -597,15 +599,20 @@
             }
         }, 'albersusa-points');
     } else if (layerId === 'democracy') {
+        const democracyStates = democracyData.map(item => item.state_name).map(String);
+        console.log("Democracy states", democracyStates);
         map.addLayer({
             id: layerId + '-fill',
             type: 'fill',
             source: layerId,
-            filter: ['!=', ['get', 'STATEFP'], '72'], // Exclude Puerto Rico
             paint: {
                 'fill-color': [
                     'case',
-                    ['>', ['to-number', ['get', 'number_per_state'] ], 0], COLOR_DEMOCRACY,
+                    ['in', 
+                        ['get', 'NAME'],
+                        ['literal', democracyStates]
+                    ],
+                    COLOR_DEMOCRACY,
                     COLOR_DEFAULT
                 ],
                 'fill-opacity': 1,
@@ -1005,9 +1012,21 @@ map.on('load', async function () {
             } 
                 const currentPowerLevel = powerLevels[currentPowerLevelIndex];
                 
-                let statesToAnimate = features.filter(feature => 
-                        voterEmpowerment[currentPowerLevel].includes(feature.properties.STUSPS)
-                    );
+                let statesToAnimate = features.filter(feature => {
+                    // Check both STUSPS and state_abbrev properties
+                    const stateCode = feature.properties?.STUSPS || feature.properties?.state_abbrev || '';
+                    if (stateCode === '') {
+                        console.log("Feature empty abbrev:", feature);
+                    }
+                    return stateCode && voterEmpowerment[currentPowerLevel].includes(stateCode);
+                });
+                    console.log(currentPowerLevel);
+                    console.log("States to animate", statesToAnimate);
+                    console.log("array", voterEmpowerment[currentPowerLevel]);
+                    console.log("features", features);
+                    // print all features in this layer and their stusps value
+                    const allFeaturesInLayer = map.queryRenderedFeatures();
+                    console.log("All features in layer:", allFeaturesInLayer);
                 const targetColor = getColorForPowerLevel(currentPowerLevel);
                 // Set all states to default fill-color
                 allFeatures.forEach(feature => {
