@@ -424,14 +424,14 @@
         const layers = {
     
             starting: 'static/data/calculated_files/geojsons/president_albers.geojson',
-            abortion: 'static/data/geojson_imports/geojson_final/ballot_abort_albers.geojson',
-            democracy: 'static/data/geojson_imports/geojson_final/ballot_VPM_albers.geojson',
+            abortion: 'static/data/calculated_files/geojsons/reprights_albers.geojson',
+            democracy: 'static/data/calculated_files/geojsons/democracy_albers.geojson',
             //aggregate: 'static/data/calculated_files/geojsons/aggregate_albers.geojson',
             presidential: 'static/data/calculated_files/geojsons/president_albers.geojson',
             senate: 'static/data/calculated_files/geojsons/senate_albers.geojson',
-            house: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
+            house: 'static/data/calculated_files/geojsons/congress_house_albers.geojson',
             statewide: 'static/data/calculated_files/geojsons/governor_albers.geojson',
-            ballot_all: 'static/data/geojson_imports/geojson_final/ballot_initiatives_main_albers.geojson',
+            ballot_all: 'static/data/calculated_files/geojsons/ballot_initiative_albers.geojson',
             //state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper_albers.geojson',
             //state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower_albers.geojson'        
         };
@@ -447,10 +447,7 @@
                 const response = await fetch(layers[layerId]);
                 const data = await response.json();
                 geoJsonCache[layerId] = data;
-                
-                const endTime = performance.now();
-                const downloadTime = (endTime - startTime) / 1000; // Convert to seconds
-                
+
                 return data;
             } catch (error) {
                 console.error('Error loading or processing GeoJSON:', error);
@@ -496,22 +493,23 @@
         
    
     if (layerId === 'ballot_all') {
+        // Get all unique state names from ballotData
+        const ballotStates = [...new Set(ballotData.map(initiative => initiative.state_name))];
+        
         map.addLayer({
             id: layerId + '-fill',
             type: 'fill',
             source: layerId,
             paint: {
-            'fill-color': [
-                'case',
-                ['all', 
-                    ['!=', ['get', 'number_per_state'], null],
-                    ['!=', ['get', 'number_per_state'], 0]
-                ], COLOR_KEY_BALLOT,
-                COLOR_DEFAULT,
-            ],
-            'fill-opacity': 1, // 100% opaque
-        }
-        }, 'albersusa-points'); // state names should be over the layers
+                'fill-color': [
+                    'case',
+                    ['in', ['get', 'NAME'], ['literal', ballotStates]],
+                    COLOR_KEY_BALLOT,
+                    COLOR_DEFAULT
+                ],
+                'fill-opacity': 1
+            }
+        }, 'albersusa-points');
     } else if (layerId === 'statewide') {
         //stateWideRaces = stateWideRaces.map(String); // Convert all elements to strings
         // Filter stateData for the current state and find max voter power
@@ -799,18 +797,18 @@ map.on('mousemove', layerId + '-fill', function (e) {
         let voterPower = feature.properties['voter_power']; // Directly use the property
 
         if (layerId === 'ballot_all') {
-            // Check if the description is undefined or empty
             const stateName = feature.properties['NAME'] || feature.properties['state_name'];
-            var description = ballotData.filter(initiative => initiative.state_name === stateName);
-            if (description === undefined || description === '') {
+            const stateInitiatives = ballotData.filter(initiative => initiative.state_name === stateName);
+            
+            if (stateInitiatives.length === 0) {
                 popupContent = `<div class="custom-popup">
-                    <strong>State:</strong> ${name}<br>
-                    There are no ballot initiatives in your state.
+                    <strong>State:</strong> ${stateName}<br>
+                    There are no ballot initiatives in this state.
                 </div>`;
             } else {
                 popupContent = `<div class="custom-popup">
-                    <strong>State:</strong> ${name}<br>
-                    <strong>Total initiatives:</strong> ${description.length}
+                    <strong>State:</strong> ${stateName}<br>
+                    <strong>Total initiatives:</strong> ${stateInitiatives.length}
                     <br>Click the state to learn more.<br>
                 </div>`;
             }
