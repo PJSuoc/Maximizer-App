@@ -1,6 +1,5 @@
 powermax.db
 config.py
-credentials.json
 server.conf
 docs/public
 docs/node_modules

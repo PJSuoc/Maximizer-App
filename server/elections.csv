@@ -1,0 +1,1283 @@
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running,eid,voter_power_val,candidate_ids,candidate_names
+01,,,,Alabama,Presidential,Presidential,2.0,,,0,2.0,"[0, 58]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+02,,,,Alaska,Presidential,Presidential,25.0,,,1,25.0,"[1, 59]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+04,,,,Arizona,Presidential,Presidential,62.0,,,2,62.0,"[2, 60]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+05,,,,Arkansas,Presidential,Presidential,4.0,,,3,4.0,"[3, 61]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+06,,,,California,Presidential,Presidential,1.0,,,4,1.0,"[4, 62]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+08,,,,Colorado,Presidential,Presidential,4.0,,,5,4.0,"[5, 63]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+09,,,,Connecticut,Presidential,Presidential,2.0,,,6,2.0,"[6, 64]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+10,,,,Delaware,Presidential,Presidential,4.0,,,7,4.0,"[7, 65]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+11,,,,District of Columbia,Presidential,Presidential,0.0,,,8,0.0,"[8, 66]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+12,,,,Florida,Presidential,Presidential,23.0,,,9,23.0,"[9, 67]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+13,,,,Georgia,Presidential,Presidential,45.0,,,10,45.0,"[10, 68]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+15,,,,Hawaii,Presidential,Presidential,4.0,,,11,4.0,"[11, 69]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+16,,,,Idaho,Presidential,Presidential,1.0,,,12,1.0,"[12, 70]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+17,,,,Illinois,Presidential,Presidential,2.0,,,13,2.0,"[13, 71]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+18,,,,Indiana,Presidential,Presidential,2.0,,,14,2.0,"[14, 72]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+19,,,,Iowa,Presidential,Presidential,26.0,,,15,26.0,"[15, 73]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+20,,,,Kansas,Presidential,Presidential,4.0,,,16,4.0,"[16, 74]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+21,,,,Kentucky,Presidential,Presidential,1.0,,,17,1.0,"[17, 75]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+22,,,,Louisiana,Presidential,Presidential,2.0,,,18,2.0,"[18, 76]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+23,,,,Maine,Presidential,Presidential,7.0,,,19,7.0,[],
+23,2.0,,,Maine,Presidential,Congressional District 2,50.0,,,20,50.0,[],
+23,1.0,,,Maine,Presidential,Congressional District 1,1.0,,,21,1.0,[],
+24,,,,Maryland,Presidential,Presidential,1.0,,,22,1.0,"[23, 81]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+25,,,,Massachusetts,Presidential,Presidential,1.0,,,23,1.0,"[24, 82]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+26,,,,Michigan,Presidential,Presidential,65.0,,,24,65.0,"[25, 83]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+27,,,,Minnesota,Presidential,Presidential,13.0,,,25,13.0,"[26, 84]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+28,,,,Mississippi,Presidential,Presidential,3.0,,,26,3.0,"[27, 85]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+29,,,,Missouri,Presidential,Presidential,5.0,,,27,5.0,"[28, 86]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+30,,,,Montana,Presidential,Presidential,6.0,,,28,6.0,"[29, 87]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+31,1.0,,,Nebraska,Presidential,Congressional District 1,3.0,,,29,3.0,[],
+31,2.0,,,Nebraska,Presidential,Congressional District 2,23.0,,,30,23.0,[],
+31,3.0,,,Nebraska,Presidential,Congressional District 3,0.0,,,31,0.0,[],
+31,,,,Nebraska,Presidential,Presidential,1.0,,,32,1.0,[],
+32,,,,Nevada,Presidential,Presidential,100.0,,,33,100.0,"[35, 93]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+33,,,,New Hampshire,Presidential,Presidential,12.0,,,34,12.0,"[36, 94]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+34,,,,New Jersey,Presidential,Presidential,3.0,,,35,3.0,"[37, 95]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+35,,,,New Mexico,Presidential,Presidential,21.0,,,36,21.0,"[38, 96]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+36,,,,New York,Presidential,Presidential,4.0,,,37,4.0,"[39, 97]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+37,,,,North Carolina,Presidential,Presidential,68.0,,,38,68.0,"[40, 98]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+38,,,,North Dakota,Presidential,Presidential,2.0,,,39,2.0,"[41, 99]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+39,,,,Ohio,Presidential,Presidential,6.0,,,40,6.0,"[42, 100]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+40,,,,Oklahoma,Presidential,Presidential,3.0,,,41,3.0,"[43, 101]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+41,,,,Oregon,Presidential,Presidential,3.0,,,42,3.0,"[44, 102]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+42,,,,Pennsylvania,Presidential,Presidential,64.0,,,43,64.0,"[45, 103]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+44,,,,Rhode Island,Presidential,Presidential,4.0,,,44,4.0,"[46, 104]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+45,,,,South Carolina,Presidential,Presidential,5.0,,,45,5.0,"[47, 105]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+46,,,,South Dakota,Presidential,Presidential,2.0,,,46,2.0,"[48, 106]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+47,,,,Tennessee,Presidential,Presidential,1.0,,,47,1.0,"[49, 107]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+48,,,,Texas,Presidential,Presidential,26.0,,,48,26.0,"[50, 108]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+49,,,,Utah,Presidential,Presidential,2.0,,,49,2.0,"[51, 109]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+50,,,,Vermont,Presidential,Presidential,1.0,,,50,1.0,"[52, 110]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+51,,,,Virginia,Presidential,Presidential,8.0,,,51,8.0,"[53, 111]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+53,,,,Washington,Presidential,Presidential,2.0,,,52,2.0,"[54, 112]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+54,,,,West Virginia,Presidential,Presidential,1.0,,,53,1.0,"[55, 113]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+55,,,,Wisconsin,Presidential,Presidential,61.0,,,54,61.0,"[56, 114]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+56,,,,Wyoming,Presidential,Presidential,1.0,,,55,1.0,"[57, 115]", Democratic Party: Kamala Harris Republican Party: Donald Trump
+00,,,,,,,N/A,,,56,,[],
+00,,,,,,,N/A,,,57,,[],
+00,,,,,,,N/A,,,58,,[],
+00,,,,,,,N/A,,,59,,[],
+00,,,,,,,N/A,,,60,,[],
+00,,,,,,,N/A,,,61,,[],
+00,,,,,,,N/A,,,62,,[],
+00,,,,,,,N/A,,,63,,[],
+00,,,,,,,N/A,,,64,,[],
+00,,,,,,,N/A,,,65,,[],
+00,,,,,,,N/A,,,66,,[],
+00,,,,,,,N/A,,,67,,[],
+00,,,,,,,N/A,,,68,,[],
+00,,,,,,,N/A,,,69,,[],
+04,,,,Arizona,Senate,,37.0,Ruben Gallego,Kari Lake,70,37.0,"[116, 117]", Democratic Party: Ruben Gallego Republican Party: Kari Lake
+06,,,,California,Senate,,0.0,Adam Schiff,Steve Garvey,71,0.0,"[118, 119]", Democratic Party: Adam Schiff Republican Party: Steve Garvey
+09,,,,Connecticut,Senate,,4.0,Christopher S. Murphy (incumbent),Matthew Corey,72,4.0,"[120, 121]", Democratic Party: Christopher S. Murphy Republican Party: Matthew Corey
+10,,,,Delaware,Senate,,13.0,Lisa Blunt Rochester,Eric Hansen,73,13.0,"[122, 123]", Democratic Party: Lisa Blunt Rochester Republican Party: Eric Hansen
+12,,,,Florida,Senate,,32.0,Debbie Mucarsel-Powell,Rick Scott (incumbent),74,32.0,"[124, 125]", Democratic Party: Debbie Mucarsel-Powell Republican Party: Rick Scott (incumbent)
+15,,,,Hawaii,Senate,,4.0,Mazie K. Hirono (incumbent),Bob McDermott,75,4.0,"[126, 127]", Democratic Party: Mazie K. Hirono (incumbent) Republican Party: Bob McDermott
+18,,,,Indiana,Senate,,8.0,Valerie McCray,Jim Banks,76,8.0,"[128, 129]", Democratic Party: Valerie McCray Republican Party: Jim Banks
+23,,,,Maine,Senate,,5.0,,Demi Kouzounas,77,5.0,"[130, 131, 132]", Democratic Party: David Costello Republican Party: Demi Kouzounas Independent: Angus King (incumbent)
+24,,,,Maryland,Senate,,2.0,Angela Alsobrooks,Larry Hogan,78,2.0,"[133, 134]", Democratic Party: Angela Alsobrooks Republican Party: Larry Hogan
+25,,,,Massachusetts,Senate,,1.0,Elizabeth Warren (incumbent),John Deaton,79,1.0,"[135, 136]", Democratic Party: Elizabeth Warren (incumbent) Republican Party: John Deaton
+26,,,,Michigan,Senate,,18.0,Elissa Slotkin,Mike Rogers,80,18.0,"[137, 138]", Democratic Party: Elissa Slotkin Republican Party: Mike Rogers
+27,,,,Minnesota,Senate,,2.0,Amy Klobuchar (incumbent),Royce White,81,2.0,"[139, 140]", Democratic Party: Amy Klobuchar (incumbent) Republican Party: Royce White
+28,,,,Mississippi,Senate,,9.0,Ty Pinkins,Roger Wicker (incumbent),82,9.0,"[141, 142]", Democratic Party: Ty Pinkins Republican Party: Roger Wicker (incumbent)
+29,,,,Missouri,Senate,,7.0,Lucas Kunce,Josh Hawley (incumbent),83,7.0,"[143, 144]", Democratic Party: Lucas Kunce Republican Party: Josh Hawley (incumbent)
+30,,,,Montana,Senate,,49.0,Jon Tester (incumbent),Tim Sheehy,84,49.0,"[145, 146]", Democratic Party: Jon Tester (incumbent) Republican Party: Tim Sheehy
+31,,,,Nebraska,Senate,,100.0,,Deb Fischer (incumbent),85,100.0,"[147, 148]", Independent: Dan Osborn Republican Party: Deb Fischer (incumbent)
+32,,,,Nevada,Senate,,52.0,Jacky Rosen (incumbent),Sam Brown,86,52.0,"[149, 150]", Democratic Party: Jacky Rosen (incumbent) Republican Party: Sam Brown
+34,,,,New Jersey,Senate,,5.0,Andy Kim,Curtis Bashaw,87,5.0,"[151, 152]", Democratic Party: Andrew Kim Republican Party: Curtis Bashaw
+35,,,,New Mexico,Senate,,11.0,Martin Heinrich (incumbent),Nella Domenici,88,11.0,"[153, 154]", Democratic Party: Martin Heinrich (incumbent) Republican Party: Nella Domenici
+36,,,,New York,Senate,,1.0,Kirsten Gillibrand (incumbent),Mike Sapraicone,89,1.0,"[155, 156]", Democratic Party: Kirsten Gillibrand (incumbent) Republican Party: Mike Sapraicone
+38,,,,North Dakota,Senate,,10.0,Katrina Christiansen,Kevin Cramer (incumbent),90,10.0,"[157, 158]", Democratic Party: Katrina Christiansen Republican Party: Kevin Cramer (incumbent)
+39,,,,Ohio,Senate,,15.0,Sherrod Brown (incumbent),Bernie Moreno,91,15.0,"[159, 160]", Democratic Party: Sherrod Brown (incumbent) Republican Party: Bernie Moreno
+42,,,,Pennsylvania,Senate,,4.0,Bob Casey Jr. (incumbent),David McCormick,92,4.0,"[161, 162]", Democratic Party: Bob Casey Jr. (incumbent) Republican Party: David McCormick
+44,,,,Rhode Island,Senate,,13.0,Sheldon Whitehouse (incumbent),Patricia Morgan,93,13.0,"[163, 164]", Democratic Party: Sheldon Whitehouse (incumbent) Republican Party: Patricia Morgan
+47,,,,Tennessee,Senate,,3.0,Gloria Johnson,Marsha Blackburn (incumbent),94,3.0,"[165, 166]", Democratic Party: Gloria Johnson Republican Party: Marsha Blackburn (incumbent)
+48,,,,Texas,Senate,,24.0,Colin Allred,Ted Cruz (incumbent),95,24.0,"[167, 168]", Democratic Party: Colin Allred Republican Party: Ted Cruz (incumbent)
+49,,,,Utah,Senate,,4.0,Caroline Gleich,John Curtis,96,4.0,"[169, 170]", Democratic Party: Caroline Gleich Republican Party: John Curtis
+50,,,,Vermont,Senate,,7.0,Bernie Sanders (incumbent),Gerald Malloy,97,7.0,"[171, 172]", Democratic Party: Bernie Sanders (incumbent) Republican Party: Gerald Malloy
+51,,,,Virginia,Senate,,4.0,Tim Kaine (incumbent),Hung Cao,98,4.0,"[173, 174]", Democratic Party: Tim Kaine (incumbent) Republican Party: Hung Cao
+53,,,,Washington,Senate,,3.0,Maria Cantwell (incumbent),Raul Garcia,99,3.0,"[175, 176]", Democratic Party: Maria Cantwell (incumbent) Republican Party: Raul Garcia
+54,,,,West Virginia,Senate,,4.0,Glenn Elliott,Jim Justice,100,4.0,"[177, 178]", Democratic Party: Glenn Elliott Republican Party: Jim Justice
+55,,,,Wisconsin,Senate,,14.0,Tammy Baldwin (incumbent),Eric Hovde,101,14.0,"[179, 180]", Democratic Party: Tammy Baldwin (incumbent) Republican Party: Eric Hovde
+56,,,,Wyoming,Senate,,10.0,Scott Morrow,John Barrasso (incumbent),102,10.0,"[181, 182]", Democratic Party: Scott Morrow Republican Party: John Barrasso (incumbent)
+01,02,,,Alabama,House,Congressional District 2,43.0,Shomari Figures,Caroleene Dobson,103,43.0,"[183, 184]", Democratic Party: Shomari Figures Republican Party: Caroleene Dobson
+02,at-large,,,Alaska,House,Congressional District (at Large),33.0,Mary Peltola (incumbent),Nicholas Begich,104,33.0,"[185, 186]", Democratic Party: Mary Peltola (incumbent) Republican Party: Nicholas Begich
+04,01,,,Arizona,House,Congressional District 1,83.0,Amish Shah,David Schweikert (incumbent),105,83.0,"[187, 188]", Democratic Party: Amish Shah Republican Party: David Schweikert (incumbent)
+04,06,,,Arizona,House,Congressional District 6,80.0,Kirsten Engel,Juan Ciscomani (incumbent),106,80.0,"[189, 190]", Democratic Party: Kirsten Engel Republican Party: Juan Ciscomani (incumbent)
+06,47,,,California,House,Congressional District 47,72.0,Dave Min,Scott Baugh,107,72.0,"[191, 192]", Democratic Party: Dave Min Republican Party: Scott Baugh
+06,45,,,California,House,Congressional District 45,100.0,Derek Tran,Michelle Steel (incumbent),108,100.0,"[193, 194]", Democratic Party: Derek Tran Republican Party: Michelle Steel (incumbent)
+06,09,,,California,House,Congressional District 9,33.0,Josh Harder (incumbent),Kevin Lincoln II,109,33.0,"[195, 196]", Democratic Party: Josh Harder (incumbent) Republican Party: Kevin Lincoln II
+06,49,,,California,House,Congressional District 49,68.0,Mike Levin (incumbent),Matt Gunderson,110,68.0,"[197, 198]", Democratic Party: Mike Levin (incumbent) Republican Party: Matt Gunderson
+06,03,,,California,House,Congressional District 3,36.0,Jessica Morse,Kevin Kiley (incumbent),111,36.0,"[199, 200]", Democratic Party: Jessica Morse Republican Party: Kevin Kiley (incumbent)
+06,40,,,California,House,Congressional District 40,26.0,Joe Kerr,Young Kim (incumbent),112,26.0,"[201, 202]", Democratic Party: Joe Kerr Republican Party: Young Kim (incumbent)
+06,13,,,California,House,Congressional District 13,76.0,Adam Gray,John Duarte (incumbent),113,76.0,"[203, 204]", Democratic Party: Adam Gray Republican Party: John Duarte (incumbent)
+06,22,,,California,House,Congressional District 22,74.0,Rudy Salas,David G. Valadao (incumbent),114,74.0,"[205, 206]", Democratic Party: Rudy Salas Republican Party: David G. Valadao (incumbent)
+06,27,,,California,House,Congressional District 27,99.0,George Whitesides,Mike Garcia (incumbent),115,99.0,"[207, 208]", Democratic Party: George Whitesides Republican Party: Mike Garcia (incumbent)
+06,41,,,California,House,Congressional District 41,52.0,Will Rollins,Ken Calvert (incumbent),116,52.0,"[209, 210]", Democratic Party: Will Rollins Republican Party: Ken Calvert (incumbent)
+08,03,,,Colorado,House,Congressional District 3,57.0,Adam Frisch,Jeff Hurd,117,57.0,"[211, 212]", Democratic Party: Adam Frisch Republican Party: Jeff Hurd
+08,08,,,Colorado,House,Congressional District 8,100.0,Yadira Caraveo (incumbent),Gabe Evans,118,100.0,"[213, 214]", Democratic Party: Yadira Caraveo (incumbent) Republican Party: Gabe Evans
+09,05,,,Connecticut,House,Congressional District 5,87.0,Jahana Hayes (incumbent),George Logan,119,87.0,"[215, 216]", Democratic Party: Jahana Hayes (incumbent) Republican Party: George Logan
+12,09,,,Florida,House,Congressional District 9,18.0,Darren Soto (incumbent),Thomas Chalifoux,120,18.0,"[217, 218]", Democratic Party: Darren Soto (incumbent) Republican Party: Thomas Chalifoux
+12,23,,,Florida,House,Congressional District 23,35.0,Jared Evan Moskowitz (incumbent),Joe Kaufman,121,35.0,"[219, 220]", Democratic Party: Jared Evan Moskowitz (incumbent) Republican Party: Joe Kaufman
+12,13,,,Florida,House,Congressional District 13,34.0,Whitney Fox,Anna Paulina Luna (incumbent),122,34.0,"[221, 222]", Democratic Party: Whitney Fox Republican Party: Anna Paulina Luna (incumbent)
+17,17,,,Illinois,House,Congressional District 17,69.0,Eric Sorenson (incumbent),Joseph G. McGraw,123,69.0,"[223, 224]", Democratic Party: Eric Sorensen (incumbent) Republican Party: Joseph G. McGraw
+18,01,,,Indiana,House,Congressional District 1,29.0,Frank Mrvan (incumbent),Randell Niemeyer,124,29.0,"[225, 226]", Democratic Party: Frank Mrvan (incumbent) Republican Party: Randell Niemeyer
+19,03,,,Iowa,House,Congressional District 3,87.0,Lanon Baccam,Zach Nunn (incumbent),125,87.0,"[227, 228]", Democratic Party: Lanon Baccam Republican Party: Zach Nunn (incumbent)
+19,01,,,Iowa,House,Congressional District 1,55.0,Christina Bohannan,Mariannette Millter-Meeks (incumbent),126,55.0,"[229, 230]", Democratic Party: Christina Bohannan Republican Party: Mariannette Miller-Meeks (incumbent)
+20,03,,,Kansas,House,Congressional District 3,63.0,Sharice Davids (incumbent),Prasanth Reddy,127,63.0,"[231, 232]", Democratic Party: Sharice Davids (incumbent) Republican Party: Prasanth Reddy
+23,02,,,Maine,House,Congressional District 2,62.0,Jared Golden (incumbent),Austin Theriault,128,62.0,"[233, 234]", Democratic Party: Jared Golden (incumbent) Republican Party: Austin Theriault
+24,06,,,Maryland,House,Congressional District 6,72.0,April McClain-Delaney,Neil Parrott,129,72.0,"[235, 236]", Democratic Party: April McClain-Delaney Republican Party: Neil Parrott
+26,10,,,Michigan,House,Congressional District 10,100.0,Carl Marlinga,John James (incumbent),130,100.0,"[237, 238]", Democratic Party: Carl Marlinga Republican Party: John James (incumbent)
+26,03,,,Michigan,House,Congressional District 3,44.0,Hillary Scholten (incumbent),Paul Hudson,131,44.0,"[239, 240]", Democratic Party: Hillary Scholten (incumbent) Republican Party: Paul Hudson
+26,07,,,Michigan,House,Congressional District 7,89.0,Curtis Hertel,Tom Barrett,132,89.0,"[241, 242]", Democratic Party: Curtis Hertel Republican Party: Tom Barrett
+26,08,,,Michigan,House,Congressional District 8,50.0,Kristen McDonald Rivet,Paul Junge,133,50.0,"[243, 244]", Democratic Party: Kristen McDonald Rivet Republican Party: Paul Junge
+27,02,,,Minnesota,House,Congressional District 2,68.0,Angie Craig (incumbent),Joe Teirab,134,68.0,"[245, 246]", Democratic Party: Angie Craig (incumbent) Republican Party: Joe Teirab
+30,01,,,Montana,House,Congressional District 1,69.0,Monica Tranel,Ryan K. Zinke (incumbent),135,69.0,"[247, 248]", Democratic Party: Monica Tranel Republican Party: Ryan K. Zinke (incumbent)
+31,02,,,Nebraska,House,Congressional District 2,76.0,Tony Vargas,Don Bacon (incumbent),136,76.0,"[249, 250]", Democratic Party: Tony Vargas Republican Party: Don Bacon (incumbent)
+32,03,,,Nevada,House,Congressional District 3,64.0,Susie Lee (incumbent),Drew Johnson,137,64.0,"[251, 252]", Democratic Party: Susie Lee (incumbent) Republican Party: Drew Johnson
+32,01,,,Nevada,House,Congressional District 1,46.0,Dina Titus (incumbent),Mark Robertson,138,46.0,"[253, 254]", Democratic Party: Dina Titus (incumbent) Republican Party: Mark Robertson
+32,04,,,Nevada,House,Congressional District 4,49.0,Steven Horsford (incumbent),John J. Lee,139,49.0,"[255, 256]", Democratic Party: Steven Horsford (incumbent) Republican Party: John J. Lee
+33,01,,,New Hampshire,House,Congressional District 1,96.0,Chris Pappas (incumbent),Russell Prescott,140,96.0,"[257, 258]", Democratic Party: Chris Pappas (incumbent) Republican Party: Russell Prescott
+33,02,,,New Hampshire,House,Congressional District 2,87.0,Maggie Goodlander,Lily Williams,141,87.0,"[259, 260]", Democratic Party: Maggie Goodlander Republican Party: Lily Williams
+34,07,,,New Jersey,House,Congressional District 7,65.0,Susan Altman,Thomas Kean Jr. (incumbent),142,65.0,"[261, 262]", Democratic Party: Susan Altman Republican Party: Thomas Kean Jr. (incumbent)
+35,02,,,New Mexico,House,Congressional District 2,79.0,Gabriel Vasquez (incumbent),Yvette Herrell,143,79.0,"[263, 264]", Democratic Party: Gabriel Vasquez (incumbent) Republican Party: Yvette Herrell
+36,18,,,New York,House,Congressional District 18,90.0,Pat Ryan (incumbent),Alison Esposito,144,90.0,"[265, 266]", Democratic Party: Pat Ryan (incumbent) Republican Party: Alison Esposito
+36,22,,,New York,House,Congressional District 22,91.0,John Mannion,Brandon Williams (incumbent),145,91.0,"[267, 268]", Democratic Party: John Mannion Republican Party: Brandon Williams (incumbent)
+36,03,,,New York,House,Congressional District 3,64.0,Tom Suozzi (incumbent),Michael LiPetri Jr.,146,64.0,"[269, 270]", Democratic Party: Tom Suozzi (incumbent) Republican Party: Michael LiPetri Jr.
+36,01,,,New York,House,Congressional District 1,25.0,John Avlon,Nicholas J. LaLota (incumbent),147,25.0,"[271, 272]", Democratic Party: John Avlon Republican Party: Nicholas J. LaLota (incumbent)
+36,04,,,New York,House,Congressional District 4,98.0,Laura Gillen,Anthony D'Esposito (incumbent),148,98.0,"[273, 274]", Democratic Party: Laura Gillen Republican Party: Anthony D'Esposito (incumbent)
+36,17,,,New York,House,Congressional District 17,91.0,Mondaire Jones,Michael Lawler (incumbent),149,91.0,"[275, 276]", Democratic Party: Mondaire Jones Republican Party: Michael Lawler (incumbent)
+36,19,,,New York,House,Congressional District 19,100.0,Josh Riley,Marcus Molinaro (incumbent),150,100.0,"[277, 278]", Democratic Party: Josh Riley Republican Party: Marcus Molinaro (incumbent)
+37,01,,,North Carolina,House,Congressional District 1,84.0,Donald Davis (incumbent),Laurie Buckhout,151,84.0,"[279, 280]", Democratic Party: Donald Davis (incumbent) Republican Party: Laurie Buckhout
+39,01,,,Ohio,House,Congressional District 1,86.0,Greg Landsman (incumbent),Orlando Sonza,152,86.0,"[281, 282]", Democratic Party: Greg Landsman (incumbent) Republican Party: Orlando Sonza
+39,09,,,Ohio,House,Congressional District 9,56.0,Marcy Kaptur (incumbent),Derek Merrin,153,56.0,"[283, 284]", Democratic Party: Marcy Kaptur (incumbent) Republican Party: Derek Merrin
+39,13,,,Ohio,House,Congressional District 13,79.0,Emilia Sykes (incumbent),Kevin Coughlin,154,79.0,"[285, 286]", Democratic Party: Emilia Sykes (incumbent) Republican Party: Kevin Coughlin
+41,06,,,Oregon,House,Congressional District 6,62.0,Andrea Salinas (incumbent),Mike Erickson,155,62.0,"[287, 288]", Democratic Party: Andrea Salinas (incumbent) Republican Party: Mike Erickson
+41,04,,,Oregon,House,Congressional District 4,34.0,Val Hoyle (incumbent),Monique DeSpain,156,34.0,"[289, 290]", Democratic Party: Val Hoyle (incumbent) Republican Party: Monique DeSpain
+41,05,,,Oregon,House,Congressional District 5,98.0,Janelle Bynum,Lori Chavez-DeRemer (incumbent),157,98.0,"[291, 292]", Democratic Party: Janelle Bynum Republican Party: Lori Chavez-DeRemer (incumbent)
+42,17,,,Pennsylvania,House,Congressional District 17,43.0,Chris Deluzio (incumbent),Rob Mercuri,158,43.0,"[293, 294]", Democratic Party: Chris Deluzio (incumbent) Republican Party: Rob Mercuri
+42,10,,,Pennsylvania,House,Congressional District 10,48.0,Janelle Stelson,Scott Perry (incumbent),159,48.0,"[295, 296]", Democratic Party: Janelle Stelson Republican Party: Scott Perry (incumbent)
+42,01,,,Pennsylvania,House,Congressional District 1,83.0,Ashley Ehasz,Brian Fitzpatrick (incumbent),160,83.0,"[297, 298]", Democratic Party: Ashley Ehasz Republican Party: Brian Fitzpatrick (incumbent)
+42,07,,,Pennsylvania,House,Congressional District 7,94.0,Susan Wild (incumbent),Ryan Mackenzie,161,94.0,"[299, 300]", Democratic Party: Susan Wild (incumbent) Republican Party: Ryan Mackenzie
+42,08,,,Pennsylvania,House,Congressional District 8,96.0,Matt Cartwright (incumbent),Rob Bresnahan Jr.,162,96.0,"[301, 302]", Democratic Party: Matt Cartwright (incumbent) Republican Party: Rob Bresnahan Jr. 
+48,28,,,Texas,House,Congressional District 28,21.0,Henry Cuellar (incumbent),Jay Furman,163,21.0,"[303, 304]", Democratic Party: Henry Cuellar (incumbent) Republican Party: Jay Furman
+48,34,,,Texas,House,Congressional District 34,12.0,Vicente Gonzalez Jr. (incumbent),Mayra Flores,164,12.0,"[305, 306]", Democratic Party: Vicente Gonzalez Jr. (incumbent) Republican Party: Mayra Flores
+48,15,,,Texas,House,Congressional District 15,82.0,Michelle Vallejo,Monica De La Cruz (incumbent),165,82.0,"[307, 308]", Democratic Party: Michelle Vallejo Republican Party: Monica De La Cruz (incumbent)
+51,07,,,Virginia,House,Congressional District 7,81.0,Eugene Vindman,Derrick Anderson,166,81.0,"[309, 310]", Democratic Party: Eugene Vindman Republican Party: Derrick Anderson
+51,02,,,Virginia,House,Congressional District 2,78.0,Missy Cotter Smasal,Jennifer Kiggans (incumbent),167,78.0,"[311, 312]", Democratic Party: Missy Cotter Smasal Republican Party: Jennifer Kiggans (incumbent)
+53,08,,,Washington,House,Congressional District 8,82.0,Kim Schrier (incumbent),Carmen Goers,168,82.0,"[313, 314]", Democratic Party: Kim Schrier (incumbent) Republican Party: Carmen Goers
+53,03,,,Washington,House,Congressional District 3,80.0,Marie Gluesenkamp Pérez (incumbent),Joe Kent,169,80.0,"[315, 316]", Democratic Party: Marie Gluesenkamp Pérez (incumbent) Republican Party: Joe Kent
+55,03,,,Wisconsin,House,Congressional District 3,80.0,Rebecca Cooke,Derrick Van Orden (incumbent),170,80.0,"[317, 318]", Democratic Party: Rebecca Cooke Republican Party: Derrick Van Orden (incumbent)
+55,01,,,Wisconsin,House,Congressional District 1,61.0,Peter Barca,Bryan Steil (incumbent),171,61.0,"[319, 320]", Democratic Party: Peter Barca Republican Party: Bryan Steil (incumbent)
+33,,,,New Hampshire,Governor,,100.0,Joyce Craig,Kelly Ayotte,172,100.0,"[769, 770]", Democratic Party: Joyce Craig Republican Party: Kelly Ayotte
+37,,,,North Carolina,Governor,,100.0,Josh Stein,Mark K. Robinson,173,100.0,"[771, 772]", Democratic Party: Josh Stein Republican Party: Mark K. Robinson
+10,,,,Delaware,Governor,,10.0,Matt Meyer,Michael Ramone,174,10.0,"[773, 774]", Democratic Party: Matt Meyer Republican Party: Michael Ramone
+18,,,,Indiana,Governor,,10.0,Jennifer McCormick,Mike Braun,175,10.0,"[775, 776]", Democratic Party: Jennifer McCormick Republican Party: Mike Braun
+29,,,,Missouri,Governor,,10.0,Crystal Quade,Mike Kehoe,176,10.0,"[777, 778]", Democratic Party: Crystal Quade Republican Party: Mike Kehoe
+30,,,,Montana,Governor,,30.0,Ryan Busse,Greg Gianforte (incumbent),177,30.0,"[779, 780]", Democratic Party: Ryan Busse Republican Party: Greg Gianforte (incumbent)
+38,,,,North Dakota,Governor,,10.0,Merrill Piepkorn,Kelly Armstrong,178,10.0,"[781, 782]", Democratic Party: Merrill Piepkorn Republican Party: Kelly Armstrong
+49,,,,Utah,Governor,,10.0,Brian King,Spencer Cox (incumbent),179,10.0,"[783, 784]", Democratic Party: Brian King Republican Party: Spencer Cox (incumbent)
+50,,,,Vermont,Governor,,30.0,Esther Charlestin,Phil Scott (incumbent),180,30.0,"[785, 786]", Democratic Party: Esther Charlestin Republican Party: Phil Scott (incumbent)
+53,,,,Washington,Governor,,30.0,Bob Ferguson,Dave Reichert,181,30.0,"[787, 788]", Democratic Party: Bob Ferguson Republican Party: Dave Reichert
+54,,,,West Virginia,Governor,,10.0,Steve Williams,Patrick Morrisey,182,10.0,"[789, 790]", Democratic Party: Steve Williams Republican Party: Patrick Morrisey
+02,,00A,,Alaska,State Leg (Upper),State Senate District A,0.0,,,183,0.0,[],
+02,,00B,,Alaska,State Leg (Upper),State Senate District B,14.0,,,184,14.0,[],
+02,,00C,,Alaska,State Leg (Upper),State Senate District C,0.0,,,185,0.0,[],
+02,,00D,,Alaska,State Leg (Upper),State Senate District D,3.0,,,186,3.0,[],
+02,,00E,,Alaska,State Leg (Upper),State Senate District E,0.0,,,187,0.0,[],
+02,,00F,,Alaska,State Leg (Upper),State Senate District F,78.0,Janice Park,James Kaufman (incumbent),188,78.0,"[694, 695, 696]", Democratic Party: Janice Park Republican Party: James Kaufman (incumbent) Republican Party: Harold Borbridge
+02,,00G,,Alaska,State Leg (Upper),State Senate District G,0.0,,,189,0.0,[],
+02,,00H,,Alaska,State Leg (Upper),State Senate District H,100.0,Matt Claman (incumbent),Thomas McKay,190,100.0,"[697, 698, 699]", Democratic Party: Matt Claman (incumbent) Republican Party: Thomas McKay Republican Party: Liz Vazquez
+02,,00I,,Alaska,State Leg (Upper),State Senate District I,0.0,,,191,0.0,[],
+02,,00J,,Alaska,State Leg (Upper),State Senate District J,31.0,,,192,31.0,[],
+02,,00K,,Alaska,State Leg (Upper),State Senate District K,0.0,,,193,0.0,[],
+02,,00L,,Alaska,State Leg (Upper),State Senate District L,8.0,,,194,8.0,[],
+02,,00M,,Alaska,State Leg (Upper),State Senate District M,0.0,,,195,0.0,[],
+02,,00N,,Alaska,State Leg (Upper),State Senate District N,2.0,,,196,2.0,[],
+02,,00O,,Alaska,State Leg (Upper),State Senate District O,0.0,,,197,0.0,[],
+02,,00P,,Alaska,State Leg (Upper),State Senate District P,43.0,,,198,43.0,[],
+02,,00Q,,Alaska,State Leg (Upper),State Senate District Q,0.0,,,199,0.0,[],
+02,,00R,,Alaska,State Leg (Upper),State Senate District R,98.0,Savannah Fletcher (Undeclared),Mike Cronk,200,98.0,"[700, 701, 702]", Democratic Party: Savannah Fletcher (Undeclared) Republican Party: Mike Cronk Republican Party: James Squyres
+02,,00S,,Alaska,State Leg (Upper),State Senate District S,0.0,,,201,0.0,[],
+02,,00T,,Alaska,State Leg (Upper),State Senate District T,33.0,,,202,33.0,[],
+04,,001,,Arizona,State Leg (Upper),State Senate District 1,9.0,,,203,9.0,[],
+04,,002,,Arizona,State Leg (Upper),State Senate District 2,86.0,Judy Schwiebert,Shawnna Bolick,204,86.0,"[703, 704]", Democratic Party: Judy Schwiebert Republican Party: Shawnna Bolick
+04,,003,,Arizona,State Leg (Upper),State Senate District 3,11.0,,,205,11.0,[],
+04,,004,,Arizona,State Leg (Upper),State Senate District 4,90.0,Christine Marsh (incumbent),Carine Werner,206,90.0,"[705, 706]", Democratic Party: Christine Marsh (incumbent) Republican Party: Carine Werner
+04,,005,,Arizona,State Leg (Upper),State Senate District 5,5.0,,,207,5.0,[],
+04,,006,,Arizona,State Leg (Upper),State Senate District 6,7.0,,,208,7.0,[],
+04,,007,,Arizona,State Leg (Upper),State Senate District 7,13.0,,,209,13.0,[],
+04,,008,,Arizona,State Leg (Upper),State Senate District 8,12.0,,,210,12.0,[],
+04,,009,,Arizona,State Leg (Upper),State Senate District 9,100.0,Eva Burch (incumbent),Robert Scantlebury,211,100.0,"[707, 708]", Democratic Party: Eva Burch (incumbent) Republican Party: Robert Scantlebury
+04,,010,,Arizona,State Leg (Upper),State Senate District 10,14.0,,,212,14.0,[],
+04,,011,,Arizona,State Leg (Upper),State Senate District 11,2.0,,,213,2.0,[],
+04,,012,,Arizona,State Leg (Upper),State Senate District 12,38.0,,,214,38.0,[],
+04,,013,,Arizona,State Leg (Upper),State Senate District 13,99.0,Sharon Lee Winters,Javan Daniel Mesnard (incumbent),215,99.0,"[709, 710]", Democratic Party: Sharon Lee Winters Republican Party: Javan Daniel Mesnard (incumbent)
+04,,014,,Arizona,State Leg (Upper),State Senate District 14,23.0,,,216,23.0,[],
+04,,015,,Arizona,State Leg (Upper),State Senate District 15,9.0,,,217,9.0,[],
+04,,016,,Arizona,State Leg (Upper),State Senate District 16,82.0,Stacey Seaman,Thomas Shope (incumbent),218,82.0,"[711, 712]", Democratic Party: Stacey Seaman Republican Party: Thomas Shope (incumbent)
+04,,017,,Arizona,State Leg (Upper),State Senate District 17,61.0,John McLean,Vince Leach,219,61.0,"[713, 714]", Democratic Party: John McLean Republican Party: Vince Leach
+04,,018,,Arizona,State Leg (Upper),State Senate District 18,22.0,,,220,22.0,[],
+04,,019,,Arizona,State Leg (Upper),State Senate District 19,13.0,,,221,13.0,[],
+04,,020,,Arizona,State Leg (Upper),State Senate District 20,2.0,,,222,2.0,[],
+04,,021,,Arizona,State Leg (Upper),State Senate District 21,9.0,,,223,9.0,[],
+04,,022,,Arizona,State Leg (Upper),State Senate District 22,5.0,,,224,5.0,[],
+04,,023,,Arizona,State Leg (Upper),State Senate District 23,31.0,,,225,31.0,[],
+04,,024,,Arizona,State Leg (Upper),State Senate District 24,7.0,,,226,7.0,[],
+04,,025,,Arizona,State Leg (Upper),State Senate District 25,11.0,,,227,11.0,[],
+04,,026,,Arizona,State Leg (Upper),State Senate District 26,5.0,,,228,5.0,[],
+04,,027,,Arizona,State Leg (Upper),State Senate District 27,54.0,,,229,54.0,[],
+04,,028,,Arizona,State Leg (Upper),State Senate District 28,11.0,,,230,11.0,[],
+04,,029,,Arizona,State Leg (Upper),State Senate District 29,35.0,,,231,35.0,[],
+04,,030,,Arizona,State Leg (Upper),State Senate District 30,2.0,,,232,2.0,[],
+20,,001,,Kansas,State Leg (Upper),State Senate District 1,3.0,,,233,3.0,[],
+20,,002,,Kansas,State Leg (Upper),State Senate District 2,2.0,,,234,2.0,[],
+20,,003,,Kansas,State Leg (Upper),State Senate District 3,43.0,,,235,43.0,[],
+20,,004,,Kansas,State Leg (Upper),State Senate District 4,1.0,,,236,1.0,[],
+20,,005,,Kansas,State Leg (Upper),State Senate District 5,75.0,Jeff Pittman (incumbent),Jeff Klemp,237,75.0,"[715, 716]", Democratic Party: Jeff Pittman (incumbent) Republican Party: Jeff Klemp
+20,,006,,Kansas,State Leg (Upper),State Senate District 6,9.0,,,238,9.0,[],
+20,,007,,Kansas,State Leg (Upper),State Senate District 7,12.0,,,239,12.0,[],
+20,,008,,Kansas,State Leg (Upper),State Senate District 8,46.0,,,240,46.0,[],
+20,,009,,Kansas,State Leg (Upper),State Senate District 9,43.0,,,241,43.0,[],
+20,,010,,Kansas,State Leg (Upper),State Senate District 10,94.0,Andrew Mall,Mike Thompson (incumbent),242,94.0,"[717, 718]", Democratic Party: Andrew Mall Republican Party: Mike Thompson (incumbent)
+20,,011,,Kansas,State Leg (Upper),State Senate District 11,74.0,Karen Thurlow,Kellie Warren (incumbent),243,74.0,"[719, 720]", Democratic Party: Karen Thurlow Republican Party: Kellie Warren (incumbent)
+20,,012,,Kansas,State Leg (Upper),State Senate District 12,2.0,,,244,2.0,[],
+20,,013,,Kansas,State Leg (Upper),State Senate District 13,7.0,,,245,7.0,[],
+20,,014,,Kansas,State Leg (Upper),State Senate District 14,3.0,,,246,3.0,[],
+20,,015,,Kansas,State Leg (Upper),State Senate District 15,3.0,,,247,3.0,[],
+20,,016,,Kansas,State Leg (Upper),State Senate District 16,13.0,,,248,13.0,[],
+20,,017,,Kansas,State Leg (Upper),State Senate District 17,24.0,,,249,24.0,[],
+20,,018,,Kansas,State Leg (Upper),State Senate District 18,9.0,,,250,9.0,[],
+20,,019,,Kansas,State Leg (Upper),State Senate District 19,9.0,,,251,9.0,[],
+20,,020,,Kansas,State Leg (Upper),State Senate District 20,67.0,Candace Ayars,Brenda Dietrich (incumbent),252,67.0,"[721, 722]", Democratic Party: Candace Ayars Republican Party: Brenda Dietrich (incumbent)
+20,,021,,Kansas,State Leg (Upper),State Senate District 21,35.0,,,253,35.0,[],
+20,,022,,Kansas,State Leg (Upper),State Senate District 22,100.0,Usha Reddi (incumbent),Brad Starnes,254,100.0,"[723, 724]", Democratic Party: Usha Reddi (incumbent) Republican Party: Brad Starnes
+20,,023,,Kansas,State Leg (Upper),State Senate District 23,69.0,Stacey Knoell,Adam Thomas,255,69.0,"[725, 726]", Democratic Party: Stacey Knoell Republican Party: Adam Thomas
+20,,024,,Kansas,State Leg (Upper),State Senate District 24,5.0,,,256,5.0,[],
+20,,025,,Kansas,State Leg (Upper),State Senate District 25,43.0,,,257,43.0,[],
+20,,026,,Kansas,State Leg (Upper),State Senate District 26,4.0,,,258,4.0,[],
+20,,027,,Kansas,State Leg (Upper),State Senate District 27,15.0,,,259,15.0,[],
+20,,028,,Kansas,State Leg (Upper),State Senate District 28,36.0,,,260,36.0,[],
+20,,029,,Kansas,State Leg (Upper),State Senate District 29,3.0,,,261,3.0,[],
+20,,030,,Kansas,State Leg (Upper),State Senate District 30,30.0,,,262,30.0,[],
+20,,031,,Kansas,State Leg (Upper),State Senate District 31,12.0,,,263,12.0,[],
+20,,032,,Kansas,State Leg (Upper),State Senate District 32,4.0,,,264,4.0,[],
+20,,033,,Kansas,State Leg (Upper),State Senate District 33,1.0,,,265,1.0,[],
+20,,034,,Kansas,State Leg (Upper),State Senate District 34,4.0,,,266,4.0,[],
+20,,035,,Kansas,State Leg (Upper),State Senate District 35,61.0,Jason Anderson,TJ Rose,267,61.0,"[727, 728]", Democratic Party: Jason Anderson Republican Party: TJ Rose
+20,,036,,Kansas,State Leg (Upper),State Senate District 36,1.0,,,268,1.0,[],
+20,,037,,Kansas,State Leg (Upper),State Senate District 37,24.0,,,269,24.0,[],
+20,,038,,Kansas,State Leg (Upper),State Senate District 38,3.0,,,270,3.0,[],
+20,,039,,Kansas,State Leg (Upper),State Senate District 39,2.0,,,271,2.0,[],
+20,,040,,Kansas,State Leg (Upper),State Senate District 40,1.0,,,272,1.0,[],
+31,,001,,Nebraska,State Leg (Upper),State Senate District 1,3.0,,,273,3.0,"[1928, 1929]", Republican Party: Robert Hallstrom Unaffiliated: Dennis Schaardt
+31,,002,,Nebraska,State Leg (Upper),State Senate District 2,0.0,,,274,0.0,[],
+31,,003,,Nebraska,State Leg (Upper),State Senate District 3,31.0,,,275,31.0,"[1930, 1931]", Unaffiliated: Victor Rountree Unaffiliated: Felix Ungerman
+31,,004,,Nebraska,State Leg (Upper),State Senate District 4,0.0,,,276,0.0,[],
+31,,005,,Nebraska,State Leg (Upper),State Senate District 5,37.0,,,277,37.0,"[1932, 1933]", Republican Party: Gilbert Ayala Unaffiliated: Margo Juarez
+31,,006,,Nebraska,State Leg (Upper),State Senate District 6,0.0,,,278,0.0,[],
+31,,007,,Nebraska,State Leg (Upper),State Senate District 7,6.0,,,279,6.0,"[1934, 1935]", Democratic Party: Dunixi Guereca Unaffiliated: Tim Pendrell
+31,,008,,Nebraska,State Leg (Upper),State Senate District 8,0.0,,,280,0.0,[],
+31,,009,,Nebraska,State Leg (Upper),State Senate District 9,6.0,,,281,6.0,"[1936, 1937]", Unaffiliated: John Cavanaugh Republican Party: Julia Palzer
+31,,010,,Nebraska,State Leg (Upper),State Senate District 10,0.0,,,282,0.0,[],
+31,,011,,Nebraska,State Leg (Upper),State Senate District 11,1.0,,,283,1.0,"[1938, 1939]", Unaffiliated: Terrell McKinney Unaffiliated: Ernie Chambers
+31,,012,,Nebraska,State Leg (Upper),State Senate District 12,0.0,,,284,0.0,[],
+31,,013,,Nebraska,State Leg (Upper),State Senate District 13,15.0,,,285,15.0,"[1940, 1941]", Unaffiliated: Nick Batter Unaffiliated: Ashlei Spivey
+31,,014,,Nebraska,State Leg (Upper),State Senate District 14,0.0,,,286,0.0,[],
+31,,015,,Nebraska,State Leg (Upper),State Senate District 15,5.0,,,287,5.0,"[1942, 1943]", Republican Party: Roxie Kracl Republican Party: Dave Wordekemper
+31,,016,,Nebraska,State Leg (Upper),State Senate District 16,0.0,,,288,0.0,[],
+31,,017,,Nebraska,State Leg (Upper),State Senate District 17,9.0,,,289,9.0,"[1944, 1945]", Republican Party: Mike Albrecht Republican Party: Glen Meyer
+31,,018,,Nebraska,State Leg (Upper),State Senate District 18,0.0,,,290,0.0,[],
+31,,019,,Nebraska,State Leg (Upper),State Senate District 19,1.0,,,291,1.0,"[1946, 1947]", Republican Party: Rob Dover Republican Party: Jeanne Reigle
+31,,020,,Nebraska,State Leg (Upper),State Senate District 20,0.0,,,292,0.0,[],
+31,,021,,Nebraska,State Leg (Upper),State Senate District 21,42.0,,,293,42.0,"[1948, 1949]", Unaffiliated: Beau Ballard Unaffiliated: Seth Derner
+31,,022,,Nebraska,State Leg (Upper),State Senate District 22,0.0,,,294,0.0,[],
+31,,023,,Nebraska,State Leg (Upper),State Senate District 23,3.0,,,295,3.0,"[1950, 1951]", Republican Party: Dennis Fujan Republican Party: Jared Storm
+31,,024,,Nebraska,State Leg (Upper),State Senate District 24,0.0,,,296,0.0,[],
+31,,025,,Nebraska,State Leg (Upper),State Senate District 25,46.0,,,297,46.0,"[1952, 1953]", Republican Party: Carolyn Bosn Unaffiliated: Nicki Behmer-Popp
+31,,026,,Nebraska,State Leg (Upper),State Senate District 26,0.0,,,298,0.0,[],
+31,,027,,Nebraska,State Leg (Upper),State Senate District 27,100.0,Jason Prokop (unaffiliated),Dawn Liphardt (unaffiliated),299,100.0,"[729, 730, 1954, 1955]", Unaffiliated: Dawn Liphardt Unaffiliated: Jason Prokop Unaffiliated: Dawn Liphardt Unaffiliated: Jason Prokop
+31,,028,,Nebraska,State Leg (Upper),State Senate District 28,0.0,,,300,0.0,[],
+31,,029,,Nebraska,State Leg (Upper),State Senate District 29,28.0,,,301,28.0,[1956], Democratic Party: Eliot Bostar
+31,,030,,Nebraska,State Leg (Upper),State Senate District 30,0.0,,,302,0.0,[],
+31,,031,,Nebraska,State Leg (Upper),State Senate District 31,23.0,,,303,23.0,"[1957, 1958]", Republican Party: Kathleen Kauth Democratic Party: Mary Ann Folchert
+31,,032,,Nebraska,State Leg (Upper),State Senate District 32,0.0,,,304,0.0,[],
+31,,033,,Nebraska,State Leg (Upper),State Senate District 33,2.0,,,305,2.0,"[1959, 1960]", Republican Party: Dan Lonowski Unaffiliated: Michelle Smith
+31,,034,,Nebraska,State Leg (Upper),State Senate District 34,0.0,,,306,0.0,[],
+31,,035,,Nebraska,State Leg (Upper),State Senate District 35,13.0,,,307,13.0,"[1961, 1962]", Republican Party: Raymond Aguilar Democratic Party: Dan Quick
+31,,036,,Nebraska,State Leg (Upper),State Senate District 36,0.0,,,308,0.0,[],
+31,,037,,Nebraska,State Leg (Upper),State Senate District 37,4.0,,,309,4.0,"[1963, 1964]", Republican Party: Stanley Clouse Republican Party: Lana Peister
+31,,038,,Nebraska,State Leg (Upper),State Senate District 38,0.0,,,310,0.0,[],
+31,,039,,Nebraska,State Leg (Upper),State Senate District 39,5.0,,,311,5.0,"[1965, 1966]", Unaffiliated: Allison Heimes Republican Party: Tony Sorrentino
+31,,040,,Nebraska,State Leg (Upper),State Senate District 40,0.0,,,312,0.0,[],
+31,,041,,Nebraska,State Leg (Upper),State Senate District 41,1.0,,,313,1.0,"[1967, 1968]", Republican Party: Ethan Clark Republican Party: Daniel McKeon
+31,,042,,Nebraska,State Leg (Upper),State Senate District 42,0.0,,,314,0.0,[],
+31,,043,,Nebraska,State Leg (Upper),State Senate District 43,1.0,,,315,1.0,"[1969, 1970]", Republican Party: Tanya Storer Republican Party: Tony Tangwall
+31,,044,,Nebraska,State Leg (Upper),State Senate District 44,0.0,,,316,0.0,[],
+31,,045,,Nebraska,State Leg (Upper),State Senate District 45,31.0,,,317,31.0,"[1971, 1972]", Republican Party: Rita Sanders Unaffiliated: Sarah Centineo
+31,,046,,Nebraska,State Leg (Upper),State Senate District 46,0.0,,,318,0.0,[],
+31,,047,,Nebraska,State Leg (Upper),State Senate District 47,1.0,,,319,1.0,"[1973, 1974]", Unaffiliated: Larry Bolinger Republican Party: Paul Strommen
+31,,048,,Nebraska,State Leg (Upper),State Senate District 48,0.0,,,320,0.0,[],
+31,,049,,Nebraska,State Leg (Upper),State Senate District 49,19.0,,,321,19.0,"[1975, 1976]", Democratic Party: Jen Day Unaffiliated: Bob Andersen
+33,,001,,New Hampshire,State Leg (Upper),State Senate District 1,99.0,Rusty Talbot,David Rochefort,322,99.0,"[731, 732, 1977]", Democratic Party: Rusty Talbot Republican Party: David Rochefort waiting on primary: waiting on primary
+33,,002,,New Hampshire,State Leg (Upper),State Senate District 2,98.0,Carlos Cardona,Timothy Lang Sr. (incumbent),323,98.0,"[733, 734, 1978]", Democratic Party: Carlos Cardona Republican Party: Timothy Lang Sr. (incumbent) waiting on primary: waiting on primary
+33,,003,,New Hampshire,State Leg (Upper),State Senate District 3,100.0,William Marsh,Mark McConkey,324,100.0,"[735, 736, 1979]", Democratic Party: William Marsh Republican Party: Mark McConkey waiting on primary: waiting on primary
+33,,004,,New Hampshire,State Leg (Upper),State Senate District 4,16.0,,,325,16.0,[1980], waiting on primary: waiting on primary
+33,,005,,New Hampshire,State Leg (Upper),State Senate District 5,3.0,,,326,3.0,[1981], waiting on primary: waiting on primary
+33,,006,,New Hampshire,State Leg (Upper),State Senate District 6,75.0,John Ceskavich,James Gray (incumbent),327,75.0,"[737, 738, 1982]", Democratic Party: John Ceskavich Republican Party: James Gray (incumbent) waiting on primary: waiting on primary
+33,,007,,New Hampshire,State Leg (Upper),State Senate District 7,99.0,Stu Green,Dan Innis (incumbent),328,99.0,"[739, 740, 1983]", Democratic Party: Stu Green Republican Party: Dan Innis (incumbent) waiting on primary: waiting on primary
+33,,008,,New Hampshire,State Leg (Upper),State Senate District 8,88.0,David Trumble,Ruth Ward (incumbent),329,88.0,"[741, 742, 1984]", Democratic Party: David Trumble Republican Party: Ruth Ward (incumbent) waiting on primary: waiting on primary
+33,,009,,New Hampshire,State Leg (Upper),State Senate District 9,98.0,Matthew McLaughlin,Denise Ricciardi (incumbent),330,98.0,"[743, 744, 1985]", Democratic Party: Matthew McLaughlin Republican Party: Denise Ricciardi (incumbent) waiting on primary: waiting on primary
+33,,010,,New Hampshire,State Leg (Upper),State Senate District 10,7.0,,,331,7.0,[1986], waiting on primary: waiting on primary
+33,,011,,New Hampshire,State Leg (Upper),State Senate District 11,83.0,Shannon Chandley (incumbent),Tim McGough,332,83.0,"[745, 746, 1987]", Democratic Party: Shannon Chandley (incumbent) Republican Party: Tim McGough waiting on primary: waiting on primary
+33,,012,,New Hampshire,State Leg (Upper),State Senate District 12,88.0,Ben Ming,Kevin Avard (incumbent),333,88.0,"[747, 748, 1988]", Democratic Party: Ben Ming Republican Party: Kevin Avard (incumbent) waiting on primary: waiting on primary
+33,,013,,New Hampshire,State Leg (Upper),State Senate District 13,18.0,,,334,18.0,[1989], waiting on primary: waiting on primary
+33,,014,,New Hampshire,State Leg (Upper),State Senate District 14,74.0,,,335,74.0,[1990], waiting on primary: waiting on primary
+33,,015,,New Hampshire,State Leg (Upper),State Senate District 15,8.0,,,336,8.0,[1991], waiting on primary: waiting on primary
+33,,016,,New Hampshire,State Leg (Upper),State Senate District 16,92.0,,,337,92.0,[1992], waiting on primary: waiting on primary
+33,,017,,New Hampshire,State Leg (Upper),State Senate District 17,78.0,Kelly Roberts,Howard Pearl (incumbent),338,78.0,"[749, 750, 1993]", Democratic Party: Kelly Roberts Republican Party: Howard Pearl (incumbent) waiting on primary: waiting on primary
+33,,018,,New Hampshire,State Leg (Upper),State Senate District 18,91.0,Donna Soucy (incumbent),Victoria Sullivan,339,91.0,"[751, 752, 1994]", Democratic Party: Donna Soucy (incumbent) Republican Party: Victoria Sullivan waiting on primary: waiting on primary
+33,,019,,New Hampshire,State Leg (Upper),State Senate District 19,68.0,,,340,68.0,[1995], waiting on primary: waiting on primary
+33,,020,,New Hampshire,State Leg (Upper),State Senate District 20,29.0,,,341,29.0,[1996], waiting on primary: waiting on primary
+33,,021,,New Hampshire,State Leg (Upper),State Senate District 21,4.0,,,342,4.0,[1997], waiting on primary: waiting on primary
+33,,022,,New Hampshire,State Leg (Upper),State Senate District 22,47.0,,,343,47.0,[1998], waiting on primary: waiting on primary
+33,,023,,New Hampshire,State Leg (Upper),State Senate District 23,57.0,,,344,57.0,[1999], waiting on primary: waiting on primary
+33,,024,,New Hampshire,State Leg (Upper),State Senate District 24,29.0,,,345,29.0,[2000], waiting on primary: waiting on primary
+42,,001,,Pennsylvania,State Leg (Upper),State Senate District 1,1.0,,,346,1.0,[2001], Democratic Party: Nikil Saval
+42,,002,,Pennsylvania,State Leg (Upper),State Senate District 2,0.0,,,347,0.0,[],
+42,,003,,Pennsylvania,State Leg (Upper),State Senate District 3,0.0,,,348,0.0,[2002], Democratic Party: Sharif Street
+42,,004,,Pennsylvania,State Leg (Upper),State Senate District 4,0.0,,,349,0.0,[],
+42,,005,,Pennsylvania,State Leg (Upper),State Senate District 5,33.0,,,350,33.0,"[2003, 2004]", Democratic Party: Jimmy Dillon Republican Party: Joe Picozzi
+42,,006,,Pennsylvania,State Leg (Upper),State Senate District 6,0.0,,,351,0.0,[],
+42,,007,,Pennsylvania,State Leg (Upper),State Senate District 7,1.0,,,352,1.0,[2005], Democratic Party: Vincent Hughes
+42,,008,,Pennsylvania,State Leg (Upper),State Senate District 8,0.0,,,353,0.0,[],
+42,,009,,Pennsylvania,State Leg (Upper),State Senate District 9,29.0,,,354,29.0,"[2006, 2007]", Democratic Party: John Kane Republican Party: Mike Woodin
+42,,010,,Pennsylvania,State Leg (Upper),State Senate District 10,0.0,,,355,0.0,[],
+42,,011,,Pennsylvania,State Leg (Upper),State Senate District 11,46.0,,,356,46.0,"[2008, 2009]", Democratic Party: Judy Schwank Republican Party: Lisha Rowe
+42,,012,,Pennsylvania,State Leg (Upper),State Senate District 12,0.0,,,357,0.0,[],
+42,,013,,Pennsylvania,State Leg (Upper),State Senate District 13,59.0,Trex Proffitt,Scott Martin (incumbent),358,59.0,"[753, 754, 2010, 2011]", Democratic Party: Trex Proffitt Republican Party: Scott Martin (incumbent) Democratic Party: Trex Proffitt Republican Party: Scott Martin
+42,,014,,Pennsylvania,State Leg (Upper),State Senate District 14,0.0,,,359,0.0,[],
+42,,015,,Pennsylvania,State Leg (Upper),State Senate District 15,36.0,,,360,36.0,"[2012, 2013]", Democratic Party: Patty Kim Republican Party: Nick DiFrancesco
+42,,016,,Pennsylvania,State Leg (Upper),State Senate District 16,0.0,,,361,0.0,[],
+42,,017,,Pennsylvania,State Leg (Upper),State Senate District 17,4.0,,,362,4.0,"[2014, 2015]", Democratic Party: Amanda Cappalletti Republican Party: Greg Harris
+42,,018,,Pennsylvania,State Leg (Upper),State Senate District 18,0.0,,,363,0.0,[],
+42,,019,,Pennsylvania,State Leg (Upper),State Senate District 19,26.0,,,364,26.0,"[2016, 2017]", Democratic Party: Carolyn Committa Republican Party: Duane Milne
+42,,020,,Pennsylvania,State Leg (Upper),State Senate District 20,0.0,,,365,0.0,[],
+42,,021,,Pennsylvania,State Leg (Upper),State Senate District 21,6.0,,,366,6.0,[2018], Republican Party: Scott Hutchinson
+42,,022,,Pennsylvania,State Leg (Upper),State Senate District 22,0.0,,,367,0.0,[],
+42,,023,,Pennsylvania,State Leg (Upper),State Senate District 23,4.0,,,368,4.0,"[2019, 2020]", Democratic Party: Denitra Moffett Republican Party: Gene Yaw
+42,,024,,Pennsylvania,State Leg (Upper),State Senate District 24,0.0,,,369,0.0,[],
+42,,025,,Pennsylvania,State Leg (Upper),State Senate District 25,16.0,,,370,16.0,"[2021, 2022]", Democratic Party: William McGill Republican Party: Cris Dush
+42,,026,,Pennsylvania,State Leg (Upper),State Senate District 26,0.0,,,371,0.0,[],
+42,,027,,Pennsylvania,State Leg (Upper),State Senate District 27,8.0,,,372,8.0,"[2023, 2024]", Democratic Party: Patricia Lawton Republican Party: Lynda Schlegel Culver
+42,,028,,Pennsylvania,State Leg (Upper),State Senate District 28,0.0,,,373,0.0,[],
+42,,029,,Pennsylvania,State Leg (Upper),State Senate District 29,10.0,,,374,10.0,"[2025, 2026, 2027]", Democratic Party: John Zugarek Republican Party: David Argall Independent Party: Eddie Wenrich
+42,,030,,Pennsylvania,State Leg (Upper),State Senate District 30,0.0,,,375,0.0,[],
+42,,031,,Pennsylvania,State Leg (Upper),State Senate District 31,45.0,,,376,45.0,"[2028, 2029]", Democratic Party: Mark Temons Republican Party: Dawn Keefer
+42,,032,,Pennsylvania,State Leg (Upper),State Senate District 32,0.0,,,377,0.0,[],
+42,,033,,Pennsylvania,State Leg (Upper),State Senate District 33,5.0,,,378,5.0,"[2030, 2031]", Democratic Party: Cameron Schroy Republican Party: Doug Mastriano
+42,,034,,Pennsylvania,State Leg (Upper),State Senate District 34,0.0,,,379,0.0,[],
+42,,035,,Pennsylvania,State Leg (Upper),State Senate District 35,14.0,,,380,14.0,[2032], Republican Party: Wayne Langerholc
+42,,036,,Pennsylvania,State Leg (Upper),State Senate District 36,0.0,,,381,0.0,[],
+42,,037,,Pennsylvania,State Leg (Upper),State Senate District 37,100.0,Nicole Ruscitto,Devlin Robinson (incumbent),382,100.0,"[755, 756, 2033, 2034]", Democratic Party: Nicole Ruscitto Republican Party: Devlin Robinson (incumbent) Democratic Party: Nicole Ruscitto Republican Party: Devlin Robinson
+42,,038,,Pennsylvania,State Leg (Upper),State Senate District 38,0.0,,,383,0.0,[],
+42,,039,,Pennsylvania,State Leg (Upper),State Senate District 39,17.0,,,384,17.0,[2035], Republican Party: Kim Ward
+42,,040,,Pennsylvania,State Leg (Upper),State Senate District 40,0.0,,,385,0.0,[],
+42,,041,,Pennsylvania,State Leg (Upper),State Senate District 41,9.0,,,386,9.0,[2036], Republican Party: Joe Pittman
+42,,042,,Pennsylvania,State Leg (Upper),State Senate District 42,0.0,,,387,0.0,[],
+42,,043,,Pennsylvania,State Leg (Upper),State Senate District 43,1.0,,,388,1.0,[2037], Democratic Party: Jay Costa
+42,,044,,Pennsylvania,State Leg (Upper),State Senate District 44,0.0,,,389,0.0,[],
+42,,045,,Pennsylvania,State Leg (Upper),State Senate District 45,32.0,,,390,32.0,"[2038, 2039]", Democratic Party: Nick Pisciottano Republican Party: Jen Dintini
+42,,046,,Pennsylvania,State Leg (Upper),State Senate District 46,0.0,,,391,0.0,[],
+42,,047,,Pennsylvania,State Leg (Upper),State Senate District 47,42.0,,,392,42.0,"[2040, 2041]", Democratic Party: Kate Lennen Republican Party: Elder Vogel
+42,,048,,Pennsylvania,State Leg (Upper),State Senate District 48,0.0,,,393,0.0,[],
+42,,049,,Pennsylvania,State Leg (Upper),State Senate District 49,69.0,Jim Wertz,Daniel Laughlin (incumbent),394,69.0,"[757, 758, 2042, 2043]", Democratic Party: Jim Wertz Republican Party: Daniel Laughlin (incumbent) Democratic Party: Jim Wertz Republican Party: Daniel Laughlin
+42,,050,,Pennsylvania,State Leg (Upper),State Senate District 50,0.0,,,395,0.0,[],
+55,,001,,Wisconsin,State Leg (Upper),State Senate District 1,0.0,,,396,0.0,[],
+55,,002,,Wisconsin,State Leg (Upper),State Senate District 2,13.0,,,397,13.0,[],
+55,,003,,Wisconsin,State Leg (Upper),State Senate District 3,0.0,,,398,0.0,[],
+55,,004,,Wisconsin,State Leg (Upper),State Senate District 4,1.0,,,399,1.0,[],
+55,,005,,Wisconsin,State Leg (Upper),State Senate District 5,0.0,,,400,0.0,[],
+55,,006,,Wisconsin,State Leg (Upper),State Senate District 6,1.0,,,401,1.0,[],
+55,,007,,Wisconsin,State Leg (Upper),State Senate District 7,0.0,,,402,0.0,[],
+55,,008,,Wisconsin,State Leg (Upper),State Senate District 8,54.0,,,403,54.0,[],
+55,,009,,Wisconsin,State Leg (Upper),State Senate District 9,0.0,,,404,0.0,[],
+55,,010,,Wisconsin,State Leg (Upper),State Senate District 10,39.0,,,405,39.0,[],
+55,,011,,Wisconsin,State Leg (Upper),State Senate District 11,0.0,,,406,0.0,[],
+55,,012,,Wisconsin,State Leg (Upper),State Senate District 12,14.0,,,407,14.0,[],
+55,,013,,Wisconsin,State Leg (Upper),State Senate District 13,0.0,,,408,0.0,[],
+55,,014,,Wisconsin,State Leg (Upper),State Senate District 14,62.0,Sarah Keyeski,,409,62.0,"[759, 760]", Democratic Party: Sarah Keyeski Republican Party: Joan Ballweg (incumbent)
+55,,015,,Wisconsin,State Leg (Upper),State Senate District 15,0.0,,,410,0.0,[],
+55,,016,,Wisconsin,State Leg (Upper),State Senate District 16,9.0,,,411,9.0,[],
+55,,017,,Wisconsin,State Leg (Upper),State Senate District 17,0.0,,,412,0.0,[],
+55,,018,,Wisconsin,State Leg (Upper),State Senate District 18,76.0,Kristin Alfheim,,413,76.0,"[761, 762]", Democratic Party: Kristin Alfheim Republican Party: Anthony Phillips
+55,,019,,Wisconsin,State Leg (Upper),State Senate District 19,0.0,,,414,0.0,[],
+55,,020,,Wisconsin,State Leg (Upper),State Senate District 20,5.0,,,415,5.0,[],
+55,,021,,Wisconsin,State Leg (Upper),State Senate District 21,0.0,,,416,0.0,[],
+55,,022,,Wisconsin,State Leg (Upper),State Senate District 22,37.0,,,417,37.0,[],
+55,,023,,Wisconsin,State Leg (Upper),State Senate District 23,0.0,,,418,0.0,[],
+55,,024,,Wisconsin,State Leg (Upper),State Senate District 24,81.0,Collin McNamara,Patrick Testin (incumbent),419,81.0,"[763, 764]", Democratic Party: Collin McNamara Republican Party: Patrick Testin (incumbent)
+55,,025,,Wisconsin,State Leg (Upper),State Senate District 25,0.0,,,420,0.0,[],
+55,,026,,Wisconsin,State Leg (Upper),State Senate District 26,1.0,,,421,1.0,[],
+55,,027,,Wisconsin,State Leg (Upper),State Senate District 27,0.0,,,422,0.0,[],
+55,,028,,Wisconsin,State Leg (Upper),State Senate District 28,9.0,,,423,9.0,[],
+55,,029,,Wisconsin,State Leg (Upper),State Senate District 29,0.0,,,424,0.0,[],
+55,,030,,Wisconsin,State Leg (Upper),State Senate District 30,100.0,Jamie Wall,Jim Rafter,425,100.0,"[765, 766]", Democratic Party: Jamie Wall Republican Party: Jim Rafter
+55,,031,,Wisconsin,State Leg (Upper),State Senate District 31,0.0,,,426,0.0,[],
+55,,032,,Wisconsin,State Leg (Upper),State Senate District 32,62.0,Brad Pfaff (incumbent),Stacey Klein,427,62.0,"[767, 768]", Democratic Party: Brad Pfaff (incumbent) Republican Party: Stacey Klein
+55,,033,,Wisconsin,State Leg (Upper),State Senate District 33,0.0,,,428,0.0,[],
+02,,,001,Alaska,State Leg (Lower),State House District 1,26.0,,,429,26.0,[],
+02,,,002,Alaska,State Leg (Lower),State House District 2,75.0,,,430,75.0,[],
+02,,,003,Alaska,State Leg (Lower),State House District 3,46.0,,,431,46.0,[],
+02,,,004,Alaska,State Leg (Lower),State House District 4,5.0,,,432,5.0,[],
+02,,,005,Alaska,State Leg (Lower),State House District 5,73.0,,,433,73.0,[],
+02,,,006,Alaska,State Leg (Lower),State House District 6,53.0,,,434,53.0,[],
+02,,,007,Alaska,State Leg (Lower),State House District 7,3.0,,,435,3.0,[],
+02,,,008,Alaska,State Leg (Lower),State House District 8,2.0,,,436,2.0,[],
+02,,,009,Alaska,State Leg (Lower),State House District 9,83.0,Ky Holland (independent),Lucy Bauer,437,83.0,"[321, 322, 323, 324]", Independent: Ky Holland Republican Party: Lucy Bauer Republican Party: Lee Ellis Republican Party: Brandy Pennington
+02,,,010,Alaska,State Leg (Lower),State House District 10,65.0,,Craig Johnson (incumbent),438,65.0,"[325, 326]", Republican Party: Craig Johnson (incumbent) Republican Party: Charles Kopp
+02,,,011,Alaska,State Leg (Lower),State House District 11,46.0,,,439,46.0,[],
+02,,,012,Alaska,State Leg (Lower),State House District 12,100.0,Calvin Schrage (incumbent),Joseph Lurtsema,440,100.0,"[327, 328]", Independent: Calvin Schrage (incumbent) Republican Party: Joseph Lurtsema
+02,,,013,Alaska,State Leg (Lower),State House District 13,99.0,Andrew L. Josephson (incumbent),Heather Gottshall,441,99.0,"[329, 330]", Democratic Party: Andrew L. Josephson (incumbent) Republican Party: Heather Gottshall
+02,,,014,Alaska,State Leg (Lower),State House District 14,24.0,,,442,24.0,[],
+02,,,015,Alaska,State Leg (Lower),State House District 15,70.0,Dustin Darden,Mia Costello,443,70.0,"[331, 332, 333]", Democratic Party: Dustin Darden Democratic Party: Denny Wells Republican Party: Mia Costello
+02,,,016,Alaska,State Leg (Lower),State House District 16,48.0,,,444,48.0,[],
+02,,,017,Alaska,State Leg (Lower),State House District 17,7.0,,,445,7.0,[],
+02,,,018,Alaska,State Leg (Lower),State House District 18,97.0,Cliff Groh (incumbent),David Nelson,446,97.0,"[334, 335]", Democratic Party: Cliff Groh (incumbent) Republican Party: David Nelson
+02,,,019,Alaska,State Leg (Lower),State House District 19,14.0,,,447,14.0,[],
+02,,,020,Alaska,State Leg (Lower),State House District 20,54.0,,,448,54.0,[],
+02,,,021,Alaska,State Leg (Lower),State House District 21,99.0,Donna Mears (incumbent),Aimee Sims,449,99.0,"[336, 337]", Democratic Party: Donna Mears (incumbent) Republican Party: Aimee Sims
+02,,,022,Alaska,State Leg (Lower),State House District 22,89.0,Ted Eischeid,Stanley Wright (incumbent),450,89.0,"[338, 339]", Democratic Party: Ted Eischeid Republican Party: Stanley Wright (incumbent)
+02,,,023,Alaska,State Leg (Lower),State House District 23,11.0,,,451,11.0,[],
+02,,,024,Alaska,State Leg (Lower),State House District 24,5.0,,,452,5.0,[],
+02,,,025,Alaska,State Leg (Lower),State House District 25,4.0,,,453,4.0,[],
+02,,,026,Alaska,State Leg (Lower),State House District 26,2.0,,,454,2.0,[],
+02,,,027,Alaska,State Leg (Lower),State House District 27,2.0,,,455,2.0,[],
+02,,,028,Alaska,State Leg (Lower),State House District 28,2.0,,,456,2.0,[],
+02,,,029,Alaska,State Leg (Lower),State House District 29,4.0,,,457,4.0,[],
+02,,,030,Alaska,State Leg (Lower),State House District 30,4.0,,,458,4.0,[],
+02,,,031,Alaska,State Leg (Lower),State House District 31,97.0,Maxine Dibert (incumbent),Bart LeBon,459,97.0,"[340, 341]", Democratic Party: Maxine Dibert (incumbent) Republican Party: Bart LeBon
+02,,,032,Alaska,State Leg (Lower),State House District 32,9.0,,,460,9.0,[],
+02,,,033,Alaska,State Leg (Lower),State House District 33,2.0,,,461,2.0,[],
+02,,,034,Alaska,State Leg (Lower),State House District 34,19.0,,,462,19.0,[],
+02,,,035,Alaska,State Leg (Lower),State House District 35,67.0,Ashley Carrick (incumbent),Ruben McNeill,463,67.0,"[342, 343]", Democratic Party: Ashley Carrick (incumbent) Republican Party: Ruben McNeill
+02,,,036,Alaska,State Leg (Lower),State House District 36,39.0,,,464,39.0,[],
+02,,,037,Alaska,State Leg (Lower),State House District 37,33.0,,,465,33.0,[],
+02,,,038,Alaska,State Leg (Lower),State House District 38,6.0,,,466,6.0,[],
+02,,,039,Alaska,State Leg (Lower),State House District 39,15.0,,,467,15.0,[],
+02,,,040,Alaska,State Leg (Lower),State House District 40,80.0,Robyn Burke,Thomas Baker (incumbent),468,80.0,"[344, 345, 346]", Democratic Party: Robyn Burke Democratic Party: Saima Chase Republican Party: Thomas Baker (incumbent)
+04,,,001,Arizona,State Leg (Lower),State House District 1,9.0,,,469,9.0,[],
+04,,,002,Arizona,State Leg (Lower),State House District 2,86.0,Stephanie Simacek,Justin Wilmeth (incumbent),470,86.0,"[347, 348, 349]", Democratic Party: Stephanie Simacek Republican Party: Justin Wilmeth (incumbent) Republican Party: Ari Bradshaw
+04,,,003,Arizona,State Leg (Lower),State House District 3,11.0,,,471,11.0,[],
+04,,,004,Arizona,State Leg (Lower),State House District 4,90.0,Kelli Butler,Matt Gress (incumbent),472,90.0,"[350, 351, 352, 353]", Democratic Party: Kelli Butler Democratic Party: Karen Gresham Republican Party: Matt Gress (incumbent) Republican Party: Pamela Carter
+04,,,005,Arizona,State Leg (Lower),State House District 5,5.0,,,473,5.0,[],
+04,,,006,Arizona,State Leg (Lower),State House District 6,7.0,,,474,7.0,[],
+04,,,007,Arizona,State Leg (Lower),State House District 7,13.0,Kevin Chiquete,David Marshall (incumbent),475,13.0,[],
+04,,,008,Arizona,State Leg (Lower),State House District 8,12.0,,,476,12.0,[],
+04,,,009,Arizona,State Leg (Lower),State House District 9,100.0,Lorena Austin (incumbent),Kylie Barber,477,100.0,"[354, 355, 356, 357]", Democratic Party: Lorena Austin (incumbent) Democratic Party: Seth Blattman (incumbent) Republican Party: Kylie Barber Republican Party: Mary Ann Mendoza
+04,,,010,Arizona,State Leg (Lower),State House District 10,14.0,,,478,14.0,[],
+04,,,011,Arizona,State Leg (Lower),State House District 11,2.0,,,479,2.0,[],
+04,,,012,Arizona,State Leg (Lower),State House District 12,38.0,,,480,38.0,[],
+04,,,013,Arizona,State Leg (Lower),State House District 13,99.0,Nicholas Gonzales,Julie Willoughby (incumbent),481,99.0,"[358, 359, 360, 361]", Democratic Party: Nicholas Gonzales Democratic Party: Brandy Reese Republican Party: Julie Willoughby (incumbent) Republican Party: Jeff Weninger
+04,,,014,Arizona,State Leg (Lower),State House District 14,23.0,,,482,23.0,[],
+04,,,015,Arizona,State Leg (Lower),State House District 15,9.0,,,483,9.0,[],
+04,,,016,Arizona,State Leg (Lower),State House District 16,82.0,Keith Seaman (incumbent),Teresa Martinez (incumbent),484,82.0,"[362, 363, 364]", Democratic Party: Keith Seaman (incumbent) Republican Party: Teresa Martinez (incumbent) Republican Party: Chris Lopez
+04,,,017,Arizona,State Leg (Lower),State House District 17,61.0,Kevin Volk,Rachel Jones (incumbent),485,61.0,"[365, 366, 367]", Democratic Party: Kevin Volk Republican Party: Rachel Jones (incumbent) Republican Party: Cory McGarr (incumbent)
+04,,,018,Arizona,State Leg (Lower),State House District 18,22.0,,,486,22.0,[],
+04,,,019,Arizona,State Leg (Lower),State House District 19,13.0,,,487,13.0,[],
+04,,,020,Arizona,State Leg (Lower),State House District 20,2.0,,,488,2.0,[],
+04,,,021,Arizona,State Leg (Lower),State House District 21,9.0,,,489,9.0,[],
+04,,,022,Arizona,State Leg (Lower),State House District 22,5.0,,,490,5.0,[],
+04,,,023,Arizona,State Leg (Lower),State House District 23,31.0,Mariana Sandoval (incumbent),Michele Pena (incumbent),491,31.0,[],
+04,,,024,Arizona,State Leg (Lower),State House District 24,7.0,,,492,7.0,[],
+04,,,025,Arizona,State Leg (Lower),State House District 25,11.0,,,493,11.0,[],
+04,,,026,Arizona,State Leg (Lower),State House District 26,5.0,,,494,5.0,[],
+04,,,027,Arizona,State Leg (Lower),State House District 27,54.0,Deborah Howard,Lisa Fink,495,54.0,[],
+04,,,028,Arizona,State Leg (Lower),State House District 28,11.0,,,496,11.0,[],
+04,,,029,Arizona,State Leg (Lower),State House District 29,35.0,Tanairi Ochoa-Martinez,Steve Montenegro (incumbent),497,35.0,[],
+04,,,030,Arizona,State Leg (Lower),State House District 30,2.0,,,498,2.0,[],
+20,,,001,Kansas,State Leg (Lower),State House District 1,3.0,,,499,3.0,[],
+20,,,002,Kansas,State Leg (Lower),State House District 2,7.0,,,500,7.0,[],
+20,,,003,Kansas,State Leg (Lower),State House District 3,52.0,,,501,52.0,[],
+20,,,004,Kansas,State Leg (Lower),State House District 4,2.0,,,502,2.0,[],
+20,,,005,Kansas,State Leg (Lower),State House District 5,15.0,,,503,15.0,[],
+20,,,006,Kansas,State Leg (Lower),State House District 6,5.0,,,504,5.0,[],
+20,,,007,Kansas,State Leg (Lower),State House District 7,7.0,,,505,7.0,[],
+20,,,008,Kansas,State Leg (Lower),State House District 8,36.0,,,506,36.0,[],
+20,,,009,Kansas,State Leg (Lower),State House District 9,3.0,,,507,3.0,[],
+20,,,010,Kansas,State Leg (Lower),State House District 10,2.0,,,508,2.0,[],
+20,,,011,Kansas,State Leg (Lower),State House District 11,3.0,,,509,3.0,[],
+20,,,012,Kansas,State Leg (Lower),State House District 12,1.0,,,510,1.0,[],
+20,,,013,Kansas,State Leg (Lower),State House District 13,2.0,,,511,2.0,[],
+20,,,014,Kansas,State Leg (Lower),State House District 14,81.0,Dennis Miller (incumbent),Charlotte Esau,512,81.0,"[654, 655]", Democratic Party: Dennis Miller (incumbent) Republican Party: Charlotte Esau
+20,,,015,Kansas,State Leg (Lower),State House District 15,81.0,Allison Hougland (incumbent),Lauren Bohi,513,81.0,"[656, 657]", Democratic Party: Allison Hougland (incumbent) Republican Party: Lauren Bohi
+20,,,016,Kansas,State Leg (Lower),State House District 16,99.0,,,514,99.0,[],
+20,,,017,Kansas,State Leg (Lower),State House District 17,84.0,,,515,84.0,[],
+20,,,018,Kansas,State Leg (Lower),State House District 18,76.0,Cindy Neighbor (incumbent),Robert Whitman,516,76.0,"[658, 659]", Democratic Party: Cindy Neighbor (incumbent) Republican Party: Robert Whitman
+20,,,019,Kansas,State Leg (Lower),State House District 19,24.0,,,517,24.0,[],
+20,,,020,Kansas,State Leg (Lower),State House District 20,91.0,Mari-Lynn Poskin (incumbent),Jerry Charlton,518,91.0,"[660, 661]", Democratic Party: Mari-Lynn Poskin (incumbent) Republican Party: Jerry Charlton
+20,,,021,Kansas,State Leg (Lower),State House District 21,11.0,,,519,11.0,[],
+20,,,022,Kansas,State Leg (Lower),State House District 22,20.0,,,520,20.0,[],
+20,,,023,Kansas,State Leg (Lower),State House District 23,28.0,,,521,28.0,[],
+20,,,024,Kansas,State Leg (Lower),State House District 24,11.0,,,522,11.0,[],
+20,,,025,Kansas,State Leg (Lower),State House District 25,10.0,,,523,10.0,[],
+20,,,026,Kansas,State Leg (Lower),State House District 26,30.0,,,524,30.0,[],
+20,,,027,Kansas,State Leg (Lower),State House District 27,26.0,,,525,26.0,[],
+20,,,028,Kansas,State Leg (Lower),State House District 28,85.0,Ace Allen,Carl Turner (incumbent),526,85.0,"[662, 663]", Democratic Party: Ace Allen Republican Party: Carl Turner (incumbent)
+20,,,029,Kansas,State Leg (Lower),State House District 29,46.0,,,527,46.0,[],
+20,,,030,Kansas,State Leg (Lower),State House District 30,93.0,Betsey Lasister,Laura Williams (incumbent),528,93.0,"[664, 665]", Democratic Party: Betsey Lasister Republican Party: Laura Williams (incumbent)
+20,,,031,Kansas,State Leg (Lower),State House District 31,3.0,,,529,3.0,[],
+20,,,032,Kansas,State Leg (Lower),State House District 32,2.0,,,530,2.0,[],
+20,,,033,Kansas,State Leg (Lower),State House District 33,99.0,Eli Woody IV,Mike Thompson (incumbent),531,99.0,"[666, 667]", Democratic Party: Eli Woody IV Republican Party: Mike Thompson (incumbent)
+20,,,034,Kansas,State Leg (Lower),State House District 34,1.0,,,532,1.0,[],
+20,,,035,Kansas,State Leg (Lower),State House District 35,1.0,,,533,1.0,[],
+20,,,036,Kansas,State Leg (Lower),State House District 36,20.0,,,534,20.0,[],
+20,,,037,Kansas,State Leg (Lower),State House District 37,11.0,,,535,11.0,[],
+20,,,038,Kansas,State Leg (Lower),State House District 38,14.0,,,536,14.0,[],
+20,,,039,Kansas,State Leg (Lower),State House District 39,73.0,Vanessa Vaughn West,Angela Stiens (incumbent),537,73.0,"[668, 669]", Democratic Party: Vanessa Vaughn West Republican Party: Angela Stiens (incumbent)
+20,,,040,Kansas,State Leg (Lower),State House District 40,50.0,,,538,50.0,[],
+20,,,041,Kansas,State Leg (Lower),State House District 41,46.0,,,539,46.0,[],
+20,,,042,Kansas,State Leg (Lower),State House District 42,26.0,,,540,26.0,[],
+20,,,043,Kansas,State Leg (Lower),State House District 43,21.0,,,541,21.0,[],
+20,,,044,Kansas,State Leg (Lower),State House District 44,3.0,,,542,3.0,[],
+20,,,045,Kansas,State Leg (Lower),State House District 45,5.0,,,543,5.0,[],
+20,,,046,Kansas,State Leg (Lower),State House District 46,1.0,,,544,1.0,[],
+20,,,047,Kansas,State Leg (Lower),State House District 47,13.0,,,545,13.0,[],
+20,,,048,Kansas,State Leg (Lower),State House District 48,99.0,Dan Osman (incumbent),Randy Ross,546,99.0,"[670, 671]", Democratic Party: Dan Osman (incumbent) Republican Party: Randy Ross
+20,,,049,Kansas,State Leg (Lower),State House District 49,93.0,Nikki McDonald (incumbent),Kurtis Ruf,547,93.0,"[672, 673]", Democratic Party: Nikki McDonald (incumbent) Republican Party: Kurtis Ruf
+20,,,050,Kansas,State Leg (Lower),State House District 50,13.0,,,548,13.0,[],
+20,,,051,Kansas,State Leg (Lower),State House District 51,5.0,,,549,5.0,[],
+20,,,052,Kansas,State Leg (Lower),State House District 52,57.0,Jacquie Lightcap,Jesse Borjon (incumbent),550,57.0,"[674, 675]", Democratic Party: Jacquie Lightcap Republican Party: Jesse Borjon (incumbent)
+20,,,053,Kansas,State Leg (Lower),State House District 53,76.0,Kirk Haskins (incumbent),Jeff Coen,551,76.0,"[676, 677]", Democratic Party: Kirk Haskins (incumbent) Republican Party: Jeff Coen
+20,,,054,Kansas,State Leg (Lower),State House District 54,9.0,,,552,9.0,[],
+20,,,055,Kansas,State Leg (Lower),State House District 55,14.0,,,553,14.0,[],
+20,,,056,Kansas,State Leg (Lower),State House District 56,84.0,Virgil Weigel (incumbent),Pennie Boyer-Kloos,554,84.0,"[678, 679]", Democratic Party: Virgil Weigel (incumbent) Republican Party: Pennie Boyer-Kloos
+20,,,057,Kansas,State Leg (Lower),State House District 57,34.0,,,555,34.0,[],
+20,,,058,Kansas,State Leg (Lower),State House District 58,11.0,,,556,11.0,[],
+20,,,059,Kansas,State Leg (Lower),State House District 59,5.0,,,557,5.0,[],
+20,,,060,Kansas,State Leg (Lower),State House District 60,96.0,Mic McGuire,Mark Schreiber (incumbent),558,96.0,"[680, 681]", Democratic Party: Mic McGuire Republican Party: Mark Schreiber (incumbent)
+20,,,061,Kansas,State Leg (Lower),State House District 61,3.0,,,559,3.0,[],
+20,,,062,Kansas,State Leg (Lower),State House District 62,2.0,,,560,2.0,[],
+20,,,063,Kansas,State Leg (Lower),State House District 63,4.0,,,561,4.0,[],
+20,,,064,Kansas,State Leg (Lower),State House District 64,2.0,,,562,2.0,[],
+20,,,065,Kansas,State Leg (Lower),State House District 65,36.0,,,563,36.0,[],
+20,,,066,Kansas,State Leg (Lower),State House District 66,15.0,,,564,15.0,[],
+20,,,067,Kansas,State Leg (Lower),State House District 67,100.0,Kim Zito,Angel Roeser,565,100.0,"[682, 683]", Democratic Party: Kim Zito Republican Party: Angel Roeser
+20,,,068,Kansas,State Leg (Lower),State House District 68,5.0,,,566,5.0,[],
+20,,,069,Kansas,State Leg (Lower),State House District 69,8.0,,,567,8.0,[],
+20,,,070,Kansas,State Leg (Lower),State House District 70,2.0,,,568,2.0,[],
+20,,,071,Kansas,State Leg (Lower),State House District 71,9.0,,,569,9.0,[],
+20,,,072,Kansas,State Leg (Lower),State House District 72,17.0,,,570,17.0,[],
+20,,,073,Kansas,State Leg (Lower),State House District 73,5.0,,,571,5.0,[],
+20,,,074,Kansas,State Leg (Lower),State House District 74,6.0,,,572,6.0,[],
+20,,,075,Kansas,State Leg (Lower),State House District 75,3.0,,,573,3.0,[],
+20,,,076,Kansas,State Leg (Lower),State House District 76,3.0,,,574,3.0,[],
+20,,,077,Kansas,State Leg (Lower),State House District 77,3.0,,,575,3.0,[],
+20,,,078,Kansas,State Leg (Lower),State House District 78,55.0,Daniel Goodman,Robyn Essex (incumbent),576,55.0,"[684, 685]", Democratic Party: Daniel Goodman Republican Party: Robyn Essex (incumbent)
+20,,,079,Kansas,State Leg (Lower),State House District 79,5.0,,,577,5.0,[],
+20,,,080,Kansas,State Leg (Lower),State House District 80,6.0,,,578,6.0,[],
+20,,,081,Kansas,State Leg (Lower),State House District 81,12.0,,,579,12.0,[],
+20,,,082,Kansas,State Leg (Lower),State House District 82,7.0,,,580,7.0,[],
+20,,,083,Kansas,State Leg (Lower),State House District 83,31.0,,,581,31.0,[],
+20,,,084,Kansas,State Leg (Lower),State House District 84,3.0,,,582,3.0,[],
+20,,,085,Kansas,State Leg (Lower),State House District 85,46.0,,,583,46.0,[],
+20,,,086,Kansas,State Leg (Lower),State House District 86,41.0,,,584,41.0,[],
+20,,,087,Kansas,State Leg (Lower),State House District 87,59.0,Mike Snider,Susan Estes,585,59.0,"[686, 687]", Democratic Party: Mike Snider Republican Party: Susan Estes
+20,,,088,Kansas,State Leg (Lower),State House District 88,99.0,Veronica Gillette,Sandy Pickert (incumbent),586,99.0,"[688, 689]", Democratic Party: Veronica Gillette Republican Party: Sandy Pickert (incumbent)
+20,,,089,Kansas,State Leg (Lower),State House District 89,10.0,,,587,10.0,[],
+20,,,090,Kansas,State Leg (Lower),State House District 90,4.0,,,588,4.0,[],
+20,,,091,Kansas,State Leg (Lower),State House District 91,9.0,,,589,9.0,[],
+20,,,092,Kansas,State Leg (Lower),State House District 92,41.0,,,590,41.0,[],
+20,,,093,Kansas,State Leg (Lower),State House District 93,3.0,,,591,3.0,[],
+20,,,094,Kansas,State Leg (Lower),State House District 94,9.0,,,592,9.0,[],
+20,,,095,Kansas,State Leg (Lower),State House District 95,96.0,Tom Sawyer (incumbent),Christopher Parisho,593,96.0,"[690, 691]", Democratic Party: Tom Sawyer (incumbent) Republican Party: Christopher Parisho
+20,,,096,Kansas,State Leg (Lower),State House District 96,81.0,,,594,81.0,[],
+20,,,097,Kansas,State Leg (Lower),State House District 97,17.0,,,595,17.0,[],
+20,,,098,Kansas,State Leg (Lower),State House District 98,20.0,,,596,20.0,[],
+20,,,099,Kansas,State Leg (Lower),State House District 99,8.0,,,597,8.0,[],
+20,,,100,Kansas,State Leg (Lower),State House District 100,15.0,,,598,15.0,[],
+20,,,101,Kansas,State Leg (Lower),State House District 101,2.0,,,599,2.0,[],
+20,,,102,Kansas,State Leg (Lower),State House District 102,49.0,,,600,49.0,[],
+20,,,103,Kansas,State Leg (Lower),State House District 103,9.0,,,601,9.0,[],
+20,,,104,Kansas,State Leg (Lower),State House District 104,5.0,,,602,5.0,[],
+20,,,105,Kansas,State Leg (Lower),State House District 105,40.0,,,603,40.0,[],
+20,,,106,Kansas,State Leg (Lower),State House District 106,1.0,,,604,1.0,[],
+20,,,107,Kansas,State Leg (Lower),State House District 107,2.0,,,605,2.0,[],
+20,,,108,Kansas,State Leg (Lower),State House District 108,52.0,,,606,52.0,[],
+20,,,109,Kansas,State Leg (Lower),State House District 109,1.0,,,607,1.0,[],
+20,,,110,Kansas,State Leg (Lower),State House District 110,1.0,,,608,1.0,[],
+20,,,111,Kansas,State Leg (Lower),State House District 111,4.0,,,609,4.0,[],
+20,,,112,Kansas,State Leg (Lower),State House District 112,2.0,,,610,2.0,[],
+20,,,113,Kansas,State Leg (Lower),State House District 113,1.0,,,611,1.0,[],
+20,,,114,Kansas,State Leg (Lower),State House District 114,2.0,,,612,2.0,[],
+20,,,115,Kansas,State Leg (Lower),State House District 115,1.0,,,613,1.0,[],
+20,,,116,Kansas,State Leg (Lower),State House District 116,1.0,,,614,1.0,[],
+20,,,117,Kansas,State Leg (Lower),State House District 117,53.0,,,615,53.0,[],
+20,,,118,Kansas,State Leg (Lower),State House District 118,1.0,,,616,1.0,[],
+20,,,119,Kansas,State Leg (Lower),State House District 119,23.0,,,617,23.0,[],
+20,,,120,Kansas,State Leg (Lower),State House District 120,1.0,,,618,1.0,[],
+20,,,121,Kansas,State Leg (Lower),State House District 121,70.0,Mel Pinick,John Resman (incumbent),619,70.0,"[692, 693]", Democratic Party: Mel Pinick Republican Party: John Resman (incumbent)
+20,,,122,Kansas,State Leg (Lower),State House District 122,2.0,,,620,2.0,[],
+20,,,123,Kansas,State Leg (Lower),State House District 123,17.0,,,621,17.0,[],
+20,,,124,Kansas,State Leg (Lower),State House District 124,1.0,,,622,1.0,[],
+20,,,125,Kansas,State Leg (Lower),State House District 125,6.0,,,623,6.0,[],
+26,,,001,Michigan,State Leg (Lower),State House District 1,1.0,,,624,1.0,[],
+26,,,002,Michigan,State Leg (Lower),State House District 2,38.0,,,625,38.0,[],
+26,,,003,Michigan,State Leg (Lower),State House District 3,2.0,,,626,2.0,[],
+26,,,004,Michigan,State Leg (Lower),State House District 4,0.0,,,627,0.0,[],
+26,,,005,Michigan,State Leg (Lower),State House District 5,0.0,,,628,0.0,[],
+26,,,006,Michigan,State Leg (Lower),State House District 6,8.0,,,629,8.0,[],
+26,,,007,Michigan,State Leg (Lower),State House District 7,0.0,,,630,0.0,[],
+26,,,008,Michigan,State Leg (Lower),State House District 8,1.0,,,631,1.0,[],
+26,,,009,Michigan,State Leg (Lower),State House District 9,0.0,,,632,0.0,[],
+26,,,010,Michigan,State Leg (Lower),State House District 10,6.0,,,633,6.0,[],
+26,,,011,Michigan,State Leg (Lower),State House District 11,1.0,,,634,1.0,[],
+26,,,012,Michigan,State Leg (Lower),State House District 12,4.0,,,635,4.0,[],
+26,,,013,Michigan,State Leg (Lower),State House District 13,78.0,,,636,78.0,[],
+26,,,014,Michigan,State Leg (Lower),State House District 14,22.0,,,637,22.0,[],
+26,,,015,Michigan,State Leg (Lower),State House District 15,12.0,,,638,12.0,[],
+26,,,016,Michigan,State Leg (Lower),State House District 16,2.0,,,639,2.0,[],
+26,,,017,Michigan,State Leg (Lower),State House District 17,5.0,,,640,5.0,[],
+26,,,018,Michigan,State Leg (Lower),State House District 18,1.0,,,641,1.0,[],
+26,,,019,Michigan,State Leg (Lower),State House District 19,6.0,,,642,6.0,[],
+26,,,020,Michigan,State Leg (Lower),State House District 20,37.0,,,643,37.0,[],
+26,,,021,Michigan,State Leg (Lower),State House District 21,60.0,Kelly Breen (incumbent),Thomas Konesky,644,60.0,"[436, 437]", Democratic Party: Kelly Breen (incumbent) Republican Party: Thomas Konesky
+26,,,022,Michigan,State Leg (Lower),State House District 22,100.0,Matt Koleszar (incumbent),Adam Stathakis,645,100.0,"[438, 439]", Democratic Party: Matt Koleszar (incumbent) Republican Party: Adam Stathakis
+26,,,023,Michigan,State Leg (Lower),State House District 23,10.0,,,646,10.0,[],
+26,,,024,Michigan,State Leg (Lower),State House District 24,19.0,,,647,19.0,[],
+26,,,025,Michigan,State Leg (Lower),State House District 25,16.0,,,648,16.0,[],
+26,,,026,Michigan,State Leg (Lower),State House District 26,5.0,,,649,5.0,[],
+26,,,027,Michigan,State Leg (Lower),State House District 27,100.0,Jaime Churches (incumbent),Rylee Linting,650,100.0,"[440, 441]", Democratic Party: Jaime Churches (incumbent) Republican Party: Rylee Linting
+26,,,028,Michigan,State Leg (Lower),State House District 28,100.0,Janise Robinson,Jamie Thompson (incumbent),651,100.0,"[442, 443]", Democratic Party: Janise Robinson Republican Party: Jamie Thompson (incumbent)
+26,,,029,Michigan,State Leg (Lower),State House District 29,98.0,Kyle Wright,James DeSana (incumbent),652,98.0,"[444, 445]", Democratic Party: Kyle Wright Republican Party: James DeSana (incumbent)
+26,,,030,Michigan,State Leg (Lower),State House District 30,27.0,,,653,27.0,[],
+26,,,031,Michigan,State Leg (Lower),State House District 31,85.0,Reggie Miller (incumbent),Dale Biniecki,654,85.0,"[446, 447]", Democratic Party: Reggie Miller (incumbent) Republican Party: Dale Biniecki
+26,,,032,Michigan,State Leg (Lower),State House District 32,2.0,,,655,2.0,[],
+26,,,033,Michigan,State Leg (Lower),State House District 33,2.0,,,656,2.0,[],
+26,,,034,Michigan,State Leg (Lower),State House District 34,29.0,,,657,29.0,[],
+26,,,035,Michigan,State Leg (Lower),State House District 35,4.0,,,658,4.0,[],
+26,,,036,Michigan,State Leg (Lower),State House District 36,8.0,,,659,8.0,[],
+26,,,037,Michigan,State Leg (Lower),State House District 37,16.0,,,660,16.0,[],
+26,,,038,Michigan,State Leg (Lower),State House District 38,83.0,Joey Andrews (incumbent),Kevin Whiteford,661,83.0,"[448, 449]", Democratic Party: Joey Andrews (incumbent) Republican Party: Kevin Whiteford
+26,,,039,Michigan,State Leg (Lower),State House District 39,21.0,,,662,21.0,[],
+26,,,040,Michigan,State Leg (Lower),State House District 40,44.0,,,663,44.0,[],
+26,,,041,Michigan,State Leg (Lower),State House District 41,2.0,,,664,2.0,[],
+26,,,042,Michigan,State Leg (Lower),State House District 42,63.0,Austin Marsman,Matt Hall (incumbent),665,63.0,"[450, 451]", Democratic Party: Austin Marsman Republican Party: Matt Hall (incumbent)
+26,,,043,Michigan,State Leg (Lower),State House District 43,4.0,,,666,4.0,[],
+26,,,044,Michigan,State Leg (Lower),State House District 44,100.0,Jim Haadsma (incumbent),Steve Frisbie,667,100.0,"[452, 453]", Democratic Party: Jim Haadsma (incumbent) Republican Party: Steve Frisbie
+26,,,045,Michigan,State Leg (Lower),State House District 45,8.0,,,668,8.0,[],
+26,,,046,Michigan,State Leg (Lower),State House District 46,97.0,Daniel Mahoney,Kathy Schmaltz (incumbent),669,97.0,"[454, 455]", Democratic Party: Daniel Mahoney Republican Party: Kathy Schmaltz (incumbent)
+26,,,047,Michigan,State Leg (Lower),State House District 47,11.0,,,670,11.0,[],
+26,,,048,Michigan,State Leg (Lower),State House District 48,91.0,Jennifer Conlin (incumbent),Brian Ignatowski,671,91.0,"[456, 457]", Democratic Party: Jennifer Conlin (incumbent) Republican Party: Brian Ignatowski
+26,,,049,Michigan,State Leg (Lower),State House District 49,54.0,Andy Wood,Ann Bollin (incumbent),672,54.0,"[458, 459]", Democratic Party: Andy Wood Republican Party: Ann Bollin (incumbent)
+26,,,050,Michigan,State Leg (Lower),State House District 50,8.0,,,673,8.0,[],
+26,,,051,Michigan,State Leg (Lower),State House District 51,19.0,,,674,19.0,[],
+26,,,052,Michigan,State Leg (Lower),State House District 52,29.0,,,675,29.0,[],
+26,,,053,Michigan,State Leg (Lower),State House District 53,5.0,,,676,5.0,[],
+26,,,054,Michigan,State Leg (Lower),State House District 54,96.0,Shadia Martini,Donni Steele (incumbent),677,96.0,"[460, 461]", Democratic Party: Shadia Martini Republican Party: Donni Steele (incumbent)
+26,,,055,Michigan,State Leg (Lower),State House District 55,98.0,Trevis Harrold,Mark Tisdel (incumbent),678,98.0,"[462, 463]", Democratic Party: Trevis Harrold Republican Party: Mark Tisdel (incumbent)
+26,,,056,Michigan,State Leg (Lower),State House District 56,50.0,,,679,50.0,[],
+26,,,057,Michigan,State Leg (Lower),State House District 57,95.0,Aisha Farooqi,Thomas Kuhn (incumbent),680,95.0,"[464, 465]", Democratic Party: Aisha Farooqi Republican Party: Thomas Kuhn (incumbent)
+26,,,058,Michigan,State Leg (Lower),State House District 58,97.0,Nate Shannon (incumbent),Ron Robinson,681,97.0,"[466, 467]", Democratic Party: Nate Shannon (incumbent) Republican Party: Ron Robinson
+26,,,059,Michigan,State Leg (Lower),State House District 59,11.0,,,682,11.0,[],
+26,,,060,Michigan,State Leg (Lower),State House District 60,37.0,,,683,37.0,[],
+26,,,061,Michigan,State Leg (Lower),State House District 61,95.0,Denise Mentzer (incumbent),Robert Wojtowicz,684,95.0,"[468, 469]", Democratic Party: Denise Mentzer (incumbent) Republican Party: Robert Wojtowicz
+26,,,062,Michigan,State Leg (Lower),State House District 62,95.0,Michelle Levine-Woodman,Alicia St. Germaine (incumbent),685,95.0,"[470, 471]", Democratic Party: Michelle Levine-Woodman Republican Party: Alicia St. Germaine (incumbent)
+26,,,063,Michigan,State Leg (Lower),State House District 63,12.0,,,686,12.0,[],
+26,,,064,Michigan,State Leg (Lower),State House District 64,35.0,,,687,35.0,[],
+26,,,065,Michigan,State Leg (Lower),State House District 65,4.0,,,688,4.0,[],
+26,,,066,Michigan,State Leg (Lower),State House District 66,8.0,,,689,8.0,[],
+26,,,067,Michigan,State Leg (Lower),State House District 67,31.0,,,690,31.0,[],
+26,,,068,Michigan,State Leg (Lower),State House District 68,91.0,Tim Sneller,David Martin (incumbent),691,91.0,"[472, 473]", Democratic Party: Tim Sneller Republican Party: David Martin (incumbent)
+26,,,069,Michigan,State Leg (Lower),State House District 69,26.0,,,692,26.0,[],
+26,,,070,Michigan,State Leg (Lower),State House District 70,1.0,,,693,1.0,[],
+26,,,071,Michigan,State Leg (Lower),State House District 71,31.0,,,694,31.0,[],
+26,,,072,Michigan,State Leg (Lower),State House District 72,54.0,,,695,54.0,[],
+26,,,073,Michigan,State Leg (Lower),State House District 73,46.0,,,696,46.0,[],
+26,,,074,Michigan,State Leg (Lower),State House District 74,5.0,,,697,5.0,[],
+26,,,075,Michigan,State Leg (Lower),State House District 75,18.0,,,698,18.0,[],
+26,,,076,Michigan,State Leg (Lower),State House District 76,91.0,Angela Witwer (incumbent),Andy Shaver,699,91.0,"[474, 475]", Democratic Party: Angela Witwer (incumbent) Republican Party: Andy Shaver
+26,,,077,Michigan,State Leg (Lower),State House District 77,13.0,,,700,13.0,[],
+26,,,078,Michigan,State Leg (Lower),State House District 78,11.0,,,701,11.0,[],
+26,,,079,Michigan,State Leg (Lower),State House District 79,6.0,,,702,6.0,[],
+26,,,080,Michigan,State Leg (Lower),State House District 80,53.0,,,703,53.0,[],
+26,,,081,Michigan,State Leg (Lower),State House District 81,73.0,Stephen Wooden,Jordan Youngquist,704,73.0,"[476, 477]", Democratic Party: Stephen Wooden Republican Party: Jordan Youngquist
+26,,,082,Michigan,State Leg (Lower),State House District 82,2.0,,,705,2.0,[],
+26,,,083,Michigan,State Leg (Lower),State House District 83,83.0,John Fitzgerald (incumbent),Tommy Brann,706,83.0,"[478, 479]", Democratic Party: John Fitzgerald (incumbent) Republican Party: Tommy Brann
+26,,,084,Michigan,State Leg (Lower),State House District 84,87.0,Carol Glanville (incumbent),John Wetzel,707,87.0,"[480, 481]", Democratic Party: Carol Glanville (incumbent) Republican Party: John Wetzel
+26,,,085,Michigan,State Leg (Lower),State House District 85,3.0,,,708,3.0,[],
+26,,,086,Michigan,State Leg (Lower),State House District 86,68.0,Abby Klomparens,Nancy De Boer (incumbent),709,68.0,"[482, 483]", Democratic Party: Abby Klomparens Republican Party: Nancy De Boer (incumbent)
+26,,,087,Michigan,State Leg (Lower),State House District 87,16.0,,,710,16.0,[],
+26,,,088,Michigan,State Leg (Lower),State House District 88,45.0,,,711,45.0,[],
+26,,,089,Michigan,State Leg (Lower),State House District 89,6.0,,,712,6.0,[],
+26,,,090,Michigan,State Leg (Lower),State House District 90,16.0,,,713,16.0,[],
+26,,,091,Michigan,State Leg (Lower),State House District 91,7.0,,,714,7.0,[],
+26,,,092,Michigan,State Leg (Lower),State House District 92,85.0,Tim Odykirk,Jerry Neyer (incumbent),715,85.0,"[484, 485]", Democratic Party: Tim Odykirk Republican Party: Jerry Neyer (incumbent)
+26,,,093,Michigan,State Leg (Lower),State House District 93,11.0,,,716,11.0,[],
+26,,,094,Michigan,State Leg (Lower),State House District 94,5.0,,,717,5.0,[],
+26,,,095,Michigan,State Leg (Lower),State House District 95,26.0,,,718,26.0,[],
+26,,,096,Michigan,State Leg (Lower),State House District 96,89.0,Rudy Howard,Timothy Beson (incumbent),719,89.0,"[486, 487]", Democratic Party: Rudy Howard Republican Party: Timothy Beson (incumbent)
+26,,,097,Michigan,State Leg (Lower),State House District 97,11.0,,,720,11.0,[],
+26,,,098,Michigan,State Leg (Lower),State House District 98,4.0,,,721,4.0,[],
+26,,,099,Michigan,State Leg (Lower),State House District 99,9.0,,,722,9.0,[],
+26,,,100,Michigan,State Leg (Lower),State House District 100,8.0,,,723,8.0,[],
+26,,,101,Michigan,State Leg (Lower),State House District 101,7.0,,,724,7.0,[],
+26,,,102,Michigan,State Leg (Lower),State House District 102,29.0,,,725,29.0,[],
+26,,,103,Michigan,State Leg (Lower),State House District 103,100.0,Betsy Coffia (incumbent),Lisa Trombley,726,100.0,"[488, 489]", Democratic Party: Betsy Coffia (incumbent) Republican Party: Lisa Trombley
+26,,,104,Michigan,State Leg (Lower),State House District 104,13.0,,,727,13.0,[],
+26,,,105,Michigan,State Leg (Lower),State House District 105,6.0,,,728,6.0,[],
+26,,,106,Michigan,State Leg (Lower),State House District 106,9.0,,,729,9.0,[],
+26,,,107,Michigan,State Leg (Lower),State House District 107,28.0,,,730,28.0,[],
+26,,,108,Michigan,State Leg (Lower),State House District 108,13.0,,,731,13.0,[],
+26,,,109,Michigan,State Leg (Lower),State House District 109,91.0,Jenn Hill (incumbent),Karl Bohnak,732,91.0,"[490, 491]", Democratic Party: Jenn Hill (incumbent) Republican Party: Karl Bohnak
+26,,,110,Michigan,State Leg (Lower),State House District 110,27.0,,,733,27.0,[],
+27,,,01A,Minnesota,State Leg (Lower),State House District 1A,9.0,,,734,9.0,[],
+27,,,01B,Minnesota,State Leg (Lower),State House District 1B,25.0,,,735,25.0,[],
+27,,,02A,Minnesota,State Leg (Lower),State House District 2A,93.0,Reed Olson,Bidal Duran,736,93.0,"[492, 493]", Democratic Party: Reed Olson Republican Party: Bidal Duran
+27,,,02B,Minnesota,State Leg (Lower),State House District 2B,31.0,,,737,31.0,[],
+27,,,03A,Minnesota,State Leg (Lower),State House District 3A,99.0,Harley Droba,Roger Skraba (incumbent),738,99.0,"[494, 495]", Democratic Party: Harley Droba Republican Party: Roger Skraba (incumbent)
+27,,,03B,Minnesota,State Leg (Lower),State House District 3B,51.0,,,739,51.0,[],
+27,,,04A,Minnesota,State Leg (Lower),State House District 4A,23.0,,,740,23.0,[],
+27,,,04B,Minnesota,State Leg (Lower),State House District 4B,35.0,,,741,35.0,[],
+27,,,05A,Minnesota,State Leg (Lower),State House District 5A,6.0,,,742,6.0,[],
+27,,,05B,Minnesota,State Leg (Lower),State House District 5B,4.0,,,743,4.0,[],
+27,,,06A,Minnesota,State Leg (Lower),State House District 6A,23.0,,,744,23.0,[],
+27,,,06B,Minnesota,State Leg (Lower),State House District 6B,16.0,,,745,16.0,[],
+27,,,07A,Minnesota,State Leg (Lower),State House District 7A,98.0,Aron Schnaser,Spencer Igo (incumbent),746,98.0,"[496, 497]", Democratic Party: Aron Schnaser Republican Party: Spencer Igo (incumbent)
+27,,,07B,Minnesota,State Leg (Lower),State House District 7B,78.0,Lorrie Janatopoulos,Cal Warwas,747,78.0,"[498, 499]", Democratic Party: Lorrie Janatopoulos Republican Party: Cal Warwas
+27,,,08A,Minnesota,State Leg (Lower),State House District 8A,4.0,,,748,4.0,[],
+27,,,08B,Minnesota,State Leg (Lower),State House District 8B,4.0,,,749,4.0,[],
+27,,,09A,Minnesota,State Leg (Lower),State House District 9A,18.0,,,750,18.0,[],
+27,,,09B,Minnesota,State Leg (Lower),State House District 9B,7.0,,,751,7.0,[],
+27,,,10A,Minnesota,State Leg (Lower),State House District 10A,8.0,,,752,8.0,[],
+27,,,10B,Minnesota,State Leg (Lower),State House District 10B,3.0,,,753,3.0,[],
+27,,,11A,Minnesota,State Leg (Lower),State House District 11A,64.0,Pete Radosevich,Jeff Dotseth (incumbent),754,64.0,"[500, 501]", Democratic Party: Pete Radosevich Republican Party: Jeff Dotseth (incumbent)
+27,,,11B,Minnesota,State Leg (Lower),State House District 11B,12.0,,,755,12.0,[],
+27,,,12A,Minnesota,State Leg (Lower),State House District 12A,16.0,,,756,16.0,[],
+27,,,12B,Minnesota,State Leg (Lower),State House District 12B,8.0,,,757,8.0,[],
+27,,,13A,Minnesota,State Leg (Lower),State House District 13A,7.0,,,758,7.0,[],
+27,,,13B,Minnesota,State Leg (Lower),State House District 13B,16.0,,,759,16.0,[],
+27,,,14A,Minnesota,State Leg (Lower),State House District 14A,98.0,Abdi Daisane,Bernie Perryman (incumbent),760,98.0,"[502, 503]", Democratic Party: Abdi Daisane Republican Party: Bernie Perryman (incumbent)
+27,,,14B,Minnesota,State Leg (Lower),State House District 14B,92.0,Dan Wolgamott (incumbent),Sue Ek,761,92.0,"[504, 505]", Democratic Party: Dan Wolgamott (incumbent) Republican Party: Sue Ek
+27,,,15A,Minnesota,State Leg (Lower),State House District 15A,18.0,,,762,18.0,[],
+27,,,15B,Minnesota,State Leg (Lower),State House District 15B,9.0,,,763,9.0,[],
+27,,,16A,Minnesota,State Leg (Lower),State House District 16A,12.0,,,764,12.0,[],
+27,,,16B,Minnesota,State Leg (Lower),State House District 16B,21.0,,,765,21.0,[],
+27,,,17A,Minnesota,State Leg (Lower),State House District 17A,7.0,,,766,7.0,[],
+27,,,17B,Minnesota,State Leg (Lower),State House District 17B,8.0,,,767,8.0,[],
+27,,,18A,Minnesota,State Leg (Lower),State House District 18A,71.0,Jeff Brand (incumbent),Erica Schwartz,768,71.0,"[506, 507]", Democratic Party: Jeff Brand (incumbent) Republican Party: Erica Schwartz
+27,,,18B,Minnesota,State Leg (Lower),State House District 18B,18.0,,,769,18.0,[],
+27,,,19A,Minnesota,State Leg (Lower),State House District 19A,27.0,,,770,27.0,[],
+27,,,19B,Minnesota,State Leg (Lower),State House District 19B,30.0,,,771,30.0,[],
+27,,,20A,Minnesota,State Leg (Lower),State House District 20A,83.0,Heather Arndt,Pam Altendorf (incumbent),772,83.0,"[508, 509]", Democratic Party: Heather Arndt Republican Party: Pam Altendorf (incumbent)
+27,,,20B,Minnesota,State Leg (Lower),State House District 20B,16.0,,,773,16.0,[],
+27,,,21A,Minnesota,State Leg (Lower),State House District 21A,6.0,,,774,6.0,[],
+27,,,21B,Minnesota,State Leg (Lower),State House District 21B,22.0,,,775,22.0,[],
+27,,,22A,Minnesota,State Leg (Lower),State House District 22A,13.0,,,776,13.0,[],
+27,,,22B,Minnesota,State Leg (Lower),State House District 22B,16.0,,,777,16.0,[],
+27,,,23A,Minnesota,State Leg (Lower),State House District 23A,38.0,,,778,38.0,[],
+27,,,23B,Minnesota,State Leg (Lower),State House District 23B,99.0,Joe Pacovsky,Patricia Mueller (incumbent),779,99.0,"[510, 511]", Democratic Party: Joe Pacovsky Republican Party: Patricia Mueller (incumbent)
+27,,,24A,Minnesota,State Leg (Lower),State House District 24A,26.0,,,780,26.0,[],
+27,,,24B,Minnesota,State Leg (Lower),State House District 24B,45.0,,,781,45.0,[],
+27,,,25A,Minnesota,State Leg (Lower),State House District 25A,46.0,,,782,46.0,[],
+27,,,25B,Minnesota,State Leg (Lower),State House District 25B,12.0,,,783,12.0,[],
+27,,,26A,Minnesota,State Leg (Lower),State House District 26A,59.0,Sarah Kruger,Aaron Repinski,784,59.0,"[512, 513]", Democratic Party: Sarah Kruger Republican Party: Aaron Repinski
+27,,,26B,Minnesota,State Leg (Lower),State House District 26B,46.0,,,785,46.0,[],
+27,,,27A,Minnesota,State Leg (Lower),State House District 27A,5.0,,,786,5.0,[],
+27,,,27B,Minnesota,State Leg (Lower),State House District 27B,4.0,,,787,4.0,[],
+27,,,28A,Minnesota,State Leg (Lower),State House District 28A,9.0,,,788,9.0,[],
+27,,,28B,Minnesota,State Leg (Lower),State House District 28B,18.0,,,789,18.0,[],
+27,,,29A,Minnesota,State Leg (Lower),State House District 29A,9.0,,,790,9.0,[],
+27,,,29B,Minnesota,State Leg (Lower),State House District 29B,16.0,,,791,16.0,[],
+27,,,30A,Minnesota,State Leg (Lower),State House District 30A,13.0,,,792,13.0,[],
+27,,,30B,Minnesota,State Leg (Lower),State House District 30B,12.0,,,793,12.0,[],
+27,,,31A,Minnesota,State Leg (Lower),State House District 31A,30.0,,,794,30.0,[],
+27,,,31B,Minnesota,State Leg (Lower),State House District 31B,9.0,,,795,9.0,[],
+27,,,32A,Minnesota,State Leg (Lower),State House District 32A,73.0,Ashton Ramsammy,Nolan West (incumbent),796,73.0,"[514, 515]", Democratic Party: Ashton Ramsammy Republican Party: Nolan West (incumbent)
+27,,,32B,Minnesota,State Leg (Lower),State House District 32B,88.0,Matt Norris (incumbent),Alex Moe,797,88.0,"[516, 517]", Democratic Party: Matt Norris (incumbent) Republican Party: Alex Moe
+27,,,33A,Minnesota,State Leg (Lower),State House District 33A,74.0,Jake Ross,Patti Anderson (incumbent),798,74.0,"[518, 519]", Democratic Party: Jake Ross Republican Party: Patti Anderson (incumbent)
+27,,,33B,Minnesota,State Leg (Lower),State House District 33B,67.0,Josiah Hill (incumbent),Jessica L. Johnson,799,67.0,"[520, 521]", Democratic Party: Josiah Hill (incumbent) Republican Party: Jessica L. Johnson
+27,,,34A,Minnesota,State Leg (Lower),State House District 34A,81.0,Brian Raines,Danny Nadeau (incumbent),800,81.0,"[522, 523]", Democratic Party: Brian Raines Republican Party: Danny Nadeau (incumbent)
+27,,,34B,Minnesota,State Leg (Lower),State House District 34B,13.0,,,801,13.0,[],
+27,,,35A,Minnesota,State Leg (Lower),State House District 35A,93.0,Zack Stephenson (incumbent),Josh Jungling,802,93.0,"[524, 525]", Democratic Party: Zack Stephenson (incumbent) Republican Party: Josh Jungling
+27,,,35B,Minnesota,State Leg (Lower),State House District 35B,93.0,Kari Rehrauer,Steve Pape,803,93.0,"[526, 527]", Democratic Party: Kari Rehrauer Republican Party: Steve Pape
+27,,,36A,Minnesota,State Leg (Lower),State House District 36A,100.0,Janelle Calhoun,Elliott Engen (incumbent),804,100.0,"[528, 529]", Democratic Party: Janelle Calhoun Republican Party: Elliott Engen (incumbent)
+27,,,36B,Minnesota,State Leg (Lower),State House District 36B,32.0,,,805,32.0,[],
+27,,,37A,Minnesota,State Leg (Lower),State House District 37A,67.0,Laurie Wolfe,Kristin Robbins (incumbent),806,67.0,"[530, 531]", Democratic Party: Laurie Wolfe Republican Party: Kristin Robbins (incumbent)
+27,,,37B,Minnesota,State Leg (Lower),State House District 37B,54.0,,,807,54.0,[],
+27,,,38A,Minnesota,State Leg (Lower),State House District 38A,5.0,,,808,5.0,[],
+27,,,38B,Minnesota,State Leg (Lower),State House District 38B,3.0,,,809,3.0,[],
+27,,,39A,Minnesota,State Leg (Lower),State House District 39A,10.0,,,810,10.0,[],
+27,,,39B,Minnesota,State Leg (Lower),State House District 39B,4.0,,,811,4.0,[],
+27,,,40A,Minnesota,State Leg (Lower),State House District 40A,19.0,,,812,19.0,[],
+27,,,40B,Minnesota,State Leg (Lower),State House District 40B,7.0,,,813,7.0,[],
+27,,,41A,Minnesota,State Leg (Lower),State House District 41A,97.0,Lucia Wroblewski,Wayne Johnson,814,97.0,"[532, 533]", Democratic Party: Lucia Wroblewski Republican Party: Wayne Johnson
+27,,,41B,Minnesota,State Leg (Lower),State House District 41B,95.0,Jen Fox,Tom Dippel,815,95.0,"[534, 535]", Democratic Party: Jen Fox Republican Party: Tom Dippel
+27,,,42A,Minnesota,State Leg (Lower),State House District 42A,28.0,,,816,28.0,[],
+27,,,42B,Minnesota,State Leg (Lower),State House District 42B,17.0,,,817,17.0,[],
+27,,,43A,Minnesota,State Leg (Lower),State House District 43A,7.0,,,818,7.0,[],
+27,,,43B,Minnesota,State Leg (Lower),State House District 43B,3.0,,,819,3.0,[],
+27,,,44A,Minnesota,State Leg (Lower),State House District 44A,10.0,,,820,10.0,[],
+27,,,44B,Minnesota,State Leg (Lower),State House District 44B,25.0,,,821,25.0,[],
+27,,,45A,Minnesota,State Leg (Lower),State House District 45A,93.0,Tracey Breazeale,Andrew Myers (incumbent),822,93.0,"[536, 537]", Democratic Party: Tracey Breazeale Republican Party: Andrew Myers (incumbent)
+27,,,45B,Minnesota,State Leg (Lower),State House District 45B,13.0,,,823,13.0,[],
+27,,,46A,Minnesota,State Leg (Lower),State House District 46A,2.0,,,824,2.0,[],
+27,,,46B,Minnesota,State Leg (Lower),State House District 46B,5.0,,,825,5.0,[],
+27,,,47A,Minnesota,State Leg (Lower),State House District 47A,16.0,,,826,16.0,[],
+27,,,47B,Minnesota,State Leg (Lower),State House District 47B,42.0,,,827,42.0,[],
+27,,,48A,Minnesota,State Leg (Lower),State House District 48A,48.0,,,828,48.0,[],
+27,,,48B,Minnesota,State Leg (Lower),State House District 48B,82.0,Lucille Rehm (incumbent),Caleb Steffenhagen,829,82.0,"[538, 539]", Democratic Party: Lucille Rehm (incumbent) Republican Party: Caleb Steffenhagen
+27,,,49A,Minnesota,State Leg (Lower),State House District 49A,13.0,,,830,13.0,[],
+27,,,49B,Minnesota,State Leg (Lower),State House District 49B,24.0,,,831,24.0,[],
+27,,,50A,Minnesota,State Leg (Lower),State House District 50A,7.0,,,832,7.0,[],
+27,,,50B,Minnesota,State Leg (Lower),State House District 50B,14.0,,,833,14.0,[],
+27,,,51A,Minnesota,State Leg (Lower),State House District 51A,3.0,,,834,3.0,[],
+27,,,51B,Minnesota,State Leg (Lower),State House District 51B,10.0,,,835,10.0,[],
+27,,,52A,Minnesota,State Leg (Lower),State House District 52A,15.0,,,836,15.0,[],
+27,,,52B,Minnesota,State Leg (Lower),State House District 52B,14.0,,,837,14.0,[],
+27,,,53A,Minnesota,State Leg (Lower),State House District 53A,26.0,,,838,26.0,[],
+27,,,53B,Minnesota,State Leg (Lower),State House District 53B,30.0,,,839,30.0,[],
+27,,,54A,Minnesota,State Leg (Lower),State House District 54A,84.0,Brad Tabke (incumbent),Aaron Paul,840,84.0,"[540, 541]", Democratic Party: Brad Tabke (incumbent) Republican Party: Aaron Paul
+27,,,54B,Minnesota,State Leg (Lower),State House District 54B,39.0,,,841,39.0,[],
+27,,,55A,Minnesota,State Leg (Lower),State House District 55A,64.0,Jessica Hanson (incumbent),Gabriela Kroetch,842,64.0,"[542, 543]", Democratic Party: Jessica Hanson (incumbent) Republican Party: Gabriela Kroetch
+27,,,55B,Minnesota,State Leg (Lower),State House District 55B,24.0,,,843,24.0,[],
+27,,,56A,Minnesota,State Leg (Lower),State House District 56A,23.0,,,844,23.0,[],
+27,,,56B,Minnesota,State Leg (Lower),State House District 56B,51.0,,,845,51.0,[],
+27,,,57A,Minnesota,State Leg (Lower),State House District 57A,28.0,,,846,28.0,[],
+27,,,57B,Minnesota,State Leg (Lower),State House District 57B,96.0,Brian Cohn,Jeff Witte (incumbent),847,96.0,"[544, 545]", Democratic Party: Brian Cohn Republican Party: Jeff Witte (incumbent)
+27,,,58A,Minnesota,State Leg (Lower),State House District 58A,54.0,Kristi Pursell (incumbent),Rita Hillmann Olson,848,54.0,"[546, 547]", Democratic Party: Kristi Pursell (incumbent) Republican Party: Rita Hillmann Olson
+27,,,58B,Minnesota,State Leg (Lower),State House District 58B,37.0,,,849,37.0,[],
+27,,,59A,Minnesota,State Leg (Lower),State House District 59A,1.0,,,850,1.0,[],
+27,,,59B,Minnesota,State Leg (Lower),State House District 59B,1.0,,,851,1.0,[],
+27,,,60A,Minnesota,State Leg (Lower),State House District 60A,1.0,,,852,1.0,[],
+27,,,60B,Minnesota,State Leg (Lower),State House District 60B,1.0,,,853,1.0,[],
+27,,,61A,Minnesota,State Leg (Lower),State House District 61A,1.0,,,854,1.0,[],
+27,,,61B,Minnesota,State Leg (Lower),State House District 61B,1.0,,,855,1.0,[],
+27,,,62A,Minnesota,State Leg (Lower),State House District 62A,1.0,,,856,1.0,[],
+27,,,62B,Minnesota,State Leg (Lower),State House District 62B,1.0,,,857,1.0,[],
+27,,,63A,Minnesota,State Leg (Lower),State House District 63A,1.0,,,858,1.0,[],
+27,,,63B,Minnesota,State Leg (Lower),State House District 63B,1.0,,,859,1.0,[],
+27,,,64A,Minnesota,State Leg (Lower),State House District 64A,1.0,,,860,1.0,[],
+27,,,64B,Minnesota,State Leg (Lower),State House District 64B,1.0,,,861,1.0,[],
+27,,,65A,Minnesota,State Leg (Lower),State House District 65A,1.0,,,862,1.0,[],
+27,,,65B,Minnesota,State Leg (Lower),State House District 65B,2.0,,,863,2.0,[],
+27,,,66A,Minnesota,State Leg (Lower),State House District 66A,1.0,,,864,1.0,[],
+27,,,66B,Minnesota,State Leg (Lower),State House District 66B,1.0,,,865,1.0,[],
+27,,,67A,Minnesota,State Leg (Lower),State House District 67A,2.0,,,866,2.0,[],
+27,,,67B,Minnesota,State Leg (Lower),State House District 67B,2.0,,,867,2.0,[],
+32,,,001,Nevada,State Leg (Lower),State House District 1,38.0,,,868,38.0,"[1537, 1538]", Democratic Party: Daniele Monroe-Moreno Republican Party: Garland Brinkley
+32,,,002,Nevada,State Leg (Lower),State House District 2,100.0,Ron Nelsen,Heidi Kasama (incumbent),869,100.0,"[548, 549, 1539, 1540]", Democratic Party: Ron Nelsen Republican Party: Heidi Kasama (incumbent) Democratic Party: Ron Nelsen Republican Party: Heidi Kasama
+32,,,003,Nevada,State Leg (Lower),State House District 3,31.0,,,870,31.0,"[1541, 1542]", Democratic Party: Selena Torres Republican Party: Michele Rizza
+32,,,004,Nevada,State Leg (Lower),State House District 4,96.0,Ryan Hampton,Lisa Cole,871,96.0,"[550, 551, 1543, 1544]", Democratic Party: Ryan Hampton Republican Party: Lisa Cole Democratic Party: Ryan Hampton Republican Party: Lisa Cole
+32,,,005,Nevada,State Leg (Lower),State House District 5,47.0,,,872,47.0,"[1545, 1546, 1547]", Democratic Party: Brittney Miller  Republican Party: Kelly Quinn Libertarian Party: Ronald Morgan
+32,,,006,Nevada,State Leg (Lower),State House District 6,1.0,,,873,1.0,"[1548, 1549]", Democratic Party: Jovan Jackson Republican Party: Nephi Oliva
+32,,,007,Nevada,State Leg (Lower),State House District 7,5.0,,,874,5.0,[1550], Democratic Party: Tanya Flanagan
+32,,,008,Nevada,State Leg (Lower),State House District 8,27.0,,,875,27.0,"[1551, 1552]", Democratic Party: Duy Nguyen Republican Party: Kelly Chapman
+32,,,009,Nevada,State Leg (Lower),State House District 9,49.0,,,876,49.0,"[1553, 1554]", Democratic Party: Steve Yeager Republican Party: Erica Neely
+32,,,010,Nevada,State Leg (Lower),State House District 10,17.0,,,877,17.0,"[1555, 1556]", Democratic Party: Venise Karris Libertarian Party: Sean Moore
+32,,,011,Nevada,State Leg (Lower),State House District 11,2.0,,,878,2.0,"[1557, 1558]", Democratic Party: Cinthia Moore Republican Party: Jeffrey Lustick
+32,,,012,Nevada,State Leg (Lower),State House District 12,36.0,,,879,36.0,"[1559, 1560]", Democratic Party: Max Carter II Republican Party: Nancy Roecker
+32,,,013,Nevada,State Leg (Lower),State House District 13,73.0,Daniel Andrews,Brian Hibbetts (incumbent),880,73.0,"[552, 553, 1561, 1562]", Democratic Party: Daniel Andrews Republican Party: Brian Hibbetts (incumbent) Democratic Party: Daniel Andrews Republican Party: Brian Hibbetts
+32,,,014,Nevada,State Leg (Lower),State House District 14,4.0,,,881,4.0,[1563], Democratic Party: Erica Mosca 
+32,,,015,Nevada,State Leg (Lower),State House District 15,6.0,,,882,6.0,"[1564, 1565, 1566]", Democratic Party: Howard Watts III Republican Party: Melissa Lynn Spence Libertarian Party: Jordy d la Caridad Viciedo Prado
+32,,,016,Nevada,State Leg (Lower),State House District 16,31.0,,,883,31.0,"[1567, 1568, 1569]", Democratic Party: Cecilia Gonzalez Republican Party: James Neville Libertarian Party: Jose Pena
+32,,,017,Nevada,State Leg (Lower),State House District 17,5.0,,,884,5.0,"[1570, 1571]", Democratic Party: Linda Hunt Republican Party: Robert Olson
+32,,,018,Nevada,State Leg (Lower),State House District 18,11.0,,,885,11.0,"[1572, 1573]", Democratic Party: Venicia Considine Republican Party: Antario Brown
+32,,,019,Nevada,State Leg (Lower),State House District 19,10.0,,,886,10.0,[1574], Republican Party: Thaddeus Yurek
+32,,,020,Nevada,State Leg (Lower),State House District 20,14.0,,,887,14.0,"[1575, 1576]", Democratic Party: David Orentlicher Republican Party: Stan Vaughan
+32,,,021,Nevada,State Leg (Lower),State House District 21,76.0,Elaine Marzola (incumbent),April Arndt,888,76.0,"[554, 555, 1577, 1578]", Democratic Party: Elaine Marzola (incumbent) Republican Party: April Arndt Democratic Party: Elaine Marzola Republican Party: April Arndt
+32,,,022,Nevada,State Leg (Lower),State House District 22,68.0,,,889,68.0,[1579], Republican Party: Melissa Hardy
+32,,,023,Nevada,State Leg (Lower),State House District 23,22.0,,,890,22.0,[1580], Republican Party: Danielle Gallant
+32,,,024,Nevada,State Leg (Lower),State House District 24,8.0,,,891,8.0,"[1581, 1582]", Democratic Party: Erica Roth Republican Party: Terisia Kolesnick
+32,,,025,Nevada,State Leg (Lower),State House District 25,69.0,Selena La Rue Hatch (incumbent),Diana Sande,892,69.0,"[556, 557, 1583, 1584]", Democratic Party: Selena La Rue Hatch (incumbent) Republican Party: Diana Sande Democratic Party: Selena La Rue Hatch Republican Party: Diana Sande
+32,,,026,Nevada,State Leg (Lower),State House District 26,47.0,,,893,47.0,"[1585, 1586]", Democratic Party: Diane Sullivan Republican Party: Rich DeLong
+32,,,027,Nevada,State Leg (Lower),State House District 27,31.0,,,894,31.0,"[1587, 1588]", Democratic Party: Heather Goulding Republican Party: Carmen Ortiz
+32,,,028,Nevada,State Leg (Lower),State House District 28,3.0,,,895,3.0,[1589], Democratic Party: Reuben D'Silva
+32,,,029,Nevada,State Leg (Lower),State House District 29,64.0,Joe Dalia,Annette Owens,896,64.0,"[558, 559, 1590, 1591]", Democratic Party: Joe Dalia Republican Party: Annette Owens Democratic Party: Joe Dalia Republican Party: Annette Owens
+32,,,030,Nevada,State Leg (Lower),State House District 30,34.0,,,897,34.0,"[1592, 1593]", Democratic Party: Natha Anderson Unaffiliated: Morgan Kolvet
+32,,,031,Nevada,State Leg (Lower),State House District 31,31.0,,,898,31.0,"[1594, 1595]", Democratic Party: Stuart MacKie Republican Party: Jill Dickman
+32,,,032,Nevada,State Leg (Lower),State House District 32,7.0,,,899,7.0,"[1596, 1597, 1598]", Democratic Party: Arnold Thomas Republican Party: Alexis Hansen Unaffiliated: John Cardiff Gerhardt
+32,,,033,Nevada,State Leg (Lower),State House District 33,2.0,,,900,2.0,"[1599, 1600]", Republican Party: Bert Gurr Libertarian Party: Darryl Baber
+32,,,034,Nevada,State Leg (Lower),State House District 34,28.0,,,901,28.0,"[1601, 1602]", Democratic Party: Hanadi Nadeem Republican Party: Brandon Davis
+32,,,035,Nevada,State Leg (Lower),State House District 35,72.0,Sharifa Wahab,Rebecca Edgeworth,902,72.0,"[560, 561, 1603, 1604]", Democratic Party: Sharifa Wahab Republican Party: Rebecca Edgeworth Democratic Party: Sharifa Wahab Republican Party: Rebecca Edgeworth
+32,,,036,Nevada,State Leg (Lower),State House District 36,12.0,,,903,12.0,"[1605, 1606]", Democratic Party: Marlene Drake Republican Party: Gregory Hafen
+32,,,037,Nevada,State Leg (Lower),State House District 37,97.0,Shea Backus (incumbent),David Brog,904,97.0,"[562, 563, 1607, 1608]", Democratic Party: Shea Backus (incumbent) Republican Party: David Brog Democratic Party: Shea Backus Republican Party: David Brog
+32,,,038,Nevada,State Leg (Lower),State House District 38,2.0,,,905,2.0,[1609], Republican Party: Gregory Koenig
+32,,,039,Nevada,State Leg (Lower),State House District 39,6.0,,,906,6.0,"[1610, 1611]", Democratic Party: Erich Obermayr Republican Party: Ken Gray
+32,,,040,Nevada,State Leg (Lower),State House District 40,28.0,,,907,28.0,"[1612, 1613]", Democratic Party: Katherin Ramsey Republican Party: Philip O'Neill
+32,,,041,Nevada,State Leg (Lower),State House District 41,51.0,,,908,51.0,"[1614, 1615]", Democratic Party: Sandra Jauregui Republican Party: Rafael Arroyo-Montalvo
+32,,,042,Nevada,State Leg (Lower),State House District 42,28.0,,,909,28.0,"[1616, 1617]", Democratic Party: Tracy Brown-May Republican Party: Kevin Child
+42,,,001,Pennsylvania,State Leg (Lower),State House District 1,6.0,,,910,6.0,[1618], Democratic Party: Patrick Harkins
+42,,,002,Pennsylvania,State Leg (Lower),State House District 2,32.0,,,911,32.0,"[1619, 1620]", Democratic Party: Robert Merski Republican Party: Matt Strupczewski
+42,,,003,Pennsylvania,State Leg (Lower),State House District 3,89.0,Ryan Bizzarro (incumbent),Micah Goring,912,89.0,"[564, 565, 1621, 1622]", Democratic Party: Ryan Bizzarro (incumbent) Republican Party: Micah Goring Democratic Party: Ryan Bizzarro Republican Party: Micah Goring
+42,,,004,Pennsylvania,State Leg (Lower),State House District 4,25.0,,,913,25.0,"[1623, 1624]", Democratic Party: Joe Cancilla Republican Party: Jake Banta
+42,,,005,Pennsylvania,State Leg (Lower),State House District 5,14.0,,,914,14.0,"[1625, 1626]", Democratic Party: Heather Hanna Republican Party: Eric Weaknecht
+42,,,006,Pennsylvania,State Leg (Lower),State House District 6,10.0,,,915,10.0,"[1627, 1628]", Democratic Party: Michael Walker Republican Party: Bradley Roae
+42,,,007,Pennsylvania,State Leg (Lower),State House District 7,83.0,,,916,83.0,[1629], Republican Party: Parke Wentling
+42,,,008,Pennsylvania,State Leg (Lower),State House District 8,6.0,,,917,6.0,[1630], Republican Party: Aaron Bernstine
+42,,,009,Pennsylvania,State Leg (Lower),State House District 9,33.0,,,918,33.0,[1631], Republican Party: Marla Gallo Brown
+42,,,010,Pennsylvania,State Leg (Lower),State House District 10,0.0,,,919,0.0,[1632], Democratic Party: Amen Brown
+42,,,011,Pennsylvania,State Leg (Lower),State House District 11,8.0,,,920,8.0,[1633], Republican Party: Marci Mustello
+42,,,012,Pennsylvania,State Leg (Lower),State House District 12,19.0,,,921,19.0,"[1634, 1635]", Democratic Party: Robert Vigue Republican Party: Stephenie Scialabba
+42,,,013,Pennsylvania,State Leg (Lower),State House District 13,91.0,Cristian Luna,John Lawrence (incumbent),922,91.0,"[566, 567, 1636, 1637]", Democratic Party: Cristian Luna Republican Party: John Lawrence (incumbent) Democratic Party: Cristian Luna Republican Party: John Lawrence
+42,,,014,Pennsylvania,State Leg (Lower),State House District 14,34.0,,,923,34.0,"[1638, 1639]", Democratic Party: Kenya Johns Republican Party: Roman Kozak
+42,,,015,Pennsylvania,State Leg (Lower),State House District 15,17.0,,,924,17.0,"[1640, 1641]", Democratic Party: Ashlee Caul Republican Party: Joshua Kail
+42,,,016,Pennsylvania,State Leg (Lower),State House District 16,74.0,Robert Matzie (incumbent),Michael Perich,925,74.0,"[568, 569, 1642, 1643]", Democratic Party: Robert Matzie (incumbent) Republican Party: Michael Perich Democratic Party: Robert Matzie Republican Party: Michael Perich
+42,,,017,Pennsylvania,State Leg (Lower),State House District 17,4.0,,,926,4.0,[1644], Republican Party: Tim Bonner
+42,,,018,Pennsylvania,State Leg (Lower),State House District 18,48.0,,,927,48.0,"[1645, 1646]", Democratic Party: Anand Patel Republican Party: K.C. Tomlinson
+42,,,019,Pennsylvania,State Leg (Lower),State House District 19,1.0,,,928,1.0,[1647], Democratic Party: Aerlon Abney
+42,,,020,Pennsylvania,State Leg (Lower),State House District 20,20.0,,,929,20.0,"[1648, 1649]", Democratic Party: Emily Kinkead Republican Party: Matt Kruth
+42,,,021,Pennsylvania,State Leg (Lower),State House District 21,10.0,,,930,10.0,[1650], Democratic Party: Lindsay Powell
+42,,,022,Pennsylvania,State Leg (Lower),State House District 22,3.0,,,931,3.0,[1651], Democratic Party: Joshua Siegel
+42,,,023,Pennsylvania,State Leg (Lower),State House District 23,1.0,,,932,1.0,[1652], Democratic Party: Dan Frankel
+42,,,024,Pennsylvania,State Leg (Lower),State House District 24,1.0,,,933,1.0,[1653], Democratic Party: La'Tasha Mayes
+42,,,025,Pennsylvania,State Leg (Lower),State House District 25,40.0,,,934,40.0,"[1654, 1655]", Democratic Party: Brandon Markosek Republican Party: John Ritter
+42,,,026,Pennsylvania,State Leg (Lower),State House District 26,55.0,Paul Friel (incumbent),Shawn Blickley,935,55.0,"[570, 571, 1656, 1657]", Democratic Party: Paul Friel (incumbent) Republican Party: Shawn Blickley Democratic Party: Paul Friel Republican Party: Shawn Blickley
+42,,,027,Pennsylvania,State Leg (Lower),State House District 27,11.0,,,936,11.0,[1658], Democratic Party: Daniel Deasy Jr. 
+42,,,028,Pennsylvania,State Leg (Lower),State House District 28,62.0,William Petulla,Jeremy Shaffer,937,62.0,"[572, 573, 1659, 1660]", Democratic Party: William Petulla Republican Party: Jeremy Shaffer Democratic Party: William Petulla Republican Party: Jeremy Shaffer
+42,,,029,Pennsylvania,State Leg (Lower),State House District 29,41.0,Tim Brennan (incumbent),Steve Mekanik,938,41.0,"[574, 575, 1661, 1662]", Democratic Party: Tim Brennan (incumbent) Republican Party: Steve Mekanik Democratic Party: Tim Brennan Republican Party: Steve Mekanik
+42,,,030,Pennsylvania,State Leg (Lower),State House District 30,91.0,Arvind Venkat (incumbent),Nathan Wolfe,939,91.0,"[576, 577, 1663, 1664]", Democratic Party: Arvind Venkat (incumbent) Republican Party: Nathan Wolfe Democratic Party: Arvind Venkat Republican Party: Nathan Wolfe
+42,,,031,Pennsylvania,State Leg (Lower),State House District 31,34.0,,,940,34.0,"[1665, 1666]", Democratic Party: Perry Warren Republican Party: Bernie Sauer
+42,,,032,Pennsylvania,State Leg (Lower),State House District 32,8.0,,,941,8.0,[1667], Democratic Party: Joe McAndrew
+42,,,033,Pennsylvania,State Leg (Lower),State House District 33,61.0,Mandy Steele (incumbent),Gary Lotz,942,61.0,"[578, 579, 1668, 1669]", Democratic Party: Mandy Steele (incumbent) Republican Party: Gary Lotz Democratic Party: Mandy Steele Republican Party: Gary Lotz
+42,,,034,Pennsylvania,State Leg (Lower),State House District 34,1.0,,,943,1.0,[1670], Democratic Party: Abigail Salisbury
+42,,,035,Pennsylvania,State Leg (Lower),State House District 35,10.0,,,944,10.0,[1671], Democratic Party: Matthew Gergely
+42,,,036,Pennsylvania,State Leg (Lower),State House District 36,6.0,,,945,6.0,[1672], Democratic Party: Jessica Benham
+42,,,037,Pennsylvania,State Leg (Lower),State House District 37,8.0,,,946,8.0,"[1673, 1674]", Democratic Party: John George Republican Party: Mindy Fee
+42,,,038,Pennsylvania,State Leg (Lower),State House District 38,42.0,John Inglis,Stone Sobieralski,947,42.0,"[580, 581, 1675, 1676]", Democratic Party: John Inglis Republican Party: Stone Sobieralski Democratic Party: John Inglis Republican Party: Stone Sobieralski
+42,,,039,Pennsylvania,State Leg (Lower),State House District 39,61.0,Angela Girol,Andrew Kuzma (incumbent),948,61.0,"[582, 583, 1677, 1678]", Democratic Party: Angela Girol Republican Party: Andrew Kuzma (incumbent) Democratic Party: Angela Girol Republican Party: Andrew Kuzma
+42,,,040,Pennsylvania,State Leg (Lower),State House District 40,69.0,Peter Kohnke,Natalie Mihalek (incumbent),949,69.0,"[584, 585, 1679, 1680]", Democratic Party: Peter Kohnke Republican Party: Natalie Mihalek (incumbent) Democratic Party: Peter Kohnke Republican Party: Natalie Mihalek
+42,,,041,Pennsylvania,State Leg (Lower),State House District 41,87.0,Brad Chambers,Brett Miller (incumbent),950,87.0,"[586, 587, 1681, 1682]", Democratic Party: Brad Chambers Republican Party: Brett Miller (incumbent) Democratic Party: Brad Chambers Republican Party: Brett Miller
+42,,,042,Pennsylvania,State Leg (Lower),State House District 42,10.0,,,951,10.0,"[1683, 1684]", Democratic Party: Dan Miller Republican Party: Joseph Leckenby
+42,,,043,Pennsylvania,State Leg (Lower),State House District 43,6.0,,,952,6.0,[1685], Republican Party: Keith Greiner
+42,,,044,Pennsylvania,State Leg (Lower),State House District 44,100.0,Hadley Haas,Valerie Gaydos (incumbent),953,100.0,"[588, 589, 1686, 1687]", Democratic Party: Hadley Haas Republican Party: Valerie Gaydos (incumbent) Democratic Party: Hadley Haas Republican Party: Valerie Gaydos
+42,,,045,Pennsylvania,State Leg (Lower),State House District 45,46.0,,,954,46.0,"[1688, 1689]", Democratic Party: Anita Astorino Kulik Republican Party: James Julius
+42,,,046,Pennsylvania,State Leg (Lower),State House District 46,67.0,Alex Taylor,Jason Ortitay (incumbent),955,67.0,"[590, 591, 1690, 1691]", Democratic Party: Alex Taylor Republican Party: Jason Ortitay (incumbent) Democratic Party: Alex Taylor Republican Party: Jason Ortitay
+42,,,047,Pennsylvania,State Leg (Lower),State House District 47,25.0,,,956,25.0,"[1692, 1693]", Democratic Party: Edward Ritter Republican Party: Joe D'Orsie
+42,,,048,Pennsylvania,State Leg (Lower),State House District 48,40.0,,,957,40.0,[1694], Republican Party: Timothy O'Neal
+42,,,049,Pennsylvania,State Leg (Lower),State House District 49,4.0,,,958,4.0,[1695], Democratic Party: Ismail Smith-Wade-El
+42,,,050,Pennsylvania,State Leg (Lower),State House District 50,29.0,,,959,29.0,"[1696, 1697]", Democratic Party: Stephanie Waggett Republican Party: Bud Cook
+42,,,051,Pennsylvania,State Leg (Lower),State House District 51,33.0,,,960,33.0,"[1698, 1699]", Democratic Party: George Rattay Republican Party: Charity Grimm Krupa
+42,,,052,Pennsylvania,State Leg (Lower),State House District 52,14.0,,,961,14.0,[1700], Republican Party: Ryan Warner
+42,,,053,Pennsylvania,State Leg (Lower),State House District 53,32.0,,,962,32.0,"[1701, 1702]", Democratic Party: Steven Malagari Republican Party: Cheryl Bonavita
+42,,,054,Pennsylvania,State Leg (Lower),State House District 54,3.0,,,963,3.0,"[1703, 1704]", Democratic Party: Greg Scott Republican Party: Martin Dickerson
+42,,,055,Pennsylvania,State Leg (Lower),State House District 55,27.0,,,964,27.0,"[1705, 1706]", Democratic Party: Davon Magwood Republican Party: Jill Cooper
+42,,,056,Pennsylvania,State Leg (Lower),State House District 56,16.0,,,965,16.0,[1707], Republican Party: Brian Rasel
+42,,,057,Pennsylvania,State Leg (Lower),State House District 57,25.0,,,966,25.0,[1708], Republican Party: Eric Nelson
+42,,,058,Pennsylvania,State Leg (Lower),State House District 58,19.0,,,967,19.0,"[1709, 1710]", Democratic Party: Cherri Rogers Republican Party: Eric Davanzo
+42,,,059,Pennsylvania,State Leg (Lower),State House District 59,10.0,,,968,10.0,"[1711, 1712]", Democratic Party: Margie Zelenak Republican Party: Leslie Baum Rossi
+42,,,060,Pennsylvania,State Leg (Lower),State House District 60,10.0,,,969,10.0,[1713], Republican Party: Abby Major
+42,,,061,Pennsylvania,State Leg (Lower),State House District 61,21.0,,,970,21.0,"[1714, 1715]", Democratic Party: Liz Hanbidge Republican Party: Michelle Rupp
+42,,,062,Pennsylvania,State Leg (Lower),State House District 62,20.0,,,971,20.0,[1716], Republican Party: James Struzzi II
+42,,,063,Pennsylvania,State Leg (Lower),State House District 63,3.0,,,972,3.0,"[1717, 1718]", Democratic Party: Pat Ritchie Republican Party: Josh Bashline
+42,,,064,Pennsylvania,State Leg (Lower),State House District 64,6.0,,,973,6.0,[1719], Republican Party: R. Lee James
+42,,,065,Pennsylvania,State Leg (Lower),State House District 65,5.0,,,974,5.0,"[1720, 1721]", Democratic Party: Erin Willman Republican Party: Kathy Rapp
+42,,,066,Pennsylvania,State Leg (Lower),State House District 66,2.0,,,975,2.0,[1722], Republican Party: Brian Smith
+42,,,067,Pennsylvania,State Leg (Lower),State House District 67,2.0,,,976,2.0,"[1723, 1724]", Democratic Party: Rajeev Pradhan Republican Party: Martin Causer
+42,,,068,Pennsylvania,State Leg (Lower),State House District 68,2.0,,,977,2.0,[1725], Republican Party: Clint Owlett
+42,,,069,Pennsylvania,State Leg (Lower),State House District 69,2.0,,,978,2.0,[1726], Republican Party: Carl Metzgar
+42,,,070,Pennsylvania,State Leg (Lower),State House District 70,35.0,,,979,35.0,"[1727, 1728]", Democratic Party: Matthew Bradford Republican Party: Ed Moye
+42,,,071,Pennsylvania,State Leg (Lower),State House District 71,7.0,,,980,7.0,[1729], Republican Party: Jim Rigby
+42,,,072,Pennsylvania,State Leg (Lower),State House District 72,24.0,,,981,24.0,"[1730, 1731]", Democratic Party: Frank Burns Republican Party: Amy Bradley
+42,,,073,Pennsylvania,State Leg (Lower),State House District 73,4.0,,,982,4.0,[1732], Republican Party: Dallas Kephart
+42,,,074,Pennsylvania,State Leg (Lower),State House District 74,36.0,,,983,36.0,"[1733, 1734]", Democratic Party: Dan Williams Republican Party: Dale Hensel
+42,,,075,Pennsylvania,State Leg (Lower),State House District 75,4.0,,,984,4.0,[1735], Republican Party: Mike Armanini
+42,,,076,Pennsylvania,State Leg (Lower),State House District 76,11.0,,,985,11.0,"[1736, 1737]", Democratic Party: Denise Maris Republican Party: Stephanie Borowicz
+42,,,077,Pennsylvania,State Leg (Lower),State House District 77,26.0,,,986,26.0,"[1738, 1739]", Democratic Party: H. Scott Conklin Republican Party: Marie Librizzi
+42,,,078,Pennsylvania,State Leg (Lower),State House District 78,1.0,,,987,1.0,[1740], Republican Party: Jesse Topper
+42,,,079,Pennsylvania,State Leg (Lower),State House District 79,9.0,,,988,9.0,[1741], Republican Party: Louis Schmitt Jr. 
+42,,,080,Pennsylvania,State Leg (Lower),State House District 80,2.0,,,989,2.0,[1742], Republican Party: Scott Barger
+42,,,081,Pennsylvania,State Leg (Lower),State House District 81,3.0,,,990,3.0,"[1743, 1744]", Democratic Party: Sean Steeg Republican Party: Richard Irvin
+42,,,082,Pennsylvania,State Leg (Lower),State House District 82,59.0,Paul Takac (incumbent),Therese Hollen,991,59.0,"[592, 593, 1745, 1746]", Democratic Party: Paul Takac (incumbent) Republican Party: Therese Hollen Democratic Party: Paul Takac Republican Party: Therese Hollen
+42,,,083,Pennsylvania,State Leg (Lower),State House District 83,14.0,,,992,14.0,[1747], Republican Party: Jamie Flick
+42,,,084,Pennsylvania,State Leg (Lower),State House District 84,2.0,,,993,2.0,[1748], Republican Party: Joe Hamm
+42,,,085,Pennsylvania,State Leg (Lower),State House District 85,5.0,,,994,5.0,"[1749, 1750]", Democratic Party: Nick Jacobson Republican Party: David Rowe
+42,,,086,Pennsylvania,State Leg (Lower),State House District 86,2.0,,,995,2.0,[1751], Republican Party: Perry Stambaugh
+42,,,087,Pennsylvania,State Leg (Lower),State House District 87,30.0,,,996,30.0,"[1752, 1753]", Democratic Party: John Flood Republican Party: Thomas Kutz
+42,,,088,Pennsylvania,State Leg (Lower),State House District 88,89.0,Sara Agerton,Sheryl Delozier (incumbent),997,89.0,"[594, 595, 1754, 1755]", Democratic Party: Sara Agerton Republican Party: Sheryl Delozier (incumbent) Democratic Party: Sara Agerton Republican Party: Sheryl Delozier
+42,,,089,Pennsylvania,State Leg (Lower),State House District 89,7.0,,,998,7.0,"[1756, 1757]", Democratic Party: Noah Kreischer Republican Party: Rob Kauffman
+42,,,090,Pennsylvania,State Leg (Lower),State House District 90,2.0,,,999,2.0,[1758], Republican Party: Chad Reichard
+42,,,091,Pennsylvania,State Leg (Lower),State House District 91,11.0,,,1000,11.0,[1759], Republican Party: Dan Moul
+42,,,092,Pennsylvania,State Leg (Lower),State House District 92,6.0,,,1001,6.0,"[1760, 1761]", Democratic Party: Dan Almoney Republican Party: Marc Anderson
+42,,,093,Pennsylvania,State Leg (Lower),State House District 93,10.0,,,1002,10.0,[1762], Republican Party: Mike Jones
+42,,,094,Pennsylvania,State Leg (Lower),State House District 94,7.0,,,1003,7.0,[1763], Republican Party: Wendy Fink
+42,,,095,Pennsylvania,State Leg (Lower),State House District 95,7.0,,,1004,7.0,"[1764, 1765]", Democratic Party: Carol Hill-Evans Republican Party: Jasmine Rivera
+42,,,096,Pennsylvania,State Leg (Lower),State House District 96,18.0,,,1005,18.0,"[1766, 1767]", Democratic Party: P. Michael Sturla Republican Party: Eric Beezer
+42,,,097,Pennsylvania,State Leg (Lower),State House District 97,21.0,,,1006,21.0,"[1768, 1769]", Democratic Party: Bob Rudy Republican Party: Steven Mentzer
+42,,,098,Pennsylvania,State Leg (Lower),State House District 98,11.0,,,1007,11.0,"[1770, 1771]", Democratic Party: Lynn McCleary Republican Party: Tom Jones
+42,,,099,Pennsylvania,State Leg (Lower),State House District 99,4.0,,,1008,4.0,[1772], Republican Party: David H. Zimmerman
+42,,,100,Pennsylvania,State Leg (Lower),State House District 100,3.0,,,1009,3.0,[1773], Republican Party: Bryan Cutler
+42,,,101,Pennsylvania,State Leg (Lower),State House District 101,25.0,,,1010,25.0,[1774], Republican Party: John Schlegel
+42,,,102,Pennsylvania,State Leg (Lower),State House District 102,4.0,,,1011,4.0,[1775], Republican Party: Russell Diamond
+42,,,103,Pennsylvania,State Leg (Lower),State House District 103,11.0,,,1012,11.0,"[1776, 1777]", Democratic Party: Nate Davidson Republican Party: Cindi Ward
+42,,,104,Pennsylvania,State Leg (Lower),State House District 104,6.0,,,1013,6.0,[1778], Democratic Party: Dave Madsen 
+42,,,105,Pennsylvania,State Leg (Lower),State House District 105,12.0,,,1014,12.0,[1779], Democratic Party: Justin Fleming
+42,,,106,Pennsylvania,State Leg (Lower),State House District 106,52.0,,,1015,52.0,"[1780, 1781]", Democratic Party: Anju Singh Republican Party: Thomas Mehaffie
+42,,,107,Pennsylvania,State Leg (Lower),State House District 107,4.0,,,1016,4.0,[1782], Republican Party: Joanne Stehr
+42,,,108,Pennsylvania,State Leg (Lower),State House District 108,9.0,,,1017,9.0,[1783], Republican Party: Michael Stender
+42,,,109,Pennsylvania,State Leg (Lower),State House District 109,13.0,,,1018,13.0,"[1784, 1785]", Democratic Party: Nick McGaw Republican Party: Robert Leadbeter
+42,,,110,Pennsylvania,State Leg (Lower),State House District 110,6.0,,,1019,6.0,[1786], Republican Party: Tina Pickett
+42,,,111,Pennsylvania,State Leg (Lower),State House District 111,6.0,,,1020,6.0,[1787], Republican Party: Jonathan Fritz
+42,,,112,Pennsylvania,State Leg (Lower),State House District 112,26.0,,,1021,26.0,[1788], Democratic Party: Kyle Mullins
+42,,,113,Pennsylvania,State Leg (Lower),State House District 113,19.0,,,1022,19.0,[1789], Democratic Party: Kyle Donahue
+42,,,114,Pennsylvania,State Leg (Lower),State House District 114,28.0,,,1023,28.0,[1790], Democratic Party: Bridget Malloy Kosierowski
+42,,,115,Pennsylvania,State Leg (Lower),State House District 115,29.0,,,1024,29.0,"[1791, 1792]", Democratic Party: Maureen Madden Republican Party: Matt Long
+42,,,116,Pennsylvania,State Leg (Lower),State House District 116,23.0,,,1025,23.0,"[1793, 1794]", Democratic Party: Deborah Adoff Republican Party: Dane Watro Jr. 
+42,,,117,Pennsylvania,State Leg (Lower),State House District 117,6.0,,,1026,6.0,[1795], waiting on primary: waiting on primary
+42,,,118,Pennsylvania,State Leg (Lower),State House District 118,81.0,James Haddock (incumbent),McKayla Kathio,1027,81.0,"[596, 597, 1796, 1797]", Democratic Party: James Haddock (incumbent) Republican Party: McKayla Kathio Democratic Party: James Haddock Republican Party: McKayla Kathio
+42,,,119,Pennsylvania,State Leg (Lower),State House District 119,84.0,Megan Kocher,Alec Ryncavage (incumbent),1028,84.0,"[598, 599, 1798, 1799]", Democratic Party: Megan Kocher Republican Party: Alec Ryncavage (incumbent) Democratic Party: Megan Kocher Republican Party: Alec Ryncavage
+42,,,120,Pennsylvania,State Leg (Lower),State House District 120,91.0,Fern Leard,Brenda Pugh,1029,91.0,"[600, 601, 1800, 1801]", Democratic Party: Fern Leard Republican Party: Brenda Pugh Democratic Party: Fern Leard Republican Party: Brenda Pugh
+42,,,121,Pennsylvania,State Leg (Lower),State House District 121,50.0,,,1030,50.0,"[1802, 1803]", Democratic Party: Eddie Day Pashinski Republican Party: Donald Disler
+42,,,122,Pennsylvania,State Leg (Lower),State House District 122,12.0,,,1031,12.0,[1804], Republican Party: Doyle Heffley
+42,,,123,Pennsylvania,State Leg (Lower),State House District 123,17.0,,,1032,17.0,"[1805, 1806]", Democratic Party: Michael Zvalaren Republican Party: Tim Twardzik
+42,,,124,Pennsylvania,State Leg (Lower),State House District 124,7.0,,,1033,7.0,"[1807, 1808]", Democratic Party: Tina Burns Republican Party: Jamie Barton
+42,,,125,Pennsylvania,State Leg (Lower),State House District 125,12.0,,,1034,12.0,"[1809, 1810]", Democratic Party: Gene Stilp Republican Party: Joe Kerwin
+42,,,126,Pennsylvania,State Leg (Lower),State House District 126,27.0,,,1035,27.0,"[1811, 1812]", Democratic Party: Jacklyn Rusnock Republican Party: James Oswald
+42,,,127,Pennsylvania,State Leg (Lower),State House District 127,4.0,,,1036,4.0,[1813], Democratic Party: Manuel Guzman
+42,,,128,Pennsylvania,State Leg (Lower),State House District 128,34.0,,,1037,34.0,[1814], Republican Party: Mark Gillen
+42,,,129,Pennsylvania,State Leg (Lower),State House District 129,18.0,,,1038,18.0,"[1815, 1816]", Democratic Party: Johanny Cepeda-Freytiz Republican Party: Susan Larkin
+42,,,130,Pennsylvania,State Leg (Lower),State House District 130,16.0,,,1039,16.0,"[1817, 1818]", Democratic Party: Rayne Reitnauer Republican Party: David Maloney
+42,,,131,Pennsylvania,State Leg (Lower),State House District 131,60.0,Meriam Sabih,Milou Mackenzie (incumbent),1040,60.0,"[602, 603, 1819, 1820]", Democratic Party: Meriam Sabih Republican Party: Milou Mackenzie (incumbent) Democratic Party: Meriam Sabih Republican Party: Milou Mackenzie
+42,,,132,Pennsylvania,State Leg (Lower),State House District 132,32.0,,,1041,32.0,[1821], Democratic Party: Michael Schlossberg
+42,,,133,Pennsylvania,State Leg (Lower),State House District 133,28.0,,,1042,28.0,[1822], Democratic Party: Jeanne McNeill
+42,,,134,Pennsylvania,State Leg (Lower),State House District 134,12.0,,,1043,12.0,[1823], Democratic Party: Peter Schweyer
+42,,,135,Pennsylvania,State Leg (Lower),State House District 135,8.0,,,1044,8.0,[1824], Democratic Party: Steve Samuelson
+42,,,136,Pennsylvania,State Leg (Lower),State House District 136,25.0,,,1045,25.0,[1825], Democratic Party: Robert Freeman
+42,,,137,Pennsylvania,State Leg (Lower),State House District 137,100.0,Anna Thomas,Joe Emrick (incumbent),1046,100.0,"[604, 605, 1826, 1827]", Democratic Party: Anna Thomas Republican Party: Joe Emrick (incumbent) Democratic Party: Anna Thomas Republican Party: Joe Emrick
+42,,,138,Pennsylvania,State Leg (Lower),State House District 138,27.0,Jared Bitting,Ann Flood (incumbent),1047,27.0,"[606, 607, 1828, 1829]", Democratic Party: Jared Bitting Republican Party: Ann Flood (incumbent) Democratic Party: Jared Bitting Republican Party: Ann Flood
+42,,,139,Pennsylvania,State Leg (Lower),State House District 139,10.0,,,1048,10.0,"[1830, 1831]", Democratic Party: Robin Schooley Skibber Republican Party: Jeff Olsommer
+42,,,140,Pennsylvania,State Leg (Lower),State House District 140,29.0,,,1049,29.0,"[1832, 1833]", Democratic Party: Jim Prokopiak Republican Party: Candace Cabanas
+42,,,141,Pennsylvania,State Leg (Lower),State House District 141,21.0,,,1050,21.0,"[1834, 1835]", Democratic Party: Tina Davis Republican Party: Noah Boyd
+42,,,142,Pennsylvania,State Leg (Lower),State House District 142,82.0,Anna Payne,Joseph Hogan (incumbent),1051,82.0,"[608, 609, 1836, 1837]", Democratic Party: Anna Payne Republican Party: Joseph Hogan (incumbent) Democratic Party: Anna Payne Republican Party: Joseph Hogan
+42,,,143,Pennsylvania,State Leg (Lower),State House District 143,86.0,Eleanor Breslin,Shelby Labs (incumbent),1052,86.0,"[610, 611, 1838, 1839]", Democratic Party: Eleanor Breslin Republican Party: Shelby Labs (incumbent) Democratic Party: Eleanor Breslin Republican Party: Shelby Labs
+42,,,144,Pennsylvania,State Leg (Lower),State House District 144,88.0,Brian Munroe (incumbent),Daniel McPhillips,1053,88.0,"[612, 613, 1840, 1841]", Democratic Party: Brian Munroe (incumbent) Republican Party: Daniel McPhillips Democratic Party: Brian Munroe Republican Party: Daniel McPhillips
+42,,,145,Pennsylvania,State Leg (Lower),State House District 145,44.0,,,1054,44.0,"[1842, 1843]", Democratic Party: Vera Cole Republican Party: Craig Staats
+42,,,146,Pennsylvania,State Leg (Lower),State House District 146,44.0,,,1055,44.0,"[1844, 1845]", Democratic Party: Joseph Ciresi Republican Party: Michael J. McCloskey III
+42,,,147,Pennsylvania,State Leg (Lower),State House District 147,59.0,Al Leach,Donna Scheuren (incumbent),1056,59.0,"[614, 615, 1846, 1847]", Democratic Party: Al Leach Republican Party: Donna Scheuren (incumbent) Democratic Party: Al Leach Republican Party: Donna Scheuren
+42,,,148,Pennsylvania,State Leg (Lower),State House District 148,2.0,,,1057,2.0,[1848], Democratic Party: Mary Jo Daley
+42,,,149,Pennsylvania,State Leg (Lower),State House District 149,4.0,,,1058,4.0,[1849], Democratic Party: Tim Briggs
+42,,,150,Pennsylvania,State Leg (Lower),State House District 150,34.0,,,1059,34.0,"[1850, 1851]", Democratic Party: Joseph Webster Republican Party: Simone Collins
+42,,,151,Pennsylvania,State Leg (Lower),State House District 151,14.0,,,1060,14.0,"[1852, 1853]", Democratic Party: Melissa Cerrato Republican Party: Allen Anderson
+42,,,152,Pennsylvania,State Leg (Lower),State House District 152,14.0,,,1061,14.0,"[1854, 1855]", Democratic Party: Nancy Guenst Republican Party: Tim Bertman
+42,,,153,Pennsylvania,State Leg (Lower),State House District 153,5.0,,,1062,5.0,"[1856, 1857]", Democratic Party: Ben Sanchez Republican Party: Joe Rooney
+42,,,154,Pennsylvania,State Leg (Lower),State House District 154,1.0,,,1063,1.0,"[1858, 1859]", Democratic Party: Napoleon Nelson Republican Party: Thomas Estilow
+42,,,155,Pennsylvania,State Leg (Lower),State House District 155,40.0,,,1064,40.0,"[1860, 1861]", Democratic Party: Danielle Friel Otten Republican Party: Rodney Simon II
+42,,,156,Pennsylvania,State Leg (Lower),State House District 156,21.0,,,1065,21.0,"[1862, 1863]", Democratic Party: Christopher Pielli Republican Party: Kris R. Vollrath
+42,,,157,Pennsylvania,State Leg (Lower),State House District 157,21.0,,,1066,21.0,"[1864, 1865]", Democratic Party: Melissa Shusterman Republican Party: Regina Mauro
+42,,,158,Pennsylvania,State Leg (Lower),State House District 158,33.0,,,1067,33.0,"[1866, 1867]", Democratic Party: Christina Sappey Republican Party: Tina Ayala
+42,,,159,Pennsylvania,State Leg (Lower),State House District 159,3.0,,,1068,3.0,[1868], Democratic Party: Carol Kazeem
+42,,,160,Pennsylvania,State Leg (Lower),State House District 160,99.0,Elizabeth Moro,Craig Williams (incumbent),1069,99.0,"[616, 617, 1869, 1870]", Democratic Party: Elizabeth Moro Republican Party: Craig Williams (incumbent) Democratic Party: Elizabeth Moro Republican Party: Craig Williams
+42,,,161,Pennsylvania,State Leg (Lower),State House District 161,33.0,,,1070,33.0,"[1871, 1872]", Democratic Party: Leanne Krueger Republican Party: John Mancinelli
+42,,,162,Pennsylvania,State Leg (Lower),State House District 162,30.0,,,1071,30.0,"[1873, 1874]", Democratic Party: David Delloso Republican Party: Gabriella Mendez
+42,,,163,Pennsylvania,State Leg (Lower),State House District 163,17.0,,,1072,17.0,"[1875, 1876]", Democratic Party: Heather Boyd Republican Party: Jeffrey Jones
+42,,,164,Pennsylvania,State Leg (Lower),State House District 164,1.0,,,1073,1.0,[1877], Democratic Party: Gina Curry
+42,,,165,Pennsylvania,State Leg (Lower),State House District 165,26.0,,,1074,26.0,"[1878, 1879]", Democratic Party: Jennifer O'Mara Republican Party: Liz Piazza
+42,,,166,Pennsylvania,State Leg (Lower),State House District 166,12.0,,,1075,12.0,"[1880, 1881]", Democratic Party: Gregory Vitali Republican Party: Kay Dugery
+42,,,167,Pennsylvania,State Leg (Lower),State House District 167,25.0,,,1076,25.0,"[1882, 1883]", Democratic Party: Kristine Howard Republican Party: Melissa Dicranian
+42,,,168,Pennsylvania,State Leg (Lower),State House District 168,28.0,,,1077,28.0,"[1884, 1885]", Democratic Party: Lisa Borowski Republican Party: Kathryn Buckley
+42,,,169,Pennsylvania,State Leg (Lower),State House District 169,7.0,,,1078,7.0,[1886], Republican Party: Kate Klunk
+42,,,170,Pennsylvania,State Leg (Lower),State House District 170,99.0,,,1079,99.0,[1887], Republican Party: Martina White
+42,,,171,Pennsylvania,State Leg (Lower),State House District 171,6.0,,,1080,6.0,[1888], Republican Party: Kerry Benninghoff
+42,,,172,Pennsylvania,State Leg (Lower),State House District 172,33.0,,,1081,33.0,"[1889, 1890]", Democratic Party: Sean Dougherty Republican Party: Aizaz Gill
+42,,,173,Pennsylvania,State Leg (Lower),State House District 173,22.0,,,1082,22.0,[1891], Democratic Party: Patrick Gallagher
+42,,,174,Pennsylvania,State Leg (Lower),State House District 174,19.0,,,1083,19.0,[1892], Democratic Party: Ed Neilson
+42,,,175,Pennsylvania,State Leg (Lower),State House District 175,1.0,,,1084,1.0,[1893], Democratic Party: MaryLouise Isaacson
+42,,,176,Pennsylvania,State Leg (Lower),State House District 176,56.0,Hope Christman,Jack Rader (incumbent),1085,56.0,"[618, 619, 1894, 1895]", Democratic Party: Hope Christman Republican Party: Jack Rader (incumbent) Democratic Party: Hope Christman Republican Party: Jack Rader
+42,,,177,Pennsylvania,State Leg (Lower),State House District 177,4.0,,,1086,4.0,[1896], Democratic Party: Joseph Hohenstein
+42,,,178,Pennsylvania,State Leg (Lower),State House District 178,71.0,,,1087,71.0,"[1897, 1898]", Democratic Party: Emma Rosenthal Republican Party: Kristin Marcell
+42,,,179,Pennsylvania,State Leg (Lower),State House District 179,1.0,,,1088,1.0,[1899], Democratic Party: Jason Dawkins
+42,,,180,Pennsylvania,State Leg (Lower),State House District 180,1.0,,,1089,1.0,[1900], Democratic Party: Jose Giral
+42,,,181,Pennsylvania,State Leg (Lower),State House District 181,0.0,,,1090,0.0,[1901], Democratic Party: Malcolm Kenyatta
+42,,,182,Pennsylvania,State Leg (Lower),State House District 182,1.0,,,1091,1.0,[1902], Democratic Party: Benjamin Waxman
+42,,,183,Pennsylvania,State Leg (Lower),State House District 183,24.0,,,1092,24.0,"[1903, 1904]", Democratic Party: Joe Lenzi Republican Party: Zachary Mako
+42,,,184,Pennsylvania,State Leg (Lower),State House District 184,3.0,,,1093,3.0,[1905], Democratic Party: Elizabeth Fiedler
+42,,,185,Pennsylvania,State Leg (Lower),State House District 185,2.0,,,1094,2.0,[1906], Democratic Party: Regina Young
+42,,,186,Pennsylvania,State Leg (Lower),State House District 186,0.0,,,1095,0.0,[1907], Democratic Party: Jordan Harris
+42,,,187,Pennsylvania,State Leg (Lower),State House District 187,61.0,Stefanie Rafes,Gary Day,1096,61.0,"[620, 621, 1908, 1909]", Democratic Party: Stefanie Rafes Republican Party: Gary Day Democratic Party: Stefanie Rafes Republican Party: Gary Day
+42,,,188,Pennsylvania,State Leg (Lower),State House District 188,0.0,,,1097,0.0,[1910], Democratic Party: Rick Krajewski
+42,,,189,Pennsylvania,State Leg (Lower),State House District 189,29.0,,,1098,29.0,"[1911, 1912]", Democratic Party: Tarah Probst Republican Party: Lisa Vanwhy
+42,,,190,Pennsylvania,State Leg (Lower),State House District 190,0.0,,,1099,0.0,[1913], Democratic Party: G. Roni Green
+42,,,191,Pennsylvania,State Leg (Lower),State House District 191,0.0,,,1100,0.0,[1914], Democratic Party: Joanna McClinton
+42,,,192,Pennsylvania,State Leg (Lower),State House District 192,0.0,,,1101,0.0,[1915], Democratic Party: Morgan Cephas
+42,,,193,Pennsylvania,State Leg (Lower),State House District 193,6.0,,,1102,6.0,[1916], Republican Party: Torren Ecker
+42,,,194,Pennsylvania,State Leg (Lower),State House District 194,2.0,,,1103,2.0,[1917], Democratic Party: Tarik Khan
+42,,,195,Pennsylvania,State Leg (Lower),State House District 195,0.0,,,1104,0.0,[1918], waiting on special election: waiting on special election
+42,,,196,Pennsylvania,State Leg (Lower),State House District 196,7.0,,,1105,7.0,[1919], Republican Party: Seth Grove
+42,,,197,Pennsylvania,State Leg (Lower),State House District 197,0.0,,,1106,0.0,[1920], Democratic Party: Danilo Burgos
+42,,,198,Pennsylvania,State Leg (Lower),State House District 198,0.0,,,1107,0.0,[1921], Democratic Party: Darisha Parker
+42,,,199,Pennsylvania,State Leg (Lower),State House District 199,28.0,,,1108,28.0,"[1922, 1923]", Democratic Party: Rick Christie Republican Party: Barbara Gleim
+42,,,200,Pennsylvania,State Leg (Lower),State House District 200,0.0,,,1109,0.0,[1924], Democratic Party: Christopher Rabb
+42,,,201,Pennsylvania,State Leg (Lower),State House District 201,0.0,,,1110,0.0,[1925], Democratic Party: Andre Carroll
+42,,,202,Pennsylvania,State Leg (Lower),State House District 202,3.0,,,1111,3.0,[1926], Democratic Party: Jared Solomon
+42,,,203,Pennsylvania,State Leg (Lower),State House District 203,1.0,,,1112,1.0,[1927], Democratic Party: Anthony Bellmon
+55,,,001,Wisconsin,State Leg (Lower),State House District 1,44.0,,,1113,44.0,[],
+55,,,002,Wisconsin,State Leg (Lower),State House District 2,17.0,,,1114,17.0,[],
+55,,,003,Wisconsin,State Leg (Lower),State House District 3,14.0,,,1115,14.0,[],
+55,,,004,Wisconsin,State Leg (Lower),State House District 4,11.0,,,1116,11.0,[],
+55,,,005,Wisconsin,State Leg (Lower),State House District 5,20.0,,,1117,20.0,[],
+55,,,006,Wisconsin,State Leg (Lower),State House District 6,9.0,,,1118,9.0,[],
+55,,,007,Wisconsin,State Leg (Lower),State House District 7,35.0,,,1119,35.0,[],
+55,,,008,Wisconsin,State Leg (Lower),State House District 8,1.0,,,1120,1.0,[],
+55,,,009,Wisconsin,State Leg (Lower),State House District 9,3.0,,,1121,3.0,[],
+55,,,010,Wisconsin,State Leg (Lower),State House District 10,1.0,,,1122,1.0,[],
+55,,,011,Wisconsin,State Leg (Lower),State House District 11,1.0,,,1123,1.0,[],
+55,,,012,Wisconsin,State Leg (Lower),State House District 12,2.0,,,1124,2.0,[],
+55,,,013,Wisconsin,State Leg (Lower),State House District 13,99.0,Robyn Vining (incumbent),Tom Michalski (incumbent),1125,99.0,"[622, 623]", Democratic Party: Robyn Vining (incumbent) Republican Party: Tom Michalski (incumbent)
+55,,,014,Wisconsin,State Leg (Lower),State House District 14,86.0,Angelito Tenorio,Jim Engstrand,1126,86.0,"[624, 625]", Democratic Party: Angelito Tenorio Republican Party: Jim Engstrand
+55,,,015,Wisconsin,State Leg (Lower),State House District 15,12.0,,,1127,12.0,[],
+55,,,016,Wisconsin,State Leg (Lower),State House District 16,1.0,,,1128,1.0,[],
+55,,,017,Wisconsin,State Leg (Lower),State House District 17,1.0,,,1129,1.0,[],
+55,,,018,Wisconsin,State Leg (Lower),State House District 18,1.0,,,1130,1.0,[],
+55,,,019,Wisconsin,State Leg (Lower),State House District 19,2.0,,,1131,2.0,[],
+55,,,020,Wisconsin,State Leg (Lower),State House District 20,25.0,,,1132,25.0,[],
+55,,,021,Wisconsin,State Leg (Lower),State House District 21,98.0,David Marstellar,Jessie Rodriguez (incumbent),1133,98.0,"[626, 627]", Democratic Party: David Marstellar Republican Party: Jessie Rodriguez (incumbent)
+55,,,022,Wisconsin,State Leg (Lower),State House District 22,18.0,,,1134,18.0,[],
+55,,,023,Wisconsin,State Leg (Lower),State House District 23,33.0,,,1135,33.0,[],
+55,,,024,Wisconsin,State Leg (Lower),State House District 24,12.0,,,1136,12.0,[],
+55,,,025,Wisconsin,State Leg (Lower),State House District 25,40.0,,,1137,40.0,[],
+55,,,026,Wisconsin,State Leg (Lower),State House District 26,95.0,Joe Sheehan,Amy Binsfield (incumbent),1138,95.0,"[628, 629]", Democratic Party: Joe Sheehan Republican Party: Amy Binsfield (incumbent)
+55,,,027,Wisconsin,State Leg (Lower),State House District 27,8.0,,,1139,8.0,[],
+55,,,028,Wisconsin,State Leg (Lower),State House District 28,16.0,,,1140,16.0,[],
+55,,,029,Wisconsin,State Leg (Lower),State House District 29,30.0,,,1141,30.0,[],
+55,,,030,Wisconsin,State Leg (Lower),State House District 30,91.0,Alison Page,Shannon Zimmerman (incumbent),1142,91.0,"[630, 631]", Democratic Party: Alison Page Republican Party: Shannon Zimmerman (incumbent)
+55,,,031,Wisconsin,State Leg (Lower),State House District 31,17.0,,,1143,17.0,[],
+55,,,032,Wisconsin,State Leg (Lower),State House District 32,12.0,,,1144,12.0,[],
+55,,,033,Wisconsin,State Leg (Lower),State House District 33,8.0,,,1145,8.0,[],
+55,,,034,Wisconsin,State Leg (Lower),State House District 34,23.0,,,1146,23.0,[],
+55,,,035,Wisconsin,State Leg (Lower),State House District 35,14.0,,,1147,14.0,[],
+55,,,036,Wisconsin,State Leg (Lower),State House District 36,9.0,,,1148,9.0,[],
+55,,,037,Wisconsin,State Leg (Lower),State House District 37,18.0,,,1149,18.0,[],
+55,,,038,Wisconsin,State Leg (Lower),State House District 38,10.0,,,1150,10.0,[],
+55,,,039,Wisconsin,State Leg (Lower),State House District 39,10.0,,,1151,10.0,[],
+55,,,040,Wisconsin,State Leg (Lower),State House District 40,44.0,,,1152,44.0,[],
+55,,,041,Wisconsin,State Leg (Lower),State House District 41,80.0,Julia Henley,Tony Kurtz (incumbent),1153,80.0,"[632, 633]", Democratic Party: Julia Henley Republican Party: Tony Kurtz (incumbent)
+55,,,042,Wisconsin,State Leg (Lower),State House District 42,23.0,,,1154,23.0,[],
+55,,,043,Wisconsin,State Leg (Lower),State House District 43,47.0,,,1155,47.0,[],
+55,,,044,Wisconsin,State Leg (Lower),State House District 44,19.0,,,1156,19.0,[],
+55,,,045,Wisconsin,State Leg (Lower),State House District 45,25.0,,,1157,25.0,[],
+55,,,046,Wisconsin,State Leg (Lower),State House District 46,48.0,,,1158,48.0,[],
+55,,,047,Wisconsin,State Leg (Lower),State House District 47,3.0,,,1159,3.0,[],
+55,,,048,Wisconsin,State Leg (Lower),State House District 48,6.0,,,1160,6.0,[],
+55,,,049,Wisconsin,State Leg (Lower),State House District 49,92.0,Scott Walker,Travis Tranel (incumbent),1161,92.0,"[634, 635]", Democratic Party: Scott Walker Republican Party: Travis Tranel (incumbent)
+55,,,050,Wisconsin,State Leg (Lower),State House District 50,21.0,,,1162,21.0,[],
+55,,,051,Wisconsin,State Leg (Lower),State House District 51,35.0,,,1163,35.0,[],
+55,,,052,Wisconsin,State Leg (Lower),State House District 52,60.0,,,1164,60.0,[],
+55,,,053,Wisconsin,State Leg (Lower),State House District 53,97.0,Duane Shukoski,Dean Kaufert,1165,97.0,"[636, 637]", Democratic Party: Duane Shukoski Republican Party: Dean Kaufert
+55,,,054,Wisconsin,State Leg (Lower),State House District 54,61.0,,,1166,61.0,[],
+55,,,055,Wisconsin,State Leg (Lower),State House District 55,25.0,,,1167,25.0,[],
+55,,,056,Wisconsin,State Leg (Lower),State House District 56,10.0,,,1168,10.0,[],
+55,,,057,Wisconsin,State Leg (Lower),State House District 57,9.0,,,1169,9.0,[],
+55,,,058,Wisconsin,State Leg (Lower),State House District 58,3.0,,,1170,3.0,[],
+55,,,059,Wisconsin,State Leg (Lower),State House District 59,2.0,,,1171,2.0,[],
+55,,,060,Wisconsin,State Leg (Lower),State House District 60,42.0,,,1172,42.0,[],
+55,,,061,Wisconsin,State Leg (Lower),State House District 61,87.0,Lu Ann Bird,Robert Donovan (incumbent),1173,87.0,"[638, 639]", Democratic Party: Lu Ann Bird Republican Party: Robert Donovan (incumbent)
+55,,,062,Wisconsin,State Leg (Lower),State House District 62,14.0,,,1174,14.0,[],
+55,,,063,Wisconsin,State Leg (Lower),State House District 63,25.0,,,1175,25.0,[],
+55,,,064,Wisconsin,State Leg (Lower),State House District 64,31.0,,,1176,31.0,[],
+55,,,065,Wisconsin,State Leg (Lower),State House District 65,34.0,,,1177,34.0,[],
+55,,,066,Wisconsin,State Leg (Lower),State House District 66,43.0,,,1178,43.0,[],
+55,,,067,Wisconsin,State Leg (Lower),State House District 67,21.0,,,1179,21.0,[],
+55,,,068,Wisconsin,State Leg (Lower),State House District 68,9.0,,,1180,9.0,[],
+55,,,069,Wisconsin,State Leg (Lower),State House District 69,7.0,,,1181,7.0,[],
+55,,,070,Wisconsin,State Leg (Lower),State House District 70,37.0,,,1182,37.0,[],
+55,,,071,Wisconsin,State Leg (Lower),State House District 71,55.0,,,1183,55.0,[],
+55,,,072,Wisconsin,State Leg (Lower),State House District 72,31.0,,,1184,31.0,[],
+55,,,073,Wisconsin,State Leg (Lower),State House District 73,14.0,,,1185,14.0,[],
+55,,,074,Wisconsin,State Leg (Lower),State House District 74,42.0,,,1186,42.0,[],
+55,,,075,Wisconsin,State Leg (Lower),State House District 75,14.0,,,1187,14.0,[],
+55,,,076,Wisconsin,State Leg (Lower),State House District 76,1.0,,,1188,1.0,[],
+55,,,077,Wisconsin,State Leg (Lower),State House District 77,1.0,,,1189,1.0,[],
+55,,,078,Wisconsin,State Leg (Lower),State House District 78,1.0,,,1190,1.0,[],
+55,,,079,Wisconsin,State Leg (Lower),State House District 79,1.0,,,1191,1.0,[],
+55,,,080,Wisconsin,State Leg (Lower),State House District 80,3.0,,,1192,3.0,[],
+55,,,081,Wisconsin,State Leg (Lower),State House District 81,5.0,,,1193,5.0,[],
+55,,,082,Wisconsin,State Leg (Lower),State House District 82,34.0,Kevin Reilly,Scott Allen (incumbent),1194,34.0,"[640, 641]", Democratic Party: Kevin Reilly Republican Party: Scott Allen (incumbent)
+55,,,083,Wisconsin,State Leg (Lower),State House District 83,11.0,,,1195,11.0,[],
+55,,,084,Wisconsin,State Leg (Lower),State House District 84,3.0,,,1196,3.0,[],
+55,,,085,Wisconsin,State Leg (Lower),State House District 85,97.0,Yee Leng Xiong,Patrick Snyder (incumbent),1197,97.0,"[642, 643]", Democratic Party: Yee Leng Xiong Republican Party: Patrick Snyder (incumbent)
+55,,,086,Wisconsin,State Leg (Lower),State House District 86,15.0,,,1198,15.0,[],
+55,,,087,Wisconsin,State Leg (Lower),State House District 87,17.0,,,1199,17.0,[],
+55,,,088,Wisconsin,State Leg (Lower),State House District 88,88.0,Christy Welch,Benjamin Franklin,1200,88.0,"[644, 645]", Democratic Party: Christy Welch Republican Party: Benjamin Franklin
+55,,,089,Wisconsin,State Leg (Lower),State House District 89,100.0,Ryan Spaude,Patrick Buckley,1201,100.0,"[646, 647]", Democratic Party: Ryan Spaude Republican Party: Patrick Buckley
+55,,,090,Wisconsin,State Leg (Lower),State House District 90,49.0,,,1202,49.0,[],
+55,,,091,Wisconsin,State Leg (Lower),State House District 91,69.0,Jodi Emerson (incumbent),Michele Magadance Skinner,1203,69.0,"[648, 649]", Democratic Party: Jodi Emerson (incumbent) Republican Party: Michele Magadance Skinner
+55,,,092,Wisconsin,State Leg (Lower),State House District 92,100.0,Joe Plouff,Clint Moses (incumbent),1204,100.0,"[650, 651]", Democratic Party: Joe Plouff Republican Party: Clint Moses (incumbent)
+55,,,093,Wisconsin,State Leg (Lower),State House District 93,52.0,,,1205,52.0,[],
+55,,,094,Wisconsin,State Leg (Lower),State House District 94,99.0,Steve Doyle (incumbent),Ryan Huebsch,1206,99.0,"[652, 653]", Democratic Party: Steve Doyle (incumbent) Republican Party: Ryan Huebsch
+55,,,095,Wisconsin,State Leg (Lower),State House District 95,44.0,,,1207,44.0,[],
+55,,,096,Wisconsin,State Leg (Lower),State House District 96,36.0,,,1208,36.0,[],
+55,,,097,Wisconsin,State Leg (Lower),State House District 97,4.0,,,1209,4.0,[],
+55,,,098,Wisconsin,State Leg (Lower),State House District 98,3.0,,,1210,3.0,[],
+55,,,099,Wisconsin,State Leg (Lower),State House District 99,4.0,,,1211,4.0,[],
+02,,,,Alaska,Democracy Repair,Ballot Measure 2,N/A,,,1212,,[],
+02,,,,Alaska,Direct Democracy,Ballot Measure 1,N/A,,,1213,,[],
+04,,,,Arizona,Direct Democracy,Proposition 135,N/A,,,1214,,[],
+04,,,,Arizona,Democracy Repair,Proposition 137,N/A,,,1215,,[2047], Proposition 137: End Term Limits and Retention Elections for Supreme Court Justices and Superior Court Judges Amendment: end term limits for state court judges with terms of good behavior and eliminate retention elections
+04,,,,Arizona,Direct Democracy,Proposition 314,N/A,,,1216,,[2048], Proposition 314: Immigration and Border Law Enforcement Measure: allow state and local police to arrest noncitizens
+04,,,,Arizona,Democracy Repair,Proposition 136,N/A,,,1217,,[2049], Proposition 136: Legal Challenges to Constitutionality of Initiatives Amendment: provide for challenges to initiative measure or amendment with superior court
+04,,,,Arizona,Democracy Repair,Proposition 133,N/A,,,1218,,[2050], Proposition 133: Require Partisan Primaries and Prohibit Primaries Where Candidates Compete Regardless of Party Affiliation Amendment: create partisan primaries for partisan offices and prohibit top-two or top-four primaries where candidates compete regardless of party ID
+04,,,,Arizona,Democracy Repair,Proposition 134,N/A,,,1219,,[2051], Proposition 134: Signature Distribution Requirement for Initiatives Amendment: create signature distribution requirement for citizen-initiated ballot measures
+04,,,,Arizona,Direct Democracy,Proposition 138,N/A,,,1220,,[2052], Proposition 138: Wages for Tipped Workers Amendment: allow for tipped workers to be paid 25% less per hour if any tips were not less than minimum wage plus $2/hours worked
+04,,,,Arizona,Direct Democracy,Proposition 315,N/A,,,1221,,[2053]," Proposition 315: Legislative Ratification of State Agency Rules that Increase Regulatory Costs Measure: prohibit proposed rule from being effective if rule will increase regulatory costs by more that $500,000 within five years of implementation"
+04,,,,Arizona,Reproductive Rights,Proposition 139,N/A,,,1222,,[2054], Proposition 139: Right to Abortion Initiative: establish the fundamental right to abortion that the state may not interfere with before point of fetal viability
+04,,,,Arizona,Direct Democracy,Proposition 140,N/A,,,1223,,[2055], Proposition 140: Single Primary for All Candidates and Possible RCV General Election Initiative: replace partisan primaries with blanket primaries and set majority-vote requirement for general election winners
+06,,,,California,Direct Democracy,Proposition 32,N/A,,,1224,,[2056], Proposition 32: $18 Minimum Wage Initiative: Increase minimum wage to $18 per hour and tie annual increases to cost of living
+06,,,,California,Civil Liberties,Proposition 3,N/A,,,1225,,[2057], Proposition 3: Right to Marry and Repeal Proposition 8 Amendment: repeal proposition 8 and establish right to marry
+06,,,,California,Direct Democracy,Proposition 5,N/A,,,1226,,[2058], Proposition 5: Lower Supermajority Requirement to 55% for Local Bond Measures to Fund Housing and Public Infrastructure Amendment: lower the vote threshold for local bond measures related to housing and public infrastructure from 66.67% to 55%
+08,,,,Colorado,Democracy Repair,Amendment H,N/A,,,1227,,[],
+08,,,,Colorado,Civil Liberties,Amendment J,N/A,,,1228,,[],
+08,,,,Colorado,Reproductive Rights,Amendment 79,N/A,,,1229,,[],
+08,,,,Colorado,Civil Liberties,Proposition KK,N/A,,,1230,,[],
+08,,,,Colorado,Democracy Repair,Proposition 131,N/A,,,1231,,[],
+09,,,,Connecticut,Democracy Repair,No-Excuse Absentee Voting Amendment,N/A,,,1232,,[2064], No-Excuse Absentee Voting Amendment: authorize state legislature to provide no-excuse absentee voting
+11,,,,District of Columbia,Democracy Repair,Initiative 83,N/A,,,1233,,[2065], Initiative 83: Ranked-Choice Voting Initiative: create a semi-open primary system in addition to RCV
+12,,,,Florida,Democracy Repair,Amendment 1,N/A,,,1234,,[2066]," Amendment 1: Partisan School Board Elections Amendment: change to partisan elections on school board, general, and primary elections beginning 2026"
+12,,,,Florida,Civil Liberties,Amendment 3,N/A,,,1235,,[2067], Amendment 3: Marijuana Legalization Initiative: legalize marijuana for 21 and older adults
+12,,,,Florida,Reproductive Rights,Amendment 4,N/A,,,1236,,[2068], Amendment 4: Right to Abortion Initiative: establish constitutional right to abortion before fetal viability (estimated around 24 weeks) or when necessary for patient's health
+12,,,,Florida,Democracy Repair,Amendment 6,N/A,,,1237,,[2069], Amendment 6: Repeal of Public Financing for Statewide Campaigns Amendment: repeal constitutional provision providing for public campaign financing for candidates
+13,,,,Georgia,Direct Democracy,Creation of Tax Court Amendment,N/A,,,1238,,[2070], Creation of Tax Court Amendment: provide georgia tax court with statewide judicial power
+15,,,,Hawaii,Democracy Repair,Judicial Appointments and Confirmations Amendment,N/A,,,1239,,[2071], Judicial Appointments and Confirmations Amendment: change process for appointing and confirming district court judges to mirror SC and other higher court judges
+15,,,,Hawaii,Civil Liberties,Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment,N/A,,,1240,,[2072], Remove Legislative Authority to Limit Marriage to Opposite-Sex Couples Amendment: remove provision of state constitution on same-sex marriage
+16,,,,Idaho,Democracy Repair,Proposition 1,N/A,,,1241,,[],
+17,,,,Illinois,Reproductive Rights,Assisted Reproductive Healthcare Advisory Question,N/A,,,1242,,[],
+17,,,,Illinois,Democracy Repair,Penalties for Candidate Interference with Election Worker's Duties Advisory Question,N/A,,,1243,,[2075], Penalties for Candidate Interference with Election Worker's Duties Advisory Question: advise state officials on whether to establish civil penalties for election interference
+18,,,,Indiana,Direct Democracy,Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment,N/A,,,1244,,[2076], Remove Superintendent of Public Instruction from Gubernatorial Line of Succession Amendment: remove the superintendent of public instruction for gubernatorial succession
+19,,,,Iowa,Democracy Repair,Require Citizenship to Vote in State Elections and Allow 17-year-olds to Vote in Primaries Amendment,N/A,,,1245,,[2077], Require Citizenship to Vote in State Elections and Allow 17-year-olds to Vote in Primaries Amendment: changes constitution to only citizens being able to vote and provides 17 year olds who will be 18 can vote
+19,,,,Iowa,Direct Democracy,Gubernatorial Succession Amendment,N/A,,,1246,,[2078]," Gubernatorial Succession Amendment: Provides that lieutenant governor assumes office of governor for remainder of term if governor dies, resigns, or is removed"
+23,,,,Maine,Democracy Repair,Question 1,N/A,,,1247,,[2079], Question 1: Limit Contributions to Super PACs Initiative: limit campaign contributions to $5000 from individuals and PACs that make independent expenditures
+24,,,,Maryland,Reproductive Rights,Right to Reproductive Freedom Amendment,N/A,,,1248,,[2080], Question 1: Right to Reproductive Freedom Amendment: establishes right to reproductive freedom in state constitution
+25,,,,Massachusetts,Direct Democracy,Question 1,N/A,,,1249,,[2081], Question 1: Authorization of State Auditor to Audit General Court Initiative: authorize state auditor to audit state legislature and remove some regulations regarding auditing
+25,,,,Massachusetts,Direct Democracy,Question 5,N/A,,,1250,,[2082], Question 5: Minimum Wage for Tipped Employees Initiative: gradually increase minimum wage for tipped workers up to 2029
+25,,,,Massachusetts,Civil Liberties,Question 4,N/A,,,1251,,[2083], Question 4: Regulated Access to Psychedelic Substances Initiative: allow limited personal use of psychedelic substances for those aged 21 and older and apply an additional sales tax
+29,,,,Missouri,Democracy Repair,Amendment 7,N/A,,,1252,,[2084], Amendment 7: Require Citizenship to Vote and Prohibit Ranked-Choice Voting Amendment: establish that only citizens who are Missouri residents can vote and prohibits RCV
+29,,,,Missouri,Direct Democracy,Proposition A,N/A,,,1253,,[2085], Proposition A: Minimum Wage and Earned Paid Sick Time Initiative: increase minimum wage to $15 per hour by 2026 and require employers to offer one hour of paid sick leave per 30 hours worked
+29,,,,Missouri,Reproductive Rights,Amendment 3,N/A,,,1254,,[2086], Amendment 3: Right to Reproductive Freedom Initiative: add a right to reproductive freedom to the state constitution and allow state legislative regulations of abortion after fetal viabililty
+30,,,,Montana,Democracy Repair,CI-126,N/A,,,1255,,[2087], CI-126: Top-Four Primary Initiative: introduce top-four blanket primaries for state and congressional elections
+30,,,,Montana,Democracy Repair,CI-127,N/A,,,1256,,[2088], CI-127: Majority Vote Required to Win Elections Initiative: require candidates to win majority of votes for state and congressional elections
+30,,,,Montana,Reproductive Rights,CI-128,N/A,,,1257,,[2089], CI-128: Right to Abortion Initiative: add a right to reproductive freedom to the state constitution and allow state legislative regulations of abortion after fetal viabililty
+31,,,,Nebraska,Direct Democracy,Initiative 436,N/A,,,1258,,[],
+31,,,,Nebraska,Reproductive Rights,Initiative 439,N/A,,,1259,,[],
+31,,,,Nebraska,Reproductive Rights,Initiative 434,N/A,,,1260,,[],
+31,,,,Nebraska,Civil Liberties,Initiative 437,N/A,,,1261,,[],
+32,,,,Nevada,Direct Democracy,Question 1,N/A,,,1262,,[2092], Question 1: Remove Constitutional Status of Board of Regents Amendment: remove constitutional status of Board of Regents to allow state legislature to review and change governing organization of state universities
+32,,,,Nevada,Direct Democracy,Question 2,N/A,,,1263,,[2093]," Question 2: Revising Language Related to Public Entities for Individuals with Mental Illness: Blindness: or Deafness Amendment: revise state constitutional language related to public entities that benefit individuals with mental illness, blindness, or deafness"
+32,,,,Nevada,Democracy Repair,Question 3,N/A,,,1264,,[2094], Question 3: Top-Five Ranked-Choice Voting Initiative: provide for open top-5 primaries and RCV for general elections
+32,,,,Nevada,Reproductive Rights,Question 6,N/A,,,1265,,[2095], Question 6: Right to Abortion Initiative: add a right to reproductive freedom to the state constitution and allow state legislative regulations of abortion after fetal viabililty
+32,,,,Nevada,Direct Democracy,Question 7,N/A,,,1266,,[],
+33,,,,New Hampshire,Democracy Repair,Increase Mandatory Judicial Retirement Age Amendment,N/A,,,1267,,[2097], Increase Mandatory Judicial Retirement Age Amendment: increase mandatory judicial retirement age from 70 to 75
+35,,,,New Mexico,Democracy Repair,Constitutional Amendment 3,N/A,,,1268,,[],
+36,,,,New York,Civil Liberties,Proposal 1,N/A,,,1269,,[],
+38,,,,North Dakota,Direct Democracy,Constitutional Measure 1,N/A,,,1270,,[],
+38,,,,North Dakota,Democracy Repair,Constitutional Measure 2,N/A,,,1271,,[2101], Constitutional Measure 2: Single-Subject Requirement for Initiatives and Require Constitutional Initiatives to be Passed Twice Amendment: establish a single-subject rule for initiatives; increase the signature requirement for constitutional initiatives; and require constitutional initiatives to be approved at two elections
+38,,,,North Dakota,Civil Liberties,Initiated Measure 5,N/A,,,1272,,[2102], Initiated Measure 5: Marijuana Legalization Initiative: legalize recreational marijuana and allow possession of up to one ounce of marijuana
+39,,,,Ohio,Democracy Repair,Issue 1,N/A,,,1273,,[2103], Issue 1: Establish the Citizens Redistricting Commission Initiative: establish a 15-member Ohio Citizens Redistricting Commission for state legislative and congressional redistricting
+41,,,,Oregon,Democracy Repair,Measure 115,N/A,,,1274,,[2105], Measure 115: Impeachment of Elected State Executives Amendment: alow legislature to impeach elected state executives
+41,,,,Oregon,Democracy Repair,Measure 117,N/A,,,1275,,[2106], Measure 117: Ranked-Choice Voting for Federal and State Elections Measure: establish RCV for federal and state offices
+44,,,,Rhode Island,Democracy Repair,Question 1,N/A,,,1276,,[2107], Question 1: Constitutional Convention Question: call for state constitutional convention to be held
+46,,,,South Dakota,Civil Liberties,Constitutional Amendment E,N/A,,,1277,,[2108], Constitutional Amendment E: Gender-Neutral Constitutional Language Amendment: amend constitution changing male pronouns to gender-neutral terms or titles
+46,,,,South Dakota,Reproductive Rights,Constitutional Amendment G,N/A,,,1278,,[2109], Constitutional Amendment G: Right to Abortion Initiative: provide state constitutional right to abortion with a trimester framework for regulations
+46,,,,South Dakota,Democracy Repair,Constitutional Amendment H,N/A,,,1279,,[2110]," Constitutional Amendment H: Top-Two Primary Elections Initiative: provide for top-2 primary elections for certain races, including certain federal races"
+46,,,,South Dakota,Civil Liberties,Initiated Measure 29,N/A,,,1280,,[2111]," Initiated Measure 29: Marijuana Legalization Initiative: legalize the recreational use, possession, and distribution of marijuana"
+49,,,,Utah,Democracy Repair,Amendment C,N/A,,,1281,,[],

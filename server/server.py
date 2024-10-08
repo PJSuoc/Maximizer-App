@@ -83,9 +83,8 @@ def home():
     #Get the democracy repair data from ELECTIONS
     test_version = request.args.get('test')
     postal_codes = list(POSTAL_TO_STATE.keys())
-    BALLOT_RACE_TYPES = ["Democracy Repair", "Civil Liberties", "Direct Democracy", "Reproductive Rights"]
-    ballot_data = ELECTIONS[ELECTIONS['race_type'].isin(BALLOT_RACE_TYPES)].to_dict(orient='records')
-    print("Ballot Data", ballot_data[-1])
+    democracy_repair_data = ELECTIONS[ELECTIONS['race_type'] == "Democracy Repair"].to_dict(orient='records')
+    print("Democracy Repair Data", democracy_repair_data[-1])
     if test_version:
         template_name = f"home_{test_version}.html"
         if os.path.exists(os.path.join(app.template_folder, template_name)):
@@ -94,7 +93,7 @@ def home():
     
     # Default to home.html if no test version specified or if the file doesn't exist
     return render_template("home.html",
-                           ballot_data= ballot_data,
+                           democracy_repair_data = democracy_repair_data,
                            states=STATES,
                            postal_codes = postal_codes,
                            mapbox_key=mapbox_key)

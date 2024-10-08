@@ -4,7 +4,6 @@
  <!-- Removed inline styles -->
  <link rel="stylesheet" href="./static/styles.css">
  <style>
-
     .footer-container {
         position: relative;
     }
@@ -181,10 +180,13 @@
             <form action="/local" method="post">
                 <div class="input-group">
                     <label for="location">Find pivotal elections near you:</label>
+
                     <div class="search-container">
-                        <input type="text" class="form-control" id="location" name="location" placeholder="Type address/ZIP">
-                        <button class="search-button">Search</button>    
-                </div>
+                            <input type="text" class="form-control" id="location" name="location" placeholder="Type address/ZIP">
+                            <button class="search-button">Search</button>
+                        
+                    </div>
+                    
                 </div>  
             </form>
 
@@ -256,6 +258,37 @@
             </div>
             
           <div class="cards-wrapper" id="cards">
+            <a href="https://samwang.substack.com/p/nebraska-rising" target="_blank" style="text-decoration: none;">
+              <card>
+                <div  class="card-date">Oct 6 2024</div>
+                <span class="card-title">
+                    Nebraska Rising
+                </span>
+                <span class="card-content">
+                    The biggest bargain of the 2024 election, for the cost of a few runzas.
+                   
+                </span>
+
+                <div class="card-footer">
+                   
+                </div>
+            </card>
+            </a>
+
+            <a href="https://samwang.substack.com/p/jersey-strong" target="_blank" style="text-decoration: none;">
+                <card>
+                    <div  class="card-date">Oct 5 2024</div>
+                    <span class="card-title">
+                        Jersey Strong
+                    </span>
+                    <span class="card-content">
+                        Feeling powerless in New Jersey this year? Vote Maximizer has something for you.
+                    </span>
+                    <div class="card-footer">
+
+                    </div>
+                </card>
+            </a>
 
             <card>
                 <div  class="card-date">Sep 17 2024</div>
@@ -300,22 +333,13 @@
         const postal_codes = JSON.parse('{{ postal_codes | tojson }}')
         let stateWideRaces = ["AK","AZ","DE","IN","MO","MT","KS","MI","MN","ND","UT","VT","WA","WV","NE","NV","NH","PA","WI","NC"];
         import voterEmpowerment from './static/js/voter_empowerment.js';
-        console.log("Voter Empowerment", voterEmpowerment);
-        //import ballotData from './static/js/ballot_initiative.js';
+        import ballotData from './static/js/ballot_initiative.js';
         import stateData from './static/js/stateData.js';
-
-        const ballotData = {{ ballot_data | tojson | safe }}
-        const democracyData = ballotData.filter(initiative => 
-            initiative.race_type.toLowerCase().includes("democracy repair")
-        );
-   
-
         const abortionData= ballotData.filter(initiative => 
-        initiative.race_type.toLowerCase().includes("reproductive")
-    );
-
+            initiative.ballot_type.toLowerCase().includes("reproductive")
+        );
+        const democracyData = {{ democracy_repair_data | tojson | safe }}
         console.log("democracyData", democracyData)
-        console.log("abortionData", abortionData)
         const LEVELS = ['democracy', 'presidential', 'senate', 'house', 'statewide', 'abortion', 'ballot_all']
         let animationRunning = true;
         const COLOR_BG = '#F2F3F4';  // Define your background color
@@ -424,16 +448,13 @@
         const layers = {
     
             starting: 'static/data/calculated_files/geojsons/president_albers.geojson',
-            abortion: 'static/data/calculated_files/geojsons/reprights_albers.geojson',
-            democracy: 'static/data/calculated_files/geojsons/democracy_albers.geojson',
-            //aggregate: 'static/data/calculated_files/geojsons/aggregate_albers.geojson',
+            abortion: 'static/data/geojson_imports/geojson_final/ballot_abort_albers.geojson',
+            democracy: 'static/data/geojson_imports/geojson_final/ballot_VPM_albers.geojson',
             presidential: 'static/data/calculated_files/geojsons/president_albers.geojson',
             senate: 'static/data/calculated_files/geojsons/senate_albers.geojson',
-            house: 'static/data/calculated_files/geojsons/congress_house_albers.geojson',
+            house: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
             statewide: 'static/data/calculated_files/geojsons/governor_albers.geojson',
-            ballot_all: 'static/data/calculated_files/geojsons/ballot_initiative_albers.geojson',
-            //state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper_albers.geojson',
-            //state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower_albers.geojson'        
+            ballot_all: 'static/data/geojson_imports/geojson_final/ballot_initiatives_main_albers.geojson',      
         };
 
         const geoJsonCache = {};
@@ -447,10 +468,12 @@
                 const response = await fetch(layers[layerId]);
                 const data = await response.json();
                 geoJsonCache[layerId] = data;
-
+                
+                const endTime = performance.now();
+                const downloadTime = (endTime - startTime) / 1000; // Convert to seconds
+                
                 return data;
             } catch (error) {
-                console.error('Error loading or processing GeoJSON:', error);
                 throw error;
             }
         }
@@ -493,23 +516,22 @@
         
    
     if (layerId === 'ballot_all') {
-        // Get all unique state names from ballotData
-        const ballotStates = [...new Set(ballotData.map(initiative => initiative.state_name))];
-        
         map.addLayer({
             id: layerId + '-fill',
             type: 'fill',
             source: layerId,
             paint: {
-                'fill-color': [
-                    'case',
-                    ['in', ['get', 'NAME'], ['literal', ballotStates]],
-                    COLOR_KEY_BALLOT,
-                    COLOR_DEFAULT
-                ],
-                'fill-opacity': 1
-            }
-        }, 'albersusa-points');
+            'fill-color': [
+                'case',
+                ['all', 
+                    ['!=', ['get', 'number_per_state'], null],
+                    ['!=', ['get', 'number_per_state'], 0]
+                ], COLOR_KEY_BALLOT,
+                COLOR_DEFAULT,
+            ],
+            'fill-opacity': 1, // 100% opaque
+        }
+        }, 'albersusa-points'); // state names should be over the layers
     } else if (layerId === 'statewide') {
         //stateWideRaces = stateWideRaces.map(String); // Convert all elements to strings
         // Filter stateData for the current state and find max voter power
@@ -558,6 +580,7 @@
                 'fill-opacity': 1
             }
         }, 'albersusa-points');
+
     } else if (layerId === 'overall') {
         map.addLayer({
             id: layerId + '-fill',
@@ -597,20 +620,15 @@
             }
         }, 'albersusa-points');
     } else if (layerId === 'democracy') {
-        const democracyStates = democracyData.map(item => item.state_name).map(String);
-        console.log("Democracy states", democracyStates);
         map.addLayer({
             id: layerId + '-fill',
             type: 'fill',
             source: layerId,
+            filter: ['!=', ['get', 'STATEFP'], '72'], // Exclude Puerto Rico
             paint: {
                 'fill-color': [
                     'case',
-                    ['in', 
-                        ['get', 'NAME'],
-                        ['literal', democracyStates]
-                    ],
-                    COLOR_DEMOCRACY,
+                    ['>', ['to-number', ['get', 'number_per_state'] ], 0], COLOR_DEMOCRACY,
                     COLOR_DEFAULT
                 ],
                 'fill-opacity': 1,
@@ -622,7 +640,7 @@
             id: layerId + '-fill',
             type: 'fill',
             source: layerId,
-            paint: {
+            paint: {   
                 'fill-color': [
                     'case',
                     ['any', 
@@ -797,23 +815,22 @@ map.on('mousemove', layerId + '-fill', function (e) {
         let voterPower = feature.properties['voter_power']; // Directly use the property
 
         if (layerId === 'ballot_all') {
-            const stateName = feature.properties['NAME'] || feature.properties['state_name'];
-            const stateInitiatives = ballotData.filter(initiative => initiative.state_name === stateName);
-            
-            if (stateInitiatives.length === 0) {
+            // Check if the description is undefined or empty
+            var description = feature.properties['number_per_state'];
+            if (description === undefined || description === '') {
                 popupContent = `<div class="custom-popup">
-                    <strong>State:</strong> ${stateName}<br>
-                    There are no ballot initiatives in this state.
+                    <strong>State:</strong> ${name}<br>
+                    There are no ballot initiatives in your state.
                 </div>`;
             } else {
                 popupContent = `<div class="custom-popup">
-                    <strong>State:</strong> ${stateName}<br>
-                    <strong>Total initiatives:</strong> ${stateInitiatives.length}
+                    <strong>State:</strong> ${name}<br>
+                    <strong>Total initiatives:</strong> ${description}
                     <br>Click the state to learn more.<br>
                 </div>`;
             }
         } else if (layerId === 'abortion') {
-            const stateName = feature.properties['NAME'] || feature.properties.state_name;
+            const stateName = feature.properties['NAME'];
             // Filter ballotData for abortion initiatives in the current state
             const stateAbortionInitiatives = abortionData.filter(initiative => initiative.state_name === stateName); 
                
@@ -847,8 +864,7 @@ map.on('mousemove', layerId + '-fill', function (e) {
             }
 
         } else if (layerId === 'democracy') {
-            const thisStateName = feature.properties.state_name || feature.properties.NAME;
-            var description = democracyData.filter(initiative => initiative.state_name === thisStateName);
+            var description = democracyData.filter(initiative => initiative.state_name === feature.properties.state_name).length;
             if (description === undefined || description === '' || description === 0) {
                 popupContent = `<div class="custom-popup">
                     <strong>State:</strong> ${name}<br>
@@ -857,7 +873,7 @@ map.on('mousemove', layerId + '-fill', function (e) {
             } else {
                 popupContent = `<div class="custom-popup">
                     <strong>State:</strong> ${name}<br>
-                    <strong>Democracy initiatives: ${description.length}</strong><br>
+                    <strong>Democracy initiatives: ${description}</strong><br>
                     Click the state to learn more.
                 </div>`;
             }
@@ -873,7 +889,16 @@ map.on('mousemove', layerId + '-fill', function (e) {
                 <strong>District:</strong> ${name}<br>
                 No competitive race.
             </div>`;
-        } 
+        } else if (layerId === 'overall') {
+            // Handle overall case
+            let powerLevel = feature.properties['power_level'];
+            powerLevel = powerLevel[0].toUpperCase() + powerLevel.slice(1);
+            popupContent = `<div class="custom-popup">
+                <strong>State:</strong> ${name}<br>
+                <strong>Power Level: ${powerLevel}</strong><br>
+                <strong>Voter Power:</strong> ${voterPower}
+            </div>`;
+        }
         else {
             // Handle other cases
             voterPower = voterPower === undefined ? 'no competitive race' : voterPower; // Check if voter power is undefined
@@ -955,6 +980,8 @@ map.on('load', async function () {
         console.error('Error during initial map setup:', error);
     }
 
+  
+
     // Set initial color for all states
     //map.setPaintProperty('starting-fill', 'fill-color', COLOR_DEFAULT);
 
@@ -1010,21 +1037,9 @@ map.on('load', async function () {
             } 
                 const currentPowerLevel = powerLevels[currentPowerLevelIndex];
                 
-                let statesToAnimate = features.filter(feature => {
-                    // Check both STUSPS and state_abbrev properties
-                    const stateCode = feature.properties?.STUSPS || feature.properties?.state_abbrev || '';
-                    if (stateCode === '') {
-                        console.log("Feature empty abbrev:", feature);
-                    }
-                    return stateCode && voterEmpowerment[currentPowerLevel].includes(stateCode);
-                });
-                    console.log(currentPowerLevel);
-                    console.log("States to animate", statesToAnimate);
-                    console.log("array", voterEmpowerment[currentPowerLevel]);
-                    console.log("features", features);
-                    // print all features in this layer and their stusps value
-                    const allFeaturesInLayer = map.queryRenderedFeatures();
-                    console.log("All features in layer:", allFeaturesInLayer);
+                let statesToAnimate = features.filter(feature => 
+                        voterEmpowerment[currentPowerLevel].includes(feature.properties.STUSPS)
+                    );
                 const targetColor = getColorForPowerLevel(currentPowerLevel);
                 // Set all states to default fill-color
                 allFeatures.forEach(feature => {
@@ -1039,6 +1054,7 @@ map.on('load', async function () {
                 const currentButton = document.querySelector(`.legend-btn[data-level="${currentPowerLevel}"]`);
                 if (currentButton) {
                     currentButton.classList.add('highlight');
+                   
                 }
 
                 // Remove "highlight" class from other buttons
@@ -1157,6 +1173,24 @@ function getColorForPowerLevel(powerLevel) {
     }
 }
 
+document.querySelectorAll('.legend-btn').forEach(button => {
+    const originalColor = window.getComputedStyle(button).backgroundColor;
+    button.style.setProperty('--btn-bg-color', originalColor); 
+    
+    button.addEventListener('mouseover', () => {
+        button.style.setProperty('--btn-bg-color', originalColor);
+    });
+
+    button.addEventListener('focus', () => {
+        button.style.setProperty('--btn-bg-color', originalColor);
+    });
+
+    
+    button.addEventListener('click', () => {
+        button.classList.toggle('highlight'); 
+    });
+});
+
 // Write a function that searches all legend buttons and 
 // returns the one that is clicked
 function getClickedButton() {
@@ -1170,21 +1204,29 @@ function getHighlightedButton() {
 
 // Add click event listener for legend buttons
 document.querySelectorAll('.legend-btn').forEach(button => {
+ 
     button.addEventListener('click', function() {
+
+
         //stop the animation
         animationRunning = false;
         const powerLevel = this.getAttribute('data-level');
         const color = getColorForPowerLevel(powerLevel);
         
+
+        
         // Remove active class from all buttons
         document.querySelectorAll('.legend-btn').forEach(btn => {
+            const btnOriginalColor = btn.style.backgroundColor; 
             btn.classList.remove('active');
             btn.classList.remove('highlight');
+
         });
         
         // Add active class to clicked button
         this.classList.add('active');
         this.classList.add('highlight');
+
         
         // Filter the map to show only states with the selected power level
         // Change the layer to the one that is clicked
@@ -1207,6 +1249,49 @@ window.addEventListener('pageshow', function(event) {
 });
 
 
+
+
+/*
+fetch('https://public-api.wordpress.com/wp/v2/sites/236951957/posts', {
+method: 'GET',
+headers: {
+    'Authorization': '5d4782818fdd' // 使用你的 API 密钥
+}
+})
+.then(response => response.json())
+.then(data =>  {
+const blogPosts = data;
+const templateCard = document.querySelector('#blog-card-template').content;
+const blogSection = document.querySelector('#cards');
+
+
+
+blogPosts.forEach(post => {
+const blogCard = templateCard.cloneNode(true);
+
+console.log("post ",post);
+const date = new Date(post.date);
+const options = { year: 'numeric', month: 'short',day:"numeric" };
+let formattedDate = date.toLocaleDateString('en-US', options);
+
+formattedDate = formattedDate.replace(',', '');
+
+blogCard.querySelector('.card-date').textContent = formattedDate;
+
+console.log("title ",post.title);
+
+const title = post.title.rendered.replace(/&nbsp;/g, ' ');
+
+blogCard.querySelector('.card-title').textContent=title;
+
+const excerpt = post.content.rendered.replace(/&nbsp;/g, ' ');
+blogCard.querySelector('.card-content').innerHTML=excerpt;
+
+blogSection.appendChild(blogCard);
+});
+})
+.catch(error => console.error('Error:', error));
+*/
     </script>
 </body>
 {% endblock %}

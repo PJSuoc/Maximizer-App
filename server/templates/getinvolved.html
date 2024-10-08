@@ -57,6 +57,10 @@
 .get-involved-sec .service-card:hover .btn {
   background-color: #000; 
   color: #fff;
+  box-shadow:none;
+  
+ 
+  
 }
 
 .get-involved-sec h3 {
@@ -108,9 +112,9 @@
 }
 
 .campaign-url .btn.btn-primary, .donate-url .btn.btn-primary {
-    padding: 0.5em 1em;          /* 设置按钮的内边距，上下是 0.25em，左右是 1em */
-    outline: 0em solid #0000;     /* 禁用按钮的 outline（即按钮被点击时的外部边框），outline 的宽度为 0，颜色为透明 */
-    border-radius: 4em;           /* 设置按钮的圆角半径为 4em，使按钮的边角变得非常圆 */
+    padding: 0.5em 1em;        
+    outline: 0em solid #0000;    
+    border-radius: 4em;           
 }
 
 .button-container:only-child {
@@ -145,6 +149,10 @@
         border-radius:125px / 12px;
        box-shadow:0 0 8px #555555;
 }
+
+.get-involved-sec .service-card:hover .partydividermask:after {
+    box-shadow:0 0 8px black;
+}
 .partydivider span {
     width:40px; height:40px; 
     position:absolute; 
@@ -154,6 +162,11 @@
     box-shadow:0 2px 4px  #777777;
     background:#fff;
 }
+
+.get-involved-sec .service-card:hover .partydivider span {
+    box-shadow:0 2px 4px  black;
+}
+
 .partydivider i {
     position:absolute;
     top:0px; bottom:0px;
@@ -167,6 +180,11 @@
     
 }
 
+.get-involved-sec .service-card:hover .partydivider i {
+    color:black;
+    border:1px dashed black;
+}
+
 .election-denier {
     display: flex;
     align-items: flex-start;
@@ -176,7 +194,36 @@
     border-radius: var(--border-radius);
     gap: 10px;
     flex-wrap: wrap;
+    position: relative; 
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.6);
+    transition: all 0.6s ease;
+   
+   /* animation: rotateBorder 10s linear infinite;*/
 }
+
+.get-involved-sec .service-card:hover .election-denier{
+    transform: translateY(-10px); 
+   
+    box-shadow: 6px 6px 10px -5px rgba(0, 0, 0, 1); 
+
+    border: 5px solid var(--warning-border); 
+
+
+}
+
+/*
+@keyframes rotateBorder {
+    0% {
+        box-shadow: 0 0 5px 5px #FFD700;
+    }
+    50% {
+        box-shadow: 0 0 5px 5px #FFA500;
+    }
+    100% {
+        box-shadow: 0 0 5px 5px #b00;
+    }
+}*/
+
 
 .election-denier__icon {
     background-color: var(--icon-bg);
