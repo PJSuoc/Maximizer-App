@@ -824,22 +824,7 @@ document.querySelector('.nav-toggle-btn').addEventListener('click', function() {
 });
 
 
-/*document.body.addEventListener('click', function(event) {
-    if (event.target.classList.contains('overlay')) {
-        console.log('Overlay clicked'); 
-        const navbar = document.querySelector('.navbar');
-        const overlay = document.querySelector('.overlay');
-        
-        navbar.classList.remove('active');
-        overlay.style.display = 'none';
 
-        const menuIcon = document.querySelector('.menu-icon');
-        const closeIcon = document.querySelector('.close-icon');
-
-        closeIcon.style.display = 'none';
-        menuIcon.style.display = 'block';
-    }
-});*/
 
 
 document.addEventListener('click', function(event) {
@@ -848,15 +833,16 @@ document.addEventListener('click', function(event) {
     const menuIcon = document.querySelector('.menu-icon');
     const closeIcon = document.querySelector('.close-icon');
 
+    if (!navbar || !overlay || !menuIcon || !closeIcon) {
+        return; 
+    }
 
     if (!navbar.contains(event.target) && navbar.classList.contains('active')) {
         console.log('Clicked outside of menu, closing menu');
 
-     
         navbar.classList.remove('active');
         overlay.style.display = 'none';
-
-        
+ 
         closeIcon.style.display = 'none';
         menuIcon.style.display = 'block';
     }
@@ -874,6 +860,10 @@ function myFunction() {
 document.addEventListener('DOMContentLoaded', () => {
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const submenu = document.getElementById('social-submenu');
+
+    if (!dropdownToggle || !submenu) {
+        return; 
+    }
 
     dropdownToggle.addEventListener('click', (event) => {
         event.preventDefault(); 

@@ -8,7 +8,7 @@ from googleapiclient.errors import HttpError
 
 import webbrowser    
 urL='https://www.google.com'
-chrome_path="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+chrome_path="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(chrome_path))
 webbrowser.get('chrome').open_new_tab(urL)
 
@@ -19,7 +19,6 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 inv_id = sheet_id
 inv_name = ''
 
-#This merely exists as a reference. spreadsheet_pull is the used function.
 def main():
   """Shows basic usage of the Sheets API.
   Prints values from a sample spreadsheet.
@@ -67,9 +66,12 @@ def main():
   except HttpError as err:
     print(err)
 
+if __name__ == "__main__":
+  main()
+
 def spreadsheet_pull(sheet_id, sheet_name):
     urL='https://www.google.com'
-    chrome_path="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+    chrome_path="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
     webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(chrome_path))
     webbrowser.get('chrome').open_new_tab(urL)
 
@@ -85,9 +87,10 @@ def spreadsheet_pull(sheet_id, sheet_name):
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                "credentials.json", SCOPES)
-            print(flow)
-            creds = flow.run_local_server(port=0)
+                "credentials.json", SCOPES
+        )
+        print(flow)
+        creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open("token.json", "w") as token:
             token.write(creds.to_json())

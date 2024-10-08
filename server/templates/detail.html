@@ -6,8 +6,11 @@
 
 <div class="detail-page">
     <body>
+        
+
     <div class="row" height="100%">
         <div class="col" id="detail-left">
+
             <ul class="list-group" id="state-data-list">
                 <!-- State data will be dynamically inserted here -->
             </ul>
@@ -16,6 +19,8 @@
         <div class="col" id="detail-right">
             <div class="map-overlay">
                 <div class="map-overlay-inner">
+
+
                     <fieldset>
                         <label for="layer-dropdown">Currently viewing: </label>
                         <div class="dropdown">
@@ -41,15 +46,26 @@
                         </select>
                     </fieldset>
                 </div>
+
+                <div class="map-pop">
+                    Mouseover for more info
+                </div>
         
                 <div class="col map-container-sm">
-                    <div id="map"></div>
-                    <div class="map-pop">
-                        Mouseover for more info
-                    </div>
+                    <div id="map"></div>  
+                    
                 </div>
+
             </div>
+
+            <div class='pin bounce'></div>
+            <div class='pulse'></div>
+
+            
+
         </div>
+
+        
         
         
         
@@ -91,12 +107,21 @@
 //convert dropdown to select
 document.querySelectorAll('#layer-dropdown div').forEach(item => {
     item.addEventListener('click', function() {
+        //get clicked data-value and selectionValue
         let selectedValue = this.getAttribute('data-value');
+        let selectedText = this.getAttribute('selectionValue');
+
         let selectElement = document.getElementById('layer');
         selectElement.value = selectedValue;
         
-        
         selectElement.dispatchEvent(new Event('change'));
+
+        //update the url with the selected text
+        const currentURL = new URL(window.location.href);
+        currentURL.searchParams.set('selection', selectedText);
+
+        //update the url without refreshing the page
+        history.pushState(null, '', currentURL);
     });
 });
 
@@ -576,12 +601,47 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             // put hover line  above others
             map.moveLayer(layerId + '-hover-line');
 
+
+            function showPinAndPop() {
+                const pin = document.querySelector('.pin');
+                const mapPop = document.querySelector('.map-pop');
+                
+                if (pin && mapPop) {
+                    mapPop.style.left = `${pin.offsetLeft-30}px`;
+                    mapPop.style.top = `${pin.offsetTop - mapPop.offsetHeight - 20}px`; 
+                    
+                    setTimeout(() => {
+                        mapPop.classList.add('show'); 
+                    }, 500);
+                }
+            }
+
+            showPinAndPop();
+
+            
+
             map.on('mouseenter', layerId + '-fill',(e) => {
                 const mapPop = document.querySelector('.map-pop');
+                const pin = document.querySelector('.pin');
+                const pulse = document.querySelector('.pulse');
+
+                if (pin) {
+                    pin.classList.add('hide');
+                }
+                
+                if (pulse) {
+                    pulse.classList.add('hide');
+                }
+                
                 if (mapPop && !mapPop.classList.contains('hide')) {
                     mapPop.classList.add('hide');
+                 
                 }
+
+           
             });
+
+
 
             // mouse event for hovering
             map.on('mousemove', layerId + '-fill', function (e) {
@@ -615,45 +675,104 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 //For the detail map I created separate popups for each layer because there were so many layers. Here is where the popup would be updated:
         if (layerId === 'gubernatorial') {
             popupContent = `<div class="custom-popup">
-                <strong>State:</strong> ${name}<br>
-                <strong>Republican running:</strong> ${candidateNameR}<br>
-                <strong>Democrat running:</strong> ${candidateNameD}<br>
-                <strong>Voter Power:</strong> ${voterPower}
+                <div class="popup-row">
+                    <div class="popup-label"><strong>State:</strong></div>
+                    <span class="popup-value">  ${name}</span>
+                </div>
+                <div class="popup-row">
+                    <div class="popup-label"><strong>Republican running:</strong></div>
+                    <span class="popup-value">  ${candidateNameR}</span>
+                </div>
+                <div class="popup-row">
+                    <div class="popup-label"><strong>Democrat running:</strong></div>
+                     <span class="popup-value"> ${candidateNameD}</span>
+                </div>
+                <div class="popup-row">
+                    <div class="popup-label"><strong>Voter Power:</strong></div>
+                    <span class="popup-value"> ${voterPower}</span>
+                </div>
             </div>`;
         } else if (layerId === 'presidential2') {
            popupContent = `<div class="custom-popup">
-            <strong>State:</strong> ${name}<br>
-              <strong>Republican running:</strong> ${candidateNameR}<br>
-              <strong>Democrat running:</strong> ${candidateNameD}<br>
-              <strong>Voter Power:</strong> ${voterPower}
+            <div class="popup-row">
+                <div class="popup-label"><strong>State:</strong></div>
+                <span class="popup-value"> ${name}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Republican running:</strong></div> 
+                <span class="popup-value"> ${candidateNameR}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Democrat running:</strong></div>
+                <span class="popup-value"> ${candidateNameD}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Voter Power:</strong></div>
+                <span class="popup-value"> ${voterPower}</span>
+            </div>
            </div>`;
 
         } else if (layerId === 'state_leg_up') {
            popupContent = `<div class="custom-popup">
-              <strong>District name:</strong> ${name}<br>
-              <strong>Republican running:</strong> ${candidateNameR}<br>
-              <strong>Democrat running:</strong> ${candidateNameD}<br>
-              <strong>Voter Power:</strong> ${voterPower}
+            <div class="popup-row">
+                <div class="popup-label"><strong>District name:</strong></div>
+                 <span class="popup-value"> ${name}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Republican running:</strong></div>
+                <span class="popup-value">  ${candidateNameR}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Democrat running:</strong></div>
+                <span class="popup-value"> ${candidateNameD}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Voter Power:</strong></div>
+                <span class="popup-value"> ${voterPower}</span>
+            </div>
            </div>`;
 
         } else if (layerId === 'state_leg_low') {
            popupContent = `<div class="custom-popup">
-              <strong>District name:</strong> ${name}<br>
-              <strong>Republican running:</strong> ${candidateNameR}<br>
-              <strong>Democrat running:</strong> ${candidateNameD}<br>
-              <strong>Voter Power:</strong> ${voterPower}
+            <div class="popup-row">
+                <div class="popup-label"><strong>District name:</strong></div>
+                <span class="popup-value">${name}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Republican running:</strong></div>
+                <span class="popup-value">${candidateNameR}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Democrat running:</strong></div>
+                <span class="popup-value"> ${candidateNameD}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Voter Power:</strong></div>
+                <span class="popup-value">  ${voterPower}</span>
+            </div>
            </div>`;
 
         } else if (layerId === 'ballot_abort') {
    
         const ballotMessage = ballotname === 'Not available'
         ? 'No abortion ballots in this state'
-        : `<strong>State name:</strong><br>
-        ${statename}<br>
-        <strong>Ballot name:</strong><br>
-        ${ballotname}<br>
-        <strong>Abortion ballot description:</strong><br>
-        ${description}<br>`;
+        : `<div class="custom-popup">
+            <div class="popup-row">
+                <div class="popup-label"><strong>State name:</strong></div>
+                <span class="popup-value"> 
+                ${statename}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Ballot name:</strong></div>
+                <span class="popup-value"> 
+                ${ballotname}</span>
+            </div>
+            <div class="popup-row">
+                <div class="popup-label"><strong>Abortion ballot description:</strong></div>
+                <span class="popup-value"> 
+                ${description}</span>
+            </div>
+            </div>`;
 
     popupContent = `<div class="custom-popup">
         ${ballotMessage}
@@ -664,12 +783,20 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
    
    const ballotMessage = ballotname === 'Not available'
    ? 'No voting policy ballots in this state'
-   : `<strong>State name:</strong><br>
-   ${statename}<br>
-   <strong>Ballot name(s):</strong><br>
-   ${ballotname}<br>
-   <strong>Voting policy ballot description(s):</strong><br>
-   ${description}<br>`;
+   : `<div class="custom-popup">
+    <div class="popup-row">
+        <div class="popup-label"><strong>State name:</strong></div>
+        <span class="popup-value"> ${statename}</span>
+    </div>
+    <div class="popup-row">
+        <div class="popup-label"><strong>Ballot name(s):</strong></div>
+        <span class="popup-value"> ${ballotname}</span>
+   </div>
+   <div class="popup-row">
+        <div class="popup-label"><strong>Voting policy ballot description(s):</strong><div>
+        <span class="popup-value"> ${description}</span>
+    </div>
+   </div>`;
 
 popupContent = `<div class="custom-popup">
    ${ballotMessage}
@@ -683,12 +810,20 @@ popupContent = `<div class="custom-popup">
    
    const ballotMessage = ballotname === 'Not available'
    ? 'No state-level ballot issues in this state'
-   : `<strong>State name:</strong><br>
-   ${statename}<br>
-   <strong>Ballot or race name(s):</strong><br>
-   ${ballotname}<br>
-   <strong>Description(s):</strong><br>
-   ${description}<br>`;
+   : `<div class="custom-popup">
+    <div class="popup-row">
+        <div class="popup-label"><strong>State name:</strong></div>
+        <span class="popup-value"> ${statename}</span>
+    </div>
+    <div class="popup-row">
+        <div class="popup-label"><strong>Ballot or race name(s):</strong></div>
+        <span class="popup-value"> ${ballotname}</span>
+    </div>
+    <div class="popup-row">
+        <div class="popup-label"><strong>Description(s):</strong></div>
+        <span class="popup-value"> ${description}</span>
+    </div>
+   </div>`;
 
 popupContent = `<div class="custom-popup">
    ${ballotMessage}
@@ -701,11 +836,27 @@ popupContent = `<div class="custom-popup">
             const displayVoterPower = voterPowerhouse === undefined ? 'no competitive race' : voterPowerhouse;
 
     popupContent = `<div class="custom-popup">
-                <strong>${layerId === 'house2' ? 'District' : 'State'}:</strong> ${name}<br>
-                <strong>Republican running:</strong> ${candidateNameR}<br>
-                <strong>Democrat running:</strong> ${candidateNameD}<br>
-                <strong>Voter Power:</strong> ${displayVoterPower}
-            </div>`;
+        <div class="popup-row">
+            <div class="popup-label"><strong>${layerId === 'house2' ? 'District' : 'State'}:</strong></div>
+            <span class="popup-value">  ${name}</span>
+        </div>
+        <div class="popup-row">
+            <div class="popup-label"><strong>Republican running:</strong></div>
+            <span class="popup-value">  ${candidateNameR}</span>
+        </div>
+        <div class="popup-row">
+            <div class="popup-label"><strong>Republican running:</strong></div>
+             <span class="popup-value"> ${candidateNameR}</span>
+        </div>
+        <div class="popup-row">
+            <div class="popup-label"><strong>Democrat running:</strong></div>
+            <span class="popup-value"> ${candidateNameD}</span>
+        </div>
+        <div class="popup-row">
+            <div class="popup-label"><strong>Voter Power:</strong></div>
+            <span class="popup-value"> ${displayVoterPower}</span>
+        </div>
+        </div>`;
         }
 
             
@@ -739,8 +890,7 @@ popupContent = `<div class="custom-popup">
             item.addEventListener('click', function() {
                 const selectedValue = this.getAttribute('data-value');
                 const selectedText = this.textContent;
-                document.querySelector('.dropbtn').textContent = selectedText; // 更新按钮文本
-                console.log('Selected value:', selectedValue); // 你可以在这里处理选择的值
+                document.querySelector('.dropbtn').textContent = selectedText; 
             });
         });
 
@@ -857,48 +1007,51 @@ popupContent = `<div class="custom-popup">
        /* setTimeout(() => {
             document.querySelector('.map-pop').classList.add('hide');
         }, 25000);*/
+
+
                 </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.querySelector(".dropbtn");
+    const dropdownContent = document.getElementById("layer-dropdown");
+    
+    dropdownButton.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const isActive = this.classList.contains("active");
+        
+        if (dropdownContent) {
+            dropdownContent.style.display = isActive ? "block" : "none";
+        }
+    });
+    
+    dropdownContent.querySelectorAll("div").forEach(function (item) {
+        item.addEventListener("click", function () {
+            dropdownButton.textContent = this.textContent;
+            dropdownButton.classList.remove("active");
+            dropdownContent.style.display = "none";
+        });
+    });
+    
+    window.addEventListener("click", function (event) {
+        if (dropdownButton && !dropdownButton.contains(event.target) 
+            && !dropdownContent.contains(event.target) && dropdownContent && !dropdownContent.contains(event.target)) {
+                dropdownButton.classList.remove("active");
+                dropdownContent.style.display = "none";
+            }
+        });
+    
+   
+});
+</script>
             </div>
         </div>
     </div>
 
 </body>
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const dropdownButton = document.querySelector(".dropbtn");
-    const dropdownContent = document.getElementById("layer-dropdown");
 
-    dropdownButton.addEventListener("click", function () {
-        // 切换 active 类以显示或隐藏下拉菜单
-        this.classList.toggle("active");
-        const isActive = this.classList.contains("active");
-
-        // 显示或隐藏下拉菜单
-        dropdownContent.style.display = isActive ? "block" : "none";
-    });
-
-    // 点击下拉菜单选项
-    dropdownContent.querySelectorAll("div").forEach(function (item) {
-        item.addEventListener("click", function () {
-            // 更新按钮文本
-            dropdownButton.textContent = this.textContent;
-
-            // 隐藏下拉菜单
-            dropdownButton.classList.remove("active");
-            dropdownContent.style.display = "none";
-        });
-    });
-
-    // 点击外部区域时关闭下拉菜单
-    window.addEventListener("click", function (event) {
-        if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
-            dropdownButton.classList.remove("active");
-            dropdownContent.style.display = "none";
-        }
-    });
-});
-</script>
 
 
 
