@@ -181,7 +181,10 @@
             <form action="/local" method="post">
                 <div class="input-group">
                     <label for="location">Find pivotal elections near you:</label>
-                    <input type="text" class="form-control" id="location" name="location" placeholder="Type address/ZIP, press enter">
+                    <div class="search-container">
+                        <input type="text" class="form-control" id="location" name="location" placeholder="Type address/ZIP">
+                        <button class="search-button">Search</button>    
+                </div>
                 </div>  
             </form>
 
@@ -441,7 +444,7 @@
     const layers = {
         baseStatesMap: 'static/data/calculated_files/geojsons/president_albers.geojson',
         houseMap: 'static/data/calculated_files/geojsons/congress_house_albers.geojson',
-        #houseMap: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
+        //houseMap: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
         stateUpperMap: 'static/data/calculated_files/geojsons/state_upper_legislature_albers.geojson',
         stateLowerMap: 'static/data/calculated_files/geojsons/state_lower_legislature_albers.geojson',
     };
@@ -473,21 +476,9 @@
             colorScale: houseScale,
             baseMap: 'houseMap',
             jsonData: houseData, // Replace with actual data when available
-            idProperty: 'GEOIDFQ',
-            matchingFunction: (feature, dataItem) => {
-                const featureState = feature.properties.state;
-                const featureCongress = feature.properties.congress; 
-                if (featureState && featureCongress) {
-                    return (
-                        dataItem.state === featureState && 
-                        (dataItem.congress === featureCongress || 
-                        (dataItem.congress && featureCongress && dataItem.congress.toString() === featureCongress.toString()))
-                    );
-                } else {
-                    console.warn("Undefined property in feature:", feature);
-                    return false; // Do not match if either state or congress property is undefined
-                }
-            }
+            idProperty: 'state-congress',
+            matchingFunction: (feature, dataItem) =>
+                feature.properties['state-congress'] === `${dataItem.state}-${dataItem.congress}`
         },
         'state_leg_up': {
             colorScale: stateLegScale,
@@ -508,7 +499,7 @@
             idProperty: 'STATEFP'
         },
         'democracy': {
-            colorScale: democracyScale,
+            colorScale: COLOR_DEMOCRACY,
             baseMap: 'baseStatesMap',
             jsonData: democracyData,
             idProperty: 'STATEFP'
@@ -522,25 +513,6 @@
     };
     const geoJsonCache = {};
 
-    function lookForMissingGEOIDFQ() {
-        console.log("Looking for missing GEOIDFQ");
-        loadGeoJson('houseMap')
-        .then(data => {
-            console.log("Data loaded successfully. Data type:", typeof data);
-            console.log("Data structure:", JSON.stringify(data).slice(0, 200) + "...");
-
-            if (data && typeof data === 'object' && data.type === 'FeatureCollection' && Array.isArray(data.features)) {
-                const featuresWithoutGEOIDFQ = data.features.filter(feature => !feature.properties.GEOIDFQ);
-                console.log("Features without GEOIDFQ:", featuresWithoutGEOIDFQ);
-            } else {
-                console.error("Unexpected data structure. Expected a GeoJSON FeatureCollection.");
-                console.log("Full data:", data);
-            }
-        })
-        .catch(error => {
-            console.error("Error loading GeoJSON for houseMap:", error);
-        });
-    }
     async function loadGeoJson(layerId) {
         const config = layerConfig[layerId] || { baseMap: 'baseStatesMap' };
         const mapId = config.baseMap;
@@ -580,19 +552,22 @@
             map.removeSource(currentLayerId);
         }
 
-        console.log(`Preparing to load data for: ${layerId}`);
         try {
             const sourceData = await loadGeoJson(layerId);
             console.log(`Data loaded successfully for: ${layerId}`);
 
+            if (layerId === 'house') {
+                // Add a new property to each feature for the composite ID
+                sourceData.features.forEach(feature => {
+                    feature.properties['state-congress'] = `${feature.properties.state}-${feature.properties.congress}`;
+                });
+            }
             // Add source
             map.addSource(layerId, {
                 type: 'geojson',
                 data: sourceData,
                 promoteId: idProperty
             });
-
-            console.log(`Source added for: ${layerId}`);
 
             // Define fill paint
             let fillPaint;
@@ -601,7 +576,6 @@
             } else {
                 fillPaint = COLOR_DEFAULT;
             }
-            console.log("Fill Paint:", fillPaint);
 
             // Add fill layer
             map.addLayer({
@@ -649,33 +623,21 @@
         }
     
         function createFillPaint(layerId, config) {
-            console.log("createFillPaint called with layerId:", layerId);
-            console.log("Configuration provided:", config);
-        
+
             if (Array.isArray(config.colorScale) && typeof config.matchingFunction === 'function') {
                 console.log("Valid colorScale and matchingFunction detected.");
         
                 // Step 1: Group by feature properties and find max voter power using matchingFunction
                 const stateMaxPower = config.jsonData.reduce((acc, item) => {
-                    console.log("Processing item from jsonData:", item);
-                    
-                    const matchingFeature = Object.keys(acc).find(name => {
-                        const matchResult = config.matchingFunction({ properties: { state: name } }, item);
-                        console.log(`Matching feature state: ${name} with data item:`, item, "Result:", matchResult);
-                        return matchResult;
-                    });
-        
+                    const key = config.idProperty === 'state-congress' ?
+                        `${item.state}-${item.congress}` :
+                        item.state;
                     const power = Math.round(parseFloat(item.voter_power) || 0);
-                    console.log("Calculated voter power for current item:", power);
-        
-                    if (matchingFeature && !isNaN(power)) {
-                        acc[matchingFeature] = Math.max(acc[matchingFeature] || 0, power);
-                        console.log(`Updating acc for matching feature ${matchingFeature}:`, acc[matchingFeature]);
-                    } else if (item.state && !isNaN(power)) {
-                        acc[item.state] = Math.max(acc[item.state] || 0, power);
-                        console.log(`Updating acc for item.state ${item.state}:`, acc[item.state]);
+                    
+                    if (!isNaN(power)) {
+                        acc[key] = Math.max(acc[key] || 0, power);
                     }
-        
+            
                     return acc;
                 }, {});
         
@@ -958,7 +920,6 @@
             const startingData = await startingDataPromise;
             addGeoJsonLayer('ballot_all');
             
-            lookForMissingGEOIDFQ();
    /*     LEVELS.forEach(level => {
                 if (level !== 'starting') {
                     addGeoJsonLayer(level).catch(error => {

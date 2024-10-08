@@ -102,7 +102,7 @@ def home():
     # Pre-filter the data
     democracy_data = ELECTIONS[ELECTIONS["race_type"] == "Democracy Repair"].to_dict(orient="records")
     abortion_data = ELECTIONS[ELECTIONS["race_type"] == "Reproductive Rights"].to_dict(orient="records")
-    
+    other_initiative_data = ELECTIONS[ELECTIONS["race_type"].isin(["Direct Democracy", "Liberties"])].to_dict(orient="records")
     house_data = ELECTIONS[ELECTIONS["race_type"] == "House"].to_dict(orient="records")
     senate_data = ELECTIONS[ELECTIONS["race_type"] == "Senate"].to_dict(orient="records")
     president_data = ELECTIONS[ELECTIONS["race_type"] == "Presidential"].to_dict(orient="records")
@@ -126,6 +126,7 @@ def home():
         "home.html",
         democracy_data=democracy_data,
         abortion_data=abortion_data,
+        other_initiative_data=other_initiative_data,
         house_data=house_data,
         senate_data=senate_data,
         president_data=president_data,

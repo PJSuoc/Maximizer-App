@@ -1,0 +1,70 @@
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running,GEOIDFQ
+01,02,,,Alabama,House,Congressional District 2,43.0,Shomari Figures,Caroleene Dobson,5001800US0102
+02,at-large,,,Alaska,House,Congressional District (at Large),33.0,Mary Peltola (incumbent),Nicholas Begich,5001800US0200
+04,01,,,Arizona,House,Congressional District 1,83.0,Amish Shah,David Schweikert (incumbent),5001800US0401
+04,06,,,Arizona,House,Congressional District 6,80.0,Kirsten Engel,Juan Ciscomani (incumbent),5001800US0406
+06,47,,,California,House,Congressional District 47,72.0,Dave Min,Scott Baugh,5001800US0647
+06,45,,,California,House,Congressional District 45,100.0,Derek Tran,Michelle Steel (incumbent),5001800US0645
+06,09,,,California,House,Congressional District 9,33.0,Josh Harder (incumbent),Kevin Lincoln II,5001800US0609
+06,49,,,California,House,Congressional District 49,68.0,Mike Levin (incumbent),Matt Gunderson,5001800US0649
+06,03,,,California,House,Congressional District 3,36.0,Jessica Morse,Kevin Kiley (incumbent),5001800US0603
+06,40,,,California,House,Congressional District 40,26.0,Joe Kerr,Young Kim (incumbent),5001800US0640
+06,13,,,California,House,Congressional District 13,76.0,Adam Gray,John Duarte (incumbent),5001800US0613
+06,22,,,California,House,Congressional District 22,74.0,Rudy Salas,David G. Valadao (incumbent),5001800US0622
+06,27,,,California,House,Congressional District 27,99.0,George Whitesides,Mike Garcia (incumbent),5001800US0627
+06,41,,,California,House,Congressional District 41,52.0,Will Rollins,Ken Calvert (incumbent),5001800US0641
+08,03,,,Colorado,House,Congressional District 3,57.0,Adam Frisch,Jeff Hurd,5001800US0803
+08,08,,,Colorado,House,Congressional District 8,100.0,Yadira Caraveo (incumbent),Gabe Evans,5001800US0808
+09,05,,,Connecticut,House,Congressional District 5,87.0,Jahana Hayes (incumbent),George Logan,5001800US0905
+12,09,,,Florida,House,Congressional District 9,18.0,Darren Soto (incumbent),Thomas Chalifoux,5001800US1209
+12,23,,,Florida,House,Congressional District 23,35.0,Jared Evan Moskowitz (incumbent),Joe Kaufman,5001800US1223
+12,13,,,Florida,House,Congressional District 13,34.0,Whitney Fox,Anna Paulina Luna (incumbent),5001800US1213
+17,17,,,Illinois,House,Congressional District 17,69.0,Eric Sorenson (incumbent),Joseph G. McGraw,5001800US1717
+18,01,,,Indiana,House,Congressional District 1,29.0,Frank Mrvan (incumbent),Randell Niemeyer,5001800US1801
+19,03,,,Iowa,House,Congressional District 3,87.0,Lanon Baccam,Zach Nunn (incumbent),5001800US1903
+19,01,,,Iowa,House,Congressional District 1,55.0,Christina Bohannan,Mariannette Millter-Meeks (incumbent),5001800US1901
+20,03,,,Kansas,House,Congressional District 3,63.0,Sharice Davids (incumbent),Prasanth Reddy,5001800US2003
+23,02,,,Maine,House,Congressional District 2,62.0,Jared Golden (incumbent),Austin Theriault,5001800US2302
+24,06,,,Maryland,House,Congressional District 6,72.0,April McClain-Delaney,Neil Parrott,5001800US2406
+26,10,,,Michigan,House,Congressional District 10,100.0,Carl Marlinga,John James (incumbent),5001800US2610
+26,03,,,Michigan,House,Congressional District 3,44.0,Hillary Scholten (incumbent),Paul Hudson,5001800US2603
+26,07,,,Michigan,House,Congressional District 7,89.0,Curtis Hertel,Tom Barrett,5001800US2607
+26,08,,,Michigan,House,Congressional District 8,50.0,Kristen McDonald Rivet,Paul Junge,5001800US2608
+27,02,,,Minnesota,House,Congressional District 2,68.0,Angie Craig (incumbent),Joe Teirab,5001800US2702
+30,01,,,Montana,House,Congressional District 1,69.0,Monica Tranel,Ryan K. Zinke (incumbent),5001800US3001
+31,02,,,Nebraska,House,Congressional District 2,76.0,Tony Vargas,Don Bacon (incumbent),5001800US3102
+32,03,,,Nevada,House,Congressional District 3,64.0,Susie Lee (incumbent),Drew Johnson,5001800US3203
+32,01,,,Nevada,House,Congressional District 1,46.0,Dina Titus (incumbent),Mark Robertson,5001800US3201
+32,04,,,Nevada,House,Congressional District 4,49.0,Steven Horsford (incumbent),John J. Lee,5001800US3204
+33,01,,,New Hampshire,House,Congressional District 1,96.0,Chris Pappas (incumbent),Russell Prescott,5001800US3301
+33,02,,,New Hampshire,House,Congressional District 2,87.0,Maggie Goodlander,Lily Williams,5001800US3302
+34,07,,,New Jersey,House,Congressional District 7,65.0,Susan Altman,Thomas Kean Jr. (incumbent),5001800US3407
+35,02,,,New Mexico,House,Congressional District 2,79.0,Gabriel Vasquez (incumbent),Yvette Herrell,5001800US3502
+36,18,,,New York,House,Congressional District 18,90.0,Pat Ryan (incumbent),Alison Esposito,5001800US3618
+36,22,,,New York,House,Congressional District 22,91.0,John Mannion,Brandon Williams (incumbent),5001800US3622
+36,03,,,New York,House,Congressional District 3,64.0,Tom Suozzi (incumbent),Michael LiPetri Jr.,5001800US3603
+36,01,,,New York,House,Congressional District 1,25.0,John Avlon,Nicholas J. LaLota (incumbent),5001800US3601
+36,04,,,New York,House,Congressional District 4,98.0,Laura Gillen,Anthony D'Esposito (incumbent),5001800US3604
+36,17,,,New York,House,Congressional District 17,91.0,Mondaire Jones,Michael Lawler (incumbent),5001800US3617
+36,19,,,New York,House,Congressional District 19,100.0,Josh Riley,Marcus Molinaro (incumbent),5001800US3619
+37,01,,,North Carolina,House,Congressional District 1,84.0,Donald Davis (incumbent),Laurie Buckhout,5001800US3701
+39,01,,,Ohio,House,Congressional District 1,86.0,Greg Landsman (incumbent),Orlando Sonza,5001800US3901
+39,09,,,Ohio,House,Congressional District 9,56.0,Marcy Kaptur (incumbent),Derek Merrin,5001800US3909
+39,13,,,Ohio,House,Congressional District 13,79.0,Emilia Sykes (incumbent),Kevin Coughlin,5001800US3913
+41,06,,,Oregon,House,Congressional District 6,62.0,Andrea Salinas (incumbent),Mike Erickson,5001800US4106
+41,04,,,Oregon,House,Congressional District 4,34.0,Val Hoyle (incumbent),Monique DeSpain,5001800US4104
+41,05,,,Oregon,House,Congressional District 5,98.0,Janelle Bynum,Lori Chavez-DeRemer (incumbent),5001800US4105
+42,17,,,Pennsylvania,House,Congressional District 17,43.0,Chris Deluzio (incumbent),Rob Mercuri,5001800US4217
+42,10,,,Pennsylvania,House,Congressional District 10,48.0,Janelle Stelson,Scott Perry (incumbent),5001800US4210
+42,01,,,Pennsylvania,House,Congressional District 1,83.0,Ashley Ehasz,Brian Fitzpatrick (incumbent),5001800US4201
+42,07,,,Pennsylvania,House,Congressional District 7,94.0,Susan Wild (incumbent),Ryan Mackenzie,5001800US4207
+42,08,,,Pennsylvania,House,Congressional District 8,96.0,Matt Cartwright (incumbent),Rob Bresnahan Jr.,5001800US4208
+48,28,,,Texas,House,Congressional District 28,21.0,Henry Cuellar (incumbent),Jay Furman,5001800US4828
+48,34,,,Texas,House,Congressional District 34,12.0,Vicente Gonzalez Jr. (incumbent),Mayra Flores,5001800US4834
+48,15,,,Texas,House,Congressional District 15,82.0,Michelle Vallejo,Monica De La Cruz (incumbent),5001800US4815
+51,07,,,Virginia,House,Congressional District 7,81.0,Eugene Vindman,Derrick Anderson,5001800US5107
+51,02,,,Virginia,House,Congressional District 2,78.0,Missy Cotter Smasal,Jennifer Kiggans (incumbent),5001800US5102
+53,08,,,Washington,House,Congressional District 8,82.0,Kim Schrier (incumbent),Carmen Goers,5001800US5308
+53,03,,,Washington,House,Congressional District 3,80.0,Marie Gluesenkamp Pérez (incumbent),Joe Kent,5001800US5303
+55,03,,,Wisconsin,House,Congressional District 3,80.0,Rebecca Cooke,Derrick Van Orden (incumbent),5001800US5503
+55,01,,,Wisconsin,House,Congressional District 1,61.0,Peter Barca,Bryan Steil (incumbent),5001800US5501

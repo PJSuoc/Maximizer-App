@@ -20,7 +20,7 @@ state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_
 35,nan,nan,nan,New Mexico,Senate,,11.0,Martin Heinrich (incumbent),Nella Domenici
 36,nan,nan,nan,New York,Senate,,1.0,Kirsten Gillibrand (incumbent),Mike Sapraicone
 38,nan,nan,nan,North Dakota,Senate,,10.0,Katrina Christiansen,Kevin Cramer (incumbent)
-39,nan,nan,nan,Ohio,Senate,,15.0,Sherrod Brown (incumbent),Bernie Moreno
+39,nan,nan,nan,Ohio,Senate,,45.0,Sherrod Brown (incumbent),Bernie Moreno
 42,nan,nan,nan,Pennsylvania,Senate,,4.0,Bob Casey Jr. (incumbent),David McCormick
 44,nan,nan,nan,Rhode Island,Senate,,13.0,Sheldon Whitehouse (incumbent),Patricia Morgan
 47,nan,nan,nan,Tennessee,Senate,,3.0,Gloria Johnson,Marsha Blackburn (incumbent)

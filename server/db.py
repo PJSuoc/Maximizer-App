@@ -225,8 +225,8 @@ class DB:
 
 
     def shapes_in_state(self, state):
-        
-        state = STATEDICT[state]
+
+        #state = STATEDICT[state]
         shapes_in_state = self.allshapes[self.allshapes["state"] == state]
 
         return shapes_in_state
