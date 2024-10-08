@@ -241,7 +241,7 @@ hr {
       width:250px;
       box-sizing: border-box;
       border: 1px solid var(--jet);
-      z-index: 1000;  
+      z-index: 100;  
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   }
   
@@ -256,8 +256,14 @@ hr {
       color: var(--jet);
       text-decoration: none;
       white-space: nowrap;
+      font-size: 16px;
+      border-bottom: 1px solid var(--jet);
   }
   
+  .nav-submenu li:last-child {
+  border-bottom: none; 
+}
+
   .nav-submenu li a:hover {
       background-color: rgba(0, 0, 0, 0.1);
   }
@@ -276,6 +282,9 @@ hr {
     opacity: 1;
     transform: translateY(0);
   }
+
+
+
   
 #right-navbar svg {
     transition: fill  0.25s ease;;
@@ -331,6 +340,16 @@ div[id="fieldset-container"] {
     display: none; 
 }
 
+#left-navbar {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+
 .navbar-list.active {
     display: block; 
 }
@@ -385,7 +404,13 @@ div[id="fieldset-container"] {
             border: none;
             cursor: pointer;
             text-align: right;
+
+            position: absolute;
+            top: 10px;
+            right: 30px;
         }
+
+        
 
        .logo-container{
         display: flex;
@@ -443,9 +468,19 @@ div[id="fieldset-container"] {
     .title-line-wrapper {
         display:none;
     }
+
+    
 }
 
+
+
+
 @media (max-width: 800px) {
+
+    #logo img,.entry-title, hr, .sub-title {
+        display: none;
+    }
+    
     .legend-section #legend-box {
         gap:15px;
     }
@@ -469,29 +504,104 @@ div[id="fieldset-container"] {
     }
 
     #left-navbar {
-        display: none;
+        display: flex;
+        position: fixed; 
+        left: 0;
+        top:100%;
+        height: 90vh;  
+        width: 100%;  
+        background-color: var(--jet);  
+        transition: left 0.3s ease-in-out;  
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+        z-index: 100;
+        transform: translateY(100%); 
     }
 
+    
+
     .navbar.active #left-navbar {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
+        transform: translateY(-90%); 
     }
 
     .navbar.active #left-navbar .navbar-link {
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
+        font-size: 1.2rem;
+        color:white;
     }
+
 
     .navbar{
         justify-content: space-between;
     }
 
+    .nav-submenu {
+        display: block; 
+        position: static; 
+        opacity: 1;
+        background-color:var(--jet);
+        transform: none; 
+        list-style: none;
+        padding-left:50px;
+        box-shadow: none;
+        border:none;
+     
+    }
+    .nav-submenu li {
+        list-style-type: disc; 
+        padding-left: 0; 
+        margin: 2px 0; 
+        color:white;
+    }
+    
+    .nav-submenu li a {
+    display: block;
+    padding: 8px 20px;
+    color: white;
+    white-space: nowrap;
+    font-size: 16px;
+    margin-left:0;
+    border-bottom:none;
+    text-decoration: none;
+}
+    
+    .nav-submenu li a:hover {
+        background-color: transparent; 
+        color: var(--orange); 
+        text-decoration: underline;
+    }
+
+    .dropdown .navbar-link.dropdown-toggle {
+        display: none; 
+    }
+
+    .resources {
+        display: block; 
+    }
+
+    .overlay {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    display: none; 
+    z-index: 5; 
+}
+
+.navbar.active + .overlay {
+    display: block; 
+}
+
     .logo-container {
+        display: flex;
         justify-content: space-between;
         width: 100%;
+        align-items: center;
     }
 
   
@@ -513,7 +623,19 @@ div[id="fieldset-container"] {
     .nav-toggle-btn {
         order: 3;
         margin-left: auto;
+        height: 50px;
+        font-size: 4rem;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
+
+    .nav-toggle-btn, #support-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+}
 
     
 }
@@ -521,10 +643,12 @@ div[id="fieldset-container"] {
 
 
 @media (max-width: 768px) {
+
     .home-container {
         display: flex;
         flex-direction: column;
     }
+
     #cards.cards-wrapper { 
         grid-template-columns: repeat(1, 1fr);  
         padding:30px;
@@ -573,6 +697,11 @@ div[id="fieldset-container"] {
                     </a>
                     
                     <a class="btn" id="support-btn" href="https://www.electoral-lab.org/donate" target="_blank" role="button">Support EIL</a>
+
+                    <button class="nav-toggle-btn" data-nav-toggler>
+                        <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+                        <ion-icon name="close-outline" aria-hidden="true" class="close-icon" style="display: none;"></ion-icon>
+                    </button>    
                     
                 </div>
             
@@ -602,17 +731,6 @@ div[id="fieldset-container"] {
                 
                 <ul id="socials">
 
-                    <li id="social-item">
-
-                        <ul class="nav-submenu" id="social-submenu">
-                            <li><a href="https://boltsmag.org/"> Bolts magazine</a></li>
-                            <li><a href="#"> Sam's substack</a></li>
-                            <li><a href="#"> Ballotpedia</a></li>
-                            <li><a href="#"> ActBlue</a></li>
-                            <li><a href="#"> WinRed</a></li>
-                        </ul>
-                    </li>
-
 
                     <li id="social-item"><a href="https://x.com/ElectoralLab" target="_blank">
                         <svg id="social-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(225, 130, 0)" class="bi bi-twitter-x" viewBox="0 0 16 16">
@@ -632,9 +750,7 @@ div[id="fieldset-container"] {
                 </ul> 
             </div>  
 
-            <button class="nav-toggle-btn" data-nav-toggler>
-                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-            </button>        
+                     
       <!--   </div> -->
 
 
@@ -684,8 +800,71 @@ div[id="fieldset-container"] {
 });
 
 document.querySelector('.nav-toggle-btn').addEventListener('click', function() {
-    document.querySelector('.navbar').classList.toggle('active');
+    event.stopPropagation(); 
+    const navbar = document.querySelector('.navbar'); 
+    const overlay = document.querySelector('.overlay'); 
+  
+    navbar.classList.toggle('active');
+    overlay.style.display = navbar.classList.contains('active') ? 'block' : 'none';
+   
+
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    if (navbar.classList.contains('active')) {
+        closeIcon.style.display = 'block'; 
+        menuIcon.style.display = 'none'; 
+    
+    } else {
+        closeIcon.style.display = 'none'; 
+        menuIcon.style.display = 'block'; 
+       
+    }
+
 });
+
+
+/*document.body.addEventListener('click', function(event) {
+    if (event.target.classList.contains('overlay')) {
+        console.log('Overlay clicked'); 
+        const navbar = document.querySelector('.navbar');
+        const overlay = document.querySelector('.overlay');
+        
+        navbar.classList.remove('active');
+        overlay.style.display = 'none';
+
+        const menuIcon = document.querySelector('.menu-icon');
+        const closeIcon = document.querySelector('.close-icon');
+
+        closeIcon.style.display = 'none';
+        menuIcon.style.display = 'block';
+    }
+});*/
+
+
+document.addEventListener('click', function(event) {
+    const navbar = document.querySelector('.navbar');
+    const overlay = document.querySelector('.overlay');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+
+    if (!navbar.contains(event.target) && navbar.classList.contains('active')) {
+        console.log('Clicked outside of menu, closing menu');
+
+     
+        navbar.classList.remove('active');
+        overlay.style.display = 'none';
+
+        
+        closeIcon.style.display = 'none';
+        menuIcon.style.display = 'block';
+    }
+});
+
+
+
+
 
 function myFunction() {
             var popup = document.getElementById("myPopup");
@@ -715,6 +894,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
  {% block main %} {% endblock %}
+
+
+<div class="overlay"></div>
 
 </body>
 

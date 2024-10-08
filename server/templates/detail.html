@@ -12,13 +12,54 @@
                 <!-- State data will be dynamically inserted here -->
             </ul>
         </div>
+
+        <div class="col" id="detail-right">
+            <div class="map-overlay">
+                <div class="map-overlay-inner">
+                    <fieldset>
+                        <label for="layer-dropdown">Currently viewing: </label>
+                        <div class="dropdown">
+                            <button class="dropbtn">Choose Layer</button>
+                            <div class="dropdown-content" id="layer-dropdown">
+                                <div data-value="ballot_vpm" selectionValue="democracy">Democracy ballot initiatives</div>
+                                <div data-value="presidential2" selectionValue="presidential">Presidential race</div>
+                                <div data-value="congressional2" selectionValue="senate">Senate race</div>
+                                <div data-value="house2" selectionValue="house">House races</div>
+                                <div data-value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</div>
+                                <div data-value="ballot_others" selectionValue="others">State-level ballot issues</div>
+                            </div>
+                        </div>
+                       
+                      
+                        <select id="layer" name="layer" style="display:none;">
+                            <option value="ballot_vpm" selectionValue="democracy">Democracy ballot initiatives</option>
+                            <option value="presidential2" selectionValue="presidential">Presidential race</option>
+                            <option value="congressional2" selectionValue="senate">Senate race</option>
+                            <option value="house2" selectionValue="house">House races</option>
+                            <option value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</option>
+                            <option value="ballot_others" selectionValue="others">State-level ballot issues</option>
+                        </select>
+                    </fieldset>
+                </div>
         
-    <div class="col" id="detail-right" >
+                <div class="col map-container-sm">
+                    <div id="map"></div>
+                    <div class="map-pop">
+                        Mouseover for more info
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+  <!--   <div class="col" id="detail-right" >
             <div class="map-overlay">
                     <div class="map-overlay-inner">
                           <fieldset>
                             <label for="layer">Currently viewing: </label>
-                            <select id="layer" name="layer">
+                            <div class="dropdown">
+                            <select id="layer" name="layer" class="dropdown-select">
                                 <option value="empty">choose</option>
                                 <option value="ballot_vpm" selectionValue="democracy">Democracy ballot initiatives</option>
                                 <option value="presidential2" selectionValue="presidential">Presidential race</option>
@@ -29,6 +70,7 @@
                                 <option value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</option>
                                 <option value="ballot_others" selectionValue="others">State-level ballot issues</option>
                             </select>
+                            </div>
                         </fieldset>
                     </div>
                     
@@ -41,10 +83,22 @@
                     </div> 
                    
             </div>       
-        </div>
+        </div>-->
      
 </div>
 <script type="module">
+
+//convert dropdown to select
+document.querySelectorAll('#layer-dropdown div').forEach(item => {
+    item.addEventListener('click', function() {
+        let selectedValue = this.getAttribute('data-value');
+        let selectElement = document.getElementById('layer');
+        selectElement.value = selectedValue;
+        
+        
+        selectElement.dispatchEvent(new Event('change'));
+    });
+});
 
     // Create a master dictionary to hold all state data
     let masterStateData = {};
@@ -681,17 +735,29 @@ popupContent = `<div class="custom-popup">
             currentLayerId = layerId;
         }
 
+        document.querySelectorAll('.dropdown-content div').forEach(item => {
+            item.addEventListener('click', function() {
+                const selectedValue = this.getAttribute('data-value');
+                const selectedText = this.textContent;
+                document.querySelector('.dropbtn').textContent = selectedText; // 更新按钮文本
+                console.log('Selected value:', selectedValue); // 你可以在这里处理选择的值
+            });
+        });
+
         
 
         // Initial layer setup on map load
     map.on('load', function () {
+        var dropdownOptions = document.querySelectorAll('#layer-dropdown div');
         var serverSelection = JSON.parse('{{ selection|default("house", true)|tojson|safe }}');
         var layerToAdd = 'house2'; // Default layer
-        var dropdown = document.getElementById('layer');
+       // var dropdown = document.getElementById('layer');
         var foundMatch = false;
+        var buttonText = 'Choose Layer';
+
     
         // Check if serverSelection corresponds to a valid layer option
-        for (var i = 0; i < dropdown.options.length; i++) {
+      /*  for (var i = 0; i < dropdown.options.length; i++) {
             var option = dropdown.options[i];
             if (option.getAttribute('selectionValue') === serverSelection) {
                 layerToAdd = option.value;
@@ -699,10 +765,29 @@ popupContent = `<div class="custom-popup">
                 foundMatch = true;
                 break;
             }
-        }
+        }*/
+
+        dropdownOptions.forEach(function(option) {
+            if (option.getAttribute('selectionValue') === serverSelection) {
+                layerToAdd = option.getAttribute('data-value');
+                option.classList.add('selected'); // 你可以通过这个为选中的 <div> 添加样式
+                    foundMatch = true;
+                    buttonText = option.textContent;
+                }
+            });
 
         // If no match found, look for house2 or house option
         if (!foundMatch) {
+            dropdownOptions.forEach(function(option) {
+                if (option.getAttribute('data-value') === 'house2' || option.getAttribute('selectionValue') === 'house') {
+                    option.classList.add('selected'); // 默认选中
+                    layerToAdd = 'house2';
+                    buttonText = option.textContent; 
+                }
+            });
+        }
+
+      /* if (!foundMatch) {
             for (var i = 0; i < dropdown.options.length; i++) {
                 var option = dropdown.options[i];
                 if (option.value === 'house2' || option.getAttribute('selectionValue') === 'house') {
@@ -711,13 +796,22 @@ popupContent = `<div class="custom-popup">
                     break;
                 }
             }
-        }
+        }*/
+
+        var selectElement = document.getElementById('layer');
+        selectElement.value = layerToAdd;
+        selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+
+        document.querySelector('.dropbtn').textContent = buttonText;
+
 
         //trigger event for change in layer and attach the corrrect e.target.value
 
-            console.log('About to trigger change event with value:', layerToAdd);
+       /*     console.log('About to trigger change event with value:', layerToAdd);
             document.getElementById('layer').value = layerToAdd;
-            document.getElementById('layer').dispatchEvent(new Event('change', {bubbles: true}));
+            document.getElementById('layer').dispatchEvent(new Event('change', {bubbles: true}));*/
+
+           
 
 
         //addGeoJsonLayer(layerToAdd);
@@ -753,6 +847,9 @@ popupContent = `<div class="custom-popup">
             }
         });
 
+
+        
+
  
 
         // Add mouseenter event to hide map-pop when first entering map
@@ -767,6 +864,41 @@ popupContent = `<div class="custom-popup">
 
 </body>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.querySelector(".dropbtn");
+    const dropdownContent = document.getElementById("layer-dropdown");
+
+    dropdownButton.addEventListener("click", function () {
+        // 切换 active 类以显示或隐藏下拉菜单
+        this.classList.toggle("active");
+        const isActive = this.classList.contains("active");
+
+        // 显示或隐藏下拉菜单
+        dropdownContent.style.display = isActive ? "block" : "none";
+    });
+
+    // 点击下拉菜单选项
+    dropdownContent.querySelectorAll("div").forEach(function (item) {
+        item.addEventListener("click", function () {
+            // 更新按钮文本
+            dropdownButton.textContent = this.textContent;
+
+            // 隐藏下拉菜单
+            dropdownButton.classList.remove("active");
+            dropdownContent.style.display = "none";
+        });
+    });
+
+    // 点击外部区域时关闭下拉菜单
+    window.addEventListener("click", function (event) {
+        if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownButton.classList.remove("active");
+            dropdownContent.style.display = "none";
+        }
+    });
+});
+</script>
 
 
 
