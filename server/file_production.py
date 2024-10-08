@@ -115,7 +115,7 @@ def election_csv_cleaner(location, csv_tag, destination, csv_name):
 
     # Cut the CSV down to the relevant columns, excluding ballot initiatives
     if csv_name != "ballot_initiative.csv":
-        df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power", "D_running", "R_running"]]
+        df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power", "D_running", "R_running", "cook_rating"]]
 
     #state ID cleaning
     df["state"] = df["state"].fillna(0.0).astype(int)
