@@ -891,6 +891,7 @@ popupContent = `<div class="custom-popup">
                 const selectedValue = this.getAttribute('data-value');
                 const selectedText = this.textContent;
                 document.querySelector('.dropbtn').textContent = selectedText; 
+                console.log('Selected value:', selectedValue); 
             });
         });
 
@@ -1016,8 +1017,9 @@ popupContent = `<div class="custom-popup">
     document.addEventListener("DOMContentLoaded", function () {
     const dropdownButton = document.querySelector(".dropbtn");
     const dropdownContent = document.getElementById("layer-dropdown");
-    
-    dropdownButton.addEventListener("click", function () {
+
+    dropdownButton?.addEventListener("click", function () {
+        
         this.classList.toggle("active");
         const isActive = this.classList.contains("active");
         
@@ -1028,21 +1030,22 @@ popupContent = `<div class="custom-popup">
     
     dropdownContent.querySelectorAll("div").forEach(function (item) {
         item.addEventListener("click", function () {
+            if (!dropdownButton || !dropdownContent) return;
             dropdownButton.textContent = this.textContent;
+
+            dropdownButton.classList.remove("active");
             dropdownButton.classList.remove("active");
             dropdownContent.style.display = "none";
         });
     });
     
     window.addEventListener("click", function (event) {
-        if (dropdownButton && !dropdownButton.contains(event.target) 
-            && !dropdownContent.contains(event.target) && dropdownContent && !dropdownContent.contains(event.target)) {
-                dropdownButton.classList.remove("active");
-                dropdownContent.style.display = "none";
-            }
-        });
-    
-   
+        if (!dropdownButton || !dropdownContent) return;
+        if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownButton.classList.remove("active");
+            dropdownContent.style.display = "none";
+        }
+    });
 });
 </script>
             </div>
