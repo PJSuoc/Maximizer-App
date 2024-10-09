@@ -1,12 +1,52 @@
 state_name,state,congress,s_lower,s_upper,election_name,race_type,voter_power,cook_rating,D_running,R_running,D_link,R_link
 New Hampshire,33,,,,,Governor,100,toss-up,Joyce Craig,Kelly Ayotte,https://joycecraig.org/,https://kellyfornh.com/
-North Carolina,37,,,,,Governor,100,toss-up,Josh Stein,Mark K. Robinson,https://www.joshstein.org/,https://electiondeniers.org/
-Delaware,10,,,,,Governor,10,safe D,Matt Meyer,Michael Ramone,https://mattmeyer.org/,https://www.mikeramone.com/
-Indiana,18,,,,,Governor,10,safe R,Jennifer McCormick,Mike Braun,https://www.mccormickforgov.com/,https://electiondeniers.org/
-Missouri,29,,,,,Governor,10,safe R,Crystal Quade,Mike Kehoe,https://crystalquade.com/,https://www.mikekehoe.com/
+North Carolina,37,,,,,Governor,3,likely D,Josh Stein,Mark K. Robinson,https://www.joshstein.org/,https://electiondeniers.org/
+Delaware,10,,,,,Governor,3,safe D,Matt Meyer,Michael Ramone,https://mattmeyer.org/,https://www.mikeramone.com/
+Indiana,18,,,,,Governor,100,safe R,Jennifer McCormick,Mike Braun,https://www.mccormickforgov.com/,https://electiondeniers.org/
+Missouri,29,,,,,Governor,3,safe R,Crystal Quade,Mike Kehoe,https://crystalquade.com/,https://www.mikekehoe.com/
 Montana,30,,,,,Governor,30,likely R,Ryan Busse,Greg Gianforte (incumbent),https://busseformontana.com/,https://electiondeniers.org/
-North Dakota,38,,,,,Governor,10,safe R,Merrill Piepkorn,Kelly Armstrong,https://www.merrillfornd.com/,https://www.armstrongnd.com/
-Utah,49,,,,,Governor,10,safe R,Brian King,Spencer Cox (incumbent),https://www.kingforutah.com/,https://www.votecox.com/
+North Dakota,38,,,,,Governor,3,safe R,Merrill Piepkorn,Kelly Armstrong,https://www.merrillfornd.com/,https://www.armstrongnd.com/
+Utah,49,,,,,Governor,3,safe R,Brian King,Spencer Cox (incumbent),https://www.kingforutah.com/,https://www.votecox.com/
 Vermont,50,,,,,Governor,30,likely R,Esther Charlestin,Phil Scott (incumbent),https://www.estherforvt.com/,https://www.philscott.org/
 Washington,53,,,,,Governor,30,likely D,Bob Ferguson,Dave Reichert,https://www.bobferguson.com/,https://www.reichertforgovernor.com/
-West Virginia,54,,,,,Governor,10,safe R,Steve Williams,Patrick Morrisey,https://stevewilliamswv.com/,https://electiondeniers.org/
+West Virginia,54,,,,,Governor,3,safe R,Steve Williams,Patrick Morrisey,https://stevewilliamswv.com/,https://electiondeniers.org/
+Alabama,01,,,,,Governor,,no race,,,,
+Alaska,02,,,,,Governor,,no race,,,,
+Arizona,04,,,,,Governor,,no race,,,,
+Arkansas,05,,,,,Governor,,no race,,,,
+California,06,,,,,Governor,,no race,,,,
+Colorado,08,,,,,Governor,,no race,,,,
+Connecticut,09,,,,,Governor,,no race,,,,
+District of Columbia,11,,,,,Governor,,no race,,,,
+Florida,12,,,,,Governor,,no race,,,,
+Georgia,13,,,,,Governor,,no race,,,,
+Hawaii,15,,,,,Governor,,no race,,,,
+Idaho,16,,,,,Governor,,no race,,,,
+Illinois,17,,,,,Governor,,no race,,,,
+Iowa,19,,,,,Governor,,no race,,,,
+Kansas,20,,,,,Governor,,no race,,,,
+Kentucky,21,,,,,Governor,,no race,,,,
+Louisiana,22,,,,,Governor,,no race,,,,
+Maine,23,,,,,Governor,,no race,,,,
+Maryland,24,,,,,Governor,,no race,,,,
+Massachusetts,25,,,,,Governor,,no race,,,,
+Michigan,26,,,,,Governor,,no race,,,,
+Minnesota,27,,,,,Governor,,no race,,,,
+Mississippi,28,,,,,Governor,,no race,,,,
+Nebraska,31,,,,,Governor,,no race,,,,
+Nevada,32,,,,,Governor,,no race,,,,
+New Jersey,34,,,,,Governor,,no race,,,,
+New Mexico,35,,,,,Governor,,no race,,,,
+New York,36,,,,,Governor,,no race,,,,
+Ohio,39,,,,,Governor,,no race,,,,
+Oklahoma,40,,,,,Governor,,no race,,,,
+Oregon,41,,,,,Governor,,no race,,,,
+Pennsylvania,42,,,,,Governor,,no race,,,,
+Rhode Island,44,,,,,Governor,,no race,,,,
+South Carolina,45,,,,,Governor,,no race,,,,
+South Dakota,46,,,,,Governor,,no race,,,,
+Tennessee,47,,,,,Governor,,no race,,,,
+Texas,48,,,,,Governor,,no race,,,,
+Virginia,51,,,,,Governor,,no race,,,,
+Wisconsin,55,,,,,Governor,,no race,,,,
+Wyoming,56,,,,,Governor,,no race,,,,

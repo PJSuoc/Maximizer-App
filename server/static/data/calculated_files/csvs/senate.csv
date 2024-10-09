@@ -1,34 +1,34 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
-04,nan,nan,nan,Arizona,Senate,,37.0,Ruben Gallego,Kari Lake
-06,nan,nan,nan,California,Senate,,0.0,Adam Schiff,Steve Garvey
-09,nan,nan,nan,Connecticut,Senate,,4.0,Christopher S. Murphy (incumbent),Matthew Corey
-10,nan,nan,nan,Delaware,Senate,,13.0,Lisa Blunt Rochester,Eric Hansen
-12,nan,nan,nan,Florida,Senate,,32.0,Debbie Mucarsel-Powell,Rick Scott (incumbent)
-15,nan,nan,nan,Hawaii,Senate,,4.0,Mazie K. Hirono (incumbent),Bob McDermott
-18,nan,nan,nan,Indiana,Senate,,8.0,Valerie McCray,Jim Banks
-23,nan,nan,nan,Maine,Senate,,5.0,,Demi Kouzounas
-24,nan,nan,nan,Maryland,Senate,,2.0,Angela Alsobrooks,Larry Hogan
-25,nan,nan,nan,Massachusetts,Senate,,1.0,Elizabeth Warren (incumbent),John Deaton
-26,nan,nan,nan,Michigan,Senate,,18.0,Elissa Slotkin,Mike Rogers
-27,nan,nan,nan,Minnesota,Senate,,2.0,Amy Klobuchar (incumbent),Royce White
-28,nan,nan,nan,Mississippi,Senate,,9.0,Ty Pinkins,Roger Wicker (incumbent)
-29,nan,nan,nan,Missouri,Senate,,7.0,Lucas Kunce,Josh Hawley (incumbent)
-30,nan,nan,nan,Montana,Senate,,49.0,Jon Tester (incumbent),Tim Sheehy
-31,nan,nan,nan,Nebraska,Senate,,100.0,,Deb Fischer (incumbent)
-32,nan,nan,nan,Nevada,Senate,,52.0,Jacky Rosen (incumbent),Sam Brown
-34,nan,nan,nan,New Jersey,Senate,,5.0,Andy Kim,Curtis Bashaw
-35,nan,nan,nan,New Mexico,Senate,,11.0,Martin Heinrich (incumbent),Nella Domenici
-36,nan,nan,nan,New York,Senate,,1.0,Kirsten Gillibrand (incumbent),Mike Sapraicone
-38,nan,nan,nan,North Dakota,Senate,,10.0,Katrina Christiansen,Kevin Cramer (incumbent)
-39,nan,nan,nan,Ohio,Senate,,15.0,Sherrod Brown (incumbent),Bernie Moreno
-42,nan,nan,nan,Pennsylvania,Senate,,4.0,Bob Casey Jr. (incumbent),David McCormick
-44,nan,nan,nan,Rhode Island,Senate,,13.0,Sheldon Whitehouse (incumbent),Patricia Morgan
-47,nan,nan,nan,Tennessee,Senate,,3.0,Gloria Johnson,Marsha Blackburn (incumbent)
-48,nan,nan,nan,Texas,Senate,,24.0,Colin Allred,Ted Cruz (incumbent)
-49,nan,nan,nan,Utah,Senate,,4.0,Caroline Gleich,John Curtis
-50,nan,nan,nan,Vermont,Senate,,7.0,Bernie Sanders (incumbent),Gerald Malloy
-51,nan,nan,nan,Virginia,Senate,,4.0,Tim Kaine (incumbent),Hung Cao
-53,nan,nan,nan,Washington,Senate,,3.0,Maria Cantwell (incumbent),Raul Garcia
-54,nan,nan,nan,West Virginia,Senate,,4.0,Glenn Elliott,Jim Justice
-55,nan,nan,nan,Wisconsin,Senate,,14.0,Tammy Baldwin (incumbent),Eric Hovde
-56,nan,nan,nan,Wyoming,Senate,,10.0,Scott Morrow,John Barrasso (incumbent)
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running,cook_rating
+04,nan,nan,nan,Arizona,Senate,,41.0,Ruben Gallego,Kari Lake,lean-D
+06,nan,nan,nan,California,Senate,,1.0,Adam Schiff,Steve Garvey,solid-D
+09,nan,nan,nan,Connecticut,Senate,,5.0,Christopher S. Murphy (incumbent),Matthew Corey,solid-D
+10,nan,nan,nan,Delaware,Senate,,16.0,Lisa Blunt Rochester,Eric Hansen,solid-D
+12,nan,nan,nan,Florida,Senate,,14.0,Debbie Mucarsel-Powell,Rick Scott (incumbent),likely-R
+15,nan,nan,nan,Hawaii,Senate,,5.0,Mazie K. Hirono (incumbent),Bob McDermott,solid-D
+18,nan,nan,nan,Indiana,Senate,,6.0,Valerie McCray,Jim Banks,solid-R
+23,nan,nan,nan,Maine,Senate,,6.0,,Demi Kouzounas,solid-D
+24,nan,nan,nan,Maryland,Senate,,3.0,Angela Alsobrooks,Larry Hogan,likely-D
+25,nan,nan,nan,Massachusetts,Senate,,1.0,Elizabeth Warren (incumbent),John Deaton,solid-D
+26,nan,nan,nan,Michigan,Senate,,36.0,Elissa Slotkin,Mike Rogers,toss-up
+27,nan,nan,nan,Minnesota,Senate,,2.0,Amy Klobuchar (incumbent),Royce White,solid-D
+28,nan,nan,nan,Mississippi,Senate,,8.0,Ty Pinkins,Roger Wicker (incumbent),solid-R
+29,nan,nan,nan,Missouri,Senate,,5.0,Lucas Kunce,Josh Hawley (incumbent),solid-R
+30,nan,nan,nan,Montana,Senate,,34.0,Jon Tester (incumbent),Tim Sheehy,lean-R
+31,nan,nan,nan,Nebraska,Senate,,77.0,,Deb Fischer (incumbent),solid-R
+32,nan,nan,nan,Nevada,Senate,,100.0,Jacky Rosen (incumbent),Sam Brown,lean-D
+34,nan,nan,nan,New Jersey,Senate,,7.0,Andy Kim,Curtis Bashaw,solid-D
+35,nan,nan,nan,New Mexico,Senate,,15.0,Martin Heinrich (incumbent),Nella Domenici,solid-D
+36,nan,nan,nan,New York,Senate,,1.0,Kirsten Gillibrand (incumbent),Mike Sapraicone,solid-D
+38,nan,nan,nan,North Dakota,Senate,,9.0,Katrina Christiansen,Kevin Cramer (incumbent),solid-R
+39,nan,nan,nan,Ohio,Senate,,44.0,Sherrod Brown (incumbent),Bernie Moreno,toss-up
+42,nan,nan,nan,Pennsylvania,Senate,,10.0,Bob Casey Jr. (incumbent),David McCormick,lean-D
+44,nan,nan,nan,Rhode Island,Senate,,17.0,Sheldon Whitehouse (incumbent),Patricia Morgan,solid-D
+47,nan,nan,nan,Tennessee,Senate,,3.0,Gloria Johnson,Marsha Blackburn (incumbent),solid-R
+48,nan,nan,nan,Texas,Senate,,14.0,Colin Allred,Ted Cruz (incumbent),likely-R
+49,nan,nan,nan,Utah,Senate,,3.0,Caroline Gleich,John Curtis,solid-R
+50,nan,nan,nan,Vermont,Senate,,9.0,Bernie Sanders (incumbent),Gerald Malloy,solid-D
+51,nan,nan,nan,Virginia,Senate,,5.0,Tim Kaine (incumbent),Hung Cao,solid-D
+53,nan,nan,nan,Washington,Senate,,4.0,Maria Cantwell (incumbent),Raul Garcia,solid-D
+54,nan,nan,nan,West Virginia,Senate,,3.0,Glenn Elliott,Jim Justice,solid-R
+55,nan,nan,nan,Wisconsin,Senate,,15.0,Tammy Baldwin (incumbent),Eric Hovde,lean-D
+56,nan,nan,nan,Wyoming,Senate,,9.0,Scott Morrow,John Barrasso (incumbent),solid-R

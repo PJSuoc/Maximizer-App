@@ -89,6 +89,7 @@
 }
 
 
+
 .get-involved-sec .service-card:hover p {
   color: #f0f0f0;
 }
@@ -327,6 +328,21 @@
 
                         <div class="button-container">
 
+                        <div class="button-container">
+
+                            <div class="campaign-url">
+                                <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
+                            </div>
+                            {% if item.donation_link and item.donation_link | lower != 'nan' %}
+                            <div class="donate-url">
+                                <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
+                            </div>
+                            {% endif %}
+
+
+                        </div>
+
+                        
                             <div class="campaign-url">
                                 <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
                             </div>
@@ -350,7 +366,27 @@
                           
     
 
+                          
+    
+
                             <h3>{{ item.party }}</h3>
+
+                            <div class="partydivider">
+                                <div class="partydividermask">
+                                  
+                                </div>
+                                <span>
+                                    {% if item.party == 'Republican Party' %}
+                                    <i class="fa-solid fa-republican"></i>
+                                    {% elif item.party == 'Democratic Party' %}
+                                    <i class="fa-solid fa-democrat"></i>
+                                    {% else %}
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                    {% endif %}
+                                </span>
+                                  
+                                </div>
+
 
                             <div class="partydivider">
                                 <div class="partydividermask">
@@ -385,6 +421,20 @@
                                 </div>
                             </div>
                             {% endif %}
+
+                            <div class="button-container">
+                                <div class="campaign-url">
+                                    <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
+                                </div>
+                                {% if item.donation_link and item.donation_link | lower != 'nan' %}
+                                    <div class="donate-url">
+                                        <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+
+                           
 
                             <div class="button-container">
                                 <div class="campaign-url">

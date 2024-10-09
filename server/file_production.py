@@ -61,14 +61,14 @@ file_list = [p_file, s_file, h_file, g_file, su_file, sl_file, b_file]
 
 import_loc = "static/data/csv_imports/"
 # List of the sheet tab names used for each data component w/ data ranges
-sheet_list = ['Presidential!A2:X','Senate!A2:X','House!A2:X','Governor!A2:X',
-              'State Upper Legislature!A2:X','State Lower Legislature!A2:X',
-              'Ballot Initiatives!A2:X','Candidates!A2:X']
+sheet_list = ['Presidential Dataset!A2:X','Senate Dataset!A2:X','House Dataset!A2:X',
+              'Governor Dataset!A2:X', 'State Legislature Upper!A2:X','State Legislature Lower!A2:X',
+              'Ballot Initiative Dataset!A2:X','Candidates!A2:X']
 # List of file locations matching list of sheet names
 import_list = [p_file, s_file, h_file, g_file, su_file, sl_file, b_file, c_file]
 
-#for i, sheet_name in enumerate(sheet_list):
-#    file = spreadsheet_pull(sheet_id, sheet_name)
+for i, sheet_name in enumerate(sheet_list):
+    file = spreadsheet_pull(sheet_id, sheet_name)
 
 
 ##### State VP Merger Test function #########################################
@@ -113,8 +113,9 @@ def state_vp(df):
 def election_csv_cleaner(location, csv_tag, destination, csv_name):
     df = pd.read_csv(location + csv_name)
 
-    # Cut the CSV down to the relevant columns
-    df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power", "D_running", "R_running"]]
+    # Cut the CSV down to the relevant columns, excluding ballot initiatives
+    if csv_name != "ballot_initiative.csv":
+        df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power", "D_running", "R_running", "cook_rating"]]
 
     #state ID cleaning
     df["state"] = df["state"].fillna(0.0).astype(int)

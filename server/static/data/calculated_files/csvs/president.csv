@@ -1,71 +1,57 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running
-01,nan,nan,nan,Alabama,Presidential,Presidential,2.0,,
-02,nan,nan,nan,Alaska,Presidential,Presidential,25.0,,
-04,nan,nan,nan,Arizona,Presidential,Presidential,62.0,,
-05,nan,nan,nan,Arkansas,Presidential,Presidential,4.0,,
-06,nan,nan,nan,California,Presidential,Presidential,1.0,,
-08,nan,nan,nan,Colorado,Presidential,Presidential,4.0,,
-09,nan,nan,nan,Connecticut,Presidential,Presidential,2.0,,
-10,nan,nan,nan,Delaware,Presidential,Presidential,4.0,,
-11,nan,nan,nan,District of Columbia,Presidential,Presidential,0.0,,
-12,nan,nan,nan,Florida,Presidential,Presidential,23.0,,
-13,nan,nan,nan,Georgia,Presidential,Presidential,45.0,,
-15,nan,nan,nan,Hawaii,Presidential,Presidential,4.0,,
-16,nan,nan,nan,Idaho,Presidential,Presidential,1.0,,
-17,nan,nan,nan,Illinois,Presidential,Presidential,2.0,,
-18,nan,nan,nan,Indiana,Presidential,Presidential,2.0,,
-19,nan,nan,nan,Iowa,Presidential,Presidential,26.0,,
-20,nan,nan,nan,Kansas,Presidential,Presidential,4.0,,
-21,nan,nan,nan,Kentucky,Presidential,Presidential,1.0,,
-22,nan,nan,nan,Louisiana,Presidential,Presidential,2.0,,
-23,nan,nan,nan,Maine,Presidential,Presidential,7.0,,
-23,2.0,nan,nan,Maine,Presidential,Congressional District 2,50.0,,
-23,1.0,nan,nan,Maine,Presidential,Congressional District 1,1.0,,
-24,nan,nan,nan,Maryland,Presidential,Presidential,1.0,,
-25,nan,nan,nan,Massachusetts,Presidential,Presidential,1.0,,
-26,nan,nan,nan,Michigan,Presidential,Presidential,65.0,,
-27,nan,nan,nan,Minnesota,Presidential,Presidential,13.0,,
-28,nan,nan,nan,Mississippi,Presidential,Presidential,3.0,,
-29,nan,nan,nan,Missouri,Presidential,Presidential,5.0,,
-30,nan,nan,nan,Montana,Presidential,Presidential,6.0,,
-31,1.0,nan,nan,Nebraska,Presidential,Congressional District 1,3.0,,
-31,2.0,nan,nan,Nebraska,Presidential,Congressional District 2,23.0,,
-31,3.0,nan,nan,Nebraska,Presidential,Congressional District 3,0.0,,
-31,nan,nan,nan,Nebraska,Presidential,Presidential,1.0,,
-32,nan,nan,nan,Nevada,Presidential,Presidential,100.0,,
-33,nan,nan,nan,New Hampshire,Presidential,Presidential,12.0,,
-34,nan,nan,nan,New Jersey,Presidential,Presidential,3.0,,
-35,nan,nan,nan,New Mexico,Presidential,Presidential,21.0,,
-36,nan,nan,nan,New York,Presidential,Presidential,4.0,,
-37,nan,nan,nan,North Carolina,Presidential,Presidential,68.0,,
-38,nan,nan,nan,North Dakota,Presidential,Presidential,2.0,,
-39,nan,nan,nan,Ohio,Presidential,Presidential,6.0,,
-40,nan,nan,nan,Oklahoma,Presidential,Presidential,3.0,,
-41,nan,nan,nan,Oregon,Presidential,Presidential,3.0,,
-42,nan,nan,nan,Pennsylvania,Presidential,Presidential,64.0,,
-44,nan,nan,nan,Rhode Island,Presidential,Presidential,4.0,,
-45,nan,nan,nan,South Carolina,Presidential,Presidential,5.0,,
-46,nan,nan,nan,South Dakota,Presidential,Presidential,2.0,,
-47,nan,nan,nan,Tennessee,Presidential,Presidential,1.0,,
-48,nan,nan,nan,Texas,Presidential,Presidential,26.0,,
-49,nan,nan,nan,Utah,Presidential,Presidential,2.0,,
-50,nan,nan,nan,Vermont,Presidential,Presidential,1.0,,
-51,nan,nan,nan,Virginia,Presidential,Presidential,8.0,,
-53,nan,nan,nan,Washington,Presidential,Presidential,2.0,,
-54,nan,nan,nan,West Virginia,Presidential,Presidential,1.0,,
-55,nan,nan,nan,Wisconsin,Presidential,Presidential,61.0,,
-56,nan,nan,nan,Wyoming,Presidential,Presidential,1.0,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
-00,nan,nan,nan,,,,,,
+state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running,cook_rating
+01,nan,nan,nan,Alabama,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
+02,nan,nan,nan,Alaska,Presidential,Presidential,21.0,Kamala Harris,Donald Trump,solid-R
+04,nan,nan,nan,Arizona,Presidential,Presidential,67.0,Kamala Harris,Donald Trump,toss-up
+05,nan,nan,nan,Arkansas,Presidential,Presidential,5.0,Kamala Harris,Donald Trump,solid-R
+06,nan,nan,nan,California,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-D
+08,nan,nan,nan,Colorado,Presidential,Presidential,6.0,Kamala Harris,Donald Trump,solid-D
+09,nan,nan,nan,Connecticut,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-D
+10,nan,nan,nan,Delaware,Presidential,Presidential,4.0,Kamala Harris,Donald Trump,solid-D
+11,nan,nan,nan,District of Columbia,Presidential,Presidential,0.0,Kamala Harris,Donald Trump,solid-D
+12,nan,nan,nan,Florida,Presidential,Presidential,47.0,Kamala Harris,Donald Trump,likely-R
+13,nan,nan,nan,Georgia,Presidential,Presidential,85.0,Kamala Harris,Donald Trump,toss-up
+15,nan,nan,nan,Hawaii,Presidential,Presidential,5.0,Kamala Harris,Donald Trump,solid-D
+16,nan,nan,nan,Idaho,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-R
+17,nan,nan,nan,Illinois,Presidential,Presidential,3.0,Kamala Harris,Donald Trump,solid-D
+18,nan,nan,nan,Indiana,Presidential,Presidential,3.0,Kamala Harris,Donald Trump,solid-R
+19,nan,nan,nan,Iowa,Presidential,Presidential,15.0,Kamala Harris,Donald Trump,solid-R
+20,nan,nan,nan,Kansas,Presidential,Presidential,5.0,Kamala Harris,Donald Trump,solid-R
+21,nan,nan,nan,Kentucky,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-R
+22,nan,nan,nan,Louisiana,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
+23,nan,nan,nan,Maine,Presidential,Presidential,14.0,Kamala Harris,Donald Trump,likely-D
+23,2.0,nan,nan,Maine,Presidential,Congressional District 2,61.0,Kamala Harris,Donald Trump,likely-R
+23,1.0,nan,nan,Maine,Presidential,Congressional District 1,1.0,Kamala Harris,Donald Trump,solid-D
+24,nan,nan,nan,Maryland,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-D
+25,nan,nan,nan,Massachusetts,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-D
+26,nan,nan,nan,Michigan,Presidential,Presidential,62.0,Kamala Harris,Donald Trump,toss-up
+27,nan,nan,nan,Minnesota,Presidential,Presidential,17.0,Kamala Harris,Donald Trump,likely-D
+28,nan,nan,nan,Mississippi,Presidential,Presidential,4.0,Kamala Harris,Donald Trump,solid-R
+29,nan,nan,nan,Missouri,Presidential,Presidential,6.0,Kamala Harris,Donald Trump,solid-R
+30,nan,nan,nan,Montana,Presidential,Presidential,5.0,Kamala Harris,Donald Trump,solid-R
+31,1.0,nan,nan,Nebraska,Presidential,Congressional District 1,5.0,Kamala Harris,Donald Trump,solid-R
+31,2.0,nan,nan,Nebraska,Presidential,Congressional District 2,8.0,Kamala Harris,Donald Trump,toss-up
+31,3.0,nan,nan,Nebraska,Presidential,Congressional District 3,0.0,Kamala Harris,Donald Trump,solid-R
+31,nan,nan,nan,Nebraska,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
+32,nan,nan,nan,Nevada,Presidential,Presidential,100.0,Kamala Harris,Donald Trump,toss-up
+33,nan,nan,nan,New Hampshire,Presidential,Presidential,17.0,Kamala Harris,Donald Trump,likely-D
+34,nan,nan,nan,New Jersey,Presidential,Presidential,3.0,Kamala Harris,Donald Trump,solid-D
+35,nan,nan,nan,New Mexico,Presidential,Presidential,19.0,Kamala Harris,Donald Trump,likely-D
+36,nan,nan,nan,New York,Presidential,Presidential,4.0,Kamala Harris,Donald Trump,solid-D
+37,nan,nan,nan,North Carolina,Presidential,Presidential,69.0,Kamala Harris,Donald Trump,toss-up
+38,nan,nan,nan,North Dakota,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
+39,nan,nan,nan,Ohio,Presidential,Presidential,7.0,Kamala Harris,Donald Trump,solid-R
+40,nan,nan,nan,Oklahoma,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
+41,nan,nan,nan,Oregon,Presidential,Presidential,3.0,Kamala Harris,Donald Trump,solid-D
+42,nan,nan,nan,Pennsylvania,Presidential,Presidential,69.0,Kamala Harris,Donald Trump,toss-up
+44,nan,nan,nan,Rhode Island,Presidential,Presidential,11.0,Kamala Harris,Donald Trump,solid-D
+45,nan,nan,nan,South Carolina,Presidential,Presidential,6.0,Kamala Harris,Donald Trump,solid-R
+46,nan,nan,nan,South Dakota,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
+47,nan,nan,nan,Tennessee,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
+48,nan,nan,nan,Texas,Presidential,Presidential,19.0,Kamala Harris,Donald Trump,likely-R
+49,nan,nan,nan,Utah,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
+50,nan,nan,nan,Vermont,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-D
+51,nan,nan,nan,Virginia,Presidential,Presidential,15.0,Kamala Harris,Donald Trump,likely-D
+53,nan,nan,nan,Washington,Presidential,Presidential,4.0,Kamala Harris,Donald Trump,solid-D
+54,nan,nan,nan,West Virginia,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-R
+55,nan,nan,nan,Wisconsin,Presidential,Presidential,43.0,Kamala Harris,Donald Trump,toss-up
+56,nan,nan,nan,Wyoming,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-R
