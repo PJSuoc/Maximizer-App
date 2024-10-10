@@ -238,11 +238,7 @@ def get_involved():
         # Use parameterized queries in your DB class methods
         elections_df = db.get_election_by_id(election)
         candidates_df = db.get_candidates_by_ids(candidates)
-        if len(elections_df) == 0 or len(candidates_df) == 0:
-            flash(
-                "Election data not found. Error has been logged and will be corrected soon",
-                "error",
-            )
+        if len(elections_df) == 0 and len(candidates_df) == 0:
             return render_template("layout.html")
 
         return render_template(
@@ -251,7 +247,6 @@ def get_involved():
     except Exception as e:
         app.logger.error(f"Error in get_involved: {str(e)}")
         print(f"Error in get_involved: {str(e)}")
-        flash("An error occurred. Please try again later.", "error")
         return render_template("layout.html")
 
 def validate_candidates(candidates):

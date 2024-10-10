@@ -39,6 +39,7 @@ const voterEmpowerment =  {
     "senate": [
         "AZ",
         "FL",
+        "OH", 
         "MI",
         "MT",
         "NE",
@@ -115,12 +116,12 @@ const voterEmpowerment =  {
         "AZ",
         "CO",
         "FL",
+        "IL",
         "MD",
         "MO",
         "MT",
         "NE",
         "NV",
-        "NY",
         "SD"
     ],
     "ballot_all": [

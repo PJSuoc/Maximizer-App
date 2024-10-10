@@ -37,7 +37,6 @@
                                 <div data-value="house" selectionValue="house">House races</div>
                                 <div data-value="state_house" selectionValue="state_house">State House races</div>
                                 <div data-value="state_senate" selectionValue="state_senate">State Senate races</div>
-                                <div data-value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</div>
                                 <div data-value="ballot_others" selectionValue="others">State-level ballot issues</div>
                             </div>
                         </div>
@@ -48,9 +47,8 @@
                             <option value="presidential" selectionValue="presidential">Presidential race</option>
                             <option value="senate" selectionValue="senate">Senate race</option>
                             <option value="house" selectionValue="house">House races</option>
-                            <div data-value="state_house" selectionValue="state_house">State House races</div>
-                            <div data-value="state_senate" selectionValue="state_senate">State Senate races</div>
-                            <option value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</option>
+                            <option value="state_house" selectionValue="state_house">State House races</div>
+                            <option value="state_senate" selectionValue="state_senate">State Senate races</div>
                             <option value="ballot_others" selectionValue="others">State-level ballot issues</option>
                         </select>
                     </fieldset>
@@ -62,7 +60,7 @@
         
                 <div class="col map-container-sm">
                     <div id="map"></div>  
-                    
+                    <div id="loading-icon" class="loading-icon">Loading...</div>
                 </div>
 
             </div>
@@ -77,6 +75,10 @@
         
 </div>
 <script type="module">
+
+// Add this near the top of your script, after other variable declarations
+const geoJsonCache = {};
+const loadingIcon = document.getElementById('loading-icon');
 
 //convert dropdown to select
 document.querySelectorAll('#layer-dropdown div').forEach(item => {
@@ -121,8 +123,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 });
 
     const all_data = {{ all_data | tojson | safe }}
-    console.log("all_data", all_data)
-    console.log("location", {{ location | tojson | safe }})
+    // console.log("location", {{ location | tojson | safe }})
     const state_to_number = {{ state_to_number | tojson | safe }};
     // Create a master dictionary to hold all state data
     let masterStateData = {};
@@ -147,7 +148,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     }
 
     // Process each data list
-    console.log("pres_list", {{ pres_list | tojson | safe }})
+    //console.log("pres_list", {{ pres_list | tojson | safe }})
     addToMasterData({{ pres_list | tojson | safe }}, 'presidential');
     addToMasterData({{ senate_list | tojson | safe }}, 'senate');
     addToMasterData({{ house_list | tojson | safe }}, 'house');
@@ -181,7 +182,6 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     );
                     if (item.election_name == "Amendment C") {
                         console.log('matchingBallot', matchingBallot);
-                    }
                     if (matchingBallot) {
                         // Merge ballot data with existing item
                         Object.assign(item, matchingBallot);
@@ -194,6 +194,18 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     });
 
 
+                   class="btn btn-primary btn-info custom-btn">
+                    Learn More
+                </a>
+            `;
+        } else {
+            return `
+                <button class="btn btn-primary btn-info custom-btn" disabled>
+                    More Info Soon
+                </button>
+    }
+
+    
     function createCategoryList(categoryData, categoryTitle) {
         // if (!categoryData || categoryData.length === 0) return '';
         
@@ -217,20 +229,18 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     tableRows += sortedCategoryData.map(item =>  `<tr>
                             <td class="text-wrap" colspan="2">
                                 <div class="row-name democracy-name">${item['candidate_names'] || ''}</div>
-                            </td>
                             <td>
                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
                                     class="btn btn-primary btn-info custom-btn">
                                     Learn More
                                 </a>   
                             </td>
+                            <td class="text-wrap" colspan="2">${item.candidate_names || ''}</td>
+                            <td>${createLearnMoreButton(item)}</td>
                         </tr>
-                `).join('');
-                }
-                else {
-                    
                     tableRows += `<tr><td colspan="3">No such ballot initiatives exist in this state.</td></tr>`;
                     
+                    tableRows = `<tr><td colspan="3">No such ballot initiatives exist in this state.</td></tr>`;
                 }
                 break;
 
@@ -249,19 +259,17 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         <tr>
                             <td>President</td>
                             <td>${Math.round(categoryData.president.voter_power)}</td>
-                            <td>
-                                <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
                                     class="btn btn-primary btn-info custom-btn">
                                     Learn More
                                 </a>    
                             </td>
+                            <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `;
                 }
                 else {
                     tableRows += `<tr><td colspan="3" class="missing">This presidential race does not have high voter power.</td></tr>`;
-                }
-                
+                } 
                 if (categoryData.senate && categoryData.senate.voter_power > 20) {
                     hasElectedOffices = true;
                     const item = categoryData.senate;
@@ -271,11 +279,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                             <td>Senate</td>
                             <td>${Math.round(categoryData.senate.voter_power)}</td>
                             <td>
-                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}"  
-                                    class="btn btn-primary btn-info custom-btn">
-                                    Learn More
-                                </a>   
-                            </td>
+                            <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `;
                 }
@@ -292,11 +296,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                             <td>${item.election_name.replace(/^Congressional\s*/, '').trim() || 'N/A'}</td>
                             <td>${Math.round(item.voter_power)}</td>
                             <td>
-                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
-                                    class="btn btn-primary btn-info custom-btn">
-                                    Learn More
-                                </a>   
-                            </td>
+                            <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `).join('');
                 }
@@ -313,11 +313,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                             <td>${item.election_name.replace(/^State Senate\s*/, '').trim() || 'N/A'}</td>
                             <td>${Math.round(item.voter_power)}</td>
                             <td>
-                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
-                                    class="btn btn-primary btn-info custom-btn">
-                                    Learn More
-                                </a>   
-                            </td>
+                            <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `).join('');
                 }
@@ -337,9 +333,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                             <td>
                                  <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
                                     class="btn btn-primary btn-info custom-btn">
-                                    Learn More
                                 </a>   
                             </td>
+                            <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `).join('');
                 }
@@ -357,6 +353,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         const nameA = (a.election_name ?? '').toLowerCase();
                         const nameB = (b.election_name ?? '').toLowerCase();
                         return typeB.localeCompare(typeA) || nameA.localeCompare(nameB);
+                        return a.election_name.localeCompare(b.election_name);
                     });
 
                     //tableRows += `<p class="category-description-fixed">Other state-level ballot initiatives:</p>`;
@@ -367,18 +364,14 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     <tr class="tr-whole">
                         <td class="text-wrap" colspan="2">
                             <div class="row-name democracy-name">${item.candidate_names && item.candidate_names.length > 0 ? item.candidate_names : item.election_name}
-                            </div>                       
-                        </td>
-
-                        <td>
-                             <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
-                                class="btn btn-primary btn-info custom-btn">
-                                Learn More
-                            </a>   
-                        </td>
-                        
-                    </tr>
-                `;}).join('');
+                    tableRows = categoryData.map(item => `
+                        <tr>
+                            <td class="text-wrap" colspan="2">
+                                ${item.candidate_names || item['name of ballot'] || item.election_name}
+                            </td>
+                            <td>${createLearnMoreButton(item)}</td>
+                        </tr>
+                    `).join('');
                 } else {
                     tableRows += `<tr><td colspan="3" class="missing">No ballot initiatives in this state.</td></tr>`;
 
@@ -427,7 +420,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
         `;
     }
 
-
+   
 
     function populateStateList() {
         const stateDataList = document.getElementById('state-data-list');
@@ -466,7 +459,15 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         container: 'map',
                         style: 'mapbox://styles/mikeklein1/clxkrmlob01s801qkb96q6c00/draft',
                         center: ['{{ long }}', '{{ lat }}'],  
-                        zoom: 5,  
+                        zoom: 5, 
+                        minZoom: 3,
+                        maxZoom: 7,
+                        dragPan: true,  // Disable panning
+                        keyboard: true,
+                        dragRotate: false,  // Disable rotation
+                        keyboard: false,  // Disable keyboard navigation
+                        doubleClickZoom: true,  // Disable double click zoom
+                        touchZoomRotate: false, // Disable touch zoom and rotate
                         projection: 'mercator'
                     });
 
@@ -519,11 +520,6 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     }
                 }
 
-                map.on('load', () => {
-                    map.addControl(new ZoomControl(), 'bottom-left');
-                });
-
-
                 
         const layers = {
             
@@ -544,116 +540,182 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
-        let currentLayerId = 'ballot_vpm'; // Track the current layer
+        let currentLayerId = null; // Track the current layer
+
 
         const popup = new mapboxgl.Popup({
             closeButton: false,
-            closeOnClick: false
+            closeOnClick: false,
+            offset: [0, -15], // Add a slight vertical offset
+            className: 'custom-popup'
         });
         
 
-        function addGeoJsonLayer(layerId) {
-            const idProperty = layerId === 'house' || 'state_leg_up' || 'state_leg_low' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
+        async function addGeoJsonLayer(layerId) {
+            console.log("Adding layer:", layerId);
+            console.log("currentLayerId:", currentLayerId);
             
-            // Clear hover state when switching layers
-            if (hoveredStateId) {
-                map.setFeatureState({source: currentLayerId, id: hoveredStateId}, { hover: false });
-                hoveredStateId = null;
-            }
+            // Show loading icon
+            loadingIcon.style.display = 'flex';
 
-            // Remove existing layers
-            if (map.getSource(currentLayerId)) {
-                map.removeLayer(currentLayerId + '-fill');
-                map.removeLayer(currentLayerId + '-line');
-                map.removeLayer(currentLayerId + '-hover-line');  // Remove hover line if it exists
-                map.removeSource(currentLayerId);
-            }
-
-            currentLayerId = layerId; // Update current layer ID
-
-    // Define colors for each of the new layers
-         const colorMapping = {
-                'ballot_abort': '#f88',
-                'ballot_vpm': '#8f8',
-                'ballot_sg': '#88f',
-                'ballot_others': '#ff8'
-         };
-
-            // Add  layers
             try {
-            map.addSource(layerId, {
-                type: 'geojson',
-                data: layers[layerId],
-                promoteId: idProperty  
-            });
+                // Remove existing layers and source
+                if (map.getSource(currentLayerId)) {
+                    map.removeLayer(currentLayerId + '-fill');
+                    map.removeLayer(currentLayerId + '-line');
+                    map.removeLayer(currentLayerId + '-hover-line');
+                    map.removeSource(currentLayerId);
+                }
 
+                currentLayerId = layerId;
+                
+                // Check if the processed GeoJSON is in the cache
+                if (!geoJsonCache[layerId]) {
+                    console.log(`Loading GeoJSON for ${layerId}`);
+                    const response = await fetch(layers[layerId]);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    // Process the GeoJSON data and store it in the cache
+                    geoJsonCache[layerId] = preprocessGeoJSON(data, layerId);
+                }
+
+                map.addSource(layerId, {
+                    type: 'geojson',
+                    data: geoJsonCache[layerId],
+                    promoteId: layerId === 'house' ? 'GEOIDFQ' : 'STATEFP'
+                });
+                console.log(`Added source for ${layerId}. Feature count: ${geoJsonCache[layerId].features.length}`);
+
+                map.addLayer({
+                    id: layerId + '-fill',
+                    type: 'fill',
+                    source: layerId,
+                    paint: {
+                        'fill-color': [
+                            'case',
+                            ['==', ['literal', layerId], 'ballot_vpm'], [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'initiative_count'],
+                                0, '#D3D3D3',
+                                1, '#E8E8FF',
+                                5, '#9494FF',
+                                10, '#6262FF'
+                            ],
+                            ['==', ['literal', layerId], 'ballot_others'], [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'initiative_count'],
+                                0, '#D3D3D3',
+                                1, '#FFE8E8',
+                                5, '#FF9494',
+                                10, '#FF6262'
+                            ],
+                            // For all other layers, use voter_power
+                            [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'voter_power'],
+                                0, '#D3D3D3',
+                                1, ['match', 
+                                    ['literal', layerId],
+                                    'presidential', '#feedde',
+                                    'senate', '#fff5e0',
+                                    'house', '#F6FAFC',
+                                    'state_senate', '#ffffcc',
+                                    'state_house', '#f1eef6',
+                                    '#D3D3D3'
+                                ],
+                                100, ['match', 
+                                    ['literal', layerId],
+                                    'presidential', '#D7301F',
+                                    'senate', '#fec548',
+                                    'house', '#B4CDE3',
+                                    'state_senate', '#225ea8',
+                                    'state_house', '#ce1256',
+                                    '#D3D3D3'
+                                ]
+                            ]
+                        ],
+                        'fill-opacity': 1
+                    }
+                }, 'state-label');
+
+                // Log the paint property to verify
+                //console.log(`Layer ${layerId} paint property:`, map.getPaintProperty(layerId + '-fill', 'fill-color'));
+
+                // line layer should be black as default
+                map.addLayer({
+                    id: layerId + '-line',
+                    type: 'line',
+                    source: layerId,
+                    layout: {},
+                    paint: {
+                        'line-color': '#808080',
+                        'line-width': 0.7,
+                        'line-opacity': 0.8
+                    }
+                });
+
+                // add line layer that highlights when hovering 
+                map.addLayer({
+                    id: layerId + '-hover-line',
+                    type: 'line',
+                    source: layerId,
+                    layout: {},
+                    paint: {
+                        'line-color': ['case', ['boolean', ['feature-state', 'hover'], false], '#ffffff', '#000'],
+                        'line-width': ['case', ['boolean', ['feature-state', 'hover'], false], 4, 2],
+                        'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0]
+                    }
+                });
+
+               // map.moveLayer('state-label')
+                //map.moveLayer('settlement-major-label')
+                //map.moveLayer('settlement-minor-label')
+                // put hover line  above others
+                map.moveLayer(layerId + '-hover-line');
+
+                // Add event listeners after the layer is added
+                map.on('mouseenter', currentLayerId + '-fill',(e) => {
+                    const mapPop = document.querySelector('.map-pop');
+                    const pin = document.querySelector('.pin');
+                    const pulse = document.querySelector('.pulse');
+
+                    if (pin) {
+                        pin.classList.add('hide');
+                    }
+                    
+                    if (pulse) {
+                        pulse.classList.add('hide');
+                    }
+                    
+                    if (mapPop && !mapPop.classList.contains('hide')) {
+                        mapPop.classList.add('hide');
+                     
+                    }      
+                });
+
+                map.on('mouseleave', currentLayerId + '-fill', function() {
+                    if (hoveredStateId) {
+                        map.setFeatureState({source: currentLayerId, id: hoveredStateId}, { hover: false });
+                        hoveredStateId = null;
+                    }
+                    map.getCanvas().style.cursor = '';
+                    popup.remove();
+                });
+
+                // Hide loading icon when done
+                loadingIcon.style.display = 'none';
             } catch (error) {
-                console.error('Error adding source for', layerId, ':', error);
+                console.error('Error adding GeoJSON layer:', error);
+                console.error('Current layer ID:', currentLayerId);
+                console.error('Attempted new layer ID:', layerId);
+                loadingIcon.style.display = 'none';
             }
-
-            map.addLayer({
-    id: layerId + '-fill',
-    type: 'fill',
-    source: layerId,
-    paint: {
-        'fill-color': [
-            'case',
-            ['==', layerId, 'ballot_abort'], ['match', ['get', 'dropdown.type'], 'abortion', '#F768A0', '#D3D3D3'],
-            ['==', layerId, 'ballot_vpm'], ['match', ['get', 'dropdown.type'], 'voting policy measure', '#9277DE', '#D3D3D3'],
-            //['==', layerId, 'ballot_sg'], ['match', ['get', 'dropdown.type'], 'state government', '#9E9AC8', '#D3D3D3'],
-            //ballot_others now includes governor, state government ballots and liberty ballots
-            ['==', layerId, 'ballot_others'], ['match', ['get', 'data'], 'has data', '#D19E9B', '#D3D3D3'],
-
-            ['==', ['get', 'voter_power'], null], '#D3D3D3', // Handles null or undefined voter_power
-            ['==', ['get', 'voter_power'], 0], '#D3D3D3', // Handles zero voter_power
-            ['==', layerId, 'presidential'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'],
-            ['==', layerId, 'senate'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fff5e0', 33.3, '#ffebb5', 66.6, '#ffe082', 100, '#fec548'],
-            ['==', layerId, 'house'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#F6FAFC', 33.3, '#E3EEF5', 66.6, '#D1E2ED', 100, '#B4CDE3'],
-           // ['==', layerId, 'gubernatorial'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'],
-            ['==', layerId, 'state_leg_up'], ['interpolate', ['linear'], ['get', 'voter_power'],1, '#ffffcc', 33.3, '#a1dab4', 66.6, '#41b6c4', 100, '#225ea8'],
-            ['==', layerId, 'state_leg_low'], ['interpolate', ['linear'], ['get', 'voter_power'],1, '#f1eef6', 33.3, '#d7b5d8', 66.6, '#df65b0', 100, '#ce1256'],
-             // Color abortion ballots pink, others grey
-            '#D3D3D3'  // Default color if no conditions are met
-        ],
-        'fill-opacity': 1
-    }
-}, 'state-label');
-
-
-
-
-            // line layer should be black as default
-            map.addLayer({
-                id: layerId + '-line',
-                type: 'line',
-                source: layerId,
-                layout: {},
-                paint: {
-                    'line-color': '#808080',
-                    'line-width': .7,
-                    'line-opacity': .8
-                }
-            });
-
-            // add line layer that highlights when hovering 
-            map.addLayer({
-                id: layerId + '-hover-line',
-                type: 'line',
-                source: layerId,
-                layout: {},
-                paint: {
-                    'line-color': ['case', ['boolean', ['feature-state', 'hover'], false], '#ffffff', '#000'],
-                    'line-width': ['case', ['boolean', ['feature-state', 'hover'], false], 4, 2],
-                    'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0]
-                }
-            });
-
-            map.moveLayer('state-label')
-            map.moveLayer('settlement-major-label')
-            map.moveLayer('settlement-minor-label')
-            // put hover line  above others
-            map.moveLayer(layerId + '-hover-line');
-
+        }
 
             function showPinAndPop() {
                 const pin = document.querySelector('.pin');
@@ -673,26 +735,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
             
 
-            map.on('mouseenter', layerId + '-fill',(e) => {
-                const mapPop = document.querySelector('.map-pop');
-                const pin = document.querySelector('.pin');
-                const pulse = document.querySelector('.pulse');
 
-                if (pin) {
-                    pin.classList.add('hide');
-                }
-                
-                if (pulse) {
-                    pulse.classList.add('hide');
-                }
-                
-                if (mapPop && !mapPop.classList.contains('hide')) {
-                    mapPop.classList.add('hide');
-                 
-                }
-
-           
-            });
 
 
 
@@ -701,44 +744,41 @@ const popupContentGenerators = {
     gubernatorial: (props) => `
         <div class="custom-popup">
             <div class="popup-row"><div class="popup-label"><strong>State:</strong></div><span class="popup-value">${props.name}</span></div>
-            ${props.candidateNameR && `<div class="popup-row"><div class="popup-label"><strong>Republican running:</strong></div><span class="popup-value">${props.candidateNameR}</span></div>`}
-            ${props.candidateNameD && `<div class="popup-row"><div class="popup-label"><strong>Democrat running:</strong></div><span class="popup-value">${props.candidateNameD}</span></div>`}
+            ${props.candidateNames ? `<div class="popup-row"><div class="popup-label"><strong>Candidates:</strong></div><span class="popup-value">${props.candidateNames}</span></div>` : ''}
             <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
         </div>
     `,
     presidential: (props) => `
         <div class="custom-popup">
             <div class="popup-row"><div class="popup-label"><strong>State:</strong></div><span class="popup-value">${props.name}</span></div>
-            ${props.candidateNameR && `<div class="popup-row"><div class="popup-label"><strong>Republican running:</strong></div><span class="popup-value">${props.candidateNameR}</span></div>`}
-            ${props.candidateNameD && `<div class="popup-row"><div class="popup-label"><strong>Democrat running:</strong></div><span class="popup-value">${props.candidateNameD}</span></div>`}
+            ${props.candidateNames ? `<div class="popup-row"><div class="popup-label"><strong>Candidates:</strong></div><span class="popup-value">${props.candidateNames}</span></div>` : ''}
             <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
         </div>
     `,
     state_leg: (props) => `
         <div class="custom-popup">
             <div class="popup-row"><div class="popup-label"><strong>District name:</strong></div><span class="popup-value">${props.name}</span></div>
-            ${props.candidateNameR && `<div class="popup-row"><div class="popup-label"><strong>Republican running:</strong></div><span class="popup-value">${props.candidateNameR}</span></div>`}
-            ${props.candidateNameD && `<div class="popup-row"><div class="popup-label"><strong>Democrat running:</strong></div><span class="popup-value">${props.candidateNameD}</span></div>`}
+            ${props.candidateNames ? `<div class="popup-row"><div class="popup-label"><strong>Candidates:</strong></div><span class="popup-value">${props.candidateNames}</span></div>` : ''}
             <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
         </div>
     `,
     ballot: (props) => `
-        <div class="custom-popup">
-            ${props.ballotname === 'Not available' 
-                ? `No ${props.ballotType} ballots in this state`
-                : `
-                    <div class="popup-row"><div class="popup-label"><strong>State name:</strong></div><span class="popup-value">${props.statename}</span></div>
-                    <div class="popup-row"><div class="popup-label"><strong>Ballot name:</strong></div><span class="popup-value">${props.ballotname}</span></div>
-                    <div class="popup-row"><div class="popup-label"><strong>Description:</strong></div><span class="popup-value">${props.description}</span></div>
-                `}
+    <div class="custom-popup">
+        <div class="popup-header">
+            <strong>${props.statename}</strong>
         </div>
+        <div class="popup-content">
+            <div style="border-bottom: 1px solid #ccc; margin-bottom: 5px;"></div>
+            <div><strong>Number of initiatives: ${props.initiativeCount}</strong></div>
+            <div style="font-size: 0.9em; color: #666;">See table for more information.</div>
+        </div>
+    </div>
     `,
     default: (props) => `
         <div class="custom-popup">
             <div class="popup-row"><div class="popup-label"><strong>${props.layerId === 'house' ? 'District' : 'State'}:</strong></div><span class="popup-value">${props.name}</span></div>
-            ${props.candidateNameR && `<div class="popup-row"><div class="popup-label"><strong>Republican running:</strong></div><span class="popup-value">${props.candidateNameR}</span></div>`}
-            ${props.candidateNameD && `<div class="popup-row"><div class="popup-label"><strong>Democrat running:</strong></div><span class="popup-value">${props.candidateNameD}</span></div>`}
-            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPowerhouse === undefined ? 'no competitive race' : props.voterPowerhouse}</span></div>
+            ${props.candidateNames ? `<div class="popup-row"><div class="popup-label"><strong>Candidates:</strong></div><span class="popup-value">${props.candidateNames}</span></div>` : ''}
+            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower === undefined ? 'no competitive race' : props.voterPower}</span></div>
         </div>
     `
 };
@@ -749,9 +789,9 @@ const layerToPopupGenerator = {
     presidential: popupContentGenerators.presidential,
     state_leg_up: popupContentGenerators.state_leg,
     state_leg_low: popupContentGenerators.state_leg,
-    ballot_abort: (props) => popupContentGenerators.ballot({...props, ballotType: 'abortion'}),
-    ballot_vpm: (props) => popupContentGenerators.ballot({...props, ballotType: 'voting policy'}),
-    ballot_others: (props) => popupContentGenerators.ballot({...props, ballotType: 'state-level ballot issues'})
+    ballot_abort: popupContentGenerators.ballot,
+    ballot_vpm: popupContentGenerators.ballot,
+    ballot_others: popupContentGenerators.ballot
 };
 
 // After the all_data declaration
@@ -762,11 +802,21 @@ if (Array.isArray(all_data) && all_data.length > 0) {
         if (['presidential', 'governor', 'senate'].includes(row.race_type.toLowerCase())) {
             key = `${row.state}-${row.race_type.toLowerCase()}`;
         } else if (row.race_type === 'House') {
-            key = `${row.state}-house-${row.congress.toString().padStart(2, '0')}`;
+            if (row.congress) {
+                const district = row.congress.toString().padStart(2, '0');
+                key += `-house-${district}`;
+            } else {
+                console.warn("Congress property not found in row:", row);
+                key += 'house-unknown';
+            }
         } else if (row.race_type === 'Democracy Repair') {
-            key = `${row.state}-ballot_vpm`;
+            key += `-ballot_vpm`;
         } else if (['Direct Democracy', 'Reproductive Rights', 'Civil Liberties'].includes(row.race_type)) {
-            key = `${row.state}-ballot_others`;
+            key += `-ballot_others`;
+        } else if (row.race_type === 'State Leg (Lower)') {
+            key += `-state_house-${row.s_lower}`;
+        } else if (row.race_type === 'State Leg (Upper)') {
+            key += `-state_senate-${row.s_upper}`;
         } else {
             // Handle other race types if needed
             return acc;
@@ -779,11 +829,11 @@ if (Array.isArray(all_data) && all_data.length > 0) {
 } else {
     console.warn('all_data is not properly defined or is empty');
 }
-
+// console.log("indexedData", indexedData)
 function findMatchingRows(feature, layerId) {
     if (!indexedData) return [];
     
-    const state = feature.properties.state || feature.properties.STATEFP;
+    const state = (feature.properties.state || feature.properties.STATEFP || '').toString().padStart(2, '0');
     let key = `${state}-`;
     
     switch (layerId) {
@@ -801,9 +851,31 @@ function findMatchingRows(feature, layerId) {
             key += 'senate';
             break;
         case 'house':
-            //make sre district is a string of size 2 with leading 0 if necessary
-            const district = feature.properties.congress.toString().padStart(2, '0');
-            key += `house-${district}`;
+            if (feature.properties.congress) {
+                const district = feature.properties.congress.toString().padStart(2, '0');
+                key += `house-${district}`;
+            } else {
+                console.warn("Congress property not found in feature:", feature);
+                return []; // Return an empty array if no congress property is found
+            }
+            break;
+        case 'state_house':
+            if (feature.properties.s_lower) {
+                const district = feature.properties.s_lower.toString().padStart(3, '0');
+                key += `state_house-${district}`;
+            } else {
+                console.warn("State House property not found in feature:", feature);
+                return []; // Return an empty array if no state house property is found
+            }
+            break;
+        case 'state_senate':
+            if (feature.properties.s_upper) {
+                const district = feature.properties.s_upper.toString().padStart(3, '0');
+                key += `state_senate-${district}`;
+            } else {
+                console.warn("State Senate property not found in feature:", feature);
+                return []; // Return an empty array if no state senate property is found
+            }
             break;
         case 'gubernatorial':
             key += 'governor';
@@ -813,40 +885,131 @@ function findMatchingRows(feature, layerId) {
             return [];
     }
     
-    console.log("Searching for key:", key);
+    //console.log("Searching for key:", key);
     const result = indexedData[key] || [];
+    //console.log("result", result)
     return result;
+}
+function preprocessGeoJSON(geoJSON, layerId) {
+    //console.log(`Preprocessing GeoJSON for layer: ${layerId}`);
+    //console.log(`Initial feature count: ${geoJSON.features.length}`);
+    
+    geoJSON.features.forEach((feature, index) => {
+        const matchingRows = findMatchingRows(feature, layerId);
+        
+        if (layerId === 'ballot_vpm' || layerId === 'ballot_others') {
+            feature.properties.initiative_count = matchingRows.length;
+            //console.log(`Feature ${index}: Set initiative_count to ${feature.properties.initiative_count}`);
+        } else {
+            feature.properties.voter_power = matchingRows.length > 0
+                ? Math.max(...matchingRows
+                    .map(row => parseFloat(row.voter_power))
+                    .filter(power => !isNaN(power) && power !== null)) || 0
+                : 0;
+            //console.log(`Feature ${index}: Set voter_power to ${feature.properties.voter_power}`);
+        }
+    });
+    
+      console.log(`Preprocessing complete. Final feature count: ${geoJSON.features.length}`);
+    return geoJSON;
+}
+
+// Modify the existing findMatchingRows function or add a new function
+function getFeatureValue(feature, layerId) {
+    const matchingRows = findMatchingRows(feature, layerId);
+    
+    if (layerId === 'ballot_vpm' || layerId === 'ballot_others') {
+        return matchingRows.length; // Return count of initiatives
+    } else {
+        // For other layers, return max voter power
+        return Math.max(...matchingRows
+            .map(row => parseFloat(row.voter_power))
+            .filter(power => !isNaN(power) && power !== null)
+        ) || 0;
+    }
+}
+
+function getColor(value, layerId) {
+    //console.log(`Getting color for value: ${value}, layerId: ${layerId}`);
+    if (value === 0 || value === null || isNaN(value)) return '#D3D3D3';
+    
+    const colorScales = {
+        presidential: ['#feedde', '#fdbe85', '#EF6548', '#D7301F'],
+        senate: ['#fff5e0', '#ffebb5', '#ffe082', '#fec548'],
+        house: ['#F6FAFC', '#E3EEF5', '#D1E2ED', '#B4CDE3'],
+        state_senate: ['#ffffcc', '#a1dab4', '#41b6c4', '#225ea8'],
+        state_house: ['#f1eef6', '#d7b5d8', '#df65b0', '#ce1256'],
+        ballot_vpm: ['#E8E8FF', '#C6C6FF', '#9494FF', '#6262FF'],
+        ballot_others: ['#FFE8E8', '#FFC6C6', '#FF9494', '#FF6262']
+    };
+    
+    const scale = colorScales[layerId] || colorScales.house;
+    
+    let t;
+    if (layerId === 'ballot_vpm' || layerId === 'ballot_others') {
+        // For ballot initiatives, scale based on count (assuming max of 10 for example)
+        t = Math.min(value / 10, 1);
+    } else {
+        // For voter power, scale as before
+        t = Math.min(value / 100, 1);
+    }
+    
+    const index = Math.floor(t * (scale.length - 1));
+    return scale[index];
 }
 
 // Mouse event for hovering
-map.on('mousemove', layerId + '-fill', function (e) {
-    if (e.features.length > 0) {
-        const feature = e.features[0];
-        const currentId = feature.properties[idProperty];
+map.on('mousemove', function (e) {
+
+    let features = map.queryRenderedFeatures(e.point, { layers: [currentLayerId + '-fill'] });
+
+    //  console.log("currentLayerId", currentLayerId)
+
+    // console.log("layerId", layerId)
+    // console.log("INside mousemove", features)
+    if (features.length > 0) {
+        const feature = features[0];
+        const currentId = feature.layer.source;
 
         if (hoveredStateId !== currentId) {
             if (hoveredStateId) {
-                map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+                map.setFeatureState({source: currentLayerId, id: hoveredStateId}, { hover: false });
             }
             hoveredStateId = currentId;
-            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
+            map.setFeatureState({source: currentLayerId, id: hoveredStateId}, { hover: true });
         }
 
+        const matchingRows = findMatchingRows(feature, currentLayerId) || [];
+
         let props = {
-            name: feature.properties['NAME'] || feature.properties['NAMELSAD'],
-            voterPower: feature.properties['voter_power'] === undefined ? 'no race' : feature.properties['voter_power'],
-            voterPowerhouse: feature.properties['voter_power'],
-            candidateNameR: feature.properties['R_running'] || '',
-            candidateNameD: feature.properties['D_running'] || '',
+            matchingRows: matchingRows,
+            name: matchingRows.length > 0 ? matchingRows[0].state_name : (feature.properties['NAME'] || feature.properties['NAMELSAD']),
+            voterPower: matchingRows.length > 0 
+                ? Math.max(...matchingRows
+                    .map(row => parseFloat(row.voter_power))
+                    .filter(power => !isNaN(power) && power !== null)
+                ) || 'no race'
+                : 'no race',
             ballotname: feature.properties['name.of.ballot'] || '',
             statename: feature.properties['state_name'] || getStateNameFromNumber(feature.properties['state']),
             description: feature.properties['description'] || 'No description available',
-            layerId: layerId,
-            matchingRows: findMatchingRows(feature, layerId)
-        };
-        console.log("Matching rows", props.matchingRows)
+            layerId: currentLayerId,
+            initiativeCount: matchingRows.length
 
-        const popupGenerator = layerToPopupGenerator[layerId] || popupContentGenerators.default;
+                        };
+                        // Safely set candidateNames with null checks
+                        props.candidateNames = Array.isArray(props.matchingRows) 
+                            ? props.matchingRows
+                                .map(row => row && row.candidate_names)
+                                .filter(Boolean)
+                                    .join(', ')
+                            : '';
+
+                        //console.log("Props", props)
+                        //console.log("feature.properties", feature.properties)
+
+
+        const popupGenerator = layerToPopupGenerator[currentLayerId] || popupContentGenerators.default;
         const popupContent = popupGenerator(props);
 
         popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
@@ -856,11 +1019,11 @@ map.on('mousemove', layerId + '-fill', function (e) {
     }
 });
 
-map.on('mouseleave', layerId + '-fill', resetHoverState);
+map.on('mouseleave', currentLayerId + '-fill', resetHoverState);
 
 function resetHoverState() {
     if (hoveredStateId) {
-        map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+        map.setFeatureState({source: currentLayerId, id: hoveredStateId}, { hover: false });
         hoveredStateId = null;
     }
     map.getCanvas().style.cursor = '';
@@ -874,9 +1037,7 @@ function getStateNameFromNumber(stateNumber) {
     return 'Not available';
 }
 
-            // Update the current layer ID
-            currentLayerId = layerId;
-        }
+
 
         document.querySelectorAll('.dropdown-content div').forEach(item => {
             item.addEventListener('click', function() {
@@ -890,103 +1051,110 @@ function getStateNameFromNumber(stateNumber) {
             
 
             // Initial layer setup on map load
-        map.on('load', function () {
-            var dropdownOptions = document.querySelectorAll('#layer-dropdown div');
-            var serverSelection = JSON.parse('{{ selection|default("house", true)|tojson|safe }}');
-            var layerToAdd = 'house'; // Default layer
-           // var dropdown = document.getElementById('layer');
-            var foundMatch = false;
-            var buttonText = 'Choose Layer';
+        map.on('load', async function () {
+            try {
+                // Show loading icon
+                loadingIcon.style.display = 'flex';
 
-        
-            // Check if serverSelection corresponds to a valid layer option
-          /*  for (var i = 0; i < dropdown.options.length; i++) {
-                var option = dropdown.options[i];
-                if (option.getAttribute('selectionValue') === serverSelection) {
-                    layerToAdd = option.value;
-                    option.selected = true;
-                    foundMatch = true;
-                    break;
-                }
-            }*/
+                map.addControl(new ZoomControl(), 'bottom-left');
 
-            dropdownOptions.forEach(function(option) {
-                if (option.getAttribute('selectionValue') === serverSelection) {
-                    layerToAdd = option.getAttribute('data-value');
-                    option.classList.add('selected'); 
-                        foundMatch = true;
-                        buttonText = option.textContent;
-                    }
-                });
+                var dropdownOptions = document.querySelectorAll('#layer-dropdown div');
+                var serverSelection = JSON.parse('{{ selection|default("house", true)|tojson|safe }}');
+                var layerToAdd = 'house'; // Default layer
+               // var dropdown = document.getElementById('layer');
+                var foundMatch = false;
+                var buttonText = 'Choose Layer';
 
-            // If no match found, look for house or house option
-            if (!foundMatch) {
-                dropdownOptions.forEach(function(option) {
-                    if (option.getAttribute('data-value') === 'house' || option.getAttribute('selectionValue') === 'house') {
-                        option.classList.add('selected'); 
-                        layerToAdd = 'house';
-                        buttonText = option.textContent; 
-                    }
-                });
-            }
-
-          /* if (!foundMatch) {
-                for (var i = 0; i < dropdown.options.length; i++) {
+            
+                // Check if serverSelection corresponds to a valid layer option
+              /*  for (var i = 0; i < dropdown.options.length; i++) {
                     var option = dropdown.options[i];
-                    if (option.value === 'house' || option.getAttribute('selectionValue') === 'house') {
+                    if (option.getAttribute('selectionValue') === serverSelection) {
+                        layerToAdd = option.value;
                         option.selected = true;
-                        layerToAdd = 'house';
+                        foundMatch = true;
                         break;
                     }
+                }*/
+
+                dropdownOptions.forEach(function(option) {
+                    if (option.getAttribute('selectionValue') === serverSelection) {
+                        layerToAdd = option.getAttribute('data-value');
+                        option.classList.add('selected'); 
+                            foundMatch = true;
+                            buttonText = option.textContent; 
+                        }
+                    });
+
+                // If no match found, look for house or house option
+                if (!foundMatch) {
+                    dropdownOptions.forEach(function(option) {
+                        if (option.getAttribute('data-value') === 'house' || option.getAttribute('selectionValue') === 'house') {
+                            option.classList.add('selected'); 
+                            layerToAdd = 'house';
+                            buttonText = option.textContent; 
+                        }
+                    });
                 }
-            }*/
 
-            var selectElement = document.getElementById('layer');
-            selectElement.value = layerToAdd;
-            selectElement.dispatchEvent(new Event('change', { bubbles: true }));
-
-            document.querySelector('.dropbtn').textContent = buttonText;
-
-
-            //trigger event for change in layer and attach the corrrect e.target.value
-
-           /*     console.log('About to trigger change event with value:', layerToAdd);
-                document.getElementById('layer').value = layerToAdd;
-                document.getElementById('layer').dispatchEvent(new Event('change', {bubbles: true}));*/
-
-               
-
-
-            //addGeoJsonLayer(layerToAdd);
-            //console.log(`Selected = ${serverSelection} and layer = ${layerToAdd}`);
-            const layers = map.getStyle().layers;
-            layers.forEach((layer) => {
-                const currentFilters = map.getFilter(layer.id);
-                // if layer includes label or state filter for USA
-                if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
-                    if (currentFilters) {
-                        map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
-                    } else {
-                        map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+              /* if (!foundMatch) {
+                    for (var i = 0; i < dropdown.options.length; i++) {
+                        var option = dropdown.options[i];
+                        if (option.value === 'house' || option.getAttribute('selectionValue') === 'house') {
+                            option.selected = true;
+                            layerToAdd = 'house';
+                            break;
+                        }
                     }
-                }
-            });
+                }*/
 
-    });
+                var selectElement = document.getElementById('layer');
+                selectElement.value = layerToAdd;
+                selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+
+                document.querySelector('.dropbtn').textContent = buttonText;
+
+
+                //trigger event for change in layer and attach the corrrect e.target.value
+
+               /*     console.log('About to trigger change event with value:', layerToAdd);
+                    document.getElementById('layer').value = layerToAdd;
+                    document.getElementById('layer').dispatchEvent(new Event('change', {bubbles: true}));*/
+
+                   
+
+
+                //addGeoJsonLayer(layerToAdd);
+                //console.log(`Selected = ${serverSelection} and layer = ${layerToAdd}`);
+                const layers = map.getStyle().layers;
+                layers.forEach((layer) => {
+                    const currentFilters = map.getFilter(layer.id);
+                    // if layer includes label or state filter for USA
+                    if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
+                        if (currentFilters) {
+                            map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
+                        } else {
+                            map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+                        }
+                    }
+                });
+
+                // Hide loading icon when done
+                loadingIcon.style.display = 'none';
+            } catch (error) {
+                console.error('Error during initial map setup:', error);
+                // Hide loading icon if there's an error
+                loadingIcon.style.display = 'none';
+            }
+        });
 
             document.getElementById('layer').addEventListener('change', function (e) {
                 const value = e.target.value;
                 if (value in layers) {
+                    currentLayerId = value;
                     addGeoJsonLayer(value);
                 } else {
-                    Object.keys(layers).forEach(id => {
-                        if (map.getLayer(id + '-fill')) {
-                            map.removeLayer(id + '-fill');
-                            map.removeLayer(id + '-line');
-                            map.removeLayer(id + '-hover-line');  // Ensure hover line is also removed
-                            map.removeSource(id);
-                        }
-                    });
+                    console.log("Invalid layer value:", value);
                 }
             });
 

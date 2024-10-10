@@ -158,8 +158,37 @@
         word-wrap: break-word; 
     }
 
-   
+    .loading-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     
+    .loading-icon::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-left: 10px;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+   
 
    </style>
 
@@ -174,6 +203,7 @@
        </div>
        <div class="map-container">
            <div class="col" id="map"></div>
+           <div id="loading-icon" class="loading-icon">Loading...</div>
        </div>
 
 
@@ -356,6 +386,8 @@
     const states = Object.keys(state_to_number);
     const postal_codes = JSON.parse('{{ postal_codes | tojson }}');
     import voterEmpowerment from './static/js/voter_empowerment.js';
+    // At the beginning of your script
+    const loadingIcon = document.getElementById('loading-icon');
 
     // Use the pre-filtered data directly
     const democracyData = {{ democracy_data | tojson | safe }};
@@ -1022,6 +1054,9 @@
             fitMapToContainer();
             window.addEventListener('resize', fitMapToContainer);
 
+            // Show loading icon
+            loadingIcon.style.display = 'flex';
+
             console.log("Loading base states map...");
             const baseStatesMapData = await baseStatesMapPromise;
             console.log("Base states map loaded:", baseStatesMapData);
@@ -1031,9 +1066,14 @@
                 await addGeoJsonLayer('starting');
                 console.log("Starting layer added");
 
+                // Hide loading icon
+                loadingIcon.style.display = 'none';
+
                 lazyLoadOtherLayers();
             } else {
                 console.error("Failed to load base states map data");
+                // Hide loading icon even if there's an error
+                loadingIcon.style.display = 'none';
             }
 
             // Add Google Analytics tracking here
@@ -1076,6 +1116,8 @@
 
         } catch (error) {
             console.error('Error during initial map setup:', error);
+            // Hide loading icon if there's an error
+            loadingIcon.style.display = 'none';
         }
     });
            
