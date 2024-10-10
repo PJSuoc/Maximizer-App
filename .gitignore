@@ -14,3 +14,6 @@
 .DS_Store
 
 *.swp
+.eslintrc.json
+/node_modules
+package-lock.json

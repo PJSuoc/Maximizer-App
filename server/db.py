@@ -228,7 +228,11 @@ class DB:
         
         state = STATEDICT[state]
         shapes_in_state = self.allshapes[self.allshapes["state"] == state]
-
+        #print if state not exists in allshapes
+        if shapes_in_state.empty:
+            print("State does not exist in allshapes:", state)
+            print("Allshapes states:", self.allshapes["state"].unique())
+            
         return shapes_in_state
 
     def voter_power_filter(self, shapelist, layer, vp_minimum = 10,max_limit=3):
