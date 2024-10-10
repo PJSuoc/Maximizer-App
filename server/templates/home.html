@@ -355,15 +355,89 @@
     const startingData = null;
     const LEVELS = ['democracy', 'presidential', 'senate', 'house', 'statewide', 'abortion', 'ballot_all']
     let animationRunning = true;
+    const COLOR_BG = '#F2F3F4';  // Define your background color
+    const COLOR_HOVER = '#FFFFFF';
+    const COLOR_DEMOCRACY = '#9277DE';
+    const COLOR_PRESIDENT = '#F5928D';
+    const COLOR_SENATE  = '#fec548'
+    const COLOR_HOUSE = '#B4CDE3';
+    const COLOR_GOVERNOR = '#13DDB7';
+    const COLOR_STATE_LEGISLATURE = '#D19E9B';
+    const COLOR_ABORTION = '#F768A0';
+    const COLOR_KEY_BALLOT = '#13DDB7';
+    const COLOR_DEFAULT  = '#e1e1e1'; // Default color for unmatched cases
+    const COLOR_BORDER = '#EEEEEE';
+    const COLOR_BORDER_LEG = '#000000';// Border color for all layers
 
-    import * as colors from './static/js/colors.js';
-    console.log("Imported colors:", colors);
-    //import * from './static/js/colors.js';
-    console.log("color.COLOR_BG", colors.COLOR_BG);
-    console.log("BG:", COLOR_BG);
+    function interpolateColor(color1, color2, factor) {
+        const result = color1.slice();
+        for (let i = 0; i < 3; i++) {
+            result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+        }
+        return result;
+    }
+    
+    function hexToRgb(hex) {
+        const bigint = parseInt(hex.slice(1), 16);
+        return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+    }
+    
+    function rgbToHex(rgb) {
+        return "#" + rgb.map(x => {
+            const hex = x.toString(16);
+            return hex.length === 1 ? "0" + hex : hex;
+        }).join('');
+    }
+    
+   function interpolateColors(startColor, endColor, steps, extendRange = false) {
+          // Combined function for both cases
+            const start = hexToRgb(startColor);
+            const end = hexToRgb(endColor);
+            const colors = [];
+    
+            if (extendRange) {
+                // Case 2: Create a darker version of the end color
+                const darkerEnd = end.map(c => Math.max(0, c - 40));
+                steps += 1; // Add an extra step for the darker color
+    
+                for (let i = 0; i < steps; i++) {
+                    const factor = i / (steps - 1);
+                    const interpolated = i === steps - 1 
+                        ? darkerEnd 
+                        : interpolateColor(start, end, factor);
+                    colors.push(rgbToHex(interpolated));
+                }
+            } else {
+                // Case 1: Standard interpolation
+                for (let i = 0; i < steps; i++) {
+                    const factor = i / (steps - 1);
+                    const interpolated = interpolateColor(start, end, factor);
+                    colors.push(rgbToHex(interpolated));
+                }
+            }
+    
+        return colors;
+    }
+
+    const democracyScale = interpolateColors(COLOR_DEFAULT, COLOR_DEMOCRACY, 5);
+    const presidentScale = interpolateColors(COLOR_DEFAULT, COLOR_PRESIDENT, 5);
+    const houseScale = interpolateColors(COLOR_DEFAULT, COLOR_HOUSE, 5)
+    const senateScale = [
+                            "#e1e1e1", // 0%
+                            "#eedcb4", // 25%
+                            "#ffd885", // 50% (increased saturation)
+                            "#ffce65", // 75% (increased saturation)
+                            "#fec548"  // 100%
+                        ];
+    
+    const govScale = interpolateColors(COLOR_DEFAULT, COLOR_GOVERNOR, 5)
+    const stateLegScale = interpolateColors(COLOR_DEFAULT, COLOR_STATE_LEGISLATURE, 5) 
+    const abortionScale = interpolateColors(COLOR_DEFAULT, COLOR_ABORTION, 5)
+    const keyBallotScale = interpolateColors(COLOR_DEFAULT, COLOR_KEY_BALLOT, 5)
+
  
         // Set the background color of the body
-        document.body.style.backgroundColor = colors.COLOR_BG;
+        document.body.style.backgroundColor = COLOR_BG;
         mapboxgl.accessToken = '{{ mapbox_key }}';
         const map = new mapboxgl.Map({
             container: 'map',
@@ -373,7 +447,7 @@
             minZoom: 2,
             center: [0,-2],
             projection: 'mercator', // Using an equal-area projection,
-            background: colors.COLOR_BG  // Use the same color for the map background
+            background: COLOR_BG  // Use the same color for the map background
         });
 
         // Disable map rotation
@@ -383,26 +457,8 @@
         map.pitchWithRotate = false
         map.scrollZoom.disable();
 
-        // Function to interpolate between two colors
-        function interpolateColor(color1, color2, factor) {
-            const result = color1.slice();
-            for (let i = 0; i < 3; i++) {
-                result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
-            }
-            return result;
-        }
-        // Function to convert hex to RGB
-        function hexToRgb(hex) {
-            const bigint = parseInt(hex.slice(1), 16);
-            return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
-        }
-        // Function to convert RGB to hex
-        function rgbToHex(rgb) {
-            return "#" + rgb.map(x => {
-                const hex = x.toString(16);
-                return hex.length === 1 ? "0" + hex : hex;
-            }).join('');
-        }
+
+
 
       
 
@@ -417,21 +473,7 @@
             }, {});
         }   
 
-    //add all the layers as const herep
-    /* const layers = {
 
-        starting: 'static/data/calculated_files/geojsons/president_albers.geojson',
-        abortion: 'static/data/geojson_imports/geojson_final/ballot_abort_albers.geojson',
-        democracy: 'static/data/geojson_imports/geojson_final/ballot_VPM_albers.geojson',
-        //aggregate: 'static/data/calculated_files/geojsons/aggregate_albers.geojson',
-        presidential: 'static/data/calculated_files/geojsons/president_albers.geojson',
-        senate: 'static/data/calculated_files/geojsons/senate_albers.geojson',
-        house: 'static/data/geojson_imports/geojson_final/house_albers.geojson',
-        statewide: 'static/data/calculated_files/geojsons/governor_albers.geojson',
-        ballot_all: 'static/data/geojson_imports/geojson_final/ballot_initiatives_main_albers.geojson',
-        //state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper_albers.geojson',
-        //state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower_albers.geojson'        
-    }; */
     const layers = {
         baseStatesMap: 'static/data/calculated_files/geojsons/president_albers.geojson',
         houseMap: 'static/data/calculated_files/geojsons/congress_house_albers.geojson',
@@ -519,46 +561,46 @@
     //Layer configuration map, simplifies logic for each layer.
     const layerConfig = {
         'starting': {
-            colorScale: colors.COLOR_DEMOCRACY,
+            colorScale: COLOR_DEMOCRACY,
             baseMap: 'baseStatesMap',
             jsonData: democracyData,
             idProperty: 'STATEFP',
-            borderColor: colors.COLOR_BORDER,
+            borderColor: COLOR_BORDER,
             borderWidth: 1.5,
             popupContentGenerator: startingPopupContent
         },
         'presidential': {
-            colorScale: colors.presidentScale,
+            colorScale: presidentScale,
             baseMap: 'baseStatesMap',
             jsonData: presidentData,
             idProperty: 'STATEFP',
             matchingFunction: (feature, dataItem) => feature.properties.state_name === dataItem.state_name,
-            borderColor: colors.COLOR_BORDER,
+            borderColor: COLOR_BORDER,
             borderWidth: 1.5,
             popupContentGenerator: competitiveRacePopupContent
         },
         'senate': {
-            colorScale: colors.senateScale,
+            colorScale: senateScale,
             baseMap: 'baseStatesMap',
             jsonData: senateData,
             idProperty: 'STATEFP',
             matchingFunction: (feature, dataItem) => feature.properties.state_name === dataItem.state_name,
-            borderColor: colors.COLOR_BORDER,
+            borderColor: COLOR_BORDER,
             borderWidth: 1.5,
             popupContentGenerator: competitiveRacePopupContent
         },
         'statewide': {
-            colorScale: colors.stateLegScale,
+            colorScale: stateLegScale,
             baseMap: 'baseStatesMap',
             jsonData: stateData,
             idProperty: 'STATEFP',
             matchingFunction: (feature, dataItem) => feature.properties.state_name === dataItem.state_name,
-            borderColor: colors.COLOR_BORDER,
+            borderColor: COLOR_BORDER,
             borderWidth: 1.5,
             popupContentGenerator: competitiveRacePopupContent
         },
         'house': {
-            colorScale: colors.houseScale,
+            colorScale: houseScale,
             baseMap: 'houseMap',
             jsonData: indexedHouseData,
             idProperty: 'GEOID',
@@ -568,50 +610,50 @@
                 const key = feature.properties.GEOID;
                 return indexedHouseData.hasOwnProperty(key);
             },
-            borderColor: colors.COLOR_BORDER,
+            borderColor: COLOR_BORDER,
             borderWidth: 0.5,
             popupContentGenerator: housePopupContent
         },
         'state_leg_up': {
-            colorScale: colors.stateLegScale,
+            colorScale: stateLegScale,
             baseMap: 'stateUpperMap',
             jsonData: stateLegUpperData,
             idProperty: 'GEOIDFQ',
-            borderColor: colors.COLOR_BORDER_LEG,
+            borderColor: COLOR_BORDER_LEG,
             borderWidth: 0.5,
         },
         'state_leg_low': {
-            colorScale: colors.stateLegScale,
+            colorScale: stateLegScale,
             baseMap: 'stateLowerMap',
             jsonData: stateLegLowerData,
             idProperty: 'GEOIDFQ',
-            borderColor: colors.COLOR_BORDER_LEG,
+            borderColor: COLOR_BORDER_LEG,
             borderWidth: 0.5,
         },
         'ballot_all': {
-            colorScale: colors.COLOR_KEY_BALLOT,
+            colorScale: COLOR_KEY_BALLOT,
             baseMap: 'baseStatesMap',
             jsonData: ballotData,
             idProperty: 'STATEFP',
-            borderColor: colors.COLOR_BORDER,
+            borderColor: COLOR_BORDER,
             borderWidth: 1.5,
             popupContentGenerator: ballotPopupContent   
         },
         'democracy': {
-            colorScale: colors.COLOR_DEMOCRACY,
+            colorScale: COLOR_DEMOCRACY,
             baseMap: 'baseStatesMap',
             jsonData: democracyData,
             idProperty: 'STATEFP',
-            borderColor: colors.COLOR_BORDER,
+            borderColor: COLOR_BORDER,
             borderWidth: 1.5,
             popupContentGenerator: ballotPopupContent
         },
         'abortion': {
-            colorScale: colors.COLOR_ABORTION,
+            colorScale: COLOR_ABORTION,
             baseMap: 'baseStatesMap',
             jsonData: abortionData,
             idProperty: 'STATEFP',
-            borderColor: colors.COLOR_BORDER,
+            borderColor: COLOR_BORDER,
             borderWidth: 1.5,
             popupContentGenerator: abortionPopupContent
         }
@@ -706,7 +748,7 @@
                 type: 'line',
                 source: layerId,
                 paint: {
-                    'line-color': config.borderColor || colors.COLOR_BORDER,
+                    'line-color': config.borderColor || COLOR_BORDER,
                     'line-width': config.borderWidth || 1.5,
                     'line-opacity': 1
                 }
@@ -719,8 +761,8 @@
                 paint: {
                     'line-color': ['case', 
                         ['boolean', ['feature-state', 'hover'], false], 
-                        colors.COLOR_HOVER, 
-                        config.borderColor || colors.COLOR_BORDER
+                        COLOR_HOVER, 
+                        config.borderColor || COLOR_BORDER
                     ],
                     'line-color-transition': { duration: 1000 },
                     'line-width': ['case', 
@@ -796,7 +838,7 @@
                 'match',
                 ['get', 'NAME'],
                 ...colorData,
-                colors.COLOR_DEFAULT
+                COLOR_DEFAULT
             ];
         }
     }
@@ -935,8 +977,6 @@
         }
     });
 
-    // Set initial color for all states
-    //map.setPaintProperty('starting-fill', 'fill-color', colors.COLOR_DEFAULT);
 
         // Wait for the source to load
         map.once('idle', function() {   
@@ -1002,7 +1042,7 @@
                     // Set all states to default fill-color
                     allFeatures.forEach(feature => {
                         const stateId = feature.properties.STATEFP;
-                        stateColors.set(stateId, colors.COLOR_DEFAULT);
+                        stateColors.set(stateId, COLOR_DEFAULT);
                         stateOpacities.set(stateId, 1); 
                     });
                     updateMapColors();
@@ -1077,7 +1117,7 @@
                         if (i === 0) {
                             states.forEach(feature => {
                                 const stateId = feature.properties.STATEFP;
-                                stateColors.set(stateId, colors.COLOR_DEFAULT);
+                                stateColors.set(stateId, COLOR_DEFAULT);
                             });
                             updateMapColors();
                             resolve();
@@ -1092,7 +1132,7 @@
                 'match',
                 ['get', 'STATEFP'],
                 ...Array.from(stateColors).flatMap(([statefp, color]) => [statefp, color]),
-                colors.COLOR_DEFAULT
+                COLOR_DEFAULT
             ];
 
             const opacityExpression = [
@@ -1118,15 +1158,15 @@
 
 function getColorForPowerLevel(powerLevel) {
     switch(powerLevel) {
-        case 'democracy': return colors.COLOR_DEMOCRACY;
-        case 'presidential': return colors.COLOR_PRESIDENT;
-        case 'senate': return colors.COLOR_SENATE;
-        case 'house': return colors.COLOR_HOUSE;
-        case 'governor': return colors.COLOR_GOVERNOR;
-        case 'abortion': return colors.COLOR_ABORTION;
-        case 'ballot_all': return colors.COLOR_KEY_BALLOT;
-        case 'statewide': return colors.COLOR_STATE_LEGISLATURE;
-        default: return colors.COLOR_DEFAULT;
+        case 'democracy': return COLOR_DEMOCRACY;
+        case 'presidential': return COLOR_PRESIDENT;
+        case 'senate': return COLOR_SENATE;
+        case 'house': return COLOR_HOUSE;
+        case 'governor': return COLOR_GOVERNOR;
+        case 'abortion': return COLOR_ABORTION;
+        case 'ballot_all': return COLOR_KEY_BALLOT;
+        case 'statewide': return COLOR_STATE_LEGISLATURE;
+        default: return COLOR_DEFAULT;
     }
 }
 
