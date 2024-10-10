@@ -8,13 +8,18 @@
     <body>
         
 
+        
+
     <div class="row" height="100%">
         <div class="col" id="detail-left">
+
 
             <ul class="list-group" id="state-data-list">
                 <!-- State data will be dynamically inserted here -->
             </ul>
         </div>
+
+        <div class="col" id="detail-right">
 
         <div class="col" id="detail-right">
             <div class="map-overlay">
@@ -94,6 +99,27 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     });
 });
 
+//convert dropdown to select
+document.querySelectorAll('#layer-dropdown div').forEach(item => {
+    item.addEventListener('click', function() {
+        //get clicked data-value and selectionValue
+        let selectedValue = this.getAttribute('data-value');
+        let selectedText = this.getAttribute('selectionValue');
+
+        let selectElement = document.getElementById('layer');
+        selectElement.value = selectedValue;
+        
+        selectElement.dispatchEvent(new Event('change'));
+
+        //update the url with the selected text
+        const currentURL = new URL(window.location.href);
+        currentURL.searchParams.set('selection', selectedText);
+
+        //update the url without refreshing the page
+        history.pushState(null, '', currentURL);
+    });
+});
+
     const all_data = {{ all_data | tojson | safe }}
     console.log("all_data", all_data)
     console.log("location", {{ location | tojson | safe }})
@@ -121,6 +147,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     }
 
     // Process each data list
+    console.log("pres_list", {{ pres_list | tojson | safe }})
     addToMasterData({{ pres_list | tojson | safe }}, 'presidential');
     addToMasterData({{ senate_list | tojson | safe }}, 'senate');
     addToMasterData({{ house_list | tojson | safe }}, 'house');
@@ -165,13 +192,15 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             }
         });
     });
-    console.log('Master State Data with ballots:', masterStateData);
+    */
+
     function createCategoryList(categoryData, categoryTitle) {
         // if (!categoryData || categoryData.length === 0) return '';
         
         let tableRows = '';
         let description = '';
-        let rowsNonEmpty = (categoryData && categoryData.length > 0)
+        /*let rowsNonEmpty = (categoryData && categoryData.length > 0)*/
+        let rowsNonEmpty = Array.isArray(categoryData) && categoryData.some(item => item.candidate_names && item.candidate_names.length > 0);
         let hasElectedOffices = false;
 
         switch (categoryTitle) {
@@ -185,10 +214,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         const nameB = (b.election_name || '').toLowerCase();
                         return nameA.localeCompare(nameB);
                     });
-                    tableRows += sortedCategoryData.map(item => 
-                        `<tr>
+                    tableRows += sortedCategoryData.map(item =>  `<tr>
                             <td class="text-wrap" colspan="2">
-                                <div class="row-name democracy-name">${item['name of ballot'] || ''}</div>
+                                <div class="row-name democracy-name">${item['candidate_names'] || ''}</div>
                             </td>
                             <td>
                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
@@ -200,7 +228,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 `).join('');
                 }
                 else {
+                    
                     tableRows += `<tr><td colspan="3">No such ballot initiatives exist in this state.</td></tr>`;
+                    
                 }
                 break;
 
@@ -320,23 +350,24 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
             case 'Other ballot initiatives':
                 description = '' 
-                // Sort categoryData by election_name
-
-            
                 if (rowsNonEmpty) {
                     const sortedCategoryData = [...categoryData].sort((a, b) => {
-                        const typeA = (a.ballot_type ?? '').toLowerCase();
-                        const typeB = (b.ballot_type ?? '').toLowerCase();
+                        const typeA = (a.race_type ?? '').toLowerCase();
+                        const typeB = (b.race_type ?? '').toLowerCase();
                         const nameA = (a.election_name ?? '').toLowerCase();
                         const nameB = (b.election_name ?? '').toLowerCase();
                         return typeB.localeCompare(typeA) || nameA.localeCompare(nameB);
                     });
 
                     //tableRows += `<p class="category-description-fixed">Other state-level ballot initiatives:</p>`;
-                    tableRows += sortedCategoryData.map(item => `
+                    tableRows += sortedCategoryData.map(item => {
+                        console.log("names: ",item['candidate_names']); 
+
+                    return `
                     <tr class="tr-whole">
                         <td class="text-wrap" colspan="2">
-                            <div class="row-name democracy-name">${item['name of ballot'] || ''}</div>
+                            <div class="row-name democracy-name">${item.candidate_names && item.candidate_names.length > 0 ? item.candidate_names : item.election_name}
+                            </div>                       
                         </td>
 
                         <td>
@@ -347,9 +378,10 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         </td>
                         
                     </tr>
-                `).join('');
+                `;}).join('');
                 } else {
                     tableRows += `<tr><td colspan="3" class="missing">No ballot initiatives in this state.</td></tr>`;
+
                 }
                 break;
             }
@@ -427,6 +459,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
     // Call the function to populate the list
     populateStateList();
+        
 
                     mapboxgl.accessToken = '{{ mapbox_key }}';
                     const map = new mapboxgl.Map({
@@ -436,6 +469,61 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         zoom: 5,  
                         projection: 'mercator'
                     });
+
+                    class ZoomControl {
+                        onAdd(map) {
+                        console.log('ZoomControl added');
+                        this._map = map;
+                        this._container = document.createElement('div');
+                        this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
+                        this._container.style.backgroundColor = 'white';
+                        this._container.style.border = '1px solid #ccc';
+                        this._container.style.borderRadius = '4px';
+                        this._container.style.zIndex = '1000';  
+                        
+                        const zoomInButton = this._createButton('+', () => {
+                            map.zoomIn();
+                        });
+                        
+                        const zoomOutButton = this._createButton('-', () => {
+                            map.zoomOut();
+                        });
+
+                        this._container.appendChild(zoomInButton);
+                        this._container.appendChild(zoomOutButton);
+
+                        console.log('Buttons created and added to container');
+                        return this._container;
+                    }
+                    onRemove() {
+                        console.log('ZoomControl removed');
+                        this._container.parentNode.removeChild(this._container);
+                        this._map = undefined;
+                    }
+
+                    _createButton(text, onClick) {
+                        console.log(`Creating button: ${text}`);
+                        const button = document.createElement('button');
+                        button.className = 'mapboxgl-ctrl-icon';
+                        button.type = 'button';
+                        button.style.width = '30px';
+                        button.style.height = '30px';
+                        button.style.fontSize = '20px';
+                        button.style.fontWeight = 'bold';
+                        button.style.border = 'none';
+                        button.style.display = 'block';
+                        button.style.cursor = 'pointer';
+                        button.textContent = text;
+                        button.onclick = onClick;
+                        return button;
+                    }
+                }
+
+                map.on('load', () => {
+                    map.addControl(new ZoomControl(), 'bottom-left');
+                });
+
+
                 
         const layers = {
             
@@ -443,12 +531,14 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             senate: 'static/data/calculated_files/geojsons/senate.geojson',
             house: 'static/data/geojson_imports/geojson_final/house.geojson',
             ballot_abort: 'static/data/geojson_imports/geojson_final/ballot_abort.geojson',
+           // ballot_abort:'static/data/calculated_files/geojsons/reprights.geojson',
             ballot_vpm: 'static/data/geojson_imports/geojson_final/ballot_VPM.geojson',
             ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson',
             state_senate:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
             state_house:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
         };
 
+       
         const senateList = {{senate_list | tojson}};
 
 
@@ -784,17 +874,18 @@ function getStateNameFromNumber(stateNumber) {
     return 'Not available';
 }
 
-// Update the current layer ID
-currentLayerId = layerId;
-}
+            // Update the current layer ID
+            currentLayerId = layerId;
+        }
 
-            document.querySelectorAll('.dropdown-content div').forEach(item => {
-                item.addEventListener('click', function() {
-                    const selectedValue = this.getAttribute('data-value');
-                    const selectedText = this.textContent;
-                    document.querySelector('.dropbtn').textContent = selectedText; 
-                });
+        document.querySelectorAll('.dropdown-content div').forEach(item => {
+            item.addEventListener('click', function() {
+                const selectedValue = this.getAttribute('data-value');
+                const selectedText = this.textContent;
+                document.querySelector('.dropbtn').textContent = selectedText; 
+                 
             });
+        });
 
             
 

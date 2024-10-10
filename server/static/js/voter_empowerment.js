@@ -12,7 +12,6 @@ const voterEmpowerment =  {
         "IA",
         "ME",
         "MO",
-        "MT",
         "NV",
         "NH",
         "NM",
@@ -22,6 +21,7 @@ const voterEmpowerment =  {
         "RI",
         "SD",
         "UT",
+        "MT"
     ],
     "presidential": [
         "AZ",
@@ -29,10 +29,11 @@ const voterEmpowerment =  {
         "ME",
         "MI",
         "NC",
-        "NE",
         "NH",
+        "NM",
         "NV",
         "PA",
+        "VA",
         "WI"
     ],
     "senate": [
@@ -78,7 +79,6 @@ const voterEmpowerment =  {
     'statewide': [
         "AK",
         "AZ",
-        "IN",
         "KS",
         "MI",
         "MN",
@@ -86,7 +86,8 @@ const voterEmpowerment =  {
         "NV",
         "NH",
         "PA",
-        "WI"
+        "WI",
+        "NC"
     ],
     "statewide_detail": [
         "AK",
@@ -136,6 +137,7 @@ const voterEmpowerment =  {
         "ID",
         "IL",
         "IN",
+        "KY",
         "MA",
         "MD",
         "ME",
@@ -148,8 +150,10 @@ const voterEmpowerment =  {
         "NV",
         "NY",
         "OH",
+        "OK",
         "OR",
         "RI",
+        "SC",
         "SD",
         "UT",
         "WI"
