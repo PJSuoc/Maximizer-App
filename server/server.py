@@ -36,7 +36,7 @@ from constants import STATES, STATELOC, POSTAL_TO_STATE, STATEDICT
 config_check = Path("config.py")
 if config_check.is_file():
     ## Environment Variables in for local development
-    from config import flask_key, google_key, mapbox_key, LOG_VIEW_SECRET_KEY
+    from config import flask_key, google_key, mapbox_key#, LOG_VIEW_SECRET_KEY
 else:
     ## Environment Variables for heroku local or production
     flask_key = os.environ.get("flask_key")
