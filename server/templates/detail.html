@@ -80,6 +80,14 @@
 const geoJsonCache = {};
 const loadingIcon = document.getElementById('loading-icon');
 
+const DEBUG_MODE = false;
+// Replace console.log with debugLog for easy debugging.
+function debugLog(...args) {
+    if (DEBUG_MODE) {
+        console.log(...args);
+    }
+}
+
 //convert dropdown to select
 document.querySelectorAll('#layer-dropdown div').forEach(item => {
     item.addEventListener('click', function() {
@@ -123,7 +131,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 });
 
     const all_data = {{ all_data | tojson | safe }}
-    // console.log("location", {{ location | tojson | safe }})
+    debugLog("location", {{ location | tojson | safe }})
     const state_to_number = {{ state_to_number | tojson | safe }};
     // Create a master dictionary to hold all state data
     let masterStateData = {};
@@ -134,7 +142,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
     // Function to add data to the master dictionary
     function addToMasterData(dataList, category) {
-        //console.log('Adding data to master data:', dataList, category);
+        debugLog('Adding data to master data:', dataList, category);
         dataList.forEach(item => {
             const state = typeof item.state_name === 'string' ? item.state_name.trim() : 'Unknown';
             if (!masterStateData[state]) {
@@ -148,7 +156,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     }
 
     // Process each data list
-    //console.log("pres_list", {{ pres_list | tojson | safe }})
+    debugLog("pres_list", {{ pres_list | tojson | safe }})
     addToMasterData({{ pres_list | tojson | safe }}, 'presidential');
     addToMasterData({{ senate_list | tojson | safe }}, 'senate');
     addToMasterData({{ house_list | tojson | safe }}, 'house');
@@ -191,7 +199,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
         });
     });
 
-    console.log("masterStateData", masterStateData)
+    debugLog("masterStateData", masterStateData)
     function createLearnMoreButton(item) {
 
         if (item.eid && item.candidate_ids && item.candidate_ids.length > 0) {
@@ -329,7 +337,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 break;
 
             case 'Other ballot initiatives':
-                console.log("categoryData", categoryData)
+                debugLog("categoryData", categoryData)
                 description = '' 
                 if (rowsNonEmpty) {
                     categoryData.sort((a, b) => {
@@ -415,7 +423,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 state_house: stateData.state_house || [],
             }, 'Elected Offices');
 
-            console.log("stateData.state_level_ballots", stateData.state_level_ballots)
+            debugLog("stateData.state_level_ballots", stateData.state_level_ballots)
             stateHtml += createCategoryList(stateData.state_level_ballots , 'Other ballot initiatives', state);
 
             stateHtml += `</div>`;
@@ -446,7 +454,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
                     class ZoomControl {
                         onAdd(map) {
-                        console.log('ZoomControl added');
+                        debugLog('ZoomControl added');
                         this._map = map;
                         this._container = document.createElement('div');
                         this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
@@ -466,17 +474,17 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         this._container.appendChild(zoomInButton);
                         this._container.appendChild(zoomOutButton);
 
-                        console.log('Buttons created and added to container');
+                        debugLog('Buttons created and added to container');
                         return this._container;
                     }
                     onRemove() {
-                        console.log('ZoomControl removed');
+                        debugLog('ZoomControl removed');
                         this._container.parentNode.removeChild(this._container);
                         this._map = undefined;
                     }
 
                     _createButton(text, onClick) {
-                        console.log(`Creating button: ${text}`);
+                        debugLog(`Creating button: ${text}`);
                         const button = document.createElement('button');
                         button.className = 'mapboxgl-ctrl-icon';
                         button.type = 'button';
@@ -513,8 +521,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
 
         let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
-        let currentLayerId = null; // Track the current layer
-
+        let currentLayerId = null; // Keep this at the top level
+        let previousLayerId = null; // Add this new variable
+        
 
         const popup = new mapboxgl.Popup({
             closeButton: false,
@@ -525,26 +534,26 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
         
 
         async function addGeoJsonLayer(layerId) {
-            console.log("Adding layer:", layerId);
-            console.log("currentLayerId:", currentLayerId);
+            debugLog("Adding layer:", layerId);
+            debugLog("Current layer ID:", currentLayerId);
             
             // Show loading icon
             loadingIcon.style.display = 'flex';
 
             try {
+                debugLog("Trying to remove layer:", previousLayerId);
                 // Remove existing layers and source
-                if (map.getSource(currentLayerId)) {
-                    map.removeLayer(currentLayerId + '-fill');
-                    map.removeLayer(currentLayerId + '-line');
-                    map.removeLayer(currentLayerId + '-hover-line');
-                    map.removeSource(currentLayerId);
+                if (previousLayerId && map.getSource(previousLayerId)) {
+                    map.removeLayer(previousLayerId + '-fill');
+                    map.removeLayer(previousLayerId + '-line');
+                    map.removeLayer(previousLayerId + '-hover-line');
+                    map.removeSource(previousLayerId);
+                    debugLog("Removed layer:", previousLayerId);
                 }
 
-                currentLayerId = layerId;
-                
                 // Check if the processed GeoJSON is in the cache
                 if (!geoJsonCache[layerId]) {
-                    console.log(`Loading GeoJSON for ${layerId}`);
+                    debugLog(`Loading GeoJSON for ${layerId}`);
                     const response = await fetch(layers[layerId]);
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
@@ -559,7 +568,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     data: geoJsonCache[layerId],
                     promoteId: layerId === 'house' ? 'GEOIDFQ' : 'STATEFP'
                 });
-                console.log(`Added source for ${layerId}. Feature count: ${geoJsonCache[layerId].features.length}`);
+                debugLog(`Added source for ${layerId}. Feature count: ${geoJsonCache[layerId].features.length}`);
 
                 map.addLayer({
                     id: layerId + '-fill',
@@ -617,7 +626,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 }, 'state-label');
 
                 // Log the paint property to verify
-                //console.log(`Layer ${layerId} paint property:`, map.getPaintProperty(layerId + '-fill', 'fill-color'));
+                //debugLog(`Layer ${layerId} paint property:`, map.getPaintProperty(layerId + '-fill', 'fill-color'));
 
                 // line layer should be black as default
                 map.addLayer({
@@ -680,6 +689,10 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     popup.remove();
                 });
 
+                // If everything was successful, update the layer IDs
+                previousLayerId = currentLayerId;
+                currentLayerId = layerId;
+
                 // Hide loading icon when done
                 loadingIcon.style.display = 'none';
             } catch (error) {
@@ -687,6 +700,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 console.error('Current layer ID:', currentLayerId);
                 console.error('Attempted new layer ID:', layerId);
                 loadingIcon.style.display = 'none';
+                // In case of error, don't update the currentLayerId
             }
         }
 
@@ -728,13 +742,23 @@ const popupContentGenerators = {
             <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
         </div>
     `,
-    state_leg: (props) => `
-        <div class="custom-popup">
-            <div class="popup-row"><div class="popup-label"><strong>District name:</strong></div><span class="popup-value">${props.name}</span></div>
-            ${props.candidateNames ? `<div class="popup-row"><div class="popup-label"><strong>Candidates:</strong></div><span class="popup-value">${props.candidateNames}</span></div>` : ''}
-            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
-        </div>
-    `,
+    state_leg: (props) => {
+        let electionName = `${props.name}`;
+        if (props.district) {
+            electionName += `  ${props.district}`;
+        }
+        if (props.matchingRows && props.matchingRows.length > 0) {
+            electionName = `${props.matchingRows[0].state_name} ${props.matchingRows[0].election_name}`;
+        }
+        debugLog("electionName", electionName)
+        return `
+            <div class="custom-popup">
+                <div class="popup-row"><div class="popup-label"><strong>District name:</strong></div><span class="popup-value">${electionName}</span></div>
+                ${props.candidateNames ? `<div class="popup-row"><div class="popup-label"><strong>Candidates:</strong></div><span class="popup-value">${props.candidateNames}</span></div>` : ''}
+                <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
+            </div>
+        `;
+    },
     ballot: (props) => `
     <div class="custom-popup">
         <div class="popup-header">
@@ -760,8 +784,9 @@ const popupContentGenerators = {
 const layerToPopupGenerator = {
     gubernatorial: popupContentGenerators.gubernatorial,
     presidential: popupContentGenerators.presidential,
-    state_leg_up: popupContentGenerators.state_leg,
-    state_leg_low: popupContentGenerators.state_leg,
+    house: popupContentGenerators.state_leg,
+    state_senate: popupContentGenerators.state_leg,
+    state_house: popupContentGenerators.state_leg,
     ballot_abort: popupContentGenerators.ballot,
     ballot_vpm: popupContentGenerators.ballot,
     ballot_others: popupContentGenerators.ballot
@@ -802,7 +827,7 @@ if (Array.isArray(all_data) && all_data.length > 0) {
 } else {
     console.warn('all_data is not properly defined or is empty');
 }
-// console.log("indexedData", indexedData)
+debugLog("indexedData", indexedData)
 function findMatchingRows(feature, layerId) {
     if (!indexedData) return [];
     
@@ -858,32 +883,32 @@ function findMatchingRows(feature, layerId) {
             return [];
     }
     
-    //console.log("Searching for key:", key);
+    debugLog("Searching for key:", key);
     const result = indexedData[key] || [];
-    //console.log("result", result)
+    debugLog("result", result)
     return result;
 }
 function preprocessGeoJSON(geoJSON, layerId) {
-    //console.log(`Preprocessing GeoJSON for layer: ${layerId}`);
-    //console.log(`Initial feature count: ${geoJSON.features.length}`);
+    debugLog(`Preprocessing GeoJSON for layer: ${layerId}`);
+    debugLog(`Initial feature count: ${geoJSON.features.length}`);
     
     geoJSON.features.forEach((feature, index) => {
         const matchingRows = findMatchingRows(feature, layerId);
         
         if (layerId === 'ballot_vpm' || layerId === 'ballot_others') {
             feature.properties.initiative_count = matchingRows.length;
-            //console.log(`Feature ${index}: Set initiative_count to ${feature.properties.initiative_count}`);
+            debugLog(`Feature ${index}: Set initiative_count to ${feature.properties.initiative_count}`);
         } else {
             feature.properties.voter_power = matchingRows.length > 0
                 ? Math.max(...matchingRows
                     .map(row => parseFloat(row.voter_power))
                     .filter(power => !isNaN(power) && power !== null)) || 0
                 : 0;
-            //console.log(`Feature ${index}: Set voter_power to ${feature.properties.voter_power}`);
+            debugLog(`Feature ${index}: Set voter_power to ${feature.properties.voter_power}`);
         }
     });
     
-      console.log(`Preprocessing complete. Final feature count: ${geoJSON.features.length}`);
+      debugLog(`Preprocessing complete. Final feature count: ${geoJSON.features.length}`);
     return geoJSON;
 }
 
@@ -903,7 +928,7 @@ function getFeatureValue(feature, layerId) {
 }
 
 function getColor(value, layerId) {
-    //console.log(`Getting color for value: ${value}, layerId: ${layerId}`);
+    debugLog(`Getting color for value: ${value}, layerId: ${layerId}`);
     if (value === 0 || value === null || isNaN(value)) return '#D3D3D3';
     
     const colorScales = {
@@ -936,10 +961,7 @@ map.on('mousemove', function (e) {
 
     let features = map.queryRenderedFeatures(e.point, { layers: [currentLayerId + '-fill'] });
 
-    //  console.log("currentLayerId", currentLayerId)
 
-    // console.log("layerId", layerId)
-    // console.log("INside mousemove", features)
     if (features.length > 0) {
         const feature = features[0];
         const currentId = feature.layer.source;
@@ -956,30 +978,31 @@ map.on('mousemove', function (e) {
 
         let props = {
             matchingRows: matchingRows,
-            name: matchingRows.length > 0 ? matchingRows[0].state_name : (feature.properties['NAME'] || feature.properties['NAMELSAD']),
+            name: matchingRows.length > 0 ? matchingRows[0].state_name : (feature.properties.state_name || getStateNameFromNumber(feature.properties['state'])),
             voterPower: matchingRows.length > 0 
                 ? Math.max(...matchingRows
                     .map(row => parseFloat(row.voter_power))
                     .filter(power => !isNaN(power) && power !== null)
                 ) || 'no race'
                 : 'no race',
-            ballotname: feature.properties['name.of.ballot'] || '',
+            ballotname: feature.properties['name of ballot'] || '',
             statename: feature.properties['state_name'] || getStateNameFromNumber(feature.properties['state']),
+            district: feature.properties['NAMELSAD'] || null,
             description: feature.properties['description'] || 'No description available',
             layerId: currentLayerId,
             initiativeCount: matchingRows.length
 
                         };
-                        // Safely set candidateNames with null checks
-                        props.candidateNames = Array.isArray(props.matchingRows) 
-                            ? props.matchingRows
-                                .map(row => row && row.candidate_names)
-                                .filter(Boolean)
-                                    .join(', ')
-                            : '';
+                // Safely set candidateNames with null checks
+                props.candidateNames = Array.isArray(props.matchingRows) 
+                    ? props.matchingRows
+                        .map(row => row && row.candidate_names)
+                        .filter(Boolean)
+                            .join(', ')
+                    : '';
 
-                        //console.log("Props", props)
-                        //console.log("feature.properties", feature.properties)
+                    debugLog("Props", props)
+                    debugLog("feature.properties", feature.properties)
 
 
         const popupGenerator = layerToPopupGenerator[currentLayerId] || popupContentGenerators.default;
@@ -1004,10 +1027,20 @@ function resetHoverState() {
 }
 
 function getStateNameFromNumber(stateNumber) {
-    if (stateNumber) {
-        return Object.keys(state_to_number).find(key => state_to_number[key] === stateNumber) || 'Not available';
+    if (stateNumber == null || stateNumber === '') {
+        return 'Not available';
     }
-    return 'Not available';
+    
+    // Convert to string and pad to 2 digits
+    const paddedNumber = String(stateNumber).padStart(2, '0');
+    
+    // Check if the padded number is valid (2 digits)
+    if (paddedNumber.length !== 2 || isNaN(paddedNumber)) {
+        return 'Invalid state number';
+    }
+    
+    // Look up the state name
+    return Object.keys(state_to_number).find(key => state_to_number[key] === paddedNumber) || 'State not found';
 }
 
 
@@ -1087,18 +1120,7 @@ function getStateNameFromNumber(stateNumber) {
 
                 document.querySelector('.dropbtn').textContent = buttonText;
 
-
-                //trigger event for change in layer and attach the corrrect e.target.value
-
-               /*     console.log('About to trigger change event with value:', layerToAdd);
-                    document.getElementById('layer').value = layerToAdd;
-                    document.getElementById('layer').dispatchEvent(new Event('change', {bubbles: true}));*/
-
-                   
-
-
-                //addGeoJsonLayer(layerToAdd);
-                //console.log(`Selected = ${serverSelection} and layer = ${layerToAdd}`);
+                debugLog(`Selected = ${serverSelection} and layer = ${layerToAdd}`);
                 const layers = map.getStyle().layers;
                 layers.forEach((layer) => {
                     const currentFilters = map.getFilter(layer.id);
@@ -1127,7 +1149,7 @@ function getStateNameFromNumber(stateNumber) {
                     currentLayerId = value;
                     addGeoJsonLayer(value);
                 } else {
-                    console.log("Invalid layer value:", value);
+                    console.warn("Invalid layer value:", value);
                 }
             });
 
