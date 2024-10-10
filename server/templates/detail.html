@@ -337,7 +337,6 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         return a.election_name.localeCompare(b.election_name);
                     });
                     tableRows = categoryData.map(item => `
-                    console.log("item", item)
                         <tr>
                             <td class="text-wrap" colspan="2">
                                 ${item.candidate_names || item['name of ballot'] || item.election_name}
