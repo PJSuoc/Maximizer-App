@@ -104,25 +104,6 @@ def load_ballot_initiatives():
 # Load the data when the server starts
 BALLOT_INITIATIVES = load_ballot_initiatives()
 
-def inspect_dataframe(df, name):
-    print(f"\nInspecting DataFrame: {name}")
-    print(f"Shape: {df.shape}")
-    print("\nData Types:")
-    print(df.dtypes)
-    print("\nNull Values:")
-    print(df.isnull().sum())
-    print("\nUnique Values in each column:")
-    for column in df.columns:
-        unique_values = df[column].unique()
-        print(f"{column}: {unique_values[:5]}{'...' if len(unique_values) > 5 else ''}")
-    print("\nSample Data:")
-    print(df.head())
-    print("\nChecking for 'NaN' strings:")
-    nan_strings = df.applymap(lambda x: x == 'NaN' if isinstance(x, str) else False).sum()
-    print(nan_strings[nan_strings > 0])
-
-# Assuming BALLOT_INITIATIVES is your DataFrame
-inspect_dataframe(BALLOT_INITIATIVES, "BALLOT_INITIATIVES")
 
 # Website Home Page
 @app.route("/", methods=["GET", "POST"])
@@ -274,49 +255,7 @@ def get_involved():
         print(f"Error in get_involved: {str(e)}")
         flash("An error occurred. Please try again later.", "error")
         return render_template("layout.html")
-    
-@app.route('/api/ballot_initiatives', methods=['GET'])
-def get_all_ballot_initiatives():
-    """
-    Retrieve all ballot initiatives.
-    
-    This endpoint returns a JSON array containing information about all ballot initiatives
-    stored in the BALLOT_INITIATIVES DataFrame.
 
-    Returns:
-        JSON: A list of dictionaries, where each dictionary represents a ballot initiative
-        with its associated data.
-
-    Example response:
-        [
-            {
-                "state_name": "California",
-                "election_name": "Proposition 1",
-                "description": "Constitutional right to reproductive freedom",
-                ...
-            },
-            ...
-        ]
-    """
-    if BALLOT_INITIATIVES.empty:
-        return jsonify({"error": "Ballot initiatives data not available"}), 500
-    try:
-        # Create a copy of the DataFrame to avoid modifying the original
-        initiatives = BALLOT_INITIATIVES.copy()
-
-        # Optional: Drop columns that are entirely null
-        initiatives = initiatives.dropna(axis=1, how='all')
-
-        # Convert NaN to None (which becomes null in JSON)
-        initiatives = initiatives.where(pd.notnull(initiatives), None)
-        
-        # Convert DataFrame to list of dictionaries
-        initiatives_list = initiatives.to_dict(orient='records')
-        
-        return jsonify(initiatives_list)
-    except Exception as e:
-        app.logger.error(f"Error converting ballot initiatives to JSON: {str(e)}")
-        return jsonify({"error": "An error occurred while processing ballot initiatives"}), 500
 def validate_candidates(candidates):
     if isinstance(candidates, str):
         candidates = candidates.split(",")
@@ -439,7 +378,9 @@ def election_delivery_function_structured(location, selection=None):
         lat = location[0]["geometry"]["location"]["lat"]
         long = location[0]["geometry"]["location"]["lng"]
 
-    # All the individual pieces for the detail lookup.
+    # Convert BALLOT_INITIATIVES to a dictionary
+    ballot_initiatives = BALLOT_INITIATIVES.to_dict(orient="records")
+    
     return render_template(
         "detail.html",
         pres_list=lookup_dict["elections"]["Presidential"],
@@ -458,10 +399,12 @@ def election_delivery_function_structured(location, selection=None):
         governor_layer=lookup_dict["layers"]["Governor"],
         dem_ballot_layer=lookup_dict["layers"]["Democracy Repair"],
         state_level_layer=lookup_dict["layers"]["State Level"],
-        states=STATES,
+        ballot_initiatives=ballot_initiatives,
+        state_to_number=STATEDICT,
         lat=lat,
         long=long,
         mapbox_key=mapbox_key,
+        location=location,
         selection=selection,
     )
 

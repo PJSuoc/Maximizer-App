@@ -16,7 +16,6 @@ const voterEmpowerment =  {
         "NV",
         "NH",
         "NM",
-        "NY",
         "ND",
         "OH",
         "OR",
