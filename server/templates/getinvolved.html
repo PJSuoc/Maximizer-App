@@ -89,6 +89,7 @@
 }
 
 
+
 .get-involved-sec .service-card:hover p {
   color: #f0f0f0;
 }
@@ -325,6 +326,8 @@
                         <h3>{{ item.party }}</h3>
                         <p>Description: {{ item.name | capitalize }}</p>
 
+                     
+
                         <div class="button-container">
 
                             <div class="campaign-url">
@@ -340,19 +343,19 @@
                         </div>
 
                         
-                    </div>
+                           
+
                   </div>
                   {% else %}
 
                     <!-- candidate -->
                     <div class="col">
                         <div class="service-card">
-                          
-    
 
                             <h3>{{ item.party }}</h3>
 
                             <div class="partydivider">
+
                                 <div class="partydividermask">
                                   
                                 </div>
@@ -366,7 +369,7 @@
                                     {% endif %}
                                 </span>
                                   
-                                </div>
+                            </div>
 
                             <h3>{{ item.name }}</h3>
                             {% if item.election_denier == "1" %}
@@ -397,6 +400,7 @@
                                 {% endif %}
 
                             </div>
+
 
                            
                         </div>
