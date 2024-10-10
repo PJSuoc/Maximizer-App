@@ -80,6 +80,7 @@ const voterEmpowerment =  {
     'statewide': [
         "AK",
         "AZ",
+        "IN",
         "KS",
         "MI",
         "MN",

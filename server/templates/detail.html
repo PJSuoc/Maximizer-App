@@ -191,6 +191,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
         });
     });
 
+    console.log("masterStateData", masterStateData)
     function createLearnMoreButton(item) {
 
         if (item.eid && item.candidate_ids && item.candidate_ids.length > 0) {
@@ -216,7 +217,11 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
         let tableRows = '';
         let description = '';
         /*let rowsNonEmpty = (categoryData && categoryData.length > 0)*/
-        let rowsNonEmpty = Array.isArray(categoryData) && categoryData.some(item => item.candidate_names && item.candidate_names.length > 0);
+        let rowsNonEmpty = Array.isArray(categoryData) && categoryData.some(item => 
+            (item.candidate_names && item.candidate_names.length > 0) || 
+            (item['name of ballot'] && item['name of ballot'].trim() !== '') ||
+            (item.election_name && item.election_name.trim() !== '')
+        );
         let hasElectedOffices = false;
 
         switch (categoryTitle) {
@@ -226,7 +231,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     categoryData.sort((a, b) => (a.election_name || '').localeCompare(b.election_name || ''));
                     tableRows = categoryData.map(item => `
                         <tr>
-                            <td class="text-wrap" colspan="2">${item.candidate_names || ''}</td>
+                            <td class="text-wrap" colspan="2">${item.candidate_names || item['name of ballot'] || item.election_name}</td>
                             <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `).join('');
@@ -324,6 +329,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 break;
 
             case 'Other ballot initiatives':
+                console.log("categoryData", categoryData)
                 description = '' 
                 if (rowsNonEmpty) {
                     categoryData.sort((a, b) => {
@@ -331,6 +337,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         return a.election_name.localeCompare(b.election_name);
                     });
                     tableRows = categoryData.map(item => `
+                    console.log("item", item)
                         <tr>
                             <td class="text-wrap" colspan="2">
                                 ${item.candidate_names || item['name of ballot'] || item.election_name}
@@ -409,6 +416,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 state_house: stateData.state_house || [],
             }, 'Elected Offices');
 
+            console.log("stateData.state_level_ballots", stateData.state_level_ballots)
             stateHtml += createCategoryList(stateData.state_level_ballots , 'Other ballot initiatives', state);
 
             stateHtml += `</div>`;
