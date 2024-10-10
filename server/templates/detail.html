@@ -27,9 +27,11 @@
                             <button class="dropbtn">Choose Layer</button>
                             <div class="dropdown-content" id="layer-dropdown">
                                 <div data-value="ballot_vpm" selectionValue="democracy">Democracy ballot initiatives</div>
-                                <div data-value="presidential2" selectionValue="presidential">Presidential race</div>
-                                <div data-value="congressional2" selectionValue="senate">Senate race</div>
-                                <div data-value="house2" selectionValue="house">House races</div>
+                                <div data-value="presidential" selectionValue="presidential">Presidential race</div>
+                                <div data-value="senate" selectionValue="senate">Senate race</div>
+                                <div data-value="house" selectionValue="house">House races</div>
+                                <div data-value="state_house" selectionValue="state_house">State House races</div>
+                                <div data-value="state_senate" selectionValue="state_senate">State Senate races</div>
                                 <div data-value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</div>
                                 <div data-value="ballot_others" selectionValue="others">State-level ballot issues</div>
                             </div>
@@ -38,9 +40,11 @@
                       
                         <select id="layer" name="layer" style="display:none;">
                             <option value="ballot_vpm" selectionValue="democracy">Democracy ballot initiatives</option>
-                            <option value="presidential2" selectionValue="presidential">Presidential race</option>
-                            <option value="congressional2" selectionValue="senate">Senate race</option>
-                            <option value="house2" selectionValue="house">House races</option>
+                            <option value="presidential" selectionValue="presidential">Presidential race</option>
+                            <option value="senate" selectionValue="senate">Senate race</option>
+                            <option value="house" selectionValue="house">House races</option>
+                            <div data-value="state_house" selectionValue="state_house">State House races</div>
+                            <div data-value="state_senate" selectionValue="state_senate">State Senate races</div>
                             <option value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</option>
                             <option value="ballot_others" selectionValue="others">State-level ballot issues</option>
                         </select>
@@ -90,6 +94,8 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     });
 });
 
+    const all_data = {{ all_data | tojson | safe }}
+    console.log("all_data", all_data)
     console.log("location", {{ location | tojson | safe }})
     const state_to_number = {{ state_to_number | tojson | safe }};
     // Create a master dictionary to hold all state data
@@ -266,8 +272,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 }
                 else {
                     tableRows += `<tr><td colspan="3" class="missing">No U.S. House races have high voter power.</td></tr>`;
-                }
-                
+                }                
                 const highPowerStateSenateDistricts = categoryData.state_senate.filter(item => item.voter_power > 20);
                 
                 if (highPowerStateSenateDistricts && highPowerStateSenateDistricts.length > 0) {
@@ -434,14 +439,14 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 
         const layers = {
             
-            presidential2: 'static/data/calculated_files/geojsons/president.geojson',
-            congressional2: 'static/data/calculated_files/geojsons/senate.geojson',
-            house2: 'static/data/geojson_imports/geojson_final/house.geojson',
+            presidential: 'static/data/calculated_files/geojsons/president.geojson',
+            senate: 'static/data/calculated_files/geojsons/senate.geojson',
+            house: 'static/data/geojson_imports/geojson_final/house.geojson',
             ballot_abort: 'static/data/geojson_imports/geojson_final/ballot_abort.geojson',
             ballot_vpm: 'static/data/geojson_imports/geojson_final/ballot_VPM.geojson',
             ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson',
-            state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
-            state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
+            state_senate:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
+            state_house:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
         };
 
         const senateList = {{senate_list | tojson}};
@@ -458,7 +463,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
         
 
         function addGeoJsonLayer(layerId) {
-            const idProperty = layerId === 'house2' || 'state_leg_up' || 'state_leg_low' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
+            const idProperty = layerId === 'house' || 'state_leg_up' || 'state_leg_low' ? 'GEOIDFQ' : 'STATEFP';  //  'house' uses GEOIDFQ, others use STATEFP for unique id
             
             // Clear hover state when switching layers
             if (hoveredStateId) {
@@ -511,9 +516,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
             ['==', ['get', 'voter_power'], null], '#D3D3D3', // Handles null or undefined voter_power
             ['==', ['get', 'voter_power'], 0], '#D3D3D3', // Handles zero voter_power
-            ['==', layerId, 'presidential2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'],
-            ['==', layerId, 'congressional2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fff5e0', 33.3, '#ffebb5', 66.6, '#ffe082', 100, '#fec548'],
-            ['==', layerId, 'house2'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#F6FAFC', 33.3, '#E3EEF5', 66.6, '#D1E2ED', 100, '#B4CDE3'],
+            ['==', layerId, 'presidential'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#feedde', 33.3, '#fdbe85', 66.6, '#EF6548', 100, '#D7301F'],
+            ['==', layerId, 'senate'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fff5e0', 33.3, '#ffebb5', 66.6, '#ffe082', 100, '#fec548'],
+            ['==', layerId, 'house'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#F6FAFC', 33.3, '#E3EEF5', 66.6, '#D1E2ED', 100, '#B4CDE3'],
            // ['==', layerId, 'gubernatorial'], ['interpolate', ['linear'], ['get', 'voter_power'], 1, '#fffac2', 33.3, '#fff68f', 66.6, '#fff25c', 100, '#ffdc09'],
             ['==', layerId, 'state_leg_up'], ['interpolate', ['linear'], ['get', 'voter_power'],1, '#ffffcc', 33.3, '#a1dab4', 66.6, '#41b6c4', 100, '#225ea8'],
             ['==', layerId, 'state_leg_low'], ['interpolate', ['linear'], ['get', 'voter_power'],1, '#f1eef6', 33.3, '#d7b5d8', 66.6, '#df65b0', 100, '#ce1256'],
@@ -601,376 +606,301 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
 
 
-            // mouse event for hovering
-            map.on('mousemove', layerId + '-fill', function (e) {
-                if (e.features.length > 0) {
-                    console.log("e.features", e.features);
-                    const feature = e.features[0];
-                    const currentId = feature.properties[idProperty];  // Make sure this is the field you promote as ID
-
-                   // console.log("Feature ID:", feature.id, "Current ID:", currentId);  // Logging feature ID for debugging
-
-                    if (hoveredStateId !== currentId) {
-                        if (hoveredStateId) {
-                            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
-                        }
-                        hoveredStateId = currentId;
-                        map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
-                    }
-//for the pop ups first grab the properties from the geojson files: 
-                    const name = feature.properties['NAME'] || feature.properties['NAMELSAD'];
-
-                    const voterPower = feature.properties['voter_power'] === undefined ? 'no race' : feature.properties['voter_power'];
-                    const voterPowerhouse = feature.properties['voter_power'];
-                    const cookRating = feature.properties['voter_power'];
-                    const candidateNameR = feature.properties['R_running'] || '';
-                    const candidateNameD = feature.properties['D_running'] || '';
-                    const ballotname = feature.properties['name.of.ballot'] || '';
-                    const statename = feature.properties['state_name']
-                    if (!statename) {
-                        const stateNumber = feature.properties['state'];
-                        if (stateNumber) {
-                            // Find the state name by number in the state_to_number object
-                            statename = Object.keys(state_to_number).find(key => state_to_number[key] === stateNumber) || 'Not available';
-                        } else {
-                            statename = 'Not available';
-                        }
-                    }
-                    const description = feature.properties['description'] || 'No liberty ballots';
-
-
-        let popupContent = '';
-//For the detail map I created separate popups for each layer because there were so many layers. Here is where the popup would be updated:
-        if (layerId === 'gubernatorial') {
-            popupContent = `<div class="custom-popup">
-                <div class="popup-row">
-                    <div class="popup-label"><strong>State:</strong></div>
-                    <span class="popup-value">  ${name}</span>
-                </div>
-                <div class="popup-row">
-                    <div class="popup-label"><strong>Republican running:</strong></div>
-                    <span class="popup-value">  ${candidateNameR}</span>
-                </div>
-                <div class="popup-row">
-                    <div class="popup-label"><strong>Democrat running:</strong></div>
-                     <span class="popup-value"> ${candidateNameD}</span>
-                </div>
-                <div class="popup-row">
-                    <div class="popup-label"><strong>Voter Power:</strong></div>
-                    <span class="popup-value"> ${voterPower}</span>
-                </div>
-            </div>`;
-        } else if (layerId === 'presidential2') {
-           popupContent = `<div class="custom-popup">
-            <div class="popup-row">
-                <div class="popup-label"><strong>State:</strong></div>
-                <span class="popup-value"> ${name}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Republican running:</strong></div> 
-                <span class="popup-value"> ${candidateNameR}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Democrat running:</strong></div>
-                <span class="popup-value"> ${candidateNameD}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Voter Power:</strong></div>
-                <span class="popup-value"> ${voterPower}</span>
-            </div>
-           </div>`;
-
-        } else if (layerId === 'state_leg_up') {
-           popupContent = `<div class="custom-popup">
-            <div class="popup-row">
-                <div class="popup-label"><strong>District name:</strong></div>
-                 <span class="popup-value"> ${name}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Republican running:</strong></div>
-                <span class="popup-value">  ${candidateNameR}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Democrat running:</strong></div>
-                <span class="popup-value"> ${candidateNameD}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Voter Power:</strong></div>
-                <span class="popup-value"> ${voterPower}</span>
-            </div>
-           </div>`;
-
-        } else if (layerId === 'state_leg_low') {
-           popupContent = `<div class="custom-popup">
-            <div class="popup-row">
-                <div class="popup-label"><strong>District name:</strong></div>
-                <span class="popup-value">${name}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Republican running:</strong></div>
-                <span class="popup-value">${candidateNameR}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Democrat running:</strong></div>
-                <span class="popup-value"> ${candidateNameD}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Voter Power:</strong></div>
-                <span class="popup-value">  ${voterPower}</span>
-            </div>
-           </div>`;
-
-        } else if (layerId === 'ballot_abort') {
-   
-        const ballotMessage = ballotname === 'Not available'
-        ? 'No abortion ballots in this state'
-        : `<div class="custom-popup">
-            <div class="popup-row">
-                <div class="popup-label"><strong>State name:</strong></div>
-                <span class="popup-value"> 
-                ${statename}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Ballot name:</strong></div>
-                <span class="popup-value"> 
-                ${ballotname}</span>
-            </div>
-            <div class="popup-row">
-                <div class="popup-label"><strong>Abortion ballot description:</strong></div>
-                <span class="popup-value"> 
-                ${description}</span>
-            </div>
-            </div>`;
-
-    popupContent = `<div class="custom-popup">
-        ${ballotMessage}
-    </div>`;
-
-
-} else if (layerId === 'ballot_vpm') {
-   
-   const ballotMessage = ballotname === 'Not available'
-   ? 'No voting policy ballots in this state'
-   : `<div class="custom-popup">
-    <div class="popup-row">
-        <div class="popup-label"><strong>State name:</strong></div>
-        <span class="popup-value"> ${statename}</span>
-    </div>
-    <div class="popup-row">
-        <div class="popup-label"><strong>Ballot name(s):</strong></div>
-        <span class="popup-value"> ${ballotname}</span>
-   </div>
-   <div class="popup-row">
-        <div class="popup-label"><strong>Voting policy ballot description(s):</strong><div>
-        <span class="popup-value"> ${description}</span>
-    </div>
-   </div>`;
-
-popupContent = `<div class="custom-popup">
-   ${ballotMessage}
-</div>`;
-
-
-}
-             
-
-     else if (layerId === 'ballot_others') {
-   
-   const ballotMessage = ballotname === 'Not available'
-   ? 'No state-level ballot issues in this state'
-   : `<div class="custom-popup">
-    <div class="popup-row">
-        <div class="popup-label"><strong>State name:</strong></div>
-        <span class="popup-value"> ${statename}</span>
-    </div>
-    <div class="popup-row">
-        <div class="popup-label"><strong>Ballot or race name(s):</strong></div>
-        <span class="popup-value"> ${ballotname}</span>
-    </div>
-    <div class="popup-row">
-        <div class="popup-label"><strong>Description(s):</strong></div>
-        <span class="popup-value"> ${description}</span>
-    </div>
-   </div>`;
-
-popupContent = `<div class="custom-popup">
-   ${ballotMessage}
-</div>`;
-
-
-}
-
-     else {
-            const displayVoterPower = voterPowerhouse === undefined ? 'no competitive race' : voterPowerhouse;
-
-    popupContent = `<div class="custom-popup">
-        <div class="popup-row">
-            <div class="popup-label"><strong>${layerId === 'house2' ? 'District' : 'State'}:</strong></div>
-            <span class="popup-value">  ${name}</span>
+            // Define popup content generation functions for each layer type
+const popupContentGenerators = {
+    gubernatorial: (props) => `
+        <div class="custom-popup">
+            <div class="popup-row"><div class="popup-label"><strong>State:</strong></div><span class="popup-value">${props.name}</span></div>
+            ${props.candidateNameR && `<div class="popup-row"><div class="popup-label"><strong>Republican running:</strong></div><span class="popup-value">${props.candidateNameR}</span></div>`}
+            ${props.candidateNameD && `<div class="popup-row"><div class="popup-label"><strong>Democrat running:</strong></div><span class="popup-value">${props.candidateNameD}</span></div>`}
+            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
         </div>
-        <div class="popup-row">
-            <div class="popup-label"><strong>Republican running:</strong></div>
-            <span class="popup-value">  ${candidateNameR}</span>
+    `,
+    presidential: (props) => `
+        <div class="custom-popup">
+            <div class="popup-row"><div class="popup-label"><strong>State:</strong></div><span class="popup-value">${props.name}</span></div>
+            ${props.candidateNameR && `<div class="popup-row"><div class="popup-label"><strong>Republican running:</strong></div><span class="popup-value">${props.candidateNameR}</span></div>`}
+            ${props.candidateNameD && `<div class="popup-row"><div class="popup-label"><strong>Democrat running:</strong></div><span class="popup-value">${props.candidateNameD}</span></div>`}
+            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
         </div>
-        <div class="popup-row">
-            <div class="popup-label"><strong>Republican running:</strong></div>
-             <span class="popup-value"> ${candidateNameR}</span>
+    `,
+    state_leg: (props) => `
+        <div class="custom-popup">
+            <div class="popup-row"><div class="popup-label"><strong>District name:</strong></div><span class="popup-value">${props.name}</span></div>
+            ${props.candidateNameR && `<div class="popup-row"><div class="popup-label"><strong>Republican running:</strong></div><span class="popup-value">${props.candidateNameR}</span></div>`}
+            ${props.candidateNameD && `<div class="popup-row"><div class="popup-label"><strong>Democrat running:</strong></div><span class="popup-value">${props.candidateNameD}</span></div>`}
+            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower}</span></div>
         </div>
-        <div class="popup-row">
-            <div class="popup-label"><strong>Democrat running:</strong></div>
-            <span class="popup-value"> ${candidateNameD}</span>
+    `,
+    ballot: (props) => `
+        <div class="custom-popup">
+            ${props.ballotname === 'Not available' 
+                ? `No ${props.ballotType} ballots in this state`
+                : `
+                    <div class="popup-row"><div class="popup-label"><strong>State name:</strong></div><span class="popup-value">${props.statename}</span></div>
+                    <div class="popup-row"><div class="popup-label"><strong>Ballot name:</strong></div><span class="popup-value">${props.ballotname}</span></div>
+                    <div class="popup-row"><div class="popup-label"><strong>Description:</strong></div><span class="popup-value">${props.description}</span></div>
+                `}
         </div>
-        <div class="popup-row">
-            <div class="popup-label"><strong>Voter Power:</strong></div>
-            <span class="popup-value"> ${displayVoterPower}</span>
+    `,
+    default: (props) => `
+        <div class="custom-popup">
+            <div class="popup-row"><div class="popup-label"><strong>${props.layerId === 'house' ? 'District' : 'State'}:</strong></div><span class="popup-value">${props.name}</span></div>
+            ${props.candidateNameR && `<div class="popup-row"><div class="popup-label"><strong>Republican running:</strong></div><span class="popup-value">${props.candidateNameR}</span></div>`}
+            ${props.candidateNameD && `<div class="popup-row"><div class="popup-label"><strong>Democrat running:</strong></div><span class="popup-value">${props.candidateNameD}</span></div>`}
+            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPowerhouse === undefined ? 'no competitive race' : props.voterPowerhouse}</span></div>
         </div>
-        </div>`;
+    `
+};
+
+// Mapping of layer IDs to popup content generator functions
+const layerToPopupGenerator = {
+    gubernatorial: popupContentGenerators.gubernatorial,
+    presidential: popupContentGenerators.presidential,
+    state_leg_up: popupContentGenerators.state_leg,
+    state_leg_low: popupContentGenerators.state_leg,
+    ballot_abort: (props) => popupContentGenerators.ballot({...props, ballotType: 'abortion'}),
+    ballot_vpm: (props) => popupContentGenerators.ballot({...props, ballotType: 'voting policy'}),
+    ballot_others: (props) => popupContentGenerators.ballot({...props, ballotType: 'state-level ballot issues'})
+};
+
+// After the all_data declaration
+let indexedData = {};
+if (Array.isArray(all_data) && all_data.length > 0) {
+    indexedData = all_data.reduce((acc, row) => {
+        let key = row.state || row.STATEFP;
+        if (['presidential', 'governor', 'senate'].includes(row.race_type.toLowerCase())) {
+            key = `${row.state}-${row.race_type.toLowerCase()}`;
+        } else if (row.race_type === 'House') {
+            key = `${row.state}-house-${row.congress.toString().padStart(2, '0')}`;
+        } else if (row.race_type === 'Democracy Repair') {
+            key = `${row.state}-ballot_vpm`;
+        } else if (['Direct Democracy', 'Reproductive Rights', 'Civil Liberties'].includes(row.race_type)) {
+            key = `${row.state}-ballot_others`;
+        } else {
+            // Handle other race types if needed
+            return acc;
         }
+
+        if (!acc[key]) acc[key] = [];
+        acc[key].push(row);
+        return acc;
+    }, {});
+} else {
+    console.warn('all_data is not properly defined or is empty');
+}
+
+function findMatchingRows(feature, layerId) {
+    if (!indexedData) return [];
+    
+    const state = feature.properties.state || feature.properties.STATEFP;
+    let key = `${state}-`;
+    
+    switch (layerId) {
+        case 'ballot_abort':
+        case 'ballot_others':
+            key += 'ballot_others';
+            break;
+        case 'ballot_vpm':
+            key += 'ballot_vpm';
+            break;
+        case 'presidential':
+            key += 'presidential';
+            break;
+        case 'senate':
+            key += 'senate';
+            break;
+        case 'house':
+            //make sre district is a string of size 2 with leading 0 if necessary
+            const district = feature.properties.congress.toString().padStart(2, '0');
+            key += `house-${district}`;
+            break;
+        case 'gubernatorial':
+            key += 'governor';
+            break;
+        default:
+            console.warn(`Unhandled layerId: ${layerId}`);
+            return [];
+    }
+    
+    console.log("Searching for key:", key);
+    const result = indexedData[key] || [];
+    return result;
+}
+
+// Mouse event for hovering
+map.on('mousemove', layerId + '-fill', function (e) {
+    if (e.features.length > 0) {
+        const feature = e.features[0];
+        const currentId = feature.properties[idProperty];
+
+        if (hoveredStateId !== currentId) {
+            if (hoveredStateId) {
+                map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+            }
+            hoveredStateId = currentId;
+            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: true });
+        }
+
+        let props = {
+            name: feature.properties['NAME'] || feature.properties['NAMELSAD'],
+            voterPower: feature.properties['voter_power'] === undefined ? 'no race' : feature.properties['voter_power'],
+            voterPowerhouse: feature.properties['voter_power'],
+            candidateNameR: feature.properties['R_running'] || '',
+            candidateNameD: feature.properties['D_running'] || '',
+            ballotname: feature.properties['name.of.ballot'] || '',
+            statename: feature.properties['state_name'] || getStateNameFromNumber(feature.properties['state']),
+            description: feature.properties['description'] || 'No description available',
+            layerId: layerId,
+            matchingRows: findMatchingRows(feature, layerId)
+        };
+        console.log("Matching rows", props.matchingRows)
+
+        const popupGenerator = layerToPopupGenerator[layerId] || popupContentGenerators.default;
+        const popupContent = popupGenerator(props);
+
+        popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+        map.getCanvas().style.cursor = 'crosshair';
+    } else {
+        resetHoverState();
+    }
+});
+
+map.on('mouseleave', layerId + '-fill', resetHoverState);
+
+function resetHoverState() {
+    if (hoveredStateId) {
+        map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
+        hoveredStateId = null;
+    }
+    map.getCanvas().style.cursor = '';
+    popup.remove();
+}
+
+function getStateNameFromNumber(stateNumber) {
+    if (stateNumber) {
+        return Object.keys(state_to_number).find(key => state_to_number[key] === stateNumber) || 'Not available';
+    }
+    return 'Not available';
+}
+
+// Update the current layer ID
+currentLayerId = layerId;
+}
+
+            document.querySelectorAll('.dropdown-content div').forEach(item => {
+                item.addEventListener('click', function() {
+                    const selectedValue = this.getAttribute('data-value');
+                    const selectedText = this.textContent;
+                    document.querySelector('.dropbtn').textContent = selectedText; 
+                });
+            });
 
             
 
-                    popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
-                    map.getCanvas().style.cursor = 'crosshair';
-                } else {
-                    if (hoveredStateId) {
-                        map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
-                        hoveredStateId = null;
-                    }
-                    map.getCanvas().style.cursor = '';
-                    popup.remove();
-                }
-            });
-
-            map.on('mouseleave', layerId + '-fill', function () {
-                if (hoveredStateId) {
-                    map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
-                    hoveredStateId = null;
-                }
-                map.getCanvas().style.cursor = '';
-                popup.remove();
-            });
-
-            // Update the current layer ID
-            currentLayerId = layerId;
-        }
-
-        document.querySelectorAll('.dropdown-content div').forEach(item => {
-            item.addEventListener('click', function() {
-                const selectedValue = this.getAttribute('data-value');
-                const selectedText = this.textContent;
-                document.querySelector('.dropbtn').textContent = selectedText; 
-            });
-        });
+            // Initial layer setup on map load
+        map.on('load', function () {
+            var dropdownOptions = document.querySelectorAll('#layer-dropdown div');
+            var serverSelection = JSON.parse('{{ selection|default("house", true)|tojson|safe }}');
+            var layerToAdd = 'house'; // Default layer
+           // var dropdown = document.getElementById('layer');
+            var foundMatch = false;
+            var buttonText = 'Choose Layer';
 
         
-
-        // Initial layer setup on map load
-    map.on('load', function () {
-        var dropdownOptions = document.querySelectorAll('#layer-dropdown div');
-        var serverSelection = JSON.parse('{{ selection|default("house", true)|tojson|safe }}');
-        var layerToAdd = 'house2'; // Default layer
-       // var dropdown = document.getElementById('layer');
-        var foundMatch = false;
-        var buttonText = 'Choose Layer';
-
-    
-        // Check if serverSelection corresponds to a valid layer option
-      /*  for (var i = 0; i < dropdown.options.length; i++) {
-            var option = dropdown.options[i];
-            if (option.getAttribute('selectionValue') === serverSelection) {
-                layerToAdd = option.value;
-                option.selected = true;
-                foundMatch = true;
-                break;
-            }
-        }*/
-
-        dropdownOptions.forEach(function(option) {
-            if (option.getAttribute('selectionValue') === serverSelection) {
-                layerToAdd = option.getAttribute('data-value');
-                option.classList.add('selected'); 
-                    foundMatch = true;
-                    buttonText = option.textContent;
-                }
-            });
-
-        // If no match found, look for house2 or house option
-        if (!foundMatch) {
-            dropdownOptions.forEach(function(option) {
-                if (option.getAttribute('data-value') === 'house2' || option.getAttribute('selectionValue') === 'house') {
-                    option.classList.add('selected'); 
-                    layerToAdd = 'house2';
-                    buttonText = option.textContent; 
-                }
-            });
-        }
-
-      /* if (!foundMatch) {
-            for (var i = 0; i < dropdown.options.length; i++) {
+            // Check if serverSelection corresponds to a valid layer option
+          /*  for (var i = 0; i < dropdown.options.length; i++) {
                 var option = dropdown.options[i];
-                if (option.value === 'house2' || option.getAttribute('selectionValue') === 'house') {
+                if (option.getAttribute('selectionValue') === serverSelection) {
+                    layerToAdd = option.value;
                     option.selected = true;
-                    layerToAdd = 'house2';
+                    foundMatch = true;
                     break;
                 }
-            }
-        }*/
+            }*/
 
-        var selectElement = document.getElementById('layer');
-        selectElement.value = layerToAdd;
-        selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+            dropdownOptions.forEach(function(option) {
+                if (option.getAttribute('selectionValue') === serverSelection) {
+                    layerToAdd = option.getAttribute('data-value');
+                    option.classList.add('selected'); 
+                        foundMatch = true;
+                        buttonText = option.textContent;
+                    }
+                });
 
-        document.querySelector('.dropbtn').textContent = buttonText;
-
-
-        //trigger event for change in layer and attach the corrrect e.target.value
-
-       /*     console.log('About to trigger change event with value:', layerToAdd);
-            document.getElementById('layer').value = layerToAdd;
-            document.getElementById('layer').dispatchEvent(new Event('change', {bubbles: true}));*/
-
-           
-
-
-        //addGeoJsonLayer(layerToAdd);
-        //console.log(`Selected = ${serverSelection} and layer = ${layerToAdd}`);
-        const layers = map.getStyle().layers;
-        layers.forEach((layer) => {
-            const currentFilters = map.getFilter(layer.id);
-            // if layer includes label or state filter for USA
-            if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
-                if (currentFilters) {
-                    map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
-                } else {
-                    map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
-                }
-            }
-        });
-
-});
-
-        document.getElementById('layer').addEventListener('change', function (e) {
-            const value = e.target.value;
-            if (value in layers) {
-                addGeoJsonLayer(value);
-            } else {
-                Object.keys(layers).forEach(id => {
-                    if (map.getLayer(id + '-fill')) {
-                        map.removeLayer(id + '-fill');
-                        map.removeLayer(id + '-line');
-                        map.removeLayer(id + '-hover-line');  // Ensure hover line is also removed
-                        map.removeSource(id);
+            // If no match found, look for house or house option
+            if (!foundMatch) {
+                dropdownOptions.forEach(function(option) {
+                    if (option.getAttribute('data-value') === 'house' || option.getAttribute('selectionValue') === 'house') {
+                        option.classList.add('selected'); 
+                        layerToAdd = 'house';
+                        buttonText = option.textContent; 
                     }
                 });
             }
-        });
+
+          /* if (!foundMatch) {
+                for (var i = 0; i < dropdown.options.length; i++) {
+                    var option = dropdown.options[i];
+                    if (option.value === 'house' || option.getAttribute('selectionValue') === 'house') {
+                        option.selected = true;
+                        layerToAdd = 'house';
+                        break;
+                    }
+                }
+            }*/
+
+            var selectElement = document.getElementById('layer');
+            selectElement.value = layerToAdd;
+            selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+
+            document.querySelector('.dropbtn').textContent = buttonText;
 
 
-                </script>
+            //trigger event for change in layer and attach the corrrect e.target.value
+
+           /*     console.log('About to trigger change event with value:', layerToAdd);
+                document.getElementById('layer').value = layerToAdd;
+                document.getElementById('layer').dispatchEvent(new Event('change', {bubbles: true}));*/
+
+               
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+            //addGeoJsonLayer(layerToAdd);
+            //console.log(`Selected = ${serverSelection} and layer = ${layerToAdd}`);
+            const layers = map.getStyle().layers;
+            layers.forEach((layer) => {
+                const currentFilters = map.getFilter(layer.id);
+                // if layer includes label or state filter for USA
+                if (layer.id.includes('label') || layer.id.includes('state') || layer.id.includes('admin')) {
+                    if (currentFilters) {
+                        map.setFilter(layer.id, ['all', currentFilters, ['==', ['get', 'iso_3166_1'], 'US']]);
+                    } else {
+                        map.setFilter(layer.id, ['==', ['get', 'iso_3166_1'], 'US']);
+                    }
+                }
+            });
+
+    });
+
+            document.getElementById('layer').addEventListener('change', function (e) {
+                const value = e.target.value;
+                if (value in layers) {
+                    addGeoJsonLayer(value);
+                } else {
+                    Object.keys(layers).forEach(id => {
+                        if (map.getLayer(id + '-fill')) {
+                            map.removeLayer(id + '-fill');
+                            map.removeLayer(id + '-line');
+                            map.removeLayer(id + '-hover-line');  // Ensure hover line is also removed
+                            map.removeSource(id);
+                        }
+                    });
+                }
+            });
+
+
+document.addEventListener("DOMContentLoaded", function () {
     const dropdownButton = document.querySelector(".dropbtn");
     const dropdownContent = document.getElementById("layer-dropdown");
     

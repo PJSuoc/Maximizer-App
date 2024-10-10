@@ -59,7 +59,6 @@ gmaps = googlemaps.Client(key=google_key)
 # path to db
 DATABASE = "powermax.db"
 
-
 def get_db_conn():
     """
     gets connection to database
@@ -86,7 +85,6 @@ def dataloader():
 with app.app_context():
     logging.info("VM Activated")
     ELECTIONS, ALLSHAPES, CANDIDATES = dataloader()
-
 
 # Loading full ballot initiatives data, this might be temporary
 if Path("config.py").is_file():  # Local testing
@@ -399,6 +397,7 @@ def election_delivery_function_structured(location, selection=None):
         governor_layer=lookup_dict["layers"]["Governor"],
         dem_ballot_layer=lookup_dict["layers"]["Democracy Repair"],
         state_level_layer=lookup_dict["layers"]["State Level"],
+        all_data=ELECTIONS.to_dict(orient="records"),
         ballot_initiatives=ballot_initiatives,
         state_to_number=STATEDICT,
         lat=lat,
