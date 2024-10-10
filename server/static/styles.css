@@ -84,9 +84,7 @@ body { margin: 0;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
-    
 }
-
 
 #legend-box {
     display: flex;
@@ -110,24 +108,26 @@ body { margin: 0;
     box-shadow: 6px 6px 0 -1px var(--jet);
     transition: opacity 1s ease;
     cursor: pointer;
+   background-color: initial;
 }
 
-.legend-btn.highlight {
+.legend-btn.highlight,.legend-btn.active  {
     transform: scale(1.05);
-    background-color: var(--jet);
     color: var(--white);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    background-color: var(--jet)!important;
+    box-shadow: 5px 5px 0 -2px var(--btn-bg-color);
 }
 .legend-btn:not(.highlight) {
+    background-color: initial;
     animation-play-state: paused;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
 .legend-btn:is(:hover, :focus-visible) {
-  background-color: var(--jet);
+  background-color: var(--jet)!important;
   color: var(--white);
-  box-shadow: 5px 5px 0 -2px rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 0 -2px var(--btn-bg-color);
 }
 
 .video-wrapper {

@@ -57,6 +57,10 @@
 .get-involved-sec .service-card:hover .btn {
   background-color: #000; 
   color: #fff;
+  box-shadow:none;
+  
+ 
+  
 }
 
 .get-involved-sec h3 {
@@ -85,6 +89,7 @@
 }
 
 
+
 .get-involved-sec .service-card:hover p {
   color: #f0f0f0;
 }
@@ -108,9 +113,9 @@
 }
 
 .campaign-url .btn.btn-primary, .donate-url .btn.btn-primary {
-    padding: 0.5em 1em;          /* 设置按钮的内边距，上下是 0.25em，左右是 1em */
-    outline: 0em solid #0000;     /* 禁用按钮的 outline（即按钮被点击时的外部边框），outline 的宽度为 0，颜色为透明 */
-    border-radius: 4em;           /* 设置按钮的圆角半径为 4em，使按钮的边角变得非常圆 */
+    padding: 0.5em 1em;        
+    outline: 0em solid #0000;    
+    border-radius: 4em;           
 }
 
 .button-container:only-child {
@@ -145,6 +150,10 @@
         border-radius:125px / 12px;
        box-shadow:0 0 8px #555555;
 }
+
+.get-involved-sec .service-card:hover .partydividermask:after {
+    box-shadow:0 0 8px black;
+}
 .partydivider span {
     width:40px; height:40px; 
     position:absolute; 
@@ -154,6 +163,11 @@
     box-shadow:0 2px 4px  #777777;
     background:#fff;
 }
+
+.get-involved-sec .service-card:hover .partydivider span {
+    box-shadow:0 2px 4px  black;
+}
+
 .partydivider i {
     position:absolute;
     top:0px; bottom:0px;
@@ -167,6 +181,11 @@
     
 }
 
+.get-involved-sec .service-card:hover .partydivider i {
+    color:black;
+    border:1px dashed black;
+}
+
 .election-denier {
     display: flex;
     align-items: flex-start;
@@ -176,7 +195,36 @@
     border-radius: var(--border-radius);
     gap: 10px;
     flex-wrap: wrap;
+    position: relative; 
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.6);
+    transition: all 0.6s ease;
+   
+   /* animation: rotateBorder 10s linear infinite;*/
 }
+
+.get-involved-sec .service-card:hover .election-denier{
+    transform: translateY(-10px); 
+   
+    box-shadow: 6px 6px 10px -5px rgba(0, 0, 0, 1); 
+
+    border: 5px solid var(--warning-border); 
+
+
+}
+
+/*
+@keyframes rotateBorder {
+    0% {
+        box-shadow: 0 0 5px 5px #FFD700;
+    }
+    50% {
+        box-shadow: 0 0 5px 5px #FFA500;
+    }
+    100% {
+        box-shadow: 0 0 5px 5px #b00;
+    }
+}*/
+
 
 .election-denier__icon {
     background-color: var(--icon-bg);
@@ -236,27 +284,10 @@
   }
 }
 
-
-
-
-
 </style>
 {% endblock %}
 
 {% block main %}
-
-<body id="gi-page">
-    <!-- Add this block for flashed messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                {{ message }} <a href="{{ url_for('home') }}" class="alert-link">Return to homepage</a>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
 
 
     <div class="container democracy" id="election-desc">
@@ -279,7 +310,6 @@
                         <p>Description: {{ item.name | capitalize }}</p>
 
                         <div class="button-container">
-
                             <div class="campaign-url">
                                 <a class="btn btn-primary" href="{{ item.campaign_link }}" target="_blank" role="button">Learn more</a>
                             </div>
@@ -288,26 +318,17 @@
                                 <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
                             </div>
                             {% endif %}
-
-
                         </div>
-
-                        
                     </div>
                   </div>
-                  {% else %}
-
+                {% else %}
                     <!-- candidate -->
                     <div class="col">
                         <div class="service-card">
-                          
-    
-
                             <h3>{{ item.party }}</h3>
 
                             <div class="partydivider">
                                 <div class="partydividermask">
-                                  
                                 </div>
                                 <span>
                                     {% if item.party == 'Republican Party' %}
@@ -318,8 +339,7 @@
                                     <i class="fa-solid fa-scale-balanced"></i>
                                     {% endif %}
                                 </span>
-                                  
-                                </div>
+                            </div>
 
                             <h3>{{ item.name }}</h3>
                             {% if item.election_denier == "1" %}
@@ -348,93 +368,18 @@
                                         <a class="btn btn-primary" href="{{ item.donation_link }}" target="_blank" role="button">Donate</a>
                                     </div>
                                 {% endif %}
-
                             </div>
-
-                           
                         </div>
                     </div>
                 {% endif %}
             {% endfor %}
             </div>
-
         </div>
-
     </section>
-    
 
-  <!--  
-    
-    <div class="horizontal">
-		<div class="vertical">
-			<div class="scrolling-wrapper">
-            {% for item in candidates %}
-              {% set special_categories = ["Direct Democracy", "Reproductive Rights", "Democracy Repair", "Civil Liberties"] %}
-              {% if item.race_type in special_categories %}
-
-                    <article class="article-body first-pinned">
-                        <section class="pinned-note">
-                            <span class="pinit"></span>
-                            <div class="nodes">
-                                <div class="left-strip">
-                                    <h1 class="pinned-heading"> {{item.race_type}} </h1>
-                                    <h1 class="pinned-heading"> {{item.party}} </h1>
-                    <p class="pinned-description"> Description: {{item.name|capitalize}} </p>
-                    <li class="campaign-url">
-                        <a class="btn btn-primary" href="{{item.campaign_link}}" target="_blank"
-                        role="button">Learn more</a>
-                        </li>
-                        {% if item.donation_link and item.donation_link|lower != 'nan' %}
-                        <li class="donate-url">
-                            <a class="btn btn-primary" href="{{item.donation_link}}" target="_blank"
-                            role="button">Donate</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                {% else %}
-                <article class="article-body second-pinned">
-					<section class="pinned-note">
-						<span class="pinit"></span>
-						<div class="nodes">
-							<div class="left-strip">
-                                <h1 class="pinned-heading"> {{item.party}} </h1>
-                                <p class="pinned-description"> {{item.name}} </p>
-                        {% if item.election_denier == "1" %}
-                        <li class="election-denier-warning alert alert-warning">
-                            <span class="desc-title"> Skeptic Flag: </span> 
-                            <span class="warning-text">This candidate has made statements doubting 
-                                the electoral proceedings of free and fair elections in the 
-                                United States. However, American elections are among the best-administered in 
-                                the world. For more on such claims, see 
-                                <a href="https://www.electiondeniers.org" target="_blank">www.electiondeniers.org</a>.
-                            </span>
-                        </li>
-                        {% else %}
-                        <li class="campaign-url">
-                            <a class="btn btn-primary" href="{{item.campaign_link}}" target="_blank"
-                            role="button">Learn more</a>
-                        </li>
-
-                            {% if item.donation_link and item.donation_link|lower != 'nan' %}
-                            <li class="donate-url">
-                                <a class="btn btn-primary" href="{{item.donation_link}}" target="_blank"
-                                role="button">Donate</a>
-                                </li>
-                            {% endif %} 
-                        {% endif %}
-                    </ul>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>-->
 </body>
 
-<script>
-  
-            
-
-</script>
+=
 
 
 {% endblock %}
