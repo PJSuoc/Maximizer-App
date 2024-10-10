@@ -6,7 +6,7 @@
  <style>
     .footer-container {
         position: relative;
-    }
+    }e
     
     .footer-cta {
         border-bottom: 1px solid #373636;
@@ -688,7 +688,7 @@
         }
 
         const maxRetries = 10;
-        const baseDelay = 1000; // 1 second
+        const baseDelay = 500; // 0.5 seconds
 
         for (let attempt = 0; attempt < maxRetries; attempt++) {
             const startTime = performance.now();
@@ -697,172 +697,115 @@
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+
                 const data = await response.json();
                 geoJsonCache[layerId] = data;
                 
                 const endTime = performance.now();
                 const downloadTime = (endTime - startTime) / 1000; // Convert to seconds
                 console.log(`GeoJSON for ${layerId} loaded in ${downloadTime.toFixed(2)} seconds`);
-                
-                
-                const endTime = performance.now();
-                const downloadTime = (endTime - startTime) / 1000; // Convert to seconds
-                console.log(`GeoJSON for ${layerId} loaded in ${downloadTime.toFixed(2)} seconds`);
-                
                 return data;
             } catch (error) {
                 console.error(`Attempt ${attempt + 1} failed to load ${layerId}:`, error);
-                
                 if (attempt === maxRetries - 1) {
                     console.error(`Failed to load ${layerId} after ${maxRetries} attempts`);
                     throw error;
                 }
-
                 // Exponential backoff
-                const delay = baseDelay * Math.pow(2, attempt);
+                const delay = baseDelay * (attempt + 1);
                 console.log(`Retrying in ${delay / 1000} seconds...`);
                 await new Promise(resolve => setTimeout(resolve, delay));
             }
         }
     }
 
-        // Load baseStatesMap first
-        const baseStatesMapPromise = loadGeoJson('baseStatesMap');
+    // Load baseStatesMap first
+    const baseStatesMapPromise = loadGeoJson('baseStatesMap');
 
-        async function lazyLoadOtherLayers() {
-            const otherLayers = Object.keys(layers).filter(layer => layer !== 'baseStatesMap');
-            for (const layer of otherLayers) {
-                loadGeoJson(layer).catch(error => console.error(`Error lazy loading ${layer}:`, error));
-            }
-        }
-
-        async function addGeoJsonLayer(layerId) {
-            const config = layerConfig[layerId];
-            const idProperty = config.idProperty;
-            console.log("Adding layer:", layerId);
-                console.error(`Attempt ${attempt + 1} failed to load ${layerId}:`, error);
-                
-                if (attempt === maxRetries - 1) {
-                    console.error(`Failed to load ${layerId} after ${maxRetries} attempts`);
-                    throw error;
-                }
-
-                // Exponential backoff
-                const delay = baseDelay * Math.pow(2, attempt);
-                console.log(`Retrying in ${delay / 1000} seconds...`);
-                await new Promise(resolve => setTimeout(resolve, delay));
-            }
+    async function lazyLoadOtherLayers() {
+        const otherLayers = Object.keys(layers).filter(layer => layer !== 'baseStatesMap');
+        for (const layer of otherLayers) {
+            loadGeoJson(layer).catch(error => console.error(`Error lazy loading ${layer}:`, error));
         }
     }
 
-        // Load baseStatesMap first
-        const baseStatesMapPromise = loadGeoJson('baseStatesMap');
-
-        async function lazyLoadOtherLayers() {
-            const otherLayers = Object.keys(layers).filter(layer => layer !== 'baseStatesMap');
-            for (const layer of otherLayers) {
-                loadGeoJson(layer).catch(error => console.error(`Error lazy loading ${layer}:`, error));
-            }
+    async function addGeoJsonLayer(layerId) {
+        const config = layerConfig[layerId];
+        const idProperty = config.idProperty;
+        console.log("Adding layer:", layerId);
+        
+        if (map.getSource(currentLayerId)) {
+            map.removeLayer(currentLayerId + '-fill');
+            map.removeLayer(currentLayerId + '-line');
+            map.removeLayer(currentLayerId + '-hover-line');
+            map.removeSource(currentLayerId);
         }
 
-        async function addGeoJsonLayer(layerId) {
-            const config = layerConfig[layerId];
-            const idProperty = config.idProperty;
-            console.log("Adding layer:", layerId);
-            if (map.getSource(currentLayerId)) {
-                map.removeLayer(currentLayerId + '-fill');
-                map.removeLayer(currentLayerId + '-line');
-                map.removeLayer(currentLayerId + '-hover-line');
-                map.removeLayer(currentLayerId + '-hover-line');
-                map.removeSource(currentLayerId);
-            }
-            }
-
-            if (!geoJsonCache[config.baseMap]) {
-                await loadGeoJson(config.baseMap);
-            if (!geoJsonCache[config.baseMap]) {
-                await loadGeoJson(config.baseMap);
-            }
-
-            map.addSource(layerId, {
-                type: 'geojson',
-                data: geoJsonCache[config.baseMap],
-                promoteId: idProperty
-                data: geoJsonCache[config.baseMap],
-                promoteId: idProperty
-            });
-            console.log("layerId:", layerId);
-            console.log("createFillPaint(layerId, config):", createFillPaint(layerId, config));
-            map.addLayer({
-                id: layerId + '-fill',
-                type: 'fill',
-                source: layerId,
-                paint: {
-                    'fill-color': createFillPaint(layerId, config),
-                    'fill-opacity': 1
-                }
-            }, 'albersusa-points');
-
-            map.addLayer({
-                id: layerId + '-line',
-                type: 'line',
-                source: layerId,
-                paint: {
-                    'line-color': config.borderColor || COLOR_BORDER,
-                    'line-width': config.borderWidth || 1.5,
-                    'line-opacity': 1
-                }
-            }, 'albersusa-points');
-
-            map.addLayer({
-                id: layerId + '-hover-line',
-                type: 'line',
-                source: layerId,
-                paint: {
-                    'line-color': ['case', 
-                        ['boolean', ['feature-state', 'hover'], false], 
-                        COLOR_HOVER, 
-                        config.borderColor || COLOR_BORDER
-                    ],
-                    'line-color-transition': { duration: 1000 },
-                    'line-width': ['case', 
-                        ['boolean', ['feature-state', 'hover'], false], 
-                        4, 
-                        config.borderWidth || 1.5
-            map.addLayer({
-                id: layerId + '-hover-line',
-                type: 'line',
-                source: layerId,
-                paint: {
-                    'line-color': ['case', 
-                        ['boolean', ['feature-state', 'hover'], false], 
-                        COLOR_HOVER, 
-                        config.borderColor || COLOR_BORDER
-                    ],
-                    'line-color-transition': { duration: 1000 },
-                    'line-width': ['case', 
-                        ['boolean', ['feature-state', 'hover'], false], 
-                        4, 
-                        config.borderWidth || 1.5
-                    ],
-                    'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0],
-                }
-            });
-
-            map.moveLayer(layerId + '-hover-line');
-            currentLayerId = layerId;
+        if (!geoJsonCache[config.baseMap]) {
+            await loadGeoJson(config.baseMap);
         }
 
-        let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
-
-
-        const popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
+        map.addSource(layerId, {
+            type: 'geojson',
+            data: geoJsonCache[config.baseMap],
+            promoteId: idProperty
         });
+
+        console.log("layerId:", layerId);
+        console.log("createFillPaint(layerId, config):", createFillPaint(layerId, config));
+        
+        map.addLayer({
+            id: layerId + '-fill',
+            type: 'fill',
+            source: layerId,
+            paint: {
+                'fill-color': createFillPaint(layerId, config),
+                'fill-opacity': 1
+            }
+        }, 'albersusa-points');
+
+        map.addLayer({
+            id: layerId + '-line',
+            type: 'line',
+            source: layerId,
+            paint: {
+                'line-color': config.borderColor || COLOR_BORDER,
+                'line-width': config.borderWidth || 1.5,
+                'line-opacity': 1
+            }
+        }, 'albersusa-points');
+
+        map.addLayer({
+            id: layerId + '-hover-line',
+            type: 'line',
+            source: layerId,
+            paint: {
+                'line-color': ['case', 
+                    ['boolean', ['feature-state', 'hover'], false], 
+                    COLOR_HOVER, 
+                    config.borderColor || COLOR_BORDER
+                ],
+                'line-color-transition': { duration: 1000 },
+                'line-width': ['case', 
+                    ['boolean', ['feature-state', 'hover'], false], 
+                    4, 
+                    config.borderWidth || 1.5
+                ],
+                'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0],
+            }
+        });
+
+        map.moveLayer(layerId + '-hover-line');
+        currentLayerId = layerId;
+    }
+
+    let hoveredStateId = null; // This will hold the ID of the feature under the mouse.
+
+
+    const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
 
 
     function createFillPaint(layerId, config) {
@@ -1033,6 +976,7 @@
         }
     });
 
+
     map.on('mouseleave', function () {
         let layerId = currentLayerId;
         if (hoveredStateId) {
@@ -1042,32 +986,9 @@
         map.getCanvas().style.cursor = '';
         popup.remove();
     });
-    map.on('mouseleave', function () {
-        let layerId = currentLayerId;
-        if (hoveredStateId) {
-            map.setFeatureState({source: layerId, id: hoveredStateId}, { hover: false });
-            hoveredStateId = null;
-        }
-        map.getCanvas().style.cursor = '';
-        popup.remove();
-    });
 
 
 
-
-    map.on('load', async function () {
-        try {
-            const mapDiv = document.getElementById('map'); 
-            const width = mapDiv.offsetWidth;
-            const height = mapDiv.offsetHeight;
-
-            function fitMapToContainer() {
-                const width = mapDiv.offsetWidth;
-                const height = mapDiv.offsetHeight;
-                
-                const aspectRatio = width / height;
-                let bound_value;
-                let bounds;
     map.on('load', async function () {
         try {
             const mapDiv = document.getElementById('map'); 
@@ -1097,82 +1018,68 @@
                     animate: false 
                 });
             }
-                if (aspectRatio >= 1) {
-                    // Landscape mode
-                    bound_value = 15 * Math.max(1, aspectRatio);
-                    bounds = [[-bound_value, -bound_value / aspectRatio], [bound_value, bound_value / aspectRatio]];
-                } else {
-                    // Portrait mode
-                    bound_value = 15 / Math.min(1, aspectRatio);
-                    bounds = [[-bound_value * aspectRatio, -bound_value], [bound_value * aspectRatio, bound_value]];
-                }
-                
-                map.fitBounds(bounds, { 
-                    padding: {top: 0, bottom: 0, left: 50, right: 50}, 
-                    animate: false 
+            
+            fitMapToContainer();
+            window.addEventListener('resize', fitMapToContainer);
+
+            console.log("Loading base states map...");
+            const baseStatesMapData = await baseStatesMapPromise;
+            console.log("Base states map loaded:", baseStatesMapData);
+
+            if (baseStatesMapData) {
+                console.log("Adding starting layer");
+                await addGeoJsonLayer('starting');
+                console.log("Starting layer added");
+
+                lazyLoadOtherLayers();
+            } else {
+                console.error("Failed to load base states map data");
+            }
+
+            // Add Google Analytics tracking here
+            map.on('click', function (e) {
+                gtag('event', 'map_click', {
+                    'event_category': 'Map Interaction',
+                    'event_label': 'Map Clicked'
+                });
+            });
+
+            // Track legend button clicks
+            document.querySelectorAll('.legend-btn').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    let level = this.getAttribute('data-level');
+                    gtag('event', 'legend_click', {
+                        'event_category': 'Legend Interaction',
+                        'event_label': level
+                    });
+                });
+            });
+
+            // Track search form submissions
+            let searchForm = document.getElementById('searchForm');
+            if (searchForm) {
+                searchForm.addEventListener('submit', function (e) {
+                    e.preventDefault(); 
+
+                    gtag('event', 'search', {
+                        'event_category': 'interaction',
+                        'event_label': 'ZIP search',
+                        'value': document.getElementById('location').value
+                    });
+
+                    // Don't forget to actually submit the form
+                    this.submit();
                 });
             }
 
-            fitMapToContainer();
-            window.addEventListener('resize', fitMapToContainer);
+            // YouTube tracking can remain in a separate script tag if needed
 
-            console.log("Loading base states map...");
-            const baseStatesMapData = await baseStatesMapPromise;
-            console.log("Base states map loaded:", baseStatesMapData);
-
-            if (baseStatesMapData) {
-                console.log("Adding starting layer");
-                await addGeoJsonLayer('starting');
-                console.log("Starting layer added");
-
-                lazyLoadOtherLayers();
-            } else {
-                console.error("Failed to load base states map data");
-            }
         } catch (error) {
             console.error('Error during initial map setup:', error);
         }
     });
-            fitMapToContainer();
-            window.addEventListener('resize', fitMapToContainer);
+           
 
-            console.log("Loading base states map...");
-            const baseStatesMapData = await baseStatesMapPromise;
-            console.log("Base states map loaded:", baseStatesMapData);
-
-            if (baseStatesMapData) {
-                console.log("Adding starting layer");
-                await addGeoJsonLayer('starting');
-                console.log("Starting layer added");
-
-                lazyLoadOtherLayers();
-            } else {
-                console.error("Failed to load base states map data");
-            }
-        } catch (error) {
-            console.error('Error during initial map setup:', error);
-        }
-    });
-
-
-        // Wait for the source to load
-        map.once('idle', function() {   
-            const DEBUG_DISABLE_ANIMATION = false;
-            if (DEBUG_DISABLE_ANIMATION) {
-                animationRunning = false;
-            }
-            let animationId;
-            let features = [];
-            let allFeatures = [];
-            let powerLevels = LEVELS;
-            let currentPowerLevelIndex = 0;
-            let skipFadeFirst = true;
-            let fadeInDelay = 1500;
-            const nextGroupDelay = 2000; // Increased delay between power levels
-            const fadeOutDelay = 1500;
-            const steps = 30;
-            const stateColors = new Map();
-            const stateOpacities = new Map();
         // Wait for the source to load
         map.once('idle', function() {   
             const DEBUG_DISABLE_ANIMATION = false;
@@ -1441,48 +1348,9 @@ window.addEventListener('pageshow', function(event) {
 });
 
     </script>
+
+<!-- Keep the YouTube tracking in a separate script tag -->
 <script>
-
-// google analytics tracking
-
-// tracking map clicks
-if (typeof map !== 'undefined') {
-        map.on('click', function (e) {
-            gtag('event', 'map_click', {
-                'event_category': 'Map Interaction',
-                'event_label': 'Map Clicked'
-            });
-        });
-    }
-    
-    // tracking legend button clicks
-       let legendButtons = document.querySelectorAll('.legend-btn');
-       legendButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            let level = this.getAttribute('data-level');
-            gtag('event', 'legend_click', {
-                'event_category': 'Legend Interaction',
-                'event_label': level
-            });
-        });
-    });
-
-
-//track the number of search form submissions
-document.addEventListener('DOMContentLoaded', function() {
-    let searchForm = document.getElementById('searchForm');
-    if (searchForm) {
-        searchForm.addEventListener('submit', function (e) {
-            e.preventDefault(); 
-
-            gtag('event', 'search', {
-                'event_category': 'interaction',
-                'event_label': 'ZIP search',
-                'value': document.getElementById('location').value
-            });
-        });
-    }
-
     // YouTube tracking
     let player;
     function onYouTubeIframeAPIReady() {
@@ -1502,15 +1370,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // make sure youtube is loaded
+    // Make sure YouTube is loaded
     if (typeof YT !== 'undefined' && YT.Player) {
         onYouTubeIframeAPIReady();
     } else {
         window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
     }
-
-    
-});
 </script>
     
 </body>
