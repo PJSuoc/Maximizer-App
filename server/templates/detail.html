@@ -66,40 +66,6 @@
         </div>
 
         
-        
-        
-        
-  <!--   <div class="col" id="detail-right" >
-            <div class="map-overlay">
-                    <div class="map-overlay-inner">
-                          <fieldset>
-                            <label for="layer">Currently viewing: </label>
-                            <div class="dropdown">
-                            <select id="layer" name="layer" class="dropdown-select">
-                                <option value="empty">choose</option>
-                                <option value="ballot_vpm" selectionValue="democracy">Democracy ballot initiatives</option>
-                                <option value="presidential2" selectionValue="presidential">Presidential race</option>
-                                <option value="congressional2" selectionValue="senate">Senate race</option>
-                                <option value="house2" selectionValue="house">House races</option>
-                                <option value="state_leg_up" >State upper legislature</option>
-                                <option value="state_leg_low">State lower legislature</option>
-                                <option value="ballot_abort" selectionValue="abortion">Reproductive rights initiatives</option>
-                                <option value="ballot_others" selectionValue="others">State-level ballot issues</option>
-                            </select>
-                            </div>
-                        </fieldset>
-                    </div>
-                    
-                    <div class="col map-container-sm">
-                        <div id="map"></div>
-                        <div class="map-pop">
-                            Mouseover for more info
-                        </div>
-                       
-                    </div> 
-                   
-            </div>       
-        </div>-->
      
 </div>
 <script type="module">
@@ -129,8 +95,6 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     let masterStateData = {};
 
     //read in ballot data
-    import ballotData from './static/js/ballot_initiative.js';
-    console.log("ballotData", ballotData)
 
     // Function to add data to the master dictionary
     function addToMasterData(dataList, category) {
@@ -149,6 +113,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
     console.log("democracy_repair_ballots", {{ dem_ballot_list | tojson | safe }})
     // Process each data list
+    console.log("pres_list", {{ pres_list | tojson | safe }})
     addToMasterData({{ pres_list | tojson | safe }}, 'presidential');
     addToMasterData({{ senate_list | tojson | safe }}, 'senate');
     addToMasterData({{ house_list | tojson | safe }}, 'house');
@@ -161,20 +126,11 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     
     console.log('Master State Data:', masterStateData);
 
-
+/*
     Object.keys(masterStateData).forEach(state => {
         Object.keys(masterStateData[state]).forEach(category => {
             if (category.includes('ballot')) {
                 masterStateData[state][category].forEach(item => {
-                    if (item.election_name == "Amendment C") {
-                        console.log('item', item);
-                        console.log('ballotData', ballotData);
-                        console.log('state', state);
-                        //print ballot data for state
-                        console.log('ballotData for state', ballotData.filter(ballot => ballot.state_name === state));  
-                        //print ballot data for election_name Amendment C
-                        console.log('ballotData for election_name Amendment C', ballotData.filter(ballot => ballot.election_name === 'Amendment C'));
-                    }
                     const matchingBallot = ballotData.find(ballot => 
                         ballot.state_name === state && 
                         ballot.election_name === item.election_name
@@ -192,13 +148,15 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             }
         });
     });
-    console.log('Master State Data with ballots:', masterStateData);
+    */
+
     function createCategoryList(categoryData, categoryTitle) {
         // if (!categoryData || categoryData.length === 0) return '';
         
         let tableRows = '';
         let description = '';
-        let rowsNonEmpty = (categoryData && categoryData.length > 0)
+        /*let rowsNonEmpty = (categoryData && categoryData.length > 0)*/
+        let rowsNonEmpty = Array.isArray(categoryData) && categoryData.some(item => item.candidate_names && item.candidate_names.length > 0);
         let hasElectedOffices = false;
 
         switch (categoryTitle) {
@@ -212,10 +170,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         const nameB = (b.election_name || '').toLowerCase();
                         return nameA.localeCompare(nameB);
                     });
-                    tableRows += sortedCategoryData.map(item => 
-                        `<tr>
+                    tableRows += sortedCategoryData.map(item =>  `<tr>
                             <td class="text-wrap" colspan="2">
-                                <div class="row-name democracy-name">${item['name of ballot'] || ''}</div>
+                                <div class="row-name democracy-name">${item['candidate_names'] || ''}</div>
                             </td>
                             <td>
                                 <a href="/get-involved?candidates=${item.candidate_ids}&election=${item.eid}" 
@@ -227,7 +184,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 `).join('');
                 }
                 else {
+                    
                     tableRows += `<tr><td colspan="3">No such ballot initiatives exist in this state.</td></tr>`;
+                    
                 }
                 break;
 
@@ -348,23 +307,24 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
             case 'Other ballot initiatives':
                 description = '' 
-                // Sort categoryData by election_name
-
-            
                 if (rowsNonEmpty) {
                     const sortedCategoryData = [...categoryData].sort((a, b) => {
-                        const typeA = (a.ballot_type ?? '').toLowerCase();
-                        const typeB = (b.ballot_type ?? '').toLowerCase();
+                        const typeA = (a.race_type ?? '').toLowerCase();
+                        const typeB = (b.race_type ?? '').toLowerCase();
                         const nameA = (a.election_name ?? '').toLowerCase();
                         const nameB = (b.election_name ?? '').toLowerCase();
                         return typeB.localeCompare(typeA) || nameA.localeCompare(nameB);
                     });
 
                     //tableRows += `<p class="category-description-fixed">Other state-level ballot initiatives:</p>`;
-                    tableRows += sortedCategoryData.map(item => `
+                    tableRows += sortedCategoryData.map(item => {
+                        console.log("names: ",item['candidate_names']); 
+
+                    return `
                     <tr class="tr-whole">
                         <td class="text-wrap" colspan="2">
-                            <div class="row-name democracy-name">${item['name of ballot'] || ''}</div>
+                            <div class="row-name democracy-name">${item.candidate_names && item.candidate_names.length > 0 ? item.candidate_names : item.election_name}
+                            </div>                       
                         </td>
 
                         <td>
@@ -375,9 +335,10 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         </td>
                         
                     </tr>
-                `).join('');
+                `;}).join('');
                 } else {
                     tableRows += `<tr><td colspan="3" class="missing">No ballot initiatives in this state.</td></tr>`;
+
                 }
                 break;
             }
@@ -468,6 +429,61 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         zoom: 5,  
                         projection: 'mercator'
                     });
+
+                    class ZoomControl {
+                        onAdd(map) {
+                        console.log('ZoomControl added');
+                        this._map = map;
+                        this._container = document.createElement('div');
+                        this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
+                        this._container.style.backgroundColor = 'white';
+                        this._container.style.border = '1px solid #ccc';
+                        this._container.style.borderRadius = '4px';
+                        this._container.style.zIndex = '1000';  
+                        
+                        const zoomInButton = this._createButton('+', () => {
+                            map.zoomIn();
+                        });
+                        
+                        const zoomOutButton = this._createButton('-', () => {
+                            map.zoomOut();
+                        });
+
+                        this._container.appendChild(zoomInButton);
+                        this._container.appendChild(zoomOutButton);
+
+                        console.log('Buttons created and added to container');
+                        return this._container;
+                    }
+                    onRemove() {
+                        console.log('ZoomControl removed');
+                        this._container.parentNode.removeChild(this._container);
+                        this._map = undefined;
+                    }
+
+                    _createButton(text, onClick) {
+                        console.log(`Creating button: ${text}`);
+                        const button = document.createElement('button');
+                        button.className = 'mapboxgl-ctrl-icon';
+                        button.type = 'button';
+                        button.style.width = '30px';
+                        button.style.height = '30px';
+                        button.style.fontSize = '20px';
+                        button.style.fontWeight = 'bold';
+                        button.style.border = 'none';
+                        button.style.display = 'block';
+                        button.style.cursor = 'pointer';
+                        button.textContent = text;
+                        button.onclick = onClick;
+                        return button;
+                    }
+                }
+
+                map.on('load', () => {
+                    map.addControl(new ZoomControl(), 'bottom-left');
+                });
+
+
                 
         const layers = {
             
@@ -477,15 +493,21 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             presidential2: 'static/data/calculated_files/geojsons/president.geojson',
             congressional2: 'static/data/calculated_files/geojsons/senate.geojson',
             house2: 'static/data/geojson_imports/geojson_final/house.geojson',
+            /*house2: 'static/data/calculated_files/geojsons/congress_house.geojson',*/
            // gubernatorial: 'static/data/calculated_files/geojsons/governor.geojson',
             ballot_abort: 'static/data/geojson_imports/geojson_final/ballot_abort.geojson',
+           // ballot_abort:'static/data/calculated_files/geojsons/reprights.geojson',
             ballot_vpm: 'static/data/geojson_imports/geojson_final/ballot_VPM.geojson',
+            //ballot_vpm: 'static/data/calculated_files/geojsons/democracy_albers.geojson',
             //ballot_sg: 'static/data/geojson_imports/geojson_final/ballot_sg.geojson',
             ballot_others: 'static/data/geojson_imports/geojson_final/ballot_other.geojson',
             state_leg_up:'static/data/geojson_imports/geojson_final/state_leg_upper.geojson',
-            state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson'
+            /*state_leg_up:'static/data/calculated_files/geojsons/state_upper_legistlature.geojson',*/
+            state_leg_low:'static/data/geojson_imports/geojson_final/state_leg_lower.geojson',
+            /*state_leg_low:'static/data/calculated_files/geojsons/state_lower_legistlature.geojson'*/
         };
 
+       
         const senateList = {{senate_list | tojson}};
 
 
@@ -891,6 +913,7 @@ popupContent = `<div class="custom-popup">
                 const selectedValue = this.getAttribute('data-value');
                 const selectedText = this.textContent;
                 document.querySelector('.dropbtn').textContent = selectedText; 
+                 
             });
         });
 
@@ -1016,8 +1039,9 @@ popupContent = `<div class="custom-popup">
     document.addEventListener("DOMContentLoaded", function () {
     const dropdownButton = document.querySelector(".dropbtn");
     const dropdownContent = document.getElementById("layer-dropdown");
-    
-    dropdownButton.addEventListener("click", function () {
+
+    dropdownButton?.addEventListener("click", function () {
+        
         this.classList.toggle("active");
         const isActive = this.classList.contains("active");
         
@@ -1028,21 +1052,22 @@ popupContent = `<div class="custom-popup">
     
     dropdownContent.querySelectorAll("div").forEach(function (item) {
         item.addEventListener("click", function () {
+            if (!dropdownButton || !dropdownContent) return;
             dropdownButton.textContent = this.textContent;
+
+            dropdownButton.classList.remove("active");
             dropdownButton.classList.remove("active");
             dropdownContent.style.display = "none";
         });
     });
     
     window.addEventListener("click", function (event) {
-        if (dropdownButton && !dropdownButton.contains(event.target) 
-            && !dropdownContent.contains(event.target) && dropdownContent && !dropdownContent.contains(event.target)) {
-                dropdownButton.classList.remove("active");
-                dropdownContent.style.display = "none";
-            }
-        });
-    
-   
+        if (!dropdownButton || !dropdownContent) return;
+        if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownButton.classList.remove("active");
+            dropdownContent.style.display = "none";
+        }
+    });
 });
 </script>
             </div>
