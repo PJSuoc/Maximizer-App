@@ -775,7 +775,7 @@ const popupContentGenerators = {
         <div class="custom-popup">
             <div class="popup-row"><div class="popup-label"><strong>${props.layerId === 'house' ? 'District' : 'State'}:</strong></div><span class="popup-value">${props.name}</span></div>
             ${props.candidateNames ? `<div class="popup-row"><div class="popup-label"><strong>Candidates:</strong></div><span class="popup-value">${props.candidateNames}</span></div>` : ''}
-            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower === undefined ? 'no competitive race' : props.voterPower}</span></div>
+            <div class="popup-row"><div class="popup-label"><strong>Voter Power:</strong></div><span class="popup-value">${props.voterPower === undefined ? 'No competitive race.' : props.voterPower}</span></div>
         </div>
     `
 };
@@ -983,8 +983,8 @@ map.on('mousemove', function (e) {
                 ? Math.max(...matchingRows
                     .map(row => parseFloat(row.voter_power))
                     .filter(power => !isNaN(power) && power !== null)
-                ) || 'no race'
-                : 'no race',
+                ) || 'No competitive race.'
+                : 'No competitive race.',
             ballotname: feature.properties['name of ballot'] || '',
             statename: feature.properties['state_name'] || getStateNameFromNumber(feature.properties['state']),
             district: feature.properties['NAMELSAD'] || null,
