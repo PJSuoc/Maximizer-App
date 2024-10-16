@@ -285,6 +285,23 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 else {
                     tableRows += `<tr><td colspan="3" class="missing">This U.S. Senate race does not have high voter power.</td></tr>`;
                 } 
+
+                if (categoryData.governor && categoryData.governor.voter_power > 20) {
+                    hasElectedOffices = true;
+                    const item = categoryData.governor;
+                    tableRows += `
+                        <tr>
+                            <td>Governor</td>
+                            <td>${Math.round(item.voter_power)}</td>
+                            <td>${createLearnMoreButton(item)}</td>
+                        </tr>
+                    `;
+                }
+                else {
+                    tableRows += `<tr><td colspan="3" class="missing">The governor's race does not have high voter power.</td></tr>`;
+                }
+
+
                 const highPowerHouseDistricts = categoryData.house.filter(item => item.voter_power > 20);
                 
                 if (highPowerHouseDistricts && highPowerHouseDistricts.length > 0) {
@@ -300,7 +317,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 }
                 else {
                     tableRows += `<tr><td colspan="3" class="missing">No U.S. House races have high voter power.</td></tr>`;
-                }                
+                }  
+                
+                
                 const highPowerStateSenateDistricts = categoryData.state_senate.filter(item => item.voter_power > 20);
                 
                 if (highPowerStateSenateDistricts && highPowerStateSenateDistricts.length > 0) {
@@ -405,7 +424,6 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
     function populateStateList() {
         const stateDataList = document.getElementById('state-data-list');
         stateDataList.innerHTML = ''; // Clear existing content
-
         for (const state in masterStateData) {
             const stateData = masterStateData[state];
             let stateHtml = `
@@ -418,6 +436,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             stateHtml += createCategoryList({
                 president: stateData.presidential?.[0] ?? [],
                 senate: stateData.senate?.[0] ?? [],
+                governor: stateData.governor?.[0] ?? [],
                 house: stateData.house || [],
                 state_senate: stateData.state_senate || [],
                 state_house: stateData.state_house || [],
