@@ -1,4 +1,4 @@
-state_name,state,congress,s_upper,s_lower,race_type,election_name,voter_power,D_running,R_running,R_running_2,D_link,R_link,R_link_2
+state_name,state,congress,s_upper,s_lower,race_type,election_name,voter_power,D_running,R_running,R_running_2,D_link,R_link,R_link_2,cook_rating
 Alaska,2,,A,,State Leg (Upper),State Senate District A,0,,,,,,
 Alaska,2,,B,,State Leg (Upper),State Senate District B,14,,,,,,
 Alaska,2,,C,,State Leg (Upper),State Senate District C,0,,,,,,

@@ -1,4 +1,4 @@
-state_name,state,congress,s_upper,s_lower,election_name,race_type,margins,vp,voter_power,D_running,D_running_2,R_running,R_running_2,R_running_3,D_link,D_link_2,R_link,R_link_2,R_link_3
+state_name,state,congress,s_upper,s_lower,election_name,race_type,margins,vp,voter_power,D_running,D_running_2,R_running,R_running_2,R_running_3,D_link,D_link_2,R_link,R_link_2,R_link_3,cook_rating
 Alaska,2,,,1,State House District 1,State Leg (Lower),-17.03283723,0.09216151959,26,,,,,,,,,,
 Alaska,2,,,2,State House District 2,State Leg (Lower),6.556165541,0.2640190982,75,,,,,,,,,,
 Alaska,2,,,3,State House District 3,State Leg (Lower),11.75744923,0.1607559847,46,,,,,,,,,,
