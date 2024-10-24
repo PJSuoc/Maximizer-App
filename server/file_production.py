@@ -116,8 +116,8 @@ def election_csv_cleaner(location, csv_tag, destination, csv_name):
     df = pd.read_csv(location + csv_name)
 
     # Cut the CSV down to the relevant columns, excluding ballot initiatives
-    if csv_name != "ballot_initiative.csv":
-        df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power", "D_running", "R_running", "cook_rating"]]
+    #if csv_name != "ballot_initiative.csv":
+        #df = df[["state", "congress", "s_upper", "s_lower", "state_name", "race_type", "election_name", "voter_power", "D_running", "R_running", "cook_rating"]]
 
     #state ID cleaning
     df["state"] = df["state"].fillna(0.0).astype(int)
@@ -183,15 +183,15 @@ def geojson_writer(df, filename):
     df["voter_power"] = df["voter_power"].astype(float)
     gdf = gpd.GeoDataFrame(df, crs=4269)
     desto = destination + geojson_tag + filename
-    output_file = desto.replace('.geojson', '_albers.geojson')
+    #output_file = desto.replace('.geojson', '_albers.geojson')
     
     # Write the initial GeoJSON file
     gdf.to_file(desto, driver="GeoJSON")
     
     # Construct the command
-    command = f'dirty-reproject --forward albersUsa < "{desto}" > "{output_file}"'
+    #command = f'dirty-reproject --forward albersUsa < "{desto}" > "{output_file}"'
     
-    print(f"Executing command: {command}")
+    #print(f"Executing command: {command}")
     
     try:
         # Use shell=True to handle input/output redirection

@@ -1,12 +1,12 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running,cook_rating
-33,nan,nan,nan,New Hampshire,Governor,,100.0,Joyce Craig,Kelly Ayotte,toss-up
-37,nan,nan,nan,North Carolina,Governor,,3.0,Josh Stein,Mark K. Robinson,likely D
-10,nan,nan,nan,Delaware,Governor,,3.0,Matt Meyer,Michael Ramone,safe D
-18,nan,nan,nan,Indiana,Governor,,100.0,Jennifer McCormick,Mike Braun,safe R
-29,nan,nan,nan,Missouri,Governor,,3.0,Crystal Quade,Mike Kehoe,safe R
-30,nan,nan,nan,Montana,Governor,,30.0,Ryan Busse,Greg Gianforte (incumbent),likely R
-38,nan,nan,nan,North Dakota,Governor,,3.0,Merrill Piepkorn,Kelly Armstrong,safe R
-49,nan,nan,nan,Utah,Governor,,3.0,Brian King,Spencer Cox (incumbent),safe R
-50,nan,nan,nan,Vermont,Governor,,30.0,Esther Charlestin,Phil Scott (incumbent),likely R
-53,nan,nan,nan,Washington,Governor,,30.0,Bob Ferguson,Dave Reichert,likely D
-54,nan,nan,nan,West Virginia,Governor,,3.0,Steve Williams,Patrick Morrisey,safe R
+state_name,state,congress,s_lower,s_upper,election_name,race_type,voter_power,cook_rating,D_running,R_running,D_link,R_link
+New Hampshire,33,nan,nan,nan,,Governor,100.0,toss-up,Joyce Craig,Kelly Ayotte,https://joycecraig.org/,https://kellyfornh.com/
+North Carolina,37,nan,nan,nan,,Governor,3.0,likely D,Josh Stein,Mark K. Robinson,https://www.joshstein.org/,https://electiondeniers.org/
+Delaware,10,nan,nan,nan,,Governor,3.0,safe D,Matt Meyer,Michael Ramone,https://mattmeyer.org/,https://www.mikeramone.com/
+Indiana,18,nan,nan,nan,,Governor,100.0,safe R,Jennifer McCormick,Mike Braun,https://www.mccormickforgov.com/,https://electiondeniers.org/
+Missouri,29,nan,nan,nan,,Governor,3.0,safe R,Crystal Quade,Mike Kehoe,https://crystalquade.com/,https://www.mikekehoe.com/
+Montana,30,nan,nan,nan,,Governor,30.0,likely R,Ryan Busse,Greg Gianforte (incumbent),https://busseformontana.com/,https://electiondeniers.org/
+North Dakota,38,nan,nan,nan,,Governor,3.0,safe R,Merrill Piepkorn,Kelly Armstrong,https://www.merrillfornd.com/,https://www.armstrongnd.com/
+Utah,49,nan,nan,nan,,Governor,3.0,safe R,Brian King,Spencer Cox (incumbent),https://www.kingforutah.com/,https://www.votecox.com/
+Vermont,50,nan,nan,nan,,Governor,30.0,likely R,Esther Charlestin,Phil Scott (incumbent),https://www.estherforvt.com/,https://www.philscott.org/
+Washington,53,nan,nan,nan,,Governor,30.0,likely D,Bob Ferguson,Dave Reichert,https://www.bobferguson.com/,https://www.reichertforgovernor.com/
+West Virginia,54,nan,nan,nan,,Governor,3.0,safe R,Steve Williams,Patrick Morrisey,https://stevewilliamswv.com/,https://electiondeniers.org/

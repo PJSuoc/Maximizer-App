@@ -1,57 +1,64 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running,cook_rating
-01,nan,nan,nan,Alabama,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
-02,nan,nan,nan,Alaska,Presidential,Presidential,21.0,Kamala Harris,Donald Trump,solid-R
-04,nan,nan,nan,Arizona,Presidential,Presidential,67.0,Kamala Harris,Donald Trump,toss-up
-05,nan,nan,nan,Arkansas,Presidential,Presidential,5.0,Kamala Harris,Donald Trump,solid-R
-06,nan,nan,nan,California,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-D
-08,nan,nan,nan,Colorado,Presidential,Presidential,6.0,Kamala Harris,Donald Trump,solid-D
-09,nan,nan,nan,Connecticut,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-D
-10,nan,nan,nan,Delaware,Presidential,Presidential,4.0,Kamala Harris,Donald Trump,solid-D
-11,nan,nan,nan,District of Columbia,Presidential,Presidential,0.0,Kamala Harris,Donald Trump,solid-D
-12,nan,nan,nan,Florida,Presidential,Presidential,47.0,Kamala Harris,Donald Trump,likely-R
-13,nan,nan,nan,Georgia,Presidential,Presidential,85.0,Kamala Harris,Donald Trump,toss-up
-15,nan,nan,nan,Hawaii,Presidential,Presidential,5.0,Kamala Harris,Donald Trump,solid-D
-16,nan,nan,nan,Idaho,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-R
-17,nan,nan,nan,Illinois,Presidential,Presidential,3.0,Kamala Harris,Donald Trump,solid-D
-18,nan,nan,nan,Indiana,Presidential,Presidential,3.0,Kamala Harris,Donald Trump,solid-R
-19,nan,nan,nan,Iowa,Presidential,Presidential,15.0,Kamala Harris,Donald Trump,solid-R
-20,nan,nan,nan,Kansas,Presidential,Presidential,5.0,Kamala Harris,Donald Trump,solid-R
-21,nan,nan,nan,Kentucky,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-R
-22,nan,nan,nan,Louisiana,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
-23,nan,nan,nan,Maine,Presidential,Presidential,14.0,Kamala Harris,Donald Trump,likely-D
-23,2.0,nan,nan,Maine,Presidential,Congressional District 2,61.0,Kamala Harris,Donald Trump,likely-R
-23,1.0,nan,nan,Maine,Presidential,Congressional District 1,1.0,Kamala Harris,Donald Trump,solid-D
-24,nan,nan,nan,Maryland,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-D
-25,nan,nan,nan,Massachusetts,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-D
-26,nan,nan,nan,Michigan,Presidential,Presidential,62.0,Kamala Harris,Donald Trump,toss-up
-27,nan,nan,nan,Minnesota,Presidential,Presidential,17.0,Kamala Harris,Donald Trump,likely-D
-28,nan,nan,nan,Mississippi,Presidential,Presidential,4.0,Kamala Harris,Donald Trump,solid-R
-29,nan,nan,nan,Missouri,Presidential,Presidential,6.0,Kamala Harris,Donald Trump,solid-R
-30,nan,nan,nan,Montana,Presidential,Presidential,5.0,Kamala Harris,Donald Trump,solid-R
-31,1.0,nan,nan,Nebraska,Presidential,Congressional District 1,5.0,Kamala Harris,Donald Trump,solid-R
-31,2.0,nan,nan,Nebraska,Presidential,Congressional District 2,8.0,Kamala Harris,Donald Trump,toss-up
-31,3.0,nan,nan,Nebraska,Presidential,Congressional District 3,0.0,Kamala Harris,Donald Trump,solid-R
-31,nan,nan,nan,Nebraska,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
-32,nan,nan,nan,Nevada,Presidential,Presidential,100.0,Kamala Harris,Donald Trump,toss-up
-33,nan,nan,nan,New Hampshire,Presidential,Presidential,17.0,Kamala Harris,Donald Trump,likely-D
-34,nan,nan,nan,New Jersey,Presidential,Presidential,3.0,Kamala Harris,Donald Trump,solid-D
-35,nan,nan,nan,New Mexico,Presidential,Presidential,19.0,Kamala Harris,Donald Trump,likely-D
-36,nan,nan,nan,New York,Presidential,Presidential,4.0,Kamala Harris,Donald Trump,solid-D
-37,nan,nan,nan,North Carolina,Presidential,Presidential,69.0,Kamala Harris,Donald Trump,toss-up
-38,nan,nan,nan,North Dakota,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
-39,nan,nan,nan,Ohio,Presidential,Presidential,7.0,Kamala Harris,Donald Trump,solid-R
-40,nan,nan,nan,Oklahoma,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
-41,nan,nan,nan,Oregon,Presidential,Presidential,3.0,Kamala Harris,Donald Trump,solid-D
-42,nan,nan,nan,Pennsylvania,Presidential,Presidential,69.0,Kamala Harris,Donald Trump,toss-up
-44,nan,nan,nan,Rhode Island,Presidential,Presidential,11.0,Kamala Harris,Donald Trump,solid-D
-45,nan,nan,nan,South Carolina,Presidential,Presidential,6.0,Kamala Harris,Donald Trump,solid-R
-46,nan,nan,nan,South Dakota,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
-47,nan,nan,nan,Tennessee,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
-48,nan,nan,nan,Texas,Presidential,Presidential,19.0,Kamala Harris,Donald Trump,likely-R
-49,nan,nan,nan,Utah,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-R
-50,nan,nan,nan,Vermont,Presidential,Presidential,2.0,Kamala Harris,Donald Trump,solid-D
-51,nan,nan,nan,Virginia,Presidential,Presidential,15.0,Kamala Harris,Donald Trump,likely-D
-53,nan,nan,nan,Washington,Presidential,Presidential,4.0,Kamala Harris,Donald Trump,solid-D
-54,nan,nan,nan,West Virginia,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-R
-55,nan,nan,nan,Wisconsin,Presidential,Presidential,43.0,Kamala Harris,Donald Trump,toss-up
-56,nan,nan,nan,Wyoming,Presidential,Presidential,1.0,Kamala Harris,Donald Trump,solid-R
+state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power,cook_rating,Democracy #9277DE,Presidential high voter power #F5928D,Senate/House high voter power #B4CDE3,Pivotal state legislature #D19E9B,Abortion #F768A0,Other ballot questions #13DDB7,D_running,R_running,I_running,L_running,G_running,D_link,R_link,I_link,L_link,G_link,EV,Polls,Min Voter Power,Max Voter Power,turnout2020,2020 margin (%),vp (unnorm),PEC margin,PEC_vp_raw
+Alabama,01,nan,nan,nan,Presidential,Presidential,2.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,9.0,-19.6,#REF!,#REF!,"2,323,282.0",-25.5,16.1,-19.6,27.7
+Alaska,02,nan,nan,nan,Presidential,Presidential,21.0,solid-R,x,,,x,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3.0,-15.5,0.0,0.0,"359,530.0",-10.1,194.9,-9.0,255.3
+Arizona,04,nan,nan,nan,Presidential,Presidential,67.0,toss-up,x,x,x,,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,11.0,-6.0,0.0,0.0,"3,387,326.0",0.3,"1,024.1",-1.4,804.8
+Arkansas,05,nan,nan,nan,Presidential,Presidential,5.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6.0,-27.6,0.0,0.0,"1,219,069.0",-27.6,17.5,-15.0,58.7
+California,06,nan,nan,nan,Presidential,Presidential,1.0,solid-D,,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,54.0,25.0,0.0,0.0,"17,501,380.0",29.2,10.7,28.0,11.3
+Colorado,08,nan,nan,nan,Presidential,Presidential,6.0,solid-D,x,,,,x,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10.0,6.0,0.0,0.0,"3,256,980.0",13.5,50.1,11.0,70.0
+Connecticut,09,nan,nan,nan,Presidential,Presidential,2.0,solid-D,x,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,7.0,20.1,0.0,0.0,"1,823,857.0",20.1,28.3,20.1,27.1
+Delaware,10,nan,nan,nan,Presidential,Presidential,4.0,solid-D,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3.0,19.0,0.0,0.0,"504,346.0",19.0,49.2,19.0,47.0
+District of Columbia,11,nan,nan,nan,Presidential,Presidential,0.0,solid-D,x,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3.0,86.8,0.0,0.0,"344,356.0",86.8,3.4,87.0,3.3
+Florida,12,nan,nan,nan,Presidential,Presidential,47.0,likely-R,,,x,,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,30.0,-6.0,0.0,0.0,"11,067,456.0",-3.4,314.6,-2.0,561.1
+Georgia,13,nan,nan,nan,Presidential,Presidential,85.0,toss-up,,x,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,16.0,-5.0,0.0,0.0,"4,999,960.0",0.2,"1,004.1",0.2,"1,018.6"
+Hawaii,15,nan,nan,nan,Presidential,Presidential,5.0,solid-D,x,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4.0,19.0,0.0,0.0,"574,469.0",29.5,23.7,19.0,55.0
+Idaho,16,nan,nan,nan,Presidential,Presidential,1.0,solid-R,x,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4.0,-30.8,0.0,0.0,"867,934.0",-30.8,13.3,-30.8,13.6
+Illinois,17,nan,nan,nan,Presidential,Presidential,3.0,solid-D,,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,19.0,17.0,0.0,0.0,"6,033,744.0",17.0,32.5,17.0,31.0
+Indiana,18,nan,nan,nan,Presidential,Presidential,3.0,solid-R,,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,11.0,-21.2,0.0,0.0,"3,033,210.0",-16.1,36.2,-17.2,33.3
+Iowa,19,nan,nan,nan,Presidential,Presidential,15.0,solid-R,x,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6.0,-15.0,0.0,0.0,"1,690,871.0",-8.2,117.6,-6.7,179.6
+Kansas,20,nan,nan,nan,Presidential,Presidential,5.0,solid-R,,,,x,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6.0,-14.7,0.0,0.0,"1,373,986.0",-14.6,51.9,-14.7,54.2
+Kentucky,21,nan,nan,nan,Presidential,Presidential,1.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,8.0,-25.9,0.0,0.0,"2,136,768.0",-25.9,15.0,-25.9,15.5
+Louisiana,22,nan,nan,nan,Presidential,Presidential,2.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,8.0,-14.0,0.0,0.0,"2,148,062.0",-18.6,28.2,-18.6,29.4
+Maine,23,nan,nan,nan,Presidential,Presidential,14.0,likely-D,,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,2.0,-18.5,0.0,0.0,"819,461.0",7.9,112.2,6.0,164.0
+Maine,23,2.0,nan,nan,Congressional District 2,Presidential,61.0,likely-R,,x,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1.0,-18.5,0.0,0.0,"376,349.0",-7.4,103.4,-1.0,729.1
+Maine,23,1.0,nan,nan,Congressional District 1,Presidential,1.0,solid-D,,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1.0,11.5,0.0,0.0,"443,112.0",23.1,12.6,27.0,8.9
+Maryland,24,nan,nan,nan,Presidential,Presidential,1.0,solid-D,,,,,x,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10.0,26.0,0.0,0.0,"3,037,030.0",33.2,8.8,31.5,9.5
+Massachusetts,25,nan,nan,nan,Presidential,Presidential,1.0,solid-D,,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,11.0,21.0,0.0,0.0,"3,631,402.0",33.5,8.0,28.0,11.1
+Michigan,26,nan,nan,nan,Presidential,Presidential,62.0,toss-up,,x,x,x,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,15.0,-2.1,0.0,0.0,"5,539,302.0",2.8,564.1,-1.0,743.1
+Minnesota,27,nan,nan,nan,Presidential,Presidential,17.0,likely-D,,,,x,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10.0,2.0,0.0,0.0,"3,277,171.0",7.1,170.1,6.0,205.0
+Mississippi,28,nan,nan,nan,Presidential,Presidential,4.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6.0,-16.5,0.0,0.0,"1,313,759.0",-16.6,43.2,-16.6,44.9
+Missouri,29,nan,nan,nan,Presidential,Presidential,6.0,solid-R,x,,,,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10.0,-15.5,0.0,0.0,"3,025,962.0",-15.4,35.8,-11.0,70.4
+Montana,30,nan,nan,nan,Presidential,Presidential,5.0,solid-R,x,,x,,x,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4.0,-20.0,0.0,0.0,"603,674.0",-16.4,63.9,-18.0,55.8
+Nebraska,31,1.0,nan,nan,Congressional District 1,Presidential,5.0,solid-R,,,x,x,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1.0,-7.0,0.0,0.0,"321,886.0",-14.9,35.6,-11.4,62.0
+Nebraska,31,2.0,nan,nan,Congressional District 2,Presidential,8.0,toss-up,,,x,x,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1.0,11.0,0.0,0.0,"339,666.0",6.5,192.5,9.0,97.6
+Nebraska,31,3.0,nan,nan,Congressional District 3,Presidential,0.0,solid-R,,,x,x,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,1.0,-49.0,0.0,0.0,"294,831.0",-53.0,3.4,-53.0,3.4
+Nebraska,31,nan,nan,nan,Presidential,Presidential,2.0,solid-R,,,x,x,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,2.0,-49.0,0.0,0.0,"956,383.0",-20.5,13.2,-17.0,19.7
+Nevada,32,nan,nan,nan,Presidential,Presidential,100.0,toss-up,x,x,x,x,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6.0,-6.0,0.0,0.0,"1,405,376.0",2.4,"1,002.2",-0.9,"1,197.9"
+New Hampshire,33,nan,nan,nan,Presidential,Presidential,17.0,likely-D,x,x,,x,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4.0,-0.3,0.0,0.0,"806,205.0",7.4,260.5,8.0,203.5
+New Jersey,34,nan,nan,nan,Presidential,Presidential,3.0,solid-D,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,14.0,2.7,0.0,0.0,"4,549,457.0",15.9,36.1,15.9,34.5
+New Mexico,35,nan,nan,nan,Presidential,Presidential,19.0,likely-D,x,x,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,5.0,4.5,0.0,0.0,"923,965.0",10.8,137.4,8.0,222.0
+New York,36,nan,nan,nan,Presidential,Presidential,4.0,solid-D,,,,,x,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,28.0,8.0,0.0,0.0,"8,616,861.0",23.1,18.0,14.0,46.7
+North Carolina,37,nan,nan,nan,Presidential,Presidential,69.0,toss-up,,x,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,16.0,-6.0,0.0,0.0,"5,524,804.0",-1.4,648.0,-0.8,829.7
+North Dakota,38,nan,nan,nan,Presidential,Presidential,2.0,solid-R,x,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3.0,-34.0,0.0,0.0,"362,024.0",-33.3,20.4,-34.0,20.1
+Ohio,39,nan,nan,nan,Presidential,Presidential,7.0,solid-R,x,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,17.0,-8.0,0.0,0.0,"5,922,202.0",-8.0,98.5,-9.1,85.5
+Oklahoma,40,nan,nan,nan,Presidential,Presidential,2.0,solid-R,,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,7.0,-32.7,0.0,0.0,"1,560,699.0",-33.1,11.2,-24.4,20.9
+Oregon,41,nan,nan,nan,Presidential,Presidential,3.0,solid-D,x,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,8.0,12.0,0.0,0.0,"2,374,321.0",16.1,38.8,16.1,36.9
+Pennsylvania,42,nan,nan,nan,Presidential,Presidential,69.0,toss-up,,x,,x,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,19.0,-4.7,0.0,0.0,"6,936,976.0",1.2,842.5,-0.5,826.8
+Rhode Island,44,nan,nan,nan,Presidential,Presidential,11.0,solid-D,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4.0,13.0,0.0,0.0,"517,757.0",20.8,53.2,13.0,128.1
+South Carolina,45,nan,nan,nan,Presidential,Presidential,6.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,9.0,-15.0,0.0,0.0,"2,513,329.0",-11.7,64.2,-11.7,68.1
+South Dakota,46,nan,nan,nan,Presidential,Presidential,2.0,solid-R,x,,,,x,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3.0,-23.8,0.0,0.0,"422,609.0",-26.2,28.0,-26.2,28.8
+Tennessee,47,nan,nan,nan,Presidential,Presidential,2.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,11.0,-24.0,0.0,0.0,"3,053,851.0",-23.2,17.9,-23.2,18.5
+Texas,48,nan,nan,nan,Presidential,Presidential,19.0,likely-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,40.0,-9.0,0.0,0.0,"11,315,056.0",-5.6,214.6,-5.8,225.1
+Utah,49,nan,nan,nan,Presidential,Presidential,2.0,solid-R,x,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,6.0,-28.0,0.0,0.0,"1,488,289.0",-20.5,25.5,-20.5,26.4
+Vermont,50,nan,nan,nan,Presidential,Presidential,2.0,solid-D,,,,,,x,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3.0,30.9,0.0,0.0,"367,428.0",35.4,19.2,35.4,18.7
+Virginia,51,nan,nan,nan,Presidential,Presidential,15.0,likely-D,,x,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,13.0,1.5,0.0,0.0,"4,460,524.0",10.1,84.0,6.3,180.7
+Washington,53,nan,nan,nan,Presidential,Presidential,4.0,solid-D,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,12.0,14.0,0.0,0.0,"4,087,631.0",19.2,23.7,14.0,42.2
+West Virginia,54,nan,nan,nan,Presidential,Presidential,1.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,4.0,-27.0,0.0,0.0,"794,731.0",-38.9,9.2,-38.9,9.4
+Wisconsin,55,nan,nan,nan,Presidential,Presidential,43.0,toss-up,,x,,x,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,10.0,-1.5,0.0,0.0,"3,298,041.0",0.6,965.1,3.0,515.8
+Wyoming,56,nan,nan,nan,Presidential,Presidential,1.0,solid-R,,,,,,,Kamala Harris,Donald Trump,Robert F. Kennedy Jr.,Chase Oliver,Jill Stein,https://kamalaharris.com/,https://www.donaldjtrump.com/,https://www.kennedy24.com/,https://www.votechaseoliver.com/,,3.0,-43.4,0.0,0.0,"276,765.0",-43.4,16.0,-43.4,16.3
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,11.5,-18.5,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,0.6,,0.2,

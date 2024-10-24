@@ -1,4 +1,4 @@
-name,party,state_name,state,congress,s_upper,s_lower,race_type,election_name,campaign_link,donation_link,election_denier,incumbent,cook_rating
+name,party,state_name,state,congress,s_upper,s_lower,race_type,election_name,campaign_link,donation_link,election_denier,incumbent
 Kamala Harris,Democratic Party,Alabama,1,,,,Presidential,,https://kamalaharris.com/,https://secure.actblue.com/donate/web-hfp-waltz-august-2024?refcode=lightbox_waltz,,
 Kamala Harris,Democratic Party,Alaska,2,,,,Presidential,,https://kamalaharris.com/,https://secure.actblue.com/donate/web-hfp-waltz-august-2024?refcode=lightbox_waltz,,
 Kamala Harris,Democratic Party,Arizona,4,,,,Presidential,,https://kamalaharris.com/,https://secure.actblue.com/donate/web-hfp-waltz-august-2024?refcode=lightbox_waltz,,
@@ -59,7 +59,7 @@ Kamala Harris,Democratic Party,Wisconsin,55,,,,Presidential,,https://kamalaharri
 Kamala Harris,Democratic Party,Wyoming,56,,,,Presidential,,https://kamalaharris.com/,https://secure.actblue.com/donate/web-hfp-waltz-august-2024?refcode=lightbox_waltz,,
 Donald Trump,Republican Party,Alabama,1,,,,Presidential,,https://electiondeniers.org/,,1,
 Donald Trump,Republican Party,Alaska,2,,,,Presidential,,https://electiondeniers.org/,,1,
-Donald Trump,Republican Party,Arizona,4,,,,Presidential,,https://electiondeniers.org/,,1,
+Donald Trump,Republican Party,Arizona,4,,,,Presidential,,https://electiondeniers.org/,,1.00E+00,
 Donald Trump,Republican Party,Arkansas,5,,,,Presidential,,https://electiondeniers.org/,,1,
 Donald Trump,Republican Party,California,6,,,,Presidential,,https://electiondeniers.org/,,1,
 Donald Trump,Republican Party,Colorado,8,,,,Presidential,,https://electiondeniers.org/,,1,

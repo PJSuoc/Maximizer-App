@@ -1,34 +1,65 @@
-state,congress,s_upper,s_lower,state_name,race_type,election_name,voter_power,D_running,R_running,cook_rating
-04,nan,nan,nan,Arizona,Senate,,43.0,Ruben Gallego,Kari Lake,lean-D
-06,nan,nan,nan,California,Senate,,1.0,Adam Schiff,Steve Garvey,solid-D
-09,nan,nan,nan,Connecticut,Senate,,6.0,Christopher S. Murphy (incumbent),Matthew Corey,solid-D
-10,nan,nan,nan,Delaware,Senate,,17.0,Lisa Blunt Rochester,Eric Hansen,solid-D
-12,nan,nan,nan,Florida,Senate,,14.0,Debbie Mucarsel-Powell,Rick Scott (incumbent),likely-R
-15,nan,nan,nan,Hawaii,Senate,,5.0,Mazie K. Hirono (incumbent),Bob McDermott,solid-D
-18,nan,nan,nan,Indiana,Senate,,6.0,Valerie McCray,Jim Banks,solid-R
-23,nan,nan,nan,Maine,Senate,,6.0,,Demi Kouzounas,solid-D
-24,nan,nan,nan,Maryland,Senate,,3.0,Angela Alsobrooks,Larry Hogan,likely-D
-25,nan,nan,nan,Massachusetts,Senate,,1.0,Elizabeth Warren (incumbent),John Deaton,solid-D
-26,nan,nan,nan,Michigan,Senate,,37.0,Elissa Slotkin,Mike Rogers,toss-up
-27,nan,nan,nan,Minnesota,Senate,,2.0,Amy Klobuchar (incumbent),Royce White,solid-D
-28,nan,nan,nan,Mississippi,Senate,,8.0,Ty Pinkins,Roger Wicker (incumbent),solid-R
-29,nan,nan,nan,Missouri,Senate,,6.0,Lucas Kunce,Josh Hawley (incumbent),solid-R
-30,nan,nan,nan,Montana,Senate,,35.0,Jon Tester (incumbent),Tim Sheehy,lean-R
-31,nan,nan,nan,Nebraska,Senate,,80.0,,Deb Fischer (incumbent),solid-R
-32,nan,nan,nan,Nevada,Senate,,100.0,Jacky Rosen (incumbent),Sam Brown,lean-D
-34,nan,nan,nan,New Jersey,Senate,,7.0,Andy Kim,Curtis Bashaw,solid-D
-35,nan,nan,nan,New Mexico,Senate,,15.0,Martin Heinrich (incumbent),Nella Domenici,solid-D
-36,nan,nan,nan,New York,Senate,,1.0,Kirsten Gillibrand (incumbent),Mike Sapraicone,solid-D
-38,nan,nan,nan,North Dakota,Senate,,9.0,Katrina Christiansen,Kevin Cramer (incumbent),solid-R
-39,nan,nan,nan,Ohio,Senate,,45.0,Sherrod Brown (incumbent),Bernie Moreno,toss-up
-42,nan,nan,nan,Pennsylvania,Senate,,11.0,Bob Casey Jr. (incumbent),David McCormick,lean-D
-44,nan,nan,nan,Rhode Island,Senate,,17.0,Sheldon Whitehouse (incumbent),Patricia Morgan,solid-D
-47,nan,nan,nan,Tennessee,Senate,,3.0,Gloria Johnson,Marsha Blackburn (incumbent),solid-R
-48,nan,nan,nan,Texas,Senate,,15.0,Colin Allred,Ted Cruz (incumbent),likely-R
-49,nan,nan,nan,Utah,Senate,,4.0,Caroline Gleich,John Curtis,solid-R
-50,nan,nan,nan,Vermont,Senate,,9.0,Bernie Sanders (incumbent),Gerald Malloy,solid-D
-51,nan,nan,nan,Virginia,Senate,,5.0,Tim Kaine (incumbent),Hung Cao,solid-D
-53,nan,nan,nan,Washington,Senate,,4.0,Maria Cantwell (incumbent),Raul Garcia,solid-D
-54,nan,nan,nan,West Virginia,Senate,,3.0,Glenn Elliott,Jim Justice,solid-R
-55,nan,nan,nan,Wisconsin,Senate,,16.0,Tammy Baldwin (incumbent),Eric Hovde,lean-D
-56,nan,nan,nan,Wyoming,Senate,,10.0,Scott Morrow,John Barrasso (incumbent),solid-R
+state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power,cook_rating,pivotal election?,structural initiative?,liberties initiative?,ballot type,D_running,R_running,I_running,I_running.1,I_running.2,I_running.3,I_running.4,I_running.5,L_running,G_running,Write_in,D_link,R_link,I_link,I_link.1,I_link.2,I_link.3,I_link.4,I_link.5,L_link,G_link,Write-in link,Competitive,turnout2020,Poll Margins,Pres20 or Sen18,vp (unnorm)
+Arizona,04,nan,nan,nan,,Senate,45.0,lean-D,,,,,Ruben Gallego,Kari Lake,,waiting on primary,waiting on primary,waiting on primary,,,waiting on primary,waiting on primary,,https://gallegoforarizona.com/,https://electiondeniers.org/,,waiting on primary,waiting on primary,waiting on primary,,,waiting on primary,waiting on primary,,1.0,"3,387,326.0",4.2,0.3,93.7
+California,06,nan,nan,nan,,Senate,0.0,solid-D,,,,,Adam Schiff,Steve Garvey,,,,,,,,,,https://www.adamschiff.com/,https://stevegarvey.com/,,,,,,,,,,1.0,"17,501,380.0",11.1,29.0,0.5
+Connecticut,09,nan,nan,nan,,Senate,2.0,solid-D,,,,,Christopher S. Murphy (incumbent),Matthew Corey,,,,,,,,,,https://chrismurphy.com/,https://coreyforsenate.com/,,,,,,,,,,1.0,"1,823,857.0",20.2,20.0,4.9
+Delaware,10,nan,nan,nan,,Senate,7.0,solid-D,,,,,Lisa Blunt Rochester,Eric Hansen,,,,,,,,,,https://lisabluntrochester.com/,https://voteerichansen.com/,,,,,,,,,,1.0,"504,346.0",24.5,19.0,14.8
+Florida,12,nan,nan,nan,,Senate,3.0,likely-R,,,,,Debbie Mucarsel-Powell,Rick Scott (incumbent),,Ben Everidge,Tuan Nguyen,Howard Knepper,,,Feena Bonoan,,,https://www.debbieforflorida.com/,https://electiondeniers.org/,,Unknown,https://letsbe-american.com/,Unknown,,,https://www.feenabonoan.com/,,,1.0,"11,067,456.0",-5.6,-0.1,7.1
+Hawaii,15,nan,nan,nan,,Senate,2.0,solid-D,,,,,Mazie K. Hirono (incumbent),Bob McDermott,,waiting on primary,waiting on primary,waiting on primary,,,waiting on primary,waiting on primary,,https://mazieforhawaii.com/,https://votemcdermott.com/,,waiting on primary,waiting on primary,waiting on primary,,,waiting on primary,waiting on primary,,1.0,"574,469.0",42.2,29.5,4.4
+Indiana,18,nan,nan,nan,,Senate,2.0,solid-R,,,,,Valerie McCray,Jim Banks,,Richard Kent,,,,,Andy Horning,,,https://valeriemccray.org/,https://electiondeniers.org/,,Unknown,,,,,https://horningforsenate.com/,,,1.0,"3,033,210.0",-10.0,-16.0,3.8
+Maine,23,nan,nan,nan,,Senate,2.0,solid-D,,,,,,Demi Kouzounas,Angus King (incumbent),Jason Cherry,,,,,,,,,https://demiforsenate.com/,https://angusformaine.com/,https://cherryforsenate.com/,,,,,,,,1.0,"819,461.0",29.0,29.0,4.9
+Maryland,24,nan,nan,nan,,Senate,1.0,likely-D,,,,,Angela Alsobrooks,Larry Hogan,,,,,,,Mike Scott,Nancy Wallace,,https://www.angelaalsobrooks.com/,https://larryhogan.com/,,,,,,,https://www.mikescott2024.com/,Unknown,,1.0,"3,037,030.0",11.0,33.0,2.4
+Massachusetts,25,nan,nan,nan,,Senate,1.0,solid-D,,,,,Elizabeth Warren (incumbent),John Deaton,,Brandon James Griffin (Workers Party),Shiva Ayyadurai,,,,,,,https://elizabethwarren.com/,https://johndeatonforsenate.com/,,Unknown,Unknown,,,,,,,1.0,"3,631,402.0",25.0,33.0,1.1
+Michigan,26,nan,nan,nan,,Senate,24.0,toss-up,,,,,Elissa Slotkin,Mike Rogers,,,,,,,,Douglas Marsh,,https://elissaslotkin.org/,https://electiondeniers.org/,,,,,,,,https://www.electmarsh.us/,,1.0,"5,539,302.0",4.2,3.0,49.5
+Minnesota,27,nan,nan,nan,,Senate,1.0,solid-D,,,,,Amy Klobuchar (incumbent),Royce White,,waiting on primary,waiting on primary,waiting on primary,,,waiting on primary,waiting on primary,,https://amyklobuchar.com/,https://electiondeniers.org/,,waiting on primary,waiting on primary,waiting on primary,,,waiting on primary,waiting on primary,,1.0,"3,277,171.0",21.0,24.1,2.1
+Mississippi,28,nan,nan,nan,,Senate,3.0,solid-R,,,,,Ty Pinkins,Roger Wicker (incumbent),,,,,,,,,,https://www.typinkins.com/,https://wickerforsenate.com/,,,,,,,,,,1.0,"1,313,759.0",-19.0,-16.5,5.3
+Missouri,29,nan,nan,nan,,Senate,2.0,solid-R,,,,,Lucas Kunce,Josh Hawley (incumbent),,Doris Canaday (Socialist Equality Party),,,,,W.C. Young,,,https://lucaskunce.com/,https://electiondeniers.org/,,Unknown,,,,,Unknown,,,1.0,"3,025,962.0",-12.0,-15.4,3.5
+Montana,30,nan,nan,nan,,Senate,10.0,lean-R,,,,,Jon Tester (incumbent),Tim Sheehy,,,,,,,Sid Daoud,Michael Downey,,https://jontester.com/,https://timformt.com/,,,,,,,https://libertysid.com/,Unknown,,1.0,"603,674.0",-8.0,-16.4,21.4
+Nebraska,31,nan,nan,nan,,Senate,26.0,solid-R,,,,,,Deb Fischer (incumbent),Dan Osborn,,,,,,,,,,https://debfornebraska.com/,https://osbornforsenate.com/,https://osbornforsenate.com/,,,,,,,,1.0,"951,800.0",3.0,-12.0,53.2
+Nevada,32,nan,nan,nan,,Senate,100.0,lean-D,,,,,Jacky Rosen (incumbent),Sam Brown,,Joseph Destin,Chris Mazlo,Allen Rheinhart,Ed Uehling,Bradley Scott Wing,Chris Cunningham,,,https://www.rosenfornevada.com/,https://captainsambrown.com/,,Unknown,Unknown,https://www.allenrheinhart.com/,https://eduehling.com/,Unknown,https://www.cunninghamfornevada.com/,,,1.0,"1,405,376.0",4.3,2.3,207.8
+New Jersey,34,nan,nan,nan,,Senate,3.0,solid-D,,,,,Andy Kim,Curtis Bashaw,,Joanne Kuniansky (Socialist Workers Party),Nick Carducci,Patricia Mooneyham,,,Kenneth Kaplan,Christina Khalil,,https://www.andykim.com/,https://curtisbashawforsenate.com/,https://votebetter2024.com/,Unknown,https://nickcarducci.com/,Unknown,,,https://www.kaplanforgovernor.com/index.php/,https://khalilforsenate.com/,,1.0,"4,549,457.0",7.0,16.0,6.9
+New Mexico,35,nan,nan,nan,,Senate,7.0,solid-D,,,,,Martin Heinrich (incumbent),Nella Domenici,,Jerry Rose,,,,,,,,https://martinheinrich.com/,https://www.nellaforsenate.com/,,Unknown,,,,,,,,1.0,"923,965.0",10.0,24.0,14.0
+New York,36,nan,nan,nan,,Senate,0.0,solid-D,,,,,Kirsten Gillibrand (incumbent),Mike Sapraicone,,Jonathan Ramos,Diane Sara (LaRouche Party),,,,,,,https://kirstengillibrand.com/,https://mikesapraiconeforsenate.com/,,Unknown,https://www.sareforsenate.com/,,,,,,,1.0,"8,616,861.0",24.5,23.1,0.7
+North Dakota,38,nan,nan,nan,,Senate,3.0,solid-R,,,,,Katrina Christiansen,Kevin Cramer (incumbent),,,,,,,,,,https://www.katrinaforussenate.com/,https://kevincramer.org/,,,,,,,,,,1.0,"362,024.0",-31.5,-33.3,6.5
+Ohio,39,nan,nan,nan,,Senate,5.0,toss-up,,,,,Sherrod Brown (incumbent),Bernie Moreno,,,,,,,,,,https://www.sherrodbrown.com/,https://electiondeniers.org/,,,,,,,,,,1.0,"5,922,202.0",-1.0,-6.8,9.9
+Pennsylvania,42,nan,nan,nan,,Senate,8.0,lean-D,,,,,Bob Casey Jr. (incumbent),David McCormick,,Hussein Tartour-Aguirre,,,,,John Thomas,Leila Hazou,Quincy Magee (I),https://bobcasey.com/,https://www.davemccormickpa.com/,,,,,,,,https://www.leilaforsenate.com/,http://www.quincymagee.com/,1.0,"6,936,976.0",-0.4,13.0,17.1
+Rhode Island,44,nan,nan,nan,,Senate,7.0,solid-D,,,,,Sheldon Whitehouse (incumbent),Patricia Morgan,,,,,,,,,Armando Anzoli (I),https://whitehouseforsenate.com/,https://www.patriciamorgan.com/,,,,,,,,,,1.0,"517,757.0",22.0,20.8,15.0
+Tennessee,47,nan,nan,nan,,Senate,1.0,solid-R,,,,,Gloria Johnson,Marsha Blackburn (incumbent),,Pamela Moses,Hastina Robinson,,,,,,,https://www.votegloriajohnson.com/,https://electiondeniers.org/,,https://pamelamosesforsenate.com/,https://vote4hastina.com/,,,,,,,1.0,"3,053,851.0",-18.0,-23.2,1.7
+Texas,48,nan,nan,nan,,Senate,3.0,likely-R,,,,,Colin Allred,Ted Cruz (incumbent),,,,,,,Ted Brown,,Tracy Andrus (D),https://colinallred.com/,https://www.tedcruz.org/,,,,,,,https://tedbrown.org/,,https://tracyandrusforsenate.com/,1.0,"11,315,056.0",-3.0,-2.6,7.0
+Utah,49,nan,nan,nan,,Senate,1.0,solid-R,,,,,Caroline Gleich,John Curtis,,,,,,,,,Laird Hamblin (D),https://www.carolineforutah.com/,https://www.johncurtis.org/,,,,,,,,,https://lairdsenate.us/,1.0,"1,488,289.0",-31.0,-20.5,2.4
+Vermont,50,nan,nan,nan,,Senate,4.0,solid-D,,,,,Bernie Sanders (incumbent),Gerald Malloy,,,,,,,,,,https://berniesanders.com/,https://www.deploymalloy.com/,,,,,,,,,,1.0,"367,428.0",34.0,35.4,7.4
+Virginia,51,nan,nan,nan,,Senate,2.0,solid-D,,,,,Tim Kaine (incumbent),Hung Cao,,Csaba Menezes Rusznak,Tiger Xiong,,,,,,,https://timkaine.com/,https://www.hungforva.com/,,,,,,,,,,1.0,"4,460,524.0",11.0,16.0,4.9
+Washington,53,nan,nan,nan,,Senate,2.0,solid-D,,,,,Maria Cantwell (incumbent),Raul Garcia,,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,https://www.cantwell.com/,https://garciaforwa.com/,,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,1.0,"4,087,631.0",15.0,16.8,3.7
+West Virginia,54,nan,nan,nan,,Senate,1.0,solid-R,,,,,Glenn Elliott,Jim Justice,,,,,,,,,,https://elliottforwv.com/,https://jimjusticewv.com/,,,,,,,,,,1.0,"794,731.0",-33.5,-39.0,2.4
+Wisconsin,55,nan,nan,nan,,Senate,17.0,lean-D,,,,,Tammy Baldwin (incumbent),Eric Hovde,,,,,,,Phillip Anderson (Disrupt The Corruption Party),,,https://www.tammybaldwin.com/,https://erichovde.com/,,,,,,,https://www.andersonforussenate.com/,,,1.0,"3,298,041.0",2.0,10.8,34.7
+Wyoming,56,nan,nan,nan,,Senate,3.0,solid-R,,,,,Scott Morrow,John Barrasso (incumbent),,,,,,,,,,https://morrowforwyoming.com/,https://barrassoforwyoming.com/,,,,,,,,,,1.0,"278,503.0",-30.0,-43.4,6.7
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,metamargin,sigma,df
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"278,503.0",2.4,3.0,1.0
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4.2,10.8,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,avg,avg,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,00,nan,nan,nan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.3535533906

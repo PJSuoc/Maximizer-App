@@ -1,34 +1,65 @@
-state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power,cook_rating,pivotal election?,structural initiative?,liberties initiative?,ballot type,D_running,R_running,I_running,I_running,I_running,I_running,I_running,I_running,L_running,G_running,Write_in,D_link,R_link,I_link
-Arizona,04,,,,,Senate,43,lean-D,,,,,Ruben Gallego,Kari Lake,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,https://gallegoforarizona.com/,https://electiondeniers.org/,
-California,06,,,,,Senate,1,solid-D,,,,,Adam Schiff,Steve Garvey,,NA,NA,NA,NA,NA,NA,NA,,https://www.adamschiff.com/,https://stevegarvey.com/,
-Connecticut,09,,,,,Senate,6,solid-D,,,,,Christopher S. Murphy (incumbent),Matthew Corey,,NA,NA,NA,NA,NA,NA,NA,,https://chrismurphy.com/,https://coreyforsenate.com/,
-Delaware,10,,,,,Senate,17,solid-D,,,,,Lisa Blunt Rochester,Eric Hansen,,NA,NA,NA,NA,NA,NA,NA,,https://lisabluntrochester.com/,https://voteerichansen.com/,
-Florida,12,,,,,Senate,14,likely-R,,,,,Debbie Mucarsel-Powell,Rick Scott (incumbent),,Ben Everidge,Tuan Nguyen,Howard Knepper,NA,NA,Feena Bonoan,NA,,https://www.debbieforflorida.com/,https://electiondeniers.org/,
-Hawaii,15,,,,,Senate,5,solid-D,,,,,Mazie K. Hirono (incumbent),Bob McDermott,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,https://mazieforhawaii.com/,https://votemcdermott.com/,
-Indiana,18,,,,,Senate,6,solid-R,,,,,Valerie McCray,Jim Banks,,Richard Kent,NA,NA,NA,NA,Andy Horning,NA,,https://valeriemccray.org/,https://electiondeniers.org/,
-Maine,23,,,,,Senate,6,solid-D,,,,,,Demi Kouzounas,Angus King (incumbent),Jason Cherry,NA,NA,NA,NA,NA,NA,,,https://demiforsenate.com/,https://angusformaine.com/
-Maryland,24,,,,,Senate,3,likely-D,,,,,Angela Alsobrooks,Larry Hogan,,NA,NA,NA,NA,NA,Mike Scott,Nancy Wallace,,https://www.angelaalsobrooks.com/,https://larryhogan.com/,
-Massachusetts,25,,,,,Senate,1,solid-D,,,,,Elizabeth Warren (incumbent),John Deaton,,Brandon James Griffin (Workers Party),Shiva Ayyadurai,NA,NA,NA,NA,NA,,https://elizabethwarren.com/,https://johndeatonforsenate.com/,
-Michigan,26,,,,,Senate,37,toss-up,,,,,Elissa Slotkin,Mike Rogers,,NA,NA,NA,NA,NA,NA,Douglas Marsh,,https://elissaslotkin.org/,https://electiondeniers.org/,
-Minnesota,27,,,,,Senate,2,solid-D,,,,,Amy Klobuchar (incumbent),Royce White,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,https://amyklobuchar.com/,https://electiondeniers.org/,
-Mississippi,28,,,,,Senate,8,solid-R,,,,,Ty Pinkins,Roger Wicker (incumbent),,NA,NA,NA,NA,NA,NA,NA,,https://www.typinkins.com/,https://wickerforsenate.com/,
-Missouri,29,,,,,Senate,6,solid-R,,,,,Lucas Kunce,Josh Hawley (incumbent),,Doris Canaday (Socialist Equality Party),NA,NA,NA,NA,W.C. Young,NA,,https://lucaskunce.com/,https://electiondeniers.org/,
-Montana,30,,,,,Senate,35,lean-R,,,,,Jon Tester (incumbent),Tim Sheehy,,NA,NA,NA,NA,NA,Sid Daoud,Michael Downey,,https://jontester.com/,https://timformt.com/,
-Nebraska,31,,,,,Senate,80,solid-R,,,,,,Deb Fischer (incumbent),Dan Osborn,NA,NA,NA,NA,NA,NA,NA,,,https://debfornebraska.com/,https://osbornforsenate.com/
-Nevada,32,,,,,Senate,100,lean-D,,,,,Jacky Rosen (incumbent),Sam Brown,,Joseph Destin,Chris Mazlo,Allen Rheinhart,Ed Uehling,Bradley Scott Wing,Chris Cunningham,NA,,https://www.rosenfornevada.com/,https://captainsambrown.com/,
-New Jersey,34,,,,,Senate,7,solid-D,,,,,Andy Kim,Curtis Bashaw,,Joanne Kuniansky (Socialist Workers Party),Nick Carducci,Patricia Mooneyham,NA,NA,Kenneth Kaplan,Christina Khalil,,https://www.andykim.com/,https://curtisbashawforsenate.com/,https://votebetter2024.com/
-New Mexico,35,,,,,Senate,15,solid-D,,,,,Martin Heinrich (incumbent),Nella Domenici,,Jerry Rose,NA,NA,NA,NA,NA,NA,,https://martinheinrich.com/,https://www.nellaforsenate.com/,
-New York,36,,,,,Senate,1,solid-D,,,,,Kirsten Gillibrand (incumbent),Mike Sapraicone,,Jonathan Ramos,Diane Sara (LaRouche Party),NA,NA,NA,NA,NA,,https://kirstengillibrand.com/,https://mikesapraiconeforsenate.com/,
-North Dakota,38,,,,,Senate,9,solid-R,,,,,Katrina Christiansen,Kevin Cramer (incumbent),,NA,NA,NA,NA,NA,NA,NA,,https://www.katrinaforussenate.com/,https://kevincramer.org/,
-Ohio,39,,,,,Senate,45,toss-up,,,,,Sherrod Brown (incumbent),Bernie Moreno,,NA,NA,NA,NA,NA,NA,NA,NA,https://www.sherrodbrown.com/,https://electiondeniers.org/,
-Pennsylvania,42,,,,,Senate,11,lean-D,,,,,Bob Casey Jr. (incumbent),David McCormick,,Hussein Tartour-Aguirre,NA,NA,NA,NA,John Thomas,Leila Hazou,Quincy Magee (I),https://bobcasey.com/,https://www.davemccormickpa.com/,
-Rhode Island,44,,,,,Senate,17,solid-D,,,,,Sheldon Whitehouse (incumbent),Patricia Morgan,,NA,NA,NA,NA,NA,NA,NA,Armando Anzoli (I),https://whitehouseforsenate.com/,https://www.patriciamorgan.com/,
-Tennessee,47,,,,,Senate,3,solid-R,,,,,Gloria Johnson,Marsha Blackburn (incumbent),,Pamela Moses,Hastina Robinson,NA,NA,NA,NA,NA,NA,https://www.votegloriajohnson.com/,https://electiondeniers.org/,
-Texas,48,,,,,Senate,15,likely-R,,,,,Colin Allred,Ted Cruz (incumbent),,NA,NA,NA,NA,NA,Ted Brown,NA,Tracy Andrus (D),https://colinallred.com/,https://www.tedcruz.org/,
-Utah,49,,,,,Senate,4,solid-R,,,,,Caroline Gleich,John Curtis,,NA,NA,NA,NA,NA,NA,NA,Laird Hamblin (D),https://www.carolineforutah.com/,https://www.johncurtis.org/,
-Vermont,50,,,,,Senate,9,solid-D,,,,,Bernie Sanders (incumbent),Gerald Malloy,,NA,NA,NA,NA,NA,NA,NA,NA,https://berniesanders.com/,https://www.deploymalloy.com/,
-Virginia,51,,,,,Senate,5,solid-D,,,,,Tim Kaine (incumbent),Hung Cao,,Csaba Menezes Rusznak,Tiger Xiong,NA,NA,NA,NA,NA,NA,https://timkaine.com/,https://www.hungforva.com/,
-Washington,53,,,,,Senate,4,solid-D,,,,,Maria Cantwell (incumbent),Raul Garcia,,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,https://www.cantwell.com/,https://garciaforwa.com/,
-West Virginia,54,,,,,Senate,3,solid-R,,,,,Glenn Elliott,Jim Justice,,NA,NA,NA,NA,NA,NA,NA,NA,https://elliottforwv.com/,https://jimjusticewv.com/,
-Wisconsin,55,,,,,Senate,16,lean-D,,,,,Tammy Baldwin (incumbent),Eric Hovde,,NA,NA,NA,NA,NA,Phillip Anderson (Disrupt The Corruption Party),NA,NA,https://www.tammybaldwin.com/,https://erichovde.com/,
-Wyoming,56,,,,,Senate,10,solid-R,,,,,Scott Morrow,John Barrasso (incumbent),,NA,NA,NA,NA,NA,NA,NA,NA,https://morrowforwyoming.com/,https://barrassoforwyoming.com/,
+state_name,state,congress,s_upper,s_lower,election_name,race_type,voter_power,cook_rating,pivotal election?,structural initiative?,liberties initiative?,ballot type,D_running,R_running,I_running,I_running,I_running,I_running,I_running,I_running,L_running,G_running,Write_in,D_link,R_link,I_link,I_link,I_link,I_link,I_link,I_link,L_link,G_link,Write-in link,Competitive,turnout2020,Poll Margins,Pres20 or Sen18,vp (unnorm)
+Arizona,04,,,,,Senate,45,lean-D,,,,,Ruben Gallego,Kari Lake,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,https://gallegoforarizona.com/,https://electiondeniers.org/,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,1.0,"3,387,326.0",4.2,0.3,93.7
+California,06,,,,,Senate,0,solid-D,,,,,Adam Schiff,Steve Garvey,,NA,NA,NA,NA,NA,NA,NA,,https://www.adamschiff.com/,https://stevegarvey.com/,,NA,NA,NA,NA,NA,NA,NA,,1.0,"17,501,380.0",11.1,29.0,0.5
+Connecticut,09,,,,,Senate,2,solid-D,,,,,Christopher S. Murphy (incumbent),Matthew Corey,,NA,NA,NA,NA,NA,NA,NA,,https://chrismurphy.com/,https://coreyforsenate.com/,,NA,NA,NA,NA,NA,NA,NA,,1.0,"1,823,857.0",20.2,20.0,4.9
+Delaware,10,,,,,Senate,7,solid-D,,,,,Lisa Blunt Rochester,Eric Hansen,,NA,NA,NA,NA,NA,NA,NA,,https://lisabluntrochester.com/,https://voteerichansen.com/,,NA,NA,NA,NA,NA,NA,NA,,1.0,"504,346.0",24.5,19.0,14.8
+Florida,12,,,,,Senate,3,likely-R,,,,,Debbie Mucarsel-Powell,Rick Scott (incumbent),,Ben Everidge,Tuan Nguyen,Howard Knepper,NA,NA,Feena Bonoan,NA,,https://www.debbieforflorida.com/,https://electiondeniers.org/,,Unknown,https://letsbe-american.com/,Unknown,NA,NA,https://www.feenabonoan.com/,,,1.0,"11,067,456.0",-5.6,-0.1,7.1
+Hawaii,15,,,,,Senate,2,solid-D,,,,,Mazie K. Hirono (incumbent),Bob McDermott,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,https://mazieforhawaii.com/,https://votemcdermott.com/,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,1.0,"574,469.0",42.2,29.5,4.4
+Indiana,18,,,,,Senate,2,solid-R,,,,,Valerie McCray,Jim Banks,,Richard Kent,NA,NA,NA,NA,Andy Horning,NA,,https://valeriemccray.org/,https://electiondeniers.org/,,Unknown,NA,NA,NA,NA,https://horningforsenate.com/,NA,,1.0,"3,033,210.0",-10.0,-16.0,3.8
+Maine,23,,,,,Senate,2,solid-D,,,,,,Demi Kouzounas,Angus King (incumbent),Jason Cherry,NA,NA,NA,NA,NA,NA,,,https://demiforsenate.com/,https://angusformaine.com/,https://cherryforsenate.com/,NA,NA,NA,NA,NA,NA,,1.0,"819,461.0",29.0,29.0,4.9
+Maryland,24,,,,,Senate,1,likely-D,,,,,Angela Alsobrooks,Larry Hogan,,NA,NA,NA,NA,NA,Mike Scott,Nancy Wallace,,https://www.angelaalsobrooks.com/,https://larryhogan.com/,,NA,NA,NA,NA,NA,https://www.mikescott2024.com/,Unknown,,1.0,"3,037,030.0",11.0,33.0,2.4
+Massachusetts,25,,,,,Senate,1,solid-D,,,,,Elizabeth Warren (incumbent),John Deaton,,Brandon James Griffin (Workers Party),Shiva Ayyadurai,NA,NA,NA,NA,NA,,https://elizabethwarren.com/,https://johndeatonforsenate.com/,,Unknown,Unknown,NA,NA,NA,NA,NA,,1.0,"3,631,402.0",25.0,33.0,1.1
+Michigan,26,,,,,Senate,24,toss-up,,,,,Elissa Slotkin,Mike Rogers,,NA,NA,NA,NA,NA,NA,Douglas Marsh,,https://elissaslotkin.org/,https://electiondeniers.org/,,NA,NA,NA,NA,NA,NA,https://www.electmarsh.us/,,1.0,"5,539,302.0",4.2,3.0,49.5
+Minnesota,27,,,,,Senate,1,solid-D,,,,,Amy Klobuchar (incumbent),Royce White,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,https://amyklobuchar.com/,https://electiondeniers.org/,,waiting on primary,waiting on primary,waiting on primary,NA,NA,waiting on primary,waiting on primary,,1.0,"3,277,171.0",21.0,24.1,2.1
+Mississippi,28,,,,,Senate,3,solid-R,,,,,Ty Pinkins,Roger Wicker (incumbent),,NA,NA,NA,NA,NA,NA,NA,,https://www.typinkins.com/,https://wickerforsenate.com/,,NA,NA,NA,NA,NA,NA,NA,,1.0,"1,313,759.0",-19.0,-16.5,5.3
+Missouri,29,,,,,Senate,2,solid-R,,,,,Lucas Kunce,Josh Hawley (incumbent),,Doris Canaday (Socialist Equality Party),NA,NA,NA,NA,W.C. Young,NA,,https://lucaskunce.com/,https://electiondeniers.org/,,Unknown,NA,NA,NA,NA,Unknown,NA,,1.0,"3,025,962.0",-12.0,-15.4,3.5
+Montana,30,,,,,Senate,10,lean-R,,,,,Jon Tester (incumbent),Tim Sheehy,,NA,NA,NA,NA,NA,Sid Daoud,Michael Downey,,https://jontester.com/,https://timformt.com/,,NA,NA,NA,NA,NA,https://libertysid.com/,Unknown,,1.0,"603,674.0",-8.0,-16.4,21.4
+Nebraska,31,,,,,Senate,26,solid-R,,,,,,Deb Fischer (incumbent),Dan Osborn,NA,NA,NA,NA,NA,NA,NA,,,https://debfornebraska.com/,https://osbornforsenate.com/,https://osbornforsenate.com/,NA,NA,NA,NA,NA,NA,,1.0,"951,800.0",3.0,-12.0,53.2
+Nevada,32,,,,,Senate,100,lean-D,,,,,Jacky Rosen (incumbent),Sam Brown,,Joseph Destin,Chris Mazlo,Allen Rheinhart,Ed Uehling,Bradley Scott Wing,Chris Cunningham,NA,,https://www.rosenfornevada.com/,https://captainsambrown.com/,,Unknown,Unknown,https://www.allenrheinhart.com/,https://eduehling.com/,Unknown,https://www.cunninghamfornevada.com/,NA,,1.0,"1,405,376.0",4.3,2.3,207.8
+New Jersey,34,,,,,Senate,3,solid-D,,,,,Andy Kim,Curtis Bashaw,,Joanne Kuniansky (Socialist Workers Party),Nick Carducci,Patricia Mooneyham,NA,NA,Kenneth Kaplan,Christina Khalil,,https://www.andykim.com/,https://curtisbashawforsenate.com/,https://votebetter2024.com/,Unknown,https://nickcarducci.com/,Unknown,NA,NA,https://www.kaplanforgovernor.com/index.php/,https://khalilforsenate.com/,,1.0,"4,549,457.0",7.0,16.0,6.9
+New Mexico,35,,,,,Senate,7,solid-D,,,,,Martin Heinrich (incumbent),Nella Domenici,,Jerry Rose,NA,NA,NA,NA,NA,NA,,https://martinheinrich.com/,https://www.nellaforsenate.com/,,Unknown,NA,NA,NA,NA,NA,NA,,1.0,"923,965.0",10.0,24.0,14.0
+New York,36,,,,,Senate,0,solid-D,,,,,Kirsten Gillibrand (incumbent),Mike Sapraicone,,Jonathan Ramos,Diane Sara (LaRouche Party),NA,NA,NA,NA,NA,,https://kirstengillibrand.com/,https://mikesapraiconeforsenate.com/,,Unknown,https://www.sareforsenate.com/,NA,NA,NA,NA,NA,,1.0,"8,616,861.0",24.5,23.1,0.7
+North Dakota,38,,,,,Senate,3,solid-R,,,,,Katrina Christiansen,Kevin Cramer (incumbent),,NA,NA,NA,NA,NA,NA,NA,,https://www.katrinaforussenate.com/,https://kevincramer.org/,,NA,NA,NA,NA,NA,NA,NA,,1.0,"362,024.0",-31.5,-33.3,6.5
+Ohio,39,,,,,Senate,5,toss-up,,,,,Sherrod Brown (incumbent),Bernie Moreno,,NA,NA,NA,NA,NA,NA,NA,NA,https://www.sherrodbrown.com/,https://electiondeniers.org/,,NA,NA,NA,NA,NA,NA,NA,,1.0,"5,922,202.0",-1.0,-6.8,9.9
+Pennsylvania,42,,,,,Senate,8,lean-D,,,,,Bob Casey Jr. (incumbent),David McCormick,,Hussein Tartour-Aguirre,NA,NA,NA,NA,John Thomas,Leila Hazou,Quincy Magee (I),https://bobcasey.com/,https://www.davemccormickpa.com/,,NA,NA,NA,NA,NA,NA,https://www.leilaforsenate.com/,http://www.quincymagee.com/,1.0,"6,936,976.0",-0.4,13.0,17.1
+Rhode Island,44,,,,,Senate,7,solid-D,,,,,Sheldon Whitehouse (incumbent),Patricia Morgan,,NA,NA,NA,NA,NA,NA,NA,Armando Anzoli (I),https://whitehouseforsenate.com/,https://www.patriciamorgan.com/,,NA,NA,NA,NA,NA,NA,NA,NA,1.0,"517,757.0",22.0,20.8,15.0
+Tennessee,47,,,,,Senate,1,solid-R,,,,,Gloria Johnson,Marsha Blackburn (incumbent),,Pamela Moses,Hastina Robinson,NA,NA,NA,NA,NA,NA,https://www.votegloriajohnson.com/,https://electiondeniers.org/,,https://pamelamosesforsenate.com/,https://vote4hastina.com/,NA,NA,NA,NA,NA,NA,1.0,"3,053,851.0",-18.0,-23.2,1.7
+Texas,48,,,,,Senate,3,likely-R,,,,,Colin Allred,Ted Cruz (incumbent),,NA,NA,NA,NA,NA,Ted Brown,NA,Tracy Andrus (D),https://colinallred.com/,https://www.tedcruz.org/,,NA,NA,NA,NA,NA,https://tedbrown.org/,NA,https://tracyandrusforsenate.com/,1.0,"11,315,056.0",-3.0,-2.6,7.0
+Utah,49,,,,,Senate,1,solid-R,,,,,Caroline Gleich,John Curtis,,NA,NA,NA,NA,NA,NA,NA,Laird Hamblin (D),https://www.carolineforutah.com/,https://www.johncurtis.org/,,NA,NA,NA,NA,NA,NA,NA,https://lairdsenate.us/,1.0,"1,488,289.0",-31.0,-20.5,2.4
+Vermont,50,,,,,Senate,4,solid-D,,,,,Bernie Sanders (incumbent),Gerald Malloy,,NA,NA,NA,NA,NA,NA,NA,NA,https://berniesanders.com/,https://www.deploymalloy.com/,,NA,NA,NA,NA,NA,NA,NA,NA,1.0,"367,428.0",34.0,35.4,7.4
+Virginia,51,,,,,Senate,2,solid-D,,,,,Tim Kaine (incumbent),Hung Cao,,Csaba Menezes Rusznak,Tiger Xiong,NA,NA,NA,NA,NA,NA,https://timkaine.com/,https://www.hungforva.com/,,NA,NA,NA,NA,NA,NA,NA,NA,1.0,"4,460,524.0",11.0,16.0,4.9
+Washington,53,,,,,Senate,2,solid-D,,,,,Maria Cantwell (incumbent),Raul Garcia,,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,https://www.cantwell.com/,https://garciaforwa.com/,,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,waiting on primary,1.0,"4,087,631.0",15.0,16.8,3.7
+West Virginia,54,,,,,Senate,1,solid-R,,,,,Glenn Elliott,Jim Justice,,NA,NA,NA,NA,NA,NA,NA,NA,https://elliottforwv.com/,https://jimjusticewv.com/,,NA,NA,NA,NA,NA,NA,NA,NA,1.0,"794,731.0",-33.5,-39.0,2.4
+Wisconsin,55,,,,,Senate,17,lean-D,,,,,Tammy Baldwin (incumbent),Eric Hovde,,NA,NA,NA,NA,NA,Phillip Anderson (Disrupt The Corruption Party),NA,NA,https://www.tammybaldwin.com/,https://erichovde.com/,,NA,NA,NA,NA,NA,https://www.andersonforussenate.com/,NA,NA,1.0,"3,298,041.0",2.0,10.8,34.7
+Wyoming,56,,,,,Senate,3,solid-R,,,,,Scott Morrow,John Barrasso (incumbent),,NA,NA,NA,NA,NA,NA,NA,NA,https://morrowforwyoming.com/,https://barrassoforwyoming.com/,,NA,NA,NA,NA,NA,NA,NA,NA,1.0,"278,503.0",-30.0,-43.4,6.7
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,metamargin,sigma,df
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"278,503.0",2.4,3.0,1.0
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4.2,10.8,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,avg,avg,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.3535533906
