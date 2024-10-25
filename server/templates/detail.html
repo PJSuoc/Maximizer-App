@@ -218,7 +218,6 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
         }
     }
 
-    
     function createCategoryList(categoryData, categoryTitle) {
         // if (!categoryData || categoryData.length === 0) return '';
         
@@ -239,12 +238,12 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     categoryData.sort((a, b) => (a.election_name || '').localeCompare(b.election_name || ''));
                     tableRows = categoryData.map(item => `
                         <tr>
-                            <td class="text-wrap" colspan="2">${item.candidate_names || item['name of ballot'] || item.election_name}</td>
+                            <td class="text-wrap" colspan="3">${item.candidate_names || item['name of ballot'] || item.election_name}</td>
                             <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `).join('');
                 } else {
-                    tableRows = `<tr><td colspan="3">No such ballot initiatives exist in this state.</td></tr>`;
+                    tableRows = `<tr><td colspan="4">No such ballot initiatives exist in this state.</td></tr>`;
                 }
                 break;
 
@@ -263,27 +262,40 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         <tr>
                             <td>President</td>
                             <td>${Math.round(categoryData.president.voter_power)}</td>
+                            <td>NA</td>
                             <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `;
                 }
                 else {
-                    tableRows += `<tr><td colspan="3" class="missing">This presidential race does not have high voter power.</td></tr>`;
+                    tableRows += `<tr><td colspan="4" class="missing">This presidential race does not have high voter power.</td></tr>`;
                 } 
                 if (categoryData.senate && categoryData.senate.voter_power > 20) {
                     hasElectedOffices = true;
                     const item = categoryData.senate;
-
+                    const poll_margin = parseInt(item['Poll Margins']);
+                    const poll_margin_display = (() => {
+                        if (isNaN(poll_margin)) return 'N/A';
+                        if (poll_margin === 0) return 'Tie';
+                        let party;
+                        if (item.I_running && item.I_running.trim() !== '') {
+                            party = 'I';
+                        } else {
+                            party = poll_margin > 0 ? 'D' : 'R';
+                        }
+                        return `${party}+${Math.abs(poll_margin)}`;
+                    })();
                     tableRows += `
                         <tr>
                             <td>Senate</td>
                             <td>${Math.round(categoryData.senate.voter_power)}</td>
+                            <td>${poll_margin_display}</td>
                             <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `;
                 }
                 else {
-                    tableRows += `<tr><td colspan="3" class="missing">This U.S. Senate race does not have high voter power.</td></tr>`;
+                    tableRows += `<tr><td colspan="4" class="missing">This U.S. Senate race does not have high voter power.</td></tr>`;
                 } 
 
                 if (categoryData.governor && categoryData.governor.voter_power > 20) {
@@ -293,12 +305,13 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         <tr>
                             <td>Governor</td>
                             <td>${Math.round(item.voter_power)}</td>
+                            <td></td>
                             <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `;
                 }
                 else {
-                    tableRows += `<tr><td colspan="3" class="missing">The governor's race does not have high voter power.</td></tr>`;
+                    tableRows += `<tr><td colspan="4" class="missing">The governor's race does not have high voter power.</td></tr>`;
                 }
 
 
@@ -306,52 +319,95 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 
                 if (highPowerHouseDistricts && highPowerHouseDistricts.length > 0) {
                     hasElectedOffices = true;
-                    tableRows += `<tr class="subcategory-header"><td colspan="3">U.S. House</td></tr>`;
-                    tableRows += highPowerHouseDistricts.map(item => `
-                        <tr>
-                            <td>${item.election_name.replace(/^Congressional\s*/, '').trim() || 'N/A'}</td>
-                            <td>${Math.round(item.voter_power)}</td>
-                            <td>${createLearnMoreButton(item)}</td>
-                        </tr>
-                    `).join('');
+
+                    tableRows += `<tr class="subcategory-header"><td colspan="4">U.S. House</td></tr>`;
+                    tableRows += highPowerHouseDistricts.map(item => {
+                        const poll_margin = parseInt(item['Margin (Averages)']);
+                        const poll_margin_display = (() => {
+                            if (isNaN(poll_margin)) return 'N/A';
+                            if (poll_margin === 0) return 'Tie';
+                            const party = poll_margin > 0 ? 'D' : 'R';
+                            return `${party}+${Math.abs(poll_margin)}`;
+                        })();
+
+                        return `
+                            <tr>
+                                <td>${item.election_name.replace(/^Congressional\s*/, '').trim() || 'N/A'}</td>
+                                <td>${Math.round(item.voter_power)}</td>
+                                <td>${poll_margin_display}</td>
+                                <td>${createLearnMoreButton(item)}</td>
+                            </tr>
+                        `;
+                    }).join('');
                 }
                 else {
-                    tableRows += `<tr><td colspan="3" class="missing">No U.S. House races have high voter power.</td></tr>`;
+                    tableRows += `<tr><td colspan="4" class="missing">No U.S. House races have high voter power.</td></tr>`;
                 }  
                 
                 
                 const highPowerStateSenateDistricts = categoryData.state_senate.filter(item => item.voter_power > 20);
-                
-                if (highPowerStateSenateDistricts && highPowerStateSenateDistricts.length > 0) {
-                    
-                    tableRows += `<tr class="subcategory-header"><td colspan="3">State Senate</td></tr>`;
-                    tableRows += highPowerStateSenateDistricts.map(item => `
-                        <tr>
-                            <td>${item.election_name.replace(/^State Senate\s*/, '').trim() || 'N/A'}</td>
-                            <td>${Math.round(item.voter_power)}</td>
-                            <td>${createLearnMoreButton(item)}</td>
-                        </tr>
-                    `).join('');
+
+                if (highPowerStateSenateDistricts && highPowerStateSenateDistricts.length > 0) {             
+                    tableRows += `<tr class="subcategory-header"><td colspan="4">State Senate</td></tr>`;
+                    tableRows += highPowerStateSenateDistricts.map(item => {
+                        const poll_margin = parseInt(item['margins']);
+                        const poll_margin_display = (() => {
+                            if (isNaN(poll_margin)) return 'N/A';
+                            if (poll_margin === 0) return 'Tie';
+                            let party;
+                            if (item.I_running && item.I_running.trim() !== '') {
+                                party = 'I';
+                            } else {
+                                party = poll_margin > 0 ? 'D' : 'R';
+                            }
+                            return `${party}+${Math.abs(poll_margin)}`;
+                        })();
+
+                        return `
+                            <tr>
+                                <td>${item.election_name.replace(/^State Senate\s*/, '').trim() || 'N/A'}</td>
+                                <td>${Math.round(item.voter_power)}</td>
+                                <td>${poll_margin_display}</td>
+                                <td>${createLearnMoreButton(item)}</td>
+                            </tr>
+                        `;
+                    }).join('');
                 }
                 else {
-                    tableRows += `<tr><td colspan="3" class="missing">No state senate races have high voter power.</td></tr>`;
+                    tableRows += `<tr><td colspan="4" class="missing">No state senate races have high voter power.</td></tr>`;
                 }
                 
                 const highPowerStateHouseDistricts = categoryData.state_house.filter(item => item.voter_power > 20);
-                
+
                 if (highPowerStateHouseDistricts && highPowerStateHouseDistricts.length > 0) {
                     hasElectedOffices = true;
-                    tableRows += `<tr class="subcategory-header"><td colspan="3">State House</td></tr>`;
-                    tableRows += highPowerStateHouseDistricts.map(item => `
-                        <tr>
-                            <td>${item.election_name.replace(/^State House\s*/, '').trim() || 'N/A'}</td>
-                            <td>${Math.round(item.voter_power)}</td>
-                            <td>${createLearnMoreButton(item)}</td>
-                        </tr>
-                    `).join('');
+                    tableRows += `<tr class="subcategory-header"><td colspan="4">State House</td></tr>`;
+                    tableRows += highPowerStateHouseDistricts.map(item => {
+                        const poll_margin = parseInt(item['margins']);
+                        const poll_margin_display = (() => {
+                            if (isNaN(poll_margin)) return 'N/A';
+                            if (poll_margin === 0) return 'Tie';
+                            let party;
+                            if (item.I_running && item.I_running.trim() !== '') {
+                                party = 'I';
+                            } else {
+                                party = poll_margin > 0 ? 'D' : 'R';
+                            }
+                            return `${party}+${Math.abs(poll_margin)}`;
+                        })();
+
+                        return `
+                            <tr>
+                                <td>${item.election_name.replace(/^State House\s*/, '').trim() || 'N/A'}</td>
+                                <td>${Math.round(item.voter_power)}</td>
+                                <td>${poll_margin_display}</td>
+                                <td>${createLearnMoreButton(item)}</td>
+                            </tr>
+                        `;
+                    }).join('');
                 }
                 else {
-                    tableRows += `<tr><td colspan="3" class="missing">No state house races have high voter power.</td></tr>`;
+                    tableRows += `<tr><td colspan="4" class="missing">No state house races have high voter power.</td></tr>`;
                 }                
                 break;
 
@@ -365,14 +421,14 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                     });
                     tableRows = categoryData.map(item => `
                         <tr>
-                            <td class="text-wrap" colspan="2">
+                            <td class="text-wrap" colspan="3">
                                 ${item.candidate_names || item['name of ballot'] || item.election_name}
                             </td>
                             <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `).join('');
                 } else {
-                    tableRows += `<tr><td colspan="3" class="missing">No ballot initiatives in this state.</td></tr>`;
+                    tableRows += `<tr><td colspan="4" class="missing">No ballot initiatives in this state.</td></tr>`;
 
                 }
                 break;
@@ -383,7 +439,7 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             if (rowsNonEmpty) {
                 columnHeaders = `
                     <tr>
-                        <th colspan="2">Initiative</th>
+                        <th colspan="3">Initiative</th>
                         <th></th>
                     </tr>
                 `;
@@ -395,7 +451,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 <tr>
                     <th>Office</th>
                     <th>Voter Power <span class="vote-info">The power of one more vote (max = 100)</span></th>
+                    <th>Estimated Margin</th>
                     <th></th>
+                   
                 </tr>
             `;
         } 
@@ -405,10 +463,10 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             <table class="table">
                 <thead>
                     <tr class="category-title">
-                        <th colspan="3">${categoryTitle}</th>
+                        <th colspan="4">${categoryTitle}</th>
                     </tr>
                     <tr class="category-description">
-                        <td colspan="3">${description}</td>
+                        <td colspan="4">${description}</td>
                     </tr>
                     ${columnHeaders}
                 </thead>
@@ -418,6 +476,13 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             </table>
         `;
     }
+
+
+
+
+
+    
+
 
    
 
@@ -739,11 +804,6 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
 
             showPinAndPop();
 
-            
-
-
-
-
 
             // Define popup content generation functions for each layer type
 const popupContentGenerators = {
@@ -816,7 +876,7 @@ let indexedData = {};
 if (Array.isArray(all_data) && all_data.length > 0) {
     indexedData = all_data.reduce((acc, row) => {
         let key = row.state || row.STATEFP;
-        if (['presidential', 'governor', 'senate'].includes(row.race_type.toLowerCase())) {
+            if (row.race_type && ['presidential', 'governor', 'senate'].includes(row.race_type.toLowerCase())) {
             key = `${row.state}-${row.race_type.toLowerCase()}`;
         } else if (row.race_type === 'House') {
             if (row.congress) {
