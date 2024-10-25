@@ -237,7 +237,22 @@ def get_involved():
 
         # Use parameterized queries in your DB class methods
         elections_df = db.get_election_by_id(election)
+        def strip_incumbent(name):
+            return name.split(" (incumbent)")[0]
+
         candidates_df = db.get_candidates_by_ids(candidates)
+        # Sort candidates_df by CID
+        candidates_df.sort(key=lambda x: int(x['cid']))
+
+        # Filter candidates_df and only include the instance with the lowest CID if the name matches
+        filtered_candidates = {}
+        for candidate in candidates_df:
+            stripped_name = strip_incumbent(candidate['name'])
+            if stripped_name not in filtered_candidates or int(candidate['cid']) < int(filtered_candidates[stripped_name]['cid']):
+                filtered_candidates[stripped_name] = candidate
+
+        candidates_df = list(filtered_candidates.values())
+
         if len(elections_df) == 0 and len(candidates_df) == 0:
             return render_template("layout.html")
 
