@@ -267,9 +267,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         </tr>
                     `;
                 }
-                else {
+               /* else {
                     tableRows += `<tr><td colspan="4" class="missing">This presidential race does not have high voter power.</td></tr>`;
-                } 
+                } */
                 if (categoryData.senate && categoryData.senate.voter_power > 20) {
                     hasElectedOffices = true;
                     const item = categoryData.senate;
@@ -294,9 +294,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         </tr>
                     `;
                 }
-                else {
+               /* else {
                     tableRows += `<tr><td colspan="4" class="missing">This U.S. Senate race does not have high voter power.</td></tr>`;
-                } 
+                } */
 
                 if (categoryData.governor && categoryData.governor.voter_power > 20) {
                     hasElectedOffices = true;
@@ -310,9 +310,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         </tr>
                     `;
                 }
-                else {
+               /* else {
                     tableRows += `<tr><td colspan="4" class="missing">The governor's race does not have high voter power.</td></tr>`;
-                }
+                }*/
 
 
                 const highPowerHouseDistricts = categoryData.house.filter(item => item.voter_power > 20);
@@ -340,9 +340,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         `;
                     }).join('');
                 }
-                else {
+               /* else {
                     tableRows += `<tr><td colspan="4" class="missing">No U.S. House races have high voter power.</td></tr>`;
-                }  
+                }  */
                 
                 
                 const highPowerStateSenateDistricts = categoryData.state_senate.filter(item => item.voter_power > 20);
@@ -373,9 +373,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         `;
                     }).join('');
                 }
-                else {
+              /*  else {
                     tableRows += `<tr><td colspan="4" class="missing">No state senate races have high voter power.</td></tr>`;
-                }
+                }*/
                 
                 const highPowerStateHouseDistricts = categoryData.state_house.filter(item => item.voter_power > 20);
 
@@ -406,9 +406,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         `;
                     }).join('');
                 }
-                else {
+               /* else {
                     tableRows += `<tr><td colspan="4" class="missing">No state house races have high voter power.</td></tr>`;
-                }                
+                }    */            
                 break;
 
             case 'Other ballot initiatives':
@@ -427,10 +427,10 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                             <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `).join('');
-                } else {
+                } /*else {
                     tableRows += `<tr><td colspan="4" class="missing">No ballot initiatives in this state.</td></tr>`;
 
-                }
+                }*/
                 break;
             }
         // Determine column headers based on category
@@ -445,9 +445,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 `;
             }
         } else {
-            if (hasElectedOffices) {
-                    description = `<p class="category-description-fixed">Elected offices where the <a href="/voter-power" target="_blank">power of individual voters</a> is high:</p>`;
-            columnHeaders = `
+            if (hasElectedOffices) {        
+                    description = `<p class="category-description-fixed">Elected offices where the <a href="/voter-power" target="_blank">power of individual voters</a> is high (maximum power=100)</p>`;
+                    columnHeaders = `
                 <tr>
                     <th>Office</th>
                     <th>Voter Power <span class="vote-info">The power of one more vote (max = 100)</span></th>
@@ -456,8 +456,11 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                    
                 </tr>
             `;
-        } 
-    }
+            }
+            else {
+                columnHeaders = `<tr><td colspan="4" class="missing">No elected offices with high voter power.</td></tr>`;
+            }
+        }
 
         return `
             <table class="table">
