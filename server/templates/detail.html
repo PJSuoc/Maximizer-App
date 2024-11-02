@@ -285,11 +285,18 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         }
                         return `${party}+${Math.abs(poll_margin)}`;
                     })();
+
+                    const tooltipMessage = createTooltipMessage(poll_margin_display, poll_margin);
+
                     tableRows += `
                         <tr>
                             <td>Senate</td>
                             <td>${Math.round(categoryData.senate.voter_power)}</td>
-                            <td>${poll_margin_display}</td>
+                            <td>${poll_margin_display}
+                                <div class="help-tip">
+                                     <p>${tooltipMessage}</p>
+                                </div>
+                            </td>
                             <td>${createLearnMoreButton(item)}</td>
                         </tr>
                     `;
@@ -330,11 +337,18 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                             return `${party}+${Math.abs(poll_margin)}`;
                         })();
 
+                        const tooltipMessage = createTooltipMessage(poll_margin_display, poll_margin);
+
                         return `
                             <tr>
                                 <td>${item.election_name.replace(/^Congressional\s*/, '').trim() || 'N/A'}</td>
                                 <td>${Math.round(item.voter_power)}</td>
-                                <td>${poll_margin_display}</td>
+                                <td>
+                                    ${poll_margin_display}
+                                    <div class="help-tip">
+                                        <p>${tooltipMessage}</p>
+                                    </div> 
+                                </td>
                                 <td>${createLearnMoreButton(item)}</td>
                             </tr>
                         `;
@@ -363,11 +377,17 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                             return `${party}+${Math.abs(poll_margin)}`;
                         })();
 
+                        const tooltipMessage = createTooltipMessage(poll_margin_display, poll_margin);
+
                         return `
                             <tr>
                                 <td>${item.election_name.replace(/^State Senate\s*/, '').trim() || 'N/A'}</td>
                                 <td>${Math.round(item.voter_power)}</td>
-                                <td>${poll_margin_display}</td>
+                                <td>${poll_margin_display}
+                                    <div class="help-tip">
+                                        <p>${tooltipMessage}</p>
+                                    </div>
+                                </td>
                                 <td>${createLearnMoreButton(item)}</td>
                             </tr>
                         `;
@@ -396,11 +416,17 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                             return `${party}+${Math.abs(poll_margin)}`;
                         })();
 
+                         const tooltipMessage = createTooltipMessage(poll_margin_display, poll_margin);
+
                         return `
                             <tr>
                                 <td>${item.election_name.replace(/^State House\s*/, '').trim() || 'N/A'}</td>
                                 <td>${Math.round(item.voter_power)}</td>
-                                <td>${poll_margin_display}</td>
+                                <td>${poll_margin_display}
+                                    <div class="help-tip">
+                                        <p>${tooltipMessage}</p>
+                                    </div>
+                                </td>
                                 <td>${createLearnMoreButton(item)}</td>
                             </tr>
                         `;
@@ -445,9 +471,9 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                 `;
             }
         } else {
-            if (hasElectedOffices) {        
+            if (hasElectedOffices) {
                     description = `<p class="category-description-fixed">Elected offices where the <a href="/voter-power" target="_blank">power of individual voters</a> is high (maximum power=100)</p>`;
-                    columnHeaders = `
+            columnHeaders = `
                 <tr>
                     <th>Office</th>
                     <th>Voter Power <span class="vote-info">The power of one more vote (max = 100)</span></th>
@@ -456,11 +482,8 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                    
                 </tr>
             `;
-            }
-            else {
-                columnHeaders = `<tr><td colspan="4" class="missing">No elected offices with high voter power.</td></tr>`;
-            }
-        }
+        } 
+    }
 
         return `
             <table class="table">
@@ -480,6 +503,17 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
         `;
     }
 
+    function createTooltipMessage(poll_margin_display, poll_margin) {
+    if (poll_margin_display === 'Tie') {
+        return `Averaged across elections, this district tends to be a <span style="color: #7f00bb; font-weight: bold;"> toss-up</span>.`;
+    } else if (poll_margin_display.startsWith('I+')) {
+        return `Averaged across elections, this district tends to vote <span style="color: #7f00bb; font-weight: bold;">Independent</span> by a margin of <span style="color: #7f00bb; font-weight: bold;">${Math.abs(poll_margin)} points</span>.`;
+    } else if (poll_margin > 0) {
+        return `Averaged across elections, this district tends to vote <span style="color: #00AEF3; font-weight: bold;"> Democratic </span> by a margin of <span style="color: #00AEF3; font-weight: bold;">${Math.abs(poll_margin)} points</span>.`;
+    } else {
+        return `Averaged across elections, this district tends to vote <span style="color: #E81B23; font-weight: bold;"> Republican </span> by a margin of <span style="color: #E81B23; font-weight: bold;">${Math.abs(poll_margin)} points</span>.`;
+    }
+}
 
 
 
@@ -618,6 +652,29 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
             offset: [0, -15], // Add a slight vertical offset
             className: 'custom-popup'
         });
+
+        //this function updates the table on the left for the selected state
+        function updateStateInfo(location) {
+            console.log("updateStateInfo", location);
+            window.location.href = `/state?location=${location}&selection=democracy`;
+                return;
+         /*   fetch(`/getStateData?location=${location}`)
+        .then(response => {
+            console.log("Response status:", response.status);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(html => {
+            
+            document.getElementById('state-data-list').innerHTML = html; 
+        })
+        .catch(error => {
+            console.error('Error fetching state data:', error);
+        });*/
+      
+}
         
 
         async function addGeoJsonLayer(layerId) {
@@ -740,6 +797,38 @@ document.querySelectorAll('#layer-dropdown div').forEach(item => {
                         'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0]
                     }
                 });
+
+                //newly added code to update the table on the left when a state is clicked
+
+                map.on('click', function (e) {
+                    
+                    const features = map.queryRenderedFeatures(e.point);
+                    let layerId = currentLayerId;
+                    
+                    if (!features || !features.length) {
+                        return;
+                    }
+                    
+                    let feature = map.queryRenderedFeatures(e.point, { layers: [layerId + '-fill'] })[0];
+                    let location = '';
+                    
+                    if (feature) {
+                        location = feature.properties.STUSPS || feature.properties.state_name;
+                    } else {
+                        feature = map.queryRenderedFeatures(e.point, { layers: ['albersusa'] })[0];
+                        location = feature.properties.STUSPS || feature.properties.state_name;
+                    }
+
+                    console.log("location in onclick", location);
+                    
+                    if (location) {
+                        // use the location to update the table
+                        window.location.href = `/state?location=${location}&selection=democracy`;
+                    }
+                });
+       
+
+
 
                // map.moveLayer('state-label')
                 //map.moveLayer('settlement-major-label')
