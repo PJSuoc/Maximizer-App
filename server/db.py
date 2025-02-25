@@ -1,4 +1,5 @@
 import os
+from os import path
 import logging
 import sqlite3 as sqlite
 import pandas as pd
@@ -49,9 +50,30 @@ else:
 '''
 
 class DB:
-    def __init__(self):
+    def __init__(self, connection):
+        self.conn = connection
         pass
     
+    def generate_table(self, table):
+        print("generating ", table)
+        script_file = path.join("schema", table)
+        with open(script_file, "r") as script:
+            c = self.conn.cursor()
+            c.executescript(script.read())
+            self.conn.commit()
+        print(table, " Done!")
+
+    def insert_data(self, table, data):
+        print("Inserting: ", data[2][6])
+        df = pd.DataFrame(data=data[1:], columns=data[0])
+        df.to_sql(table, self.conn, if_exists='append', index=False)
+        self.conn.commit()
+        print("Insert Done!")
+
+    def build_small_tables(self):
+        election_query = "SELECT election_name, state, congress, s_upper, s_lower, race_type,\
+              voter_power, categorical_flag, numerical_flag, explainer_text FROM elections"
+
     def import_data_v2(self):
         '''
         Imports all necessary data into pandas/geopandas dataframes to hold in memory

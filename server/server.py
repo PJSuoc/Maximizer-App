@@ -17,16 +17,15 @@ from flask import (
     url_for,
 )
 import googlemaps
-import geopandas as gpd
 import pandas as pd
 from datetime import datetime
 import os
 from pathlib import Path
 import logging
-import base64
 from urllib.parse import urlparse, parse_qs
 import re
 from werkzeug.exceptions import BadRequest
+from static.data.gsheet_import import spreadsheet_pull
 
 # Other File imports: DB for database interaction, calculations, support.
 from db import DB
@@ -37,6 +36,7 @@ config_check = Path("config.py")
 if config_check.is_file():
     ## Environment Variables in for local development
     from config import flask_key, google_key, mapbox_key#, LOG_VIEW_SECRET_KEY
+    from config import sheet_id
 else:
     ## Environment Variables for heroku local or production
     flask_key = os.environ.get("flask_key")
@@ -56,8 +56,9 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.secret_key = flask_key
 gmaps = googlemaps.Client(key=google_key)
 
-# path to db
-DATABASE = "powermax.db"
+
+########################### DATABASE LOADING #######################
+DATABASE = "votemax.db"
 
 def get_db_conn():
     """
@@ -69,21 +70,47 @@ def get_db_conn():
     else:
         return app.config["_database"]
 
+def database_loader():
+    db = DB(get_db_conn())
+    #Sets up the blank tables with schemas
+    db.generate_table('input_elections.sql')
+    # List of data points we want inserted into the DB
+    ####### Adjust here for different sheet sets ###############
+    spreadsheet_list = ['President','Senate','House','Governor','State Legislature Upper',
+                        'State Legislature Lower']
+    for sheet in spreadsheet_list:
+        #Pulls the data from the google sheet and puts it in the DB
+        data = spreadsheet_pull(sheet_id, sheet)
+        db.insert_data('input_elections', data)
+        logging.info('Main Pull Done!')
 
-# SITE PAGES AND WIDGETS ------------------------------------------------
-# Note- can't use logging.info messages here to check things?
+    #Generate useful tables from input_elections
+    db.generate_table('elections.sql')
+    logging.info('Elections Done!')
+    db.generate_table('candidates.sql')
+    logging.info('Candidates Done!')
 
-
+    #Pull and use Ballot Initiative data separately
+    db.generate_table('ballot_initiatives.sql')
+    bi_data = spreadsheet_pull(sheet_id, 'Ballot Initiative')
+    db.insert_data('ballot_initiatives', bi_data)
+    logging.info('Ballot Initiatives Done!')
+    
+    return {"message": "Data Ingested"}
+    
 def dataloader():
     # Imports shapefiles, elections, and candidates(soonTM) as dataframes and
-    # Holds them in memory???
-    db = DB()
+    # Holds them in memory
+    db = DB(get_db_conn())
     elections, allshapes, candidates = db.import_data_v2()
     return elections, allshapes, candidates
 
+def table_loader():
+    pass
 
 with app.app_context():
     logging.info("VM Activated")
+    database_loader()
     ELECTIONS, ALLSHAPES, CANDIDATES = dataloader()
 
 # Loading full ballot initiatives data, this might be temporary
@@ -102,6 +129,8 @@ def load_ballot_initiatives():
 # Load the data when the server starts
 BALLOT_INITIATIVES = load_ballot_initiatives()
 
+# SITE PAGES AND WIDGETS ------------------------------------------------
+# Note- can't use logging.info messages here to check things?
 
 # Website Home Page
 @app.route("/", methods=["GET", "POST"])
@@ -290,7 +319,7 @@ def election_delivery_function(location):
     For a state, returns elections within that state.
 
     """
-    db = DB()
+    db = DB(get_db_conn())
     db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
 
     # Dictionary to store information from shape lookup
@@ -353,7 +382,7 @@ def election_delivery_function(location):
 
 
 def election_delivery_function_structured(location, selection=None):
-    db = DB()
+    db = DB(get_db_conn())
     db.grab_dataframes(ELECTIONS, ALLSHAPES, CANDIDATES)
 
     # Dictionary to store information from shape lookup
